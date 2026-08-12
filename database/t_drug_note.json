@@ -1,0 +1,1082 @@
+[
+    {
+        "form": "Capsul",
+        "id": 182,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Capsule",
+        "id": 183,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Capsule in Vegetable Shell",
+        "id": 184,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Continued Release Tablet",
+        "id": 185,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "D-R Tablet",
+        "id": 186,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "DR Tablet",
+        "id": 187,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "DRTablet",
+        "id": 188,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Dr Tablet",
+        "id": 189,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "ER Tablet",
+        "id": 190,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Elixir",
+        "id": 191,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Er Tablet",
+        "id": 192,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Extended Release Tablet",
+        "id": 193,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Extented Release Tablet",
+        "id": 194,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Film Coated Tablet",
+        "id": 195,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "M R Capsule",
+        "id": 196,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Mups",
+        "id": 197,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Licap",
+        "id": 198,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Soft Capsule",
+        "id": 199,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Soft Gelatin Capsul",
+        "id": 200,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Soft Gelatin Capsule",
+        "id": 201,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Rapid Tablet",
+        "id": 202,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Retard Tablet",
+        "id": 203,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "SR Capsul",
+        "id": 204,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "SR Tablet",
+        "id": 205,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Soft gel Capsule",
+        "id": 206,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Sprinkle Capsule",
+        "id": 207,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Sr Capsule",
+        "id": 208,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Sustained Release Tablet",
+        "id": 209,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "XR Tablet",
+        "id": 210,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Xr Tablet",
+        "id": 211,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Tablet",
+        "id": 212,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Timed Release Capsule",
+        "id": 213,
+        "note": "This kind of medicine should be taken by mouth. Do not crush, chew, break, or open an enteric-coated or delayed-release tablet. Swallow it whole with a full glass of water.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে খেতে হয়। ওষুধটি মুখে নিয়ে, ১ গ্লাস পানি দিয়ে গিলে ফেলুন। ওষুধটি চুষে খাওয়া বা ভেঙ্গে বা গুড়া করে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "DR Suspension",
+        "id": 214,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Dry Powder Sachet",
+        "id": 215,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Dry Powder for Suspension",
+        "id": 216,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Dry Powder for Syrup",
+        "id": 217,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Dry Suspension",
+        "id": 218,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Dry Syrup",
+        "id": 219,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Granules For Suspension",
+        "id": 220,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Granules for Solution",
+        "id": 221,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Granules for Suspension",
+        "id": 222,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Granules for suspension",
+        "id": 223,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Kids syrup",
+        "id": 224,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Oral Granules",
+        "id": 225,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Oral Liquid",
+        "id": 226,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Powder For Suspension",
+        "id": 227,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Powder Of Suspension",
+        "id": 228,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Powder for Paediatric Drops",
+        "id": 229,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Powder for Suspension",
+        "id": 230,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Linctus",
+        "id": 231,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Powder for suspension",
+        "id": 232,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Powder milk",
+        "id": 233,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Pellets For Suspension",
+        "id": 234,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Syrup",
+        "id": 235,
+        "note": "Take exactly as prescribed by your doctor. Do not take in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription.\n\nFor oral use only. Shake the oral suspension (liquid) well just before you measure a dose. Measure the liquid with a special dose-measuring spoon or medicine cup.\n\nUse this medication for the full prescribed length of time. Store the syrup/mixture at room temperature away from moisture, heat, and light. Throw away any unused medication after 14 days.\n\nHow to prepare the suspension:\n\nTap the bottle several times to loosen powder contents prior to reconstitution. Add 60 ml (with the help of provided cup) of boiled and cooled water to the bottle. Then continue shaking the bottle gently until the powder mixed properly.\n\nShake the suspension well before each use. Keep the bottle tightly closed. The reconstituted suspension should be stored in a cool and dry place, preferably in refrigerator and unused portion should be discarded after 14 days.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nসিরাপ বা সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র মুখে খাবার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া কাপ বা চামুচের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে গ্রহন করুন।\n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": null,
+        "id": 236,
+        "note": null,
+        "note_bangla": null
+    },
+    {
+        "form": "Intravenous/Intramuscular",
+        "id": 237,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into a muscle, or into a vein through an IV needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "IM Injection",
+        "id": 238,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into a muscle, or into a vein through an IV needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "IM/IV Injection",
+        "id": 239,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into a muscle, or into a vein through an IV needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "IM/IV injection",
+        "id": 240,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into a muscle, or into a vein through an IV needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "IV Injectio",
+        "id": 241,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into a muscle, or into a vein through an IV needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "IV Injection",
+        "id": 242,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into a muscle, or into a vein through an IV needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "IV/IM Injectio",
+        "id": 243,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into a muscle, or into a vein through an IV needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "IV/IM Injection",
+        "id": 244,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into a muscle, or into a vein through an IV needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "Intramuscular",
+        "id": 245,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into a muscle, or into a vein through an IV needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "Intravenous",
+        "id": 246,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into a muscle, or into a vein through an IV needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "Injection",
+        "id": 247,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into a muscle, or into a vein through an IV needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "SC Injection",
+        "id": 248,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into skin or a muscle, or into a vein through a needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Subcuteneous injection can be self given. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত চামড়াতে, মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। চামড়ার নিচে ইনজেকশান নিজে নিজেও দেয়া যায়। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "SC/IM/IV Injection",
+        "id": 249,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into skin or a muscle, or into a vein through a needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. \n It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Subcuteneous injection can be self given. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত চামড়াতে, মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। চামড়ার নিচে ইনজেকশান নিজে নিজেও দেয়া যায়। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "Pre-filled Syringe Injection",
+        "id": 250,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into skin or a muscle, or into a vein through a needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Subcuteneous injection can be self given. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত চামড়াতে, মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন।  চামড়ার নিচে ইনজেকশান নিজে নিজেও দেয়া যায়। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "Subcutaneous Injection",
+        "id": 251,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into skin or a muscle, or into a vein through a needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Subcuteneous injection can be self given. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত চামড়াতে, মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়।  একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন।  চামড়ার নিচে ইনজেকশান নিজে নিজেও দেয়া যায়। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "injection",
+        "id": 252,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nIt is injected into a muscle, or into a vein through an IV needle.\n\nKeep this product, as well as syringes and needles, out of the reach of children and away from pets. Do not reuse needles, syringes, or other materials. Dispose of properly after use.\n\nA doctor, nurse, or other healthcare professional will give you this medication. It must be given slowly, and some IV infusion can take at least 30 minutes to complete. Use this medicine for the full prescribed length of time.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ইনজেকশান সাধারণত মাংসপেশি বা শিরাতে সিরিঞ্জ ও সুইয়ের সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": null,
+        "id": 253,
+        "note": null,
+        "note_bangla": null
+    },
+    {
+        "form": "IV Infusion",
+        "id": 254,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\n \n\nIt is injected into a vein through an IV needle/cannula. It is usually administered as an injection at your doctor's office, hospital, or clinic by a doctor, nurse, or other healthcare professional. Keep this product, as well as syringes and needles, out of the reach of children. Do not reuse needles, syringes, or other materials. Dispose of properly after use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই স্যালাইন বা ইনজেকশান সাধারণত রক্ত নালিতে আইভি ক্যানুলার  সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "Infusion",
+        "id": 255,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\n \n\nIt is injected into a vein through an IV needle/cannula. It is usually administered as an injection at your doctor's office, hospital, or clinic by a doctor, nurse, or other healthcare professional. Keep this product, as well as syringes and needles, out of the reach of children. Do not reuse needles, syringes, or other materials. Dispose of properly after use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই স্যালাইন বা ইনজেকশান সাধারণত রক্ত নালিতে আইভি ক্যানুলার  সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "Injection/ Infusion",
+        "id": 256,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\n \n\nIt is injected into a vein through an IV needle/cannula. It is usually administered as an injection at your doctor's office, hospital, or clinic by a doctor, nurse, or other healthcare professional. Keep this product, as well as syringes and needles, out of the reach of children. Do not reuse needles, syringes, or other materials. Dispose of properly after use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই স্যালাইন বা ইনজেকশান সাধারণত রক্ত নালিতে আইভি ক্যানুলার  সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "Intravenous infusion",
+        "id": 257,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\n \n\nIt is injected into a vein through an IV needle/cannula. It is usually administered as an injection at your doctor's office, hospital, or clinic by a doctor, nurse, or other healthcare professional. Keep this product, as well as syringes and needles, out of the reach of children. Do not reuse needles, syringes, or other materials. Dispose of properly after use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই স্যালাইন বা ইনজেকশান সাধারণত রক্ত নালিতে আইভি ক্যানুলার  সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "Solution For Infusion",
+        "id": 258,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\n \n\nIt is injected into a vein through an IV needle/cannula. It is usually administered as an injection at your doctor's office, hospital, or clinic by a doctor, nurse, or other healthcare professional. Keep this product, as well as syringes and needles, out of the reach of children. Do not reuse needles, syringes, or other materials. Dispose of properly after use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই স্যালাইন বা ইনজেকশান সাধারণত রক্ত নালিতে আইভি ক্যানুলার  সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "Solution for Infusion",
+        "id": 259,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\n \n\nIt is injected into a vein through an IV needle/cannula. It is usually administered as an injection at your doctor's office, hospital, or clinic by a doctor, nurse, or other healthcare professional. Keep this product, as well as syringes and needles, out of the reach of children. Do not reuse needles, syringes, or other materials. Dispose of properly after use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই স্যালাইন বা ইনজেকশান সাধারণত রক্ত নালিতে আইভি ক্যানুলার  সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "Solution for infusion",
+        "id": 260,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\n \n\nIt is injected into a vein through an IV needle/cannula. It is usually administered as an injection at your doctor's office, hospital, or clinic by a doctor, nurse, or other healthcare professional. Keep this product, as well as syringes and needles, out of the reach of children. Do not reuse needles, syringes, or other materials. Dispose of properly after use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই স্যালাইন বা ইনজেকশান সাধারণত রক্ত নালিতে আইভি ক্যানুলার  সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": "injection for infusion",
+        "id": 261,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\n \n\nIt is injected into a vein through an IV needle/cannula. It is usually administered as an injection at your doctor's office, hospital, or clinic by a doctor, nurse, or other healthcare professional. Keep this product, as well as syringes and needles, out of the reach of children. Do not reuse needles, syringes, or other materials. Dispose of properly after use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই স্যালাইন বা ইনজেকশান সাধারণত রক্ত নালিতে আইভি ক্যানুলার  সাহায্যে দেয়া হয়। একজন ডাক্তার বা নার্স এটি আপনাকে দিবেন। সিরিঞ্জ ও সুইটি একবার ব্যাবহারের জন্য, ব্যাবহারের পর সেটি নির্দিষ্ট স্থানে ফেলে দিন।"
+    },
+    {
+        "form": null,
+        "id": 262,
+        "note": null,
+        "note_bangla": null
+    },
+    {
+        "form": "Drop",
+        "id": 263,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Drops",
+        "id": 264,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "E/E Drop",
+        "id": 265,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "E/E Drops",
+        "id": 266,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Ear Drop",
+        "id": 267,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Ear Drops",
+        "id": 268,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Eye Drop",
+        "id": 269,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Eye Drops",
+        "id": 270,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Eye Solution",
+        "id": 271,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Eye drops",
+        "id": 272,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Eye, Ear & Nasal Drops",
+        "id": 273,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Eye/Ear Drops",
+        "id": 274,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Ophthalmic Emulsion",
+        "id": 275,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Ophthalmic Solution",
+        "id": 276,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Ophthalmic Solutions",
+        "id": 277,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for using only in the eye and/or ears. Shake the medicine well just before each use.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার ড্রপটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। ড্রপ দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Nasal Drop",
+        "id": 278,
+        "note": "Use exactly as directed on the label, or as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended.\n\n \n\nTo use the nose drops:\n\nBlow your nose gently. Tilt your head back as far as possible, or lie down and hang your head over the side of a bed. Hold the dropper over your nose and place the correct number of drops into your nose.\n\nSit up and bend your head slightly forward, then move it gently left and right. Stay seated with your head bent forward for a few minutes.\n\nAvoid sneezing or blowing your nose for at least a few minutes after using the nose drops.\n\nTo use the nasal spray:\n\nBlow your nose gently. Keep your head upright and insert the tip of bottle into one nostril. Press your other nostril closed with your finger. Breathe in quickly and gently spray the medicine into your nose. Then use the spray in your other nostril.\n\nDo not blow your nose for at least a few minutes after using the nasal spray.\n\nStore at room temperature away from moisture and heat. Do not freeze. Keep the bottle tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার নাকের ড্রপ বা স্প্রেটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ/স্প্রে শুধুমাত্র নাকে ব্যবহারের জন্য উপযুক্ত। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন।\n\nবোতলের মুখটি খুলে মাথা একটু পিছনের দিকে ঝুকিয়ে নাকের যেকোন একটি ফুটায় নির্দেশিত পরিমান ড্রপ বা স্প্রে দিতায়েরপর একই ভাবে অন্য নাকেও দিন। ড্রপ বা স্প্রে ব্যবহার করার পরে কমপক্ষে কয়েক মিনিটের জন্য নাক ঝাড়া বা হাঁচি দেয়া এড়িয়ে চলুন।\n\nব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন এবং বোতলটি ঘরের ঠান্ডা স্থানে রাখুন। তাপ ও আলো থেকে দূরে রাখুন।"
+    },
+    {
+        "form": "Nasal Drops",
+        "id": 279,
+        "note": "Use exactly as directed on the label, or as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended.\n\n \n\nTo use the nose drops:\n\nBlow your nose gently. Tilt your head back as far as possible, or lie down and hang your head over the side of a bed. Hold the dropper over your nose and place the correct number of drops into your nose.\n\nSit up and bend your head slightly forward, then move it gently left and right. Stay seated with your head bent forward for a few minutes.\n\nAvoid sneezing or blowing your nose for at least a few minutes after using the nose drops.\n\nTo use the nasal spray:\n\nBlow your nose gently. Keep your head upright and insert the tip of bottle into one nostril. Press your other nostril closed with your finger. Breathe in quickly and gently spray the medicine into your nose. Then use the spray in your other nostril.\n\nDo not blow your nose for at least a few minutes after using the nasal spray.\n\nStore at room temperature away from moisture and heat. Do not freeze. Keep the bottle tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার নাকের ড্রপ বা স্প্রেটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ/স্প্রে শুধুমাত্র নাকে ব্যবহারের জন্য উপযুক্ত। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন।\n\nবোতলের মুখটি খুলে মাথা একটু পিছনের দিকে ঝুকিয়ে নাকের যেকোন একটি ফুটায় নির্দেশিত পরিমান ড্রপ বা স্প্রে দিতায়েরপর একই ভাবে অন্য নাকেও দিন। ড্রপ বা স্প্রে ব্যবহার করার পরে কমপক্ষে কয়েক মিনিটের জন্য নাক ঝাড়া বা হাঁচি দেয়া এড়িয়ে চলুন।\n\nব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন এবং বোতলটি ঘরের ঠান্ডা স্থানে রাখুন। তাপ ও আলো থেকে দূরে রাখুন।"
+    },
+    {
+        "form": "Nasal Spray",
+        "id": 280,
+        "note": "Use exactly as directed on the label, or as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended.\n\n \n\nTo use the nose drops:\n\nBlow your nose gently. Tilt your head back as far as possible, or lie down and hang your head over the side of a bed. Hold the dropper over your nose and place the correct number of drops into your nose.\n\nSit up and bend your head slightly forward, then move it gently left and right. Stay seated with your head bent forward for a few minutes.\n\nAvoid sneezing or blowing your nose for at least a few minutes after using the nose drops.\n\nTo use the nasal spray:\n\nBlow your nose gently. Keep your head upright and insert the tip of bottle into one nostril. Press your other nostril closed with your finger. Breathe in quickly and gently spray the medicine into your nose. Then use the spray in your other nostril.\n\nDo not blow your nose for at least a few minutes after using the nasal spray.\n\nStore at room temperature away from moisture and heat. Do not freeze. Keep the bottle tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার নাকের ড্রপ বা স্প্রেটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ/স্প্রে শুধুমাত্র নাকে ব্যবহারের জন্য উপযুক্ত। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন।\n\nবোতলের মুখটি খুলে মাথা একটু পিছনের দিকে ঝুকিয়ে নাকের যেকোন একটি ফুটায় নির্দেশিত পরিমান ড্রপ বা স্প্রে দিতায়েরপর একই ভাবে অন্য নাকেও দিন। ড্রপ বা স্প্রে ব্যবহার করার পরে কমপক্ষে কয়েক মিনিটের জন্য নাক ঝাড়া বা হাঁচি দেয়া এড়িয়ে চলুন।\n\nব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন এবং বোতলটি ঘরের ঠান্ডা স্থানে রাখুন। তাপ ও আলো থেকে দূরে রাখুন।"
+    },
+    {
+        "form": "Spray",
+        "id": 281,
+        "note": "Use exactly as directed on the label, or as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended.\n\n \n\nTo use the nose drops:\n\nBlow your nose gently. Tilt your head back as far as possible, or lie down and hang your head over the side of a bed. Hold the dropper over your nose and place the correct number of drops into your nose.\n\nSit up and bend your head slightly forward, then move it gently left and right. Stay seated with your head bent forward for a few minutes.\n\nAvoid sneezing or blowing your nose for at least a few minutes after using the nose drops.\n\nTo use the nasal spray:\n\nBlow your nose gently. Keep your head upright and insert the tip of bottle into one nostril. Press your other nostril closed with your finger. Breathe in quickly and gently spray the medicine into your nose. Then use the spray in your other nostril.\n\nDo not blow your nose for at least a few minutes after using the nasal spray.\n\nStore at room temperature away from moisture and heat. Do not freeze. Keep the bottle tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার নাকের ড্রপ বা স্প্রেটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ/স্প্রে শুধুমাত্র নাকে ব্যবহারের জন্য উপযুক্ত। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন।\n\nবোতলের মুখটি খুলে মাথা একটু পিছনের দিকে ঝুকিয়ে নাকের যেকোন একটি ফুটায় নির্দেশিত পরিমান ড্রপ বা স্প্রে দিতায়েরপর একই ভাবে অন্য নাকেও দিন। ড্রপ বা স্প্রে ব্যবহার করার পরে কমপক্ষে কয়েক মিনিটের জন্য নাক ঝাড়া বা হাঁচি দেয়া এড়িয়ে চলুন।\n\nব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন এবং বোতলটি ঘরের ঠান্ডা স্থানে রাখুন। তাপ ও আলো থেকে দূরে রাখুন।"
+    },
+    {
+        "form": null,
+        "id": 282,
+        "note": null,
+        "note_bangla": null
+    },
+    {
+        "form": "Resperitory Solution",
+        "id": 283,
+        "note": "To use the solution with a nebulizer:\n\nOpen the foil pouch and remove one vial. Squeeze all of the medicine out into the chamber of the nebulizer.\n\nAttach the mouthpiece or face mask to the drug chamber. Then, attach the drug chamber to the compressor. Sit upright in a comfortable position. Place the mouthpiece into your mouth or put the face mask on, covering your nose and mouth.\n\nBreathe in slowly and evenly until you have inhaled all of the medicine (usually 5 to 15 minutes). The treatment is complete when no more mist is formed by the nebulizer and the drug chamber is empty.\n\nClean the nebulizer after each use. Follow the cleaning directions that came with your nebulizer.",
+        "note_bangla": "এই সলিউশানটি নেবুলাইজার মেশিনে দিয়ে ব্যাবহার করতে হয়। এম্পুলটি ভেঙ্গে এর সম্পূর্ণ ওষুধ নেবুলাইজারের মাউথপিস বা মাস্কের ওষুধ মেশানোর চেম্বারে ঢালতে হবে, এরপর নির্দেশিত মাত্রায় নরমাল স্যালাইনও তাতে ঢালতে হবে।\n\nএখন সোজা হয়ে বসে মুখে মাস্ক বা মাউথ পিসটি লাগিয়ে লম্বা লম্বা শ্বাস টানতে হবে। ৫ থেকে ১৫ মিনিট পর চেম্বারে ওষুধ শেষ হয়ে গেলে যখন ধোয়া বার হওয়া বন্ধ হয়ে যাবে তখন নেবুলাইজার মেশিনটি বন্ধ করতে হবে।"
+    },
+    {
+        "form": "Respirator Solutio",
+        "id": 284,
+        "note": "To use the solution with a nebulizer:\n\nOpen the foil pouch and remove one vial. Squeeze all of the medicine out into the chamber of the nebulizer.\n\nAttach the mouthpiece or face mask to the drug chamber. Then, attach the drug chamber to the compressor. Sit upright in a comfortable position. Place the mouthpiece into your mouth or put the face mask on, covering your nose and mouth.\n\nBreathe in slowly and evenly until you have inhaled all of the medicine (usually 5 to 15 minutes). The treatment is complete when no more mist is formed by the nebulizer and the drug chamber is empty.\n\nClean the nebulizer after each use. Follow the cleaning directions that came with your nebulizer.",
+        "note_bangla": "এই সলিউশানটি নেবুলাইজার মেশিনে দিয়ে ব্যাবহার করতে হয়। এম্পুলটি ভেঙ্গে এর সম্পূর্ণ ওষুধ নেবুলাইজারের মাউথপিস বা মাস্কের ওষুধ মেশানোর চেম্বারে ঢালতে হবে, এরপর নির্দেশিত মাত্রায় নরমাল স্যালাইনও তাতে ঢালতে হবে।\n\nএখন সোজা হয়ে বসে মুখে মাস্ক বা মাউথ পিসটি লাগিয়ে লম্বা লম্বা শ্বাস টানতে হবে। ৫ থেকে ১৫ মিনিট পর চেম্বারে ওষুধ শেষ হয়ে গেলে যখন ধোয়া বার হওয়া বন্ধ হয়ে যাবে তখন নেবুলাইজার মেশিনটি বন্ধ করতে হবে।"
+    },
+    {
+        "form": "Respiratory Solution",
+        "id": 285,
+        "note": "To use the solution with a nebulizer:\n\nOpen the foil pouch and remove one vial. Squeeze all of the medicine out into the chamber of the nebulizer.\n\nAttach the mouthpiece or face mask to the drug chamber. Then, attach the drug chamber to the compressor. Sit upright in a comfortable position. Place the mouthpiece into your mouth or put the face mask on, covering your nose and mouth.\n\nBreathe in slowly and evenly until you have inhaled all of the medicine (usually 5 to 15 minutes). The treatment is complete when no more mist is formed by the nebulizer and the drug chamber is empty.\n\nClean the nebulizer after each use. Follow the cleaning directions that came with your nebulizer.",
+        "note_bangla": "এই সলিউশানটি নেবুলাইজার মেশিনে দিয়ে ব্যাবহার করতে হয়। এম্পুলটি ভেঙ্গে এর সম্পূর্ণ ওষুধ নেবুলাইজারের মাউথপিস বা মাস্কের ওষুধ মেশানোর চেম্বারে ঢালতে হবে, এরপর নির্দেশিত মাত্রায় নরমাল স্যালাইনও তাতে ঢালতে হবে।\n\nএখন সোজা হয়ে বসে মুখে মাস্ক বা মাউথ পিসটি লাগিয়ে লম্বা লম্বা শ্বাস টানতে হবে। ৫ থেকে ১৫ মিনিট পর চেম্বারে ওষুধ শেষ হয়ে গেলে যখন ধোয়া বার হওয়া বন্ধ হয়ে যাবে তখন নেবুলাইজার মেশিনটি বন্ধ করতে হবে।"
+    },
+    {
+        "form": "Nebuliser Solution",
+        "id": 286,
+        "note": "To use the solution with a nebulizer:\n\nOpen the foil pouch and remove one vial. Squeeze all of the medicine out into the chamber of the nebulizer.\n\nAttach the mouthpiece or face mask to the drug chamber. Then, attach the drug chamber to the compressor. Sit upright in a comfortable position. Place the mouthpiece into your mouth or put the face mask on, covering your nose and mouth.\n\nBreathe in slowly and evenly until you have inhaled all of the medicine (usually 5 to 15 minutes). The treatment is complete when no more mist is formed by the nebulizer and the drug chamber is empty.\n\nClean the nebulizer after each use. Follow the cleaning directions that came with your nebulizer.",
+        "note_bangla": "এই সলিউশানটি নেবুলাইজার মেশিনে দিয়ে ব্যাবহার করতে হয়। এম্পুলটি ভেঙ্গে এর সম্পূর্ণ ওষুধ নেবুলাইজারের মাউথপিস বা মাস্কের ওষুধ মেশানোর চেম্বারে ঢালতে হবে, এরপর নির্দেশিত মাত্রায় নরমাল স্যালাইনও তাতে ঢালতে হবে।\n\nএখন সোজা হয়ে বসে মুখে মাস্ক বা মাউথ পিসটি লাগিয়ে লম্বা লম্বা শ্বাস টানতে হবে। ৫ থেকে ১৫ মিনিট পর চেম্বারে ওষুধ শেষ হয়ে গেলে যখন ধোয়া বার হওয়া বন্ধ হয়ে যাবে তখন নেবুলাইজার মেশিনটি বন্ধ করতে হবে।"
+    },
+    {
+        "form": "Nebuliser Solution/Ampule",
+        "id": 287,
+        "note": "To use the solution with a nebulizer:\n\nOpen the foil pouch and remove one vial. Squeeze all of the medicine out into the chamber of the nebulizer.\n\nAttach the mouthpiece or face mask to the drug chamber. Then, attach the drug chamber to the compressor. Sit upright in a comfortable position. Place the mouthpiece into your mouth or put the face mask on, covering your nose and mouth.\n\nBreathe in slowly and evenly until you have inhaled all of the medicine (usually 5 to 15 minutes). The treatment is complete when no more mist is formed by the nebulizer and the drug chamber is empty.\n\nClean the nebulizer after each use. Follow the cleaning directions that came with your nebulizer.",
+        "note_bangla": "এই সলিউশানটি নেবুলাইজার মেশিনে দিয়ে ব্যাবহার করতে হয়। এম্পুলটি ভেঙ্গে এর সম্পূর্ণ ওষুধ নেবুলাইজারের মাউথপিস বা মাস্কের ওষুধ মেশানোর চেম্বারে ঢালতে হবে, এরপর নির্দেশিত মাত্রায় নরমাল স্যালাইনও তাতে ঢালতে হবে।\n\nএখন সোজা হয়ে বসে মুখে মাস্ক বা মাউথ পিসটি লাগিয়ে লম্বা লম্বা শ্বাস টানতে হবে। ৫ থেকে ১৫ মিনিট পর চেম্বারে ওষুধ শেষ হয়ে গেলে যখন ধোয়া বার হওয়া বন্ধ হয়ে যাবে তখন নেবুলাইজার মেশিনটি বন্ধ করতে হবে।"
+    },
+    {
+        "form": "Nebuliser Suspension",
+        "id": 288,
+        "note": "To use the solution with a nebulizer:\n\nOpen the foil pouch and remove one vial. Squeeze all of the medicine out into the chamber of the nebulizer.\n\nAttach the mouthpiece or face mask to the drug chamber. Then, attach the drug chamber to the compressor. Sit upright in a comfortable position. Place the mouthpiece into your mouth or put the face mask on, covering your nose and mouth.\n\nBreathe in slowly and evenly until you have inhaled all of the medicine (usually 5 to 15 minutes). The treatment is complete when no more mist is formed by the nebulizer and the drug chamber is empty.\n\nClean the nebulizer after each use. Follow the cleaning directions that came with your nebulizer.",
+        "note_bangla": "এই সলিউশানটি নেবুলাইজার মেশিনে দিয়ে ব্যাবহার করতে হয়। এম্পুলটি ভেঙ্গে এর সম্পূর্ণ ওষুধ নেবুলাইজারের মাউথপিস বা মাস্কের ওষুধ মেশানোর চেম্বারে ঢালতে হবে, এরপর নির্দেশিত মাত্রায় নরমাল স্যালাইনও তাতে ঢালতে হবে।\n\nএখন সোজা হয়ে বসে মুখে মাস্ক বা মাউথ পিসটি লাগিয়ে লম্বা লম্বা শ্বাস টানতে হবে। ৫ থেকে ১৫ মিনিট পর চেম্বারে ওষুধ শেষ হয়ে গেলে যখন ধোয়া বার হওয়া বন্ধ হয়ে যাবে তখন নেবুলাইজার মেশিনটি বন্ধ করতে হবে।"
+    },
+    {
+        "form": "Orally Dispersible Tablet",
+        "id": 289,
+        "note": "Orally disintegrating tablet or the dispersible tablets, are designed to be dissolved on the tongue without the aid of water rather than swallowed whole.",
+        "note_bangla": "এ জাতিয় ওষুধ জিহ্বার মধ্যে বা জিহ্বার নিচে নিয়ে রাখলে আপনাআপনি গলে যায়। এ ওশুধ পানি ছাড়া যাতে জিহ্বার মধ্যে নিজে থেকেই গলে যায়, সেভাবে তৈরি করা হয়।"
+    },
+    {
+        "form": "Orodispersible Tablet",
+        "id": 290,
+        "note": "Orally disintegrating tablet or the dispersible tablets, are designed to be dissolved on the tongue without the aid of water rather than swallowed whole.",
+        "note_bangla": "এ জাতিয় ওষুধ জিহ্বার মধ্যে বা জিহ্বার নিচে নিয়ে রাখলে আপনাআপনি গলে যায়। এ ওশুধ পানি ছাড়া যাতে জিহ্বার মধ্যে নিজে থেকেই গলে যায়, সেভাবে তৈরি করা হয়।"
+    },
+    {
+        "form": "Sublingual Tablet",
+        "id": 291,
+        "note": "Orally disintegrating tablet or the dispersible tablets, are designed to be dissolved on the tongue without the aid of water rather than swallowed whole.",
+        "note_bangla": "এ জাতিয় ওষুধ জিহ্বার মধ্যে বা জিহ্বার নিচে নিয়ে রাখলে আপনাআপনি গলে যায়। এ ওশুধ পানি ছাড়া যাতে জিহ্বার মধ্যে নিজে থেকেই গলে যায়, সেভাবে তৈরি করা হয়।"
+    },
+    {
+        "form": "Dispersible Tablet",
+        "id": 292,
+        "note": "Orally disintegrating tablet or the dispersible tablets, are designed to be dissolved on the tongue without the aid of water rather than swallowed whole.",
+        "note_bangla": "এ জাতিয় ওষুধ জিহ্বার মধ্যে বা জিহ্বার নিচে নিয়ে রাখলে আপনাআপনি গলে যায়। এ ওশুধ পানি ছাড়া যাতে জিহ্বার মধ্যে নিজে থেকেই গলে যায়, সেভাবে তৈরি করা হয়।"
+    },
+    {
+        "form": "Buccal Tablet",
+        "id": 293,
+        "note": "Orally disintegrating tablet or the dispersible tablets, are designed to be dissolved on the tongue without the aid of water rather than swallowed whole.",
+        "note_bangla": "এ জাতিয় ওষুধ জিহ্বার মধ্যে বা জিহ্বার নিচে নিয়ে রাখলে আপনাআপনি গলে যায়। এ ওশুধ পানি ছাড়া যাতে জিহ্বার মধ্যে নিজে থেকেই গলে যায়, সেভাবে তৈরি করা হয়।"
+    },
+    {
+        "form": "Paediatric Drop",
+        "id": 294,
+        "note": "Use exactly as directed on the label, or as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended.\n\nAfter opening the cap, squize the bottle and give exact drop prescribed by a doctor. \n\nStore at room temperature away from moisture and heat. Do not allow the liquid form of this medicine to freeze.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nপেডিয়াট্রিক ড্রপ  শুধু মাত্র বাচ্চাদের মুখে খাওয়ার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন। অথবা বোতলের সাথে দেয়া ড্রপারের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে বাচ্চাকে খাওয়াতে হবে। \n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Paediatric Drops",
+        "id": 295,
+        "note": "Use exactly as directed on the label, or as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended.\nAfter opening the cap, squize the bottle and give exact drop prescribed by a doctor. \n\nStore at room temperature away from moisture and heat. Do not allow the liquid form of this medicine to freeze.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nপেডিয়াট্রিক ড্রপ  শুধু মাত্র বাচ্চাদের মুখে খাওয়ার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন। অথবা বোতলের সাথে দেয়া ড্রপারের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে বাচ্চাকে খাওয়াতে হবে। \n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Paedriatric Drops",
+        "id": 296,
+        "note": "Use exactly as directed on the label, or as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended.\n\nAfter opening the cap, squize the bottle and give exact drop prescribed by a doctor. \n\nStore at room temperature away from moisture and heat. Do not allow the liquid form of this medicine to freeze.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nপেডিয়াট্রিক ড্রপ  শুধু মাত্র বাচ্চাদের মুখে খাওয়ার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন। অথবা বোতলের সাথে দেয়া ড্রপারের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে বাচ্চাকে খাওয়াতে হবে। \n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Pediatric Dro",
+        "id": 297,
+        "note": "Use exactly as directed on the label, or as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended.\n\nAfter opening the cap, squize the bottle and give exact drop prescribed by a doctor. \n\nStore at room temperature away from moisture and heat. Do not allow the liquid form of this medicine to freeze.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nপেডিয়াট্রিক ড্রপ  শুধু মাত্র বাচ্চাদের মুখে খাওয়ার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন। অথবা বোতলের সাথে দেয়া ড্রপারের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে বাচ্চাকে খাওয়াতে হবে। \n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Pediatric Drop",
+        "id": 298,
+        "note": "Use exactly as directed on the label, or as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended.\nAfter opening the cap, squize the bottle and give exact drop prescribed by a doctor. \n\nStore at room temperature away from moisture and heat. Do not allow the liquid form of this medicine to freeze.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nপেডিয়াট্রিক ড্রপ  শুধু মাত্র বাচ্চাদের মুখে খাওয়ার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন। অথবা বোতলের সাথে দেয়া ড্রপারের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে বাচ্চাকে খাওয়াতে হবে। \n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Pediatric Drops",
+        "id": 299,
+        "note": "Use exactly as directed on the label, or as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended.\n\nAfter opening the cap, squize the bottle and give exact drop prescribed by a doctor. \n\nStore at room temperature away from moisture and heat. Do not allow the liquid form of this medicine to freeze.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nপেডিয়াট্রিক ড্রপ  শুধু মাত্র বাচ্চাদের মুখে খাওয়ার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন। অথবা বোতলের সাথে দেয়া ড্রপারের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে বাচ্চাকে খাওয়াতে হবে। \n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Pediatric drops",
+        "id": 300,
+        "note": "Use exactly as directed on the label, or as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended.\n\nAfter opening the cap, squize the bottle and give exact drop prescribed by a doctor. \n\nStore at room temperature away from moisture and heat. Do not allow the liquid form of this medicine to freeze.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nপেডিয়াট্রিক ড্রপ  শুধু মাত্র বাচ্চাদের মুখে খাওয়ার জন্য ব্যাবহার করা হয়। খাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন। অথবা বোতলের সাথে দেয়া ড্রপারের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে বাচ্চাকে খাওয়াতে হবে। \n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Liquid cleanser",
+        "id": 301,
+        "note": ".         Apply a palmful of the product in a cupped hand and cover all surfaces.\n\n·         Rub hands palm to palm right palm over left dorsum with interlaced fingers and vice versa.\n\n·         Then palm to palm with fingers interlaced.\n\n·         Backs of fingers to opposing palms with fingers interlocked.\n\n·         Rotational rubbing of left thumb, clasped in right palm and vice versa.\n\n·         Rotational rubbing, backwards and forwards with clasped fingers of right hand in left palm and vice versa.\n\n·         Rinse hands with water & dry thoroughly with a towel.\n\n·         Once dry, your hands are safe.",
+        "note_bangla": "• হ্যান্ড রাবটি হাতের তালুতে পরিমান মত নিয়ে, দুই হাতের পুরা তালুতে প্রয়োগ করুন।\n\n• এরপর ডান হাতের তালু ও আঙ্গুল দিয়ে বাম হাতের উপর অংশ ও আঙুলের মাঝের অংশে প্রয়োগ করুন, এভাবে একই ভাবে বাম হাতের তালু দিয়ে ডান হাতের উপর আঙুলে প্রয়োগ করুন ।   \n\n• আঙ্গুলের সাথে আঙ্গুলের সামনে পিছনের অংশে প্রয়োগ করুন।\n\n• তারপর একটি টাওয়েল দিয়ে শুকিয়ে নিন।\n\n• শুকিয়ে যাবার পর, আপনার হাত নিরাপদ।"
+    },
+    {
+        "form": "Hand Rub",
+        "id": 302,
+        "note": ".         Apply a palmful of the product in a cupped hand and cover all surfaces.\n\n·         Rub hands palm to palm right palm over left dorsum with interlaced fingers and vice versa.\n\n·         Then palm to palm with fingers interlaced.\n\n·         Backs of fingers to opposing palms with fingers interlocked.\n\n·         Rotational rubbing of left thumb, clasped in right palm and vice versa.\n\n·         Rotational rubbing, backwards and forwards with clasped fingers of right hand in left palm and vice versa.\n\n·         Rinse hands with water & dry thoroughly with a towel.\n\n·         Once dry, your hands are safe.",
+        "note_bangla": "• হ্যান্ড রাবটি হাতের তালুতে পরিমান মত নিয়ে, দুই হাতের পুরা তালুতে প্রয়োগ করুন।\n\n• এরপর ডান হাতের তালু ও আঙ্গুল দিয়ে বাম হাতের উপর অংশ ও আঙুলের মাঝের অংশে প্রয়োগ করুন, এভাবে একই ভাবে বাম হাতের তালু দিয়ে ডান হাতের উপর আঙুলে প্রয়োগ করুন ।   \n\n• আঙ্গুলের সাথে আঙ্গুলের সামনে পিছনের অংশে প্রয়োগ করুন।\n\n• তারপর একটি টাওয়েল দিয়ে শুকিয়ে নিন।\n\n• শুকিয়ে যাবার পর, আপনার হাত নিরাপদ।"
+    },
+    {
+        "form": "Hand Rub Solution",
+        "id": 303,
+        "note": ".         Apply a palmful of the product in a cupped hand and cover all surfaces.\n\n·         Rub hands palm to palm right palm over left dorsum with interlaced fingers and vice versa.\n\n·         Then palm to palm with fingers interlaced.\n\n·         Backs of fingers to opposing palms with fingers interlocked.\n\n·         Rotational rubbing of left thumb, clasped in right palm and vice versa.\n\n·         Rotational rubbing, backwards and forwards with clasped fingers of right hand in left palm and vice versa.\n\n·         Rinse hands with water & dry thoroughly with a towel.\n\n·         Once dry, your hands are safe.",
+        "note_bangla": "• হ্যান্ড রাবটি হাতের তালুতে পরিমান মত নিয়ে, দুই হাতের পুরা তালুতে প্রয়োগ করুন।\n\n• এরপর ডান হাতের তালু ও আঙ্গুল দিয়ে বাম হাতের উপর অংশ ও আঙুলের মাঝের অংশে প্রয়োগ করুন, এভাবে একই ভাবে বাম হাতের তালু দিয়ে ডান হাতের উপর আঙুলে প্রয়োগ করুন ।   \n\n• আঙ্গুলের সাথে আঙ্গুলের সামনে পিছনের অংশে প্রয়োগ করুন।\n\n• তারপর একটি টাওয়েল দিয়ে শুকিয়ে নিন।\n\n• শুকিয়ে যাবার পর, আপনার হাত নিরাপদ।"
+    },
+    {
+        "form": "Hand Rub solution",
+        "id": 304,
+        "note": ".         Apply a palmful of the product in a cupped hand and cover all surfaces.\n\n·         Rub hands palm to palm right palm over left dorsum with interlaced fingers and vice versa.\n\n·         Then palm to palm with fingers interlaced.\n\n·         Backs of fingers to opposing palms with fingers interlocked.\n\n·         Rotational rubbing of left thumb, clasped in right palm and vice versa.\n\n·         Rotational rubbing, backwards and forwards with clasped fingers of right hand in left palm and vice versa.\n\n·         Rinse hands with water & dry thoroughly with a towel.\n\n·         Once dry, your hands are safe.",
+        "note_bangla": "• হ্যান্ড রাবটি হাতের তালুতে পরিমান মত নিয়ে, দুই হাতের পুরা তালুতে প্রয়োগ করুন।\n\n• এরপর ডান হাতের তালু ও আঙ্গুল দিয়ে বাম হাতের উপর অংশ ও আঙুলের মাঝের অংশে প্রয়োগ করুন, এভাবে একই ভাবে বাম হাতের তালু দিয়ে ডান হাতের উপর আঙুলে প্রয়োগ করুন ।   \n\n• আঙ্গুলের সাথে আঙ্গুলের সামনে পিছনের অংশে প্রয়োগ করুন।\n\n• তারপর একটি টাওয়েল দিয়ে শুকিয়ে নিন।\n\n• শুকিয়ে যাবার পর, আপনার হাত নিরাপদ।"
+    },
+    {
+        "form": "Oral Soluble Film",
+        "id": 305,
+        "note": "Wash your hands before and after applying the gel. Apply a pea-sized amount of the gel to the sore area of the mouth with a clean fingertip.\n\nYou may need to hold the medicine in your mouth for as long as possible.",
+        "note_bangla": "জেল প্রয়োগ করার আগে এবং পরে আপনার হাত ধুয়ে নিন। আপনার একটি পরিষ্কার আঙুলের মাথায় অল্প পরিমান বা একটি মটরশুঁটির পরিমান জেল নিয়ে মুখের ভিতর ক্ষতস্থানে প্রয়োগ করুন।\n\nযতক্ষন সম্ভব মুখের মধ্যে ওষুধ রাখা দরকার।"
+    },
+    {
+        "form": "Dental Gel",
+        "id": 306,
+        "note": "Wash your hands before and after applying the gel. Apply a pea-sized amount of the gel to the sore area of the mouth with a clean fingertip.\n\nYou may need to hold the medicine in your mouth for as long as possible.",
+        "note_bangla": "জেল প্রয়োগ করার আগে এবং পরে আপনার হাত ধুয়ে নিন। আপনার একটি পরিষ্কার আঙুলের মাথায় অল্প পরিমান বা একটি মটরশুঁটির পরিমান জেল নিয়ে মুখের ভিতর ক্ষতস্থানে প্রয়োগ করুন।\n\nযতক্ষন সম্ভব মুখের মধ্যে ওষুধ রাখা দরকার।"
+    },
+    {
+        "form": "Oral Gel",
+        "id": 307,
+        "note": "Wash your hands before and after applying the gel. Apply a pea-sized amount of the gel to the sore area of the mouth with a clean fingertip.\n\nYou may need to hold the medicine in your mouth for as long as possible.",
+        "note_bangla": "জেল প্রয়োগ করার আগে এবং পরে আপনার হাত ধুয়ে নিন। আপনার একটি পরিষ্কার আঙুলের মাথায় অল্প পরিমান বা একটি মটরশুঁটির পরিমান জেল নিয়ে মুখের ভিতর ক্ষতস্থানে প্রয়োগ করুন।\n\nযতক্ষন সম্ভব মুখের মধ্যে ওষুধ রাখা দরকার।"
+    },
+    {
+        "form": "Oral Emulsion",
+        "id": 308,
+        "note": "Wash your hands before and after applying the gel. Apply a pea-sized amount of the gel to the sore area of the mouth with a clean fingertip.\n\nYou may need to hold the medicine in your mouth for as long as possible.",
+        "note_bangla": "জেল প্রয়োগ করার আগে এবং পরে আপনার হাত ধুয়ে নিন। আপনার একটি পরিষ্কার আঙুলের মাথায় অল্প পরিমান বা একটি মটরশুঁটির পরিমান জেল নিয়ে মুখের ভিতর ক্ষতস্থানে প্রয়োগ করুন।\n\nযতক্ষন সম্ভব মুখের মধ্যে ওষুধ রাখা দরকার।"
+    },
+    {
+        "form": "Oral Paste",
+        "id": 309,
+        "note": "Wash your hands before and after applying the gel. Apply a pea-sized amount of the gel to the sore area of the mouth with a clean fingertip.\n\nYou may need to hold the medicine in your mouth for as long as possible.",
+        "note_bangla": "জেল প্রয়োগ করার আগে এবং পরে আপনার হাত ধুয়ে নিন। আপনার একটি পরিষ্কার আঙুলের মাথায় অল্প পরিমান বা একটি মটরশুঁটির পরিমান জেল নিয়ে মুখের ভিতর ক্ষতস্থানে প্রয়োগ করুন।\n\nযতক্ষন সম্ভব মুখের মধ্যে ওষুধ রাখা দরকার।"
+    },
+    {
+        "form": "Oro-dental Gel",
+        "id": 310,
+        "note": "Wash your hands before and after applying the gel. Apply a pea-sized amount of the gel to the sore area of the mouth with a clean fingertip.\n\nYou may need to hold the medicine in your mouth for as long as possible.",
+        "note_bangla": "জেল প্রয়োগ করার আগে এবং পরে আপনার হাত ধুয়ে নিন। আপনার একটি পরিষ্কার আঙুলের মাথায় অল্প পরিমান বা একটি মটরশুঁটির পরিমান জেল নিয়ে মুখের ভিতর ক্ষতস্থানে প্রয়োগ করুন।\n\nযতক্ষন সম্ভব মুখের মধ্যে ওষুধ রাখা দরকার।"
+    },
+    {
+        "form": "Aerosol Inhalation",
+        "id": 311,
+        "note": "To use the solution with a nebulizer:\n\nOpen the foil pouch and remove one vial. Squeeze all of the medicine out into the chamber of the nebulizer.\n\nAttach the mouthpiece or face mask to the drug chamber. Then, attach the drug chamber to the compressor. Sit upright in a comfortable position. Place the mouthpiece into your mouth or put the face mask on, covering your nose and mouth.\n\nBreathe in slowly and evenly until you have inhaled all of the medicine (usually 5 to 15 minutes). The treatment is complete when no more mist is formed by the nebulizer and the drug chamber is empty.\n\nClean the nebulizer after each use. Follow the cleaning directions that came with your nebulizer.",
+        "note_bangla": "এই সলিউশানটি নেবুলাইজার মেশিনে দিয়ে ব্যাবহার করতে হয়। এম্পুলটি ভেঙ্গে এর সম্পূর্ণ ওষুধ নেবুলাইজারের মাউথপিস বা মাস্কের ওষুধ মেশানোর চেম্বারে ঢালতে হবে, এরপর নির্দেশিত মাত্রায় নরমাল স্যালাইনও তাতে ঢালতে হবে।\n\nএখন সোজা হয়ে বসে মুখে মাস্ক বা মাউথ পিসটি লাগিয়ে লম্বা লম্বা শ্বাস টানতে হবে। ৫ থেকে ১৫ মিনিট পর চেম্বারে ওষুধ শেষ হয়ে গেলে যখন ধোয়া বার হওয়া বন্ধ হয়ে যাবে তখন নেবুলাইজার মেশিনটি বন্ধ করতে হবে।"
+    },
+    {
+        "form": "HFA Inhaler (CFC-Free)",
+        "id": 312,
+        "note": "Use inhalation exactly as prescribed by your doctor. Follow all directions on your prescription. Do not use inhalation in larger or smaller amounts or for longer than recommended.\n \nHow to use inhaler: \nUncap the mouthpiece of the inhaler. Breathe out fully. Put the mouthpiece into your mouth and close your lips. Keep your eyes closed to prevent spraying any medicine into your eyes. Breathe in slowly and deeply while pushing down on the canister. Hold your breath for 10 seconds, then breathe out slowly.\nIf you use more than one inhalation at a time, wait at least 1 minute before using the second inhalation. Carefully follow all directions for cleaning your specific inhaler device once per week.\n \nYou may need to prime your inhaler device before the first use. Your medicine comes with directions for priming if needed.\nYou may also need to shake your device just before each use. Follow all medication instructions very carefully. Do not allow a young child to use inhalation without help from an adult.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n \nইনহেলারের ব্যাবহার পদ্ধতিঃ\nপ্রতিবার ব্যাবহারের আগে ইনহেলারটি কয়েকবার নাড়িয়ে নিন। এবার ইনহেলারের ক্যাপটি খুলুন। নিশ্বাস ছেড়ে দিন। এরপর ইনহেলারের মাউথ পিসটি মুখে নিন এবং ঠোট বন্ধ করুন। এরপর ইনহেলারের কেনিসটারটি ১ বার চাপ দিন, সাথে সাথে লম্বা করে শ্বাস টানুন এবং ১০ সেকেন্ড পর্যন্ত শ্বাস ধরে রাখার চেস্টা করুন। এরপর আস্তে আস্তে শ্বাস ছাড়ুন। ১ মিনিট পর আবার একই ভাবে আরেক চাপ ওষুধ টানুন।"
+    },
+    {
+        "form": "HFA Refill (CFC-Free)",
+        "id": 313,
+        "note": "Use inhalation exactly as prescribed by your doctor. Follow all directions on your prescription. Do not use inhalation in larger or smaller amounts or for longer than recommended.\n \nHow to use inhaler: \nUncap the mouthpiece of the inhaler. Breathe out fully. Put the mouthpiece into your mouth and close your lips. Keep your eyes closed to prevent spraying any medicine into your eyes. Breathe in slowly and deeply while pushing down on the canister. Hold your breath for 10 seconds, then breathe out slowly.\nIf you use more than one inhalation at a time, wait at least 1 minute before using the second inhalation. Carefully follow all directions for cleaning your specific inhaler device once per week.\n \nYou may need to prime your inhaler device before the first use. Your medicine comes with directions for priming if needed.\nYou may also need to shake your device just before each use. Follow all medication instructions very carefully. Do not allow a young child to use inhalation without help from an adult.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n \nইনহেলারের ব্যাবহার পদ্ধতিঃ\nপ্রতিবার ব্যাবহারের আগে ইনহেলারটি কয়েকবার নাড়িয়ে নিন। এবার ইনহেলারের ক্যাপটি খুলুন। নিশ্বাস ছেড়ে দিন। এরপর ইনহেলারের মাউথ পিসটি মুখে নিন এবং ঠোট বন্ধ করুন। এরপর ইনহেলারের কেনিসটারটি ১ বার চাপ দিন, সাথে সাথে লম্বা করে শ্বাস টানুন এবং ১০ সেকেন্ড পর্যন্ত শ্বাস ধরে রাখার চেস্টা করুন। এরপর আস্তে আস্তে শ্বাস ছাড়ুন। ১ মিনিট পর আবার একই ভাবে আরেক চাপ ওষুধ টানুন।"
+    },
+    {
+        "form": "Inhalation Aerosol",
+        "id": 314,
+        "note": "To use the solution with a nebulizer:\n\nOpen the foil pouch and remove one vial. Squeeze all of the medicine out into the chamber of the nebulizer.\n\nAttach the mouthpiece or face mask to the drug chamber. Then, attach the drug chamber to the compressor. Sit upright in a comfortable position. Place \nthe mouthpiece into your mouth or put the face mask on, covering your nose and mouth.\n\nBreathe in slowly and evenly until you have inhaled all of the medicine (usually 5 to 15 minutes). The treatment is complete when no more mist is formed by the nebulizer and the drug chamber is empty.\n\nClean the nebulizer after each use. Follow the cleaning directions that came with your nebulizer.",
+        "note_bangla": "এই সলিউশানটি নেবুলাইজার মেশিনে দিয়ে ব্যাবহার করতে হয়। এম্পুলটি ভেঙ্গে এর সম্পূর্ণ ওষুধ নেবুলাইজারের মাউথপিস বা মাস্কের ওষুধ মেশানোর চেম্বারে ঢালতে হবে, এরপর নির্দেশিত মাত্রায় নরমাল স্যালাইনও তাতে ঢালতে হবে।\n\nএখন সোজা হয়ে বসে মুখে মাস্ক বা মাউথ পিসটি লাগিয়ে লম্বা লম্বা শ্বাস টানতে হবে। ৫ থেকে ১৫ মিনিট পর চেম্বারে ওষুধ শেষ হয়ে গেলে যখন ধোয়া বার হওয়া বন্ধ হয়ে যাবে তখন নেবুলাইজার মেশিনটি বন্ধ করতে হবে।"
+    },
+    {
+        "form": "Inhalation Solution",
+        "id": 315,
+        "note": "To use the solution with a nebulizer:\n\nOpen the foil pouch and remove one vial. Squeeze all of the medicine out into the chamber of the nebulizer.\n\nAttach the mouthpiece or face mask to the drug chamber. Then, attach the drug chamber to the compressor. Sit upright in a comfortable position. Place the mouthpiece into your mouth or put the face mask on, covering your nose and mouth.\n\nBreathe in slowly and evenly until you have inhaled all of the medicine (usually 5 to 15 minutes). The treatment is complete when no more mist is formed by the nebulizer and the drug chamber is empty.\n\nClean the nebulizer after each use. Follow the cleaning directions that came with your nebulizer.",
+        "note_bangla": "এই সলিউশানটি নেবুলাইজার মেশিনে দিয়ে ব্যাবহার করতে হয়। এম্পুলটি ভেঙ্গে এর সম্পূর্ণ ওষুধ নেবুলাইজারের মাউথপিস বা মাস্কের ওষুধ মেশানোর চেম্বারে ঢালতে হবে, এরপর নির্দেশিত মাত্রায় নরমাল স্যালাইনও তাতে ঢালতে হবে।\n\nএখন সোজা হয়ে বসে মুখে মাস্ক বা মাউথ পিসটি লাগিয়ে লম্বা লম্বা শ্বাস টানতে হবে। ৫ থেকে ১৫ মিনিট পর চেম্বারে ওষুধ শেষ হয়ে গেলে যখন ধোয়া বার হওয়া বন্ধ হয়ে যাবে তখন নেবুলাইজার মেশিনটি বন্ধ করতে হবে।"
+    },
+    {
+        "form": "Inhaler",
+        "id": 316,
+        "note": "Use inhalation exactly as prescribed by your doctor. Follow all directions on your prescription. Do not use inhalation in larger or smaller amounts or for longer than recommended.\n \nHow to use inhaler: \nUncap the mouthpiece of the inhaler. Breathe out fully. Put the mouthpiece into your mouth and close your lips. Keep your eyes closed to prevent spraying any medicine into your eyes. Breathe in slowly and deeply while pushing down on the canister. Hold your breath for 10 seconds, then breathe out slowly.\nIf you use more than one inhalation at a time, wait at least 1 minute before using the second inhalation. Carefully follow all directions for cleaning your specific inhaler device once per week.\n \nYou may need to prime your inhaler device before the first use. Your medicine comes with directions for priming if needed.\nYou may also need to shake your device just before each use. Follow all medication instructions very carefully. Do not allow a young child to use inhalation without help from an adult.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n \nইনহেলারের ব্যাবহার পদ্ধতিঃ\nপ্রতিবার ব্যাবহারের আগে ইনহেলারটি কয়েকবার নাড়িয়ে নিন। এবার ইনহেলারের ক্যাপটি খুলুন। নিশ্বাস ছেড়ে দিন। এরপর ইনহেলারের মাউথ পিসটি মুখে নিন এবং ঠোট বন্ধ করুন। এরপর ইনহেলারের কেনিসটারটি ১ বার চাপ দিন, সাথে সাথে লম্বা করে শ্বাস টানুন এবং ১০ সেকেন্ড পর্যন্ত শ্বাস ধরে রাখার চেস্টা করুন। এরপর আস্তে আস্তে শ্বাস ছাড়ুন। ১ মিনিট পর আবার একই ভাবে আরেক চাপ ওষুধ টানুন।"
+    },
+    {
+        "form": "Inhaler (MDI)",
+        "id": 317,
+        "note": "Use inhalation exactly as prescribed by your doctor. Follow all directions on your prescription. Do not use inhalation in larger or smaller amounts or for longer than recommended.\n \nHow to use inhaler: \nUncap the mouthpiece of the inhaler. Breathe out fully. Put the mouthpiece into your mouth and close your lips. Keep your eyes closed to prevent spraying any medicine into your eyes. Breathe in slowly and deeply while pushing down on the canister. Hold your breath for 10 seconds, then breathe out slowly.\nIf you use more than one inhalation at a time, wait at least 1 minute before using the second inhalation. Carefully follow all directions for cleaning your specific inhaler device once per week.\n \nYou may need to prime your inhaler device before the first use. Your medicine comes with directions for priming if needed.\nYou may also need to shake your device just before each use. Follow all medication instructions very carefully. Do not allow a young child to use inhalation without help from an adult.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n \nইনহেলারের ব্যাবহার পদ্ধতিঃ\nপ্রতিবার ব্যাবহারের আগে ইনহেলারটি কয়েকবার নাড়িয়ে নিন। এবার ইনহেলারের ক্যাপটি খুলুন। নিশ্বাস ছেড়ে দিন। এরপর ইনহেলারের মাউথ পিসটি মুখে নিন এবং ঠোট বন্ধ করুন। এরপর ইনহেলারের কেনিসটারটি ১ বার চাপ দিন, সাথে সাথে লম্বা করে শ্বাস টানুন এবং ১০ সেকেন্ড পর্যন্ত শ্বাস ধরে রাখার চেস্টা করুন। এরপর আস্তে আস্তে শ্বাস ছাড়ুন। ১ মিনিট পর আবার একই ভাবে আরেক চাপ ওষুধ টানুন।"
+    },
+    {
+        "form": "MDI",
+        "id": 318,
+        "note": "Use inhalation exactly as prescribed by your doctor. Follow all directions on your prescription. Do not use inhalation in larger or smaller amounts or for longer than recommended.\n \nHow to use inhaler: \nUncap the mouthpiece of the inhaler. Breathe out fully. Put the mouthpiece into your mouth and close your lips. Keep your eyes closed to prevent spraying any medicine into your eyes. Breathe in slowly and deeply while pushing down on the canister. Hold your breath for 10 seconds, then breathe out slowly.\nIf you use more than one inhalation at a time, wait at least 1 minute before using the second inhalation. Carefully follow all directions for cleaning your specific inhaler device once per week.\n \nYou may need to prime your inhaler device before the first use. Your medicine comes with directions for priming if needed.\nYou may also need to shake your device just before each use. Follow all medication instructions very carefully. Do not allow a young child to use inhalation without help from an adult.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n \nইনহেলারের ব্যাবহার পদ্ধতিঃ\nপ্রতিবার ব্যাবহারের আগে ইনহেলারটি কয়েকবার নাড়িয়ে নিন। এবার ইনহেলারের ক্যাপটি খুলুন। নিশ্বাস ছেড়ে দিন। এরপর ইনহেলারের মাউথ পিসটি মুখে নিন এবং ঠোট বন্ধ করুন। এরপর ইনহেলারের কেনিসটারটি ১ বার চাপ দিন, সাথে সাথে লম্বা করে শ্বাস টানুন এবং ১০ সেকেন্ড পর্যন্ত শ্বাস ধরে রাখার চেস্টা করুন। এরপর আস্তে আস্তে শ্বাস ছাড়ুন। ১ মিনিট পর আবার একই ভাবে আরেক চাপ ওষুধ টানুন।"
+    },
+    {
+        "form": "Effervescent granules for inhalation",
+        "id": 319,
+        "note": "Use inhalation exactly as prescribed by your doctor. Follow all directions on your prescription. Do not use inhalation in larger or smaller amounts or for longer than recommended.\n\nHow to use your Dry powder inhaler (DPI)\nDry powder inhalers (DPI) are filled with powdered medicine that is inhaled into the lungs.\nFor the capsule aerolizer DPI, the powder comes in a capsule that is punctured before inhaling.\nYou must inhale fast and deep to pull the medicine out of the holder and deep into your lungs.\n\nOpen the plastic medicine holder.\nOpen the capsule from the foil wrap and place the entire capsule in the bottom of the holder.\nClose the holder.\nBreathe out and press the side buttons once to puncture the capsule to release the powder.\nSeal your lips over the mouth piece.\nInhale at a medium speed. You will hear the capsule “rattle” in the bottom.\nHold your breath for 10 seconds.\nRepeat few times and breathe easy until capsule is not empty.\nOpen the holder and throw away the empty capsule.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nড্রাই পাউডার ইনহেলার (ডিপিআই) কিভাবে ব্যবহার করবেন\n\nড্রাই পাউডার ইনহেলারগুলি (ডিপিআই) পাউডার যুক্ত ঔষধ দিয়ে ভরা হয়। পাউডারটি একটি ক্যাপসুলে আসে যা ইনহেলিংয়ের আগে পাঞ্চ করা হয়।\nড্রাই পাউডার ইনহেলারের প্লাস্টিক ঔষধ ধারকটি খুলুন।\nফয়েল মোড়ানো থেকে ক্যাপসুলটি খুলুন এবং ধারকটির নীচে সমগ্র ক্যাপসুলটি রাখুন।\nধারক বন্ধ করুন।\nশ্বাস বার করুন এবং পার্শ্ব বাটন টিপুন এতে ক্যাপসুল ফুঁটা হয়ে পাউডার গুঁড়া বার হতে সাহায্য করবে।\nমাউথ পিসটি মুখে নিয়ে ঠোঁট বন্ধ করুন।\nমাঝারি গতিতে শ্বাস নিন । ক্যাপসুল নড়াচড়ার শব্দ শুনা যাবে।\n১০ সেকেন্ডের জন্য আপনার শ্বাস ধরে রাখুন।।\nক্যাপসুল খালি না হওয়া পর্যন্ত কয়েক বার পুনরাবৃত্তি করুন এবং সাবলীল ভাবে শ্বাস নিন।\nধারক খুলুন এবং খালি ক্যাপসুল ফেলে দিন।"
+    },
+    {
+        "form": "Cozycap",
+        "id": 320,
+        "note": "Use inhalation exactly as prescribed by your doctor. Follow all directions on your prescription. Do not use inhalation in larger or smaller amounts or for longer than recommended.\n\nHow to use your Dry powder inhaler (DPI)\nDry powder inhalers (DPI) are filled with powdered medicine that is inhaled into the lungs.\nFor the capsule aerolizer DPI, the powder comes in a capsule that is punctured before inhaling.\nYou must inhale fast and deep to pull the medicine out of the holder and deep into your lungs.\n\nOpen the plastic medicine holder.\nOpen the capsule from the foil wrap and place the entire capsule in the bottom of the holder.\nClose the holder.\nBreathe out and press the side buttons once to puncture the capsule to release the powder.\nSeal your lips over the mouth piece.\nInhale at a medium speed. You will hear the capsule “rattle” in the bottom.\nHold your breath for 10 seconds.\nRepeat few times and breathe easy until capsule is not empty.\nOpen the holder and throw away the empty capsule.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nড্রাই পাউডার ইনহেলার (ডিপিআই) কিভাবে ব্যবহার করবেন\n\nড্রাই পাউডার ইনহেলারগুলি (ডিপিআই) পাউডার যুক্ত ঔষধ দিয়ে ভরা হয়। পাউডারটি একটি ক্যাপসুলে আসে যা ইনহেলিংয়ের আগে পাঞ্চ করা হয়।\nড্রাই পাউডার ইনহেলারের প্লাস্টিক ঔষধ ধারকটি খুলুন।\nফয়েল মোড়ানো থেকে ক্যাপসুলটি খুলুন এবং ধারকটির নীচে সমগ্র ক্যাপসুলটি রাখুন।\nধারক বন্ধ করুন।\nশ্বাস বার করুন এবং পার্শ্ব বাটন টিপুন এতে ক্যাপসুল ফুঁটা হয়ে পাউডার গুঁড়া বার হতে সাহায্য করবে।\nমাউথ পিসটি মুখে নিয়ে ঠোঁট বন্ধ করুন।\nমাঝারি গতিতে শ্বাস নিন । ক্যাপসুল নড়াচড়ার শব্দ শুনা যাবে।\n১০ সেকেন্ডের জন্য আপনার শ্বাস ধরে রাখুন।।\nক্যাপসুল খালি না হওয়া পর্যন্ত কয়েক বার পুনরাবৃত্তি করুন এবং সাবলীল ভাবে শ্বাস নিন।\nধারক খুলুন এবং খালি ক্যাপসুল ফেলে দিন।"
+    },
+    {
+        "form": "DPI Capsule",
+        "id": 321,
+        "note": "Use inhalation exactly as prescribed by your doctor. Follow all directions on your prescription. Do not use inhalation in larger or smaller amounts or for longer than recommended.\n\nHow to use your Dry powder inhaler (DPI)\nDry powder inhalers (DPI) are filled with powdered medicine that is inhaled into the lungs.\nFor the capsule aerolizer DPI, the powder comes in a capsule that is punctured before inhaling.\nYou must inhale fast and deep to pull the medicine out of the holder and deep into your lungs.\n\nOpen the plastic medicine holder.\nOpen the capsule from the foil wrap and place the entire capsule in the bottom of the holder.\nClose the holder.\nBreathe out and press the side buttons once to puncture the capsule to release the powder.\nSeal your lips over the mouth piece.\nInhale at a medium speed. You will hear the capsule “rattle” in the bottom.\nHold your breath for 10 seconds.\nRepeat few times and breathe easy until capsule is not empty.\nOpen the holder and throw away the empty capsule.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nড্রাই পাউডার ইনহেলার (ডিপিআই) কিভাবে ব্যবহার করবেন\n\nড্রাই পাউডার ইনহেলারগুলি (ডিপিআই) পাউডার যুক্ত ঔষধ দিয়ে ভরা হয়। পাউডারটি একটি ক্যাপসুলে আসে যা ইনহেলিংয়ের আগে পাঞ্চ করা হয়।\nড্রাই পাউডার ইনহেলারের প্লাস্টিক ঔষধ ধারকটি খুলুন।\nফয়েল মোড়ানো থেকে ক্যাপসুলটি খুলুন এবং ধারকটির নীচে সমগ্র ক্যাপসুলটি রাখুন।\nধারক বন্ধ করুন।\nশ্বাস বার করুন এবং পার্শ্ব বাটন টিপুন এতে ক্যাপসুল ফুঁটা হয়ে পাউডার গুঁড়া বার হতে সাহায্য করবে।\nমাউথ পিসটি মুখে নিয়ে ঠোঁট বন্ধ করুন।\nমাঝারি গতিতে শ্বাস নিন । ক্যাপসুল নড়াচড়ার শব্দ শুনা যাবে।\n১০ সেকেন্ডের জন্য আপনার শ্বাস ধরে রাখুন।।\nক্যাপসুল খালি না হওয়া পর্যন্ত কয়েক বার পুনরাবৃত্তি করুন এবং সাবলীল ভাবে শ্বাস নিন।\nধারক খুলুন এবং খালি ক্যাপসুল ফেলে দিন।"
+    },
+    {
+        "form": "Dry Powder Inhalation",
+        "id": 322,
+        "note": "Use inhalation exactly as prescribed by your doctor. Follow all directions on your prescription. Do not use inhalation in larger or smaller amounts or for longer than recommended.\n\nHow to use your Dry powder inhaler (DPI)\nDry powder inhalers (DPI) are filled with powdered medicine that is inhaled into the lungs.\nFor the capsule aerolizer DPI, the powder comes in a capsule that is punctured before inhaling.\nYou must inhale fast and deep to pull the medicine out of the holder and deep into your lungs.\n\nOpen the plastic medicine holder.\nOpen the capsule from the foil wrap and place the entire capsule in the bottom of the holder.\nClose the holder.\nBreathe out and press the side buttons once to puncture the capsule to release the powder.\nSeal your lips over the mouth piece.\nInhale at a medium speed. You will hear the capsule “rattle” in the bottom.\nHold your breath for 10 seconds.\nRepeat few times and breathe easy until capsule is not empty.\nOpen the holder and throw away the empty capsule.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nড্রাই পাউডার ইনহেলার (ডিপিআই) কিভাবে ব্যবহার করবেন\n\nড্রাই পাউডার ইনহেলারগুলি (ডিপিআই) পাউডার যুক্ত ঔষধ দিয়ে ভরা হয়। পাউডারটি একটি ক্যাপসুলে আসে যা ইনহেলিংয়ের আগে পাঞ্চ করা হয়।\nড্রাই পাউডার ইনহেলারের প্লাস্টিক ঔষধ ধারকটি খুলুন।\nফয়েল মোড়ানো থেকে ক্যাপসুলটি খুলুন এবং ধারকটির নীচে সমগ্র ক্যাপসুলটি রাখুন।\nধারক বন্ধ করুন।\nশ্বাস বার করুন এবং পার্শ্ব বাটন টিপুন এতে ক্যাপসুল ফুঁটা হয়ে পাউডার গুঁড়া বার হতে সাহায্য করবে।\nমাউথ পিসটি মুখে নিয়ে ঠোঁট বন্ধ করুন।\nমাঝারি গতিতে শ্বাস নিন । ক্যাপসুল নড়াচড়ার শব্দ শুনা যাবে।\n১০ সেকেন্ডের জন্য আপনার শ্বাস ধরে রাখুন।।\nক্যাপসুল খালি না হওয়া পর্যন্ত কয়েক বার পুনরাবৃত্তি করুন এবং সাবলীল ভাবে শ্বাস নিন।\nধারক খুলুন এবং খালি ক্যাপসুল ফেলে দিন।"
+    },
+    {
+        "form": "Dry Powder Inhalation Capsule",
+        "id": 323,
+        "note": "Use inhalation exactly as prescribed by your doctor. Follow all directions on your prescription. Do not use inhalation in larger or smaller amounts or for longer than recommended.\n\nHow to use your Dry powder inhaler (DPI)\nDry powder inhalers (DPI) are filled with powdered medicine that is inhaled into the lungs.\nFor the capsule aerolizer DPI, the powder comes in a capsule that is punctured before inhaling.\nYou must inhale fast and deep to pull the medicine out of the holder and deep into your lungs.\n\nOpen the plastic medicine holder.\nOpen the capsule from the foil wrap and place the entire capsule in the bottom of the holder.\nClose the holder.\nBreathe out and press the side buttons once to puncture the capsule to release the powder.\nSeal your lips over the mouth piece.\nInhale at a medium speed. You will hear the capsule “rattle” in the bottom.\nHold your breath for 10 seconds.\nRepeat few times and breathe easy until capsule is not empty.\nOpen the holder and throw away the empty capsule.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nড্রাই পাউডার ইনহেলার (ডিপিআই) কিভাবে ব্যবহার করবেন\n\nড্রাই পাউডার ইনহেলারগুলি (ডিপিআই) পাউডার যুক্ত ঔষধ দিয়ে ভরা হয়। পাউডারটি একটি ক্যাপসুলে আসে যা ইনহেলিংয়ের আগে পাঞ্চ করা হয়।\nড্রাই পাউডার ইনহেলারের প্লাস্টিক ঔষধ ধারকটি খুলুন।\nফয়েল মোড়ানো থেকে ক্যাপসুলটি খুলুন এবং ধারকটির নীচে সমগ্র ক্যাপসুলটি রাখুন।\nধারক বন্ধ করুন।\nশ্বাস বার করুন এবং পার্শ্ব বাটন টিপুন এতে ক্যাপসুল ফুঁটা হয়ে পাউডার গুঁড়া বার হতে সাহায্য করবে।\nমাউথ পিসটি মুখে নিয়ে ঠোঁট বন্ধ করুন।\nমাঝারি গতিতে শ্বাস নিন । ক্যাপসুল নড়াচড়ার শব্দ শুনা যাবে।\n১০ সেকেন্ডের জন্য আপনার শ্বাস ধরে রাখুন।।\nক্যাপসুল খালি না হওয়া পর্যন্ত কয়েক বার পুনরাবৃত্তি করুন এবং সাবলীল ভাবে শ্বাস নিন।\nধারক খুলুন এবং খালি ক্যাপসুল ফেলে দিন।"
+    },
+    {
+        "form": "Dry Powder Inhaler",
+        "id": 324,
+        "note": "Use inhalation exactly as prescribed by your doctor. Follow all directions on your prescription. Do not use inhalation in larger or smaller amounts or for longer than recommended.\n\nHow to use your Dry powder inhaler (DPI)\nDry powder inhalers (DPI) are filled with powdered medicine that is inhaled into the lungs.\nFor the capsule aerolizer DPI, the powder comes in a capsule that is punctured before inhaling.\nYou must inhale fast and deep to pull the medicine out of the holder and deep into your lungs.\n\nOpen the plastic medicine holder.\nOpen the capsule from the foil wrap and place the entire capsule in the bottom of the holder.\nClose the holder.\nBreathe out and press the side buttons once to puncture the capsule to release the powder.\nSeal your lips over the mouth piece.\nInhale at a medium speed. You will hear the capsule “rattle” in the bottom.\nHold your breath for 10 seconds.\nRepeat few times and breathe easy until capsule is not empty.\nOpen the holder and throw away the empty capsule.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nড্রাই পাউডার ইনহেলার (ডিপিআই) কিভাবে ব্যবহার করবেন\n\nড্রাই পাউডার ইনহেলারগুলি (ডিপিআই) পাউডার যুক্ত ঔষধ দিয়ে ভরা হয়। পাউডারটি একটি ক্যাপসুলে আসে যা ইনহেলিংয়ের আগে পাঞ্চ করা হয়।\nড্রাই পাউডার ইনহেলারের প্লাস্টিক ঔষধ ধারকটি খুলুন।\nফয়েল মোড়ানো থেকে ক্যাপসুলটি খুলুন এবং ধারকটির নীচে সমগ্র ক্যাপসুলটি রাখুন।\nধারক বন্ধ করুন।\nশ্বাস বার করুন এবং পার্শ্ব বাটন টিপুন এতে ক্যাপসুল ফুঁটা হয়ে পাউডার গুঁড়া বার হতে সাহায্য করবে।\nমাউথ পিসটি মুখে নিয়ে ঠোঁট বন্ধ করুন।\nমাঝারি গতিতে শ্বাস নিন । ক্যাপসুল নড়াচড়ার শব্দ শুনা যাবে।\n১০ সেকেন্ডের জন্য আপনার শ্বাস ধরে রাখুন।।\nক্যাপসুল খালি না হওয়া পর্যন্ত কয়েক বার পুনরাবৃত্তি করুন এবং সাবলীল ভাবে শ্বাস নিন।\nধারক খুলুন এবং খালি ক্যাপসুল ফেলে দিন।"
+    },
+    {
+        "form": "Dry powder inhalation capsule",
+        "id": 325,
+        "note": "Use inhalation exactly as prescribed by your doctor. Follow all directions on your prescription. Do not use inhalation in larger or smaller amounts or for longer than recommended.\n\nHow to use your Dry powder inhaler (DPI)\nDry powder inhalers (DPI) are filled with powdered medicine that is inhaled into the lungs.\nFor the capsule aerolizer DPI, the powder comes in a capsule that is punctured before inhaling.\nYou must inhale fast and deep to pull the medicine out of the holder and deep into your lungs.\n\nOpen the plastic medicine holder.\nOpen the capsule from the foil wrap and place the entire capsule in the bottom of the holder.\nClose the holder.\nBreathe out and press the side buttons once to puncture the capsule to release the powder.\nSeal your lips over the mouth piece.\nInhale at a medium speed. You will hear the capsule “rattle” in the bottom.\nHold your breath for 10 seconds.\nRepeat few times and breathe easy until capsule is not empty.\nOpen the holder and throw away the empty capsule.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nড্রাই পাউডার ইনহেলার (ডিপিআই) কিভাবে ব্যবহার করবেন\n\nড্রাই পাউডার ইনহেলারগুলি (ডিপিআই) পাউডার যুক্ত ঔষধ দিয়ে ভরা হয়। পাউডারটি একটি ক্যাপসুলে আসে যা ইনহেলিংয়ের আগে পাঞ্চ করা হয়।\nড্রাই পাউডার ইনহেলারের প্লাস্টিক ঔষধ ধারকটি খুলুন।\nফয়েল মোড়ানো থেকে ক্যাপসুলটি খুলুন এবং ধারকটির নীচে সমগ্র ক্যাপসুলটি রাখুন।\nধারক বন্ধ করুন।\nশ্বাস বার করুন এবং পার্শ্ব বাটন টিপুন এতে ক্যাপসুল ফুঁটা হয়ে পাউডার গুঁড়া বার হতে সাহায্য করবে।\nমাউথ পিসটি মুখে নিয়ে ঠোঁট বন্ধ করুন।\nমাঝারি গতিতে শ্বাস নিন । ক্যাপসুল নড়াচড়ার শব্দ শুনা যাবে।\n১০ সেকেন্ডের জন্য আপনার শ্বাস ধরে রাখুন।।\nক্যাপসুল খালি না হওয়া পর্যন্ত কয়েক বার পুনরাবৃত্তি করুন এবং সাবলীল ভাবে শ্বাস নিন।\nধারক খুলুন এবং খালি ক্যাপসুল ফেলে দিন।"
+    },
+    {
+        "form": "Inhalation Capsule",
+        "id": 326,
+        "note": "Use inhalation exactly as prescribed by your doctor. Follow all directions on your prescription. Do not use inhalation in larger or smaller amounts or for longer than recommended.\n\nHow to use your Dry powder inhaler (DPI)\nDry powder inhalers (DPI) are filled with powdered medicine that is inhaled into the lungs.\nFor the capsule aerolizer DPI, the powder comes in a capsule that is punctured before inhaling.\nYou must inhale fast and deep to pull the medicine out of the holder and deep into your lungs.\n\nOpen the plastic medicine holder.\nOpen the capsule from the foil wrap and place the entire capsule in the bottom of the holder.\nClose the holder.\nBreathe out and press the side buttons once to puncture the capsule to release the powder.\nSeal your lips over the mouth piece.\nInhale at a medium speed. You will hear the capsule “rattle” in the bottom.\nHold your breath for 10 seconds.\nRepeat few times and breathe easy until capsule is not empty.\nOpen the holder and throw away the empty capsule.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nড্রাই পাউডার ইনহেলার (ডিপিআই) কিভাবে ব্যবহার করবেন\n\nড্রাই পাউডার ইনহেলারগুলি (ডিপিআই) পাউডার যুক্ত ঔষধ দিয়ে ভরা হয়। পাউডারটি একটি ক্যাপসুলে আসে যা ইনহেলিংয়ের আগে পাঞ্চ করা হয়।\nড্রাই পাউডার ইনহেলারের প্লাস্টিক ঔষধ ধারকটি খুলুন।\nফয়েল মোড়ানো থেকে ক্যাপসুলটি খুলুন এবং ধারকটির নীচে সমগ্র ক্যাপসুলটি রাখুন।\nধারক বন্ধ করুন।\nশ্বাস বার করুন এবং পার্শ্ব বাটন টিপুন এতে ক্যাপসুল ফুঁটা হয়ে পাউডার গুঁড়া বার হতে সাহায্য করবে।\nমাউথ পিসটি মুখে নিয়ে ঠোঁট বন্ধ করুন।\nমাঝারি গতিতে শ্বাস নিন । ক্যাপসুল নড়াচড়ার শব্দ শুনা যাবে।\n১০ সেকেন্ডের জন্য আপনার শ্বাস ধরে রাখুন।।\nক্যাপসুল খালি না হওয়া পর্যন্ত কয়েক বার পুনরাবৃত্তি করুন এবং সাবলীল ভাবে শ্বাস নিন।\nধারক খুলুন এবং খালি ক্যাপসুল ফেলে দিন।"
+    },
+    {
+        "form": "Chewable Tabet",
+        "id": 327,
+        "note": "The chewable tablet must be chewed before swallowing. Chewable tablets are an oral dosage form intended to be chewed and then swallowed by the patient rather than swallowed whole.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে নিয়ে চুষে খেতে হয়। ওষুধটি মুখে নিয়ে চুষে চুষে গিলে ফেলুন। ওষুধটি একবারে গিলে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Chewable Tablet",
+        "id": 328,
+        "note": "The chewable tablet must be chewed before swallowing. Chewable tablets are an oral dosage form intended to be chewed and then swallowed by the patient rather than swallowed whole.",
+        "note_bangla": "এ জাতিয় ওষুধ মুখে নিয়ে চুষে খেতে হয়। ওষুধটি মুখে নিয়ে চুষে চুষে গিলে ফেলুন। ওষুধটি একবারে গিলে খাওয়া যাবেনা।"
+    },
+    {
+        "form": "Rectal Cream",
+        "id": 329,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nDo not take this preparation by mouth. It is for use only in your anus/rectum. Wash your hands before and after using this medicine.\n\nSuppository:\n\nRemove the outer wrapper from the suppository before inserting it. For best results from the suppository, lie down and insert it and hold the suppository for few seconds. The suppository will melt quickly once inserted and you should feel little or no discomfort while holding it in.\n\nRectal cream/ointment:\n\nFor best results from the cream, use only the applicator provided with the medication. Otherwise, follow the directions provided with your rectal cream.\n\nAvoid using the bathroom for one to two hours after inserting the cream or suppository. Apply the ointment to the rectum and surrounding skin of the rectal area as directed on the package label.\n\nStore the rectal cream at room temperature away from moisture and heat. Do not refrigerate or freeze them.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএটি মুখ দ্বারা নেওয়ার ওষুধ না। এটি শুধুমাত্র মলদ্বারে ব্যবহার করার জন্য তৈরি।\n\nসাপোজিটোরি:\n\nব্যাবহারের আগে সাপোজিটোরির বাইরের মোড়কটি সরিয়ে ফেলুন। পানি দিয়ে একটু ভিজিয়ে নিন, এরপর বিছানায় কাত হয়ে শুয়ে পুরো সাপোজিটোরিটি মলদ্বারে প্রবেশ করান এবং কিছুক্ষণ ধরে রাখুন। এটি আপনা থেকেই ভিতরে চলে যাবে এবং দ্রবীভূত হয়ে যাবে।\n\nরেক্টাল ক্রিম/অয়েন্টমেন্টঃ\n\nঅয়েন্টমেন্ট ব্যাবহারের জন্য এর সাথে দেয়া এপ্লিকেটর ব্যাবহার করুন। ক্রিমের মুখটি খুলে এপ্লিকেটরটি টিউবয়ের এর মাথায় লাগিয়ে নিন। এরপর যথারীতি শুয়ে মলদ্বারে আস্তে আস্তে পুরো এপ্লিকেটরটি ঢুকান এবং ঢুকানোর পর টিউবটি চাপ দিন, তাইলে ক্রিমটি মলদ্বারের অভ্যন্তরে প্রবেশ করবে। প্রয়োজনে এপ্লিকেটোরটি পানি দিয়ে একটু ভিজিয়ে নিন।\n\nএছাড়া হালকা ভাবে মলমটি অল্প করে আঙুলের মাথায় নিয়ে মলদ্বারের চারপাশে ও মলদ্বারের ভিতরে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন। মলদ্বারে ক্রিম দেয়ার পর এক বা দুই ঘন্টার জন্য বাথরুম ব্যবহার করা এড়িয়ে চলুন।"
+    },
+    {
+        "form": "Rectal Ointment",
+        "id": 330,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. Follow the directions on your prescription label.\n\nDo not take this preparation by mouth. It is for use only in your anus/rectum. Wash your hands before and after using this medicine.\n\nSuppository:\n\nRemove the outer wrapper from the suppository before inserting it. For best results from the suppository, lie down and insert it and hold the suppository for few seconds. The suppository will melt quickly once inserted and you should feel little or no discomfort while holding it in.\n\nRectal cream/ointment:\n\nFor best results from the cream, use only the applicator provided with the medication. Otherwise, follow the directions provided with your rectal cream.\n\nAvoid using the bathroom for one to two hours after inserting the cream or suppository. Apply the ointment to the rectum and surrounding skin of the rectal area as directed on the package label.\n\nStore the rectal cream at room temperature away from moisture and heat. Do not refrigerate or freeze them.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএটি মুখ দ্বারা নেওয়ার ওষুধ না। এটি শুধুমাত্র মলদ্বারে ব্যবহার করার জন্য তৈরি।\n\nসাপোজিটোরি:\n\nব্যাবহারের আগে সাপোজিটোরির বাইরের মোড়কটি সরিয়ে ফেলুন। পানি দিয়ে একটু ভিজিয়ে নিন, এরপর বিছানায় কাত হয়ে শুয়ে পুরো সাপোজিটোরিটি মলদ্বারে প্রবেশ করান এবং কিছুক্ষণ ধরে রাখুন। এটি আপনা থেকেই ভিতরে চলে যাবে এবং দ্রবীভূত হয়ে যাবে।\n\nরেক্টাল ক্রিম/অয়েন্টমেন্টঃ\n\nঅয়েন্টমেন্ট ব্যাবহারের জন্য এর সাথে দেয়া এপ্লিকেটর ব্যাবহার করুন। ক্রিমের মুখটি খুলে এপ্লিকেটরটি টিউবয়ের এর মাথায় লাগিয়ে নিন। এরপর যথারীতি শুয়ে মলদ্বারে আস্তে আস্তে পুরো এপ্লিকেটরটি ঢুকান এবং ঢুকানোর পর টিউবটি চাপ দিন, তাইলে ক্রিমটি মলদ্বারের অভ্যন্তরে প্রবেশ করবে। প্রয়োজনে এপ্লিকেটোরটি পানি দিয়ে একটু ভিজিয়ে নিন।\n\nএছাড়া হালকা ভাবে মলমটি অল্প করে আঙুলের মাথায় নিয়ে মলদ্বারের চারপাশে ও মলদ্বারের ভিতরে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন। মলদ্বারে ক্রিম দেয়ার পর এক বা দুই ঘন্টার জন্য বাথরুম ব্যবহার করা এড়িয়ে চলুন।"
+    },
+    {
+        "form": null,
+        "id": 331,
+        "note": null,
+        "note_bangla": null
+    },
+    {
+        "form": "Effervescent Tablet",
+        "id": 332,
+        "note": "Dissolve the effervescent tablets in at least 1 glass of water. Stir and drink this mixture right away. To get the entire dose, add a little more water to the same glass, swirl gently and drink right away.",
+        "note_bangla": "এ জাতিয় ওষুধ ১ গ্লাস পানিতে দ্রবিভুত করে খেতে হয়। ১ গ্লাস পানিতে ওশুধটি ছেড়ে দিয়ে, ভালো করে মেশানোর জন্য চামচ দিয়ে নাড়াতে হবে কিছুক্ষণ। ওশুধটি পুরোপুরি মিশে গেলে গ্লাসের সব টুকু পানি খেয়ে ফেলতে হবে।"
+    },
+    {
+        "form": "Effervescent powder",
+        "id": 333,
+        "note": "Dissolve the effervescent tablets in at least 1 glass of water. Stir and drink this mixture right away. To get the entire dose, add a little more water to the same glass, swirl gently and drink right away.",
+        "note_bangla": "এ জাতিয় ওষুধ ১ গ্লাস পানিতে দ্রবিভুত করে খেতে হয়। ১ গ্লাস পানিতে ওশুধটি ছেড়ে দিয়ে, ভালো করে মেশানোর জন্য চামচ দিয়ে নাড়াতে হবে কিছুক্ষণ। ওশুধটি পুরোপুরি মিশে গেলে গ্লাসের সব টুকু পানি খেয়ে ফেলতে হবে।"
+    },
+    {
+        "form": null,
+        "id": 334,
+        "note": null,
+        "note_bangla": null
+    },
+    {
+        "form": "Bar cleanser",
+        "id": 335,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Topical preparation’s is for use only on the skin/scalp.\n\nWash your hands before and after applying this medicine. Shake the lotion/solution form of this medicine well just before you use it. At first wash the face or affected area gently with warm water or soap. Pat the skin dry with a clean towel. Apply the medication in a thin layer to the entire face or other affected skin areas and rub it in completely. Do not apply any other skin products unless your doctor has told you to.\n\n \n\nDo not cover treated skin areas with a bandage or tight clothing, unless your doctor has told you to.  Keep the tube or bottle capped and tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না। চোখ, নাক ও অন্যান্য মিউকাস পর্দা থেকে দূরে রাখতে হবে। শিশুদের নাগালের বাইরে রাখুন ।\n\nইহা শুধুমাত্র বাহ্যিক ত্বকে ব্যাবহারের জন্য। ক্ষতস্থা্নে বা আক্রান্ত স্থানে যেখানে ওশুধটি লাগানো হবে সেটি পরিস্কার ও শুষ্ক করুন। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। এরপর হালকা ভাবে জেল বা লোশানটি অল্প করে আঙুলের মাথায় বা হাতের তালুতে নিয়ে  ক্ষতস্থানে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন।\n\nডাক্তারের পরামর্শ ছাড়া ক্ষতস্থানটি ওষুধ লাগানোর পর ব্যান্ডেজ বা তুলা দিয়ে ঢাকা যাবেনা। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Topical Solution",
+        "id": 336,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Topical preparation’s is for use only on the skin/scalp.\n\nWash your hands before and after applying this medicine. Shake the lotion/solution form of this medicine well just before you use it. At first wash the face or affected area gently with warm water or soap. Pat the skin dry with a clean towel. Apply the medication in a thin layer to the entire face or other affected skin areas and rub it in completely. Do not apply any other skin products unless your doctor has told you to.\n\n \n\nDo not cover treated skin areas with a bandage or tight clothing, unless your doctor has told you to.  Keep the tube or bottle capped and tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না। চোখ, নাক ও অন্যান্য মিউকাস পর্দা থেকে দূরে রাখতে হবে। শিশুদের নাগালের বাইরে রাখুন ।\n\nইহা শুধুমাত্র বাহ্যিক ত্বকে ব্যাবহারের জন্য। ক্ষতস্থা্নে বা আক্রান্ত স্থানে যেখানে ওশুধটি লাগানো হবে সেটি পরিস্কার ও শুষ্ক করুন। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। এরপর হালকা ভাবে জেল বা লোশানটি অল্প করে আঙুলের মাথায় বা হাতের তালুতে নিয়ে  ক্ষতস্থানে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন।\n\nডাক্তারের পরামর্শ ছাড়া ক্ষতস্থানটি ওষুধ লাগানোর পর ব্যান্ডেজ বা তুলা দিয়ে ঢাকা যাবেনা। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Topical Suspension",
+        "id": 337,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Topical preparation’s is for use only on the skin/scalp.\n\nWash your hands before and after applying this medicine. Shake the lotion/solution form of this medicine well just before you use it. At first wash the face or affected area gently with warm water or soap. Pat the skin dry with a clean towel. Apply the medication in a thin layer to the entire face or other affected skin areas and rub it in completely. Do not apply any other skin products unless your doctor has told you to.\n\n \n\nDo not cover treated skin areas with a bandage or tight clothing, unless your doctor has told you to.  Keep the tube or bottle capped and tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না। চোখ, নাক ও অন্যান্য মিউকাস পর্দা থেকে দূরে রাখতে হবে। শিশুদের নাগালের বাইরে রাখুন ।\n\nইহা শুধুমাত্র বাহ্যিক ত্বকে ব্যাবহারের জন্য। ক্ষতস্থা্নে বা আক্রান্ত স্থানে যেখানে ওশুধটি লাগানো হবে সেটি পরিস্কার ও শুষ্ক করুন। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। এরপর হালকা ভাবে জেল বা লোশানটি অল্প করে আঙুলের মাথায় বা হাতের তালুতে নিয়ে  ক্ষতস্থানে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন।\n\nডাক্তারের পরামর্শ ছাড়া ক্ষতস্থানটি ওষুধ লাগানোর পর ব্যান্ডেজ বা তুলা দিয়ে ঢাকা যাবেনা। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Emollient",
+        "id": 338,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Topical preparation’s is for use only on the skin/scalp.\n\nWash your hands before and after applying this medicine. Shake the lotion/solution form of this medicine well just before you use it. At first wash the face or affected area gently with warm water or soap. Pat the skin dry with a clean towel. Apply the medication in a thin layer to the entire face or other affected skin areas and rub it in completely. Do not apply any other skin products unless your doctor has told you to.\n\n \n\nDo not cover treated skin areas with a bandage or tight clothing, unless your doctor has told you to.  Keep the tube or bottle capped and tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না। চোখ, নাক ও অন্যান্য মিউকাস পর্দা থেকে দূরে রাখতে হবে। শিশুদের নাগালের বাইরে রাখুন ।\n\nইহা শুধুমাত্র বাহ্যিক ত্বকে ব্যাবহারের জন্য। ক্ষতস্থা্নে বা আক্রান্ত স্থানে যেখানে ওশুধটি লাগানো হবে সেটি পরিস্কার ও শুষ্ক করুন। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। এরপর হালকা ভাবে জেল বা লোশানটি অল্প করে আঙুলের মাথায় বা হাতের তালুতে নিয়ে  ক্ষতস্থানে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন।\n\nডাক্তারের পরামর্শ ছাড়া ক্ষতস্থানটি ওষুধ লাগানোর পর ব্যান্ডেজ বা তুলা দিয়ে ঢাকা যাবেনা। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Emulgel",
+        "id": 339,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Topical preparation’s is for use only on the skin/scalp.\n\nWash your hands before and after applying this medicine. Shake the lotion/solution form of this medicine well just before you use it. At first wash the face or affected area gently with warm water or soap. Pat the skin dry with a clean towel. Apply the medication in a thin layer to the entire face or other affected skin areas and rub it in completely. Do not apply any other skin products unless your doctor has told you to.\n\n \n\nDo not cover treated skin areas with a bandage or tight clothing, unless your doctor has told you to.  Keep the tube or bottle capped and tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না। চোখ, নাক ও অন্যান্য মিউকাস পর্দা থেকে দূরে রাখতে হবে। শিশুদের নাগালের বাইরে রাখুন ।\n\nইহা শুধুমাত্র বাহ্যিক ত্বকে ব্যাবহারের জন্য। ক্ষতস্থা্নে বা আক্রান্ত স্থানে যেখানে ওশুধটি লাগানো হবে সেটি পরিস্কার ও শুষ্ক করুন। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। এরপর হালকা ভাবে জেল বা লোশানটি অল্প করে আঙুলের মাথায় বা হাতের তালুতে নিয়ে  ক্ষতস্থানে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন।\n\nডাক্তারের পরামর্শ ছাড়া ক্ষতস্থানটি ওষুধ লাগানোর পর ব্যান্ডেজ বা তুলা দিয়ে ঢাকা যাবেনা। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Emulsion",
+        "id": 340,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Topical preparation’s is for use only on the skin/scalp.\n\nWash your hands before and after applying this medicine. Shake the lotion/solution form of this medicine well just before you use it. At first wash the face or affected area gently with warm water or soap. Pat the skin dry with a clean towel. Apply the medication in a thin layer to the entire face or other affected skin areas and rub it in completely. Do not apply any other skin products unless your doctor has told you to.\n\n \n\nDo not cover treated skin areas with a bandage or tight clothing, unless your doctor has told you to.  Keep the tube or bottle capped and tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না। চোখ, নাক ও অন্যান্য মিউকাস পর্দা থেকে দূরে রাখতে হবে। শিশুদের নাগালের বাইরে রাখুন ।\n\nইহা শুধুমাত্র বাহ্যিক ত্বকে ব্যাবহারের জন্য। ক্ষতস্থা্নে বা আক্রান্ত স্থানে যেখানে ওশুধটি লাগানো হবে সেটি পরিস্কার ও শুষ্ক করুন। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। এরপর হালকা ভাবে জেল বা লোশানটি অল্প করে আঙুলের মাথায় বা হাতের তালুতে নিয়ে  ক্ষতস্থানে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন।\n\nডাক্তারের পরামর্শ ছাড়া ক্ষতস্থানটি ওষুধ লাগানোর পর ব্যান্ডেজ বা তুলা দিয়ে ঢাকা যাবেনা। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Scalp Lotion",
+        "id": 341,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Topical preparation’s is for use only on the skin/scalp.\n\nWash your hands before and after applying this medicine. Shake the lotion/solution form of this medicine well just before you use it. At first wash the face or affected area gently with warm water or soap. Pat the skin dry with a clean towel. Apply the medication in a thin layer to the entire face or other affected skin areas and rub it in completely. Do not apply any other skin products unless your doctor has told you to.\n\n \n\nDo not cover treated skin areas with a bandage or tight clothing, unless your doctor has told you to.  Keep the tube or bottle capped and tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না। চোখ, নাক ও অন্যান্য মিউকাস পর্দা থেকে দূরে রাখতে হবে। শিশুদের নাগালের বাইরে রাখুন ।\n\nইহা শুধুমাত্র বাহ্যিক ত্বকে ব্যাবহারের জন্য। ক্ষতস্থা্নে বা আক্রান্ত স্থানে যেখানে ওশুধটি লাগানো হবে সেটি পরিস্কার ও শুষ্ক করুন। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। এরপর হালকা ভাবে জেল বা লোশানটি অল্প করে আঙুলের মাথায় বা হাতের তালুতে নিয়ে  ক্ষতস্থানে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন।\n\nডাক্তারের পরামর্শ ছাড়া ক্ষতস্থানটি ওষুধ লাগানোর পর ব্যান্ডেজ বা তুলা দিয়ে ঢাকা যাবেনা। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Scalp Ointment",
+        "id": 342,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Topical preparation’s is for use only on the skin/scalp.\n\nWash your hands before and after applying this medicine. Shake the lotion/solution form of this medicine well just before you use it. At first wash the face or affected area gently with warm water or soap. Pat the skin dry with a clean towel. Apply the medication in a thin layer to the entire face or other affected skin areas and rub it in completely. Do not apply any other skin products unless your doctor has told you to.\n\n \n\nDo not cover treated skin areas with a bandage or tight clothing, unless your doctor has told you to.  Keep the tube or bottle capped and tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না। চোখ, নাক ও অন্যান্য মিউকাস পর্দা থেকে দূরে রাখতে হবে। শিশুদের নাগালের বাইরে রাখুন ।\n\nইহা শুধুমাত্র বাহ্যিক ত্বকে ব্যাবহারের জন্য। ক্ষতস্থা্নে বা আক্রান্ত স্থানে যেখানে ওশুধটি লাগানো হবে সেটি পরিস্কার ও শুষ্ক করুন। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। এরপর হালকা ভাবে জেল বা লোশানটি অল্প করে আঙুলের মাথায় বা হাতের তালুতে নিয়ে  ক্ষতস্থানে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন।\n\nডাক্তারের পরামর্শ ছাড়া ক্ষতস্থানটি ওষুধ লাগানোর পর ব্যান্ডেজ বা তুলা দিয়ে ঢাকা যাবেনা। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Scalp Solution",
+        "id": 343,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Topical preparation’s is for use only on the skin/scalp.\n\nWash your hands before and after applying this medicine. Shake the lotion/solution form of this medicine well just before you use it. At first wash the face or affected area gently with warm water or soap. Pat the skin dry with a clean towel. Apply the medication in a thin layer to the entire face or other affected skin areas and rub it in completely. Do not apply any other skin products unless your doctor has told you to.\n\n \n\nDo not cover treated skin areas with a bandage or tight clothing, unless your doctor has told you to.  Keep the tube or bottle capped and tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না। চোখ, নাক ও অন্যান্য মিউকাস পর্দা থেকে দূরে রাখতে হবে। শিশুদের নাগালের বাইরে রাখুন ।\n\nইহা শুধুমাত্র বাহ্যিক ত্বকে ব্যাবহারের জন্য। ক্ষতস্থা্নে বা আক্রান্ত স্থানে যেখানে ওশুধটি লাগানো হবে সেটি পরিস্কার ও শুষ্ক করুন। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন। এরপর হালকা ভাবে জেল বা লোশানটি অল্প করে আঙুলের মাথায় বা হাতের তালুতে নিয়ে  ক্ষতস্থানে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন।\n\nডাক্তারের পরামর্শ ছাড়া ক্ষতস্থানটি ওষুধ লাগানোর পর ব্যান্ডেজ বা তুলা দিয়ে ঢাকা যাবেনা। ব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Vaginal Cream",
+        "id": 344,
+        "note": "Use exactly as directed by your doctor, or follow the directions that accompany the package.\n\nWash your hands before and after using this medication. Insert the tablet, suppository, or cream into the vagina using the applicator as directed.\n\n \n\nAvoid getting this medication in your eyes, nose, or mouth. Store at room temperature away from moisture and heat.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nএটি মুখ দ্বারা নেওয়ার ওষুধ না। এটি শুধুমাত্র মহিলাদের যোনিপথে ব্যবহার করার জন্য তৈরি।\nসাপোজিটোরি:\nব্যাবহারের আগে সাপোজিটোরির বাইরের মোড়কটি সরিয়ে ফেলুন। পানি দিয়ে একটু ভিজিয়ে নিন, এরপর বিছানায় পিঠ লাগিয়ে শুয়ে, দুই পা ভাজ করে পুরো সাপোজিটোরিটি যোনিদ্বারে প্রবেশ করান এবং কিছুক্ষণ ধরে রাখুন। এটি আপনা থেকেই ভিতরে চলে যাবে এবং দ্রবীভূত হয়ে যাবে। \n \nভেজাইনাল ক্রিম/ট্যাবলেটঃ\nক্রিম বা ট্যাবলেট ব্যাবহারের জন্য এর সাথে দেয়া এপ্লিকেটর ব্যাবহার করুন। ক্রিমের মুখটি খুলে এপ্লিকেটরটি টিউবয়ের এর মাথায় লাগিয়ে নিন। এরপর টিউবটি চাপ দিন, মলম বা ট্যাবলেটটি আপ্লিকেটোরে ঢুকে যাবে। যথারীতি পিঠ দিয়ে শুয়ে যোনিদ্বারে আস্তে আস্তে পুরো এপ্লিকেটরটি ঢুকান যতদূর সম্ভব এবং ঢুকানোর পর এপ্লিকেটোরের প্লাঞ্জারটি চাপ দিলে ট্যাবলেট বা ক্রিমটি যোনিদ্বারে অভ্যন্তরে প্রবেশ করবে। প্রয়োজনে এপ্লিকেটোরটি পানি দিয়ে একটু ভিজিয়ে নিন।\nএছাড়া হালকা ভাবে মলমটি অল্প করে আঙুলের মাথায় নিয়ে যোনিদ্বারে চারপাশে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন।"
+    },
+    {
+        "form": "Vaginal Suppository",
+        "id": 345,
+        "note": "Use exactly as directed by your doctor, or follow the directions that accompany the package.\n\nWash your hands before and after using this medication. Insert the tablet, suppository, or cream into the vagina using the applicator as directed.\n\n \n\nAvoid getting this medication in your eyes, nose, or mouth. Store at room temperature away from moisture and heat.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nএটি মুখ দ্বারা নেওয়ার ওষুধ না। এটি শুধুমাত্র মহিলাদের যোনিপথে ব্যবহার করার জন্য তৈরি।\nসাপোজিটোরি:\nব্যাবহারের আগে সাপোজিটোরির বাইরের মোড়কটি সরিয়ে ফেলুন। পানি দিয়ে একটু ভিজিয়ে নিন, এরপর বিছানায় পিঠ লাগিয়ে শুয়ে, দুই পা ভাজ করে পুরো সাপোজিটোরিটি যোনিদ্বারে প্রবেশ করান এবং কিছুক্ষণ ধরে রাখুন। এটি আপনা থেকেই ভিতরে চলে যাবে এবং দ্রবীভূত হয়ে যাবে। \n \nভেজাইনাল ক্রিম/ট্যাবলেটঃ\nক্রিম বা ট্যাবলেট ব্যাবহারের জন্য এর সাথে দেয়া এপ্লিকেটর ব্যাবহার করুন। ক্রিমের মুখটি খুলে এপ্লিকেটরটি টিউবয়ের এর মাথায় লাগিয়ে নিন। এরপর টিউবটি চাপ দিন, মলম বা ট্যাবলেটটি আপ্লিকেটোরে ঢুকে যাবে। যথারীতি পিঠ দিয়ে শুয়ে যোনিদ্বারে আস্তে আস্তে পুরো এপ্লিকেটরটি ঢুকান যতদূর সম্ভব এবং ঢুকানোর পর এপ্লিকেটোরের প্লাঞ্জারটি চাপ দিলে ট্যাবলেট বা ক্রিমটি যোনিদ্বারে অভ্যন্তরে প্রবেশ করবে। প্রয়োজনে এপ্লিকেটোরটি পানি দিয়ে একটু ভিজিয়ে নিন।\nএছাড়া হালকা ভাবে মলমটি অল্প করে আঙুলের মাথায় নিয়ে যোনিদ্বারে চারপাশে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন।"
+    },
+    {
+        "form": "Vaginal Tablet",
+        "id": 346,
+        "note": "Use exactly as directed by your doctor, or follow the directions that accompany the package.\n\nWash your hands before and after using this medication. Insert the tablet, suppository, or cream into the vagina using the applicator as directed.\n\n \n\nAvoid getting this medication in your eyes, nose, or mouth. Store at room temperature away from moisture and heat.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nএটি মুখ দ্বারা নেওয়ার ওষুধ না। এটি শুধুমাত্র মহিলাদের যোনিপথে ব্যবহার করার জন্য তৈরি।\nসাপোজিটোরি:\nব্যাবহারের আগে সাপোজিটোরির বাইরের মোড়কটি সরিয়ে ফেলুন। পানি দিয়ে একটু ভিজিয়ে নিন, এরপর বিছানায় পিঠ লাগিয়ে শুয়ে, দুই পা ভাজ করে পুরো সাপোজিটোরিটি যোনিদ্বারে প্রবেশ করান এবং কিছুক্ষণ ধরে রাখুন। এটি আপনা থেকেই ভিতরে চলে যাবে এবং দ্রবীভূত হয়ে যাবে। \n \nভেজাইনাল ক্রিম/ট্যাবলেটঃ\nক্রিম বা ট্যাবলেট ব্যাবহারের জন্য এর সাথে দেয়া এপ্লিকেটর ব্যাবহার করুন। ক্রিমের মুখটি খুলে এপ্লিকেটরটি টিউবয়ের এর মাথায় লাগিয়ে নিন। এরপর টিউবটি চাপ দিন, মলম বা ট্যাবলেটটি আপ্লিকেটোরে ঢুকে যাবে। যথারীতি পিঠ দিয়ে শুয়ে যোনিদ্বারে আস্তে আস্তে পুরো এপ্লিকেটরটি ঢুকান যতদূর সম্ভব এবং ঢুকানোর পর এপ্লিকেটোরের প্লাঞ্জারটি চাপ দিলে ট্যাবলেট বা ক্রিমটি যোনিদ্বারে অভ্যন্তরে প্রবেশ করবে। প্রয়োজনে এপ্লিকেটোরটি পানি দিয়ে একটু ভিজিয়ে নিন।\nএছাড়া হালকা ভাবে মলমটি অল্প করে আঙুলের মাথায় নিয়ে যোনিদ্বারে চারপাশে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন।"
+    },
+    {
+        "form": "Vaginal suppository",
+        "id": 347,
+        "note": "Use exactly as directed by your doctor, or follow the directions that accompany the package.\n\nWash your hands before and after using this medication. Insert the tablet, suppository, or cream into the vagina using the applicator as directed.\n\n \n\nAvoid getting this medication in your eyes, nose, or mouth. Store at room temperature away from moisture and heat.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\nএটি মুখ দ্বারা নেওয়ার ওষুধ না। এটি শুধুমাত্র মহিলাদের যোনিপথে ব্যবহার করার জন্য তৈরি।\nসাপোজিটোরি:\nব্যাবহারের আগে সাপোজিটোরির বাইরের মোড়কটি সরিয়ে ফেলুন। পানি দিয়ে একটু ভিজিয়ে নিন, এরপর বিছানায় পিঠ লাগিয়ে শুয়ে, দুই পা ভাজ করে পুরো সাপোজিটোরিটি যোনিদ্বারে প্রবেশ করান এবং কিছুক্ষণ ধরে রাখুন। এটি আপনা থেকেই ভিতরে চলে যাবে এবং দ্রবীভূত হয়ে যাবে। \n \nভেজাইনাল ক্রিম/ট্যাবলেটঃ\nক্রিম বা ট্যাবলেট ব্যাবহারের জন্য এর সাথে দেয়া এপ্লিকেটর ব্যাবহার করুন। ক্রিমের মুখটি খুলে এপ্লিকেটরটি টিউবয়ের এর মাথায় লাগিয়ে নিন। এরপর টিউবটি চাপ দিন, মলম বা ট্যাবলেটটি আপ্লিকেটোরে ঢুকে যাবে। যথারীতি পিঠ দিয়ে শুয়ে যোনিদ্বারে আস্তে আস্তে পুরো এপ্লিকেটরটি ঢুকান যতদূর সম্ভব এবং ঢুকানোর পর এপ্লিকেটোরের প্লাঞ্জারটি চাপ দিলে ট্যাবলেট বা ক্রিমটি যোনিদ্বারে অভ্যন্তরে প্রবেশ করবে। প্রয়োজনে এপ্লিকেটোরটি পানি দিয়ে একটু ভিজিয়ে নিন।\nএছাড়া হালকা ভাবে মলমটি অল্প করে আঙুলের মাথায় নিয়ে যোনিদ্বারে চারপাশে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন।"
+    },
+    {
+        "form": null,
+        "id": 348,
+        "note": null,
+        "note_bangla": null
+    },
+    {
+        "form": "Mouth Wash",
+        "id": 349,
+        "note": "To use as a mouthwash or gargle, measure your dose using the cup provided with the medication. Hold the medicine in your mouth for at least 30 seconds, then spit it out. Do not swallow the mouthwash.\n\nSome oral rinse should generally be used undiluted, but if you find it makes your mouth sting you can dilute it with an equal volume of water before use.",
+        "note_bangla": "মাউথ ওয়াশ বা গার্গল হিসাবে ব্যবহার করতে, ওষুধ সরবরাহ করা কাপ ব্যবহার করে আপনার ডোজ পরিমাপ করুন। অতপর মুখে নিয়ে অন্তত ৩০ সেকেন্ডের জন্য ওষুধটি ধরে রাখুন, তারপর মুখ থেকে ফেলে দিন। এটা গেলা যাবেনা। সাথে সাথে পানি ব্যাবহার বা পানি নিয়ে কুলি করা যাবেনা বা খাওয়া যাবেনা।\n\n \n\nযদি এটি আপনার মুখে জ্বালা সৃষ্টি করে তাহলে এটি ব্যবহার করার আগে আপনি ওশুধের সম পরিমান পানি মিশিয়ে এটি পাতলা করে ব্যাবহার করতে পারেন।"
+    },
+    {
+        "form": "Mouthwash",
+        "id": 350,
+        "note": "To use as a mouthwash or gargle, measure your dose using the cup provided with the medication. Hold the medicine in your mouth for at least 30 seconds, then spit it out. Do not swallow the mouthwash.\n\nSome oral rinse should generally be used undiluted, but if you find it makes your mouth sting you can dilute it with an equal volume of water before use.",
+        "note_bangla": "মাউথ ওয়াশ বা গার্গল হিসাবে ব্যবহার করতে, ওষুধ সরবরাহ করা কাপ ব্যবহার করে আপনার ডোজ পরিমাপ করুন। অতপর মুখে নিয়ে অন্তত ৩০ সেকেন্ডের জন্য ওষুধটি ধরে রাখুন, তারপর মুখ থেকে ফেলে দিন। এটা গেলা যাবেনা। সাথে সাথে পানি ব্যাবহার বা পানি নিয়ে কুলি করা যাবেনা বা খাওয়া যাবেনা।\n\n \n\nযদি এটি আপনার মুখে জ্বালা সৃষ্টি করে তাহলে এটি ব্যবহার করার আগে আপনি ওশুধের সম পরিমান পানি মিশিয়ে এটি পাতলা করে ব্যাবহার করতে পারেন।"
+    },
+    {
+        "form": "Pen Cartridge",
+        "id": 351,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended. Do not change your medication dose or schedule without your doctor's advice.\n\nInsulin is injected under the skin. Choose a different place in your injection skin area each time you use this medication. Do not inject into the same place two times in a row.\n\nStoring unopened vials and cartridges: Keep in the carton and store in a refrigerator, protected from light. Storing after your first use: Keep the \"in-use\" vials or cartridges at cool room temperature. Throw away any insulin not used within 31 days.\n\nDo not freeze insulin, and throw away the medication if it has become frozen. Once you start using an injection pen or prefilled syringe, do not keep it in a refrigerator. Store it at room temperature. Store the injection pen with its cap on.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nইনসুলিন সাধারণত চামড়ার নিচে, বিশেষভাবে তৈরি ইনসুলিন সিরিঞ্জ বা পেনের সাহায্যে দেয়া হয়। ডাক্তার বা নার্স কিভাবে এটি দিতে হয় তা দেখিয়ে দিবেন।\n\nঅব্যবহৃত ইনসুলিন ভায়াল বা কার্টিজ ২-৮ ডিগ্রী সেলসিয়াস তাপমাত্রায় ফ্রিজের নরমাল চেম্বারে রাখুন। ব্যবহৃত ইনসুলিন ভায়াল বা কার্টিজ নরমাল ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন। ইনসুলিন পেনটি ঘরের নরমাল তাপমাত্রায় রাখুন। ফ্রিজ করা বা বরফ রাখার চেম্বারে রাখা যাবেনা।"
+    },
+    {
+        "form": "PenSet injection",
+        "id": 352,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended. Do not change your medication dose or schedule without your doctor's advice.\n\nInsulin is injected under the skin. Choose a different place in your injection skin area each time you use this medication. Do not inject into the same place two times in a row.\n\nStoring unopened vials and cartridges: Keep in the carton and store in a refrigerator, protected from light. Storing after your first use: Keep the \"in-use\" vials or cartridges at cool room temperature. Throw away any insulin not used within 31 days.\n\nDo not freeze insulin, and throw away the medication if it has become frozen. Once you start using an injection pen or prefilled syringe, do not keep it in a refrigerator. Store it at room temperature. Store the injection pen with its cap on.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nইনসুলিন সাধারণত চামড়ার নিচে, বিশেষভাবে তৈরি ইনসুলিন সিরিঞ্জ বা পেনের সাহায্যে দেয়া হয়। ডাক্তার বা নার্স কিভাবে এটি দিতে হয় তা দেখিয়ে দিবেন।\n\nঅব্যবহৃত ইনসুলিন ভায়াল বা কার্টিজ ২-৮ ডিগ্রী সেলসিয়াস তাপমাত্রায় ফ্রিজের নরমাল চেম্বারে রাখুন। ব্যবহৃত ইনসুলিন ভায়াল বা কার্টিজ নরমাল ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন। ইনসুলিন পেনটি ঘরের নরমাল তাপমাত্রায় রাখুন। ফ্রিজ করা বা বরফ রাখার চেম্বারে রাখা যাবেনা।"
+    },
+    {
+        "form": "Insulin Pen Device",
+        "id": 353,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended. Do not change your medication dose or schedule without your doctor's advice.\n\nInsulin is injected under the skin. Choose a different place in your injection skin area each time you use this medication. Do not inject into the same place two times in a row.\n\nStoring unopened vials and cartridges: Keep in the carton and store in a refrigerator, protected from light. Storing after your first use: Keep the \"in-use\" vials or cartridges at cool room temperature. Throw away any insulin not used within 31 days.\n\nDo not freeze insulin, and throw away the medication if it has become frozen. Once you start using an injection pen or prefilled syringe, do not keep it in a refrigerator. Store it at room temperature. Store the injection pen with its cap on.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nইনসুলিন সাধারণত চামড়ার নিচে, বিশেষভাবে তৈরি ইনসুলিন সিরিঞ্জ বা পেনের সাহায্যে দেয়া হয়। ডাক্তার বা নার্স কিভাবে এটি দিতে হয় তা দেখিয়ে দিবেন।\n\nঅব্যবহৃত ইনসুলিন ভায়াল বা কার্টিজ ২-৮ ডিগ্রী সেলসিয়াস তাপমাত্রায় ফ্রিজের নরমাল চেম্বারে রাখুন। ব্যবহৃত ইনসুলিন ভায়াল বা কার্টিজ নরমাল ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন। ইনসুলিন পেনটি ঘরের নরমাল তাপমাত্রায় রাখুন। ফ্রিজ করা বা বরফ রাখার চেম্বারে রাখা যাবেনা।"
+    },
+    {
+        "form": "Eye Cream",
+        "id": 354,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for use only in the eye and/or ears.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle or tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার অয়েন্টমেনটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই মলম শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ওশুধটি দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর টিউবের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Eye Gel",
+        "id": 355,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for use only in the eye and/or ears.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle or tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার অয়েন্টমেনটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই মলম শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ওশুধটি দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর টিউবের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Eye Ointment",
+        "id": 356,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for use only in the eye and/or ears.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle or tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার অয়েন্টমেনটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই মলম শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ওশুধটি দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর টিউবের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Eye gel",
+        "id": 357,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for use only in the eye and/or ears.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle or tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার অয়েন্টমেনটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই মলম শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ওশুধটি দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর টিউবের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Eye/Ear Ointment",
+        "id": 358,
+        "note": "Use exactly as prescribed by your doctor. Do not use this medicine in larger or smaller amounts or for longer than recommended.\n\nDo not take by mouth. Eye and/or Ear preparation’s is for use only in the eye and/or ears.\n\nAfter opening your eyes, you may have blurred vision for a short time. Avoid driving or doing anything that requires you to be able to see clearly. Keep the bottle or tube tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার অয়েন্টমেনটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই মলম শুধুমাত্র চোখে বা কানে ব্যবহারের জন্য উপযুক্ত। যখন অন্য আরেকটি ঔষধ চোখে বা কানে ব্যাবহার করতে হবে তখন ১৫ মিনিট বেবধানে ব্যাবহার করা উচিৎ। ওশুধটি দেওয়ার পর কয়েক ঘন্টা চোখে ঝাপসা দেখা যেতে পারে, তাই সতর্ক ভাবে চলা ফেরা করতে হবে। ব্যাবহারের পর টিউবের মুখটি শক্ত ভাবে আটকিয়ে রাখুন।"
+    },
+    {
+        "form": "Lotion",
+        "id": 359,
+        "note": "Use exactly as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended.\n\nTopical preparation is use only on the skin. Clean and dry the affected area. Apply a small amount of the cream/ointment. Wash your hands before and after using this medicine.\n\nDo not cover the treated skin area unless your doctor tells you to. Avoid using bandages or dressings that do not allow air circulation.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না। চোখ, নাক ও অন্যান্য মিউকাস পর্দা থেকে দূরে রাখতে হবে। শিশুদের নাগালের বাইরে রাখুন ।\n\nইহা শুধুমাত্র বাহ্যিক ত্বকে ব্যাবহারের জন্য। ক্ষতস্থা্নে বা আক্রান্ত স্থানে যেখানে ওশুধটি লাগানো হবে সেটি পরিস্কার ও শুষ্ক করুন। এরপর হালকা ভাবে মলম বা লোশানটি অল্প করে আঙুলের মাথায় বা হাতের তালুতে নিয়ে  ক্ষতস্থানে লাগান। ওষুধটি ব্যাবহারের পর হাত ধুয়ে ফেলুন।\n\nডাক্তারের পরামর্শ ছাড়া ক্ষতস্থানটি মলম লাগানোর পর ব্যান্ডেজ বা তুলা দিয়ে ঢাকা যাবেনা।"
+    },
+    {
+        "form": "Paediatric Suspension",
+        "id": 360,
+        "note": "Use exactly as directed on the label, or as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended. \n\nShake the bottle before adding water. Then add 10 ml (or with the help of provided spoon) of boiled and cooled water. Then continuously shake the bottle well until the powder mixed properly. Measure liquid medicine with a special dose-measuring dropper. Shake the bottle well before each use.\n\nStore at room temperature away from moisture and heat. Do not allow the liquid form of this medicine to freeze.",
+        "note_bangla": "আপনার ডাক্তার যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nপেডিয়াট্রিক সাসপেনশান বা পাউডার ফর সাসপেনশান শুধু মাত্র বাচ্চাদের মুখে খাওয়ার জন্য ব্যাবহার করা হয়।\nখাবার আগে তরল ওশুধের বোতলটি কয়েকবার ভালোভাবে ঝাঁকিয়ে নিন।এরপর বোতলের সাথে দেয়া ড্রপারের সাহায্যে নির্দিষ্ট পরিমান ওষুধ মেপে বাচ্চাকে খাওয়াতে হবে।  \n\nসাস্পেনশান তৈরির জন্য পাউডার যুক্ত বোতলে নির্দিষ্ট পরিমান ফুটানো ঠান্ডা পানি ঢালুন এবং বোতলের ক্যাপটি লাগিয়ে ভালোভাবে ঝাঁকিয়ে পাউডারটি মিশান। ব্যাবহারের জন্য সাস্পেনশান্টি তৈরি হয়ে গেলো। বোতলটি ঘরের তাপমাত্রায় আলো ও তাপ থেকে দূরে ঘরের ঠান্ডা স্থানে রাখুন।"
+    },
+    {
+        "form": "Paediatric Nasal Drops",
+        "id": 361,
+        "note": "Use exactly as directed on the label, or as prescribed by your doctor. Do not use in larger or smaller amounts or for longer than recommended.\n\n \n\nTo use the nose drops:\n\nBlow your nose gently. Tilt your head back as far as possible, or lie down and hang your head over the side of a bed. Hold the dropper over your nose and place the correct number of drops into your nose.\n\nSit up and bend your head slightly forward, then move it gently left and right. Stay seated with your head bent forward for a few minutes.\n\nAvoid sneezing or blowing your nose for at least a few minutes after using the nose drops.\n\nTo use the nasal spray:\n\nBlow your nose gently. Keep your head upright and insert the tip of bottle into one nostril. Press your other nostril closed with your finger. Breathe in quickly and gently spray the medicine into your nose. Then use the spray in your other nostril.\n\nDo not blow your nose for at least a few minutes after using the nasal spray.\n\nStore at room temperature away from moisture and heat. Do not freeze. Keep the bottle tightly closed when not in use.",
+        "note_bangla": "আপনার ডাক্তার নাকের ড্রপ বা স্প্রেটি যেভাবে ব্যাবহার করতে নির্দেশ দিয়েছেন ঠিক সেভাবে ব্যবহার করুন। নির্দেশনার চেয়ে কম বা বেশী পরিমানে বা বেশী দিন ব্যবহার করবেন না।\n\nএই ড্রপ/স্প্রে শুধুমাত্র নাকে ব্যবহারের জন্য উপযুক্ত। ব্যাবহার করার আগে ওশুধটি কয়েকবার ঝাঁকিয়ে নিন।\n\nবোতলের মুখটি খুলে মাথা একটু পিছনের দিকে ঝুকিয়ে নাকের যেকোন একটি ফুটায় নির্দেশিত পরিমান ড্রপ বা স্প্রে দিতায়েরপর একই ভাবে অন্য নাকেও দিন। ড্রপ বা স্প্রে ব্যবহার করার পরে কমপক্ষে কয়েক মিনিটের জন্য নাক ঝাড়া বা হাঁচি দেয়া এড়িয়ে চলুন।\n\nব্যাবহারের পর বোতলের মুখটি শক্ত ভাবে আটকিয়ে রাখুন এবং বোতলটি ঘরের ঠান্ডা স্থানে রাখুন। তাপ ও আলো থেকে দূরে রাখুন।"
+    }
+]

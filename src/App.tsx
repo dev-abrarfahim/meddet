@@ -1,0 +1,502 @@
+import React, { useState, useEffect, useRef } from 'react';
+import {
+  Header,
+  SearchBar,
+  AlphabetFilter,
+  MedicineCard,
+  TableOfContents,
+  MedicineHero,
+  PriceSection,
+  AlternativeBrands,
+  ChemicalStructure,
+  UsesSection,
+  SafetySection,
+  HowToUseSection,
+  WarningsSection,
+  SideEffectsSection,
+  MoreInfoSection,
+  MedicalDisclaimer,
+  BottomNav,
+  FilterDrawer,
+  SidebarDrawer,
+  HomeLanding
+} from './components';
+
+import { Medicine, FilterOptions, LanguageMode } from './types';
+import { searchMedicines, getMedicineById, subscribeDatabase, isDatabaseReady } from './data/dbEngine';
+import { Pill, Search, RotateCcw, ChevronLeft, ChevronRight } from 'lucide-react';
+
+export default function App() {
+  const [dbReady, setDbReady] = useState<boolean>(isDatabaseReady());
+
+  useEffect(() => {
+    return subscribeDatabase(() => setDbReady(true));
+  }, []);
+
+  // Active Main Tab State ('home' vs 'search')
+  const [activeTab, setActiveTab] = useState<'home' | 'search'>('home');
+
+  // Dual Language State ('en' vs 'bn')
+  const [lang, setLang] = useState<LanguageMode>(() => {
+    try {
+      const saved = localStorage.getItem('medvhai_lang');
+      return (saved === 'bn' ? 'bn' : 'en');
+    } catch {
+      return 'en';
+    }
+  });
+
+  const toggleLang = () => {
+    setLang((prev) => {
+      const next = prev === 'en' ? 'bn' : 'en';
+      try {
+        localStorage.setItem('medvhai_lang', next);
+      } catch (e) {
+        console.error(e);
+      }
+      return next;
+    });
+  };
+
+  // Theme State (Dark / Light Mode)
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem('medvhai_dark_mode');
+      if (saved !== null) return JSON.parse(saved);
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    } catch {
+      return false;
+    }
+  });
+
+  // Sync dark class on html root element
+  useEffect(() => {
+    const root = document.documentElement;
+    if (isDarkMode) {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+    try {
+      localStorage.setItem('medvhai_dark_mode', JSON.stringify(isDarkMode));
+    } catch (e) {
+      console.error(e);
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => setIsDarkMode((prev) => !prev);
+
+  // Search & Filter State
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [selectedLetter, setSelectedLetter] = useState<string>('All');
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [filters, setFilters] = useState<FilterOptions>({
+    category: 'All',
+    dosageForm: 'All',
+    manufacturer: 'All',
+    maxPrice: 0,
+    sortBy: 'relevance'
+  });
+
+  const [selectedMedicine, setSelectedMedicine] = useState<Medicine | null>(null);
+
+  // Modal / Drawer States
+  const [isFiltersOpen, setIsFiltersOpen] = useState<boolean>(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+  const [activeSection, setActiveSection] = useState<string>('sec-overview');
+
+  const mainInputRef = useRef<HTMLInputElement | null>(null);
+
+  // Keyboard shortcut (⌘K or /) to focus search
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        handleGoToSearch();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  // Track active scrolling section when viewing medicine details
+  useEffect(() => {
+    if (!selectedMedicine) return;
+
+    const sections = [
+      'sec-overview',
+      'sec-price',
+      'sec-alternatives',
+      'sec-structure',
+      'sec-uses',
+      'sec-safety',
+      'sec-dosage',
+      'sec-warnings',
+      'sec-sideeffects',
+      'sec-moreinfo'
+    ];
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 180;
+      for (const secId of sections) {
+        const el = document.getElementById(secId);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(secId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [selectedMedicine]);
+
+  // Execute database search with pagination
+  const searchResults = searchMedicines(
+    searchQuery,
+    selectedLetter,
+    {
+      category: filters.category,
+      dosageForm: filters.dosageForm,
+      manufacturer: filters.manufacturer,
+      maxPrice: filters.maxPrice,
+      sortBy: filters.sortBy
+    },
+    currentPage,
+    48
+  );
+
+  const activeFilterCount =
+    (filters.category !== 'All' ? 1 : 0) +
+    (filters.dosageForm !== 'All' ? 1 : 0) +
+    (filters.manufacturer !== 'All' ? 1 : 0) +
+    (filters.maxPrice > 0 ? 1 : 0);
+
+  const handleSelectMedicine = (med: Medicine) => {
+    // Ensure full monograph and note are populated
+    const fullMed = getMedicineById(med.id) || med;
+    setSelectedMedicine(fullMed);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleGoHome = () => {
+    setSelectedMedicine(null);
+    setActiveTab('home');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleGoToSearch = (query?: string, category?: string, manufacturer?: string) => {
+    setSelectedMedicine(null);
+    setActiveTab('search');
+    setSelectedLetter('All');
+    setCurrentPage(1);
+    if (query !== undefined) setSearchQuery(query);
+    if (category !== undefined) {
+      setFilters((prev) => ({ ...prev, category }));
+    }
+    if (manufacturer !== undefined) {
+      setFilters((prev) => ({ ...prev, manufacturer }));
+    }
+    setTimeout(() => {
+      mainInputRef.current?.focus();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 50);
+  };
+
+  const resetFilters = () => {
+    setFilters({
+      category: 'All',
+      dosageForm: 'All',
+      manufacturer: 'All',
+      maxPrice: 0,
+      sortBy: 'relevance'
+    });
+    setCurrentPage(1);
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col bg-[#F1F9FF]/70 dark:bg-[#0B131B]/70 text-[#095D7E] dark:text-slate-100 font-sans pb-24 transition-colors duration-300 relative z-10">
+      
+      {/* Primary Navigation Header */}
+      <Header
+        isDarkMode={isDarkMode}
+        onToggleDarkMode={toggleDarkMode}
+        lang={lang}
+        onToggleLang={toggleLang}
+        onOpenFilters={() => setIsFiltersOpen(true)}
+        onOpenSidebar={() => setIsSidebarOpen(true)}
+        onGoHome={handleGoHome}
+      />
+
+      {/* Secondary Sticky Search Header Toolbar */}
+      <div className="sticky top-16 z-30 bg-[#095D7E] dark:bg-[#0B1927] border-b border-[#074760] dark:border-[#1E3A52] py-2.5 px-4 sm:px-6 lg:px-8 shadow-md transition-colors duration-300">
+        <div className="max-w-7xl mx-auto">
+          <SearchBar
+            query={searchQuery}
+            onChangeQuery={(q) => {
+              setSearchQuery(q);
+              setCurrentPage(1);
+              if (selectedMedicine) setSelectedMedicine(null);
+              if (activeTab !== 'search') setActiveTab('search');
+            }}
+            onSelectMedicine={handleSelectMedicine}
+            onOpenFilterDrawer={() => setIsFiltersOpen(true)}
+            activeFilterCount={activeFilterCount}
+            inputRef={mainInputRef}
+          />
+        </div>
+      </div>
+
+      {/* Main Content Area */}
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 space-y-6">
+
+        {/* VIEW 1: SINGLE MEDICINE DETAILS PAGE */}
+        {selectedMedicine ? (
+          <div className="space-y-6 animate-in fade-in duration-200">
+            
+            {/* Sticky Table of Contents Jump Bar */}
+            <TableOfContents activeSection={activeSection} />
+
+            {/* 1. Hero Overview */}
+            <MedicineHero
+              medicine={selectedMedicine}
+              onBackToSearch={() => {
+                setSelectedMedicine(null);
+                setActiveTab('search');
+              }}
+              lang={lang}
+              onToggleLang={toggleLang}
+            />
+
+            {/* 2. Price Information (Main focus on MRP) */}
+            <PriceSection medicine={selectedMedicine} />
+
+            {/* 3. Alternative Brands Comparison */}
+            <AlternativeBrands
+              medicine={selectedMedicine}
+              onSelectMedicine={handleSelectMedicine}
+            />
+
+            {/* 4. Chemical Structure (Feature Coming Soon) */}
+            <ChemicalStructure
+              genericName={selectedMedicine.genericName}
+            />
+
+            {/* 5. Indications & Uses (English & Bangla) */}
+            <UsesSection
+              monograph={selectedMedicine.monograph}
+              medicineName={selectedMedicine.name}
+              lang={lang}
+            />
+
+            {/* 6. Pregnancy & Breastfeeding Safety */}
+            <SafetySection
+              monograph={selectedMedicine.monograph}
+              medicineName={selectedMedicine.name}
+              lang={lang}
+            />
+
+            {/* 7. Dosage & Administration + Intake Guidelines */}
+            <HowToUseSection
+              monograph={selectedMedicine.monograph}
+              dosageNote={selectedMedicine.dosageNote}
+              medicineName={selectedMedicine.name}
+              dosageForm={selectedMedicine.form}
+              lang={lang}
+            />
+
+            {/* 8. Warnings, Precautions & Contraindications */}
+            <WarningsSection
+              monograph={selectedMedicine.monograph}
+              medicineName={selectedMedicine.name}
+              lang={lang}
+            />
+
+            {/* 9. Possible Side Effects */}
+            <SideEffectsSection
+              monograph={selectedMedicine.monograph}
+              medicineName={selectedMedicine.name}
+              lang={lang}
+            />
+
+            {/* 10. Overdose Management */}
+            <MoreInfoSection
+              monograph={selectedMedicine.monograph}
+              medicineName={selectedMedicine.name}
+              lang={lang}
+            />
+
+            {/* Disclaimer Footer */}
+            <MedicalDisclaimer />
+
+          </div>
+        ) : activeTab === 'home' ? (
+          /* VIEW 2: HOME LANDING PAGE */
+          <div className="space-y-8 animate-in fade-in duration-200">
+            <HomeLanding
+              onGoToSearch={handleGoToSearch}
+              onSelectMedicine={handleSelectMedicine}
+              lang={lang}
+            />
+            <MedicalDisclaimer />
+          </div>
+        ) : (
+          /* VIEW 3: MEDICINE INDEX SEARCH & FILTER GRID PAGE */
+          <div className="space-y-6 animate-in fade-in duration-200">
+            
+            {/* Alphabet Quick Filter */}
+            <AlphabetFilter
+              selectedLetter={selectedLetter}
+              onSelectLetter={(letter) => {
+                setSelectedLetter(letter);
+                setCurrentPage(1);
+                if (selectedMedicine) setSelectedMedicine(null);
+              }}
+            />
+
+            {/* Results Counter & Filter Status Bar */}
+            <div className="flex items-center justify-between gap-3 flex-wrap bg-white dark:bg-[#152232] p-4 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] transition-colors shadow-xs">
+              <div>
+                <h2 className="text-base sm:text-lg font-bold text-[#095D7E] dark:text-slate-100 flex items-center gap-2">
+                  <Pill className="w-5 h-5 text-[#14967F] dark:text-[#2DD4BF]" />
+                  <span>{lang === 'en' ? 'Database Search Results' : 'ডাটাবেজ ফলাফল'}</span>
+                  <span className="bg-[#E2FCD6] dark:bg-[#064E3B] text-[#0D6F5D] dark:text-[#6EE7B7] text-xs font-black px-3 py-0.5 rounded-full border border-[#14967F]/30">
+                    {searchResults.total.toLocaleString()} {lang === 'en' ? 'Medicines Found' : 'টি ওষুধ পাওয়া গেছে'}
+                  </span>
+                </h2>
+                <p className="text-xs text-[#095D7E]/70 dark:text-slate-400 mt-0.5">
+                  Showing page {searchResults.page} of {searchResults.totalPages} {selectedLetter !== 'All' ? `• Letter "${selectedLetter}"` : ''} {searchQuery ? `• Query "${searchQuery}"` : ''}
+                </p>
+              </div>
+
+              {activeFilterCount > 0 && (
+                <button
+                  onClick={resetFilters}
+                  id="reset-search-filters-btn"
+                  className="text-xs font-bold text-[#14967F] dark:text-[#2DD4BF] hover:text-[#0D6F5D] flex items-center gap-1 bg-[#F1F9FF] dark:bg-[#1A2B3E] px-3 py-1.5 rounded-xl border border-[#CCECEE] dark:border-[#243B53] transition-colors"
+                >
+                  <RotateCcw className="w-3.5 h-3.5" />
+                  <span>Clear Filters</span>
+                </button>
+              )}
+            </div>
+
+            {/* Medicine Cards Grid */}
+            {searchResults.items.length > 0 ? (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {searchResults.items.map((med) => (
+                    <MedicineCard
+                      key={med.id}
+                      medicine={med}
+                      onSelect={handleSelectMedicine}
+                    />
+                  ))}
+                </div>
+
+                {/* Pagination Controls */}
+                {searchResults.totalPages > 1 && (
+                  <div className="flex items-center justify-between bg-white dark:bg-[#152232] p-4 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] mt-6 shadow-xs">
+                    <button
+                      disabled={currentPage <= 1}
+                      onClick={() => {
+                        setCurrentPage((p) => Math.max(1, p - 1));
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="flex items-center gap-1 text-xs font-bold text-[#095D7E] dark:text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed bg-[#F1F9FF] dark:bg-[#1A2B3E] px-4 py-2 rounded-xl border border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F]"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                      <span>Previous Page</span>
+                    </button>
+
+                    <div className="text-xs font-bold text-[#095D7E] dark:text-slate-200">
+                      Page <span className="text-[#14967F] dark:text-[#2DD4BF] font-black">{currentPage}</span> of {searchResults.totalPages}
+                    </div>
+
+                    <button
+                      disabled={currentPage >= searchResults.totalPages}
+                      onClick={() => {
+                        setCurrentPage((p) => Math.min(searchResults.totalPages, p + 1));
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="flex items-center gap-1 text-xs font-bold text-[#095D7E] dark:text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed bg-[#F1F9FF] dark:bg-[#1A2B3E] px-4 py-2 rounded-xl border border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F]"
+                    >
+                      <span>Next Page</span>
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                )}
+              </>
+            ) : (
+              /* Empty Search State */
+              <div className="bg-white dark:bg-[#152232] rounded-2xl border border-[#CCECEE] dark:border-[#243B53] p-8 sm:p-12 text-center space-y-4 max-w-lg mx-auto my-6 transition-colors">
+                <div className="w-16 h-16 rounded-2xl bg-[#F1F9FF] dark:bg-[#1A2B3E] text-[#14967F] dark:text-[#2DD4BF] flex items-center justify-center mx-auto">
+                  <Search className="w-8 h-8" />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="text-xl font-extrabold text-[#095D7E] dark:text-slate-100">No medicines found</h3>
+                  <p className="text-xs sm:text-sm text-[#095D7E]/80 dark:text-slate-400">
+                    Try searching by brand name (e.g., "Napa", "Seclo", "Maxpro") or generic ingredient (e.g., "Esomeprazole", "Paracetamol").
+                  </p>
+                </div>
+
+                <div className="pt-2 flex justify-center gap-3">
+                  <button
+                    onClick={() => {
+                      setSearchQuery('');
+                      setSelectedLetter('All');
+                      resetFilters();
+                    }}
+                    id="clear-search-empty-state-btn"
+                    className="bg-[#14967F] text-[#E2FCD6] font-bold text-xs px-4 py-2.5 rounded-xl hover:bg-[#11806C] transition-colors"
+                  >
+                    Reset Search & Filters
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Disclaimer Footer */}
+            <MedicalDisclaimer />
+
+          </div>
+        )}
+
+      </main>
+
+      {/* Floating Bottom Utility Bar */}
+      <BottomNav
+        currentView={selectedMedicine ? 'details' : activeTab}
+        onGoHome={handleGoHome}
+        onGoSearch={() => handleGoToSearch()}
+        onOpenFilters={() => setIsFiltersOpen(true)}
+      />
+
+      {/* Drawers */}
+      <FilterDrawer
+        isOpen={isFiltersOpen}
+        onClose={() => setIsFiltersOpen(false)}
+        filters={filters}
+        onChangeFilters={(f) => {
+          setFilters(f);
+          setCurrentPage(1);
+        }}
+        onResetFilters={resetFilters}
+      />
+
+      <SidebarDrawer
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+        onOpenFilters={() => setIsFiltersOpen(true)}
+        lang={lang}
+        onToggleLang={toggleLang}
+        onSelectManufacturer={(compName) => handleGoToSearch(undefined, undefined, compName)}
+      />
+
+    </div>
+  );
+}

@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Open Sans', system-ui, -apple-system, sans-serif;
+  --color-med-navy: #095D7E;
+  --color-med-teal: #14967F;
+  --color-med-lightgreen: #E2FCD6;
+  --color-med-cyan: #CCECEE;
+  --color-med-lightblue: #F1F9FF;
+  --color-med-darkteal: #0D6F5D;
+}
+
+*, ::before, ::after {
+  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #F1F9FF;
+  color: #095D7E;
+  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html.dark {
+  background-color: #0B131B;
+  color: #E2E8F0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #F1F9FF;
+  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  position: relative;
+}
+
+/* Professional Watermarked Medical Doodle Background Pattern */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/medical-bg.png');
+  background-size: 540px auto;
+  background-repeat: repeat;
+  background-position: top center;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+html.dark body::before {
+  opacity: 0.08;
+  filter: invert(1) brightness(1.3) contrast(0.9);
+}
+
+body.dark {
+  background-color: #0B131B;
+  color: #E2E8F0;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F9FF;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #0B131B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CCECEE;
+  border-radius: 4px;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #1E3A4C;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #14967F;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #2DD4BF;
+}
+
+/* Hide scrollbar for clean horizontal scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

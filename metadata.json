@@ -1,0 +1,6 @@
+{
+  "name": "MedVhai",
+  "description": "A premium, modern Medical Index & Medicine Explorer for searching medicines, comparing generic alternative brands, price savings, uses, safety profiles, and dosage guidelines.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
