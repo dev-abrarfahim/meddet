@@ -56,17 +56,6 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Right Navigation Actions */}
         <div className="flex items-center gap-2">
-          
-          {/* Language Switcher Button (EN / Bangla) */}
-          <button
-            onClick={onToggleLang}
-            id="header-lang-toggle-btn"
-            title="Toggle Language / ভাষা পরিবর্তন"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#074760] dark:bg-[#1E2D3D] border border-[#CCECEE]/30 dark:border-[#2DD4BF]/40 text-xs font-bold text-[#E2FCD6] dark:text-[#2DD4BF] hover:bg-[#06384C] transition-colors cursor-pointer"
-          >
-            <Languages className="w-4 h-4 text-[#E2FCD6] dark:text-[#2DD4BF]" />
-            <span>{lang === 'en' ? 'ENGLISH' : 'বাংলা'}</span>
-          </button>
 
           {/* Filter Drawer Trigger */}
           <button
