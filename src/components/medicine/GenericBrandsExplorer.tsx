@@ -5,6 +5,8 @@ import { getAllBrandsForGeneric, getGenericById } from '../../data/dbEngine';
 
 interface GenericBrandsExplorerProps {
   genericId: number;
+  initialForm?: string;
+  initialStrength?: string;
   onSelectMedicine: (med: Medicine) => void;
   onBack: () => void;
   lang: LanguageMode;
@@ -12,18 +14,14 @@ interface GenericBrandsExplorerProps {
 
 export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
   genericId,
+  initialForm,
+  initialStrength,
   onSelectMedicine,
   onBack,
   lang
 }) => {
   const genericMonograph = getGenericById(genericId);
   const allBrands = useMemo(() => getAllBrandsForGeneric(genericId), [genericId]);
-
-  // Filter States
-  const [selectedCompany, setSelectedCompany] = useState<string>('All');
-  const [selectedStrength, setSelectedStrength] = useState<string>('All');
-  const [selectedForm, setSelectedForm] = useState<string>('All');
-  const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity'>('name');
 
   // Unique options for filter dropdowns
   const companyOptions = useMemo(() => {
@@ -40,6 +38,29 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
     const set = new Set(allBrands.map((b) => b.form.trim()));
     return ['All', ...Array.from(set).sort()];
   }, [allBrands]);
+
+  // Calculate default matching form and strength
+  const defaultForm = useMemo(() => {
+    if (!initialForm) return 'All';
+    const target = initialForm.trim().toLowerCase();
+    const match = formOptions.find(
+      (f) => f.trim().toLowerCase() === target || f.trim().toLowerCase().includes(target) || target.includes(f.trim().toLowerCase())
+    );
+    return match || 'All';
+  }, [initialForm, formOptions]);
+
+  const defaultStrength = useMemo(() => {
+    if (!initialStrength) return 'All';
+    const target = initialStrength.trim().toLowerCase();
+    const match = strengthOptions.find((s) => s.trim().toLowerCase() === target);
+    return match || 'All';
+  }, [initialStrength, strengthOptions]);
+
+  // Filter States initialized to exact matching dosage form & strength
+  const [selectedCompany, setSelectedCompany] = useState<string>('All');
+  const [selectedStrength, setSelectedStrength] = useState<string>(defaultStrength);
+  const [selectedForm, setSelectedForm] = useState<string>(defaultForm);
+  const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity'>('name');
 
   // Filter & Sort Logic
   const filteredBrands = useMemo(() => {
@@ -94,9 +115,24 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
           <span>{lang === 'en' ? 'Back to Details' : 'ফিরে যান'}</span>
         </button>
 
-        <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400">
-          Showing {filteredBrands.length} of {allBrands.length} Brands
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400">
+            Showing {filteredBrands.length} of {allBrands.length} Brands
+          </span>
+          
+          {(selectedForm !== 'All' || selectedStrength !== 'All' || selectedCompany !== 'All') && (
+            <button
+              onClick={() => {
+                setSelectedForm('All');
+                setSelectedStrength('All');
+                setSelectedCompany('All');
+              }}
+              className="text-[10px] font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-200 dark:border-emerald-800 cursor-pointer"
+            >
+              Reset Filters
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Main Page Title Header (Strictly Matching User Reference Image) */}
@@ -106,7 +142,7 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
             {genericName}
           </h1>
           <p className="text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400">
-            Available Brands
+            Available Brands {selectedForm !== 'All' ? `(${selectedForm})` : ''} {selectedStrength !== 'All' ? `• ${selectedStrength}` : ''}
           </p>
         </div>
 
@@ -227,84 +263,98 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200">
-              {filteredBrands.map((brand, idx) => (
-                <tr
-                  key={brand.id}
-                  onClick={() => onSelectMedicine(brand)}
-                  className={`hover:bg-emerald-50/60 dark:hover:bg-slate-800/60 transition-colors cursor-pointer ${
-                    idx % 2 === 0 ? 'bg-white dark:bg-[#131B2E]' : 'bg-slate-50/50 dark:bg-slate-800/30'
-                  }`}
-                >
-                  {/* Brand Name */}
-                  <td className="py-3 px-4 font-black text-slate-900 dark:text-slate-100 hover:text-[#14967F]">
-                    {brand.name}
-                  </td>
-
-                  {/* Dosage Form with Icon */}
-                  <td className="py-3 px-4">
-                    <div className="flex items-center gap-1.5">
-                      {getFormIcon(brand.form)}
-                      <span>{brand.form}</span>
-                    </div>
-                  </td>
-
-                  {/* Strength */}
-                  <td className="py-3 px-4 font-mono font-black text-slate-700 dark:text-slate-300">
-                    {brand.strength || '—'}
-                  </td>
-
-                  {/* Company */}
-                  <td className="py-3 px-4 text-slate-600 dark:text-slate-400">
-                    <div className="flex items-center gap-1">
-                      <Building2 className="w-3 h-3 text-slate-400 shrink-0" />
-                      <span className="truncate">{brand.company}</span>
-                    </div>
-                  </td>
-
-                  {/* Pack Size & Price */}
-                  <td className="py-3 px-4 text-right">
-                    <div className="font-black text-slate-900 dark:text-slate-100 font-mono">
-                      Unit Price: ৳ {brand.mrp > 0 ? brand.mrp.toFixed(2) : 'N/A'}
-                    </div>
-                    {brand.packSize && (
-                      <div className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 font-mono">
-                        ({brand.packSize})
-                      </div>
-                    )}
+              {filteredBrands.length === 0 ? (
+                <tr>
+                  <td colSpan={5} className="py-8 text-center text-slate-500">
+                    No matching brands found for the selected filter combination.
                   </td>
                 </tr>
-              ))}
+              ) : (
+                filteredBrands.map((brand, idx) => (
+                  <tr
+                    key={brand.id}
+                    onClick={() => onSelectMedicine(brand)}
+                    className={`hover:bg-emerald-50/60 dark:hover:bg-slate-800/60 transition-colors cursor-pointer ${
+                      idx % 2 === 0 ? 'bg-white dark:bg-[#131B2E]' : 'bg-slate-50/50 dark:bg-slate-800/30'
+                    }`}
+                  >
+                    {/* Brand Name */}
+                    <td className="py-3 px-4 font-black text-slate-900 dark:text-slate-100 hover:text-[#14967F]">
+                      {brand.name}
+                    </td>
+
+                    {/* Dosage Form with Icon */}
+                    <td className="py-3 px-4">
+                      <div className="flex items-center gap-1.5">
+                        {getFormIcon(brand.form)}
+                        <span>{brand.form}</span>
+                      </div>
+                    </td>
+
+                    {/* Strength */}
+                    <td className="py-3 px-4 font-mono font-black text-slate-700 dark:text-slate-300">
+                      {brand.strength || '—'}
+                    </td>
+
+                    {/* Company */}
+                    <td className="py-3 px-4 text-slate-600 dark:text-slate-400">
+                      <div className="flex items-center gap-1">
+                        <Building2 className="w-3 h-3 text-slate-400 shrink-0" />
+                        <span className="truncate">{brand.company}</span>
+                      </div>
+                    </td>
+
+                    {/* Pack Size & Price */}
+                    <td className="py-3 px-4 text-right">
+                      <div className="font-black text-slate-900 dark:text-slate-100 font-mono">
+                        Unit Price: ৳ {brand.mrp > 0 ? brand.mrp.toFixed(2) : 'N/A'}
+                      </div>
+                      {brand.packSize && (
+                        <div className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 font-mono">
+                          ({brand.packSize})
+                        </div>
+                      )}
+                    </td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>
 
         {/* Mobile Compact Card Rows */}
         <div className="sm:hidden divide-y divide-slate-100 dark:divide-slate-800">
-          {filteredBrands.map((brand) => (
-            <div
-              key={brand.id}
-              onClick={() => onSelectMedicine(brand)}
-              className="p-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer space-y-1.5"
-            >
-              <div className="flex items-center justify-between gap-2">
-                <h3 className="text-sm font-black text-slate-900 dark:text-slate-100 hover:text-[#14967F]">
-                  {brand.name}
-                </h3>
-                <span className="text-xs font-black text-[#14967F] dark:text-[#2DD4BF] font-mono">
-                  ৳ {brand.mrp > 0 ? brand.mrp.toFixed(2) : 'N/A'}
-                </span>
-              </div>
-
-              <div className="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400 font-semibold gap-2">
-                <div className="flex items-center gap-1">
-                  {getFormIcon(brand.form)}
-                  <span>{brand.form}</span>
-                  {brand.strength && <span className="font-mono font-bold">• {brand.strength}</span>}
-                </div>
-                <span className="truncate max-w-[140px] text-right font-medium">{brand.company}</span>
-              </div>
+          {filteredBrands.length === 0 ? (
+            <div className="p-6 text-center text-xs text-slate-500">
+              No matching brands found for the selected filter.
             </div>
-          ))}
+          ) : (
+            filteredBrands.map((brand) => (
+              <div
+                key={brand.id}
+                onClick={() => onSelectMedicine(brand)}
+                className="p-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer space-y-1.5"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="text-sm font-black text-slate-900 dark:text-slate-100 hover:text-[#14967F]">
+                    {brand.name}
+                  </h3>
+                  <span className="text-xs font-black text-[#14967F] dark:text-[#2DD4BF] font-mono">
+                    ৳ {brand.mrp > 0 ? brand.mrp.toFixed(2) : 'N/A'}
+                  </span>
+                </div>
+
+                <div className="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400 font-semibold gap-2">
+                  <div className="flex items-center gap-1">
+                    {getFormIcon(brand.form)}
+                    <span>{brand.form}</span>
+                    {brand.strength && <span className="font-mono font-bold">• {brand.strength}</span>}
+                  </div>
+                  <span className="truncate max-w-[140px] text-right font-medium">{brand.company}</span>
+                </div>
+              </div>
+            ))
+          )}
         </div>
 
       </div>

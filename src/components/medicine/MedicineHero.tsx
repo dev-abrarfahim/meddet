@@ -7,7 +7,7 @@ interface MedicineHeroProps {
   medicine: Medicine;
   onBackToSearch: () => void;
   onSelectMedicine: (med: Medicine) => void;
-  onOpenGenericBrandsExplorer: (genericId: number) => void;
+  onOpenGenericBrandsExplorer: (genericId: number, form?: string, strength?: string) => void;
   lang: LanguageMode;
   onToggleLang?: () => void;
 }
@@ -97,7 +97,7 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
 
           {/* Alternative Brands Dedicated Explorer Button */}
           <button
-            onClick={() => onOpenGenericBrandsExplorer(medicine.genericId)}
+            onClick={() => onOpenGenericBrandsExplorer(medicine.genericId, medicine.form, medicine.strength)}
             id="hero-open-alt-brands-explorer-btn"
             className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-700 text-[11px] font-black text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900 transition-all cursor-pointer shadow-xs"
           >

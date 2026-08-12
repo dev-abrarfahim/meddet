@@ -102,25 +102,36 @@ export default function App() {
 
   const [selectedMedicine, setSelectedMedicine] = useState<Medicine | null>(null);
   const [explorerGenericId, setExplorerGenericId] = useState<number | null>(null);
+  const [explorerForm, setExplorerForm] = useState<string | undefined>(undefined);
+  const [explorerStrength, setExplorerStrength] = useState<string | undefined>(undefined);
 
-  // Sync URL query param ?genericId=...
+  // Sync URL query param ?genericId=...&form=...&strength=...
   useEffect(() => {
     try {
       const url = new URL(window.location.href);
       const gIdParam = url.searchParams.get('genericId');
+      const formParam = url.searchParams.get('form');
+      const strParam = url.searchParams.get('strength');
+
       if (gIdParam && !isNaN(Number(gIdParam))) {
         setExplorerGenericId(Number(gIdParam));
+        if (formParam) setExplorerForm(formParam);
+        if (strParam) setExplorerStrength(strParam);
       }
     } catch (e) {
       console.error(e);
     }
   }, []);
 
-  const handleOpenGenericBrandsExplorer = (genericId: number) => {
+  const handleOpenGenericBrandsExplorer = (genericId: number, form?: string, strength?: string) => {
     setExplorerGenericId(genericId);
+    setExplorerForm(form);
+    setExplorerStrength(strength);
     try {
       const url = new URL(window.location.href);
       url.searchParams.set('genericId', genericId.toString());
+      if (form) url.searchParams.set('form', form);
+      if (strength) url.searchParams.set('strength', strength);
       window.history.pushState(null, '', url.toString());
     } catch (e) {
       console.error(e);
@@ -130,9 +141,13 @@ export default function App() {
 
   const handleCloseGenericBrandsExplorer = () => {
     setExplorerGenericId(null);
+    setExplorerForm(undefined);
+    setExplorerStrength(undefined);
     try {
       const url = new URL(window.location.href);
       url.searchParams.delete('genericId');
+      url.searchParams.delete('form');
+      url.searchParams.delete('strength');
       window.history.pushState(null, '', url.toString());
     } catch (e) {
       console.error(e);
@@ -299,6 +314,8 @@ export default function App() {
           <div className="max-w-4xl mx-auto space-y-4 animate-in fade-in duration-200 pb-16">
             <GenericBrandsExplorer
               genericId={explorerGenericId}
+              initialForm={explorerForm}
+              initialStrength={explorerStrength}
               onSelectMedicine={handleSelectMedicine}
               onBack={handleCloseGenericBrandsExplorer}
               lang={lang}
