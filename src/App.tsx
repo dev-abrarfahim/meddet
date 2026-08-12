@@ -25,7 +25,7 @@ import {
 
 import { Medicine, FilterOptions, LanguageMode } from './types';
 import { searchMedicines, getMedicineById, subscribeDatabase, isDatabaseReady } from './data/dbEngine';
-import { Pill, Search, RotateCcw, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Pill, Search, RotateCcw, ChevronLeft, ChevronRight, Languages } from 'lucide-react';
 
 export default function App() {
   const [dbReady, setDbReady] = useState<boolean>(isDatabaseReady());
@@ -432,6 +432,18 @@ export default function App() {
         )}
 
       </main>
+
+      {/* Persistent Floating Language Switcher Pill (Always Floating Right Above Bottom Nav on All Tabs) */}
+      <div className="fixed bottom-16 left-1/2 -translate-x-1/2 z-40 pointer-events-auto">
+        <button
+          onClick={toggleLang}
+          id="persistent-floating-lang-toggle"
+          className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#095D7E] dark:bg-[#14967F] text-white text-xs font-black shadow-2xl border-2 border-white dark:border-slate-800 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+        >
+          <Languages className="w-4 h-4 text-[#E2FCD6]" />
+          <span>{lang === 'en' ? 'বাংলায় দেখুন' : 'View in English'}</span>
+        </button>
+      </div>
 
       {/* Floating Bottom Utility Bar */}
       <BottomNav

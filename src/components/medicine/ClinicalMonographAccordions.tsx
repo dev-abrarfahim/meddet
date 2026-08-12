@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, ChevronDown, ChevronUp, Languages } from 'lucide-react';
+import { CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
 import { GenericMonograph, LanguageMode } from '../../types';
 
 interface ClinicalMonographAccordionsProps {
@@ -10,8 +10,7 @@ interface ClinicalMonographAccordionsProps {
 
 export const ClinicalMonographAccordions: React.FC<ClinicalMonographAccordionsProps> = ({
   monograph,
-  lang,
-  onToggleLang
+  lang
 }) => {
   // Track open state for each accordion
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({
@@ -104,18 +103,6 @@ export const ClinicalMonographAccordions: React.FC<ClinicalMonographAccordionsPr
             </div>
           );
         })}
-      </div>
-
-      {/* Floating / Sticky Bottom Language Toggle Button (Exact Hand-Drawn Sketch Feature: "বাংলায় দেখুন") */}
-      <div className="pt-2 flex justify-center sticky bottom-14 z-30 pointer-events-auto">
-        <button
-          onClick={onToggleLang}
-          id="toggle-bangla-btn-sketch"
-          className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#095D7E] dark:bg-[#14967F] text-white text-xs font-black shadow-xl border-2 border-white dark:border-slate-800 hover:scale-105 transition-all cursor-pointer"
-        >
-          <Languages className="w-3.5 h-3.5 text-[#E2FCD6]" />
-          <span>{lang === 'en' ? 'বাংলায় দেখুন' : 'View in English'}</span>
-        </button>
       </div>
 
     </section>
