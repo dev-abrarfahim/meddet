@@ -3,7 +3,7 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: 'Open Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Lato', system-ui, -apple-system, sans-serif;
   --color-med-navy: #095D7E;
   --color-med-teal: #14967F;
   --color-med-lightgreen: #E2FCD6;
@@ -12,16 +12,16 @@
   --color-med-darkteal: #0D6F5D;
 }
 
-/* Force Open Sans typography globally across ALL HTML elements without exception */
+/* Force Lato typography globally across ALL HTML elements without exception */
 *, ::before, ::after, html, body, input, button, select, textarea, h1, h2, h3, h4, h5, h6, p, span, div, a, li, label, section, main, article, footer, header {
-  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
 html {
   scroll-behavior: smooth;
   background-color: #F1F9FF;
   color: #095D7E;
-  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -35,7 +35,7 @@ body {
   padding: 0;
   min-height: 100vh;
   background-color: #F1F9FF;
-  font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.25s ease, color 0.25s ease;
   position: relative;
