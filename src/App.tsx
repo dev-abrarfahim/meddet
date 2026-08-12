@@ -107,13 +107,50 @@ export default function App() {
   const [explorerForm, setExplorerForm] = useState<string | undefined>(undefined);
   const [explorerStrength, setExplorerStrength] = useState<string | undefined>(undefined);
 
-  // Sync URL query param ?genericId=...&form=...&strength=...
+  // Helper to safely update URL both in current window and parent frame if embedded in Blogspot iframe
+  const syncUrlState = (paramsToUpdate: Record<string, string | null>) => {
+    try {
+      const url = new URL(window.location.href);
+      Object.entries(paramsToUpdate).forEach(([key, val]) => {
+        if (val === null) {
+          url.searchParams.delete(key);
+        } else {
+          url.searchParams.set(key, val);
+        }
+      });
+
+      // Update current window URL
+      window.history.pushState(null, '', url.toString());
+
+      // If embedded inside Blogger iframe, sync URL to Blogspot address bar!
+      if (window.parent && window.parent !== window) {
+        try {
+          window.parent.history.pushState(null, '', window.parent.location.pathname + url.search);
+        } catch (err) {
+          window.parent.postMessage({ type: 'MEDVHAI_URL_CHANGE', search: url.search }, '*');
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  // Sync URL query params on initial page load (?id=... & ?genericId=...)
   useEffect(() => {
     try {
       const url = new URL(window.location.href);
+      const idParam = url.searchParams.get('id');
       const gIdParam = url.searchParams.get('genericId');
       const formParam = url.searchParams.get('form');
       const strParam = url.searchParams.get('strength');
+
+      if (idParam && !isNaN(Number(idParam))) {
+        const med = getMedicineById(Number(idParam));
+        if (med) {
+          setSelectedMedicine(med);
+          return;
+        }
+      }
 
       if (gIdParam && !isNaN(Number(gIdParam))) {
         setExplorerGenericId(Number(gIdParam));
@@ -129,15 +166,7 @@ export default function App() {
     setExplorerGenericId(genericId);
     setExplorerForm(form);
     setExplorerStrength(strength);
-    try {
-      const url = new URL(window.location.href);
-      url.searchParams.set('genericId', genericId.toString());
-      if (form) url.searchParams.set('form', form);
-      if (strength) url.searchParams.set('strength', strength);
-      window.history.pushState(null, '', url.toString());
-    } catch (e) {
-      console.error(e);
-    }
+    syncUrlState({ genericId: genericId.toString(), form: form || null, strength: strength || null, id: null });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -145,15 +174,7 @@ export default function App() {
     setExplorerGenericId(null);
     setExplorerForm(undefined);
     setExplorerStrength(undefined);
-    try {
-      const url = new URL(window.location.href);
-      url.searchParams.delete('genericId');
-      url.searchParams.delete('form');
-      url.searchParams.delete('strength');
-      window.history.pushState(null, '', url.toString());
-    } catch (e) {
-      console.error(e);
-    }
+    syncUrlState({ genericId: null, form: null, strength: null });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -238,17 +259,21 @@ export default function App() {
     // Ensure full monograph and note are populated
     const fullMed = getMedicineById(med.id) || med;
     setSelectedMedicine(fullMed);
+    syncUrlState({ id: med.id.toString(), genericId: null, form: null, strength: null });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleGoHome = () => {
     setSelectedMedicine(null);
+    setExplorerGenericId(null);
     setActiveTab('home');
+    syncUrlState({ id: null, genericId: null, form: null, strength: null });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleGoToSearch = (query?: string, category?: string, manufacturer?: string) => {
     setSelectedMedicine(null);
+    setExplorerGenericId(null);
     setActiveTab('search');
     setSelectedLetter('All');
     setCurrentPage(1);
@@ -259,6 +284,7 @@ export default function App() {
     if (manufacturer !== undefined) {
       setFilters((prev) => ({ ...prev, manufacturer }));
     }
+    syncUrlState({ id: null, genericId: null, form: null, strength: null });
     setTimeout(() => {
       mainInputRef.current?.focus();
       window.scrollTo({ top: 0, behavior: 'smooth' });
