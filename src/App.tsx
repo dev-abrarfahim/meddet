@@ -29,6 +29,7 @@ import {
 import { Medicine, FilterOptions, LanguageMode } from './types';
 import { searchMedicines, getMedicineById, getGenericById, subscribeDatabase, isDatabaseReady } from './data/dbEngine';
 import { slugify } from './utils/slugify';
+import { updateDynamicSEO } from './utils/seoManager';
 import { Pill, Search, RotateCcw, ChevronLeft, ChevronRight, Languages, ShieldCheck, SlidersHorizontal } from 'lucide-react';
 
 export default function App() {
@@ -182,6 +183,17 @@ export default function App() {
       console.error(e);
     }
   }, [dbReady]);
+
+  // Dynamically update document title, meta descriptions, canonical link, OpenGraph & Schema.org JSON-LD for Search Engine Optimization
+  useEffect(() => {
+    const genericObj = explorerGenericId ? getGenericById(explorerGenericId) : null;
+    updateDynamicSEO({
+      medicine: selectedMedicine,
+      generic: genericObj,
+      categoryName: filters.category !== 'All' ? filters.category : undefined,
+      searchQuery: searchQuery || undefined
+    });
+  }, [selectedMedicine, explorerGenericId, searchQuery, filters.category, activeTab]);
 
   const handleOpenGenericBrandsExplorer = (genericId: number, form?: string, strength?: string) => {
     setExplorerGenericId(genericId);
