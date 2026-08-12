@@ -133,7 +133,7 @@ export const SidebarDrawer: React.FC<SidebarDrawerProps> = ({
                 <span>Verified Bangladeshi Drug Index</span>
               </div>
               <p className="text-amber-700 dark:text-amber-400/90 leading-relaxed text-[11px]">
-                Contains 30,507 verified brand items, 2,279 generic monographs, and 156 dosage form intake guidelines directly integrated from official pharmaceutical records.
+                Contains 30,507 verified brand items, 2,279 generic monographs, and 156 dosage form intake guidelines directly integrated from verified pharmaceutical records.
               </p>
             </div>
 

@@ -47,7 +47,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Header Tagline Badge */}
         <div className="hidden md:flex items-center gap-2 text-xs font-semibold text-[#CCECEE] dark:text-slate-300 bg-[#074760]/60 dark:bg-[#152232] px-3.5 py-1.5 rounded-full border border-[#CCECEE]/20 dark:border-[#243B53]">
           <ShieldCheck className="w-4 h-4 text-[#E2FCD6] dark:text-[#2DD4BF]" />
-          <span>Official Drug Index & Monograph Explorer</span>
+          <span>Clinical Drug Index & Monograph Explorer</span>
         </div>
 
         {/* Right Navigation Actions */}

@@ -62,7 +62,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
           {/* Top Pill Tagline */}
           <div className="inline-flex items-center gap-1.5 bg-[#14967F]/30 dark:bg-[#2DD4BF]/20 border border-[#CCECEE]/30 dark:border-[#2DD4BF]/40 text-[#E2FCD6] dark:text-[#2DD4BF] text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full shadow-inner">
             <ShieldCheck className="w-3.5 h-3.5 text-[#E2FCD6] dark:text-[#2DD4BF]" />
-            <span>{lang === 'en' ? 'Official Bangladeshi Drug Index' : 'অফিসিয়াল বাংলাদেশী ড্রাগ ইনডেক্স'}</span>
+            <span>{lang === 'en' ? 'Clinical Medicine Index' : 'ক্লিনিক্যাল ড্রাগ ইনডেক্স'}</span>
           </div>
 
           {/* Main Hero Heading */}
@@ -73,8 +73,8 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
           {/* Main Hero Subtitle */}
           <p className="text-xs sm:text-base text-[#CCECEE] dark:text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
             {lang === 'en'
-              ? 'Find active ingredients, official MRP prices in ৳ BDT, generic brand alternatives, and complete clinical monographs in English & Bangla.'
-              : 'ওষুধের বিবরণ, অফিসিয়াল এমআরপি মূল্য, বিকল্প জেনেরিক ব্রান্ড এবং সম্পূর্ণ নির্দেশিকা বাংলা ও ইংরেজিতে দেখুন।'}
+              ? 'Find active ingredients, verified MRP prices in ৳ BDT, generic brand alternatives, and complete clinical monographs in English & Bangla.'
+              : 'ওষুধের বিবরণ, এমআরপি মূল্য, বিকল্প জেনেরিক ব্রান্ড এবং সম্পূর্ণ নির্দেশিকা বাংলা ও ইংরেজিতে দেখুন।'}
           </p>
 
           {/* Search Box Form */}
