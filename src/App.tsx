@@ -132,15 +132,22 @@ export default function App() {
     }
   };
 
-  // Sync URL query params on initial page load (?id=... & ?genericId=...)
+  // Sync & restore URL state on initial load and whenever dbReady is true
   useEffect(() => {
+    if (!dbReady) return;
+
     try {
       const url = new URL(window.location.href);
       const idParam = url.searchParams.get('id');
       const gIdParam = url.searchParams.get('genericId');
       const formParam = url.searchParams.get('form');
       const strParam = url.searchParams.get('strength');
+      const qParam = url.searchParams.get('q');
+      const letterParam = url.searchParams.get('letter');
+      const catParam = url.searchParams.get('category');
+      const mfrParam = url.searchParams.get('company') || url.searchParams.get('manufacturer');
 
+      // 1. Restore Medicine Details Page
       if (idParam && !isNaN(Number(idParam))) {
         const med = getMedicineById(Number(idParam));
         if (med) {
@@ -149,15 +156,32 @@ export default function App() {
         }
       }
 
+      // 2. Restore Generic Brands Explorer Page
       if (gIdParam && !isNaN(Number(gIdParam))) {
         setExplorerGenericId(Number(gIdParam));
         if (formParam) setExplorerForm(formParam);
         if (strParam) setExplorerStrength(strParam);
+        return;
+      }
+
+      // 3. Restore Search Filters & Query Page
+      if (qParam || letterParam || catParam || mfrParam || formParam) {
+        setActiveTab('search');
+        if (qParam) setSearchQuery(qParam);
+        if (letterParam) setSelectedLetter(letterParam);
+        if (catParam || mfrParam || formParam) {
+          setFilters((prev) => ({
+            ...prev,
+            category: catParam || prev.category,
+            manufacturer: mfrParam || prev.manufacturer,
+            dosageForm: formParam || prev.dosageForm
+          }));
+        }
       }
     } catch (e) {
       console.error(e);
     }
-  }, []);
+  }, [dbReady]);
 
   const handleOpenGenericBrandsExplorer = (genericId: number, form?: string, strength?: string) => {
     setExplorerGenericId(genericId);
