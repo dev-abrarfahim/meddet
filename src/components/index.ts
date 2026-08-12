@@ -5,6 +5,7 @@ export { BottomNav } from './common/BottomNav';
 export { SidebarDrawer } from './common/SidebarDrawer';
 export { TableOfContents } from './common/TableOfContents';
 export { MedicalDisclaimer } from './common/MedicalDisclaimer';
+export { ApiDocsModal } from './common/ApiDocsModal';
 
 // Search & Filtering Components
 export { SearchBar } from './search/SearchBar';

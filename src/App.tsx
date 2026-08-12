@@ -21,7 +21,8 @@ import {
   SidebarDrawer,
   HomeLanding,
   ClinicalMonographAccordions,
-  GenericBrandsExplorer
+  GenericBrandsExplorer,
+  ApiDocsModal
 } from './components';
 
 import { Medicine, FilterOptions, LanguageMode } from './types';
@@ -158,6 +159,7 @@ export default function App() {
   // Modal / Drawer States
   const [isFiltersOpen, setIsFiltersOpen] = useState<boolean>(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+  const [isApiDocsOpen, setIsApiDocsOpen] = useState<boolean>(false);
   const [activeSection, setActiveSection] = useState<string>('sec-overview');
 
   const mainInputRef = useRef<HTMLInputElement | null>(null);
@@ -280,11 +282,10 @@ export default function App() {
       <Header
         isDarkMode={isDarkMode}
         onToggleDarkMode={toggleDarkMode}
-        lang={lang}
-        onToggleLang={toggleLang}
         onOpenFilters={() => setIsFiltersOpen(true)}
         onOpenSidebar={() => setIsSidebarOpen(true)}
         onGoHome={handleGoHome}
+        onOpenApiDocs={() => setIsApiDocsOpen(true)}
       />
 
       {/* Secondary Sticky Search Header Toolbar */}
@@ -492,7 +493,7 @@ export default function App() {
             )}
 
             {/* Disclaimer Footer */}
-            <MedicalDisclaimer />
+            <MedicalDisclaimer onOpenApiDocs={() => setIsApiDocsOpen(true)} />
 
           </div>
         )}
@@ -538,6 +539,11 @@ export default function App() {
         lang={lang}
         onToggleLang={toggleLang}
         onSelectManufacturer={(compName) => handleGoToSearch(undefined, undefined, compName)}
+      />
+
+      <ApiDocsModal
+        isOpen={isApiDocsOpen}
+        onClose={() => setIsApiDocsOpen(false)}
       />
 
     </div>

@@ -1,12 +1,16 @@
 import React from 'react';
-import { ShieldAlert } from 'lucide-react';
+import { ShieldAlert, Code2, ExternalLink } from 'lucide-react';
 
-export const MedicalDisclaimer: React.FC = () => {
+interface MedicalDisclaimerProps {
+  onOpenApiDocs?: () => void;
+}
+
+export const MedicalDisclaimer: React.FC<MedicalDisclaimerProps> = ({ onOpenApiDocs }) => {
   return (
-    <footer className="bg-transparent text-[#095D7E] dark:text-slate-300 border-t border-[#CCECEE] dark:border-[#243B53] pt-8 mt-8 space-y-4 transition-colors">
+    <footer className="bg-transparent text-[#095D7E] dark:text-slate-300 border-t border-[#CCECEE] dark:border-[#243B53] pt-6 mt-6 space-y-4 transition-colors">
       <div className="flex items-start gap-3">
-        <div className="w-10 h-10 rounded-lg bg-[#14967F] text-[#E2FCD6] flex items-center justify-center shrink-0">
-          <ShieldAlert className="w-6 h-6" />
+        <div className="w-9 h-9 rounded-lg bg-[#14967F] text-[#E2FCD6] flex items-center justify-center shrink-0">
+          <ShieldAlert className="w-5 h-5" />
         </div>
         <div className="space-y-1">
           <h3 className="text-base sm:text-lg font-extrabold text-[#095D7E] dark:text-slate-100">
@@ -18,16 +22,29 @@ export const MedicalDisclaimer: React.FC = () => {
         </div>
       </div>
 
-      <div className="border-t border-[#CCECEE] dark:border-[#243B53] pt-4 text-xs text-[#095D7E]/80 dark:text-slate-400 space-y-2">
-        <p>
-          • Always consult a registered physician or licensed medical practitioner before starting, stopping, or altering any medication or drug therapy.
-        </p>
-        <p>
-          • Alternative brand comparisons are generated strictly by matching active pharmaceutical ingredients (generics), dosage forms, and strengths. Individual drug responses, bioavailability, and excipient tolerances may vary.
-        </p>
-        <p className="text-[11px] text-[#095D7E]/60 dark:text-slate-500">
-          © 2026 MedVhai Healthcare Index. All rights reserved. Registered medical data updated periodically.
-        </p>
+      {/* Developer API & Links Footer Bar */}
+      <div className="border-t border-[#CCECEE] dark:border-[#243B53] pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-[#095D7E]/80 dark:text-slate-400">
+        <div className="space-y-1">
+          <p>
+            • Always consult a registered physician before starting or altering any drug therapy.
+          </p>
+          <p className="text-[11px] text-[#095D7E]/60 dark:text-slate-500">
+            © 2026 MedVhai Healthcare Index. All rights reserved. Registered medical data updated periodically.
+          </p>
+        </div>
+
+        {/* Developer API Link */}
+        {onOpenApiDocs && (
+          <button
+            onClick={onOpenApiDocs}
+            id="footer-open-api-docs-btn"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#14967F]/10 dark:bg-[#14967F]/20 border border-[#14967F]/30 dark:border-[#2DD4BF]/40 text-xs font-black text-[#14967F] dark:text-[#2DD4BF] hover:bg-[#14967F] hover:text-white transition-all cursor-pointer shrink-0 shadow-xs"
+          >
+            <Code2 className="w-4 h-4" />
+            <span>Developer API & Docs</span>
+            <ExternalLink className="w-3 h-3" />
+          </button>
+        )}
       </div>
     </footer>
   );
