@@ -1,0 +1,11 @@
+# MedVhai Robots.txt File for Search Engine Indexing
+User-agent: *
+Allow: /
+
+# Disallow admin or draft paths if any
+Disallow: /draft/
+Disallow: /api/private/
+
+# Sitemap Links
+Sitemap: https://medivhai.blogspot.com/sitemap.xml
+Sitemap: https://medvhai.heliox.workers.dev/sitemap.xml
