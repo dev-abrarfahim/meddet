@@ -8,7 +8,6 @@ import {
   HeartPulse,
   Layers,
   Building2,
-  Flame,
   Stethoscope
 } from 'lucide-react';
 import { Medicine, LanguageMode } from '../../types';
@@ -50,122 +49,116 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
   ];
 
   return (
-    <div className="space-y-10 sm:space-y-14 animate-in fade-in duration-300">
+    <div className="space-y-4 sm:space-y-8 animate-in fade-in duration-300">
       
-      {/* HERO BANNER SECTION */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#095D7E] via-[#074760] to-[#042C3C] dark:from-[#0B1927] dark:via-[#0E2439] dark:to-[#07131F] text-white p-6 sm:p-10 md:p-14 shadow-2xl border border-[#074760] dark:border-[#1E3A52]">
+      {/* HERO BANNER SECTION (Compact Mobile Padding) */}
+      <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#095D7E] via-[#074760] to-[#042C3C] dark:from-[#0B1927] dark:via-[#0E2439] dark:to-[#07131F] text-white p-3.5 sm:p-8 md:p-10 shadow-xl border border-[#074760] dark:border-[#1E3A52]">
         
         {/* Decorative Ambient Shapes */}
-        <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#14967F]/20 blur-3xl pointer-events-none" />
-        <div className="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-[#CCECEE]/10 blur-3xl pointer-events-none" />
+        <div className="absolute -right-20 -top-20 w-60 h-60 rounded-full bg-[#14967F]/20 blur-3xl pointer-events-none" />
+        <div className="absolute -left-20 -bottom-20 w-60 h-60 rounded-full bg-[#CCECEE]/10 blur-3xl pointer-events-none" />
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-3 sm:space-y-5">
           
           {/* Top Pill Tagline */}
-          <div className="inline-flex items-center gap-2 bg-[#14967F]/30 dark:bg-[#2DD4BF]/20 border border-[#CCECEE]/30 dark:border-[#2DD4BF]/40 text-[#E2FCD6] dark:text-[#2DD4BF] text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full shadow-inner">
-            <ShieldCheck className="w-4 h-4 text-[#E2FCD6] dark:text-[#2DD4BF]" />
+          <div className="inline-flex items-center gap-1.5 bg-[#14967F]/30 dark:bg-[#2DD4BF]/20 border border-[#CCECEE]/30 dark:border-[#2DD4BF]/40 text-[#E2FCD6] dark:text-[#2DD4BF] text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full shadow-inner">
+            <ShieldCheck className="w-3.5 h-3.5 text-[#E2FCD6] dark:text-[#2DD4BF]" />
             <span>{lang === 'en' ? 'Official Bangladeshi Drug Index' : 'অফিসিয়াল বাংলাদেশী ড্রাগ ইনডেক্স'}</span>
           </div>
 
           {/* Main Hero Heading */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-white font-sans">
+          <h1 className="text-xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-white">
             {lang === 'en' ? 'Search 30,500+ Medicines & Generic Brands' : '৩০,৫০০+ ওষুধ ও জেনেরিক ব্রান্ড অনুসন্ধান করুন'}
           </h1>
 
           {/* Main Hero Subtitle */}
-          <p className="text-sm sm:text-lg md:text-xl text-[#CCECEE] dark:text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-base text-[#CCECEE] dark:text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
             {lang === 'en'
               ? 'Find active ingredients, official MRP prices in ৳ BDT, generic brand alternatives, and complete clinical monographs in English & Bangla.'
               : 'ওষুধের বিবরণ, অফিসিয়াল এমআরপি মূল্য, বিকল্প জেনেরিক ব্রান্ড এবং সম্পূর্ণ নির্দেশিকা বাংলা ও ইংরেজিতে দেখুন।'}
           </p>
 
           {/* Search Box Form */}
-          <form onSubmit={handleHeroSearchSubmit} className="max-w-2xl mx-auto pt-2">
-            <div className="flex items-center gap-2 bg-white dark:bg-[#152232] p-2 rounded-2xl shadow-2xl border-2 border-[#CCECEE] dark:border-[#243B53] focus-within:border-[#14967F] dark:focus-within:border-[#2DD4BF] transition-all">
-              <div className="pl-3 text-[#14967F] dark:text-[#2DD4BF]">
-                <Search className="w-6 h-6" />
+          <form onSubmit={handleHeroSearchSubmit} className="max-w-2xl mx-auto pt-1">
+            <div className="flex items-center gap-1.5 bg-white dark:bg-[#152232] p-1.5 rounded-xl shadow-xl border-2 border-[#CCECEE] dark:border-[#243B53] focus-within:border-[#14967F] dark:focus-within:border-[#2DD4BF] transition-all">
+              <div className="pl-2 text-[#14967F] dark:text-[#2DD4BF]">
+                <Search className="w-5 h-5" />
               </div>
               <input
                 type="text"
                 value={heroQuery}
                 onChange={(e) => setHeroQuery(e.target.value)}
-                placeholder={lang === 'en' ? 'Search by brand (Napa, Seclo, Maxpro) or generic (Paracetamol)...' : 'ব্র্যান্ড বা জেনেরিক নাম লিখুন (যেমন: Napa, Seclo, Paracetamol)...'}
-                className="w-full text-sm sm:text-base font-semibold text-[#095D7E] dark:text-slate-100 placeholder-[#095D7E]/50 dark:placeholder-slate-400 bg-transparent focus:outline-none py-2 px-1"
+                placeholder={lang === 'en' ? 'Search brand (Napa, Seclo, Maxpro) or generic (Paracetamol)...' : 'ব্র্যান্ড বা জেনেরিক নাম (Napa, Seclo, Paracetamol)...'}
+                className="w-full text-xs sm:text-sm font-semibold text-[#095D7E] dark:text-slate-100 placeholder-[#095D7E]/50 dark:placeholder-slate-400 bg-transparent focus:outline-none py-1.5 px-1"
                 id="hero-medicine-search-input"
               />
               <button
                 type="submit"
                 id="hero-search-submit-btn"
-                className="bg-[#14967F] dark:bg-[#2DD4BF] hover:bg-[#11806C] dark:hover:bg-[#14967F] text-[#E2FCD6] dark:text-slate-950 font-black text-xs sm:text-sm px-5 py-3 rounded-xl transition-all shadow-md flex items-center gap-2 shrink-0 cursor-pointer"
+                className="bg-[#14967F] dark:bg-[#2DD4BF] hover:bg-[#11806C] dark:hover:bg-[#14967F] text-[#E2FCD6] dark:text-slate-950 font-black text-xs px-3.5 py-2 rounded-lg transition-all shadow-sm flex items-center gap-1 shrink-0 cursor-pointer"
               >
-                <span>{lang === 'en' ? 'Search Index' : 'খুঁজুন'}</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>{lang === 'en' ? 'Search' : 'খুঁজুন'}</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
           </form>
 
           {/* Quick Stats Grid */}
-          <div className="pt-6 grid grid-cols-3 gap-3 sm:gap-6 max-w-2xl mx-auto border-t border-white/10">
+          <div className="pt-3 grid grid-cols-3 gap-2 sm:gap-4 max-w-2xl mx-auto border-t border-white/10">
             <div className="space-y-0.5">
-              <div className="text-xl sm:text-3xl font-black text-[#E2FCD6] dark:text-[#2DD4BF]">
+              <div className="text-base sm:text-2xl font-black text-[#E2FCD6] dark:text-[#2DD4BF]">
                 {stats.totalBrands.toLocaleString()}
               </div>
-              <div className="text-[11px] sm:text-xs text-[#CCECEE] dark:text-slate-400 font-semibold">
+              <div className="text-[10px] sm:text-xs text-[#CCECEE] dark:text-slate-400 font-semibold">
                 {lang === 'en' ? 'Brand Medicines' : 'ব্র্যান্ড ওষুধ'}
               </div>
             </div>
             <div className="space-y-0.5">
-              <div className="text-xl sm:text-3xl font-black text-[#E2FCD6] dark:text-[#2DD4BF]">
+              <div className="text-base sm:text-2xl font-black text-[#E2FCD6] dark:text-[#2DD4BF]">
                 {stats.totalGenerics.toLocaleString()}
               </div>
-              <div className="text-[11px] sm:text-xs text-[#CCECEE] dark:text-slate-400 font-semibold">
-                {lang === 'en' ? 'Generic Monographs' : 'জেনেরিক উপাদান'}
+              <div className="text-[10px] sm:text-xs text-[#CCECEE] dark:text-slate-400 font-semibold">
+                {lang === 'en' ? 'Generics' : 'জেনেরিক ইনডেক্স'}
               </div>
             </div>
             <div className="space-y-0.5">
-              <div className="text-xl sm:text-3xl font-black text-[#E2FCD6] dark:text-[#2DD4BF]">
+              <div className="text-base sm:text-2xl font-black text-[#E2FCD6] dark:text-[#2DD4BF]">
                 {stats.totalCompanies.toLocaleString()}
               </div>
-              <div className="text-[11px] sm:text-xs text-[#CCECEE] dark:text-slate-400 font-semibold">
-                {lang === 'en' ? 'Pharma Companies' : 'ফার্মাসিউটিক্যালস'}
+              <div className="text-[10px] sm:text-xs text-[#CCECEE] dark:text-slate-400 font-semibold">
+                {lang === 'en' ? 'Pharma Companies' : 'কোম্পানি'}
               </div>
             </div>
           </div>
 
         </div>
+
       </section>
 
-      {/* QUICK CATEGORY SEARCH */}
-      <section className="space-y-4">
+      {/* CATEGORY EXPLORER SECTION (Compact Grid) */}
+      <section className="space-y-2">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg sm:text-xl font-extrabold text-[#095D7E] dark:text-slate-100 flex items-center gap-2">
-            <Flame className="w-5 h-5 text-amber-500" />
-            <span>{lang === 'en' ? 'Popular Therapeutic Indications' : 'জনপ্রিয় চিকিৎসাগত ক্যাটাগরি'}</span>
+          <h2 className="text-sm sm:text-lg font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-1.5">
+            <Pill className="w-4 h-4 text-[#14967F]" />
+            <span>{lang === 'en' ? 'Browse by Condition' : 'রোগ বা ক্যাটাগরি অনুযায়ী খুঁজুন'}</span>
           </h2>
-          <button
-            onClick={() => onGoToSearch()}
-            className="text-xs font-bold text-[#14967F] dark:text-[#2DD4BF] hover:underline flex items-center gap-1"
-          >
-            <span>{lang === 'en' ? 'View All Medicines' : 'সব ওষুধ দেখুন'}</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5">
-          {categoriesList.map((cat) => {
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3">
+          {categoriesList.map((cat, idx) => {
             const IconComp = cat.icon;
             return (
               <button
-                key={cat.name}
+                key={idx}
                 onClick={() => onGoToSearch(cat.name)}
-                className={`p-4 rounded-2xl border ${cat.color} hover:scale-[1.02] transition-all text-left flex flex-col justify-between space-y-3 shadow-xs cursor-pointer`}
+                className={`p-2.5 rounded-xl border text-left transition-all hover:scale-[1.02] cursor-pointer flex items-center gap-2 ${cat.color}`}
               >
-                <div className="w-9 h-9 rounded-xl bg-white/80 dark:bg-black/30 flex items-center justify-center shadow-xs">
-                  <IconComp className="w-5 h-5" />
+                <div className="w-8 h-8 rounded-lg bg-white/80 dark:bg-black/20 flex items-center justify-center shrink-0">
+                  <IconComp className="w-4 h-4" />
                 </div>
-                <div>
-                  <h3 className="font-extrabold text-sm leading-snug">{cat.name}</h3>
-                  <p className="text-[11px] opacity-80 mt-0.5">{cat.label}</p>
+                <div className="min-w-0">
+                  <div className="text-xs font-black truncate">{cat.label}</div>
+                  <div className="text-[10px] opacity-80 font-bold">{lang === 'en' ? 'Explore' : 'দেখুন'} →</div>
                 </div>
               </button>
             );
@@ -174,73 +167,69 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
       </section>
 
       {/* FEATURED POPULAR MEDICINES */}
-      <section className="space-y-4">
+      <section className="space-y-2">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg sm:text-xl font-extrabold text-[#095D7E] dark:text-slate-100 flex items-center gap-2">
-            <Pill className="w-5 h-5 text-[#14967F]" />
-            <span>{lang === 'en' ? 'Featured Medicines' : 'ফিচার্ড ওষুধসমূহ'}</span>
+          <h2 className="text-sm sm:text-lg font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-1.5">
+            <Stethoscope className="w-4 h-4 text-[#14967F]" />
+            <span>{lang === 'en' ? 'Popular Medicines' : 'জনপ্রিয় ওষুধসমূহ'}</span>
           </h2>
           <button
             onClick={() => onGoToSearch()}
-            className="text-xs font-bold text-[#14967F] dark:text-[#2DD4BF] hover:underline flex items-center gap-1"
+            className="text-xs font-black text-[#14967F] dark:text-[#2DD4BF] hover:underline cursor-pointer"
           >
-            <span>{lang === 'en' ? 'Search Full Index' : 'সম্পূর্ণ ইনডেক্স খুঁজুন'}</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            {lang === 'en' ? 'View All 30,500+' : 'সবগুলো দেখুন'} →
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
           {featuredMedicines.map((med) => (
             <div
               key={med.id}
               onClick={() => onSelectMedicine(med)}
-              className="bg-white dark:bg-[#152232] p-5 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F] dark:hover:border-[#2DD4BF] shadow-xs hover:shadow-md transition-all cursor-pointer space-y-3"
+              className="bg-white dark:bg-[#131B2E] p-3 rounded-xl border border-slate-200 dark:border-slate-800/80 hover:border-[#14967F] dark:hover:border-[#2DD4BF] transition-all cursor-pointer flex items-center justify-between gap-2 shadow-xs group"
             >
-              <div className="flex items-start justify-between gap-2">
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-[#14967F] dark:text-[#2DD4BF] bg-[#F1F9FF] dark:bg-[#1A2B3E] px-2 py-0.5 rounded-md border border-[#CCECEE] dark:border-[#243B53]">
-                    {med.form} • {med.strength}
-                  </span>
-                  <h3 className="text-lg font-black text-[#095D7E] dark:text-slate-100 mt-1.5">
-                    {med.name}
-                  </h3>
-                </div>
-                <div className="text-right">
-                  <div className="text-[10px] font-bold text-slate-400 uppercase">MRP Price</div>
-                  <div className="text-base font-black text-[#14967F] dark:text-[#2DD4BF]">৳{med.mrp.toFixed(2)}</div>
-                </div>
+              <div>
+                <span className="text-[10px] font-bold text-[#14967F] dark:text-[#2DD4BF] bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded font-mono">
+                  {med.form} • {med.strength}
+                </span>
+                <h3 className="text-sm font-black text-slate-900 dark:text-slate-100 group-hover:text-[#14967F] transition-colors mt-1">
+                  {med.name}
+                </h3>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold truncate max-w-[200px]">
+                  {med.genericName}
+                </p>
               </div>
 
-              <div className="text-xs text-[#095D7E]/70 dark:text-slate-400 space-y-1">
-                <div><span className="font-bold">{lang === 'en' ? 'Generic:' : 'জেনেরিক:'}</span> {lang === 'bn' && med.genericNameBn ? med.genericNameBn : med.genericName}</div>
-                <div><span className="font-bold">{lang === 'en' ? 'Company:' : 'কোম্পানি:'}</span> {med.company}</div>
+              <div className="text-right shrink-0">
+                <div className="text-[10px] font-bold text-slate-400">MRP</div>
+                <div className="text-xs font-black text-slate-900 dark:text-slate-100 font-mono">
+                  ৳ {med.mrp.toFixed(2)}
+                </div>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* TOP PHARMACEUTICAL COMPANIES */}
-      <section className="space-y-4">
+      {/* TOP PHARMA MANUFACTURERS */}
+      <section className="space-y-2">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg sm:text-xl font-extrabold text-[#095D7E] dark:text-slate-100 flex items-center gap-2">
-            <Building2 className="w-5 h-5 text-[#14967F]" />
-            <span>{lang === 'en' ? 'Top Pharmaceutical Manufacturers' : 'শীর্ষ ফার্মাসিউটিক্যাল কোম্পানি'}</span>
+          <h2 className="text-sm sm:text-lg font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-1.5">
+            <Building2 className="w-4 h-4 text-[#14967F]" />
+            <span>{lang === 'en' ? 'Top Pharma Manufacturers' : 'শীর্ষ ফার্মাসিউটিক্যালস'}</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
           {topCompanies.map((comp) => (
             <button
               key={comp.id}
               onClick={() => onGoToSearch(undefined, undefined, comp.name)}
-              className="p-3.5 bg-white dark:bg-[#152232] rounded-xl border border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F] transition-all text-left space-y-1 cursor-pointer"
+              className="p-2.5 rounded-xl bg-white dark:bg-[#131B2E] border border-slate-200 dark:border-slate-800/80 text-left hover:border-[#14967F] transition-all cursor-pointer shadow-xs"
             >
-              <div className="font-bold text-xs sm:text-sm text-[#095D7E] dark:text-slate-200 truncate">
-                {comp.name}
-              </div>
-              <div className="text-[11px] text-[#14967F] dark:text-[#2DD4BF] font-semibold">
-                {comp.brandCount} {lang === 'en' ? 'Medicines' : 'ওষুধ'}
+              <div className="text-xs font-black text-slate-900 dark:text-slate-100 truncate">{comp.name}</div>
+              <div className="text-[10px] font-bold text-[#14967F] dark:text-[#2DD4BF] mt-0.5 font-mono">
+                {comp.brandCount} Brands
               </div>
             </button>
           ))}
