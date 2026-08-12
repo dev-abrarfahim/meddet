@@ -22,12 +22,13 @@ import {
   HomeLanding,
   ClinicalMonographAccordions,
   GenericBrandsExplorer,
-  ApiDocsModal
+  ApiDocsModal,
+  FilterPanel
 } from './components';
 
 import { Medicine, FilterOptions, LanguageMode } from './types';
 import { searchMedicines, getMedicineById, subscribeDatabase, isDatabaseReady } from './data/dbEngine';
-import { Pill, Search, RotateCcw, ChevronLeft, ChevronRight, Languages } from 'lucide-react';
+import { Pill, Search, RotateCcw, ChevronLeft, ChevronRight, Languages, ShieldCheck, SlidersHorizontal } from 'lucide-react';
 
 export default function App() {
   const [dbReady, setDbReady] = useState<boolean>(isDatabaseReady());
@@ -323,47 +324,70 @@ export default function App() {
             />
           </div>
         ) : selectedMedicine ? (
-          <div className="max-w-xl mx-auto space-y-2.5 animate-in fade-in duration-200 pb-16">
+          <div className="max-w-7xl mx-auto space-y-4 animate-in fade-in duration-200 pb-16">
             
             {/* Sticky Table of Contents Jump Bar */}
             <TableOfContents activeSection={activeSection} />
 
-            {/* 1. Hero Overview */}
-            <MedicineHero
-              medicine={selectedMedicine}
-              onBackToSearch={() => {
-                setSelectedMedicine(null);
-                setActiveTab('search');
-              }}
-              onSelectMedicine={handleSelectMedicine}
-              onOpenGenericBrandsExplorer={handleOpenGenericBrandsExplorer}
-              lang={lang}
-              onToggleLang={toggleLang}
-            />
+            {/* Responsive Grid Layout for Tablet (md:), PC/Desktop (lg: & xl:) */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+              
+              {/* Primary Clinical Column (lg:col-span-8) */}
+              <div className="lg:col-span-8 space-y-3 sm:space-y-4">
+                {/* 1. Hero Overview */}
+                <MedicineHero
+                  medicine={selectedMedicine}
+                  onBackToSearch={() => {
+                    setSelectedMedicine(null);
+                    setActiveTab('search');
+                  }}
+                  onSelectMedicine={handleSelectMedicine}
+                  onOpenGenericBrandsExplorer={handleOpenGenericBrandsExplorer}
+                  lang={lang}
+                  onToggleLang={toggleLang}
+                />
 
-            {/* 2. Price Information (Unit Price + Pack Price Cards) */}
-            <PriceSection medicine={selectedMedicine} />
+                {/* 2. Price Information (Unit Price + Pack Price Cards) */}
+                <PriceSection medicine={selectedMedicine} />
 
-            {/* 3. Alternative Brands Comparison */}
-            <AlternativeBrands
-              medicine={selectedMedicine}
-              onSelectMedicine={handleSelectMedicine}
-            />
+                {/* 3. Alternative Brands Comparison */}
+                <AlternativeBrands
+                  medicine={selectedMedicine}
+                  onSelectMedicine={handleSelectMedicine}
+                />
 
-            {/* 4. Chemical Structure (2D Diagram + Formula Grid) */}
-            <ChemicalStructure
-              genericName={selectedMedicine.genericName}
-            />
+                {/* 4. Clinical Monograph Accordions */}
+                <ClinicalMonographAccordions
+                  monograph={selectedMedicine.monograph}
+                  lang={lang}
+                  onToggleLang={toggleLang}
+                />
+              </div>
 
-            {/* 5. Clinical Monograph Accordions & Sticky "বাংলায় দেখুন" Button */}
-            <ClinicalMonographAccordions
-              monograph={selectedMedicine.monograph}
-              lang={lang}
-              onToggleLang={toggleLang}
-            />
+              {/* Secondary Sidebar Column (lg:col-span-4) - PC & Tablet */}
+              <div className="lg:col-span-4 space-y-3 sm:space-y-4 lg:sticky lg:top-24">
+                {/* Chemical Structure (2D Diagram + Formula Grid) */}
+                <ChemicalStructure
+                  genericName={selectedMedicine.genericName}
+                />
 
-            {/* Disclaimer Footer */}
-            <MedicalDisclaimer />
+                {/* Verified Clinical Quick Info Card */}
+                <div className="bg-white dark:bg-[#131B2E] p-4 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-2.5 shadow-xs">
+                  <div className="flex items-center gap-2 text-xs font-black text-slate-900 dark:text-slate-100">
+                    <ShieldCheck className="w-4 h-4 text-[#14967F]" />
+                    <span>Clinical Verification Summary</span>
+                  </div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
+                    Active ingredient: <span className="font-bold text-slate-800 dark:text-slate-200">{selectedMedicine.genericName}</span> ({selectedMedicine.strength}). Manufactured by <span className="font-bold text-slate-800 dark:text-slate-200">{selectedMedicine.manufacturer}</span>.
+                  </p>
+                  <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-bold text-slate-500 dark:text-slate-400">
+                    <span>Form: {selectedMedicine.form}</span>
+                    <span className="font-mono text-emerald-600 dark:text-emerald-400">MRP: ৳{selectedMedicine.mrp.toFixed(2)}</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
 
           </div>
         ) : activeTab === 'home' ? (
@@ -377,7 +401,7 @@ export default function App() {
           </div>
         ) : (
           /* VIEW 3: MEDICINE INDEX SEARCH & FILTER GRID PAGE */
-          <div className="space-y-6 animate-in fade-in duration-200">
+          <div className="space-y-4 sm:space-y-6 animate-in fade-in duration-200">
             
             {/* Alphabet Quick Filter */}
             <AlphabetFilter
@@ -389,107 +413,143 @@ export default function App() {
               }}
             />
 
-            {/* Results Counter & Filter Status Bar */}
-            <div className="flex items-center justify-between gap-3 flex-wrap bg-white dark:bg-[#152232] p-4 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] transition-colors shadow-xs">
-              <div>
-                <h2 className="text-base sm:text-lg font-bold text-[#095D7E] dark:text-slate-100 flex items-center gap-2">
-                  <Pill className="w-5 h-5 text-[#14967F] dark:text-[#2DD4BF]" />
-                  <span>{lang === 'en' ? 'Database Search Results' : 'ডাটাবেজ ফলাফল'}</span>
-                  <span className="bg-[#E2FCD6] dark:bg-[#064E3B] text-[#0D6F5D] dark:text-[#6EE7B7] text-xs font-black px-3 py-0.5 rounded-full border border-[#14967F]/30">
-                    {searchResults.total.toLocaleString()} {lang === 'en' ? 'Medicines Found' : 'টি ওষুধ পাওয়া গেছে'}
-                  </span>
-                </h2>
-                <p className="text-xs text-[#095D7E]/70 dark:text-slate-400 mt-0.5">
-                  Showing page {searchResults.page} of {searchResults.totalPages} {selectedLetter !== 'All' ? `• Letter "${selectedLetter}"` : ''} {searchQuery ? `• Query "${searchQuery}"` : ''}
-                </p>
+            {/* Responsive Grid Layout for PC Desktop & Tablet */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+              
+              {/* Desktop Sticky Filter Sidebar (lg:col-span-3 - Hidden on Mobile, visible on PC lg:) */}
+              <div className="hidden lg:block lg:col-span-3 space-y-4 sticky top-24">
+                <div className="bg-white dark:bg-[#131B2E] p-4.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-4">
+                  <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                    <div className="flex items-center gap-2">
+                      <SlidersHorizontal className="w-4 h-4 text-[#14967F]" />
+                      <h3 className="font-extrabold text-sm text-slate-900 dark:text-slate-100">Filter Index</h3>
+                    </div>
+                    {activeFilterCount > 0 && (
+                      <span className="bg-[#14967F] text-white text-[10px] font-black px-2 py-0.5 rounded-full">
+                        {activeFilterCount} Active
+                      </span>
+                    )}
+                  </div>
+
+                  <FilterPanel
+                    filters={filters}
+                    onChangeFilters={(f) => {
+                      setFilters(f);
+                      setCurrentPage(1);
+                    }}
+                    onResetFilters={resetFilters}
+                  />
+                </div>
               </div>
 
-              {activeFilterCount > 0 && (
-                <button
-                  onClick={resetFilters}
-                  id="reset-search-filters-btn"
-                  className="text-xs font-bold text-[#14967F] dark:text-[#2DD4BF] hover:text-[#0D6F5D] flex items-center gap-1 bg-[#F1F9FF] dark:bg-[#1A2B3E] px-3 py-1.5 rounded-xl border border-[#CCECEE] dark:border-[#243B53] transition-colors"
-                >
-                  <RotateCcw className="w-3.5 h-3.5" />
-                  <span>Clear Filters</span>
-                </button>
-              )}
-            </div>
+              {/* Main Results Column (lg:col-span-9) */}
+              <div className="lg:col-span-9 space-y-4">
 
-            {/* Medicine Cards Grid */}
-            {searchResults.items.length > 0 ? (
-              <>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                  {searchResults.items.map((med) => (
-                    <MedicineCard
-                      key={med.id}
-                      medicine={med}
-                      onSelect={handleSelectMedicine}
-                    />
-                  ))}
+                {/* Results Counter & Filter Status Bar */}
+                <div className="flex items-center justify-between gap-3 flex-wrap bg-white dark:bg-[#152232] p-3.5 sm:p-4 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] transition-colors shadow-xs">
+                  <div>
+                    <h2 className="text-base sm:text-lg font-bold text-[#095D7E] dark:text-slate-100 flex items-center gap-2">
+                      <Pill className="w-5 h-5 text-[#14967F] dark:text-[#2DD4BF]" />
+                      <span>{lang === 'en' ? 'Database Search Results' : 'ডাটাবেজ ফলাফল'}</span>
+                      <span className="bg-[#E2FCD6] dark:bg-[#064E3B] text-[#0D6F5D] dark:text-[#6EE7B7] text-xs font-black px-3 py-0.5 rounded-full border border-[#14967F]/30">
+                        {searchResults.total.toLocaleString()} {lang === 'en' ? 'Medicines Found' : 'টি ওষুধ পাওয়া গেছে'}
+                      </span>
+                    </h2>
+                    <p className="text-xs text-[#095D7E]/70 dark:text-slate-400 mt-0.5">
+                      Showing page {searchResults.page} of {searchResults.totalPages} {selectedLetter !== 'All' ? `• Letter "${selectedLetter}"` : ''} {searchQuery ? `• Query "${searchQuery}"` : ''}
+                    </p>
+                  </div>
+
+                  {activeFilterCount > 0 && (
+                    <button
+                      onClick={resetFilters}
+                      id="reset-search-filters-btn"
+                      className="text-xs font-bold text-[#14967F] dark:text-[#2DD4BF] hover:text-[#0D6F5D] flex items-center gap-1 bg-[#F1F9FF] dark:bg-[#1A2B3E] px-3 py-1.5 rounded-xl border border-[#CCECEE] dark:border-[#243B53] transition-colors cursor-pointer"
+                    >
+                      <RotateCcw className="w-3.5 h-3.5" />
+                      <span>Clear Filters</span>
+                    </button>
+                  )}
                 </div>
 
-                {/* Pagination Controls */}
-                {searchResults.totalPages > 1 && (
-                  <div className="flex items-center justify-between bg-white dark:bg-[#152232] p-4 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] mt-6 shadow-xs">
-                    <button
-                      disabled={currentPage <= 1}
-                      onClick={() => {
-                        setCurrentPage((p) => Math.max(1, p - 1));
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      className="flex items-center gap-1 text-xs font-bold text-[#095D7E] dark:text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed bg-[#F1F9FF] dark:bg-[#1A2B3E] px-4 py-2 rounded-xl border border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F]"
-                    >
-                      <ChevronLeft className="w-4 h-4" />
-                      <span>Previous Page</span>
-                    </button>
-
-                    <div className="text-xs font-bold text-[#095D7E] dark:text-slate-200">
-                      Page <span className="text-[#14967F] dark:text-[#2DD4BF] font-black">{currentPage}</span> of {searchResults.totalPages}
+                {/* Medicine Cards Grid (1 col mobile, 2 col tablet md, 3 col pc lg/xl) */}
+                {searchResults.items.length > 0 ? (
+                  <>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3.5 sm:gap-4">
+                      {searchResults.items.map((med) => (
+                        <MedicineCard
+                          key={med.id}
+                          medicine={med}
+                          onSelect={handleSelectMedicine}
+                        />
+                      ))}
                     </div>
 
-                    <button
-                      disabled={currentPage >= searchResults.totalPages}
-                      onClick={() => {
-                        setCurrentPage((p) => Math.min(searchResults.totalPages, p + 1));
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      }}
-                      className="flex items-center gap-1 text-xs font-bold text-[#095D7E] dark:text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed bg-[#F1F9FF] dark:bg-[#1A2B3E] px-4 py-2 rounded-xl border border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F]"
-                    >
-                      <span>Next Page</span>
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
+                    {/* Pagination Controls */}
+                    {searchResults.totalPages > 1 && (
+                      <div className="flex items-center justify-between bg-white dark:bg-[#152232] p-4 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] mt-6 shadow-xs">
+                        <button
+                          disabled={currentPage <= 1}
+                          onClick={() => {
+                            setCurrentPage((p) => Math.max(1, p - 1));
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }}
+                          className="flex items-center gap-1 text-xs font-bold text-[#095D7E] dark:text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed bg-[#F1F9FF] dark:bg-[#1A2B3E] px-4 py-2 rounded-xl border border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F] cursor-pointer"
+                        >
+                          <ChevronLeft className="w-4 h-4" />
+                          <span>Previous Page</span>
+                        </button>
+
+                        <div className="text-xs font-bold text-[#095D7E] dark:text-slate-200">
+                          Page <span className="text-[#14967F] dark:text-[#2DD4BF] font-black">{currentPage}</span> of {searchResults.totalPages}
+                        </div>
+
+                        <button
+                          disabled={currentPage >= searchResults.totalPages}
+                          onClick={() => {
+                            setCurrentPage((p) => Math.min(searchResults.totalPages, p + 1));
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }}
+                          className="flex items-center gap-1 text-xs font-bold text-[#095D7E] dark:text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed bg-[#F1F9FF] dark:bg-[#1A2B3E] px-4 py-2 rounded-xl border border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F] cursor-pointer"
+                        >
+                          <span>Next Page</span>
+                          <ChevronRight className="w-4 h-4" />
+                        </button>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  /* Empty Search State */
+                  <div className="bg-white dark:bg-[#152232] rounded-2xl border border-[#CCECEE] dark:border-[#243B53] p-8 sm:p-12 text-center space-y-4 max-w-lg mx-auto my-6 transition-colors">
+                    <div className="w-16 h-16 rounded-2xl bg-[#F1F9FF] dark:bg-[#1A2B3E] text-[#14967F] dark:text-[#2DD4BF] flex items-center justify-center mx-auto">
+                      <Search className="w-8 h-8" />
+                    </div>
+                    <div className="space-y-1">
+                      <h3 className="text-xl font-extrabold text-[#095D7E] dark:text-slate-100">No medicines found</h3>
+                      <p className="text-xs sm:text-sm text-[#095D7E]/80 dark:text-slate-400">
+                        Try searching by brand name (e.g., "Napa", "Seclo", "Maxpro") or generic ingredient (e.g., "Esomeprazole", "Paracetamol").
+                      </p>
+                    </div>
+
+                    <div className="pt-2 flex justify-center gap-3">
+                      <button
+                        onClick={() => {
+                          setSearchQuery('');
+                          setSelectedLetter('All');
+                          resetFilters();
+                        }}
+                        id="clear-search-empty-state-btn"
+                        className="bg-[#14967F] text-[#E2FCD6] font-bold text-xs px-4 py-2.5 rounded-xl hover:bg-[#11806C] transition-colors cursor-pointer"
+                      >
+                        Reset Search & Filters
+                      </button>
+                    </div>
                   </div>
                 )}
-              </>
-            ) : (
-              /* Empty Search State */
-              <div className="bg-white dark:bg-[#152232] rounded-2xl border border-[#CCECEE] dark:border-[#243B53] p-8 sm:p-12 text-center space-y-4 max-w-lg mx-auto my-6 transition-colors">
-                <div className="w-16 h-16 rounded-2xl bg-[#F1F9FF] dark:bg-[#1A2B3E] text-[#14967F] dark:text-[#2DD4BF] flex items-center justify-center mx-auto">
-                  <Search className="w-8 h-8" />
-                </div>
-                <div className="space-y-1">
-                  <h3 className="text-xl font-extrabold text-[#095D7E] dark:text-slate-100">No medicines found</h3>
-                  <p className="text-xs sm:text-sm text-[#095D7E]/80 dark:text-slate-400">
-                    Try searching by brand name (e.g., "Napa", "Seclo", "Maxpro") or generic ingredient (e.g., "Esomeprazole", "Paracetamol").
-                  </p>
-                </div>
 
-                <div className="pt-2 flex justify-center gap-3">
-                  <button
-                    onClick={() => {
-                      setSearchQuery('');
-                      setSelectedLetter('All');
-                      resetFilters();
-                    }}
-                    id="clear-search-empty-state-btn"
-                    className="bg-[#14967F] text-[#E2FCD6] font-bold text-xs px-4 py-2.5 rounded-xl hover:bg-[#11806C] transition-colors"
-                  >
-                    Reset Search & Filters
-                  </button>
-                </div>
               </div>
-            )}
+
+            </div>
 
           </div>
         )}

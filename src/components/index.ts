@@ -10,7 +10,7 @@ export { ApiDocsModal } from './common/ApiDocsModal';
 // Search & Filtering Components
 export { SearchBar } from './search/SearchBar';
 export { AlphabetFilter } from './search/AlphabetFilter';
-export { FilterDrawer } from './search/FilterDrawer';
+export { FilterDrawer, FilterPanel } from './search/FilterDrawer';
 
 // Medicine Monograph & Detail Components
 export { MedicineCard } from './medicine/MedicineCard';
