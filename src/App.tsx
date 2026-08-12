@@ -374,7 +374,6 @@ export default function App() {
               onSelectMedicine={handleSelectMedicine}
               lang={lang}
             />
-            <MedicalDisclaimer />
           </div>
         ) : (
           /* VIEW 3: MEDICINE INDEX SEARCH & FILTER GRID PAGE */
@@ -492,11 +491,11 @@ export default function App() {
               </div>
             )}
 
-            {/* Disclaimer Footer */}
-            <MedicalDisclaimer onOpenApiDocs={() => setIsApiDocsOpen(true)} />
-
           </div>
         )}
+
+        {/* Global Footer (Rendered on ALL Pages) */}
+        <MedicalDisclaimer onOpenApiDocs={() => setIsApiDocsOpen(true)} />
 
       </main>
 
