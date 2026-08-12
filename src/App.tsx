@@ -27,7 +27,8 @@ import {
 } from './components';
 
 import { Medicine, FilterOptions, LanguageMode } from './types';
-import { searchMedicines, getMedicineById, subscribeDatabase, isDatabaseReady } from './data/dbEngine';
+import { searchMedicines, getMedicineById, getGenericById, subscribeDatabase, isDatabaseReady } from './data/dbEngine';
+import { slugify } from './utils/slugify';
 import { Pill, Search, RotateCcw, ChevronLeft, ChevronRight, Languages, ShieldCheck, SlidersHorizontal } from 'lucide-react';
 
 export default function App() {
@@ -162,7 +163,9 @@ export default function App() {
     setExplorerGenericId(genericId);
     setExplorerForm(form);
     setExplorerStrength(strength);
-    syncUrlState({ genericId: genericId.toString(), form: form || null, strength: strength || null, id: null });
+    const gen = getGenericById(genericId);
+    const genSlug = gen ? slugify(gen.name) : 'generic';
+    syncUrlState({ genericId: genericId.toString(), generic: genSlug, form: form || null, strength: strength || null, id: null, brand: null });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -170,7 +173,7 @@ export default function App() {
     setExplorerGenericId(null);
     setExplorerForm(undefined);
     setExplorerStrength(undefined);
-    syncUrlState({ genericId: null, form: null, strength: null });
+    syncUrlState({ genericId: null, generic: null, form: null, strength: null, id: null, brand: null });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -255,7 +258,8 @@ export default function App() {
     // Ensure full monograph and note are populated
     const fullMed = getMedicineById(med.id) || med;
     setSelectedMedicine(fullMed);
-    syncUrlState({ id: med.id.toString(), genericId: null, form: null, strength: null });
+    const brandSlug = slugify(`${med.name}-${med.strength || ''}-${med.form}`);
+    syncUrlState({ id: med.id.toString(), brand: brandSlug, genericId: null, generic: null, form: null, strength: null });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -263,7 +267,7 @@ export default function App() {
     setSelectedMedicine(null);
     setExplorerGenericId(null);
     setActiveTab('home');
-    syncUrlState({ id: null, genericId: null, form: null, strength: null });
+    syncUrlState({ id: null, brand: null, genericId: null, generic: null, form: null, strength: null });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -280,7 +284,7 @@ export default function App() {
     if (manufacturer !== undefined) {
       setFilters((prev) => ({ ...prev, manufacturer }));
     }
-    syncUrlState({ id: null, genericId: null, form: null, strength: null });
+    syncUrlState({ id: null, brand: null, genericId: null, generic: null, form: null, strength: null });
     setTimeout(() => {
       mainInputRef.current?.focus();
       window.scrollTo({ top: 0, behavior: 'smooth' });
