@@ -8,10 +8,12 @@ import {
   HeartPulse,
   Layers,
   Building2,
-  Stethoscope
+  Stethoscope,
+  Grid
 } from 'lucide-react';
 import { Medicine, LanguageMode } from '../../types';
 import { searchMedicines, getAllCompanies } from '../../data/dbEngine';
+import { DOSAGE_FORM_CATEGORIES } from '../../utils/dosageFormHelper';
 
 interface HomeLandingProps {
   onGoToSearch: (query?: string, category?: string, manufacturer?: string) => void;
@@ -106,12 +108,60 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
 
       </section>
 
-      {/* CATEGORY EXPLORER SECTION (Compact Grid) */}
+      {/* DOSAGE FORM CATEGORY EXPLORER (10 Distinct Types with Custom Icons & Counts) */}
+      <section className="space-y-3">
+        <div className="flex items-center justify-between">
+          <h2 className="text-sm sm:text-lg font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-1.5">
+            <Grid className="w-4 h-4 text-[#14967F]" />
+            <span>{lang === 'en' ? 'Browse by Dosage Form' : 'ওষুধের ক্যাটাগরি ও রূপ অনুযায়ী খুঁজুন'}</span>
+          </h2>
+          <button
+            onClick={() => onGoToSearch()}
+            className="text-xs font-black text-[#14967F] dark:text-[#2DD4BF] hover:underline cursor-pointer"
+          >
+            {lang === 'en' ? 'View All Forms' : 'সব ফর্ম দেখুন'} →
+          </button>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 sm:gap-3">
+          {DOSAGE_FORM_CATEGORIES.map((formCat) => {
+            const IconComponent = formCat.icon;
+            return (
+              <button
+                key={formCat.id}
+                onClick={() => onGoToSearch(formCat.name)}
+                className={`p-3 rounded-2xl border text-left transition-all hover:scale-[1.03] active:scale-[0.98] cursor-pointer flex flex-col justify-between space-y-2 shadow-xs group ${formCat.color}`}
+              >
+                <div className="flex items-center justify-between w-full">
+                  <div className="w-9 h-9 rounded-xl bg-white/90 dark:bg-black/30 flex items-center justify-center shadow-inner shrink-0 group-hover:bg-[#14967F] group-hover:text-white transition-colors">
+                    <IconComponent className="w-5 h-5" />
+                  </div>
+
+                  <span className="text-[10px] font-black font-mono px-2 py-0.5 rounded-full bg-white/80 dark:bg-black/30 border border-current/20">
+                    {formCat.count}
+                  </span>
+                </div>
+
+                <div>
+                  <div className="text-xs font-black leading-snug group-hover:text-[#14967F] transition-colors">
+                    {lang === 'en' ? formCat.name : formCat.nameBn}
+                  </div>
+                  <div className="text-[10px] opacity-75 font-bold mt-0.5">
+                    {lang === 'en' ? 'Explore Index' : 'খুঁজুন'} →
+                  </div>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* CONDITION CATEGORY EXPLORER SECTION (Compact Grid) */}
       <section className="space-y-2">
         <div className="flex items-center justify-between">
           <h2 className="text-sm sm:text-lg font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-1.5">
             <Pill className="w-4 h-4 text-[#14967F]" />
-            <span>{lang === 'en' ? 'Browse by Condition' : 'রোগ বা ক্যাটাগরি অনুযায়ী খুঁজুন'}</span>
+            <span>{lang === 'en' ? 'Browse by Medical Condition' : 'রোগ অনুযায়ী খুঁজুন'}</span>
           </h2>
         </div>
 

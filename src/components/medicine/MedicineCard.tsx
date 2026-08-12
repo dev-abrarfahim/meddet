@@ -1,6 +1,7 @@
 import React from 'react';
-import { Pill, Building2, ChevronRight } from 'lucide-react';
+import { Building2, ChevronRight } from 'lucide-react';
 import { Medicine } from '../../types';
+import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
 
 interface MedicineCardProps {
   medicine: Medicine;
@@ -8,6 +9,8 @@ interface MedicineCardProps {
 }
 
 export const MedicineCard: React.FC<MedicineCardProps> = ({ medicine, onSelect }) => {
+  const { icon: DosageIcon, color: badgeColor } = getDosageFormIconInfo(medicine.form);
+
   return (
     <div
       onClick={() => onSelect(medicine)}
@@ -16,8 +19,8 @@ export const MedicineCard: React.FC<MedicineCardProps> = ({ medicine, onSelect }
       <div className="space-y-1.5">
         {/* Top Badges */}
         <div className="flex items-center justify-between gap-1 flex-wrap">
-          <span className="inline-flex items-center gap-1 text-[10px] font-extrabold text-[#14967F] dark:text-[#2DD4BF] bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded font-mono">
-            <Pill className="w-3 h-3" />
+          <span className={`inline-flex items-center gap-1 text-[10px] font-extrabold px-2 py-0.5 rounded font-mono ${badgeColor}`}>
+            <DosageIcon className="w-3 h-3" />
             <span>{medicine.form}</span>
             {medicine.strength && <span>• {medicine.strength}</span>}
           </span>
