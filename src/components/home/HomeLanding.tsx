@@ -11,7 +11,7 @@ import {
   Stethoscope
 } from 'lucide-react';
 import { Medicine, LanguageMode } from '../../types';
-import { getDatabaseStats, searchMedicines, getAllCompanies } from '../../data/dbEngine';
+import { searchMedicines, getAllCompanies } from '../../data/dbEngine';
 
 interface HomeLandingProps {
   onGoToSearch: (query?: string, category?: string, manufacturer?: string) => void;
@@ -25,7 +25,6 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
   lang
 }) => {
   const [heroQuery, setHeroQuery] = useState('');
-  const stats = getDatabaseStats();
 
   const handleHeroSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,7 +50,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
   return (
     <div className="space-y-4 sm:space-y-8 animate-in fade-in duration-300">
       
-      {/* HERO BANNER SECTION (Compact Mobile Padding) */}
+      {/* HERO BANNER SECTION (Clean & Modern Layout) */}
       <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#095D7E] via-[#074760] to-[#042C3C] dark:from-[#0B1927] dark:via-[#0E2439] dark:to-[#07131F] text-white p-3.5 sm:p-8 md:p-10 shadow-xl border border-[#074760] dark:border-[#1E3A52]">
         
         {/* Decorative Ambient Shapes */}
@@ -68,7 +67,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
 
           {/* Main Hero Heading */}
           <h1 className="text-xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-white">
-            {lang === 'en' ? 'Search 30,500+ Medicines & Generic Brands' : '৩০,৫০০+ ওষুধ ও জেনেরিক ব্রান্ড অনুসন্ধান করুন'}
+            {lang === 'en' ? 'Search Medicines & Generic Brands' : 'ওষুধ ও জেনেরিক ব্রান্ড অনুসন্ধান করুন'}
           </h1>
 
           {/* Main Hero Subtitle */}
@@ -102,34 +101,6 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
               </button>
             </div>
           </form>
-
-          {/* Quick Stats Grid */}
-          <div className="pt-3 grid grid-cols-3 gap-2 sm:gap-4 max-w-2xl mx-auto border-t border-white/10">
-            <div className="space-y-0.5">
-              <div className="text-base sm:text-2xl font-black text-[#E2FCD6] dark:text-[#2DD4BF]">
-                {stats.totalBrands.toLocaleString()}
-              </div>
-              <div className="text-[10px] sm:text-xs text-[#CCECEE] dark:text-slate-400 font-semibold">
-                {lang === 'en' ? 'Brand Medicines' : 'ব্র্যান্ড ওষুধ'}
-              </div>
-            </div>
-            <div className="space-y-0.5">
-              <div className="text-base sm:text-2xl font-black text-[#E2FCD6] dark:text-[#2DD4BF]">
-                {stats.totalGenerics.toLocaleString()}
-              </div>
-              <div className="text-[10px] sm:text-xs text-[#CCECEE] dark:text-slate-400 font-semibold">
-                {lang === 'en' ? 'Generics' : 'জেনেরিক ইনডেক্স'}
-              </div>
-            </div>
-            <div className="space-y-0.5">
-              <div className="text-base sm:text-2xl font-black text-[#E2FCD6] dark:text-[#2DD4BF]">
-                {stats.totalCompanies.toLocaleString()}
-              </div>
-              <div className="text-[10px] sm:text-xs text-[#CCECEE] dark:text-slate-400 font-semibold">
-                {lang === 'en' ? 'Pharma Companies' : 'কোম্পানি'}
-              </div>
-            </div>
-          </div>
 
         </div>
 
@@ -177,7 +148,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
             onClick={() => onGoToSearch()}
             className="text-xs font-black text-[#14967F] dark:text-[#2DD4BF] hover:underline cursor-pointer"
           >
-            {lang === 'en' ? 'View All 30,500+' : 'সবগুলো দেখুন'} →
+            {lang === 'en' ? 'View All' : 'সবগুলো দেখুন'} →
           </button>
         </div>
 
