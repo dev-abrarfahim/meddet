@@ -1,10 +1,12 @@
 import React from 'react';
-import { Pill, Building2, Languages, ShieldCheck, ArrowLeft } from 'lucide-react';
+import { Pill, Building2, ShieldCheck, ArrowLeft, Layers } from 'lucide-react';
 import { Medicine, LanguageMode } from '../../types';
+import { getAlternativeBrands } from '../../data/dbEngine';
 
 interface MedicineHeroProps {
   medicine: Medicine;
   onBackToSearch: () => void;
+  onSelectMedicine: (med: Medicine) => void;
   lang: LanguageMode;
   onToggleLang: () => void;
 }
@@ -12,110 +14,106 @@ interface MedicineHeroProps {
 export const MedicineHero: React.FC<MedicineHeroProps> = ({
   medicine,
   onBackToSearch,
+  onSelectMedicine,
   lang,
   onToggleLang
 }) => {
+  // Find variants of the same generic/brand with different strengths & forms
+  const allGenericAlternatives = getAlternativeBrands(medicine.genericId);
+  const variants = [
+    medicine,
+    ...allGenericAlternatives.filter(
+      (m) => m.company.toLowerCase() === medicine.company.toLowerCase() || m.name.toLowerCase().startsWith(medicine.name.split(' ')[0].toLowerCase())
+    )
+  ].filter((v, idx, self) => self.findIndex(t => t.form === v.form && t.strength === v.strength) === idx).slice(0, 6);
+
   return (
-    <section id="sec-overview" className="bg-white dark:bg-[#152232] rounded-3xl border border-[#CCECEE] dark:border-[#243B53] p-6 sm:p-8 shadow-xl relative overflow-hidden transition-colors">
+    <section id="sec-overview" className="bg-white dark:bg-[#152232] rounded-3xl border border-[#CCECEE] dark:border-[#243B53] p-5 sm:p-7 shadow-lg relative overflow-hidden transition-colors space-y-5">
       
       {/* Top Action Bar */}
-      <div className="flex items-center justify-between gap-3 mb-6 flex-wrap">
+      <div className="flex items-center justify-between gap-3 flex-wrap border-b border-[#F1F9FF] dark:border-[#243B53] pb-3">
         <button
           onClick={onBackToSearch}
           className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#14967F] dark:text-[#2DD4BF] hover:text-[#11806C] bg-[#F1F9FF] dark:bg-[#1A2B3E] px-3.5 py-2 rounded-xl border border-[#CCECEE] dark:border-[#243B53] transition-colors cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>{lang === 'en' ? 'Back to Search Index' : 'ইনডেক্সে ফিরে যান'}</span>
+          <span>{lang === 'en' ? 'Back' : 'ফিরে যান'}</span>
         </button>
 
-        <div className="flex items-center gap-2">
-          {/* Language Toggle Button */}
-          <button
-            onClick={onToggleLang}
-            className="inline-flex items-center gap-1.5 text-xs font-black text-[#095D7E] dark:text-slate-100 bg-[#E2FCD6] dark:bg-[#064E3B] px-3.5 py-2 rounded-xl border border-[#14967F]/30 hover:bg-[#d2f9bf] transition-colors cursor-pointer"
-          >
-            <Languages className="w-4 h-4 text-[#14967F] dark:text-[#2DD4BF]" />
-            <span>{lang === 'en' ? 'Monograph: ENGLISH' : 'মনোগ্রাফ: বাংলা'}</span>
-          </button>
-        </div>
+        <span className="bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-extrabold px-3 py-1 rounded-lg border border-emerald-200 dark:border-emerald-800 flex items-center gap-1">
+          <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+          <span>Verified Drug</span>
+        </span>
       </div>
 
-      {/* Main Header Info Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      {/* Main Header Info (Strictly matching hand-drawn sketch) */}
+      <div className="space-y-3">
         
-        <div className="lg:col-span-2 space-y-4">
-          
-          {/* Form & Strength Badges */}
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="inline-flex items-center gap-1.5 bg-[#095D7E] dark:bg-[#14967F] text-white text-xs font-black px-3 py-1 rounded-lg">
-              <Pill className="w-3.5 h-3.5" />
-              <span>{medicine.form}</span>
-            </span>
-
-            {medicine.strength && (
-              <span className="bg-[#F1F9FF] dark:bg-[#1A2B3E] text-[#095D7E] dark:text-[#2DD4BF] text-xs font-extrabold px-3 py-1 rounded-lg border border-[#CCECEE] dark:border-[#243B53]">
-                Strength: {medicine.strength}
-              </span>
-            )}
-
-            <span className="bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-extrabold px-3 py-1 rounded-lg border border-emerald-200 dark:border-emerald-800 flex items-center gap-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Verified Bangladeshi Drug</span>
-            </span>
+        {/* Brand Name + Icon + Form Tag */}
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded-xl bg-[#095D7E] dark:bg-[#14967F] text-white flex items-center justify-center shrink-0 shadow-md">
+            <Pill className="w-6 h-6 text-[#E2FCD6]" />
           </div>
-
-          {/* Brand Name */}
-          <div className="space-y-1">
-            <h1 className="text-3xl sm:text-4xl font-black text-[#095D7E] dark:text-slate-100 tracking-tight">
-              {medicine.name}
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-black text-[#095D7E] dark:text-slate-100 tracking-tight flex items-center gap-2">
+              <span>{medicine.name}</span>
+              <span className="text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-md border border-slate-200 dark:border-slate-700 font-mono">
+                {medicine.form}
+              </span>
             </h1>
-            
-            {/* Generic Active Ingredient */}
-            <div className="text-base sm:text-lg font-bold text-[#14967F] dark:text-[#2DD4BF] flex items-center gap-2 flex-wrap pt-1">
-              <span>Generic Active Ingredient:</span>
-              <span className="bg-[#E2FCD6] dark:bg-[#064E3B] text-[#0D6F5D] dark:text-[#6EE7B7] px-2.5 py-0.5 rounded-lg border border-[#14967F]/30">
-                {medicine.genericName}
-              </span>
-              {medicine.genericNameBn && (
-                <span className="text-sm font-semibold text-[#095D7E]/80 dark:text-slate-300">
-                  ({medicine.genericNameBn})
-                </span>
-              )}
-            </div>
           </div>
-
-          {/* Manufacturer Info */}
-          <div className="flex items-center gap-2 text-sm text-[#095D7E]/80 dark:text-slate-300 pt-2 border-t border-[#F1F9FF] dark:border-[#243B53]">
-            <Building2 className="w-4 h-4 text-[#14967F] shrink-0" />
-            <span className="font-bold">Manufactured by:</span>
-            <span className="font-extrabold text-[#095D7E] dark:text-slate-100">{medicine.company}</span>
-          </div>
-
         </div>
 
-        {/* Clean Main MRP Price Card */}
-        <div className="bg-[#F1F9FF] dark:bg-[#1A2B3E] p-6 rounded-2xl border-2 border-[#14967F] space-y-3 shadow-md">
-          
-          <div className="text-xs font-black uppercase text-[#14967F] dark:text-[#2DD4BF] tracking-wider">
-            Official MRP Price
-          </div>
-
-          <div className="text-3xl sm:text-4xl font-black text-[#095D7E] dark:text-slate-100">
-            ৳ {medicine.mrp > 0 ? medicine.mrp.toFixed(2) : 'N/A'}
-          </div>
-
-          <div className="text-xs text-[#095D7E]/70 dark:text-slate-400 font-medium">
-            Maximum Retail Price in Bangladeshi Taka (BDT)
-          </div>
-
-          {medicine.packSize && (
-            <div className="text-xs font-bold text-[#095D7E] dark:text-slate-200 pt-2 border-t border-[#CCECEE] dark:border-[#243B53]">
-              Pack Size: <span className="font-extrabold">{medicine.packSize}</span>
-            </div>
+        {/* Generic Name */}
+        <div className="text-base sm:text-lg font-extrabold text-[#14967F] dark:text-[#2DD4BF] leading-snug">
+          {medicine.genericName}
+          {medicine.genericNameBn && (
+            <span className="text-sm font-medium text-slate-500 dark:text-slate-400 ml-2">
+              ({medicine.genericNameBn})
+            </span>
           )}
-
         </div>
 
+        {/* Strength */}
+        {medicine.strength && (
+          <div className="text-sm font-bold text-slate-700 dark:text-slate-300 font-mono">
+            {medicine.strength}
+          </div>
+        )}
+
+        {/* Manufacturer / Company */}
+        <div className="flex items-center gap-1.5 text-sm font-bold text-slate-600 dark:text-slate-300 pt-1">
+          <Building2 className="w-4 h-4 text-[#14967F] shrink-0" />
+          <span>{medicine.company}</span>
+        </div>
+
+      </div>
+
+      {/* "Also available As" Container (Exact Hand-Drawn Sketch Feature) */}
+      <div className="pt-3 border-t border-[#CCECEE] dark:border-[#243B53] space-y-2">
+        <div className="text-xs font-black uppercase tracking-wider text-[#095D7E] dark:text-[#2DD4BF] flex items-center gap-1.5">
+          <Layers className="w-3.5 h-3.5 text-[#14967F]" />
+          <span>Also available As</span>
+        </div>
+
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+          {variants.map((v) => {
+            const isCurrent = v.id === medicine.id || (v.form === medicine.form && v.strength === medicine.strength);
+            return (
+              <button
+                key={v.id}
+                onClick={() => onSelectMedicine(v)}
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all border cursor-pointer ${
+                  isCurrent
+                    ? 'bg-[#095D7E] dark:bg-[#14967F] text-white border-[#095D7E] dark:border-[#14967F] shadow-sm'
+                    : 'bg-[#F1F9FF] dark:bg-[#1A2B3E] text-[#095D7E] dark:text-slate-200 border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F]'
+                }`}
+              >
+                {v.strength || medicine.strength} - {v.form || medicine.form}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
     </section>

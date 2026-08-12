@@ -19,7 +19,8 @@ import {
   BottomNav,
   FilterDrawer,
   SidebarDrawer,
-  HomeLanding
+  HomeLanding,
+  ClinicalMonographAccordions
 } from './components';
 
 import { Medicine, FilterOptions, LanguageMode } from './types';
@@ -268,11 +269,12 @@ export default function App() {
                 setSelectedMedicine(null);
                 setActiveTab('search');
               }}
+              onSelectMedicine={handleSelectMedicine}
               lang={lang}
               onToggleLang={toggleLang}
             />
 
-            {/* 2. Price Information (Main focus on MRP) */}
+            {/* 2. Price Information (Unit Price + Pack Price Cards) */}
             <PriceSection medicine={selectedMedicine} />
 
             {/* 3. Alternative Brands Comparison */}
@@ -281,53 +283,16 @@ export default function App() {
               onSelectMedicine={handleSelectMedicine}
             />
 
-            {/* 4. Chemical Structure (Feature Coming Soon) */}
+            {/* 4. Chemical Structure (2D Diagram + Formula Grid) */}
             <ChemicalStructure
               genericName={selectedMedicine.genericName}
             />
 
-            {/* 5. Indications & Uses (English & Bangla) */}
-            <UsesSection
+            {/* 5. Clinical Monograph Accordions & Sticky "বাংলায় দেখুন" Button */}
+            <ClinicalMonographAccordions
               monograph={selectedMedicine.monograph}
-              medicineName={selectedMedicine.name}
               lang={lang}
-            />
-
-            {/* 6. Pregnancy & Breastfeeding Safety */}
-            <SafetySection
-              monograph={selectedMedicine.monograph}
-              medicineName={selectedMedicine.name}
-              lang={lang}
-            />
-
-            {/* 7. Dosage & Administration + Intake Guidelines */}
-            <HowToUseSection
-              monograph={selectedMedicine.monograph}
-              dosageNote={selectedMedicine.dosageNote}
-              medicineName={selectedMedicine.name}
-              dosageForm={selectedMedicine.form}
-              lang={lang}
-            />
-
-            {/* 8. Warnings, Precautions & Contraindications */}
-            <WarningsSection
-              monograph={selectedMedicine.monograph}
-              medicineName={selectedMedicine.name}
-              lang={lang}
-            />
-
-            {/* 9. Possible Side Effects */}
-            <SideEffectsSection
-              monograph={selectedMedicine.monograph}
-              medicineName={selectedMedicine.name}
-              lang={lang}
-            />
-
-            {/* 10. Overdose Management */}
-            <MoreInfoSection
-              monograph={selectedMedicine.monograph}
-              medicineName={selectedMedicine.name}
-              lang={lang}
+              onToggleLang={toggleLang}
             />
 
             {/* Disclaimer Footer */}

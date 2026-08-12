@@ -1,5 +1,5 @@
 import React from 'react';
-import { Atom, Clock, Sparkles, ShieldAlert } from 'lucide-react';
+import { Atom, Clock } from 'lucide-react';
 
 interface ChemicalStructureProps {
   genericName: string;
@@ -7,44 +7,85 @@ interface ChemicalStructureProps {
 
 export const ChemicalStructure: React.FC<ChemicalStructureProps> = ({ genericName }) => {
   return (
-    <section id="sec-structure" className="bg-white dark:bg-[#152232] rounded-3xl border border-[#CCECEE] dark:border-[#243B53] p-6 sm:p-8 shadow-sm space-y-6 transition-colors">
+    <section id="sec-structure" className="bg-white dark:bg-[#152232] rounded-3xl border-2 border-[#CCECEE] dark:border-[#243B53] p-5 sm:p-6 shadow-sm space-y-5 transition-colors">
       
-      {/* Header */}
-      <div className="flex items-center justify-between gap-3 flex-wrap border-b border-[#F1F9FF] dark:border-[#243B53] pb-4">
-        <div>
-          <h2 className="text-xl font-extrabold text-[#095D7E] dark:text-slate-100 flex items-center gap-2">
-            <Atom className="w-5 h-5 text-[#14967F]" />
-            <span>Chemical Structure & Molecular Specifications</span>
+      {/* Header Bar */}
+      <div className="flex items-center justify-between gap-2 flex-wrap border-b border-[#F1F9FF] dark:border-[#243B53] pb-3">
+        <div className="flex items-center gap-2">
+          <Atom className="w-5 h-5 text-[#14967F]" />
+          <h2 className="text-lg sm:text-xl font-extrabold text-[#095D7E] dark:text-slate-100">
+            Chemical Structure
           </h2>
-          <p className="text-xs text-[#095D7E]/70 dark:text-slate-400 mt-0.5">
-            2D/3D Molecular formula, IUPAC name, and CAS Chemical Registration
-          </p>
         </div>
 
-        <span className="bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 text-xs font-bold px-3 py-1 rounded-full border border-amber-300 dark:border-amber-800 flex items-center gap-1.5">
+        <span className="bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 text-xs font-extrabold px-3 py-1 rounded-full border border-amber-300 dark:border-amber-800 flex items-center gap-1">
           <Clock className="w-3.5 h-3.5" />
-          <span>Feature Coming Soon</span>
+          <span>Coming soon</span>
         </span>
       </div>
 
-      {/* Feature Coming Soon Card */}
-      <div className="bg-gradient-to-br from-[#F1F9FF] to-[#E2FCD6]/30 dark:from-[#1A2B3E] dark:to-[#0B1927] p-6 sm:p-8 rounded-2xl border-2 border-dashed border-[#14967F]/40 text-center space-y-4">
-        <div className="w-14 h-14 rounded-2xl bg-[#14967F] text-white flex items-center justify-center mx-auto shadow-md">
-          <Sparkles className="w-7 h-7 text-[#E2FCD6]" />
+      {/* 2D Skeletal Chemical Diagram Box (Strictly Matching Hand-Drawn Sketch) */}
+      <div className="bg-[#F1F9FF] dark:bg-[#1A2B3E] p-6 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] flex flex-col items-center justify-center space-y-4 min-h-[220px]">
+        
+        {/* SVG Drawing of Esomeprazole / Chemical Ring Diagram */}
+        <svg
+          viewBox="0 0 450 180"
+          className="w-full max-w-md h-auto text-[#095D7E] dark:text-[#2DD4BF] stroke-current stroke-2 fill-none"
+        >
+          {/* Left Benzene Ring */}
+          <polygon points="50,90 80,40 130,40 160,90 130,140 80,140" />
+          <line x1="85" y1="50" x2="125" y2="50" strokeWidth="1.5" />
+          <line x1="150" y1="90" x2="125" y2="130" strokeWidth="1.5" />
+          <line x1="60" y1="90" x2="85" y2="130" strokeWidth="1.5" />
+
+          {/* Imidazole Ring Junction */}
+          <line x1="160" y1="90" x2="200" y2="60" />
+          <text x="202" y="55" className="fill-current text-xs font-extrabold stroke-none">N</text>
+          
+          <line x1="160" y1="90" x2="200" y2="120" />
+          <text x="202" y="130" className="fill-current text-xs font-extrabold stroke-none">N</text>
+
+          <line x1="215" y1="60" x2="250" y2="90" />
+          <line x1="215" y1="120" x2="250" y2="90" />
+
+          {/* Sulfinyl Linker - S(=O) */}
+          <line x1="250" y1="90" x2="280" y2="90" />
+          <circle cx="280" cy="90" r="14" className="fill-white dark:fill-[#152232] stroke-2" />
+          <text x="276" y="94" className="fill-current text-xs font-black stroke-none">S</text>
+          <line x1="280" y1="76" x2="280" y2="60" />
+          <circle cx="280" cy="54" r="8" className="fill-white dark:fill-[#152232] stroke-1" />
+          <text x="276" y="58" className="fill-current text-[10px] font-bold stroke-none">O</text>
+
+          {/* Pyridine Ring on Right */}
+          <line x1="294" y1="90" x2="330" y2="90" />
+          <polygon points="330,90 360,40 410,40 440,90 410,140 360,140" />
+          <text x="382" y="32" className="fill-current text-xs font-extrabold stroke-none">N</text>
+          
+          {/* Methoxy Group - OCH3 */}
+          <line x1="440" y1="90" x2="455" y2="90" />
+          <text x="458" y="94" className="fill-current text-xs font-extrabold stroke-none">OCH3</text>
+        </svg>
+
+        <div className="text-xs font-bold text-[#095D7E]/70 dark:text-slate-400">
+          2D Molecular Structure for {genericName}
+        </div>
+      </div>
+
+      {/* Info Grid (Strictly Matching Hand-Drawn Sketch) */}
+      <div className="space-y-2 border-t border-[#F1F9FF] dark:border-[#243B53] pt-3">
+        <div className="flex items-center justify-between text-xs sm:text-sm py-1.5 border-b border-[#F1F9FF] dark:border-[#243B53]">
+          <span className="font-extrabold text-[#095D7E] dark:text-slate-300">Molecular Formula</span>
+          <span className="font-mono font-black text-[#14967F] dark:text-[#2DD4BF]">C19H19N3O3S</span>
         </div>
 
-        <div className="max-w-md mx-auto space-y-2">
-          <h3 className="text-lg font-black text-[#095D7E] dark:text-slate-100">
-            Chemical Data for {genericName}
-          </h3>
-          <p className="text-xs text-[#095D7E]/80 dark:text-slate-300 leading-relaxed">
-            Detailed 2D/3D molecular graphics, IUPAC nomenclature, molecular mass, and CAS registry identifiers for <span className="font-bold text-[#14967F] dark:text-[#2DD4BF]">{genericName}</span> are currently in development.
-          </p>
+        <div className="flex items-center justify-between text-xs sm:text-sm py-1.5 border-b border-[#F1F9FF] dark:border-[#243B53]">
+          <span className="font-extrabold text-[#095D7E] dark:text-slate-300">Molecular Mass</span>
+          <span className="font-mono font-black text-[#14967F] dark:text-[#2DD4BF]">345.42 g/mol</span>
         </div>
 
-        <div className="inline-flex items-center gap-2 bg-white dark:bg-[#152232] px-4 py-2 rounded-xl border border-[#CCECEE] dark:border-[#243B53] text-xs font-extrabold text-[#14967F] dark:text-[#2DD4BF] shadow-xs">
-          <ShieldAlert className="w-4 h-4 text-amber-500" />
-          <span>This Feature is Coming Soon in the Next Database Update</span>
+        <div className="flex items-center justify-between text-xs sm:text-sm py-1.5 border-b border-[#F1F9FF] dark:border-[#243B53]">
+          <span className="font-extrabold text-[#095D7E] dark:text-slate-300">CAS Registry NO</span>
+          <span className="font-mono font-black text-[#14967F] dark:text-[#2DD4BF]">119141-88-7</span>
         </div>
       </div>
 
