@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { ChevronUp, ChevronDown, Zap, Building2, Layers } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronUp, ChevronDown, Building2, Layers } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Medicine } from '../../types';
 import { getAlternativeBrands } from '../../data/dbEngine';
 
@@ -12,144 +13,184 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
   medicine,
   onSelectMedicine
 }) => {
-  const [isExpanded, setIsExpanded] = useState<boolean>(true);
-  const [showFullList, setShowFullList] = useState<boolean>(false);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
 
-  const alternatives = getAlternativeBrands(medicine.genericId, medicine.id, medicine.form);
-  
-  // Find lower cost alternative if available, or top alternative
-  const lowerCostAlt = alternatives.find((a) => a.mrp > 0 && a.mrp < medicine.mrp) || alternatives[0];
+  // Fetch alternatives with matching generic, dosage form, and strength
+  const rawAlternatives = getAlternativeBrands(medicine.genericId, medicine.id, medicine.form);
 
-  if (!lowerCostAlt && alternatives.length === 0) {
+  // Sort by lowest price first
+  const alternatives = [...rawAlternatives].sort((a, b) => {
+    const pA = a.mrp > 0 ? a.mrp : 999;
+    const pB = b.mrp > 0 ? b.mrp : 999;
+    return pA - pB;
+  });
+
+  // Automatic smooth transition every 4.5 seconds
+  useEffect(() => {
+    if (alternatives.length <= 1 || isPaused) return;
+
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % alternatives.length);
+    }, 4500);
+
+    return () => clearInterval(timer);
+  }, [alternatives.length, isPaused]);
+
+  if (alternatives.length === 0) {
     return null;
   }
 
-  // Calculate percentage savings
+  const currentAlt = alternatives[currentIndex] || alternatives[0];
+
+  // Pricing calculations
   const currentPrice = medicine.mrp > 0 ? medicine.mrp : 7.00;
-  const altPrice = lowerCostAlt ? (lowerCostAlt.mrp > 0 ? lowerCostAlt.mrp : 3.00) : 3.00;
+  const altPrice = currentAlt.mrp > 0 ? currentAlt.mrp : 3.50;
   const savings = currentPrice - altPrice;
   const percentCheaper = savings > 0 ? Math.round((savings / currentPrice) * 100) : 43;
 
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsPaused(true);
+    setCurrentIndex((prev) => (prev - 1 + alternatives.length) % alternatives.length);
+  };
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsPaused(true);
+    setCurrentIndex((prev) => (prev + 1) % alternatives.length);
+  };
+
   return (
-    <section id="sec-alternatives" className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800/80 overflow-hidden shadow-xs transition-colors">
-      
-      {/* Header Bar with Accordion Toggle */}
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full p-3 sm:p-3.5 flex items-center justify-between gap-2 text-left bg-white dark:bg-[#131B2E] hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors cursor-pointer"
-      >
+    <section
+      id="sec-alternatives"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800/80 p-3 sm:p-3.5 shadow-xs space-y-3 transition-colors relative"
+    >
+      {/* 1. Header Bar */}
+      <div className="flex items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800/60 pb-2.5">
         <div className="flex items-center gap-2">
-          <Layers className="w-4 h-4 text-[#14967F]" />
-          <h2 className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-slate-100">
-            Alternative Brand
-          </h2>
-        </div>
-
-        <div className="w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200">
-          {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-        </div>
-      </button>
-
-      {/* Main Content Body */}
-      {isExpanded && (
-        <div className="p-3 sm:p-3.5 pt-0 space-y-2.5 border-t border-slate-100 dark:border-slate-800/60">
-          
-          {/* Top Highlight Box for Lower Cost Alternative (Exact Hand-Drawn Sketch Layout) */}
-          {lowerCostAlt && (
-            <div className="bg-slate-50 dark:bg-slate-800/80 p-3 sm:p-3.5 rounded-xl border border-[#14967F]/40 space-y-2 shadow-xs">
-              
-              {/* Badges Bar */}
-              <div className="flex items-center justify-between gap-1 flex-wrap">
-                <span className="inline-flex items-center gap-1 text-[10px] font-black text-[#14967F] dark:text-[#2DD4BF] uppercase tracking-wider">
-                  <Zap className="w-3 h-3 fill-[#14967F] dark:fill-[#2DD4BF]" />
-                  <span>Lower Cost Alternative</span>
-                </span>
-
-                <span className="bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-[10px] font-black px-2 py-0.5 rounded border border-emerald-300 dark:border-emerald-800">
-                  {percentCheaper}% Cheaper
-                </span>
-              </div>
-
-              {/* Brand Info */}
-              <div className="flex items-start justify-between gap-2 pt-0.5">
-                <div>
-                  <h3
-                    onClick={() => onSelectMedicine(lowerCostAlt)}
-                    className="text-base font-black text-slate-900 dark:text-slate-100 hover:text-[#14967F] cursor-pointer"
-                  >
-                    {lowerCostAlt.name} {lowerCostAlt.strength} {lowerCostAlt.form}
-                  </h3>
-                  <div className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                    <Building2 className="w-3 h-3 text-[#14967F]" />
-                    <span className="font-bold">{lowerCostAlt.company}</span>
-                  </div>
-                </div>
-
-                <div className="text-right shrink-0">
-                  <div className="text-xs sm:text-sm font-black text-slate-900 dark:text-slate-100 font-mono">
-                    Unit Price ৳ {altPrice.toFixed(2)}
-                  </div>
-                  {savings > 0 && (
-                    <div className="text-[11px] font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5">
-                      save ৳ {savings.toFixed(2)} / unit
-                    </div>
-                  )}
-                </div>
-              </div>
-
-            </div>
-          )}
-
-          {/* Expanded List of All Alternatives */}
-          {showFullList && alternatives.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-              {alternatives.map((alt) => (
-                <div
-                  key={alt.id}
-                  onClick={() => onSelectMedicine(alt)}
-                  className="bg-white dark:bg-[#131B2E] p-2.5 rounded-lg border border-slate-200 dark:border-slate-800/80 hover:border-[#14967F] transition-all cursor-pointer flex items-center justify-between gap-2 shadow-xs"
-                >
-                  <div>
-                    <div className="text-xs font-extrabold text-slate-900 dark:text-slate-100">{alt.name}</div>
-                    <div className="text-[10px] text-slate-500 dark:text-slate-400 font-semibold">{alt.company}</div>
-                  </div>
-                  <div className="text-xs font-black text-[#14967F] dark:text-[#2DD4BF] font-mono">
-                    ৳ {alt.mrp > 0 ? alt.mrp.toFixed(2) : '3.00'}
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* Footer Bar: See the Full List + Pagination Dots + Chevron */}
-          <div className="flex items-center justify-between gap-2 pt-1">
-            <button
-              onClick={() => setShowFullList(!showFullList)}
-              className="px-3 py-1.5 rounded-lg bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-800 dark:text-slate-200 hover:border-[#14967F] transition-colors cursor-pointer"
-            >
-              {showFullList ? 'Hide List' : 'See the Full List'}
-            </button>
-
-            {/* Pagination Dots */}
-            <div className="flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#14967F]"></span>
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
-              <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700"></span>
-            </div>
-
-            <button
-              onClick={() => setShowFullList(!showFullList)}
-              className="w-7 h-7 rounded-lg bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200 cursor-pointer"
-            >
-              {showFullList ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
-            </button>
+          <div className="w-7 h-7 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 flex items-center justify-center text-[#14967F] dark:text-[#2DD4BF] shrink-0">
+            <Layers className="w-4 h-4" />
           </div>
-
+          <div>
+            <h2 className="text-sm sm:text-base font-black text-slate-900 dark:text-slate-100 leading-tight">
+              Alternative Brand
+            </h2>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold">
+              Lowest-cost equivalent
+            </p>
+          </div>
         </div>
-      )}
 
+        {/* Top Right Controls & Page Counter */}
+        <div className="flex items-center gap-2">
+          <span className="text-[11px] font-black text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-md font-mono">
+            {currentIndex + 1} of {alternatives.length}
+          </span>
+
+          {/* Top Up Arrow (Previous) */}
+          <button
+            onClick={handlePrev}
+            id="alt-brand-prev-btn"
+            title="Previous Alternative (↑)"
+            aria-label="Previous Alternative"
+            className="w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:border-[#14967F] transition-colors cursor-pointer"
+          >
+            <ChevronUp className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+
+      {/* 2. Single Alternative Brand Card (Smooth Fade & Slide Transition) */}
+      <div className="relative overflow-hidden min-h-[115px] flex items-center">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentAlt.id}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+            onClick={() => onSelectMedicine(currentAlt)}
+            className="w-full bg-slate-50 dark:bg-slate-800/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700/80 hover:border-[#14967F] transition-all cursor-pointer shadow-xs flex items-center justify-between gap-3 group"
+          >
+            {/* Left Column: Brand Name, Generic, Manufacturer */}
+            <div className="space-y-1 min-w-0 flex-1">
+              <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-slate-100 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors truncate">
+                {currentAlt.name} {currentAlt.strength} {currentAlt.form}
+              </h3>
+              
+              <div className="text-xs font-extrabold text-[#14967F] dark:text-[#2DD4BF] truncate">
+                {medicine.genericName}
+              </div>
+
+              <div className="flex items-center gap-1 text-[11px] text-slate-500 dark:text-slate-400 font-semibold pt-0.5 truncate">
+                <Building2 className="w-3 h-3 text-[#14967F] shrink-0" />
+                <span className="truncate">{currentAlt.company}</span>
+              </div>
+            </div>
+
+            {/* Right Column: Prominent Savings & Pricing Display */}
+            <div className="text-right shrink-0 space-y-1 bg-white dark:bg-[#131B2E] p-2 rounded-lg border border-slate-200 dark:border-slate-800/80">
+              {/* Savings Badge */}
+              <div className="inline-flex items-center gap-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-[10px] font-black px-2 py-0.5 rounded border border-emerald-300 dark:border-emerald-800">
+                <span>{percentCheaper}% cheaper</span>
+              </div>
+
+              {/* Unit Price */}
+              <div className="text-xs sm:text-sm font-black text-slate-900 dark:text-slate-100 font-mono">
+                Unit Price: ৳ {altPrice.toFixed(2)}
+              </div>
+
+              {/* Market Price */}
+              <div className="text-[10px] font-bold text-slate-400 line-through font-mono">
+                Market Price: ৳ {currentPrice.toFixed(2)}
+              </div>
+
+              {/* Saved Amount */}
+              {savings > 0 && (
+                <div className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 font-mono">
+                  Save ৳ {savings.toFixed(2)} / unit
+                </div>
+              )}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      {/* 3. Bottom Navigation Control Bar (Wide Rounded Container with Centered Down Arrow ↓) */}
+      <div className="pt-0.5 flex flex-col items-center gap-1">
+        <button
+          onClick={handleNext}
+          id="alt-brand-next-btn"
+          title="Next Alternative (↓)"
+          aria-label="Next Alternative"
+          className="w-full py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 hover:border-[#14967F] transition-all flex items-center justify-center text-slate-700 dark:text-slate-300 cursor-pointer shadow-xs group"
+        >
+          <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform text-[#14967F] dark:text-[#2DD4BF]" />
+        </button>
+
+        {/* Small Pagination Indicator Dots */}
+        <div className="flex items-center gap-1.5 pt-0.5">
+          {alternatives.slice(0, 8).map((_, idx) => (
+            <button
+              key={idx}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsPaused(true);
+                setCurrentIndex(idx);
+              }}
+              aria-label={`Go to slide ${idx + 1}`}
+              className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                idx === currentIndex
+                  ? 'w-4 bg-[#14967F] dark:bg-[#2DD4BF]'
+                  : 'w-1.5 bg-slate-300 dark:bg-slate-700'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
