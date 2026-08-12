@@ -35,8 +35,6 @@ export const ClinicalMonographAccordions: React.FC<ClinicalMonographAccordionsPr
   const doseText = getLangField(monograph?.dose, monograph?.doseBn);
   const contraText = getLangField(monograph?.contraIndication, monograph?.contraIndicationBn);
   const precautionText = getLangField(monograph?.precaution, monograph?.precautionBn);
-  const sideEffectText = getLangField(monograph?.sideEffect, monograph?.sideEffectBn);
-  const pregText = getLangField(monograph?.pregnancyCategory, monograph?.pregnancyCategoryBn);
 
   // Helper parser for dose sections
   const parseDosePart = (text?: string, type: 'adult' | 'child' | 'renal' | 'admin' = 'adult') => {
@@ -67,10 +65,10 @@ export const ClinicalMonographAccordions: React.FC<ClinicalMonographAccordionsPr
   ];
 
   return (
-    <section id="sec-monograph" className="space-y-4 pt-2">
+    <section id="sec-monograph" className="space-y-3 pt-1">
       
       {/* Accordions List (Strictly matching hand-drawn sketch) */}
-      <div className="space-y-2.5">
+      <div className="space-y-1.5">
         {accordionItems.map((item) => {
           const isOpen = !!openItems[item.key];
           if (!item.content) return null;
@@ -78,28 +76,28 @@ export const ClinicalMonographAccordions: React.FC<ClinicalMonographAccordionsPr
           return (
             <div
               key={item.key}
-              className="bg-white dark:bg-[#152232] rounded-2xl border-2 border-[#CCECEE] dark:border-[#243B53] overflow-hidden shadow-xs transition-colors"
+              className="bg-white dark:bg-[#131B2E] rounded-xl border border-slate-200 dark:border-slate-800/80 overflow-hidden shadow-xs transition-colors"
             >
               <button
                 onClick={() => toggleItem(item.key)}
-                className="w-full p-4 flex items-center justify-between gap-3 text-left hover:bg-[#F1F9FF] dark:hover:bg-[#1A2B3E] transition-colors cursor-pointer"
+                className="w-full py-2.5 px-3 flex items-center justify-between gap-2 text-left hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors cursor-pointer"
               >
-                <div className="flex items-center gap-2.5">
-                  <span className="text-[#14967F] dark:text-[#2DD4BF]">
-                    <CheckCircle2 className="w-5 h-5" />
+                <div className="flex items-center gap-2">
+                  <span className="text-[#14967F] dark:text-[#2DD4BF] shrink-0">
+                    <CheckCircle2 className="w-4 h-4" />
                   </span>
-                  <span className="text-base font-extrabold text-[#095D7E] dark:text-slate-100">
+                  <span className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-slate-100">
                     {item.title}
                   </span>
                 </div>
 
-                <div className="w-7 h-7 rounded-lg bg-[#F1F9FF] dark:bg-[#1A2B3E] flex items-center justify-center text-[#095D7E] dark:text-slate-200">
-                  {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                <div className="w-6 h-6 rounded-md bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300">
+                  {isOpen ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
                 </div>
               </button>
 
               {isOpen && (
-                <div className="p-4 pt-0 text-sm font-medium text-slate-700 dark:text-slate-200 leading-relaxed border-t border-[#F1F9FF] dark:border-[#243B53] whitespace-pre-line bg-[#F1F9FF]/40 dark:bg-[#1A2B3E]/40">
+                <div className="py-2 px-3 text-xs font-medium text-slate-700 dark:text-slate-200 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 whitespace-pre-line bg-slate-50/60 dark:bg-slate-800/40">
                   {item.content}
                 </div>
               )}
@@ -109,13 +107,13 @@ export const ClinicalMonographAccordions: React.FC<ClinicalMonographAccordionsPr
       </div>
 
       {/* Floating / Sticky Bottom Language Toggle Button (Exact Hand-Drawn Sketch Feature: "বাংলায় দেখুন") */}
-      <div className="pt-2 flex justify-center sticky bottom-16 z-30 pointer-events-auto">
+      <div className="pt-2 flex justify-center sticky bottom-14 z-30 pointer-events-auto">
         <button
           onClick={onToggleLang}
           id="toggle-bangla-btn-sketch"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#095D7E] dark:bg-[#14967F] text-white text-sm font-black shadow-2xl border-2 border-white dark:border-[#243B53] hover:scale-105 transition-all cursor-pointer"
+          className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-[#095D7E] dark:bg-[#14967F] text-white text-xs font-black shadow-xl border-2 border-white dark:border-slate-800 hover:scale-105 transition-all cursor-pointer"
         >
-          <Languages className="w-4 h-4 text-[#E2FCD6]" />
+          <Languages className="w-3.5 h-3.5 text-[#E2FCD6]" />
           <span>{lang === 'en' ? 'বাংলায় দেখুন' : 'View in English'}</span>
         </button>
       </div>

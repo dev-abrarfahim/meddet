@@ -255,9 +255,9 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 space-y-6">
 
-        {/* VIEW 1: SINGLE MEDICINE DETAILS PAGE */}
+        {/* VIEW 1: SINGLE MEDICINE DETAILS PAGE (Mobile First Compact Layout) */}
         {selectedMedicine ? (
-          <div className="space-y-6 animate-in fade-in duration-200">
+          <div className="max-w-xl mx-auto space-y-2.5 animate-in fade-in duration-200 pb-16">
             
             {/* Sticky Table of Contents Jump Bar */}
             <TableOfContents activeSection={activeSection} />

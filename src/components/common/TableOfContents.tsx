@@ -40,22 +40,22 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection 
   };
 
   return (
-    <div className="sticky top-28 z-20 bg-white/95 dark:bg-[#152232]/95 backdrop-blur-md border-2 border-[#CCECEE] dark:border-[#243B53] rounded-2xl p-1.5 shadow-md transition-colors flex items-center gap-1">
+    <div className="sticky top-28 z-20 bg-white/95 dark:bg-[#131B2E]/95 backdrop-blur-md border border-slate-200 dark:border-slate-800/80 rounded-xl p-1 shadow-xs transition-colors flex items-center gap-1">
       
       {/* Left Chevron Arrow Button < */}
       <button
         onClick={handleScrollLeft}
         id="toc-scroll-left-btn"
-        className="w-7 h-7 rounded-xl bg-[#F1F9FF] dark:bg-[#1A2B3E] border border-[#CCECEE] dark:border-[#243B53] flex items-center justify-center text-[#095D7E] dark:text-slate-200 hover:border-[#14967F] shrink-0 cursor-pointer"
+        className="w-6 h-6 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:border-[#14967F] shrink-0 cursor-pointer"
         aria-label="Scroll left"
       >
-        <ChevronLeft className="w-4 h-4" />
+        <ChevronLeft className="w-3.5 h-3.5" />
       </button>
 
       {/* Scrollable Tabs */}
       <div
         ref={scrollRef}
-        className="flex items-center gap-1.5 overflow-x-auto no-scrollbar scroll-smooth flex-1 px-1"
+        className="flex items-center gap-1 overflow-x-auto no-scrollbar scroll-smooth flex-1 px-0.5"
       >
         {sections.map((sec) => {
           const IconComp = sec.icon;
@@ -64,13 +64,13 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection 
             <button
               key={sec.id}
               onClick={() => scrollToSection(sec.id)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-black whitespace-nowrap transition-all border ${
+              className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-black whitespace-nowrap transition-all border ${
                 isActive
                   ? 'bg-[#095D7E] dark:bg-[#14967F] text-white border-[#095D7E] dark:border-[#14967F] shadow-xs'
-                  : 'bg-[#F1F9FF] dark:bg-[#1A2B3E] text-[#095D7E] dark:text-slate-200 border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F]'
+                  : 'bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700/60 hover:border-[#14967F]'
               }`}
             >
-              <IconComp className="w-3.5 h-3.5" />
+              <IconComp className="w-3 h-3" />
               <span>{sec.label}</span>
             </button>
           );
@@ -81,10 +81,10 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection 
       <button
         onClick={handleScrollRight}
         id="toc-scroll-right-btn"
-        className="w-7 h-7 rounded-xl bg-[#F1F9FF] dark:bg-[#1A2B3E] border border-[#CCECEE] dark:border-[#243B53] flex items-center justify-center text-[#095D7E] dark:text-slate-200 hover:border-[#14967F] shrink-0 cursor-pointer"
+        className="w-6 h-6 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-700 dark:text-slate-200 hover:border-[#14967F] shrink-0 cursor-pointer"
         aria-label="Scroll right"
       >
-        <ChevronRight className="w-4 h-4" />
+        <ChevronRight className="w-3.5 h-3.5" />
       </button>
 
     </div>
