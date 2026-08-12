@@ -15,7 +15,7 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
   const [isExpanded, setIsExpanded] = useState<boolean>(true);
   const [showFullList, setShowFullList] = useState<boolean>(false);
 
-  const alternatives = getAlternativeBrands(medicine.genericId, medicine.id);
+  const alternatives = getAlternativeBrands(medicine.genericId, medicine.id, medicine.form);
   
   // Find lower cost alternative if available, or top alternative
   const lowerCostAlt = alternatives.find((a) => a.mrp > 0 && a.mrp < medicine.mrp) || alternatives[0];

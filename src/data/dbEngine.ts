@@ -108,10 +108,24 @@ export function getMedicineById(id: number): Medicine | null {
   };
 }
 
-// 5. Get Alternative Brands for a Generic ID
-export function getAlternativeBrands(genericId: number, currentBrandId?: number): Medicine[] {
+// 5. Get Alternative Brands for a Generic ID (Strictly matched by Dosage Form)
+export function getAlternativeBrands(genericId: number, currentBrandId?: number, dosageForm?: string): Medicine[] {
   const alternatives = genericToBrandsMap.get(genericId) || [];
-  return alternatives.filter((b) => b.id !== currentBrandId);
+  let filtered = alternatives.filter((b) => b.id !== currentBrandId);
+
+  if (dosageForm && dosageForm.trim() !== '') {
+    const targetForm = dosageForm.trim().toLowerCase();
+    const sameFormMatches = filtered.filter((b) => {
+      const bForm = b.form.trim().toLowerCase();
+      return bForm === targetForm || bForm.includes(targetForm) || targetForm.includes(bForm);
+    });
+
+    if (sameFormMatches.length > 0) {
+      filtered = sameFormMatches;
+    }
+  }
+
+  return filtered;
 }
 
 // 6. Database Statistics
