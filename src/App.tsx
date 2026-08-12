@@ -122,13 +122,9 @@ export default function App() {
       // Update current window URL
       window.history.pushState(null, '', url.toString());
 
-      // If embedded inside Blogger iframe, sync URL to Blogspot address bar!
+      // If embedded inside Blogger iframe, sync URL to Blogspot address bar via postMessage!
       if (window.parent && window.parent !== window) {
-        try {
-          window.parent.history.pushState(null, '', window.parent.location.pathname + url.search);
-        } catch (err) {
-          window.parent.postMessage({ type: 'MEDVHAI_URL_CHANGE', search: url.search }, '*');
-        }
+        window.parent.postMessage({ type: 'MEDVHAI_URL_CHANGE', search: url.search }, '*');
       }
     } catch (e) {
       console.error(e);
