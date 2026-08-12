@@ -24,3 +24,4 @@ export { WarningsSection } from './medicine/WarningsSection';
 export { SideEffectsSection } from './medicine/SideEffectsSection';
 export { MoreInfoSection } from './medicine/MoreInfoSection';
 export { ClinicalMonographAccordions } from './medicine/ClinicalMonographAccordions';
+export { GenericBrandsPage } from './generic/GenericBrandsPage';

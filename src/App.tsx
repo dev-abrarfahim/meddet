@@ -20,7 +20,8 @@ import {
   FilterDrawer,
   SidebarDrawer,
   HomeLanding,
-  ClinicalMonographAccordions
+  ClinicalMonographAccordions,
+  GenericBrandsPage
 } from './components';
 
 import { Medicine, FilterOptions, LanguageMode } from './types';
@@ -100,6 +101,33 @@ export default function App() {
   });
 
   const [selectedMedicine, setSelectedMedicine] = useState<Medicine | null>(null);
+  const [selectedGenericView, setSelectedGenericView] = useState<{ id: number; name: string } | null>(null);
+
+  // Open Generic Brands Page
+  const handleOpenGenericBrands = (genericId: number, genericName: string) => {
+    setSelectedGenericView({ id: genericId, name: genericName });
+    setSelectedMedicine(null);
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('generic', genericName);
+      window.history.pushState({}, '', url.toString());
+    } catch (e) {
+      console.error(e);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleCloseGenericBrands = () => {
+    setSelectedGenericView(null);
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('generic');
+      window.history.pushState({}, '', url.toString());
+    } catch (e) {
+      console.error(e);
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Modal / Drawer States
   const [isFiltersOpen, setIsFiltersOpen] = useState<boolean>(false);
@@ -181,17 +209,20 @@ export default function App() {
     // Ensure full monograph and note are populated
     const fullMed = getMedicineById(med.id) || med;
     setSelectedMedicine(fullMed);
+    setSelectedGenericView(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleGoHome = () => {
     setSelectedMedicine(null);
+    setSelectedGenericView(null);
     setActiveTab('home');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleGoToSearch = (query?: string, category?: string, manufacturer?: string) => {
     setSelectedMedicine(null);
+    setSelectedGenericView(null);
     setActiveTab('search');
     setSelectedLetter('All');
     setCurrentPage(1);
@@ -255,8 +286,15 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 space-y-6">
 
-        {/* VIEW 1: SINGLE MEDICINE DETAILS PAGE (Mobile First Compact Layout) */}
-        {selectedMedicine ? (
+        {/* VIEW 0: DEDICATED GENERIC AVAILABLE BRANDS PAGE */}
+        {selectedGenericView ? (
+          <GenericBrandsPage
+            genericId={selectedGenericView.id}
+            genericName={selectedGenericView.name}
+            onSelectMedicine={handleSelectMedicine}
+            onBack={handleCloseGenericBrands}
+          />
+        ) : selectedMedicine ? (
           <div className="max-w-xl mx-auto space-y-2.5 animate-in fade-in duration-200 pb-16">
             
             {/* Sticky Table of Contents Jump Bar */}
@@ -281,6 +319,7 @@ export default function App() {
             <AlternativeBrands
               medicine={selectedMedicine}
               onSelectMedicine={handleSelectMedicine}
+              onSeeAll={() => handleOpenGenericBrands(selectedMedicine.genericId, selectedMedicine.genericName)}
             />
 
             {/* 4. Chemical Structure (2D Diagram + Formula Grid) */}

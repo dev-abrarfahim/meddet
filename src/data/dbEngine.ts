@@ -128,6 +128,11 @@ export function getAlternativeBrands(genericId: number, currentBrandId?: number,
   return filtered;
 }
 
+// 5b. Get All Brands for a Generic ID
+export function getBrandsForGeneric(genericId: number): Medicine[] {
+  return genericToBrandsMap.get(genericId) || [];
+}
+
 // 6. Database Statistics
 export function getDatabaseStats(): IndexStats {
   return {
