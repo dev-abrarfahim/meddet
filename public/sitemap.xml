@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Main Home Page -->
     <url>
         <loc>https://medivhai.blogspot.com/</loc>
         <lastmod>2026-08-12</lastmod>
@@ -14,4 +16,71 @@
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
+
+    <!-- Popular Medicine Detail Pages -->
+    <url>
+        <loc>https://medivhai.blogspot.com/?id=1</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://medivhai.blogspot.com/?id=2</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://medivhai.blogspot.com/?id=3</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://medivhai.blogspot.com/?id=4</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
+        <loc>https://medivhai.blogspot.com/?id=5</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <!-- Generic Brand Explorer Pages -->
+    <url>
+        <loc>https://medivhai.blogspot.com/?genericId=1</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://medivhai.blogspot.com/?genericId=2</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://medivhai.blogspot.com/?genericId=3</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- A-Z Alphabetical Directory Paths -->
+    <url>
+        <loc>https://medivhai.blogspot.com/?letter=A</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medivhai.blogspot.com/?letter=B</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medivhai.blogspot.com/?letter=C</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medivhai.blogspot.com/?letter=N</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
 </urlset>
