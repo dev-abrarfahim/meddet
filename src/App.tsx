@@ -21,7 +21,7 @@ import {
   SidebarDrawer,
   HomeLanding,
   ClinicalMonographAccordions,
-  GenericBrandsPage
+  GenericBrandsExplorer
 } from './components';
 
 import { Medicine, FilterOptions, LanguageMode } from './types';
@@ -101,28 +101,39 @@ export default function App() {
   });
 
   const [selectedMedicine, setSelectedMedicine] = useState<Medicine | null>(null);
-  const [selectedGenericView, setSelectedGenericView] = useState<{ id: number; name: string } | null>(null);
+  const [explorerGenericId, setExplorerGenericId] = useState<number | null>(null);
 
-  // Open Generic Brands Page
-  const handleOpenGenericBrands = (genericId: number, genericName: string) => {
-    setSelectedGenericView({ id: genericId, name: genericName });
-    setSelectedMedicine(null);
+  // Sync URL query param ?genericId=...
+  useEffect(() => {
     try {
       const url = new URL(window.location.href);
-      url.searchParams.set('generic', genericName);
-      window.history.pushState({}, '', url.toString());
+      const gIdParam = url.searchParams.get('genericId');
+      if (gIdParam && !isNaN(Number(gIdParam))) {
+        setExplorerGenericId(Number(gIdParam));
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }, []);
+
+  const handleOpenGenericBrandsExplorer = (genericId: number) => {
+    setExplorerGenericId(genericId);
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('genericId', genericId.toString());
+      window.history.pushState(null, '', url.toString());
     } catch (e) {
       console.error(e);
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleCloseGenericBrands = () => {
-    setSelectedGenericView(null);
+  const handleCloseGenericBrandsExplorer = () => {
+    setExplorerGenericId(null);
     try {
       const url = new URL(window.location.href);
-      url.searchParams.delete('generic');
-      window.history.pushState({}, '', url.toString());
+      url.searchParams.delete('genericId');
+      window.history.pushState(null, '', url.toString());
     } catch (e) {
       console.error(e);
     }
@@ -209,20 +220,17 @@ export default function App() {
     // Ensure full monograph and note are populated
     const fullMed = getMedicineById(med.id) || med;
     setSelectedMedicine(fullMed);
-    setSelectedGenericView(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleGoHome = () => {
     setSelectedMedicine(null);
-    setSelectedGenericView(null);
     setActiveTab('home');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleGoToSearch = (query?: string, category?: string, manufacturer?: string) => {
     setSelectedMedicine(null);
-    setSelectedGenericView(null);
     setActiveTab('search');
     setSelectedLetter('All');
     setCurrentPage(1);
@@ -286,14 +294,16 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 space-y-6">
 
-        {/* VIEW 0: DEDICATED GENERIC AVAILABLE BRANDS PAGE */}
-        {selectedGenericView ? (
-          <GenericBrandsPage
-            genericId={selectedGenericView.id}
-            genericName={selectedGenericView.name}
-            onSelectMedicine={handleSelectMedicine}
-            onBack={handleCloseGenericBrands}
-          />
+        {/* VIEW 0: DEDICATED ALTERNATIVE BRANDS EXPLORER VIEW */}
+        {explorerGenericId ? (
+          <div className="max-w-4xl mx-auto space-y-4 animate-in fade-in duration-200 pb-16">
+            <GenericBrandsExplorer
+              genericId={explorerGenericId}
+              onSelectMedicine={handleSelectMedicine}
+              onBack={handleCloseGenericBrandsExplorer}
+              lang={lang}
+            />
+          </div>
         ) : selectedMedicine ? (
           <div className="max-w-xl mx-auto space-y-2.5 animate-in fade-in duration-200 pb-16">
             
@@ -308,6 +318,7 @@ export default function App() {
                 setActiveTab('search');
               }}
               onSelectMedicine={handleSelectMedicine}
+              onOpenGenericBrandsExplorer={handleOpenGenericBrandsExplorer}
               lang={lang}
               onToggleLang={toggleLang}
             />
@@ -319,7 +330,6 @@ export default function App() {
             <AlternativeBrands
               medicine={selectedMedicine}
               onSelectMedicine={handleSelectMedicine}
-              onSeeAll={() => handleOpenGenericBrands(selectedMedicine.genericId, selectedMedicine.genericName)}
             />
 
             {/* 4. Chemical Structure (2D Diagram + Formula Grid) */}

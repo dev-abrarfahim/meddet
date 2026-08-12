@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pill, Building2, Layers, ArrowLeft } from 'lucide-react';
+import { Pill, Building2, Layers, ArrowLeft, ExternalLink } from 'lucide-react';
 import { Medicine, LanguageMode } from '../../types';
 import { getAlternativeBrands } from '../../data/dbEngine';
 
@@ -7,14 +7,16 @@ interface MedicineHeroProps {
   medicine: Medicine;
   onBackToSearch: () => void;
   onSelectMedicine: (med: Medicine) => void;
+  onOpenGenericBrandsExplorer: (genericId: number) => void;
   lang: LanguageMode;
-  onToggleLang: () => void;
+  onToggleLang?: () => void;
 }
 
 export const MedicineHero: React.FC<MedicineHeroProps> = ({
   medicine,
   onBackToSearch,
   onSelectMedicine,
+  onOpenGenericBrandsExplorer,
   lang
 }) => {
   // Find variants of the same generic/brand with different strengths & forms
@@ -85,11 +87,23 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
 
       </div>
 
-      {/* "Also available As" Container (Strictly Matching Hand-Drawn Sketch) */}
+      {/* "Also available As" Container with "Alternative Brands" Button */}
       <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80 space-y-1.5">
-        <div className="text-[11px] font-black uppercase tracking-wider text-slate-800 dark:text-slate-200 flex items-center gap-1">
-          <Layers className="w-3 h-3 text-[#14967F]" />
-          <span>Also available As</span>
+        <div className="flex items-center justify-between gap-2 flex-wrap">
+          <div className="text-[11px] font-black uppercase tracking-wider text-slate-800 dark:text-slate-200 flex items-center gap-1">
+            <Layers className="w-3 h-3 text-[#14967F]" />
+            <span>Also available As</span>
+          </div>
+
+          {/* Alternative Brands Dedicated Explorer Button */}
+          <button
+            onClick={() => onOpenGenericBrandsExplorer(medicine.genericId)}
+            id="hero-open-alt-brands-explorer-btn"
+            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-700 text-[11px] font-black text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900 transition-all cursor-pointer shadow-xs"
+          >
+            <span>Alternative Brands</span>
+            <ExternalLink className="w-3 h-3" />
+          </button>
         </div>
 
         <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5">

@@ -7,13 +7,11 @@ import { getAlternativeBrands } from '../../data/dbEngine';
 interface AlternativeBrandsProps {
   medicine: Medicine;
   onSelectMedicine: (med: Medicine) => void;
-  onSeeAll?: () => void;
 }
 
 export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
   medicine,
-  onSelectMedicine,
-  onSeeAll
+  onSelectMedicine
 }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isPaused, setIsPaused] = useState<boolean>(false);
@@ -87,17 +85,7 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
         </div>
 
         {/* Top Right Controls & Page Counter */}
-        <div className="flex items-center gap-1.5">
-          {onSeeAll && (
-            <button
-              onClick={onSeeAll}
-              id="alt-brand-see-all-btn"
-              className="px-2.5 py-1 rounded-lg bg-[#14967F]/10 dark:bg-[#2DD4BF]/20 border border-[#14967F]/30 dark:border-[#2DD4BF]/40 text-xs font-black text-[#14967F] dark:text-[#2DD4BF] hover:bg-[#14967F] hover:text-white transition-all cursor-pointer mr-0.5"
-            >
-              See All →
-            </button>
-          )}
-
+        <div className="flex items-center gap-2">
           <span className="text-[11px] font-black text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-md font-mono">
             {currentIndex + 1} of {alternatives.length}
           </span>
