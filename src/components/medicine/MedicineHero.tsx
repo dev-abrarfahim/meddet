@@ -20,7 +20,7 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
   onOpenGenericBrandsExplorer,
   lang
 }) => {
-  const { icon: DosageFormIcon, color: badgeColor } = getDosageFormIconInfo(medicine.form);
+  const { iconPath, color: badgeColor } = getDosageFormIconInfo(medicine.form);
 
   // Find variants of the same generic/brand with different strengths & forms
   const allGenericAlternatives = getAlternativeBrands(medicine.genericId);
@@ -53,15 +53,14 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
       <div className="space-y-1">
         
         {/* Line 1: Dynamic Dosage Form Icon + Brand Name + Form Badge */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-[#095D7E] dark:bg-[#14967F] text-white flex items-center justify-center shrink-0 shadow-sm" title={medicine.form}>
-            <DosageFormIcon className="w-4.5 h-4.5 text-[#E2FCD6]" />
+        <div className="flex items-center gap-1.5">
+          <div className="flex items-center justify-center shrink-0" title={medicine.form}>
+            <img src={iconPath} alt={medicine.form} className="w-9 h-9 object-contain" loading="lazy" />
           </div>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight flex items-center gap-1.5 flex-wrap">
             <span>{medicine.name}</span>
-            <span className={`inline-flex items-center gap-1 text-xs font-extrabold px-2 py-0.5 rounded font-mono ${badgeColor}`}>
-              <DosageFormIcon className="w-3.5 h-3.5" />
-              <span>{medicine.form}</span>
+            <span className={`inline-flex items-center text-xs font-extrabold px-2 py-0.5 rounded font-mono ${badgeColor}`}>
+              {medicine.form}
             </span>
           </h1>
         </div>

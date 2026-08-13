@@ -44,10 +44,11 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
   const currentAlt = alternatives[currentIndex] || alternatives[0];
 
   // Pricing calculations
-  const currentPrice = medicine.mrp > 0 ? medicine.mrp : 7.00;
-  const altPrice = currentAlt.mrp > 0 ? currentAlt.mrp : 3.50;
-  const savings = currentPrice - altPrice;
-  const percentCheaper = savings > 0 ? Math.round((savings / currentPrice) * 100) : 43;
+  const currentPrice = Number(medicine.mrp) > 0 ? Number(medicine.mrp) : 0;
+  const altPrice = Number(currentAlt.mrp) > 0 ? Number(currentAlt.mrp) : 0;
+  const hasValidComparison = currentPrice > 0 && altPrice > 0;
+  const savings = hasValidComparison && currentPrice > altPrice ? currentPrice - altPrice : 0;
+  const percentCheaper = hasValidComparison && savings > 0 ? Math.round((savings / currentPrice) * 100) : 0;
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -134,24 +135,28 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
             {/* Right Column: Prominent Savings & Pricing Display */}
             <div className="text-right shrink-0 space-y-1 bg-white dark:bg-[#131B2E] p-2 rounded-lg border border-slate-200 dark:border-slate-800/80">
               {/* Savings Badge */}
-              <div className="inline-flex items-center gap-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-[10px] font-black px-2 py-0.5 rounded border border-emerald-300 dark:border-emerald-800">
-                <span>{percentCheaper}% cheaper</span>
-              </div>
+              {percentCheaper > 0 && (
+                <div className="inline-flex items-center gap-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-[10px] font-black px-2 py-0.5 rounded border border-emerald-300 dark:border-emerald-800">
+                  <span>{percentCheaper}% cheaper</span>
+                </div>
+              )}
 
               {/* Unit Price */}
               <div className="text-xs sm:text-sm font-black text-slate-900 dark:text-slate-100 font-mono">
-                Unit Price: ৳ {altPrice.toFixed(2)}
+                {altPrice > 0 ? `৳ ${altPrice.toFixed(2)}` : 'MRP N/A'}
               </div>
 
-              {/* Market Price */}
-              <div className="text-[10px] font-bold text-slate-400 line-through font-mono">
-                Market Price: ৳ {currentPrice.toFixed(2)}
-              </div>
+              {/* Market Price Comparison */}
+              {currentPrice > 0 && currentPrice !== altPrice && (
+                <div className="text-[10px] font-bold text-slate-400 line-through font-mono">
+                  ৳ {currentPrice.toFixed(2)}
+                </div>
+              )}
 
               {/* Saved Amount */}
               {savings > 0 && (
                 <div className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 font-mono">
-                  Save ৳ {savings.toFixed(2)} / unit
+                  Save ৳ {savings.toFixed(2)}
                 </div>
               )}
             </div>

@@ -374,7 +374,6 @@ export default function App() {
         onOpenFilters={() => setIsFiltersOpen(true)}
         onOpenSidebar={() => setIsSidebarOpen(true)}
         onGoHome={handleGoHome}
-        onOpenApiDocs={() => setIsApiDocsOpen(true)}
       />
 
       {/* Secondary Sticky Search Header Toolbar */}

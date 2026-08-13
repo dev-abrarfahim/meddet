@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Sun, Moon, SlidersHorizontal, Code2 } from 'lucide-react';
+import { ShieldCheck, Sun, Moon, SlidersHorizontal } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface HeaderProps {
@@ -8,15 +8,13 @@ interface HeaderProps {
   onOpenFilters: () => void;
   onOpenSidebar: () => void;
   onGoHome: () => void;
-  onOpenApiDocs?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   isDarkMode,
   onToggleDarkMode,
   onOpenFilters,
-  onGoHome,
-  onOpenApiDocs
+  onGoHome
 }) => {
   return (
     <header className="sticky top-0 z-30 bg-[#095D7E] dark:bg-[#0B1927] border-b border-transparent dark:border-[#1E3A52] text-white shadow-md transition-colors duration-300">
@@ -43,19 +41,6 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Right Navigation Actions */}
         <nav aria-label="Main Navigation" className="flex items-center gap-1.5 sm:gap-2">
-
-          {/* Developer API Trigger */}
-          {onOpenApiDocs && (
-            <button
-              onClick={onOpenApiDocs}
-              id="header-open-api-docs-btn"
-              title="Developer API Docs"
-              className="flex items-center gap-1 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl bg-[#14967F]/40 dark:bg-[#14967F]/30 border border-[#CCECEE]/40 dark:border-[#2DD4BF]/40 text-[11px] sm:text-xs font-black text-[#E2FCD6] dark:text-[#2DD4BF] hover:bg-[#14967F] transition-colors cursor-pointer"
-            >
-              <Code2 className="w-3.5 h-3.5" />
-              <span>API</span>
-            </button>
-          )}
 
           {/* Filter Drawer Trigger */}
           <button

@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import { Pill, Syringe, Building2, ChevronLeft, ArrowUpDown, Filter, Sparkles } from 'lucide-react';
+import { Building2, ChevronLeft, ArrowUpDown, Filter, Sparkles } from 'lucide-react';
+import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
 import { Medicine, LanguageMode } from '../../types';
 import { getAllBrandsForGeneric, getGenericById } from '../../data/dbEngine';
 
@@ -95,11 +96,8 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
 
   // Helper icon for dosage forms
   const getFormIcon = (formStr: string) => {
-    const lower = formStr.toLowerCase();
-    if (lower.includes('inj') || lower.includes('vial') || lower.includes('ampoule')) {
-      return <Syringe className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />;
-    }
-    return <Pill className="w-3.5 h-3.5 text-[#14967F] dark:text-[#2DD4BF] shrink-0" />;
+    const { iconPath } = getDosageFormIconInfo(formStr);
+    return <img src={iconPath} alt={formStr} className="w-3.5 h-3.5 object-contain shrink-0" loading="lazy" />;
   };
 
   return (

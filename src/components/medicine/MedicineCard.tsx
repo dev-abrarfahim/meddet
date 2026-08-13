@@ -10,7 +10,7 @@ interface MedicineCardProps {
 }
 
 export const MedicineCard: React.FC<MedicineCardProps> = ({ medicine, onSelect }) => {
-  const { icon: DosageIcon, color: badgeColor } = getDosageFormIconInfo(medicine.form);
+  const { iconPath, color: badgeColor } = getDosageFormIconInfo(medicine.form);
   const brandSlug = slugify(`${medicine.name}-${medicine.strength || ''}-${medicine.form}`);
   const href = `/?id=${medicine.id}&brand=${brandSlug}`;
 
@@ -27,7 +27,7 @@ export const MedicineCard: React.FC<MedicineCardProps> = ({ medicine, onSelect }
         {/* Top Badges */}
         <div className="flex items-center justify-between gap-1 flex-wrap">
           <span className={`inline-flex items-center gap-1 text-xs font-black px-2.5 py-0.5 rounded font-mono ${badgeColor}`}>
-            <DosageIcon className="w-3.5 h-3.5" />
+            <img src={iconPath} alt={medicine.form} className="w-3.5 h-3.5 object-contain shrink-0" loading="lazy" />
             <span>{medicine.form}</span>
             {medicine.strength && <span>• {medicine.strength}</span>}
           </span>

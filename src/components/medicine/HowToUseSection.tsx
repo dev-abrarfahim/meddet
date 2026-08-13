@@ -1,5 +1,6 @@
 import React from 'react';
-import { Clock, Info, ShieldCheck, Pill } from 'lucide-react';
+import { Clock, Info, ShieldCheck } from 'lucide-react';
+import { DosageFormIcon } from '../../utils/dosageFormHelper';
 import { GenericMonograph, DosageFormNote, LanguageMode } from '../../types';
 
 interface HowToUseSectionProps {
@@ -46,7 +47,7 @@ export const HowToUseSection: React.FC<HowToUseSectionProps> = ({
       {displayNote && (
         <div className="bg-emerald-50 dark:bg-emerald-950/40 p-5 rounded-2xl border-2 border-emerald-500/40 space-y-2">
           <div className="flex items-center gap-2 text-xs font-black uppercase text-emerald-800 dark:text-emerald-300">
-            <Pill className="w-4 h-4 text-emerald-600" />
+            <DosageFormIcon formString={dosageForm} size="sm" />
             <span>{lang === 'en' ? `Administration Note for ${dosageForm}` : `${dosageForm} ব্যবহারের বিশেষ নির্দেশিকা`}</span>
           </div>
           <p className="text-sm font-semibold text-emerald-900 dark:text-emerald-200 leading-relaxed">

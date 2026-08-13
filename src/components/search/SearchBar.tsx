@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Search, SlidersHorizontal, X, Clock, Trash2 } from 'lucide-react';
 import { Medicine } from '../../types';
 import { searchMedicines } from '../../data/dbEngine';
+import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
 
 interface SearchBarProps {
   query: string;
@@ -170,6 +171,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                   >
                     <div className="space-y-0.5 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
+                        <img src={getDosageFormIconInfo(med.form).iconPath} alt={med.form} className="w-5 h-5 object-contain shrink-0" loading="lazy" />
                         <span className="font-black text-sm sm:text-base text-[#095D7E] dark:text-slate-100">
                           {med.name}
                         </span>
