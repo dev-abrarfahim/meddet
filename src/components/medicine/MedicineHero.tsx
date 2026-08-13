@@ -1,7 +1,8 @@
 import React from 'react';
-import { Pill, Building2, Layers, ArrowLeft, ExternalLink } from 'lucide-react';
+import { Building2, Layers, ArrowLeft, ExternalLink } from 'lucide-react';
 import { Medicine, LanguageMode } from '../../types';
 import { getAlternativeBrands } from '../../data/dbEngine';
+import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
 
 interface MedicineHeroProps {
   medicine: Medicine;
@@ -19,6 +20,8 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
   onOpenGenericBrandsExplorer,
   lang
 }) => {
+  const { icon: DosageFormIcon, color: badgeColor } = getDosageFormIconInfo(medicine.form);
+
   // Find variants of the same generic/brand with different strengths & forms
   const allGenericAlternatives = getAlternativeBrands(medicine.genericId);
   const variants = [
@@ -49,15 +52,16 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
       {/* Main Header Info */}
       <div className="space-y-1">
         
-        {/* Line 1: Cross Icon + Brand Name + Form */}
+        {/* Line 1: Dynamic Dosage Form Icon + Brand Name + Form Badge */}
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-[#095D7E] dark:bg-[#14967F] text-white flex items-center justify-center shrink-0">
-            <Pill className="w-4.5 h-4.5 text-[#E2FCD6]" />
+          <div className="w-8 h-8 rounded-lg bg-[#095D7E] dark:bg-[#14967F] text-white flex items-center justify-center shrink-0 shadow-sm" title={medicine.form}>
+            <DosageFormIcon className="w-4.5 h-4.5 text-[#E2FCD6]" />
           </div>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight flex items-center gap-1.5 flex-wrap">
             <span>{medicine.name}</span>
-            <span className="text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded font-mono">
-              {medicine.form}
+            <span className={`inline-flex items-center gap-1 text-xs font-extrabold px-2 py-0.5 rounded font-mono ${badgeColor}`}>
+              <DosageFormIcon className="w-3.5 h-3.5" />
+              <span>{medicine.form}</span>
             </span>
           </h1>
         </div>
