@@ -187,50 +187,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
         </div>
       </section>
 
-      {/* FEATURED POPULAR MEDICINES */}
-      <section className="space-y-2">
-        <div className="flex items-center justify-between">
-          <h2 className="text-sm sm:text-lg font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-1.5">
-            <Stethoscope className="w-4 h-4 text-[#14967F]" />
-            <span>{lang === 'en' ? 'Popular Medicines' : 'জনপ্রিয় ওষুধসমূহ'}</span>
-          </h2>
-          <button
-            onClick={() => onGoToSearch()}
-            className="text-xs font-black text-[#14967F] dark:text-[#2DD4BF] hover:underline cursor-pointer"
-          >
-            {lang === 'en' ? 'View All' : 'সবগুলো দেখুন'} →
-          </button>
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
-          {featuredMedicines.map((med) => (
-            <div
-              key={med.id}
-              onClick={() => onSelectMedicine(med)}
-              className="bg-white dark:bg-[#131B2E] p-3 rounded-xl border border-slate-200 dark:border-slate-800/80 hover:border-[#14967F] dark:hover:border-[#2DD4BF] transition-all cursor-pointer flex items-center justify-between gap-2 shadow-xs group"
-            >
-              <div>
-                <span className="text-[10px] font-bold text-[#14967F] dark:text-[#2DD4BF] bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded font-mono">
-                  {med.form} • {med.strength}
-                </span>
-                <h3 className="text-sm font-black text-slate-900 dark:text-slate-100 group-hover:text-[#14967F] transition-colors mt-1">
-                  {med.name}
-                </h3>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold truncate max-w-[200px]">
-                  {med.genericName}
-                </p>
-              </div>
-
-              <div className="text-right shrink-0">
-                <div className="text-[10px] font-bold text-slate-400">MRP</div>
-                <div className="text-xs font-black text-slate-900 dark:text-slate-100 font-mono">
-                  ৳ {med.mrp.toFixed(2)}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* TOP PHARMA MANUFACTURERS */}
       <section className="space-y-2">
