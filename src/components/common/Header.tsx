@@ -28,9 +28,11 @@ export const Header: React.FC<HeaderProps> = ({
           id="brand-logo-btn"
           className="flex items-center gap-2 sm:gap-3 text-left group focus:outline-none focus:ring-2 focus:ring-[#CCECEE] rounded-lg p-0.5"
         >
-          <div className="w-7 h-7 sm:w-10 sm:h-10 rounded-xl bg-[#14967F] dark:bg-[#14967F] text-white flex items-center justify-center shadow-inner group-hover:bg-[#11806C] transition-colors shrink-0">
-            <Stethoscope className="w-4 h-4 sm:w-6 sm:h-6 text-[#E2FCD6]" />
-          </div>
+          <img
+            src="/logo.png"
+            alt="MedVhai Logo"
+            className="h-8 sm:h-10 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform"
+          />
           <div>
             <div className="flex items-center gap-1">
               <span className="font-extrabold text-base sm:text-xl tracking-tight text-white">MedVhai</span>

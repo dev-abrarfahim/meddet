@@ -15,9 +15,7 @@ export const MedicalDisclaimer: React.FC<MedicalDisclaimerProps> = ({ onOpenApiD
         {/* Column 1: Brand Info & Mission */}
         <div className="md:col-span-2 space-y-1.5 sm:space-y-2.5">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-[#095D7E] dark:bg-[#14967F] text-white flex items-center justify-center shrink-0">
-              <Stethoscope className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E2FCD6]" />
-            </div>
+            <img src="/logo.png" alt="MedVhai Logo" className="h-7 sm:h-8 w-auto object-contain shrink-0" />
             <span className="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 dark:text-slate-100">
               MedVhai
             </span>
