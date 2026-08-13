@@ -43,10 +43,14 @@
     <meta property="twitter:description" content="Bangladesh's clinical drug index & medicine price guide. Search 30,000+ brand medicines, generic active ingredients, BDT MRP prices, and lower-cost alternative brands." />
     <meta property="twitter:image" content="https://medvhai.heliox.workers.dev/logo.png" />
 
-    <!-- Google Fonts - Lato -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- High-Performance Non-Render-Blocking Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" />
+    </noscript>
 
     <!-- Schema.org WebSite Structured Data (Explicit Google Site Name Signal) -->
     <script type="application/ld+json">

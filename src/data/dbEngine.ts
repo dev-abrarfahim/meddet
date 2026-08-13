@@ -42,6 +42,29 @@ function notifyListeners() {
   listeners.forEach((fn) => fn());
 }
 
+async function fetchCachedJson<T>(url: string): Promise<T> {
+  if (typeof window !== 'undefined' && 'caches' in window) {
+    try {
+      const cache = await caches.open('medvhai-data-v1');
+      const cachedResponse = await cache.match(url);
+      if (cachedResponse) {
+        return (await cachedResponse.json()) as T;
+      }
+      const networkResponse = await fetch(url);
+      if (networkResponse.ok) {
+        cache.put(url, networkResponse.clone()).catch(() => {});
+        return (await networkResponse.json()) as T;
+      }
+    } catch {
+      // fallback to direct fetch below
+    }
+  }
+  return fetch(url).then((res) => {
+    if (!res.ok) throw new Error(`HTTP error ${res.status} fetching ${url}`);
+    return res.json();
+  });
+}
+
 export async function loadDatabase(): Promise<void> {
   if (isLoaded) return;
   if (loadPromise) return loadPromise;
@@ -53,21 +76,16 @@ export async function loadDatabase(): Promise<void> {
       const basePath = (import.meta as any).env?.BASE_URL || '/';
       const cleanBase = basePath.endsWith('/') ? basePath : basePath + '/';
       
-      const [brandsRes, genericsRes, companiesRes, notesRes] = await Promise.all([
-        fetch(`${cleanBase}data/brands.json`).then((res) => res.json()),
-        fetch(`${cleanBase}data/generics.json`).then((res) => res.json()),
-        fetch(`${cleanBase}data/companies.json`).then((res) => res.json()),
-        fetch(`${cleanBase}data/dosageNotes.json`).then((res) => res.json())
+      // Tier 1: Fast initial load (Brands, Companies, Notes) for immediate UI rendering & search
+      const [brandsRes, companiesRes, notesRes] = await Promise.all([
+        fetchCachedJson<Medicine[]>(`${cleanBase}data/brands.json`),
+        fetchCachedJson<CompanyInfo[]>(`${cleanBase}data/companies.json`),
+        fetchCachedJson<Record<string, DosageFormNote>>(`${cleanBase}data/dosageNotes.json`)
       ]);
 
-      BRANDS = brandsRes as Medicine[];
-      GENERICS = genericsRes as GenericMonograph[];
-      COMPANIES = companiesRes as CompanyInfo[];
-      DOSAGE_NOTES = notesRes as Record<string, DosageFormNote>;
-
-      // Populate O(1) Maps
-      genericsMap.clear();
-      GENERICS.forEach((g) => genericsMap.set(g.id, g));
+      BRANDS = brandsRes;
+      COMPANIES = companiesRes;
+      DOSAGE_NOTES = notesRes;
 
       companiesMap.clear();
       COMPANIES.forEach((c) => companiesMap.set(c.id, c));
@@ -86,6 +104,19 @@ export async function loadDatabase(): Promise<void> {
       isLoaded = true;
       isLoading = false;
       notifyListeners();
+
+      // Tier 2: Deferred load for large full monographs in background (prevents blocking LCP)
+      fetchCachedJson<GenericMonograph[]>(`${cleanBase}data/generics.json`)
+        .then((genericsRes) => {
+          GENERICS = genericsRes;
+          genericsMap.clear();
+          GENERICS.forEach((g) => genericsMap.set(g.id, g));
+          notifyListeners();
+        })
+        .catch((err) => {
+          console.warn('Background monograph fetch notice:', err);
+        });
+
     } catch (err) {
       console.error('Failed to load database JSON files:', err);
       isLoading = false;

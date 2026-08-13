@@ -34,9 +34,13 @@ import { Pill, Search, RotateCcw, ChevronLeft, ChevronRight, Languages, ShieldCh
 
 export default function App() {
   const [dbReady, setDbReady] = useState<boolean>(isDatabaseReady());
+  const [dbVersion, setDbVersion] = useState<number>(0);
 
   useEffect(() => {
-    return subscribeDatabase(() => setDbReady(true));
+    return subscribeDatabase(() => {
+      setDbReady(isDatabaseReady());
+      setDbVersion((v) => v + 1);
+    });
   }, []);
 
   // Active Main Tab State ('home' vs 'search')
@@ -209,6 +213,16 @@ export default function App() {
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, [dbReady]);
+
+  // Re-hydrate detailed monograph when Tier 2 background loading completes
+  useEffect(() => {
+    if (selectedMedicine && !selectedMedicine.monograph) {
+      const refreshed = getMedicineById(selectedMedicine.id);
+      if (refreshed && refreshed.monograph) {
+        setSelectedMedicine(refreshed);
+      }
+    }
+  }, [dbVersion]);
 
   // Dynamically update document title, meta descriptions, canonical link, OpenGraph & Schema.org JSON-LD for Search Engine Optimization
   useEffect(() => {
