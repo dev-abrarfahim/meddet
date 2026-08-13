@@ -22,8 +22,8 @@ export function updateDynamicSEO(props: SEOProps) {
   const defaultBaseUrl = 'https://medvhai.heliox.workers.dev';
   const blogspotUrl = 'https://medivhai.blogspot.com';
 
-  let pageTitle = 'MedVhai - Clinical Medicine Index & Monograph Explorer';
-  let pageDesc = 'Search 30,000+ brand medicines, generic active ingredients, BDT MRP prices, lower-cost alternative brands, and bilingual clinical monographs in Bangladesh.';
+  let pageTitle = 'MedVhai™ - Clinical Drug Index & Medicine Price BD';
+  let pageDesc = "Bangladesh's clinical drug index & medicine price guide. Search 30,000+ brand medicines, generic active ingredients, BDT MRP prices, lower-cost alternative brands, and bilingual monograph guidelines.";
   let pageKeywords = 'MedVhai, Medicine Index, Drug Price BD, Generic Medicine BD, Napa, Seclo, Maxpro, Paracetamol, Esomeprazole, Beximco, Square Pharma, Incepta';
   let pageCanonical = `${blogspotUrl}/`;
 
