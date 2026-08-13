@@ -1,4 +1,13 @@
 import { Medicine, GenericMonograph, CompanyInfo, DosageFormNote, FilterOptions, IndexStats } from '../types';
+import { DOSAGE_FORM_CATEGORIES } from '../utils/dosageFormHelper';
+
+const CONDITION_KEYWORDS_MAP: Record<string, string[]> = {
+  ulcer: ['ulcer', 'gastric', 'gerd', 'reflux', 'peptic', 'omeprazole', 'esomeprazole', 'pantoprazole', 'rabeprazole', 'antacid', 'alginate', 'acid', 'আলসার', 'গ্যাস্ট্রিক', 'বুকজ্বালা'],
+  pain: ['pain', 'fever', 'paracetamol', 'analgesic', 'headache', 'nsaid', 'ibuprofen', 'naproxen', 'ketorolac', 'diclofenac', 'aceclofenac', 'tramadol', 'ব্যথা', 'জ্বর', 'মাথাব্যথা'],
+  infection: ['infection', 'antibiotic', 'bacterial', 'antimicrobial', 'antiviral', 'antifungal', 'cefixime', 'azithromycin', 'ciprofloxacin', 'amoxicillin', 'clavulanic', 'সংক্রমণ', 'অ্যান্টিবায়োটিক'],
+  hypertension: ['hypertension', 'blood pressure', 'cardiovascular', 'heart', 'amlodipine', 'losartan', 'bisoprolol', 'atenolol', 'telmisartan', 'valsartan', 'রক্তচাপ', 'হৃদরোগ', 'হাইপারটেনশন'],
+  asthma: ['asthma', 'respiratory', 'bronchial', 'bronchodilator', 'salbutamol', 'montelukast', 'budesonide', 'fluticasone', 'ipratropium', 'শ্বাসকষ্ট', 'অ্যাজমা', 'হাঁপানি']
+};
 
 let BRANDS: Medicine[] = [];
 let GENERICS: GenericMonograph[] = [];
@@ -204,14 +213,56 @@ export function searchMedicines(
     });
   }
 
-  // C. Manufacturer / Company Filter
+  // C. Medical Condition / Category Filter
+  if (filters.category && filters.category !== 'All') {
+    const catKey = filters.category.toLowerCase().trim();
+    const keywords = CONDITION_KEYWORDS_MAP[catKey] || [catKey];
+    results = results.filter((b) => {
+      const mono = genericsMap.get(b.genericId);
+      const targetText = [
+        b.name,
+        b.genericName,
+        b.genericNameBn || '',
+        mono?.indication || '',
+        mono?.indicationBn || '',
+        mono?.dose || '',
+        mono?.sideEffect || ''
+      ].join(' ').toLowerCase();
+
+      return keywords.some((k) => targetText.includes(k.toLowerCase()));
+    });
+  }
+
+  // D. Manufacturer / Company Filter
   if (filters.manufacturer && filters.manufacturer !== 'All') {
     results = results.filter((b) => b.company.toLowerCase() === filters.manufacturer!.toLowerCase());
   }
 
-  // D. Dosage Form Filter
+  // E. Dosage Form Filter
   if (filters.dosageForm && filters.dosageForm !== 'All') {
-    results = results.filter((b) => b.form.toLowerCase() === filters.dosageForm!.toLowerCase());
+    const target = filters.dosageForm.toLowerCase().trim();
+
+    // 1. Try matching with standard DOSAGE_FORM_CATEGORIES
+    const category = DOSAGE_FORM_CATEGORIES.find(
+      (c) =>
+        c.id.toLowerCase() === target ||
+        c.name.toLowerCase() === target ||
+        c.nameBn.toLowerCase() === target ||
+        target.includes(c.id.toLowerCase())
+    );
+
+    if (category) {
+      results = results.filter((b) => {
+        const formLower = b.form.toLowerCase();
+        return category.formsMatch.some((k) => formLower.includes(k.toLowerCase()));
+      });
+    } else {
+      // 2. Direct match on form string
+      results = results.filter((b) => {
+        const formLower = b.form.toLowerCase();
+        return formLower === target || formLower.includes(target) || target.includes(formLower);
+      });
+    }
   }
 
   // E. Max Price Filter

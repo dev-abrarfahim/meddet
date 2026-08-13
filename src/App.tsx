@@ -333,22 +333,29 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleGoToSearch = (query?: string, category?: string, manufacturer?: string) => {
+  const handleGoToSearch = (query?: string, category?: string, manufacturer?: string, dosageForm?: string) => {
     setSelectedMedicine(null);
     setExplorerGenericId(null);
     setActiveTab('search');
     setSelectedLetter('All');
     setCurrentPage(1);
-    if (query !== undefined) setSearchQuery(query);
-    if (category !== undefined) {
-      setFilters((prev) => ({ ...prev, category }));
+
+    setFilters({
+      category: category !== undefined ? category : 'All',
+      manufacturer: manufacturer !== undefined ? manufacturer : 'All',
+      dosageForm: dosageForm !== undefined ? dosageForm : 'All',
+      maxPrice: 0,
+      sortBy: 'relevance'
+    });
+
+    if (query !== undefined) {
+      setSearchQuery(query);
+    } else {
+      setSearchQuery('');
     }
-    if (manufacturer !== undefined) {
-      setFilters((prev) => ({ ...prev, manufacturer }));
-    }
-    syncUrlState({ id: null, brand: null, genericId: null, generic: null, form: null, strength: null });
+
+    syncUrlState({ id: null, brand: null, genericId: null, generic: null, form: dosageForm || null, strength: null });
     setTimeout(() => {
-      mainInputRef.current?.focus();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 50);
   };
@@ -535,16 +542,59 @@ export default function App() {
                 {/* Results Counter & Filter Status Bar */}
                 <div className="flex items-center justify-between gap-3 flex-wrap bg-white dark:bg-[#152232] p-3.5 sm:p-4 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] transition-colors shadow-xs">
                   <div>
-                    <h2 className="text-base sm:text-lg font-bold text-[#095D7E] dark:text-slate-100 flex items-center gap-2">
+                    <h2 className="text-base sm:text-lg font-bold text-[#095D7E] dark:text-slate-100 flex items-center gap-2 flex-wrap">
                       <Pill className="w-5 h-5 text-[#14967F] dark:text-[#2DD4BF]" />
                       <span>{lang === 'en' ? 'Database Search Results' : 'ডাটাবেজ ফলাফল'}</span>
                       <span className="bg-[#E2FCD6] dark:bg-[#064E3B] text-[#0D6F5D] dark:text-[#6EE7B7] text-xs font-black px-3 py-0.5 rounded-full border border-[#14967F]/30">
                         {searchResults.total.toLocaleString()} {lang === 'en' ? 'Medicines Found' : 'টি ওষুধ পাওয়া গেছে'}
                       </span>
                     </h2>
-                    <p className="text-xs text-[#095D7E]/70 dark:text-slate-400 mt-0.5">
-                      Showing page {searchResults.page} of {searchResults.totalPages} {selectedLetter !== 'All' ? `• Letter "${selectedLetter}"` : ''} {searchQuery ? `• Query "${searchQuery}"` : ''}
-                    </p>
+                    
+                    {/* Active Filter Chips */}
+                    <div className="flex items-center gap-1.5 flex-wrap pt-1">
+                      <p className="text-xs text-[#095D7E]/70 dark:text-slate-400">
+                        Showing page {searchResults.page} of {searchResults.totalPages} {selectedLetter !== 'All' ? `• Letter "${selectedLetter}"` : ''} {searchQuery ? `• Query "${searchQuery}"` : ''}
+                      </p>
+
+                      {filters.dosageForm !== 'All' && (
+                        <span className="inline-flex items-center gap-1 bg-emerald-50 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 text-xs font-extrabold px-2.5 py-0.5 rounded-lg border border-emerald-300 dark:border-emerald-700">
+                          <span>Form: {filters.dosageForm}</span>
+                          <button
+                            onClick={() => setFilters((p) => ({ ...p, dosageForm: 'All' }))}
+                            className="hover:text-rose-500 cursor-pointer ml-0.5"
+                            title="Clear Dosage Form filter"
+                          >
+                            ✕
+                          </button>
+                        </span>
+                      )}
+
+                      {filters.category !== 'All' && (
+                        <span className="inline-flex items-center gap-1 bg-indigo-50 dark:bg-indigo-950/70 text-indigo-800 dark:text-indigo-300 text-xs font-extrabold px-2.5 py-0.5 rounded-lg border border-indigo-300 dark:border-indigo-700">
+                          <span>Condition: {filters.category}</span>
+                          <button
+                            onClick={() => setFilters((p) => ({ ...p, category: 'All' }))}
+                            className="hover:text-rose-500 cursor-pointer ml-0.5"
+                            title="Clear Condition filter"
+                          >
+                            ✕
+                          </button>
+                        </span>
+                      )}
+
+                      {filters.manufacturer !== 'All' && (
+                        <span className="inline-flex items-center gap-1 bg-sky-50 dark:bg-sky-950/70 text-sky-800 dark:text-sky-300 text-xs font-extrabold px-2.5 py-0.5 rounded-lg border border-sky-300 dark:border-sky-700">
+                          <span>Company: {filters.manufacturer}</span>
+                          <button
+                            onClick={() => setFilters((p) => ({ ...p, manufacturer: 'All' }))}
+                            className="hover:text-rose-500 cursor-pointer ml-0.5"
+                            title="Clear Manufacturer filter"
+                          >
+                            ✕
+                          </button>
+                        </span>
+                      )}
+                    </div>
                   </div>
 
                   {activeFilterCount > 0 && (
@@ -554,7 +604,7 @@ export default function App() {
                       className="text-xs font-bold text-[#14967F] dark:text-[#2DD4BF] hover:text-[#0D6F5D] flex items-center gap-1 bg-[#F1F9FF] dark:bg-[#1A2B3E] px-3 py-1.5 rounded-xl border border-[#CCECEE] dark:border-[#243B53] transition-colors cursor-pointer"
                     >
                       <RotateCcw className="w-3.5 h-3.5" />
-                      <span>Clear Filters</span>
+                      <span>Clear All Filters</span>
                     </button>
                   )}
                 </div>

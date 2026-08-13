@@ -16,7 +16,7 @@ import { searchMedicines, getAllCompanies } from '../../data/dbEngine';
 import { DOSAGE_FORM_CATEGORIES } from '../../utils/dosageFormHelper';
 
 interface HomeLandingProps {
-  onGoToSearch: (query?: string, category?: string, manufacturer?: string) => void;
+  onGoToSearch: (query?: string, category?: string, manufacturer?: string, dosageForm?: string) => void;
   onSelectMedicine: (med: Medicine) => void;
   lang: LanguageMode;
 }
@@ -129,7 +129,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
             return (
               <button
                 key={formCat.id}
-                onClick={() => onGoToSearch(formCat.name)}
+                onClick={() => onGoToSearch(undefined, undefined, undefined, formCat.id)}
                 className={`p-3.5 sm:p-4 rounded-2xl border text-left transition-all hover:scale-[1.03] active:scale-[0.98] cursor-pointer flex flex-col justify-between space-y-3 shadow-xs group ${formCat.color}`}
               >
                 <div className="flex items-center justify-between w-full">
@@ -171,7 +171,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
             return (
               <button
                 key={idx}
-                onClick={() => onGoToSearch(cat.name)}
+                onClick={() => onGoToSearch(undefined, cat.name)}
                 className={`p-3.5 rounded-2xl border text-left transition-all hover:scale-[1.02] cursor-pointer flex items-center gap-2.5 ${cat.color}`}
               >
                 <div className="w-9 h-9 rounded-xl bg-white/80 dark:bg-black/20 flex items-center justify-center shrink-0">
