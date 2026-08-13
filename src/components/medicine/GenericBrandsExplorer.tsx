@@ -296,8 +296,8 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
 
                     {/* Company */}
                     <td className="py-3 px-4 text-slate-600 dark:text-slate-400">
-                      <div className="flex items-center gap-1">
-                        <Building2 className="w-3 h-3 text-slate-400 shrink-0" />
+                      <div className="flex items-center gap-1.5">
+                        <img src="/icons/pharmaceutical.png" alt="Company" className="w-3.5 h-3.5 object-contain shrink-0" loading="lazy" />
                         <span className="truncate">{brand.company}</span>
                       </div>
                     </td>

@@ -83,8 +83,8 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
         )}
 
         {/* Line 4: Manufacturer */}
-        <div className="flex items-center gap-1 text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-300 pt-0.5 pl-0.5">
-          <Building2 className="w-4 h-4 text-[#14967F] shrink-0" />
+        <div className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-300 pt-0.5 pl-0.5">
+          <img src="/icons/pharmaceutical.png" alt="Manufacturer" className="w-4 h-4 object-contain shrink-0" loading="lazy" />
           <span>{medicine.company}</span>
         </div>
 

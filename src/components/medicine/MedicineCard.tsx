@@ -44,8 +44,8 @@ export const MedicineCard: React.FC<MedicineCardProps> = ({ medicine, onSelect }
         </div>
 
         {/* Manufacturer */}
-        <div className="flex items-center gap-1 text-xs sm:text-sm text-slate-500 dark:text-slate-400 pt-0.5">
-          <Building2 className="w-4 h-4 text-[#14967F] shrink-0" />
+        <div className="flex items-center gap-1.5 text-xs sm:text-sm text-slate-500 dark:text-slate-400 pt-0.5">
+          <img src="/icons/pharmaceutical.png" alt="Company" className="w-3.5 h-3.5 object-contain shrink-0" loading="lazy" />
           <span className="truncate font-semibold">{medicine.company}</span>
         </div>
       </div>

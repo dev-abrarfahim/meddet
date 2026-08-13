@@ -126,8 +126,8 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
                 {medicine.genericName}
               </div>
 
-              <div className="flex items-center gap-1 text-[11px] text-slate-500 dark:text-slate-400 font-semibold pt-0.5 truncate">
-                <Building2 className="w-3 h-3 text-[#14967F] shrink-0" />
+              <div className="flex items-center gap-1.5 text-[11px] text-slate-500 dark:text-slate-400 font-semibold pt-0.5 truncate">
+                <img src="/icons/pharmaceutical.png" alt="Company" className="w-3.5 h-3.5 object-contain shrink-0" loading="lazy" />
                 <span className="truncate">{currentAlt.company}</span>
               </div>
             </div>

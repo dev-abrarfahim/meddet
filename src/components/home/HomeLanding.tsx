@@ -191,7 +191,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
       <section className="space-y-3 pt-2">
         <div className="flex items-center justify-between">
           <h2 className="text-base sm:text-xl md:text-2xl font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-2">
-            <Building2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#14967F]" />
+            <img src="/icons/pharmaceutical.png" alt="Pharma Manufacturers" className="w-6 h-6 sm:w-7 sm:h-7 object-contain shrink-0" loading="lazy" />
             <span>{lang === 'en' ? 'Top Pharma Manufacturers' : 'শীর্ষ ফার্মাসিউটিক্যালস'}</span>
           </h2>
         </div>
@@ -201,11 +201,18 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
             <button
               key={comp.id}
               onClick={() => onGoToSearch(undefined, undefined, comp.name)}
-              className="p-3 sm:p-3.5 rounded-2xl bg-white dark:bg-[#131B2E] border border-slate-200 dark:border-slate-800/80 text-left hover:border-[#14967F] transition-all cursor-pointer shadow-xs"
+              className="p-3 sm:p-3.5 rounded-2xl bg-white dark:bg-[#131B2E] border border-slate-200 dark:border-slate-800/80 text-left hover:border-[#14967F] transition-all cursor-pointer shadow-xs group"
             >
-              <div className="text-xs sm:text-sm font-black text-slate-900 dark:text-slate-100 truncate">{comp.name}</div>
-              <div className="text-xs font-bold text-[#14967F] dark:text-[#2DD4BF] mt-0.5 font-mono">
-                {comp.brandCount} Brands
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center shrink-0 border border-slate-100 dark:border-slate-700/60 group-hover:bg-[#E2FCD6] dark:group-hover:bg-[#064E3B] transition-colors">
+                  <img src="/icons/pharmaceutical.png" alt={comp.name} className="w-5 h-5 object-contain shrink-0" loading="lazy" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="text-xs sm:text-sm font-black text-slate-900 dark:text-slate-100 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors truncate">{comp.name}</div>
+                  <div className="text-xs font-bold text-[#14967F] dark:text-[#2DD4BF] mt-0.5 font-mono">
+                    {comp.brandCount} Brands
+                  </div>
+                </div>
               </div>
             </button>
           ))}
