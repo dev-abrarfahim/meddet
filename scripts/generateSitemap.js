@@ -60,7 +60,7 @@ const dosageForms = [
   'Syrup',
   'Suspension',
   'Cream',
-  'Drops',
+  'Eye Drops',
   'Solution',
   'Inhaler',
   'Suppository'
@@ -73,6 +73,32 @@ dosageForms.forEach((form) => {
         <priority>0.85</priority>
     </url>\n`;
 });
+
+xml += `\n    <!-- Medical Condition Categories -->\n`;
+const conditions = ['Ulcer', 'Pain', 'Infection', 'Hypertension', 'Asthma'];
+conditions.forEach((cond) => {
+  xml += `    <url>
+        <loc>${baseUrl}/?category=${encodeURIComponent(cond)}</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>\n`;
+});
+
+xml += `\n    <!-- Top Pharmaceutical Manufacturers -->\n`;
+const companiesPath = path.resolve('public/data/companies.json');
+if (fs.existsSync(companiesPath)) {
+  const companies = JSON.parse(fs.readFileSync(companiesPath, 'utf8'));
+  const activeCompanies = companies.filter((c) => c.brandCount > 20);
+  activeCompanies.forEach((comp) => {
+    xml += `    <url>
+        <loc>${baseUrl}/?manufacturer=${encodeURIComponent(comp.name)}</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>\n`;
+  });
+}
 
 xml += `\n    <!-- Generic Monograph Pages -->\n`;
 generics.forEach((gen) => {
@@ -101,4 +127,4 @@ xml += `</urlset>\n`;
 const outputPath = path.resolve('public/sitemap.xml');
 fs.writeFileSync(outputPath, xml, 'utf8');
 
-console.log(`Successfully generated sitemap.xml with ${generics.length + brands.length + 37} URLs at ${outputPath}!`);
+console.log(`Successfully generated production sitemap.xml at ${outputPath}!`);

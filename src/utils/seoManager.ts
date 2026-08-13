@@ -14,6 +14,9 @@ export interface SEOProps {
   medicine?: Medicine | null;
   generic?: GenericMonograph | null;
   categoryName?: string;
+  dosageForm?: string;
+  manufacturer?: string;
+  letter?: string;
   searchQuery?: string;
 }
 
@@ -42,12 +45,37 @@ export function updateDynamicSEO(props: SEOProps) {
     pageKeywords = `${gen.name}, ${gen.name} brands BD, ${gen.name} price, ${gen.name} side effects, ${gen.name} dosage, MedVhai`;
     pageCanonical = `${defaultBaseUrl}/?genericId=${gen.id}`;
   }
-  // 3. Category / Search Query SEO
+  // 3. Dosage Form Filter SEO
+  else if (props.dosageForm && props.dosageForm !== 'All') {
+    const form = props.dosageForm;
+    pageTitle = `${form} Medicines in Bangladesh - Price List, Brands & Directory | MedVhai`;
+    pageDesc = `Browse all verified ${form} dosage form medicines in Bangladesh. Check BDT MRP prices, manufacturers, active ingredients, and brand alternatives.`;
+    pageKeywords = `${form} medicines BD, ${form} list Bangladesh, ${form} prices, MedVhai`;
+    pageCanonical = `${defaultBaseUrl}/?form=${encodeURIComponent(form)}`;
+  }
+  // 4. Manufacturer Filter SEO
+  else if (props.manufacturer && props.manufacturer !== 'All') {
+    const comp = props.manufacturer;
+    pageTitle = `${comp} Medicines List & MRP Prices in BD | MedVhai`;
+    pageDesc = `Explore all pharmaceutical brands manufactured by ${comp} in Bangladesh. View active ingredients, dosage forms, verified MRP prices, and monographs.`;
+    pageKeywords = `${comp} medicine list, ${comp} products, ${comp} pharma BD price, MedVhai`;
+    pageCanonical = `${defaultBaseUrl}/?manufacturer=${encodeURIComponent(comp)}`;
+  }
+  // 5. Letter Alphabet Filter SEO
+  else if (props.letter && props.letter !== 'All') {
+    const letChar = props.letter;
+    pageTitle = `Medicines Starting with Letter "${letChar}" - Bangladesh Drug Directory | MedVhai`;
+    pageDesc = `Complete list of Bangladeshi medicine brands starting with letter ${letChar}. Search by brand name, check active generic substances and BDT MRP prices.`;
+    pageKeywords = `medicines starting with ${letChar}, drugs letter ${letChar} BD, MedVhai`;
+    pageCanonical = `${defaultBaseUrl}/?letter=${encodeURIComponent(letChar)}`;
+  }
+  // 6. Medical Condition / Search Query SEO
   else if (props.categoryName || props.searchQuery) {
     const query = props.categoryName || props.searchQuery;
     pageTitle = `${query} Medicines & Brands in Bangladesh - Price List | MedVhai`;
     pageDesc = `Explore ${query} medicines, brand alternatives, BDT MRP prices, and clinical monograph guidelines on MedVhai Drug Index.`;
     pageKeywords = `${query}, ${query} medicine BD, ${query} price list, MedVhai`;
+    pageCanonical = props.searchQuery ? `${defaultBaseUrl}/?q=${encodeURIComponent(props.searchQuery)}` : `${defaultBaseUrl}/?category=${encodeURIComponent(props.categoryName || '')}`;
   }
 
   // Update Document Title

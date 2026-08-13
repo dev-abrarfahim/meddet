@@ -217,9 +217,12 @@ export default function App() {
       medicine: selectedMedicine,
       generic: genericObj,
       categoryName: filters.category !== 'All' ? filters.category : undefined,
+      dosageForm: filters.dosageForm !== 'All' ? filters.dosageForm : undefined,
+      manufacturer: filters.manufacturer !== 'All' ? filters.manufacturer : undefined,
+      letter: selectedLetter !== 'All' ? selectedLetter : undefined,
       searchQuery: searchQuery || undefined
     });
-  }, [selectedMedicine, explorerGenericId, searchQuery, filters.category, activeTab]);
+  }, [selectedMedicine, explorerGenericId, searchQuery, filters.category, filters.dosageForm, filters.manufacturer, selectedLetter, activeTab]);
 
   const handleOpenGenericBrandsExplorer = (genericId: number, form?: string, strength?: string) => {
     setExplorerGenericId(genericId);
@@ -542,13 +545,13 @@ export default function App() {
                 {/* Results Counter & Filter Status Bar */}
                 <div className="flex items-center justify-between gap-3 flex-wrap bg-white dark:bg-[#152232] p-3.5 sm:p-4 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] transition-colors shadow-xs">
                   <div>
-                    <h2 className="text-base sm:text-lg font-bold text-[#095D7E] dark:text-slate-100 flex items-center gap-2 flex-wrap">
+                    <h1 className="text-base sm:text-lg font-bold text-[#095D7E] dark:text-slate-100 flex items-center gap-2 flex-wrap">
                       <Pill className="w-5 h-5 text-[#14967F] dark:text-[#2DD4BF]" />
                       <span>{lang === 'en' ? 'Database Search Results' : 'ডাটাবেজ ফলাফল'}</span>
                       <span className="bg-[#E2FCD6] dark:bg-[#064E3B] text-[#0D6F5D] dark:text-[#6EE7B7] text-xs font-black px-3 py-0.5 rounded-full border border-[#14967F]/30">
                         {searchResults.total.toLocaleString()} {lang === 'en' ? 'Medicines Found' : 'টি ওষুধ পাওয়া গেছে'}
                       </span>
-                    </h2>
+                    </h1>
                     
                     {/* Active Filter Chips */}
                     <div className="flex items-center gap-1.5 flex-wrap pt-1">
