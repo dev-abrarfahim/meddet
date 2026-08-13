@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stethoscope, ShieldCheck, Sun, Moon, SlidersHorizontal, Code2 } from 'lucide-react';
+import { ShieldCheck, Sun, Moon, SlidersHorizontal, Code2 } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface HeaderProps {
@@ -26,24 +26,13 @@ export const Header: React.FC<HeaderProps> = ({
         <button
           onClick={onGoHome}
           id="brand-logo-btn"
-          className="flex items-center gap-2 sm:gap-3 text-left group focus:outline-none focus:ring-2 focus:ring-[#CCECEE] rounded-lg p-0.5"
+          className="flex items-center text-left group focus:outline-none focus:ring-2 focus:ring-[#CCECEE] rounded-lg p-0.5"
         >
           <img
             src="/logo.png"
-            alt="MedVhai Logo"
+            alt="MedVhai - Bangladeshi Drug Index & Clinical Monograph Explorer"
             className="h-8 sm:h-10 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform"
           />
-          <div>
-            <div className="flex items-center gap-1">
-              <span className="font-extrabold text-base sm:text-xl tracking-tight text-white">MedVhai</span>
-              <span className="bg-[#14967F] text-[#E2FCD6] dark:bg-[#14967F]/40 dark:text-[#2DD4BF] dark:border dark:border-[#2DD4BF]/40 text-[9px] sm:text-[10px] font-bold uppercase px-1 py-0.5 rounded tracking-wider">
-                Index
-              </span>
-            </div>
-            <p className="text-[11px] text-[#CCECEE] dark:text-slate-400 hidden md:block">
-              Bangladeshi Drug Index & Clinical Monograph Explorer
-            </p>
-          </div>
         </button>
 
         {/* Header Tagline Badge */}
@@ -53,7 +42,7 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Right Navigation Actions */}
-        <div className="flex items-center gap-1.5 sm:gap-2">
+        <nav aria-label="Main Navigation" className="flex items-center gap-1.5 sm:gap-2">
 
           {/* Developer API Trigger */}
           {onOpenApiDocs && (
@@ -110,7 +99,7 @@ export const Header: React.FC<HeaderProps> = ({
             </motion.div>
           </button>
 
-        </div>
+        </nav>
       </div>
     </header>
   );

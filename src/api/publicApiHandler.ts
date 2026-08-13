@@ -34,6 +34,15 @@ export function checkRateLimit(clientId: string = 'global_client'): { allowed: b
   const windowMs = 60 * 1000; // 1 minute window
   const maxRequests = 60; // Max 60 requests per minute
 
+  // Periodically clean up expired entries to prevent memory leak
+  if (requestTracker.size > 100) {
+    for (const [key, data] of requestTracker) {
+      if (now > data.resetTime) {
+        requestTracker.delete(key);
+      }
+    }
+  }
+
   const clientData = requestTracker.get(clientId) || { count: 0, resetTime: now + windowMs };
 
   if (now > clientData.resetTime) {

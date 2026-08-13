@@ -37,12 +37,7 @@ let xml = `<?xml version="1.0" encoding="UTF-8"?>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
-    <url>
-        <loc>https://medivhai.blogspot.com/</loc>
-        <lastmod>${today}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.00</priority>
-    </url>
+
 
     <!-- Alphabetical Directory Pages -->
 `;
@@ -91,8 +86,7 @@ generics.forEach((gen) => {
 });
 
 xml += `\n    <!-- Brand Medicine Detail Pages -->\n`;
-// Limit to first 2500 top brands for super fast indexing in Google Search Console
-brands.slice(0, 2500).forEach((med) => {
+brands.forEach((med) => {
   const brandSlug = slugify(`${med.name}-${med.strength || ''}-${med.form}`);
   xml += `    <url>
         <loc>${baseUrl}/?id=${med.id}&amp;brand=${brandSlug}</loc>
@@ -107,4 +101,4 @@ xml += `</urlset>\n`;
 const outputPath = path.resolve('public/sitemap.xml');
 fs.writeFileSync(outputPath, xml, 'utf8');
 
-console.log(`Successfully generated sitemap.xml with ${generics.length + Math.min(brands.length, 2500) + 38} URLs at ${outputPath}!`);
+console.log(`Successfully generated sitemap.xml with ${generics.length + brands.length + 37} URLs at ${outputPath}!`);

@@ -15,8 +15,8 @@
     <!-- Primary SEO Meta Tags -->
     <title>MedVhai™ - Clinical Drug Index & Medicine Price BD</title>
     <meta name="title" content="MedVhai™ - Clinical Drug Index & Medicine Price BD" />
-    <meta name="description" content="Bangladesh's clinical drug index & medicine price guide. Search 30,000+ brand medicines, generic active ingredients, BDT MRP prices, lower-cost alternative brands, and bilingual monograph guidelines." />
-    <meta name="keywords" content="MedVhai, Medicine Index, Drug Price BD, Generic Medicine BD, Napa, Seclo, Maxpro, Paracetamol, Esomeprazole, Drug Price BD, Medicine Directory Bangladesh" />
+    <meta name="description" content="Bangladesh's clinical drug index & medicine price guide. Search 30,000+ brand medicines, generic ingredients, BDT MRP prices & alternatives." />
+    <meta name="keywords" content="MedVhai, Medicine Index, Drug Price BD, Generic Medicine BD, Napa, Seclo, Maxpro, Paracetamol, Esomeprazole, Medicine Directory Bangladesh, Beximco Pharma, Square Pharma, Incepta" />
     <meta name="author" content="MedVhai Clinical Index" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
@@ -41,12 +41,12 @@
     <meta property="twitter:url" content="https://medvhai.heliox.workers.dev/" />
     <meta property="twitter:title" content="MedVhai™ - Clinical Drug Index & Medicine Price BD" />
     <meta property="twitter:description" content="Bangladesh's clinical drug index & medicine price guide. Search 30,000+ brand medicines, generic active ingredients, BDT MRP prices, and lower-cost alternative brands." />
-    <meta property="twitter:image" content="https://medvhai.heliox.workers.dev/medical-bg.png" />
+    <meta property="twitter:image" content="https://medvhai.heliox.workers.dev/logo.png" />
 
     <!-- Google Fonts - Lato -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 
     <!-- Schema.org WebSite Structured Data (Explicit Google Site Name Signal) -->
     <script type="application/ld+json">
@@ -76,14 +76,23 @@
         "@type": "MedicalAudience",
         "audienceType": ["Patients", "Doctors", "Pharmacists", "Medical Students"]
       },
-      "medicalAudience": "Public",
+
       "inLanguage": ["en", "bn"],
       "publisher": {
         "@type": "Organization",
         "name": "MedVhai Health Index",
-        "logo": "https://medvhai.heliox.workers.dev/medical-bg.png"
+        "logo": "https://medvhai.heliox.workers.dev/logo.png"
       }
     }
+    </script>
+    <!-- Dark Mode FOUC Prevention (blocks rendering flash) -->
+    <script>
+      try {
+        const d = localStorage.getItem('medvhai_dark_mode');
+        if (d === 'true' || (!d && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch(e) {}
     </script>
   </head>
   <body>

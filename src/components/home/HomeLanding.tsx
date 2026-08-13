@@ -92,6 +92,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
                 placeholder={lang === 'en' ? 'Search brand (Napa, Seclo, Maxpro) or generic (Paracetamol)...' : 'ব্র্যান্ড বা জেনেরিক নাম (Napa, Seclo, Paracetamol)...'}
                 className="w-full text-xs sm:text-sm font-semibold text-[#095D7E] dark:text-slate-100 placeholder-[#095D7E]/50 dark:placeholder-slate-400 bg-transparent focus:outline-none py-1.5 px-1"
                 id="hero-medicine-search-input"
+                aria-label="Search medicine by brand or generic name"
               />
               <button
                 type="submit"

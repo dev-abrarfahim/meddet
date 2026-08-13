@@ -15,7 +15,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
   onOpenFilters
 }) => {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/90 dark:bg-[#0B1927]/90 backdrop-blur-md border-t border-[#CCECEE] dark:border-[#1E3A52] py-2 px-4 shadow-lg transition-colors">
+    <nav aria-label="Bottom Navigation" className="fixed bottom-0 left-0 right-0 z-40 bg-white/90 dark:bg-[#0B1927]/90 backdrop-blur-md border-t border-[#CCECEE] dark:border-[#1E3A52] py-2 px-4 shadow-lg transition-colors">
       <div className="max-w-md mx-auto flex items-center justify-around">
         
         {/* Home Button */}
@@ -65,6 +65,6 @@ export const BottomNav: React.FC<BottomNavProps> = ({
         )}
 
       </div>
-    </div>
+    </nav>
   );
 };

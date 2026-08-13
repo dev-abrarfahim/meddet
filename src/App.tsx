@@ -133,10 +133,8 @@ export default function App() {
     }
   };
 
-  // Sync & restore URL state on initial load and whenever dbReady is true
-  useEffect(() => {
-    if (!dbReady) return;
-
+  // Reusable function: Restore React state from current URL parameters
+  const restoreStateFromUrl = () => {
     try {
       const url = new URL(window.location.href);
       const idParam = url.searchParams.get('id');
@@ -153,12 +151,14 @@ export default function App() {
         const med = getMedicineById(Number(idParam));
         if (med) {
           setSelectedMedicine(med);
+          setExplorerGenericId(null);
           return;
         }
       }
 
       // 2. Restore Generic Brands Explorer Page
       if (gIdParam && !isNaN(Number(gIdParam))) {
+        setSelectedMedicine(null);
         setExplorerGenericId(Number(gIdParam));
         if (formParam) setExplorerForm(formParam);
         if (strParam) setExplorerStrength(strParam);
@@ -167,6 +167,8 @@ export default function App() {
 
       // 3. Restore Search Filters & Query Page
       if (qParam || letterParam || catParam || mfrParam || formParam) {
+        setSelectedMedicine(null);
+        setExplorerGenericId(null);
         setActiveTab('search');
         if (qParam) setSearchQuery(qParam);
         if (letterParam) setSelectedLetter(letterParam);
@@ -178,10 +180,34 @@ export default function App() {
             dosageForm: formParam || prev.dosageForm
           }));
         }
+        return;
       }
+
+      // 4. No URL params → go to home
+      setSelectedMedicine(null);
+      setExplorerGenericId(null);
+      setActiveTab('home');
     } catch (e) {
       console.error(e);
     }
+  };
+
+  // Sync & restore URL state on initial load and whenever dbReady is true
+  useEffect(() => {
+    if (!dbReady) return;
+    restoreStateFromUrl();
+  }, [dbReady]);
+
+  // Handle browser Back / Forward button navigation (popstate)
+  useEffect(() => {
+    if (!dbReady) return;
+
+    const handlePopState = () => {
+      restoreStateFromUrl();
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, [dbReady]);
 
   // Dynamically update document title, meta descriptions, canonical link, OpenGraph & Schema.org JSON-LD for Search Engine Optimization

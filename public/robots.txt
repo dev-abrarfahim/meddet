@@ -6,6 +6,5 @@ Allow: /
 Disallow: /draft/
 Disallow: /api/private/
 
-# Sitemap Links
-Sitemap: https://medivhai.blogspot.com/sitemap.xml
+# Sitemap
 Sitemap: https://medvhai.heliox.workers.dev/sitemap.xml
