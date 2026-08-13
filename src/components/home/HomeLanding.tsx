@@ -53,54 +53,54 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
     <div className="space-y-4 sm:space-y-8 animate-in fade-in duration-300">
       
       {/* HERO BANNER SECTION (Clean & Modern Layout) */}
-      <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#095D7E] via-[#074760] to-[#042C3C] dark:from-[#0B1927] dark:via-[#0E2439] dark:to-[#07131F] text-white p-3.5 sm:p-8 md:p-10 shadow-xl border border-[#074760] dark:border-[#1E3A52]">
+      <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#095D7E] via-[#074760] to-[#042C3C] dark:from-[#0B1927] dark:via-[#0E2439] dark:to-[#07131F] text-white p-4 sm:p-10 md:p-12 shadow-xl border border-[#074760] dark:border-[#1E3A52]">
         
         {/* Decorative Ambient Shapes */}
         <div className="absolute -right-20 -top-20 w-60 h-60 rounded-full bg-[#14967F]/20 blur-3xl pointer-events-none" />
         <div className="absolute -left-20 -bottom-20 w-60 h-60 rounded-full bg-[#CCECEE]/10 blur-3xl pointer-events-none" />
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-3 sm:space-y-5">
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
           
           {/* Top Pill Tagline */}
-          <div className="inline-flex items-center gap-1.5 bg-[#14967F]/30 dark:bg-[#2DD4BF]/20 border border-[#CCECEE]/30 dark:border-[#2DD4BF]/40 text-[#E2FCD6] dark:text-[#2DD4BF] text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full shadow-inner">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#E2FCD6] dark:text-[#2DD4BF]" />
+          <div className="inline-flex items-center gap-1.5 bg-[#14967F]/30 dark:bg-[#2DD4BF]/20 border border-[#CCECEE]/30 dark:border-[#2DD4BF]/40 text-[#E2FCD6] dark:text-[#2DD4BF] text-xs sm:text-sm font-bold px-3.5 py-1.5 rounded-full shadow-inner">
+            <ShieldCheck className="w-4 h-4 text-[#E2FCD6] dark:text-[#2DD4BF]" />
             <span>{lang === 'en' ? 'Clinical Medicine Index' : 'ক্লিনিক্যাল ড্রাগ ইনডেক্স'}</span>
           </div>
 
           {/* Main Hero Heading */}
-          <h1 className="text-xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight text-white">
+          <h1 className="text-2xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-white">
             {lang === 'en' ? 'Search Medicines & Generic Brands' : 'ওষুধ ও জেনেরিক ব্রান্ড অনুসন্ধান করুন'}
           </h1>
 
           {/* Main Hero Subtitle */}
-          <p className="text-xs sm:text-base text-[#CCECEE] dark:text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-lg md:text-xl text-[#CCECEE] dark:text-slate-300 font-semibold max-w-3xl mx-auto leading-relaxed">
             {lang === 'en'
               ? 'Find active ingredients, verified MRP prices in ৳ BDT, generic brand alternatives, and complete clinical monographs in English & Bangla.'
               : 'ওষুধের বিবরণ, এমআরপি মূল্য, বিকল্প জেনেরিক ব্রান্ড এবং সম্পূর্ণ নির্দেশিকা বাংলা ও ইংরেজিতে দেখুন।'}
           </p>
 
           {/* Search Box Form */}
-          <form onSubmit={handleHeroSearchSubmit} className="max-w-2xl mx-auto pt-1">
-            <div className="flex items-center gap-1.5 bg-white dark:bg-[#152232] p-1.5 rounded-xl shadow-xl border-2 border-[#CCECEE] dark:border-[#243B53] focus-within:border-[#14967F] dark:focus-within:border-[#2DD4BF] transition-all">
-              <div className="pl-2 text-[#14967F] dark:text-[#2DD4BF]">
-                <Search className="w-5 h-5" />
+          <form onSubmit={handleHeroSearchSubmit} className="max-w-2xl mx-auto pt-2">
+            <div className="flex items-center gap-2 bg-white dark:bg-[#152232] p-2 sm:p-2.5 rounded-2xl shadow-2xl border-2 border-[#CCECEE] dark:border-[#243B53] focus-within:border-[#14967F] dark:focus-within:border-[#2DD4BF] transition-all">
+              <div className="pl-2.5 text-[#14967F] dark:text-[#2DD4BF]">
+                <Search className="w-6 h-6" />
               </div>
               <input
                 type="text"
                 value={heroQuery}
                 onChange={(e) => setHeroQuery(e.target.value)}
-                placeholder={lang === 'en' ? 'Search brand (Napa, Seclo, Maxpro) or generic (Paracetamol)...' : 'ব্র্যান্ড বা জেনেরিক নাম (Napa, Seclo, Paracetamol)...'}
-                className="w-full text-xs sm:text-sm font-semibold text-[#095D7E] dark:text-slate-100 placeholder-[#095D7E]/50 dark:placeholder-slate-400 bg-transparent focus:outline-none py-1.5 px-1"
+                placeholder={lang === 'en' ? 'Search brand (Napa, Seclo, Maxpro) or generic...' : 'ব্র্যান্ড বা জেনেরিক নাম (Napa, Seclo, Paracetamol)...'}
+                className="w-full text-sm sm:text-base md:text-lg font-bold text-[#095D7E] dark:text-slate-100 placeholder-[#095D7E]/50 dark:placeholder-slate-400 bg-transparent focus:outline-none py-2 px-1"
                 id="hero-medicine-search-input"
                 aria-label="Search medicine by brand or generic name"
               />
               <button
                 type="submit"
                 id="hero-search-submit-btn"
-                className="bg-[#14967F] dark:bg-[#2DD4BF] hover:bg-[#11806C] dark:hover:bg-[#14967F] text-[#E2FCD6] dark:text-slate-950 font-black text-xs px-3.5 py-2 rounded-lg transition-all shadow-sm flex items-center gap-1 shrink-0 cursor-pointer"
+                className="bg-[#14967F] dark:bg-[#2DD4BF] hover:bg-[#11806C] dark:hover:bg-[#14967F] text-[#E2FCD6] dark:text-slate-950 font-black text-sm sm:text-base px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl transition-all shadow-md flex items-center gap-1.5 shrink-0 cursor-pointer"
               >
                 <span>{lang === 'en' ? 'Search' : 'খুঁজুন'}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </form>
@@ -110,44 +110,44 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
       </section>
 
       {/* DOSAGE FORM CATEGORY EXPLORER (10 Distinct Types with Custom Icons & Counts) */}
-      <section className="space-y-3">
+      <section className="space-y-3.5 pt-2">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm sm:text-lg font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-1.5">
-            <Grid className="w-4 h-4 text-[#14967F]" />
+          <h2 className="text-base sm:text-xl md:text-2xl font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-2">
+            <Grid className="w-5 h-5 sm:w-6 sm:h-6 text-[#14967F]" />
             <span>{lang === 'en' ? 'Browse by Dosage Form' : 'ওষুধের ক্যাটাগরি ও রূপ অনুযায়ী খুঁজুন'}</span>
           </h2>
           <button
             onClick={() => onGoToSearch()}
-            className="text-xs font-black text-[#14967F] dark:text-[#2DD4BF] hover:underline cursor-pointer"
+            className="text-xs sm:text-sm font-black text-[#14967F] dark:text-[#2DD4BF] hover:underline cursor-pointer"
           >
             {lang === 'en' ? 'View All Forms' : 'সব ফর্ম দেখুন'} →
           </button>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 sm:gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
           {DOSAGE_FORM_CATEGORIES.map((formCat) => {
             const IconComponent = formCat.icon;
             return (
               <button
                 key={formCat.id}
                 onClick={() => onGoToSearch(formCat.name)}
-                className={`p-3 rounded-2xl border text-left transition-all hover:scale-[1.03] active:scale-[0.98] cursor-pointer flex flex-col justify-between space-y-2 shadow-xs group ${formCat.color}`}
+                className={`p-3.5 sm:p-4 rounded-2xl border text-left transition-all hover:scale-[1.03] active:scale-[0.98] cursor-pointer flex flex-col justify-between space-y-3 shadow-xs group ${formCat.color}`}
               >
                 <div className="flex items-center justify-between w-full">
-                  <div className="w-9 h-9 rounded-xl bg-white/90 dark:bg-black/30 flex items-center justify-center shadow-inner shrink-0 group-hover:bg-[#14967F] group-hover:text-white transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-white/90 dark:bg-black/30 flex items-center justify-center shadow-inner shrink-0 group-hover:bg-[#14967F] group-hover:text-white transition-colors">
                     <IconComponent className="w-5 h-5" />
                   </div>
 
-                  <span className="text-[10px] font-black font-mono px-2 py-0.5 rounded-full bg-white/80 dark:bg-black/30 border border-current/20">
+                  <span className="text-xs font-black font-mono px-2.5 py-0.5 rounded-full bg-white/90 dark:bg-black/30 border border-current/20">
                     {formCat.count}
                   </span>
                 </div>
 
                 <div>
-                  <div className="text-xs font-black leading-snug group-hover:text-[#14967F] transition-colors">
+                  <div className="text-sm sm:text-base font-black leading-snug group-hover:text-[#14967F] transition-colors">
                     {lang === 'en' ? formCat.name : formCat.nameBn}
                   </div>
-                  <div className="text-[10px] opacity-75 font-bold mt-0.5">
+                  <div className="text-xs opacity-80 font-extrabold mt-1">
                     {lang === 'en' ? 'Explore Index' : 'খুঁজুন'} →
                   </div>
                 </div>
@@ -158,29 +158,29 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
       </section>
 
       {/* CONDITION CATEGORY EXPLORER SECTION (Compact Grid) */}
-      <section className="space-y-2">
+      <section className="space-y-3 pt-2">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm sm:text-lg font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-1.5">
-            <Pill className="w-4 h-4 text-[#14967F]" />
+          <h2 className="text-base sm:text-xl md:text-2xl font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-2">
+            <Pill className="w-5 h-5 sm:w-6 sm:h-6 text-[#14967F]" />
             <span>{lang === 'en' ? 'Browse by Medical Condition' : 'রোগ অনুযায়ী খুঁজুন'}</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {categoriesList.map((cat, idx) => {
             const IconComp = cat.icon;
             return (
               <button
                 key={idx}
                 onClick={() => onGoToSearch(cat.name)}
-                className={`p-2.5 rounded-xl border text-left transition-all hover:scale-[1.02] cursor-pointer flex items-center gap-2 ${cat.color}`}
+                className={`p-3.5 rounded-2xl border text-left transition-all hover:scale-[1.02] cursor-pointer flex items-center gap-2.5 ${cat.color}`}
               >
-                <div className="w-8 h-8 rounded-lg bg-white/80 dark:bg-black/20 flex items-center justify-center shrink-0">
-                  <IconComp className="w-4 h-4" />
+                <div className="w-9 h-9 rounded-xl bg-white/80 dark:bg-black/20 flex items-center justify-center shrink-0">
+                  <IconComp className="w-5 h-5" />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-xs font-black truncate">{cat.label}</div>
-                  <div className="text-[10px] opacity-80 font-bold">{lang === 'en' ? 'Explore' : 'দেখুন'} →</div>
+                  <div className="text-xs sm:text-sm font-black truncate">{cat.label}</div>
+                  <div className="text-[11px] opacity-85 font-extrabold">{lang === 'en' ? 'Explore' : 'দেখুন'} →</div>
                 </div>
               </button>
             );
@@ -188,26 +188,24 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
         </div>
       </section>
 
-
-
       {/* TOP PHARMA MANUFACTURERS */}
-      <section className="space-y-2">
+      <section className="space-y-3 pt-2">
         <div className="flex items-center justify-between">
-          <h2 className="text-sm sm:text-lg font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-1.5">
-            <Building2 className="w-4 h-4 text-[#14967F]" />
+          <h2 className="text-base sm:text-xl md:text-2xl font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-2">
+            <Building2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#14967F]" />
             <span>{lang === 'en' ? 'Top Pharma Manufacturers' : 'শীর্ষ ফার্মাসিউটিক্যালস'}</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {topCompanies.map((comp) => (
             <button
               key={comp.id}
               onClick={() => onGoToSearch(undefined, undefined, comp.name)}
-              className="p-2.5 rounded-xl bg-white dark:bg-[#131B2E] border border-slate-200 dark:border-slate-800/80 text-left hover:border-[#14967F] transition-all cursor-pointer shadow-xs"
+              className="p-3 sm:p-3.5 rounded-2xl bg-white dark:bg-[#131B2E] border border-slate-200 dark:border-slate-800/80 text-left hover:border-[#14967F] transition-all cursor-pointer shadow-xs"
             >
-              <div className="text-xs font-black text-slate-900 dark:text-slate-100 truncate">{comp.name}</div>
-              <div className="text-[10px] font-bold text-[#14967F] dark:text-[#2DD4BF] mt-0.5 font-mono">
+              <div className="text-xs sm:text-sm font-black text-slate-900 dark:text-slate-100 truncate">{comp.name}</div>
+              <div className="text-xs font-bold text-[#14967F] dark:text-[#2DD4BF] mt-0.5 font-mono">
                 {comp.brandCount} Brands
               </div>
             </button>
