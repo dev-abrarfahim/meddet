@@ -63,8 +63,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({
             onFocus={() => {
               if (query.trim().length >= 2) setIsOpen(true);
             }}
-            placeholder="Search 30,500+ medicines (e.g. Napa, Seclo, Paracetamol, Square)..."
-            className="w-full text-sm font-semibold text-[#095D7E] dark:text-slate-100 placeholder-[#095D7E]/50 dark:placeholder-slate-400 bg-transparent focus:outline-none py-2.5 px-2"
+            placeholder="Search 30,500+ medicines (e.g. Napa, Seclo, Paracetamol)..."
+            className="w-full text-sm sm:text-base font-bold text-[#095D7E] dark:text-slate-100 placeholder-[#095D7E]/50 dark:placeholder-slate-400 bg-transparent focus:outline-none py-2.5 sm:py-3 px-2"
           />
 
           {query && (
