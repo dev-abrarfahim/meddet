@@ -113,12 +113,11 @@ export async function loadDatabase(): Promise<void> {
           GENERICS.forEach((g) => genericsMap.set(g.id, g));
           notifyListeners();
         })
-        .catch((err) => {
-          console.warn('Background monograph fetch notice:', err);
+        .catch(() => {
+          // Background monograph fetch silently retries on next user interaction
         });
 
     } catch (err) {
-      console.error('Failed to load database JSON files:', err);
       isLoading = false;
       loadPromise = null;
     }

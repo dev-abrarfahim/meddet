@@ -3,6 +3,7 @@ import { ChevronUp, ChevronDown, Building2, Layers } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Medicine } from '../../types';
 import { getAlternativeBrands } from '../../data/dbEngine';
+import { slugify } from '../../utils/slugify';
 
 interface AlternativeBrandsProps {
   medicine: Medicine;
@@ -49,6 +50,9 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
   const hasValidComparison = currentPrice > 0 && altPrice > 0;
   const savings = hasValidComparison && currentPrice > altPrice ? currentPrice - altPrice : 0;
   const percentCheaper = hasValidComparison && savings > 0 ? Math.round((savings / currentPrice) * 100) : 0;
+
+  const altSlug = slugify(`${currentAlt.name}-${currentAlt.strength || ''}-${currentAlt.form}`);
+  const altHref = `/?id=${currentAlt.id}&brand=${altSlug}`;
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -113,53 +117,61 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            onClick={() => onSelectMedicine(currentAlt)}
-            className="w-full bg-slate-50 dark:bg-slate-800/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700/80 hover:border-[#14967F] transition-all cursor-pointer shadow-xs flex items-center justify-between gap-3 group"
+            className="w-full"
           >
-            {/* Left Column: Brand Name, Generic, Manufacturer */}
-            <div className="space-y-1 min-w-0 flex-1">
-              <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-slate-100 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors truncate">
-                {currentAlt.name} {currentAlt.strength} {currentAlt.form}
-              </h3>
-              
-              <div className="text-xs font-extrabold text-[#14967F] dark:text-[#2DD4BF] truncate">
-                {medicine.genericName}
+            <a
+              href={altHref}
+              onClick={(e) => {
+                e.preventDefault();
+                onSelectMedicine(currentAlt);
+              }}
+              className="w-full bg-slate-50 dark:bg-slate-800/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700/80 hover:border-[#14967F] transition-all cursor-pointer shadow-xs flex items-center justify-between gap-3 group"
+            >
+              {/* Left Column: Brand Name, Generic, Manufacturer */}
+              <div className="space-y-1 min-w-0 flex-1">
+                <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-slate-100 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors truncate">
+                  {currentAlt.name} {currentAlt.strength} {currentAlt.form}
+                </h3>
+                
+                <div className="text-xs font-extrabold text-[#14967F] dark:text-[#2DD4BF] truncate">
+                  {medicine.genericName}
+                </div>
+
+                <div className="flex items-center gap-1.5 text-[11px] text-slate-500 dark:text-slate-400 font-semibold pt-0.5 truncate">
+                  <img src="/icons/pharmaceutical.webp" alt="Company" className="w-3.5 h-3.5 object-contain shrink-0" loading="lazy" />
+                  <span className="truncate">{currentAlt.company}</span>
+                </div>
               </div>
 
-              <div className="flex items-center gap-1.5 text-[11px] text-slate-500 dark:text-slate-400 font-semibold pt-0.5 truncate">
-                <img src="/icons/pharmaceutical.png" alt="Company" className="w-3.5 h-3.5 object-contain shrink-0" loading="lazy" />
-                <span className="truncate">{currentAlt.company}</span>
+              {/* Right Column: Prominent Savings & Pricing Display */}
+              <div className="text-right shrink-0 space-y-1 bg-white dark:bg-[#131B2E] p-2 rounded-lg border border-slate-200 dark:border-slate-800/80">
+                {/* Savings Badge */}
+                {percentCheaper > 0 && (
+                  <div className="inline-flex items-center gap-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-[10px] font-black px-2 py-0.5 rounded border border-emerald-300 dark:border-emerald-800">
+                    <span>{percentCheaper}% cheaper</span>
+                  </div>
+                )}
+
+                {/* Unit Price */}
+                <div className="text-xs sm:text-sm font-black text-slate-900 dark:text-slate-100 font-mono">
+                  {altPrice > 0 ? `৳ ${altPrice.toFixed(2)}` : 'MRP N/A'}
+                </div>
+
+                {/* Market Price Comparison */}
+                {currentPrice > 0 && currentPrice !== altPrice && (
+                  <div className="text-[10px] font-bold text-slate-400 line-through font-mono">
+                    ৳ {currentPrice.toFixed(2)}
+                  </div>
+                )}
+
+                {/* Saved Amount */}
+                {savings > 0 && (
+                  <div className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 font-mono">
+                    Save ৳ {savings.toFixed(2)}
+                  </div>
+                )}
               </div>
-            </div>
-
-            {/* Right Column: Prominent Savings & Pricing Display */}
-            <div className="text-right shrink-0 space-y-1 bg-white dark:bg-[#131B2E] p-2 rounded-lg border border-slate-200 dark:border-slate-800/80">
-              {/* Savings Badge */}
-              {percentCheaper > 0 && (
-                <div className="inline-flex items-center gap-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-[10px] font-black px-2 py-0.5 rounded border border-emerald-300 dark:border-emerald-800">
-                  <span>{percentCheaper}% cheaper</span>
-                </div>
-              )}
-
-              {/* Unit Price */}
-              <div className="text-xs sm:text-sm font-black text-slate-900 dark:text-slate-100 font-mono">
-                {altPrice > 0 ? `৳ ${altPrice.toFixed(2)}` : 'MRP N/A'}
-              </div>
-
-              {/* Market Price Comparison */}
-              {currentPrice > 0 && currentPrice !== altPrice && (
-                <div className="text-[10px] font-bold text-slate-400 line-through font-mono">
-                  ৳ {currentPrice.toFixed(2)}
-                </div>
-              )}
-
-              {/* Saved Amount */}
-              {savings > 0 && (
-                <div className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 font-mono">
-                  Save ৳ {savings.toFixed(2)}
-                </div>
-              )}
-            </div>
+            </a>
           </motion.div>
         </AnimatePresence>
       </div>

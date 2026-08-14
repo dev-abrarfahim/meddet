@@ -22,7 +22,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const top = el.offsetTop - 140;
+      const top = el.getBoundingClientRect().top + window.scrollY - 130;
       window.scrollTo({ top, behavior: 'smooth' });
     }
   };
@@ -40,7 +40,10 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection 
   };
 
   return (
-    <div className="sticky top-28 z-20 bg-white/95 dark:bg-[#131B2E]/95 backdrop-blur-md border border-slate-200 dark:border-slate-800/80 rounded-xl p-1 shadow-xs transition-colors flex items-center gap-1">
+    <nav
+      aria-label="Table of Contents"
+      className="sticky top-28 z-20 bg-white/95 dark:bg-[#131B2E]/95 backdrop-blur-md border border-slate-200 dark:border-slate-800/80 rounded-xl p-1 shadow-xs transition-colors flex items-center gap-1"
+    >
       
       {/* Left Chevron Arrow Button < */}
       <button
@@ -61,9 +64,13 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection 
           const IconComp = sec.icon;
           const isActive = activeSection === sec.id;
           return (
-            <button
+            <a
               key={sec.id}
-              onClick={() => scrollToSection(sec.id)}
+              href={`#${sec.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(sec.id);
+              }}
               className={`flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-black whitespace-nowrap transition-all border ${
                 isActive
                   ? 'bg-[#095D7E] dark:bg-[#14967F] text-white border-[#095D7E] dark:border-[#14967F] shadow-xs'
@@ -72,7 +79,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection 
             >
               <IconComp className="w-3 h-3" />
               <span>{sec.label}</span>
-            </button>
+            </a>
           );
         })}
       </div>
@@ -87,6 +94,6 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection 
         <ChevronRight className="w-3.5 h-3.5" />
       </button>
 
-    </div>
+    </nav>
   );
 };

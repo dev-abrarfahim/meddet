@@ -116,20 +116,28 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
             <Grid className="w-5 h-5 sm:w-6 sm:h-6 text-[#14967F]" />
             <span>{lang === 'en' ? 'Browse by Dosage Form' : 'ওষুধের ক্যাটাগরি ও রূপ অনুযায়ী খুঁজুন'}</span>
           </h2>
-          <button
-            onClick={() => onGoToSearch()}
+          <a
+            href="/?tab=search"
+            onClick={(e) => {
+              e.preventDefault();
+              onGoToSearch();
+            }}
             className="text-xs sm:text-sm font-black text-[#14967F] dark:text-[#2DD4BF] hover:underline cursor-pointer"
           >
             {lang === 'en' ? 'View All Forms' : 'সব ফর্ম দেখুন'} →
-          </button>
+          </a>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
           {DOSAGE_FORM_CATEGORIES.map((formCat) => {
             return (
-              <button
+              <a
                 key={formCat.id}
-                onClick={() => onGoToSearch(undefined, undefined, undefined, formCat.id)}
+                href={`/?form=${encodeURIComponent(formCat.id)}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onGoToSearch(undefined, undefined, undefined, formCat.id);
+                }}
                 className={`p-3.5 sm:p-4 rounded-2xl border text-left transition-all hover:scale-[1.03] active:scale-[0.98] cursor-pointer flex flex-col justify-between space-y-3 shadow-xs group ${formCat.color}`}
               >
                 <div className="flex items-center justify-between w-full">
@@ -150,7 +158,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
                     {lang === 'en' ? 'Explore Index' : 'খুঁজুন'} →
                   </div>
                 </div>
-              </button>
+              </a>
             );
           })}
         </div>
@@ -169,9 +177,13 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
           {categoriesList.map((cat, idx) => {
             const IconComp = cat.icon;
             return (
-              <button
+              <a
                 key={idx}
-                onClick={() => onGoToSearch(undefined, cat.name)}
+                href={`/?category=${encodeURIComponent(cat.name)}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onGoToSearch(undefined, cat.name);
+                }}
                 className={`p-3.5 rounded-2xl border text-left transition-all hover:scale-[1.02] cursor-pointer flex items-center gap-2.5 ${cat.color}`}
               >
                 <div className="w-9 h-9 rounded-xl bg-white/80 dark:bg-black/20 flex items-center justify-center shrink-0">
@@ -181,7 +193,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
                   <div className="text-xs sm:text-sm font-black truncate">{cat.label}</div>
                   <div className="text-[11px] opacity-85 font-extrabold">{lang === 'en' ? 'Explore' : 'দেখুন'} →</div>
                 </div>
-              </button>
+              </a>
             );
           })}
         </div>
@@ -191,21 +203,25 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
       <section className="space-y-3 pt-2">
         <div className="flex items-center justify-between">
           <h2 className="text-base sm:text-xl md:text-2xl font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-2">
-            <img src="/icons/pharmaceutical.png" alt="Pharma Manufacturers" className="w-6 h-6 sm:w-7 sm:h-7 object-contain shrink-0" loading="lazy" />
+            <img src="/icons/pharmaceutical.webp" alt="Pharma Manufacturers" className="w-6 h-6 sm:w-7 sm:h-7 object-contain shrink-0" loading="lazy" />
             <span>{lang === 'en' ? 'Top Pharma Manufacturers' : 'শীর্ষ ফার্মাসিউটিক্যালস'}</span>
           </h2>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {topCompanies.map((comp) => (
-            <button
+            <a
               key={comp.id}
-              onClick={() => onGoToSearch(undefined, undefined, comp.name)}
+              href={`/?manufacturer=${encodeURIComponent(comp.name)}`}
+              onClick={(e) => {
+                e.preventDefault();
+                onGoToSearch(undefined, undefined, comp.name);
+              }}
               className="p-3 sm:p-3.5 rounded-2xl bg-white dark:bg-[#131B2E] border border-slate-200 dark:border-slate-800/80 text-left hover:border-[#14967F] transition-all cursor-pointer shadow-xs group"
             >
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center shrink-0 border border-slate-100 dark:border-slate-700/60 group-hover:bg-[#E2FCD6] dark:group-hover:bg-[#064E3B] transition-colors">
-                  <img src="/icons/pharmaceutical.png" alt={comp.name} className="w-5 h-5 object-contain shrink-0" loading="lazy" />
+                  <img src="/icons/pharmaceutical.webp" alt={comp.name} className="w-5 h-5 object-contain shrink-0" loading="lazy" />
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="text-xs sm:text-sm font-black text-slate-900 dark:text-slate-100 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors truncate">{comp.name}</div>
@@ -214,7 +230,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
                   </div>
                 </div>
               </div>
-            </button>
+            </a>
           ))}
         </div>
       </section>

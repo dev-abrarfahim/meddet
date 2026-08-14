@@ -3,6 +3,7 @@ import { Building2, ChevronLeft, ArrowUpDown, Filter, Sparkles } from 'lucide-re
 import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
 import { Medicine, LanguageMode } from '../../types';
 import { getAllBrandsForGeneric, getGenericById } from '../../data/dbEngine';
+import { slugify } from '../../utils/slugify';
 
 interface GenericBrandsExplorerProps {
   genericId: number;
@@ -268,53 +269,66 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
                   </td>
                 </tr>
               ) : (
-                filteredBrands.map((brand, idx) => (
-                  <tr
-                    key={brand.id}
-                    onClick={() => onSelectMedicine(brand)}
-                    className={`hover:bg-emerald-50/60 dark:hover:bg-slate-800/60 transition-colors cursor-pointer ${
-                      idx % 2 === 0 ? 'bg-white dark:bg-[#131B2E]' : 'bg-slate-50/50 dark:bg-slate-800/30'
-                    }`}
-                  >
-                    {/* Brand Name */}
-                    <td className="py-3 px-4 font-black text-slate-900 dark:text-slate-100 hover:text-[#14967F]">
-                      {brand.name}
-                    </td>
+                filteredBrands.map((brand, idx) => {
+                  const brandSlug = slugify(`${brand.name}-${brand.strength || ''}-${brand.form}`);
+                  const brandHref = `/?id=${brand.id}&brand=${brandSlug}`;
+                  return (
+                    <tr
+                      key={brand.id}
+                      onClick={() => onSelectMedicine(brand)}
+                      className={`hover:bg-emerald-50/60 dark:hover:bg-slate-800/60 transition-colors cursor-pointer ${
+                        idx % 2 === 0 ? 'bg-white dark:bg-[#131B2E]' : 'bg-slate-50/50 dark:bg-slate-800/30'
+                      }`}
+                    >
+                      {/* Brand Name with Crawlable Link */}
+                      <td className="py-3 px-4 font-black text-slate-900 dark:text-slate-100 hover:text-[#14967F]">
+                        <a
+                          href={brandHref}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            onSelectMedicine(brand);
+                          }}
+                          className="hover:text-[#14967F] dark:hover:text-[#2DD4BF] block"
+                        >
+                          {brand.name}
+                        </a>
+                      </td>
 
-                    {/* Dosage Form with Icon */}
-                    <td className="py-3 px-4">
-                      <div className="flex items-center gap-1.5">
-                        {getFormIcon(brand.form)}
-                        <span>{brand.form}</span>
-                      </div>
-                    </td>
-
-                    {/* Strength */}
-                    <td className="py-3 px-4 font-mono font-black text-slate-700 dark:text-slate-300">
-                      {brand.strength || '—'}
-                    </td>
-
-                    {/* Company */}
-                    <td className="py-3 px-4 text-slate-600 dark:text-slate-400">
-                      <div className="flex items-center gap-1.5">
-                        <img src="/icons/pharmaceutical.png" alt="Company" className="w-3.5 h-3.5 object-contain shrink-0" loading="lazy" />
-                        <span className="truncate">{brand.company}</span>
-                      </div>
-                    </td>
-
-                    {/* Pack Size & Price */}
-                    <td className="py-3 px-4 text-right">
-                      <div className="font-black text-slate-900 dark:text-slate-100 font-mono">
-                        Unit Price: ৳ {brand.mrp > 0 ? brand.mrp.toFixed(2) : 'N/A'}
-                      </div>
-                      {brand.packSize && (
-                        <div className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 font-mono">
-                          ({brand.packSize})
+                      {/* Dosage Form with Icon */}
+                      <td className="py-3 px-4">
+                        <div className="flex items-center gap-1.5">
+                          {getFormIcon(brand.form)}
+                          <span>{brand.form}</span>
                         </div>
-                      )}
-                    </td>
-                  </tr>
-                ))
+                      </td>
+
+                      {/* Strength */}
+                      <td className="py-3 px-4 font-mono font-black text-slate-700 dark:text-slate-300">
+                        {brand.strength || '—'}
+                      </td>
+
+                      {/* Company */}
+                      <td className="py-3 px-4 text-slate-600 dark:text-slate-400">
+                        <div className="flex items-center gap-1.5">
+                          <img src="/icons/pharmaceutical.webp" alt="Company" className="w-3.5 h-3.5 object-contain shrink-0" loading="lazy" />
+                          <span className="truncate">{brand.company}</span>
+                        </div>
+                      </td>
+
+                      {/* Pack Size & Price */}
+                      <td className="py-3 px-4 text-right">
+                        <div className="font-black text-slate-900 dark:text-slate-100 font-mono">
+                          Unit Price: ৳ {brand.mrp > 0 ? brand.mrp.toFixed(2) : 'N/A'}
+                        </div>
+                        {brand.packSize && (
+                          <div className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 font-mono">
+                            ({brand.packSize})
+                          </div>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })
               )}
             </tbody>
           </table>
@@ -327,31 +341,39 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
               No matching brands found for the selected filter.
             </div>
           ) : (
-            filteredBrands.map((brand) => (
-              <div
-                key={brand.id}
-                onClick={() => onSelectMedicine(brand)}
-                className="p-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer space-y-1.5"
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-sm font-black text-slate-900 dark:text-slate-100 hover:text-[#14967F]">
-                    {brand.name}
-                  </h3>
-                  <span className="text-xs font-black text-[#14967F] dark:text-[#2DD4BF] font-mono">
-                    ৳ {brand.mrp > 0 ? brand.mrp.toFixed(2) : 'N/A'}
-                  </span>
-                </div>
-
-                <div className="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400 font-semibold gap-2">
-                  <div className="flex items-center gap-1">
-                    {getFormIcon(brand.form)}
-                    <span>{brand.form}</span>
-                    {brand.strength && <span className="font-mono font-bold">• {brand.strength}</span>}
+            filteredBrands.map((brand) => {
+              const brandSlug = slugify(`${brand.name}-${brand.strength || ''}-${brand.form}`);
+              const brandHref = `/?id=${brand.id}&brand=${brandSlug}`;
+              return (
+                <a
+                  key={brand.id}
+                  href={brandHref}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onSelectMedicine(brand);
+                  }}
+                  className="block p-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer space-y-1.5"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="text-sm font-black text-slate-900 dark:text-slate-100 hover:text-[#14967F]">
+                      {brand.name}
+                    </h3>
+                    <span className="text-xs font-black text-[#14967F] dark:text-[#2DD4BF] font-mono">
+                      ৳ {brand.mrp > 0 ? brand.mrp.toFixed(2) : 'N/A'}
+                    </span>
                   </div>
-                  <span className="truncate max-w-[140px] text-right font-medium">{brand.company}</span>
-                </div>
-              </div>
-            ))
+
+                  <div className="flex items-center justify-between text-xs text-slate-600 dark:text-slate-400 font-semibold gap-2">
+                    <div className="flex items-center gap-1">
+                      {getFormIcon(brand.form)}
+                      <span>{brand.form}</span>
+                      {brand.strength && <span className="font-mono font-bold">• {brand.strength}</span>}
+                    </div>
+                    <span className="truncate max-w-[140px] text-right font-medium">{brand.company}</span>
+                  </div>
+                </a>
+              );
+            })
           )}
         </div>
 

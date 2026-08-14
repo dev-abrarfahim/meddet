@@ -21,17 +21,22 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 h-12 sm:h-16 flex items-center justify-between gap-2 sm:gap-4">
         
         {/* Logo & Brand */}
-        <button
-          onClick={onGoHome}
+        <a
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            onGoHome();
+          }}
           id="brand-logo-btn"
+          aria-label="MedVhai - Home"
           className="flex items-center text-left group focus:outline-none focus:ring-2 focus:ring-[#CCECEE] rounded-lg p-0.5"
         >
           <img
-            src="/logo.png"
+            src="/logo.webp"
             alt="MedVhai - Bangladeshi Drug Index & Clinical Monograph Explorer"
             className="h-8 sm:h-10 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform"
           />
-        </button>
+        </a>
 
         {/* Header Tagline Badge */}
         <div className="hidden md:flex items-center gap-2 text-xs font-semibold text-[#CCECEE] dark:text-slate-300 bg-[#074760]/60 dark:bg-[#152232] px-3.5 py-1.5 rounded-full border border-[#CCECEE]/20 dark:border-[#243B53]">

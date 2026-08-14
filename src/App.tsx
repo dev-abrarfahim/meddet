@@ -9,12 +9,6 @@ import {
   PriceSection,
   AlternativeBrands,
   ChemicalStructure,
-  UsesSection,
-  SafetySection,
-  HowToUseSection,
-  WarningsSection,
-  SideEffectsSection,
-  MoreInfoSection,
   MedicalDisclaimer,
   BottomNav,
   FilterDrawer,
@@ -61,9 +55,7 @@ export default function App() {
       const next = prev === 'en' ? 'bn' : 'en';
       try {
         localStorage.setItem('medvhai_lang', next);
-      } catch (e) {
-        console.error(e);
-      }
+      } catch {}
       return next;
     });
   };
@@ -89,9 +81,7 @@ export default function App() {
     }
     try {
       localStorage.setItem('medvhai_dark_mode', JSON.stringify(isDarkMode));
-    } catch (e) {
-      console.error(e);
-    }
+    } catch {}
   }, [isDarkMode]);
 
   const toggleDarkMode = () => setIsDarkMode((prev) => !prev);
@@ -132,9 +122,7 @@ export default function App() {
       if (window.parent && window.parent !== window) {
         window.parent.postMessage({ type: 'MEDVHAI_URL_CHANGE', search: url.search }, '*');
       }
-    } catch (e) {
-      console.error(e);
-    }
+    } catch {}
   };
 
   // Reusable function: Restore React state from current URL parameters
@@ -191,9 +179,7 @@ export default function App() {
       setSelectedMedicine(null);
       setExplorerGenericId(null);
       setActiveTab('home');
-    } catch (e) {
-      console.error(e);
-    }
+    } catch {}
   };
 
   // Sync & restore URL state on initial load and whenever dbReady is true
@@ -459,7 +445,7 @@ export default function App() {
                 />
 
                 {/* 2. Price Information (Unit Price + Pack Price Cards) */}
-                <PriceSection medicine={selectedMedicine} />
+                <PriceSection medicine={selectedMedicine} lang={lang} />
 
                 {/* 3. Alternative Brands Comparison */}
                 <AlternativeBrands
@@ -480,6 +466,7 @@ export default function App() {
                 {/* Chemical Structure (2D Diagram + Formula Grid) */}
                 <ChemicalStructure
                   genericName={selectedMedicine.genericName}
+                  lang={lang}
                 />
 
                 {/* Verified Clinical Quick Info Card */}
@@ -489,7 +476,7 @@ export default function App() {
                     <span>Clinical Verification Summary</span>
                   </div>
                   <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
-                    Active ingredient: <span className="font-bold text-slate-800 dark:text-slate-200">{selectedMedicine.genericName}</span> ({selectedMedicine.strength}). Manufactured by <span className="font-bold text-slate-800 dark:text-slate-200">{selectedMedicine.manufacturer}</span>.
+                    Active ingredient: <span className="font-bold text-slate-800 dark:text-slate-200">{selectedMedicine.genericName}</span> ({selectedMedicine.strength}). Manufactured by <span className="font-bold text-slate-800 dark:text-slate-200">{selectedMedicine.company}</span>.
                   </p>
                   <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-bold text-slate-500 dark:text-slate-400">
                     <span>Form: {selectedMedicine.form}</span>
@@ -731,6 +718,7 @@ export default function App() {
         onGoHome={handleGoHome}
         onGoSearch={() => handleGoToSearch()}
         onOpenFilters={() => setIsFiltersOpen(true)}
+        lang={lang}
       />
 
       {/* Drawers */}

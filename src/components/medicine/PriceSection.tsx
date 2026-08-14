@@ -1,13 +1,19 @@
 import React from 'react';
-import { Medicine } from '../../types';
+import { Medicine, LanguageMode } from '../../types';
 import { calculateMedicinePricing } from '../../utils/pricingHelper';
 
 interface PriceSectionProps {
   medicine: Medicine;
+  lang?: LanguageMode;
 }
 
-export const PriceSection: React.FC<PriceSectionProps> = ({ medicine }) => {
+export const PriceSection: React.FC<PriceSectionProps> = ({ medicine, lang = 'en' }) => {
   const pricing = calculateMedicinePricing(medicine);
+
+  const discountLabel = lang === 'en' ? 'Pharmacy Discount (10%):' : 'ফার্মেসি ডিসকাউন্ট (১০%):';
+  const packPriceLabel = pricing.hasSeparatePack
+    ? (lang === 'en' ? 'Pack Price :' : 'প্যাক মূল্য :')
+    : (lang === 'en' ? 'Commercial Pack :' : 'কমার্শিয়াল প্যাক :');
 
   return (
     <section id="sec-price" className="space-y-2">
@@ -31,7 +37,7 @@ export const PriceSection: React.FC<PriceSectionProps> = ({ medicine }) => {
 
         {pricing.hasPrice && (
           <div className="text-right text-[11px] sm:text-xs font-bold text-[#14967F] dark:text-[#2DD4BF] pt-1 border-t border-slate-100 dark:border-slate-800/60">
-            Pharmacy Discount (10%): <span className="font-extrabold">৳ {pricing.unitDiscountPrice.toFixed(2)}</span>
+            {discountLabel} <span className="font-extrabold">৳ {pricing.unitDiscountPrice.toFixed(2)}</span>
           </div>
         )}
       </div>
@@ -41,7 +47,7 @@ export const PriceSection: React.FC<PriceSectionProps> = ({ medicine }) => {
         <div className="flex items-start justify-between gap-2">
           <div>
             <div className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-slate-100 leading-tight">
-              {pricing.hasSeparatePack ? 'Pack Price :' : 'Commercial Pack :'}
+              {packPriceLabel}
             </div>
             <div className="text-xs font-extrabold text-slate-500 dark:text-slate-400 mt-0.5">
               {pricing.packLabel}
@@ -55,7 +61,7 @@ export const PriceSection: React.FC<PriceSectionProps> = ({ medicine }) => {
 
         {pricing.hasPrice && (
           <div className="text-right text-[11px] sm:text-xs font-bold text-[#14967F] dark:text-[#2DD4BF] pt-1 border-t border-slate-100 dark:border-slate-800/60">
-            Pharmacy Discount (10%): <span className="font-extrabold">৳ {pricing.packDiscountPrice.toFixed(2)}/pack</span>
+            {discountLabel} <span className="font-extrabold">৳ {pricing.packDiscountPrice.toFixed(2)}/{lang === 'en' ? 'pack' : 'প্যাক'}</span>
           </div>
         )}
       </div>

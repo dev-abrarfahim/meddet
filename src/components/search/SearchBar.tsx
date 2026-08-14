@@ -43,9 +43,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       const updated = [trimmed, ...filtered].slice(0, 5);
       try {
         localStorage.setItem('medvhai_recent_searches', JSON.stringify(updated));
-      } catch (e) {
-        console.error(e);
-      }
+      } catch {}
       return updated;
     });
   };
@@ -56,9 +54,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       const updated = prev.filter((item) => item.toLowerCase() !== term.toLowerCase());
       try {
         localStorage.setItem('medvhai_recent_searches', JSON.stringify(updated));
-      } catch (e) {
-        console.error(e);
-      }
+      } catch {}
       return updated;
     });
   };
@@ -68,9 +64,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     setRecentSearches([]);
     try {
       localStorage.removeItem('medvhai_recent_searches');
-    } catch (e) {
-      console.error(e);
-    }
+    } catch {}
   };
 
   // Close suggestions popover when clicking outside

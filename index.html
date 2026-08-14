@@ -100,7 +100,33 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Inline Critical Loading Skeleton (instant FCP before React hydrates) -->
+      <style>
+        .mv-skel{font-family:system-ui,-apple-system,sans-serif;min-height:100vh;background:#F1F9FF}
+        .dark .mv-skel{background:#0B131B}
+        .mv-skel-hdr{height:64px;background:#095D7E;display:flex;align-items:center;padding:0 16px}
+        .dark .mv-skel-hdr{background:#0B1927}
+        .mv-skel-logo{height:32px;width:120px;background:rgba(255,255,255,0.15);border-radius:6px}
+        .mv-skel-bar{height:44px;background:#074760;display:flex;align-items:center;padding:0 16px}
+        .dark .mv-skel-bar{background:#0E2439}
+        .mv-skel-search{height:32px;width:100%;max-width:640px;margin:0 auto;background:rgba(255,255,255,0.12);border-radius:8px}
+        .mv-skel-hero{margin:16px;padding:32px 24px;background:linear-gradient(135deg,#095D7E,#074760,#042C3C);border-radius:16px;text-align:center}
+        .dark .mv-skel-hero{background:linear-gradient(135deg,#0B1927,#0E2439,#07131F)}
+        .mv-skel-h1{color:#E2FCD6;font-size:20px;font-weight:900;margin:0 0 8px}
+        .mv-skel-p{color:#CCECEE;font-size:14px;margin:0;opacity:0.85}
+        @keyframes mv-pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+        .mv-skel-pulse{animation:mv-pulse 1.5s ease-in-out infinite}
+      </style>
+      <div class="mv-skel" aria-hidden="true">
+        <div class="mv-skel-hdr"><div class="mv-skel-logo mv-skel-pulse"></div></div>
+        <div class="mv-skel-bar"><div class="mv-skel-search mv-skel-pulse"></div></div>
+        <div class="mv-skel-hero">
+          <div class="mv-skel-h1">MedVhai™</div>
+          <p class="mv-skel-p">Clinical Drug Index & Medicine Price BD</p>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

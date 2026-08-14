@@ -102,7 +102,7 @@ export const SidebarDrawer: React.FC<SidebarDrawerProps> = ({
             <div className="space-y-3">
               <div className="flex items-center justify-between">
                 <h4 className="text-xs font-bold text-[#095D7E]/60 dark:text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <img src="/icons/pharmaceutical.png" alt="Manufacturers" className="w-4 h-4 object-contain shrink-0" loading="lazy" />
+                  <img src="/icons/pharmaceutical.webp" alt="Manufacturers" className="w-4 h-4 object-contain shrink-0" loading="lazy" />
                   <span>Top Manufacturers (723 Total)</span>
                 </h4>
               </div>

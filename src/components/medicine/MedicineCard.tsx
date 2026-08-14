@@ -35,9 +35,9 @@ export const MedicineCard: React.FC<MedicineCardProps> = ({ medicine, onSelect }
 
         {/* Brand Name */}
         <div>
-          <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-slate-100 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors leading-tight">
+          <h2 className="text-lg sm:text-xl font-black text-slate-900 dark:text-slate-100 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors leading-tight">
             {medicine.name}
-          </h3>
+          </h2>
           <p className="text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-300 mt-0.5 truncate">
             {medicine.genericName} {medicine.genericNameBn ? `(${medicine.genericNameBn})` : ''}
           </p>
@@ -45,7 +45,7 @@ export const MedicineCard: React.FC<MedicineCardProps> = ({ medicine, onSelect }
 
         {/* Manufacturer */}
         <div className="flex items-center gap-1.5 text-xs sm:text-sm text-slate-500 dark:text-slate-400 pt-0.5">
-          <img src="/icons/pharmaceutical.png" alt="Company" className="w-3.5 h-3.5 object-contain shrink-0" loading="lazy" />
+          <img src="/icons/pharmaceutical.webp" alt="Company" className="w-3.5 h-3.5 object-contain shrink-0" loading="lazy" />
           <span className="truncate font-semibold">{medicine.company}</span>
         </div>
       </div>

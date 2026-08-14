@@ -1,11 +1,13 @@
 import React from 'react';
 import { Atom, Clock } from 'lucide-react';
+import { LanguageMode } from '../../types';
 
 interface ChemicalStructureProps {
-  genericName: string;
+  genericName?: string;
+  lang?: LanguageMode;
 }
 
-export const ChemicalStructure: React.FC<ChemicalStructureProps> = ({ genericName }) => {
+export const ChemicalStructure: React.FC<ChemicalStructureProps> = ({ genericName = 'Active Generic Substance', lang = 'en' }) => {
   return (
     <section id="sec-structure" className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800/80 p-3 sm:p-3.5 shadow-xs space-y-3 transition-colors">
       
@@ -14,13 +16,13 @@ export const ChemicalStructure: React.FC<ChemicalStructureProps> = ({ genericNam
         <div className="flex items-center gap-1.5">
           <Atom className="w-4 h-4 text-[#14967F]" />
           <h2 className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-slate-100">
-            Chemical Structure
+            {lang === 'en' ? 'Chemical Structure' : 'রাসায়নিক গঠন'}
           </h2>
         </div>
 
         <span className="bg-amber-50 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 text-[10px] font-extrabold px-2 py-0.5 rounded border border-amber-200 dark:border-amber-800 flex items-center gap-1">
           <Clock className="w-3 h-3" />
-          <span>Coming soon</span>
+          <span>{lang === 'en' ? 'Coming soon' : 'শীঘ্রই আসছে'}</span>
         </span>
       </div>
 
@@ -30,8 +32,11 @@ export const ChemicalStructure: React.FC<ChemicalStructureProps> = ({ genericNam
         {/* SVG Drawing of Esomeprazole / Chemical Ring Diagram */}
         <svg
           viewBox="0 0 450 180"
+          role="img"
+          aria-label={`2D Skeletal Chemical Structure for ${genericName}`}
           className="w-full max-w-sm h-auto text-slate-800 dark:text-[#2DD4BF] stroke-current stroke-2 fill-none"
         >
+          <title>2D Chemical Diagram for {genericName}</title>
           {/* Left Benzene Ring */}
           <polygon points="50,90 80,40 130,40 160,90 130,140 80,140" />
           <line x1="85" y1="50" x2="125" y2="50" strokeWidth="1.5" />
@@ -67,24 +72,24 @@ export const ChemicalStructure: React.FC<ChemicalStructureProps> = ({ genericNam
         </svg>
 
         <div className="text-[11px] font-bold text-slate-500 dark:text-slate-400">
-          2D Structure for {genericName}
+          {lang === 'en' ? `2D Structure for ${genericName}` : `${genericName}-এর দ্বিমাত্রিক গঠন`}
         </div>
       </div>
 
       {/* Info Grid (Strictly Matching Hand-Drawn Sketch Layout) */}
       <div className="space-y-1 border-t border-slate-100 dark:border-slate-800/60 pt-2">
         <div className="flex items-center justify-between text-xs py-1 border-b border-slate-100 dark:border-slate-800/60">
-          <span className="font-extrabold text-slate-800 dark:text-slate-300">Molecular Formula</span>
+          <span className="font-extrabold text-slate-800 dark:text-slate-300">{lang === 'en' ? 'Molecular Formula' : 'আণবিক সংকেত'}</span>
           <span className="font-mono font-black text-[#14967F] dark:text-[#2DD4BF]">C19H19N3O3S</span>
         </div>
 
         <div className="flex items-center justify-between text-xs py-1 border-b border-slate-100 dark:border-slate-800/60">
-          <span className="font-extrabold text-slate-800 dark:text-slate-300">Molecular Mass</span>
+          <span className="font-extrabold text-slate-800 dark:text-slate-300">{lang === 'en' ? 'Molecular Mass' : 'আণবিক ভর'}</span>
           <span className="font-mono font-black text-[#14967F] dark:text-[#2DD4BF]">345.42 g/mol</span>
         </div>
 
         <div className="flex items-center justify-between text-xs py-1 border-b border-slate-100 dark:border-slate-800/60">
-          <span className="font-extrabold text-slate-800 dark:text-slate-300">CAS Registry NO</span>
+          <span className="font-extrabold text-slate-800 dark:text-slate-300">{lang === 'en' ? 'CAS Registry NO' : 'সিএএস নম্বর'}</span>
           <span className="font-mono font-black text-[#14967F] dark:text-[#2DD4BF]">119141-88-7</span>
         </div>
       </div>
