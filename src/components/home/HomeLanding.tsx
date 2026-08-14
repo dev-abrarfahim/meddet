@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Search,
   Pill,
-  ShieldCheck,
   ArrowRight,
   Activity,
   HeartPulse,
@@ -53,19 +52,28 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
     <div className="space-y-4 sm:space-y-8 animate-in fade-in duration-300">
       
       {/* HERO BANNER SECTION (Clean & Modern Layout) */}
-      <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#095D7E] via-[#074760] to-[#042C3C] dark:from-[#0B1927] dark:via-[#0E2439] dark:to-[#07131F] text-white p-4 sm:p-10 md:p-12 shadow-xl border border-[#074760] dark:border-[#1E3A52]">
+      <section className="relative overflow-hidden rounded-2xl bg-[#095D7E] dark:bg-[#0B1927] text-white p-4 sm:p-10 md:p-12 shadow-xl border border-[#074760]/60 dark:border-[#1E3A52]">
         
+        {/* Hero Background Image (Optimized WebP with Fallback) */}
+        <picture>
+          <source srcSet="/hero-bg.webp" type="image/webp" />
+          <img
+            src="/hero-bg.jpg"
+            alt="MedVhai banner background"
+            className="absolute inset-0 w-full h-full object-cover object-center opacity-35 dark:opacity-25 pointer-events-none select-none"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </picture>
+
+        {/* Professional Multi-Layer Overlay for Legibility & Brand Tone */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#095D7E]/75 via-[#074760]/70 to-[#042C3C]/80 dark:from-[#0B1927]/85 dark:via-[#0E2439]/80 dark:to-[#07131F]/90 pointer-events-none" />
+
         {/* Decorative Ambient Shapes */}
-        <div className="absolute -right-20 -top-20 w-60 h-60 rounded-full bg-[#14967F]/20 blur-3xl pointer-events-none" />
-        <div className="absolute -left-20 -bottom-20 w-60 h-60 rounded-full bg-[#CCECEE]/10 blur-3xl pointer-events-none" />
+        <div className="absolute -right-20 -top-20 w-60 h-60 rounded-full bg-[#14967F]/25 blur-3xl pointer-events-none" />
+        <div className="absolute -left-20 -bottom-20 w-60 h-60 rounded-full bg-[#CCECEE]/15 blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-4 sm:space-y-6">
-          
-          {/* Top Pill Tagline */}
-          <div className="inline-flex items-center gap-1.5 bg-[#14967F]/30 dark:bg-[#2DD4BF]/20 border border-[#CCECEE]/30 dark:border-[#2DD4BF]/40 text-[#E2FCD6] dark:text-[#2DD4BF] text-xs sm:text-sm font-bold px-3.5 py-1.5 rounded-full shadow-inner">
-            <ShieldCheck className="w-4 h-4 text-[#E2FCD6] dark:text-[#2DD4BF]" />
-            <span>{lang === 'en' ? 'Clinical Medicine Index' : 'ক্লিনিক্যাল ড্রাগ ইনডেক্স'}</span>
-          </div>
 
           {/* Main Hero Heading */}
           <h1 className="text-2xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-white">
@@ -142,7 +150,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
               >
                 <div className="flex items-center justify-between w-full">
                   <div className="w-10 h-10 rounded-xl bg-white/90 dark:bg-black/30 flex items-center justify-center shadow-inner shrink-0 group-hover:bg-[#14967F] group-hover:text-white transition-colors">
-                    <img src={formCat.iconPath} alt={formCat.name} className="w-5 h-5 object-contain" loading="lazy" />
+                    <img src={formCat.iconPath} alt={formCat.name} className="w-7 h-7 object-contain" loading="lazy" />
                   </div>
 
                   <span className="text-xs font-black font-mono px-2.5 py-0.5 rounded-full bg-white/90 dark:bg-black/30 border border-current/20">
