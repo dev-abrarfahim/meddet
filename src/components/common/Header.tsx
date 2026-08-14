@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Sun, Moon, SlidersHorizontal } from 'lucide-react';
+import { Sun, Moon, SlidersHorizontal } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface HeaderProps {
@@ -33,16 +33,10 @@ export const Header: React.FC<HeaderProps> = ({
         >
           <img
             src="/logo.webp"
-            alt="MedVhai - Bangladeshi Drug Index & Clinical Monograph Explorer"
+            alt="MedVhai Logo"
             className="h-8 sm:h-10 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform"
           />
         </a>
-
-        {/* Header Tagline Badge */}
-        <div className="hidden md:flex items-center gap-2 text-xs font-semibold text-[#CCECEE] dark:text-slate-300 bg-[#074760]/60 dark:bg-[#152232] px-3.5 py-1.5 rounded-full border border-[#CCECEE]/20 dark:border-[#243B53]">
-          <ShieldCheck className="w-4 h-4 text-[#E2FCD6] dark:text-[#2DD4BF]" />
-          <span>Clinical Drug Index & Monograph Explorer</span>
-        </div>
 
         {/* Right Navigation Actions */}
         <nav aria-label="Main Navigation" className="flex items-center gap-1.5 sm:gap-2">

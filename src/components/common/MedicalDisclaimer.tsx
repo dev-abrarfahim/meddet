@@ -17,7 +17,7 @@ export const MedicalDisclaimer: React.FC<MedicalDisclaimerProps> = ({ onOpenApiD
           <div className="flex items-center">
             <img
               src="/logo.webp"
-              alt="MedVhai - Bangladeshi Drug Index & Clinical Monograph Explorer"
+              alt="MedVhai Logo"
               className="h-8 sm:h-10 w-auto object-contain shrink-0"
             />
           </div>
