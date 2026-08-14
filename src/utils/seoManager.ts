@@ -1,9 +1,10 @@
 import { Medicine, GenericMonograph } from '../types';
+import { getDosageFormIconInfo } from './dosageFormHelper';
 
 /**
  * Enterprise Dynamic SEO & OpenGraph Meta Tag Manager for MedVhai
  * Dynamically updates document title, meta descriptions, canonical URLs,
- * OpenGraph / Twitter cards, and Schema.org Medical JSON-LD snippets.
+ * OpenGraph / Twitter cards, and Schema.org Medical & Merchant Rich Snippets.
  */
 
 export interface SEOProps {
@@ -121,6 +122,7 @@ function updateMedicalSchema(
   description?: string,
   url?: string
 ) {
+  const defaultBaseUrl = 'https://medvhai.heliox.workers.dev';
   let scriptEl = document.querySelector<HTMLScriptElement>('#dynamic-seo-schema');
   if (!scriptEl) {
     scriptEl = document.createElement('script');
@@ -132,12 +134,26 @@ function updateMedicalSchema(
   let schemaObj: Record<string, any>;
 
   if (medicine) {
+    const { iconPath } = getDosageFormIconInfo(medicine.form);
+    const imageUrl = `${defaultBaseUrl}${iconPath.replace(/\.webp$/, '.png')}`;
+    const logoUrl = `${defaultBaseUrl}/logo.png`;
+
     schemaObj = {
       '@context': 'https://schema.org',
-      '@type': 'Drug',
-      'name': medicine.name,
+      '@type': ['Drug', 'Product'],
+      'name': `${medicine.name} ${medicine.strength || ''} ${medicine.form}`.trim(),
+      'image': [
+        imageUrl,
+        logoUrl
+      ],
       'description': description,
       'url': url,
+      'sku': `MEDVHAI-${medicine.id}`,
+      'mpn': `MED-${medicine.id}`,
+      'brand': {
+        '@type': 'Brand',
+        'name': medicine.company
+      },
       'dosageForm': medicine.form,
       'strengthValue': medicine.strength || 'N/A',
       'activeIngredient': medicine.genericName,
@@ -147,9 +163,35 @@ function updateMedicalSchema(
       },
       'offers': {
         '@type': 'Offer',
+        'url': url,
         'priceCurrency': 'BDT',
         'price': medicine.mrp > 0 ? medicine.mrp.toFixed(2) : '0.00',
-        'availability': 'https://schema.org/InStock'
+        'priceValidUntil': '2027-12-31',
+        'itemCondition': 'https://schema.org/NewCondition',
+        'availability': 'https://schema.org/InStock',
+        'seller': {
+          '@type': 'Organization',
+          'name': 'MedVhai'
+        },
+        'hasMerchantReturnPolicy': {
+          '@type': 'MerchantReturnPolicy',
+          'applicableCountry': 'BD',
+          'returnPolicyCategory': 'https://schema.org/MerchantReturnNotPermitted'
+        },
+        'shippingDetails': {
+          '@type': 'OfferShippingDetails',
+          'shippingRate': {
+            '@type': 'MonetaryAmount',
+            'value': '0',
+            'currency': 'BDT'
+          },
+          'shippingDestination': [
+            {
+              '@type': 'DefinedRegion',
+              'addressCountry': 'BD'
+            }
+          ]
+        }
       }
     };
   } else if (generic) {
