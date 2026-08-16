@@ -323,6 +323,9 @@ export default function App() {
     // Ensure full monograph and note are populated
     const fullMed = getMedicineById(med.id) || med;
     setSelectedMedicine(fullMed);
+    setExplorerGenericId(null);
+    setExplorerForm(undefined);
+    setExplorerStrength(undefined);
     const brandSlug = slugify(`${med.name}-${med.strength || ''}-${med.form}`);
     syncUrlState({ id: med.id.toString(), brand: brandSlug, genericId: null, generic: null, form: null, strength: null });
     window.scrollTo({ top: 0, behavior: 'smooth' });
