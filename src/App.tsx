@@ -153,6 +153,12 @@ export default function App() {
           if (med) {
             setSelectedMedicine(med);
             setExplorerGenericId(null);
+
+            // Enforce clean canonical URL: Strip any legacy/conflicting query parameters from browser address bar
+            const canonicalPath = getMedicineCanonicalPath(med);
+            if (url.search !== '' || pathname !== canonicalPath) {
+              window.history.replaceState(null, '', canonicalPath);
+            }
             return;
           }
         }
@@ -387,6 +393,11 @@ export default function App() {
     (filters.maxPrice > 0 ? 1 : 0);
 
   const handleSelectMedicine = (med: Medicine) => {
+    // Development-only diagnostic logging
+    if (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+      console.log(`[MedVhai Navigation] Current: ${selectedMedicine?.id || 'none'} (${selectedMedicine?.name || 'none'}) -> Target: ${med.id} (${med.name}) | Generated Canonical Path: ${getMedicineCanonicalPath(med)}`);
+    }
+
     // Ensure full monograph and note are populated
     const fullMed = getMedicineById(med.id) || med;
     setSelectedMedicine(fullMed);

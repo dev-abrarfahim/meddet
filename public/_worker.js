@@ -236,8 +236,10 @@ export default {
       const canonicalPath = getMedicineCanonicalPath(med);
       const canonicalUrl = `${origin}${canonicalPath}`;
 
-      // Canonical URL Normalization: If requested with mismatched slug, 301 to exact canonical slug
-      if (pathname !== canonicalPath) {
+      // Canonical URL Normalization & Slug-ID Consistency Enforcement:
+      // If requested with mismatched slug or forbidden legacy medicine query parameters, 301 to exact clean canonical URL
+      const hasForbiddenQuery = searchParams.has('id') || searchParams.has('brand') || searchParams.has('medicineId') || searchParams.has('genericId');
+      if (pathname !== canonicalPath || hasForbiddenQuery) {
         return Response.redirect(canonicalUrl, 301);
       }
 
@@ -414,7 +416,8 @@ export default {
       const canonicalPath = getGenericCanonicalPath(gen);
       const canonicalUrl = `${origin}${canonicalPath}`;
 
-      if (pathname !== canonicalPath) {
+      const hasForbiddenGenQuery = searchParams.has('id') || searchParams.has('brand') || searchParams.has('genericId');
+      if (pathname !== canonicalPath || hasForbiddenGenQuery) {
         return Response.redirect(canonicalUrl, 301);
       }
 

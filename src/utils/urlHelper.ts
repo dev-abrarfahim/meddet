@@ -44,6 +44,8 @@ export function getMedicineCanonicalPath(medicine: { id: number; name: string; s
   return `/medicine/${getMedicineCanonicalSlug(medicine)}`;
 }
 
+export const buildMedicinePath = getMedicineCanonicalPath;
+
 /**
  * Canonical Absolute Medicine URL
  * e.g., "https://medvhai.heliox.workers.dev/medicine/napa-500mg-tablet-14521"
@@ -51,6 +53,8 @@ export function getMedicineCanonicalPath(medicine: { id: number; name: string; s
 export function getMedicineCanonicalUrl(medicine: { id: number; name: string; strength?: string; form: string }): string {
   return `${SITE_BASE_URL}${getMedicineCanonicalPath(medicine)}`;
 }
+
+export const getMedicineUrl = getMedicineCanonicalUrl;
 
 /**
  * Canonical Generic Slug Generator (Collision-safe with stable trailing ID)

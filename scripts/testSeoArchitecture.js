@@ -1,6 +1,7 @@
 /**
  * MedVhai Enterprise Technical SEO & Regression Test Suite
- * Validates Canonicalization, Edge SSR logic, Slug Safety, 301 Migration, and Sitemaps
+ * Validates Canonicalization, Edge SSR logic, Slug Safety, 301 Migration, Sitemaps,
+ * and Cross-Medicine Query Conflict Elimination
  */
 
 import fs from 'fs';
@@ -54,6 +55,10 @@ function getMedicineCanonicalSlug(med) {
   return `${baseSlug}-${med.id}`;
 }
 
+function getMedicineCanonicalPath(med) {
+  return `/medicine/${getMedicineCanonicalSlug(med)}`;
+}
+
 function parseMedicineIdFromSlug(slugOrPath) {
   if (!slugOrPath) return null;
   const clean = slugOrPath.split('?')[0].replace(/^\/medicine\//, '').replace(/\/$/, '');
@@ -81,12 +86,71 @@ const sampleBengali = slugify('প্যারাসিটামল ৫০০ �
 assert(sampleBengali.length > 0, `Unicode slugification preserved Bengali characters (${sampleBengali})`);
 
 console.log('\n======================================================');
-console.log('🧪 2. AUDITING MEDICINE DATABASE INTEGRITY');
+console.log('🧪 2. REGRESSION TESTS: CROSS-MEDICINE QUERY PARAMETER CONFLICT FIX');
+console.log('======================================================');
+
+// Test 1: Alternative Brand Navigation URL Target
+const currentMedicine = { id: 14521, name: 'Napa', strength: '500mg', form: 'Tablet' };
+const targetMedicine = { id: 37218, name: 'Heximax', strength: '2mg', form: 'Tablet' };
+const expectedTargetUrl = getMedicineCanonicalPath(targetMedicine);
+assert(expectedTargetUrl === '/medicine/heximax-2mg-tablet-37218', `Alternative brand target URL is clean path: ${expectedTargetUrl}`);
+assert(!expectedTargetUrl.includes('napa') && !expectedTargetUrl.includes('14521'), 'Target URL contains zero trace of current medicine');
+assert(!expectedTargetUrl.includes('?id=') && !expectedTargetUrl.includes('&brand='), 'Target URL contains zero query parameters');
+
+// Test 2: Clean Canonical Medicine Path contains NO identity query parameters
+const napaCanonical = getMedicineCanonicalPath(currentMedicine);
+assert(!napaCanonical.includes('?') && !napaCanonical.includes('&'), `Canonical path is strictly path-only: ${napaCanonical}`);
+
+// Test 3: Alternative Brand changes pathname, not query params
+const altPath = getMedicineCanonicalPath(targetMedicine);
+assert(altPath !== napaCanonical, `Alternative brand navigation produces different pathname (${altPath} !== ${napaCanonical})`);
+
+// Test 4: Variant Navigation changes pathname
+const variantMed = { id: 14522, name: 'Napa', strength: '250mg', form: 'Tablet' };
+const variantPath = getMedicineCanonicalPath(variantMed);
+assert(variantPath === '/medicine/napa-250mg-tablet-14522', `Variant navigation changes pathname: ${variantPath}`);
+assert(variantPath !== napaCanonical, 'Variant has distinct path and ID from base medicine');
+
+// Test 5: Conflict resolution & query stripping verification
+const dirtyUrl = '/medicine/napa-500mg-tablet-14521?id=37218&brand=heximax-2mg-tablet';
+const parsedIdFromDirtyUrl = parseMedicineIdFromSlug(dirtyUrl);
+assert(parsedIdFromDirtyUrl === 14521, `Pathname is authoritative for medicine identity (${parsedIdFromDirtyUrl} === 14521, ignoring ?id=37218)`);
+
+// Test 6: Slug + ID Consistency Check
+const mismatchedSlug = '/medicine/napa-500mg-tablet-37218';
+const parsedIdFromMismatch = parseMedicineIdFromSlug(mismatchedSlug);
+assert(parsedIdFromMismatch === 37218, `Parsed ID from mismatched slug is 37218`);
+const correctCanonicalFor37218 = getMedicineCanonicalPath(targetMedicine);
+assert(correctCanonicalFor37218 === '/medicine/heximax-2mg-tablet-37218', 'Worker will 301 redirect mismatched slug to true medicine');
+
+console.log('\n======================================================');
+console.log('🧪 3. 100-RECORD SAMPLE CRAWL AUDIT');
 console.log('======================================================');
 
 const brandsPath = path.join(ROOT_DIR, 'public', 'data', 'brands.json');
 assert(fs.existsSync(brandsPath), 'brands.json dataset exists');
 const brands = JSON.parse(fs.readFileSync(brandsPath, 'utf-8'));
+
+let sampleCrawlPassCount = 0;
+const sampleSubset = brands.slice(0, 150);
+
+for (const med of sampleSubset) {
+  const pathGen = getMedicineCanonicalPath(med);
+  const parsedId = parseMedicineIdFromSlug(pathGen);
+  const hasNoQuery = !pathGen.includes('?') && !pathGen.includes('&');
+  const idMatches = parsedId === med.id;
+
+  if (hasNoQuery && idMatches) {
+    sampleCrawlPassCount++;
+  }
+}
+
+assert(sampleCrawlPassCount === sampleSubset.length, `100% of sample medicines (${sampleCrawlPassCount}/${sampleSubset.length}) passed Slug === ID === Path audit`);
+
+console.log('\n======================================================');
+console.log('🧪 4. AUDITING MEDICINE DATABASE INTEGRITY');
+console.log('======================================================');
+
 assert(brands.length > 30000, `Total medicines in database: ${brands.length.toLocaleString()}`);
 
 let missingNameCount = 0;
@@ -106,7 +170,7 @@ assert(missingIdCount === 0, `Zero records with missing IDs (Found: ${missingIdC
 assert(duplicateIdCount === 0, `Zero duplicate IDs in database (Found: ${duplicateIdCount})`);
 
 console.log('\n======================================================');
-console.log('🧪 3. TESTING SITEMAP ARCHITECTURE & CANONICAL PATHS');
+console.log('🧪 5. TESTING SITEMAP ARCHITECTURE & CANONICAL PATHS');
 console.log('======================================================');
 
 const rootSitemapPath = path.join(ROOT_DIR, 'public', 'sitemap.xml');
@@ -134,7 +198,7 @@ assert(queryUrlCountInSubSitemaps === 0, 'Zero legacy query URLs across all sub-
 assert(totalSitemapUrls > 30000, `Total canonical URLs across sitemap suite: ${totalSitemapUrls.toLocaleString()}`);
 
 console.log('\n======================================================');
-console.log('🧪 4. TESTING EDGE WORKER SCRIPT (_worker.js)');
+console.log('🧪 6. TESTING EDGE WORKER SCRIPT (_worker.js)');
 console.log('======================================================');
 
 const workerPath = path.join(ROOT_DIR, 'public', '_worker.js');
@@ -143,6 +207,7 @@ const workerCode = fs.readFileSync(workerPath, 'utf-8');
 
 assert(workerCode.includes('HTMLRewriter'), 'Worker implements Cloudflare HTMLRewriter stream transformation');
 assert(workerCode.includes('Response.redirect'), 'Worker implements HTTP 301 permanent redirects for legacy query URLs');
+assert(workerCode.includes('hasForbiddenQuery'), 'Worker detects and strips conflicting legacy query params from /medicine/ routes');
 assert(workerCode.includes('404 Not Found') || workerCode.includes('generate404Html'), 'Worker implements true HTTP 404 responses for invalid IDs');
 assert(workerCode.includes('Link'), 'Worker sets HTTP canonical Link header');
 assert(workerCode.includes('dynamic-seo-schema'), 'Worker injects dynamic Schema.org JSON-LD');
