@@ -285,6 +285,45 @@ export default function App() {
     restoreStateFromUrl();
   }, [dbReady]);
 
+  // Synchronize Search & Filter state to browser URL (Debounced replaceState)
+  useEffect(() => {
+    if (!dbReady || selectedMedicine || explorerGenericId || is404) return;
+    const pathname = window.location.pathname;
+    if (pathname.startsWith('/medicine/') || pathname.startsWith('/generic/')) return;
+
+    const timer = setTimeout(() => {
+      try {
+        const url = new URL(window.location.href);
+        const params: Record<string, string | null> = {
+          q: searchQuery.trim() ? searchQuery.trim() : null,
+          letter: selectedLetter !== 'All' ? selectedLetter : null,
+          category: filters.category !== 'All' ? filters.category : null,
+          form: filters.dosageForm !== 'All' ? filters.dosageForm : null,
+          company: filters.manufacturer !== 'All' ? filters.manufacturer : null,
+        };
+
+        Object.entries(params).forEach(([key, val]) => {
+          if (val === null) {
+            url.searchParams.delete(key);
+          } else {
+            url.searchParams.set(key, val);
+          }
+        });
+
+        if (!pathname.startsWith('/dosage-form/') && !pathname.startsWith('/company/')) {
+          url.pathname = '/';
+        }
+
+        const newUrl = url.pathname + (url.searchParams.toString() ? `?${url.searchParams.toString()}` : '');
+        if (window.location.pathname + window.location.search !== newUrl) {
+          window.history.replaceState(null, '', newUrl);
+        }
+      } catch {}
+    }, 250);
+
+    return () => clearTimeout(timer);
+  }, [dbReady, searchQuery, selectedLetter, filters, activeTab, selectedMedicine, explorerGenericId, is404]);
+
   // Handle browser Back / Forward button navigation (popstate)
   useEffect(() => {
     if (!dbReady) return;

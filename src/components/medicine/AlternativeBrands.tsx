@@ -189,9 +189,9 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
 
         {/* Small Pagination Indicator Dots */}
         <div className="flex items-center gap-1.5 pt-0.5">
-          {alternatives.slice(0, 8).map((_, idx) => (
+          {alternatives.slice(0, 8).map((alt, idx) => (
             <button
-              key={idx}
+              key={alt.id || idx}
               onClick={(e) => {
                 e.stopPropagation();
                 setIsPaused(true);

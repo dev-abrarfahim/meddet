@@ -207,9 +207,9 @@ export const SearchBar: React.FC<SearchBarProps> = ({
               </div>
 
               <div className="divide-y divide-[#F1F9FF] dark:divide-[#243B53]">
-                {recentSearches.slice(0, 5).map((term, idx) => (
+                {recentSearches.slice(0, 5).map((term) => (
                   <div
-                    key={idx}
+                    key={term}
                     onClick={() => {
                       onChangeQuery(term);
                       saveRecentSearch(term);
