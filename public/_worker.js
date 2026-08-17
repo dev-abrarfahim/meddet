@@ -375,6 +375,11 @@ export default {
       if (assetRes.ok && (pathname === '/robots.txt' || pathname.endsWith('.xml'))) {
         const headers = new Headers(assetRes.headers);
         headers.set('Cache-Control', 'public, max-age=86400, s-maxage=86400');
+        if (pathname.endsWith('.xml')) {
+          headers.set('Content-Type', 'application/xml; charset=utf-8');
+        } else if (pathname === '/robots.txt') {
+          headers.set('Content-Type', 'text/plain; charset=utf-8');
+        }
         return new Response(assetRes.body, { status: assetRes.status, headers });
       }
       return assetRes;
