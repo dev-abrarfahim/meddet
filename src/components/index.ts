@@ -6,6 +6,7 @@ export { SidebarDrawer } from './common/SidebarDrawer';
 export { TableOfContents } from './common/TableOfContents';
 export { MedicalDisclaimer } from './common/MedicalDisclaimer';
 export { ApiDocsModal } from './common/ApiDocsModal';
+export { NotFoundPage } from './common/NotFoundPage';
 
 // Search & Filtering Components
 export { SearchBar } from './search/SearchBar';

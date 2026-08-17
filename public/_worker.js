@@ -128,23 +128,220 @@ function generate404Html(resourceType, identifier) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 — ${resourceType} Not Found | MedVhai</title>
+  <title>404 — ${resourceType} Not Found | MedVhai™ Clinical Drug Index</title>
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="${SITE_BASE_URL}/">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #F1F9FF; color: #095D7E; margin: 0; padding: 40px 20px; display: flex; align-items: center; justify-content: center; min-height: 80vh; text-align: center; }
-    .card { background: #fff; padding: 40px 30px; border-radius: 20px; border: 1px solid #CCECEE; box-shadow: 0 10px 25px rgba(9,93,126,0.08); max-width: 480px; width: 100%; }
-    h1 { font-size: 32px; margin: 0 0 10px; color: #095D7E; }
-    p { font-size: 15px; color: #555; line-height: 1.5; margin: 0 0 24px; }
-    .btn { display: inline-block; background: #14967F; color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 12px; font-weight: bold; font-size: 14px; transition: background 0.2s; }
-    .btn:hover { background: #0E7563; }
+    :root {
+      --bg: #F1F9FF;
+      --card-bg: #ffffff;
+      --text-main: #095D7E;
+      --text-muted: #526E7E;
+      --accent: #14967F;
+      --accent-hover: #11806C;
+      --border: #CCECEE;
+      --chip-bg: #EAF4F9;
+      --chip-hover: #E2FCD6;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0B131B;
+        --card-bg: #131B2E;
+        --text-main: #E2FCD6;
+        --text-muted: #94A3B8;
+        --accent: #2DD4BF;
+        --accent-hover: #14967F;
+        --border: #1E3A52;
+        --chip-bg: #1E293B;
+        --chip-hover: #064E3B;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+    .container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 40px 28px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(9, 93, 126, 0.08);
+      position: relative;
+    }
+    .badge-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 16px;
+      background: #E2FCD6;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      .badge-icon { background: #064E3B; }
+    }
+    .badge-icon svg { width: 44px; height: 44px; stroke: #14967F; }
+    .badge-404 {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      background: #095D7E;
+      color: #E2FCD6;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    p.subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    .search-form {
+      display: flex;
+      gap: 8px;
+      background: var(--bg);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 6px;
+      margin-bottom: 24px;
+      transition: border 0.2s;
+    }
+    .search-form:focus-within {
+      border-color: var(--accent);
+    }
+    .search-form input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-main);
+      outline: none;
+    }
+    .search-form button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .search-form button:hover {
+      background: var(--accent-hover);
+    }
+    .chips-section {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .chips-title {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .chips-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .chip {
+      display: inline-block;
+      padding: 6px 12px;
+      background: var(--chip-bg);
+      color: var(--text-main);
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      transition: all 0.15s;
+    }
+    .chip:hover {
+      background: var(--chip-hover);
+      color: #095D7E;
+    }
+    .home-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #095D7E;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 14px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(9,93,126,0.2);
+    }
+    .home-btn:hover {
+      background: #074760;
+      transform: translateY(-1px);
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>404 Not Found</h1>
-    <p>We could not find any ${resourceType.toLowerCase()} record matching "<strong>${identifier}</strong>". It may have been discontinued or the URL is invalid.</p>
-    <a href="${SITE_BASE_URL}/" class="btn">Return to MedVhai Index</a>
+  <div class="container">
+    <div class="badge-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
+        <path d="m8.5 8.5 7 7"/>
+      </svg>
+    </div>
+
+    <span class="badge-404">HTTP 404 — ${resourceType} Not Found</span>
+    <h1>Medicine Record Not Found</h1>
+    <p class="subtitle">We couldn't find any ${resourceType.toLowerCase()} record matching "<strong>${identifier}</strong>". It may have been discontinued or the URL is incorrect.</p>
+
+    <!-- Instant Search Recovery -->
+    <form class="search-form" action="/" method="GET">
+      <input type="text" name="q" placeholder="Search 30,500+ medicines (e.g. Napa, Seclo)..." autofocus required>
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- Popular Searches -->
+    <div class="chips-section">
+      <div class="chips-title">Popular Medicine Searches:</div>
+      <div class="chips-list">
+        <a href="/medicine/napa-500mg-tablet-14521" class="chip">Napa 500mg</a>
+        <a href="/medicine/seclo-20mg-capsule-18967" class="chip">Seclo 20mg</a>
+        <a href="/medicine/maxpro-20mg-tablet-12869" class="chip">Maxpro 20mg</a>
+        <a href="/medicine/sergel-20mg-capsule-19131" class="chip">Sergel 20mg</a>
+        <a href="/medicine/ace-500mg-tablet-155" class="chip">Ace 500mg</a>
+        <a href="/medicine/monas-10-10mg-tablet-13838" class="chip">Monas 10mg</a>
+      </div>
+    </div>
+
+    <a href="/" class="home-btn">← Return to MedVhai Index</a>
   </div>
 </body>
 </html>`;

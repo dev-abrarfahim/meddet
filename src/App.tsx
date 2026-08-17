@@ -17,7 +17,8 @@ import {
   ClinicalMonographAccordions,
   GenericBrandsExplorer,
   ApiDocsModal,
-  FilterPanel
+  FilterPanel,
+  NotFoundPage
 } from './components';
 
 import { Medicine, FilterOptions, LanguageMode } from './types';
@@ -110,6 +111,8 @@ export default function App() {
   const [explorerGenericId, setExplorerGenericId] = useState<number | null>(null);
   const [explorerForm, setExplorerForm] = useState<string | undefined>(undefined);
   const [explorerStrength, setExplorerStrength] = useState<string | undefined>(undefined);
+  const [is404, setIs404] = useState<boolean>(false);
+  const [notFoundSlug, setNotFoundSlug] = useState<string>('');
 
   // Helper to update browser URL using clean canonical path or query parameters
   const syncNavigationUrl = (canonicalPath: string, searchParams?: Record<string, string | null>) => {
@@ -145,6 +148,10 @@ export default function App() {
       const pathname = decodeURIComponent(url.pathname);
       const searchParams = url.searchParams;
 
+      // Reset 404 state
+      setIs404(false);
+      setNotFoundSlug('');
+
       // 1. Path-based routing: /medicine/:slug (e.g., /medicine/napa-500mg-tablet-14521)
       if (pathname.startsWith('/medicine/')) {
         const medId = parseMedicineIdFromSlug(pathname);
@@ -153,6 +160,7 @@ export default function App() {
           if (med) {
             setSelectedMedicine(med);
             setExplorerGenericId(null);
+            setIs404(false);
 
             // Enforce clean canonical URL: Strip any legacy/conflicting query parameters from browser address bar
             const canonicalPath = getMedicineCanonicalPath(med);
@@ -162,20 +170,34 @@ export default function App() {
             return;
           }
         }
+        setIs404(true);
+        setNotFoundSlug(pathname.replace(/^\/medicine\//, '').replace(/\/$/, ''));
+        setSelectedMedicine(null);
+        setExplorerGenericId(null);
+        return;
       }
 
       // 2. Path-based routing: /generic/:slug (e.g., /generic/paracetamol-1124)
       if (pathname.startsWith('/generic/')) {
         const genId = parseGenericIdFromSlug(pathname);
         if (genId) {
-          setSelectedMedicine(null);
-          setExplorerGenericId(genId);
-          const formParam = searchParams.get('form');
-          const strParam = searchParams.get('strength');
-          if (formParam) setExplorerForm(formParam);
-          if (strParam) setExplorerStrength(strParam);
-          return;
+          const gen = getGenericById(genId);
+          if (gen) {
+            setSelectedMedicine(null);
+            setExplorerGenericId(genId);
+            setIs404(false);
+            const formParam = searchParams.get('form');
+            const strParam = searchParams.get('strength');
+            if (formParam) setExplorerForm(formParam);
+            if (strParam) setExplorerStrength(strParam);
+            return;
+          }
         }
+        setIs404(true);
+        setNotFoundSlug(pathname.replace(/^\/generic\//, '').replace(/\/$/, ''));
+        setSelectedMedicine(null);
+        setExplorerGenericId(null);
+        return;
       }
 
       // 3. Path-based routing: /dosage-form/:form (e.g., /dosage-form/tablet)
@@ -183,6 +205,7 @@ export default function App() {
         const formSlug = pathname.replace(/^\/dosage-form\//, '').replace(/\/$/, '');
         setSelectedMedicine(null);
         setExplorerGenericId(null);
+        setIs404(false);
         setActiveTab('search');
         setFilters((prev) => ({ ...prev, dosageForm: formSlug }));
         return;
@@ -193,6 +216,7 @@ export default function App() {
         const compSlug = pathname.replace(/^\/company\//, '').replace(/\/$/, '');
         setSelectedMedicine(null);
         setExplorerGenericId(null);
+        setIs404(false);
         setActiveTab('search');
         setFilters((prev) => ({ ...prev, manufacturer: compSlug }));
         return;
@@ -400,6 +424,7 @@ export default function App() {
 
     // Ensure full monograph and note are populated
     const fullMed = getMedicineById(med.id) || med;
+    setIs404(false);
     setSelectedMedicine(fullMed);
     setExplorerGenericId(null);
     setExplorerForm(undefined);
@@ -410,6 +435,7 @@ export default function App() {
   };
 
   const handleGoHome = () => {
+    setIs404(false);
     setSelectedMedicine(null);
     setExplorerGenericId(null);
     setActiveTab('home');
@@ -418,6 +444,7 @@ export default function App() {
   };
 
   const handleGoToSearch = (query?: string, category?: string, manufacturer?: string, dosageForm?: string) => {
+    setIs404(false);
     setSelectedMedicine(null);
     setExplorerGenericId(null);
     setActiveTab('search');
@@ -498,8 +525,15 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 space-y-6">
 
-        {/* VIEW 0: DEDICATED ALTERNATIVE BRANDS EXPLORER VIEW */}
-        {explorerGenericId ? (
+        {/* VIEW 404: MEDICINE NOT FOUND RECOVERY VIEW */}
+        {is404 ? (
+          <NotFoundPage
+            onGoHome={handleGoHome}
+            onGoToSearch={handleGoToSearch}
+            lang={lang}
+            requestedSlug={notFoundSlug}
+          />
+        ) : explorerGenericId ? (
           <div className="max-w-4xl mx-auto space-y-4 animate-in fade-in duration-200 pb-16">
             <GenericBrandsExplorer
               genericId={explorerGenericId}
