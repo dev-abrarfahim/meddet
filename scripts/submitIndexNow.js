@@ -49,7 +49,7 @@ function getAllCanonicalUrls() {
   return cleanUrls;
 }
 
-function postIndexNowBatch(batch, batchNumber, totalBatches) {
+function postIndexNowBatch(batch, batchNumber, totalBatches, endpoint = 'api.indexnow.org') {
   return new Promise((resolve, reject) => {
     const payload = JSON.stringify({
       host: HOST,
@@ -59,7 +59,7 @@ function postIndexNowBatch(batch, batchNumber, totalBatches) {
     });
 
     const options = {
-      hostname: 'www.bing.com',
+      hostname: endpoint,
       port: 443,
       path: '/indexnow',
       method: 'POST',
@@ -69,25 +69,25 @@ function postIndexNowBatch(batch, batchNumber, totalBatches) {
       }
     };
 
-    console.log(`[Batch ${batchNumber}/${totalBatches}] Submitting ${batch.length} canonical URLs to IndexNow...`);
+    console.log(`[Batch ${batchNumber}/${totalBatches}] Submitting ${batch.length} canonical URLs to ${endpoint}...`);
 
     const req = https.request(options, (res) => {
       let responseBody = '';
       res.on('data', (chunk) => { responseBody += chunk; });
       res.on('end', () => {
         if (res.statusCode === 200 || res.statusCode === 202) {
-          console.log(`✅ [Batch ${batchNumber}/${totalBatches}] Success! Status: ${res.statusCode} (${batch.length} URLs queued for indexing)`);
+          console.log(`✅ [Batch ${batchNumber}/${totalBatches}] Success (${endpoint})! Status: ${res.statusCode} (${batch.length} URLs queued for indexing)`);
           resolve({ status: res.statusCode, count: batch.length });
         } else {
-          console.error(`⚠️ [Batch ${batchNumber}/${totalBatches}] Response Status: ${res.statusCode} ${responseBody}`);
+          console.warn(`⚠️ [Batch ${batchNumber}/${totalBatches}] (${endpoint}) Response Status: ${res.statusCode} ${responseBody}`);
           resolve({ status: res.statusCode, response: responseBody, count: batch.length });
         }
       });
     });
 
     req.on('error', (err) => {
-      console.error(`❌ [Batch ${batchNumber}/${totalBatches}] Error:`, err.message);
-      reject(err);
+      console.error(`❌ [Batch ${batchNumber}/${totalBatches}] (${endpoint}) Error:`, err.message);
+      resolve({ error: err.message });
     });
 
     req.write(payload);
