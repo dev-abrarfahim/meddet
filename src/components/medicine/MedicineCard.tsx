@@ -2,7 +2,7 @@ import React from 'react';
 import { Building2, ChevronRight } from 'lucide-react';
 import { Medicine } from '../../types';
 import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
-import { slugify } from '../../utils/slugify';
+import { getMedicineCanonicalPath } from '../../utils/urlHelper';
 
 interface MedicineCardProps {
   medicine: Medicine;
@@ -11,8 +11,7 @@ interface MedicineCardProps {
 
 export const MedicineCard: React.FC<MedicineCardProps> = ({ medicine, onSelect }) => {
   const { iconPath, color: badgeColor } = getDosageFormIconInfo(medicine.form);
-  const brandSlug = slugify(`${medicine.name}-${medicine.strength || ''}-${medicine.form}`);
-  const href = `/?id=${medicine.id}&brand=${brandSlug}`;
+  const href = getMedicineCanonicalPath(medicine);
 
   return (
     <a

@@ -3,6 +3,7 @@ import { Search, SlidersHorizontal, X, Clock, Trash2 } from 'lucide-react';
 import { Medicine } from '../../types';
 import { searchMedicines } from '../../data/dbEngine';
 import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
+import { getMedicineCanonicalPath } from '../../utils/urlHelper';
 
 interface SearchBarProps {
   query: string;
@@ -154,14 +155,16 @@ export const SearchBar: React.FC<SearchBarProps> = ({
 
               <div className="divide-y divide-[#F1F9FF] dark:divide-[#243B53] max-h-80 overflow-y-auto">
                 {suggestions.map((med) => (
-                  <button
+                  <a
                     key={med.id}
-                    onClick={() => {
+                    href={getMedicineCanonicalPath(med)}
+                    onClick={(e) => {
+                      e.preventDefault();
                       saveRecentSearch(med.name);
                       onSelectMedicine(med);
                       setIsOpen(false);
                     }}
-                    className="w-full p-3 sm:p-3.5 hover:bg-[#F1F9FF] dark:hover:bg-[#1A2B3E] text-left flex items-center justify-between gap-3 transition-colors cursor-pointer"
+                    className="w-full p-3 sm:p-3.5 hover:bg-[#F1F9FF] dark:hover:bg-[#1A2B3E] text-left flex items-center justify-between gap-3 transition-colors cursor-pointer block"
                   >
                     <div className="space-y-0.5 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
@@ -182,7 +185,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                       <div className="text-[10px] font-bold text-slate-400 uppercase">MRP</div>
                       <div className="text-sm sm:text-base font-black text-[#14967F] dark:text-[#2DD4BF] font-mono">৳{med.mrp.toFixed(2)}</div>
                     </div>
-                  </button>
+                  </a>
                 ))}
               </div>
             </>

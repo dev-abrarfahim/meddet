@@ -1,6 +1,6 @@
 /**
  * MedVhai Automatic IndexNow Batch Submitter
- * Submits all 33,000+ medicine URLs from sitemap.xml to Microsoft Bing / IndexNow
+ * Submits all 33,000+ canonical medicine URLs to Microsoft Bing / IndexNow
  * Protocol: https://www.indexnow.org/documentation
  */
 
@@ -15,17 +15,38 @@ const __dirname = path.dirname(__filename);
 const HOST = 'medvhai.heliox.workers.dev';
 const API_KEY = '5711ad7c2b904d059ece59ef8e77bf90';
 const KEY_LOCATION = `https://${HOST}/${API_KEY}.txt`;
-const SITEMAP_PATH = path.join(__dirname, '..', 'public', 'sitemap.xml');
+const PUBLIC_DIR = path.join(__dirname, '..', 'public');
 
-function extractUrlsFromSitemap(xmlContent) {
+function extractUrlsFromXml(xmlContent) {
   const urlRegex = /<loc>(https:\/\/[^<]+)<\/loc>/g;
   const urls = [];
   let match;
   while ((match = urlRegex.exec(xmlContent)) !== null) {
-    // Unescape XML entities like &amp; to &
-    urls.push(match[1].replace(/&amp;/g, '&'));
+    const rawUrl = match[1].replace(/&amp;/g, '&');
+    urls.push(rawUrl);
   }
   return urls;
+}
+
+function getAllCanonicalUrls() {
+  const rootSitemap = path.join(PUBLIC_DIR, 'sitemap.xml');
+  const sitemapsDir = path.join(PUBLIC_DIR, 'sitemaps');
+  let allUrls = [];
+
+  if (fs.existsSync(sitemapsDir)) {
+    const files = fs.readdirSync(sitemapsDir).filter(f => f.endsWith('.xml'));
+    for (const f of files) {
+      const content = fs.readFileSync(path.join(sitemapsDir, f), 'utf-8');
+      allUrls = allUrls.concat(extractUrlsFromXml(content));
+    }
+  } else if (fs.existsSync(rootSitemap)) {
+    const content = fs.readFileSync(rootSitemap, 'utf-8');
+    allUrls = extractUrlsFromXml(content);
+  }
+
+  // Deduplicate and filter out sitemap indexes themselves
+  const cleanUrls = Array.from(new Set(allUrls)).filter(u => !u.endsWith('.xml'));
+  return cleanUrls;
 }
 
 function postIndexNowBatch(batch, batchNumber, totalBatches) {
@@ -48,7 +69,7 @@ function postIndexNowBatch(batch, batchNumber, totalBatches) {
       }
     };
 
-    console.log(`[Batch ${batchNumber}/${totalBatches}] Submitting ${batch.length} URLs to IndexNow...`);
+    console.log(`[Batch ${batchNumber}/${totalBatches}] Submitting ${batch.length} canonical URLs to IndexNow...`);
 
     const req = https.request(options, (res) => {
       let responseBody = '';
@@ -75,15 +96,9 @@ function postIndexNowBatch(batch, batchNumber, totalBatches) {
 }
 
 async function run() {
-  console.log('📖 Reading sitemap.xml...');
-  if (!fs.existsSync(SITEMAP_PATH)) {
-    console.error(`Error: sitemap.xml not found at ${SITEMAP_PATH}`);
-    process.exit(1);
-  }
-
-  const xmlContent = fs.readFileSync(SITEMAP_PATH, 'utf-8');
-  const allUrls = extractUrlsFromSitemap(xmlContent);
-  console.log(`Found ${allUrls.length.toLocaleString()} total URLs to index.\n`);
+  console.log('📖 Extracting canonical URLs from sitemap suite...');
+  const allUrls = getAllCanonicalUrls();
+  console.log(`Found ${allUrls.length.toLocaleString()} total clean canonical URLs to submit.\n`);
 
   const BATCH_SIZE = 10000;
   const totalBatches = Math.ceil(allUrls.length / BATCH_SIZE);
@@ -93,7 +108,6 @@ async function run() {
     const batchNumber = Math.floor(i / BATCH_SIZE) + 1;
     try {
       await postIndexNowBatch(batch, batchNumber, totalBatches);
-      // Wait 1.5 seconds between batches
       if (i + BATCH_SIZE < allUrls.length) {
         await new Promise((r) => setTimeout(r, 1500));
       }
@@ -102,7 +116,7 @@ async function run() {
     }
   }
 
-  console.log('\n🎉 All URLs successfully submitted to IndexNow!');
+  console.log('\n🎉 All canonical URLs submitted to IndexNow!');
 }
 
 run();

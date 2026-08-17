@@ -3,7 +3,7 @@ import { Building2, ChevronLeft, ArrowUpDown, Filter, Sparkles } from 'lucide-re
 import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
 import { Medicine, LanguageMode } from '../../types';
 import { getAllBrandsForGeneric, getGenericById } from '../../data/dbEngine';
-import { slugify } from '../../utils/slugify';
+import { getMedicineCanonicalPath } from '../../utils/urlHelper';
 
 interface GenericBrandsExplorerProps {
   genericId: number;
@@ -270,8 +270,7 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
                 </tr>
               ) : (
                 filteredBrands.map((brand, idx) => {
-                  const brandSlug = slugify(`${brand.name}-${brand.strength || ''}-${brand.form}`);
-                  const brandHref = `/?id=${brand.id}&brand=${brandSlug}`;
+                  const brandHref = getMedicineCanonicalPath(brand);
                   return (
                     <tr
                       key={brand.id}
@@ -342,8 +341,7 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
             </div>
           ) : (
             filteredBrands.map((brand) => {
-              const brandSlug = slugify(`${brand.name}-${brand.strength || ''}-${brand.form}`);
-              const brandHref = `/?id=${brand.id}&brand=${brandSlug}`;
+              const brandHref = getMedicineCanonicalPath(brand);
               return (
                 <a
                   key={brand.id}

@@ -22,7 +22,15 @@ import {
 
 import { Medicine, FilterOptions, LanguageMode } from './types';
 import { searchMedicines, getMedicineById, getGenericById, subscribeDatabase, isDatabaseReady } from './data/dbEngine';
-import { slugify } from './utils/slugify';
+import {
+  slugify,
+  getMedicineCanonicalPath,
+  getGenericCanonicalPath,
+  getDosageFormCanonicalPath,
+  getCompanyCanonicalPath,
+  parseMedicineIdFromSlug,
+  parseGenericIdFromSlug
+} from './utils/urlHelper';
 import { updateDynamicSEO } from './utils/seoManager';
 import { Pill, Search, RotateCcw, ChevronLeft, ChevronRight, Languages, ShieldCheck, SlidersHorizontal } from 'lucide-react';
 
@@ -103,61 +111,120 @@ export default function App() {
   const [explorerForm, setExplorerForm] = useState<string | undefined>(undefined);
   const [explorerStrength, setExplorerStrength] = useState<string | undefined>(undefined);
 
-  // Helper to safely update URL both in current window and parent frame if embedded in Blogspot iframe
-  const syncUrlState = (paramsToUpdate: Record<string, string | null>) => {
+  // Helper to update browser URL using clean canonical path or query parameters
+  const syncNavigationUrl = (canonicalPath: string, searchParams?: Record<string, string | null>) => {
     try {
       const url = new URL(window.location.href);
-      Object.entries(paramsToUpdate).forEach(([key, val]) => {
-        if (val === null) {
-          url.searchParams.delete(key);
-        } else {
-          url.searchParams.set(key, val);
-        }
-      });
+      url.pathname = canonicalPath;
+      if (searchParams) {
+        Object.entries(searchParams).forEach(([key, val]) => {
+          if (val === null) {
+            url.searchParams.delete(key);
+          } else {
+            url.searchParams.set(key, val);
+          }
+        });
+      } else {
+        url.search = '';
+      }
 
-      // Update current window URL
-      window.history.pushState(null, '', url.toString());
+      // Update current window history
+      window.history.pushState(null, '', url.pathname + url.search);
 
-      // If embedded inside Blogger iframe, sync URL to Blogspot address bar via postMessage!
+      // If embedded inside Blogger iframe, sync URL via postMessage
       if (window.parent && window.parent !== window) {
-        window.parent.postMessage({ type: 'MEDVHAI_URL_CHANGE', search: url.search }, '*');
+        window.parent.postMessage({ type: 'MEDVHAI_URL_CHANGE', pathname: url.pathname, search: url.search }, '*');
       }
     } catch {}
   };
 
-  // Reusable function: Restore React state from current URL parameters
+  // Reusable function: Restore React state from current URL path & search parameters
   const restoreStateFromUrl = () => {
     try {
       const url = new URL(window.location.href);
-      const idParam = url.searchParams.get('id');
-      const gIdParam = url.searchParams.get('genericId');
-      const formParam = url.searchParams.get('form');
-      const strParam = url.searchParams.get('strength');
-      const qParam = url.searchParams.get('q');
-      const letterParam = url.searchParams.get('letter');
-      const catParam = url.searchParams.get('category');
-      const mfrParam = url.searchParams.get('company') || url.searchParams.get('manufacturer');
+      const pathname = decodeURIComponent(url.pathname);
+      const searchParams = url.searchParams;
 
-      // 1. Restore Medicine Details Page
+      // 1. Path-based routing: /medicine/:slug (e.g., /medicine/napa-500mg-tablet-14521)
+      if (pathname.startsWith('/medicine/')) {
+        const medId = parseMedicineIdFromSlug(pathname);
+        if (medId) {
+          const med = getMedicineById(medId);
+          if (med) {
+            setSelectedMedicine(med);
+            setExplorerGenericId(null);
+            return;
+          }
+        }
+      }
+
+      // 2. Path-based routing: /generic/:slug (e.g., /generic/paracetamol-1124)
+      if (pathname.startsWith('/generic/')) {
+        const genId = parseGenericIdFromSlug(pathname);
+        if (genId) {
+          setSelectedMedicine(null);
+          setExplorerGenericId(genId);
+          const formParam = searchParams.get('form');
+          const strParam = searchParams.get('strength');
+          if (formParam) setExplorerForm(formParam);
+          if (strParam) setExplorerStrength(strParam);
+          return;
+        }
+      }
+
+      // 3. Path-based routing: /dosage-form/:form (e.g., /dosage-form/tablet)
+      if (pathname.startsWith('/dosage-form/')) {
+        const formSlug = pathname.replace(/^\/dosage-form\//, '').replace(/\/$/, '');
+        setSelectedMedicine(null);
+        setExplorerGenericId(null);
+        setActiveTab('search');
+        setFilters((prev) => ({ ...prev, dosageForm: formSlug }));
+        return;
+      }
+
+      // 4. Path-based routing: /company/:company (e.g., /company/square-pharmaceuticals-plc)
+      if (pathname.startsWith('/company/')) {
+        const compSlug = pathname.replace(/^\/company\//, '').replace(/\/$/, '');
+        setSelectedMedicine(null);
+        setExplorerGenericId(null);
+        setActiveTab('search');
+        setFilters((prev) => ({ ...prev, manufacturer: compSlug }));
+        return;
+      }
+
+      // 5. Legacy Query Parameter Fallback (e.g., /?id=14521&brand=napa-500mg-tablet)
+      const idParam = searchParams.get('id');
+      const gIdParam = searchParams.get('genericId');
+      const formParam = searchParams.get('form');
+      const strParam = searchParams.get('strength');
+      const qParam = searchParams.get('q');
+      const letterParam = searchParams.get('letter');
+      const catParam = searchParams.get('category');
+      const mfrParam = searchParams.get('company') || searchParams.get('manufacturer');
+
       if (idParam && !isNaN(Number(idParam))) {
         const med = getMedicineById(Number(idParam));
         if (med) {
           setSelectedMedicine(med);
           setExplorerGenericId(null);
+          // Upgrade URL in address bar to clean canonical path
+          window.history.replaceState(null, '', getMedicineCanonicalPath(med));
           return;
         }
       }
 
-      // 2. Restore Generic Brands Explorer Page
       if (gIdParam && !isNaN(Number(gIdParam))) {
         setSelectedMedicine(null);
         setExplorerGenericId(Number(gIdParam));
         if (formParam) setExplorerForm(formParam);
         if (strParam) setExplorerStrength(strParam);
+        const gen = getGenericById(Number(gIdParam));
+        if (gen) {
+          window.history.replaceState(null, '', getGenericCanonicalPath(gen));
+        }
         return;
       }
 
-      // 3. Restore Search Filters & Query Page
       if (qParam || letterParam || catParam || mfrParam || formParam) {
         setSelectedMedicine(null);
         setExplorerGenericId(null);
@@ -175,7 +242,7 @@ export default function App() {
         return;
       }
 
-      // 4. No URL params → go to home
+      // 6. Default Root Homepage
       setSelectedMedicine(null);
       setExplorerGenericId(null);
       setActiveTab('home');
@@ -210,7 +277,7 @@ export default function App() {
     }
   }, [dbVersion]);
 
-  // Dynamically update document title, meta descriptions, canonical link, OpenGraph & Schema.org JSON-LD for Search Engine Optimization
+  // Dynamically update document title, meta descriptions, canonical link, OpenGraph & Schema.org JSON-LD
   useEffect(() => {
     const genericObj = explorerGenericId ? getGenericById(explorerGenericId) : null;
     updateDynamicSEO({
@@ -229,8 +296,8 @@ export default function App() {
     setExplorerForm(form);
     setExplorerStrength(strength);
     const gen = getGenericById(genericId);
-    const genSlug = gen ? slugify(gen.name) : 'generic';
-    syncUrlState({ genericId: genericId.toString(), generic: genSlug, form: form || null, strength: strength || null, id: null, brand: null });
+    const canonicalPath = gen ? getGenericCanonicalPath(gen) : `/generic/${genericId}`;
+    syncNavigationUrl(canonicalPath, { form: form || null, strength: strength || null });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -238,7 +305,7 @@ export default function App() {
     setExplorerGenericId(null);
     setExplorerForm(undefined);
     setExplorerStrength(undefined);
-    syncUrlState({ genericId: null, generic: null, form: null, strength: null, id: null, brand: null });
+    syncNavigationUrl('/');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -326,8 +393,8 @@ export default function App() {
     setExplorerGenericId(null);
     setExplorerForm(undefined);
     setExplorerStrength(undefined);
-    const brandSlug = slugify(`${med.name}-${med.strength || ''}-${med.form}`);
-    syncUrlState({ id: med.id.toString(), brand: brandSlug, genericId: null, generic: null, form: null, strength: null });
+    const canonicalPath = getMedicineCanonicalPath(fullMed);
+    syncNavigationUrl(canonicalPath);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -335,7 +402,7 @@ export default function App() {
     setSelectedMedicine(null);
     setExplorerGenericId(null);
     setActiveTab('home');
-    syncUrlState({ id: null, brand: null, genericId: null, generic: null, form: null, strength: null });
+    syncNavigationUrl('/');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -360,7 +427,16 @@ export default function App() {
       setSearchQuery('');
     }
 
-    syncUrlState({ id: null, brand: null, genericId: null, generic: null, form: dosageForm || null, strength: null });
+    if (dosageForm && dosageForm !== 'All') {
+      syncNavigationUrl(getDosageFormCanonicalPath(dosageForm));
+    } else if (manufacturer && manufacturer !== 'All') {
+      syncNavigationUrl(getCompanyCanonicalPath(manufacturer));
+    } else if (query) {
+      syncNavigationUrl('/', { q: query });
+    } else {
+      syncNavigationUrl('/');
+    }
+
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 50);

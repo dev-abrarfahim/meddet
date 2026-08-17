@@ -3,6 +3,7 @@ import { Building2, Layers, ArrowLeft, ExternalLink } from 'lucide-react';
 import { Medicine, LanguageMode } from '../../types';
 import { getAlternativeBrands } from '../../data/dbEngine';
 import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
+import { getMedicineCanonicalPath, getGenericCanonicalPath } from '../../utils/urlHelper';
 
 interface MedicineHeroProps {
   medicine: Medicine;
@@ -98,24 +99,32 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
             <span>Also available As</span>
           </div>
 
-          {/* Alternative Brands Dedicated Explorer Button */}
-          <button
-            onClick={() => onOpenGenericBrandsExplorer(medicine.genericId, medicine.form, medicine.strength)}
+          {/* Alternative Brands Dedicated Explorer Link */}
+          <a
+            href={getGenericCanonicalPath({ id: medicine.genericId, name: medicine.genericName })}
+            onClick={(e) => {
+              e.preventDefault();
+              onOpenGenericBrandsExplorer(medicine.genericId, medicine.form, medicine.strength);
+            }}
             id="hero-open-alt-brands-explorer-btn"
             className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-700 text-[11px] font-black text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900 transition-all cursor-pointer shadow-xs"
           >
             <span>Alternative Brands</span>
             <ExternalLink className="w-3 h-3" />
-          </button>
+          </a>
         </div>
 
         <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5">
           {variants.map((v) => {
             const isCurrent = v.id === medicine.id || (v.form === medicine.form && v.strength === medicine.strength);
             return (
-              <button
+              <a
                 key={v.id}
-                onClick={() => onSelectMedicine(v)}
+                href={getMedicineCanonicalPath(v)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectMedicine(v);
+                }}
                 className={`px-2.5 py-1 rounded-lg text-[11px] font-bold whitespace-nowrap transition-all border cursor-pointer ${
                   isCurrent
                     ? 'bg-[#095D7E] dark:bg-[#14967F] text-white border-[#095D7E] dark:border-[#14967F] shadow-xs'
@@ -123,7 +132,7 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
                 }`}
               >
                 {v.strength || medicine.strength} - {v.form || medicine.form}
-              </button>
+              </a>
             );
           })}
         </div>

@@ -13,6 +13,7 @@ import {
 import { Medicine, LanguageMode } from '../../types';
 import { searchMedicines, getAllCompanies } from '../../data/dbEngine';
 import { DOSAGE_FORM_CATEGORIES } from '../../utils/dosageFormHelper';
+import { getDosageFormCanonicalPath, getCompanyCanonicalPath } from '../../utils/urlHelper';
 
 interface HomeLandingProps {
   onGoToSearch: (query?: string, category?: string, manufacturer?: string, dosageForm?: string) => void;
@@ -141,7 +142,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
             return (
               <a
                 key={formCat.id}
-                href={`/?form=${encodeURIComponent(formCat.id)}`}
+                href={getDosageFormCanonicalPath(formCat.id)}
                 onClick={(e) => {
                   e.preventDefault();
                   onGoToSearch(undefined, undefined, undefined, formCat.id);
@@ -220,7 +221,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
           {topCompanies.map((comp) => (
             <a
               key={comp.id}
-              href={`/?manufacturer=${encodeURIComponent(comp.name)}`}
+              href={getCompanyCanonicalPath(comp.name)}
               onClick={(e) => {
                 e.preventDefault();
                 onGoToSearch(undefined, undefined, comp.name);

@@ -3,7 +3,7 @@ import { ChevronUp, ChevronDown, Building2, Layers } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Medicine } from '../../types';
 import { getAlternativeBrands } from '../../data/dbEngine';
-import { slugify } from '../../utils/slugify';
+import { getMedicineCanonicalPath } from '../../utils/urlHelper';
 
 interface AlternativeBrandsProps {
   medicine: Medicine;
@@ -51,8 +51,7 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
   const savings = hasValidComparison && currentPrice > altPrice ? currentPrice - altPrice : 0;
   const percentCheaper = hasValidComparison && savings > 0 ? Math.round((savings / currentPrice) * 100) : 0;
 
-  const altSlug = slugify(`${currentAlt.name}-${currentAlt.strength || ''}-${currentAlt.form}`);
-  const altHref = `/?id=${currentAlt.id}&brand=${altSlug}`;
+  const altHref = getMedicineCanonicalPath(currentAlt);
 
   const handlePrev = (e: React.MouseEvent) => {
     e.stopPropagation();

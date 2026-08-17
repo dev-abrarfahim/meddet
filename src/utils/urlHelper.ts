@@ -1,0 +1,397 @@
+import { Medicine, GenericMonograph } from '../types';
+
+export const SITE_BASE_URL = 'https://medvhai.heliox.workers.dev';
+
+/**
+ * Enterprise Unicode & Case-Safe Slugifier
+ */
+export function slugify(text: string): string {
+  if (!text) return '';
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/[^\p{L}\p{N}\s-]+/gu, '') // Keep letters, numbers, spaces, hyphens in any script (including Bengali)
+    .replace(/\s+/g, '-')              // Replace spaces with hyphens
+    .replace(/-+/g, '-')               // Replace multiple hyphens with single hyphen
+    .replace(/^-+/, '')                // Trim leading hyphens
+    .replace(/-+$/, '');               // Trim trailing hyphens
+}
+
+/**
+ * Canonical Medicine Slug Generator (Collision-safe with stable trailing ID)
+ * e.g., "napa-500mg-tablet-14521"
+ */
+export function getMedicineCanonicalSlug(medicine: { id: number; name: string; strength?: string; form: string }): string {
+  const parts = [slugify(medicine.name)];
+  if (medicine.strength) {
+    const cleanStrength = slugify(medicine.strength);
+    if (cleanStrength) parts.push(cleanStrength);
+  }
+  if (medicine.form) {
+    const cleanForm = slugify(medicine.form);
+    if (cleanForm) parts.push(cleanForm);
+  }
+  const baseSlug = parts.filter(Boolean).join('-');
+  return `${baseSlug}-${medicine.id}`;
+}
+
+/**
+ * Canonical Medicine Path
+ * e.g., "/medicine/napa-500mg-tablet-14521"
+ */
+export function getMedicineCanonicalPath(medicine: { id: number; name: string; strength?: string; form: string }): string {
+  return `/medicine/${getMedicineCanonicalSlug(medicine)}`;
+}
+
+/**
+ * Canonical Absolute Medicine URL
+ * e.g., "https://medvhai.heliox.workers.dev/medicine/napa-500mg-tablet-14521"
+ */
+export function getMedicineCanonicalUrl(medicine: { id: number; name: string; strength?: string; form: string }): string {
+  return `${SITE_BASE_URL}${getMedicineCanonicalPath(medicine)}`;
+}
+
+/**
+ * Canonical Generic Slug Generator (Collision-safe with stable trailing ID)
+ * e.g., "paracetamol-1124"
+ */
+export function getGenericCanonicalSlug(generic: { id: number; name: string }): string {
+  const baseSlug = slugify(generic.name) || 'generic';
+  return `${baseSlug}-${generic.id}`;
+}
+
+/**
+ * Canonical Generic Path
+ * e.g., "/generic/paracetamol-1124"
+ */
+export function getGenericCanonicalPath(generic: { id: number; name: string }): string {
+  return `/generic/${getGenericCanonicalSlug(generic)}`;
+}
+
+/**
+ * Canonical Absolute Generic URL
+ * e.g., "https://medvhai.heliox.workers.dev/generic/paracetamol-1124"
+ */
+export function getGenericCanonicalUrl(generic: { id: number; name: string }): string {
+  return `${SITE_BASE_URL}${getGenericCanonicalPath(generic)}`;
+}
+
+/**
+ * Canonical Dosage Form Path
+ * e.g., "/dosage-form/tablet"
+ */
+export function getDosageFormCanonicalPath(form: string): string {
+  return `/dosage-form/${slugify(form)}`;
+}
+
+/**
+ * Canonical Company Path
+ * e.g., "/company/square-pharmaceuticals-plc"
+ */
+export function getCompanyCanonicalPath(company: string): string {
+  return `/company/${slugify(company)}`;
+}
+
+/**
+ * Robust ID extractor from medicine slug or pathname
+ * Matches trailing digits like "-14521" or direct ID "14521"
+ */
+export function parseMedicineIdFromSlug(slugOrPath: string): number | null {
+  if (!slugOrPath) return null;
+  const clean = slugOrPath.split('?')[0].replace(/^\/medicine\//, '').replace(/\/$/, '');
+  const match = clean.match(/-(\d+)$/) || clean.match(/^(\d+)$/);
+  if (match) {
+    const id = parseInt(match[1], 10);
+    return isNaN(id) ? null : id;
+  }
+  return null;
+}
+
+/**
+ * Robust ID extractor from generic slug or pathname
+ * Matches trailing digits like "-1124" or direct ID "1124"
+ */
+export function parseGenericIdFromSlug(slugOrPath: string): number | null {
+  if (!slugOrPath) return null;
+  const clean = slugOrPath.split('?')[0].replace(/^\/generic\//, '').replace(/\/$/, '');
+  const match = clean.match(/-(\d+)$/) || clean.match(/^(\d+)$/);
+  if (match) {
+    const id = parseInt(match[1], 10);
+    return isNaN(id) ? null : id;
+  }
+  return null;
+}
+
+export interface SEOMetadata {
+  title: string;
+  description: string;
+  keywords: string;
+  canonicalUrl: string;
+  h1: string;
+  og: {
+    title: string;
+    description: string;
+    url: string;
+    image: string;
+    type: string;
+  };
+  twitter: {
+    card: string;
+    title: string;
+    description: string;
+    image: string;
+  };
+  jsonLd: Record<string, any>;
+  robots: string;
+}
+
+/**
+ * Authoritative Central Metadata Factory for Medicines
+ */
+export function generateMedicineMetadata(medicine: Medicine, generic?: GenericMonograph | null): SEOMetadata {
+  const brandName = medicine.name;
+  const strength = medicine.strength || '';
+  const form = medicine.form || 'Medicine';
+  const company = medicine.company || 'Pharmaceuticals';
+  const genericName = medicine.genericName || 'Active Ingredient';
+  const genericBn = medicine.genericNameBn ? ` (${medicine.genericNameBn})` : '';
+  const priceFormatted = medicine.mrp > 0 ? `৳${medicine.mrp.toFixed(2)}` : 'MRP N/A';
+
+  const title = `${brandName} ${strength} ${form} — Uses, Price, Dosage & Alternatives | MedVhai`.replace(/\s+/g, ' ');
+  const description = `Learn about ${brandName} ${strength} ${form} by ${company}. Generic: ${genericName}${genericBn}. MRP Price: ${priceFormatted} BDT. View dosage, indications, side effects, precautions & lower-cost alternative brands on MedVhai.`.replace(/\s+/g, ' ');
+  const keywords = `${brandName}, ${genericName}, ${company}, ${brandName} price in BD, ${brandName} dosage, ${brandName} uses, ${form}, medicine BD, MedVhai`;
+  const canonicalUrl = getMedicineCanonicalUrl(medicine);
+  const h1 = `${brandName} ${strength} ${form}`.trim();
+  const imageUrl = `${SITE_BASE_URL}/icons/${slugify(form)}.png`;
+  const logoUrl = `${SITE_BASE_URL}/logo.png`;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': ['Drug', 'Product'],
+    'name': h1,
+    'image': [imageUrl, logoUrl],
+    'description': description,
+    'url': canonicalUrl,
+    'sku': `MEDVHAI-${medicine.id}`,
+    'mpn': `MED-${medicine.id}`,
+    'brand': {
+      '@type': 'Brand',
+      'name': company
+    },
+    'dosageForm': form,
+    'strengthValue': strength || 'N/A',
+    'activeIngredient': genericName,
+    'manufacturer': {
+      '@type': 'Organization',
+      'name': company
+    },
+    'offers': {
+      '@type': 'Offer',
+      'url': canonicalUrl,
+      'priceCurrency': 'BDT',
+      'price': medicine.mrp > 0 ? medicine.mrp.toFixed(2) : '0.00',
+      'priceValidUntil': '2027-12-31',
+      'itemCondition': 'https://schema.org/NewCondition',
+      'availability': 'https://schema.org/InStock',
+      'seller': {
+        '@type': 'Organization',
+        'name': 'MedVhai'
+      },
+      'hasMerchantReturnPolicy': {
+        '@type': 'MerchantReturnPolicy',
+        'applicableCountry': 'BD',
+        'returnPolicyCategory': 'https://schema.org/MerchantReturnNotPermitted'
+      },
+      'shippingDetails': {
+        '@type': 'OfferShippingDetails',
+        'shippingRate': {
+          '@type': 'MonetaryAmount',
+          'value': '0',
+          'currency': 'BDT'
+        },
+        'shippingDestination': [
+          {
+            '@type': 'DefinedRegion',
+            'addressCountry': 'BD'
+          }
+        ]
+      }
+    }
+  };
+
+  return {
+    title,
+    description,
+    keywords,
+    canonicalUrl,
+    h1,
+    og: {
+      title,
+      description,
+      url: canonicalUrl,
+      image: logoUrl,
+      type: 'website'
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      image: logoUrl
+    },
+    jsonLd,
+    robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+  };
+}
+
+/**
+ * Authoritative Central Metadata Factory for Generics
+ */
+export function generateGenericMetadata(generic: GenericMonograph): SEOMetadata {
+  const genName = generic.name;
+  const genBn = generic.nameBn ? ` (${generic.nameBn})` : '';
+  const canonicalUrl = getGenericCanonicalUrl(generic);
+  const title = `${genName} Brands in Bangladesh — Price List, Dosage & Monograph | MedVhai`;
+  const description = `Complete clinical monograph for ${genName}${genBn} in Bangladesh. Compare brand medicines, BDT prices, indications, contraindications, dosage, and side effects.`;
+  const keywords = `${genName}, ${genName} brands BD, ${genName} price, ${genName} side effects, ${genName} dosage, MedVhai`;
+  const logoUrl = `${SITE_BASE_URL}/logo.png`;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalEntity',
+    'name': genName,
+    'description': description,
+    'url': canonicalUrl,
+    'code': {
+      '@type': 'MedicalCode',
+      'code': generic.id.toString(),
+      'codingSystem': 'MedVhai-Generic-Index'
+    }
+  };
+
+  return {
+    title,
+    description,
+    keywords,
+    canonicalUrl,
+    h1: `${genName} Clinical Monograph & Brands`,
+    og: {
+      title,
+      description,
+      url: canonicalUrl,
+      image: logoUrl,
+      type: 'website'
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      image: logoUrl
+    },
+    jsonLd,
+    robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+  };
+}
+
+/**
+ * Authoritative Central Metadata Factory for Homepage & Category Routes
+ */
+export function generateDefaultMetadata(categoryName?: string, dosageForm?: string, manufacturer?: string, letter?: string, searchQuery?: string): SEOMetadata {
+  const logoUrl = `${SITE_BASE_URL}/logo.png`;
+
+  if (dosageForm && dosageForm !== 'All') {
+    const title = `${dosageForm} Medicines in Bangladesh — Price List & Directory | MedVhai`;
+    const description = `Browse all verified ${dosageForm} dosage form medicines in Bangladesh. Check BDT MRP prices, manufacturers, active ingredients, and brand alternatives.`;
+    const canonicalUrl = `${SITE_BASE_URL}${getDosageFormCanonicalPath(dosageForm)}`;
+    return {
+      title,
+      description,
+      keywords: `${dosageForm} medicines BD, ${dosageForm} list Bangladesh, ${dosageForm} prices, MedVhai`,
+      canonicalUrl,
+      h1: `${dosageForm} Medicines in Bangladesh`,
+      og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
+      twitter: { card: 'summary_large_image', title, description, image: logoUrl },
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'MedicalWebPage',
+        'name': title,
+        'description': description,
+        'url': canonicalUrl
+      },
+      robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+    };
+  }
+
+  if (manufacturer && manufacturer !== 'All') {
+    const title = `${manufacturer} Medicines List & MRP Prices in BD | MedVhai`;
+    const description = `Explore all pharmaceutical brands manufactured by ${manufacturer} in Bangladesh. View active ingredients, dosage forms, verified MRP prices, and monographs.`;
+    const canonicalUrl = `${SITE_BASE_URL}${getCompanyCanonicalPath(manufacturer)}`;
+    return {
+      title,
+      description,
+      keywords: `${manufacturer} medicine list, ${manufacturer} products, ${manufacturer} pharma BD price, MedVhai`,
+      canonicalUrl,
+      h1: `${manufacturer} Medicine Directory`,
+      og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
+      twitter: { card: 'summary_large_image', title, description, image: logoUrl },
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'MedicalWebPage',
+        'name': title,
+        'description': description,
+        'url': canonicalUrl
+      },
+      robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+    };
+  }
+
+  if (searchQuery) {
+    const title = `Search Results for "${searchQuery}" — Medicine Price & Index | MedVhai`;
+    const description = `Search results for ${searchQuery} on MedVhai. Find brand medicines, active generic ingredients, BDT MRP prices, and lower-cost alternatives.`;
+    const canonicalUrl = `${SITE_BASE_URL}/`;
+    return {
+      title,
+      description,
+      keywords: `${searchQuery}, medicine search, MedVhai`,
+      canonicalUrl,
+      h1: `Search: ${searchQuery}`,
+      og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
+      twitter: { card: 'summary_large_image', title, description, image: logoUrl },
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'SearchResultsPage',
+        'name': title,
+        'url': `${SITE_BASE_URL}/?q=${encodeURIComponent(searchQuery)}`
+      },
+      robots: 'noindex, follow' // User search queries should not pollute index with thin search results
+    };
+  }
+
+  // Core Homepage
+  const title = 'MedVhai™ — Clinical Drug Index & Medicine Price BD';
+  const description = "Bangladesh's clinical drug index & medicine price guide. Search 30,000+ brand medicines, generic ingredients, BDT MRP prices & alternatives.";
+  const canonicalUrl = `${SITE_BASE_URL}/`;
+
+  return {
+    title,
+    description,
+    keywords: 'MedVhai, Medicine Index, Drug Price BD, Generic Medicine BD, Napa, Seclo, Maxpro, Paracetamol, Esomeprazole, Beximco, Square Pharma, Incepta',
+    canonicalUrl,
+    h1: 'MedVhai™ Clinical Drug Index & Medicine Price BD',
+    og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
+    twitter: { card: 'summary_large_image', title, description, image: logoUrl },
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      'name': 'MedVhai',
+      'alternateName': ['MedVhai BD', 'MedVhai Health Index', 'MedVhai Clinical Index'],
+      'url': canonicalUrl,
+      'potentialAction': {
+        '@type': 'SearchAction',
+        'target': `${SITE_BASE_URL}/?q={search_term_string}`,
+        'query-input': 'required name=search_term_string'
+      }
+    },
+    robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+  };
+}
