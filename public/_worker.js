@@ -18,6 +18,39 @@ let cachedMedicinesMap = null;
 let cachedGenericsMap = null;
 let cachedCompaniesMap = null;
 
+const OBFUSCATION_ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyz';
+const OBFUSCATION_BASE = 36;
+const OBFUSCATION_M = 1679616; // 36^4
+const OBFUSCATION_A = 387421;
+const OBFUSCATION_A_INV = 1197301;
+const OBFUSCATION_B = 41725;
+
+function encodeId(id) {
+  if (!id || id <= 0 || isNaN(id)) return '';
+  const x = Number((BigInt(id) * BigInt(OBFUSCATION_A) + BigInt(OBFUSCATION_B)) % BigInt(OBFUSCATION_M));
+  let str = '';
+  let n = x;
+  for (let i = 0; i < 4; i++) {
+    str = OBFUSCATION_ALPHABET[n % OBFUSCATION_BASE] + str;
+    n = Math.floor(n / OBFUSCATION_BASE);
+  }
+  return str;
+}
+
+function decodeId(code) {
+  if (!code || typeof code !== 'string') return null;
+  const clean = code.toLowerCase().trim();
+  if (clean.length !== 4) return null;
+  let x = 0;
+  for (let i = 0; i < 4; i++) {
+    const idx = OBFUSCATION_ALPHABET.indexOf(clean[i]);
+    if (idx === -1) return null;
+    x = x * OBFUSCATION_BASE + idx;
+  }
+  const id = Number(((BigInt(x) - BigInt(OBFUSCATION_B) + BigInt(OBFUSCATION_M)) * BigInt(OBFUSCATION_A_INV)) % BigInt(OBFUSCATION_M));
+  return (id > 0 && !isNaN(id)) ? id : null;
+}
+
 function slugify(text) {
   if (!text) return '';
   return text
@@ -42,7 +75,8 @@ function getMedicineCanonicalSlug(med) {
     if (cleanForm) parts.push(cleanForm);
   }
   const baseSlug = parts.filter(Boolean).join('-');
-  return `${baseSlug}-${med.id}`;
+  const code = encodeId(med.id);
+  return `${baseSlug}-${code}`;
 }
 
 function getMedicineCanonicalPath(med) {
@@ -51,7 +85,8 @@ function getMedicineCanonicalPath(med) {
 
 function getGenericCanonicalSlug(gen) {
   const baseSlug = slugify(gen.name) || 'generic';
-  return `${baseSlug}-${gen.id}`;
+  const code = encodeId(gen.id);
+  return `${baseSlug}-${code}`;
 }
 
 function getGenericCanonicalPath(gen) {
@@ -61,6 +96,15 @@ function getGenericCanonicalPath(gen) {
 function parseMedicineIdFromSlug(slugOrPath) {
   if (!slugOrPath) return null;
   const clean = slugOrPath.split('?')[0].replace(/^\/medicine\//, '').replace(/\/$/, '');
+  
+  // 1. Try extracting trailing 4-char alphanumeric code
+  const codeMatch = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
+  if (codeMatch) {
+    const decoded = decodeId(codeMatch[1]);
+    if (decoded) return decoded;
+  }
+
+  // 2. Fallback: Try extracting legacy raw numeric ID
   const match = clean.match(/-(\d+)$/) || clean.match(/^(\d+)$/);
   if (match) {
     const id = parseInt(match[1], 10);
@@ -72,6 +116,15 @@ function parseMedicineIdFromSlug(slugOrPath) {
 function parseGenericIdFromSlug(slugOrPath) {
   if (!slugOrPath) return null;
   const clean = slugOrPath.split('?')[0].replace(/^\/generic\//, '').replace(/\/$/, '');
+  
+  // 1. Try extracting trailing 4-char alphanumeric code
+  const codeMatch = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
+  if (codeMatch) {
+    const decoded = decodeId(codeMatch[1]);
+    if (decoded) return decoded;
+  }
+
+  // 2. Fallback: Try extracting legacy raw numeric ID
   const match = clean.match(/-(\d+)$/) || clean.match(/^(\d+)$/);
   if (match) {
     const id = parseInt(match[1], 10);
@@ -332,12 +385,12 @@ function generate404Html(resourceType, identifier) {
     <div class="chips-section">
       <div class="chips-title">Popular Medicine Searches:</div>
       <div class="chips-list">
-        <a href="/medicine/napa-500mg-tablet-14521" class="chip">Napa 500mg</a>
-        <a href="/medicine/seclo-20mg-capsule-18967" class="chip">Seclo 20mg</a>
-        <a href="/medicine/maxpro-20mg-tablet-12869" class="chip">Maxpro 20mg</a>
-        <a href="/medicine/sergel-20mg-capsule-19131" class="chip">Sergel 20mg</a>
-        <a href="/medicine/ace-500mg-tablet-155" class="chip">Ace 500mg</a>
-        <a href="/medicine/monas-10-10mg-tablet-13838" class="chip">Monas 10mg</a>
+        <a href="/medicine/napa-500mg-tablet-g182" class="chip">Napa 500mg</a>
+        <a href="/medicine/seclo-20mg-capsule-ymhk" class="chip">Seclo 20mg</a>
+        <a href="/medicine/maxpro-20mg-tablet-e70u" class="chip">Maxpro 20mg</a>
+        <a href="/medicine/sergel-20mg-capsule-sfzg" class="chip">Sergel 20mg</a>
+        <a href="/medicine/ace-500mg-tablet-rz9o" class="chip">Ace 500mg</a>
+        <a href="/medicine/monas-10-10mg-tablet-wjyr" class="chip">Monas 10mg</a>
       </div>
     </div>
 

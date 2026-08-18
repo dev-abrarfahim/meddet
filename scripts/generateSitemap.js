@@ -1,6 +1,24 @@
 import fs from 'fs';
 import path from 'path';
 
+const OBFUSCATION_ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyz';
+const OBFUSCATION_BASE = 36;
+const OBFUSCATION_M = 1679616; // 36^4
+const OBFUSCATION_A = 387421;
+const OBFUSCATION_B = 41725;
+
+function encodeId(id) {
+  if (!id || id <= 0 || isNaN(id)) return '';
+  const x = Number((BigInt(id) * BigInt(OBFUSCATION_A) + BigInt(OBFUSCATION_B)) % BigInt(OBFUSCATION_M));
+  let str = '';
+  let n = x;
+  for (let i = 0; i < 4; i++) {
+    str = OBFUSCATION_ALPHABET[n % OBFUSCATION_BASE] + str;
+    n = Math.floor(n / OBFUSCATION_BASE);
+  }
+  return str;
+}
+
 function slugify(text) {
   if (!text) return '';
   return text
@@ -89,8 +107,9 @@ let genXml = `<?xml version="1.0" encoding="UTF-8"?>
 generics.forEach((gen) => {
   if (!gen.id || !gen.name) return;
   const genSlug = slugify(gen.name) || 'generic';
+  const genCode = encodeId(gen.id);
   genXml += `    <url>
-        <loc>${baseUrl}/generic/${genSlug}-${gen.id}</loc>
+        <loc>${baseUrl}/generic/${genSlug}-${genCode}</loc>
         <lastmod>${today}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.90</priority>
@@ -127,7 +146,8 @@ for (let i = 0; i < totalChunks; i++) {
       if (cleanForm) parts.push(cleanForm);
     }
     const brandSlug = parts.filter(Boolean).join('-');
-    const canonicalPath = `/medicine/${brandSlug}-${med.id}`;
+    const code = encodeId(med.id);
+    const canonicalPath = `/medicine/${brandSlug}-${code}`;
 
     medXml += `    <url>
         <loc>${baseUrl}${canonicalPath}</loc>

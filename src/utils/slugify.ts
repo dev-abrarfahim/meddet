@@ -15,5 +15,7 @@ export {
   getDosageFormCanonicalPath,
   getCompanyCanonicalPath,
   parseMedicineIdFromSlug,
-  parseGenericIdFromSlug
+  parseGenericIdFromSlug,
+  encodeId,
+  decodeId
 } from './urlHelper';

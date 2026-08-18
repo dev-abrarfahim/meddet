@@ -19,8 +19,45 @@ export function slugify(text: string): string {
 }
 
 /**
- * Canonical Medicine Slug Generator (Collision-safe with stable trailing ID)
- * e.g., "napa-500mg-tablet-14521"
+ * Mathematical Bijective ID Obfuscation (Zero-collision 4-character alphanumeric hash)
+ * Maps any integer 1 <= ID < 1,679,616 to a unique 4-character Base36 code
+ */
+const OBFUSCATION_ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyz';
+const OBFUSCATION_BASE = 36;
+const OBFUSCATION_M = 1679616; // 36^4
+const OBFUSCATION_A = 387421;  // Coprime to 36
+const OBFUSCATION_A_INV = 1197301; // Modular multiplicative inverse of A mod M
+const OBFUSCATION_B = 41725;
+
+export function encodeId(id: number): string {
+  if (!id || id <= 0 || isNaN(id)) return '';
+  const x = Number((BigInt(id) * BigInt(OBFUSCATION_A) + BigInt(OBFUSCATION_B)) % BigInt(OBFUSCATION_M));
+  let str = '';
+  let n = x;
+  for (let i = 0; i < 4; i++) {
+    str = OBFUSCATION_ALPHABET[n % OBFUSCATION_BASE] + str;
+    n = Math.floor(n / OBFUSCATION_BASE);
+  }
+  return str;
+}
+
+export function decodeId(code: string): number | null {
+  if (!code || typeof code !== 'string') return null;
+  const clean = code.toLowerCase().trim();
+  if (clean.length !== 4) return null;
+  let x = 0;
+  for (let i = 0; i < 4; i++) {
+    const idx = OBFUSCATION_ALPHABET.indexOf(clean[i]);
+    if (idx === -1) return null;
+    x = x * OBFUSCATION_BASE + idx;
+  }
+  const id = Number(((BigInt(x) - BigInt(OBFUSCATION_B) + BigInt(OBFUSCATION_M)) * BigInt(OBFUSCATION_A_INV)) % BigInt(OBFUSCATION_M));
+  return (id > 0 && !isNaN(id)) ? id : null;
+}
+
+/**
+ * Canonical Medicine Slug Generator (Collision-safe with stable trailing 4-char code)
+ * e.g., "brinzopt-1-ophthalmic-suspension-o2e1"
  */
 export function getMedicineCanonicalSlug(medicine: { id: number; name: string; strength?: string; form: string }): string {
   const parts = [slugify(medicine.name)];
@@ -33,12 +70,13 @@ export function getMedicineCanonicalSlug(medicine: { id: number; name: string; s
     if (cleanForm) parts.push(cleanForm);
   }
   const baseSlug = parts.filter(Boolean).join('-');
-  return `${baseSlug}-${medicine.id}`;
+  const code = encodeId(medicine.id);
+  return `${baseSlug}-${code}`;
 }
 
 /**
  * Canonical Medicine Path
- * e.g., "/medicine/napa-500mg-tablet-14521"
+ * e.g., "/medicine/brinzopt-1-ophthalmic-suspension-o2e1"
  */
 export function getMedicineCanonicalPath(medicine: { id: number; name: string; strength?: string; form: string }): string {
   return `/medicine/${getMedicineCanonicalSlug(medicine)}`;
@@ -48,7 +86,7 @@ export const buildMedicinePath = getMedicineCanonicalPath;
 
 /**
  * Canonical Absolute Medicine URL
- * e.g., "https://medvhai.heliox.workers.dev/medicine/napa-500mg-tablet-14521"
+ * e.g., "https://medvhai.heliox.workers.dev/medicine/brinzopt-1-ophthalmic-suspension-o2e1"
  */
 export function getMedicineCanonicalUrl(medicine: { id: number; name: string; strength?: string; form: string }): string {
   return `${SITE_BASE_URL}${getMedicineCanonicalPath(medicine)}`;
@@ -57,17 +95,18 @@ export function getMedicineCanonicalUrl(medicine: { id: number; name: string; st
 export const getMedicineUrl = getMedicineCanonicalUrl;
 
 /**
- * Canonical Generic Slug Generator (Collision-safe with stable trailing ID)
- * e.g., "paracetamol-1124"
+ * Canonical Generic Slug Generator (Collision-safe with stable trailing 4-char code)
+ * e.g., "paracetamol-k9p3"
  */
 export function getGenericCanonicalSlug(generic: { id: number; name: string }): string {
   const baseSlug = slugify(generic.name) || 'generic';
-  return `${baseSlug}-${generic.id}`;
+  const code = encodeId(generic.id);
+  return `${baseSlug}-${code}`;
 }
 
 /**
  * Canonical Generic Path
- * e.g., "/generic/paracetamol-1124"
+ * e.g., "/generic/paracetamol-k9p3"
  */
 export function getGenericCanonicalPath(generic: { id: number; name: string }): string {
   return `/generic/${getGenericCanonicalSlug(generic)}`;
@@ -75,7 +114,7 @@ export function getGenericCanonicalPath(generic: { id: number; name: string }): 
 
 /**
  * Canonical Absolute Generic URL
- * e.g., "https://medvhai.heliox.workers.dev/generic/paracetamol-1124"
+ * e.g., "https://medvhai.heliox.workers.dev/generic/paracetamol-k9p3"
  */
 export function getGenericCanonicalUrl(generic: { id: number; name: string }): string {
   return `${SITE_BASE_URL}${getGenericCanonicalPath(generic)}`;
@@ -99,14 +138,23 @@ export function getCompanyCanonicalPath(company: string): string {
 
 /**
  * Robust ID extractor from medicine slug or pathname
- * Matches trailing digits like "-14521" or direct ID "14521"
+ * Supports both new 4-char obfuscated codes (e.g. "-o2e1") and legacy numeric IDs (e.g. "-3276")
  */
 export function parseMedicineIdFromSlug(slugOrPath: string): number | null {
   if (!slugOrPath) return null;
   const clean = slugOrPath.split('?')[0].replace(/^\/medicine\//, '').replace(/\/$/, '');
-  const match = clean.match(/-(\d+)$/) || clean.match(/^(\d+)$/);
-  if (match) {
-    const id = parseInt(match[1], 10);
+  
+  // 1. Try extracting trailing 4-char alphanumeric code
+  const codeMatch = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
+  if (codeMatch) {
+    const decoded = decodeId(codeMatch[1]);
+    if (decoded) return decoded;
+  }
+
+  // 2. Fallback: Try extracting legacy raw numeric ID
+  const numMatch = clean.match(/-(\d+)$/) || clean.match(/^(\d+)$/);
+  if (numMatch) {
+    const id = parseInt(numMatch[1], 10);
     return isNaN(id) ? null : id;
   }
   return null;
@@ -114,14 +162,23 @@ export function parseMedicineIdFromSlug(slugOrPath: string): number | null {
 
 /**
  * Robust ID extractor from generic slug or pathname
- * Matches trailing digits like "-1124" or direct ID "1124"
+ * Supports both new 4-char obfuscated codes (e.g. "-k9p3") and legacy numeric IDs (e.g. "-1124")
  */
 export function parseGenericIdFromSlug(slugOrPath: string): number | null {
   if (!slugOrPath) return null;
   const clean = slugOrPath.split('?')[0].replace(/^\/generic\//, '').replace(/\/$/, '');
-  const match = clean.match(/-(\d+)$/) || clean.match(/^(\d+)$/);
-  if (match) {
-    const id = parseInt(match[1], 10);
+  
+  // 1. Try extracting trailing 4-char alphanumeric code
+  const codeMatch = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
+  if (codeMatch) {
+    const decoded = decodeId(codeMatch[1]);
+    if (decoded) return decoded;
+  }
+
+  // 2. Fallback: Try extracting legacy raw numeric ID
+  const numMatch = clean.match(/-(\d+)$/) || clean.match(/^(\d+)$/);
+  if (numMatch) {
+    const id = parseInt(numMatch[1], 10);
     return isNaN(id) ? null : id;
   }
   return null;

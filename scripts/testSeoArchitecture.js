@@ -27,6 +27,39 @@ function assert(condition, message) {
   }
 }
 
+const OBFUSCATION_ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyz';
+const OBFUSCATION_BASE = 36;
+const OBFUSCATION_M = 1679616; // 36^4
+const OBFUSCATION_A = 387421;
+const OBFUSCATION_A_INV = 1197301;
+const OBFUSCATION_B = 41725;
+
+function encodeId(id) {
+  if (!id || id <= 0 || isNaN(id)) return '';
+  const x = Number((BigInt(id) * BigInt(OBFUSCATION_A) + BigInt(OBFUSCATION_B)) % BigInt(OBFUSCATION_M));
+  let str = '';
+  let n = x;
+  for (let i = 0; i < 4; i++) {
+    str = OBFUSCATION_ALPHABET[n % OBFUSCATION_BASE] + str;
+    n = Math.floor(n / OBFUSCATION_BASE);
+  }
+  return str;
+}
+
+function decodeId(code) {
+  if (!code || typeof code !== 'string') return null;
+  const clean = code.toLowerCase().trim();
+  if (clean.length !== 4) return null;
+  let x = 0;
+  for (let i = 0; i < 4; i++) {
+    const idx = OBFUSCATION_ALPHABET.indexOf(clean[i]);
+    if (idx === -1) return null;
+    x = x * OBFUSCATION_BASE + idx;
+  }
+  const id = Number(((BigInt(x) - BigInt(OBFUSCATION_B) + BigInt(OBFUSCATION_M)) * BigInt(OBFUSCATION_A_INV)) % BigInt(OBFUSCATION_M));
+  return (id > 0 && !isNaN(id)) ? id : null;
+}
+
 // 1. Central URL Logic Verification
 function slugify(text) {
   if (!text) return '';
@@ -52,7 +85,8 @@ function getMedicineCanonicalSlug(med) {
     if (cleanForm) parts.push(cleanForm);
   }
   const baseSlug = parts.filter(Boolean).join('-');
-  return `${baseSlug}-${med.id}`;
+  const code = encodeId(med.id);
+  return `${baseSlug}-${code}`;
 }
 
 function getMedicineCanonicalPath(med) {
@@ -62,6 +96,15 @@ function getMedicineCanonicalPath(med) {
 function parseMedicineIdFromSlug(slugOrPath) {
   if (!slugOrPath) return null;
   const clean = slugOrPath.split('?')[0].replace(/^\/medicine\//, '').replace(/\/$/, '');
+  
+  // 1. Try extracting trailing 4-char alphanumeric code
+  const codeMatch = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
+  if (codeMatch) {
+    const decoded = decodeId(codeMatch[1]);
+    if (decoded) return decoded;
+  }
+
+  // 2. Fallback: Try extracting legacy raw numeric ID
   const match = clean.match(/-(\d+)$/) || clean.match(/^(\d+)$/);
   if (match) {
     const id = parseInt(match[1], 10);
@@ -71,15 +114,25 @@ function parseMedicineIdFromSlug(slugOrPath) {
 }
 
 console.log('\n======================================================');
-console.log('🧪 1. TESTING URL GENERATION & SLUG COLLISION SAFETY');
+console.log('🧪 1. TESTING URL GENERATION, OBFUSCATION & SLUG SAFETY');
 console.log('======================================================');
 
 const sampleMed1 = { id: 14521, name: 'Napa', strength: '500mg', form: 'Tablet' };
+const code1 = encodeId(14521);
 const slug1 = getMedicineCanonicalSlug(sampleMed1);
-assert(slug1 === 'napa-500mg-tablet-14521', `Slug matches expected format (${slug1})`);
-assert(parseMedicineIdFromSlug(slug1) === 14521, `ID parsed back from slug (${slug1} -> 14521)`);
-assert(parseMedicineIdFromSlug('/medicine/napa-500mg-tablet-14521') === 14521, 'ID parsed from full path');
-assert(parseMedicineIdFromSlug('/medicine/14521') === 14521, 'ID parsed from raw ID path');
+assert(code1 === 'g182', `ID 14521 encodes to 4-char code (${code1} === g182)`);
+assert(decodeId('g182') === 14521, `Code g182 decodes to ID (g182 -> 14521)`);
+assert(slug1 === 'napa-500mg-tablet-g182', `Slug matches expected obfuscated format (${slug1})`);
+assert(parseMedicineIdFromSlug(slug1) === 14521, `ID parsed back from obfuscated slug (${slug1} -> 14521)`);
+assert(parseMedicineIdFromSlug('/medicine/napa-500mg-tablet-14521') === 14521, 'Legacy numeric ID parsed from old URL');
+assert(parseMedicineIdFromSlug('/medicine/14521') === 14521, 'ID parsed from raw numeric path');
+assert(parseMedicineIdFromSlug('/medicine/g182') === 14521, 'ID parsed from raw code path');
+
+// Test Brinzopt sample (ID: 3276)
+const brinzoptMed = { id: 3276, name: 'Brinzopt', strength: '1%', form: 'Ophthalmic Suspension' };
+const brinzoptPath = getMedicineCanonicalPath(brinzoptMed);
+assert(brinzoptPath === '/medicine/brinzopt-1-ophthalmic-suspension-o2e1', `Brinzopt canonical path matches: ${brinzoptPath}`);
+assert(parseMedicineIdFromSlug(brinzoptPath) === 3276, 'Brinzopt ID correctly parsed back');
 
 // Test Unicode & Bengali Support
 const sampleBengali = slugify('প্যারাসিটামল ৫০০ মিগ্রা ট্যাবলেট');
@@ -93,7 +146,8 @@ console.log('======================================================');
 const currentMedicine = { id: 14521, name: 'Napa', strength: '500mg', form: 'Tablet' };
 const targetMedicine = { id: 37218, name: 'Heximax', strength: '2mg', form: 'Tablet' };
 const expectedTargetUrl = getMedicineCanonicalPath(targetMedicine);
-assert(expectedTargetUrl === '/medicine/heximax-2mg-tablet-37218', `Alternative brand target URL is clean path: ${expectedTargetUrl}`);
+const heximaxCode = encodeId(37218);
+assert(expectedTargetUrl === `/medicine/heximax-2mg-tablet-${heximaxCode}`, `Alternative brand target URL is clean path: ${expectedTargetUrl}`);
 assert(!expectedTargetUrl.includes('napa') && !expectedTargetUrl.includes('14521'), 'Target URL contains zero trace of current medicine');
 assert(!expectedTargetUrl.includes('?id=') && !expectedTargetUrl.includes('&brand='), 'Target URL contains zero query parameters');
 
@@ -108,20 +162,21 @@ assert(altPath !== napaCanonical, `Alternative brand navigation produces differe
 // Test 4: Variant Navigation changes pathname
 const variantMed = { id: 14522, name: 'Napa', strength: '250mg', form: 'Tablet' };
 const variantPath = getMedicineCanonicalPath(variantMed);
-assert(variantPath === '/medicine/napa-250mg-tablet-14522', `Variant navigation changes pathname: ${variantPath}`);
-assert(variantPath !== napaCanonical, 'Variant has distinct path and ID from base medicine');
+const variantCode = encodeId(14522);
+assert(variantPath === `/medicine/napa-250mg-tablet-${variantCode}`, `Variant navigation changes pathname: ${variantPath}`);
+assert(variantPath !== napaCanonical, 'Variant has distinct path and code from base medicine');
 
 // Test 5: Conflict resolution & query stripping verification
-const dirtyUrl = '/medicine/napa-500mg-tablet-14521?id=37218&brand=heximax-2mg-tablet';
+const dirtyUrl = '/medicine/napa-500mg-tablet-g182?id=37218&brand=heximax-2mg-tablet';
 const parsedIdFromDirtyUrl = parseMedicineIdFromSlug(dirtyUrl);
 assert(parsedIdFromDirtyUrl === 14521, `Pathname is authoritative for medicine identity (${parsedIdFromDirtyUrl} === 14521, ignoring ?id=37218)`);
 
 // Test 6: Slug + ID Consistency Check
-const mismatchedSlug = '/medicine/napa-500mg-tablet-37218';
+const mismatchedSlug = `/medicine/napa-500mg-tablet-${heximaxCode}`;
 const parsedIdFromMismatch = parseMedicineIdFromSlug(mismatchedSlug);
 assert(parsedIdFromMismatch === 37218, `Parsed ID from mismatched slug is 37218`);
 const correctCanonicalFor37218 = getMedicineCanonicalPath(targetMedicine);
-assert(correctCanonicalFor37218 === '/medicine/heximax-2mg-tablet-37218', 'Worker will 301 redirect mismatched slug to true medicine');
+assert(correctCanonicalFor37218 === `/medicine/heximax-2mg-tablet-${heximaxCode}`, 'Worker will 301 redirect mismatched slug to true medicine');
 
 console.log('\n======================================================');
 console.log('🧪 3. 100-RECORD SAMPLE CRAWL AUDIT');
