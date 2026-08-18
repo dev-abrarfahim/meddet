@@ -4,6 +4,7 @@ export interface CompanyInfo {
   id: number;
   name: string;
   brandCount: number;
+  rank?: number;
 }
 
 export interface DosageFormNote {

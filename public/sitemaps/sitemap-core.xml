@@ -105,7 +105,55 @@
         <priority>0.85</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/aci-limited</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/square-pharmaceuticals-plc</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/incepta-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/beximco-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/healthcare-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/renata-plc</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/eskayef-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/opsonin-pharma-limited</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/aristopharma-limited</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/popular-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
@@ -117,19 +165,187 @@
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/ad-din-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/aci-limited</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/aexim-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/radiant-pharmaceutical-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/al-madina-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/drug-international-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/unimed-unihealth-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/beacon-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/nipro-jmi-pharma-limited</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/ziska-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/ibn-sina-pharmaceutical-ind-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/navana-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/synovia-pharma-plc</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/nuvista-pharma-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/general-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/sun-pharmaceutical-bangladesh-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/orion-pharma-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/everest-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/labaid-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/delta-pharma-limited</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/osl-pharma-limited</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/biopharma-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/pacific-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/dbl-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/jenphar-bangladesh-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/pharmasia-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/pharmacil-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/jayson-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/globe-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/one-pharma-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/team-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/goodman-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/white-horse-pharma</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/sharif-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
@@ -141,13 +357,169 @@
         <priority>0.80</priority>
     </url>
     <url>
+        <loc>https://medvhai.heliox.workers.dev/company/novartis-bangladesh-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/techno-drugs-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/euro-pharma-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/apex-pharma-limited</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/asiatic-laboratories-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/kemiko-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
         <loc>https://medvhai.heliox.workers.dev/company/alco-pharma-limited</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/allied-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/novatek-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/g-a-company-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/somatec-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/chemist-laboratories-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/edruc-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/gonoshasthaya-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/ad-din-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/pharmik-laboratories-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/benham-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/zenith-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/rangs-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/rephco-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/amico-laboratories-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/kumudini-pharma-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/medicon-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/medimet-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/silva-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/nipa-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/concord-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/pharmadesh-laboratories-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/ethical-drug-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
@@ -159,7 +531,187 @@
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/amico-laboratories-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/veritas-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/zas-corporation</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/doctors-chemicals-works-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/astra-biopharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/novo-healthcare-and-pharma-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/desh-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/silco-pharmaceuticlas-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/leon-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/monicopharma-limited</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/cosmic-pharma-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/naafco-pharma-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/al-madina-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/hudson-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/biogen-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/reman-drug-laboratories-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/supreme-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/salton-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/bristol-pharma-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/doctor-tims-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/millat-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/seema-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/modern-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/virgo-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/hallmark-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/union-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/indobangla-pharmaceuticals</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/smc-enterprise-limited-bangladesh</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/sunman-birdem-pharma-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/central-pharmaceutical-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/globex-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/belsen-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
@@ -177,7 +729,7 @@
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/apex-pharma-limited</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/pristine-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
@@ -189,121 +741,13 @@
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/arges-life-science-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/syntho-laboratories-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/aristopharma-limited</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/asiatic-laboratories-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/astra-biopharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/avarox-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/aztec-pharmaceuticals</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/beacon-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/belsen-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/bengal-drugs-chemical-works-pharm-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/benham-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/beximco-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/biogen-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/biopharma-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/bristol-pharma-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/c2c-pharma-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/centeon-pharma-limited</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/central-pharmaceutical-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/chemist-laboratories-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/concord-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/cosmic-pharma-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/aexim-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
@@ -315,133 +759,25 @@
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/dbl-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/novelta-bestway-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/decent-pharma-laboratories-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/reliance-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/delta-pharma-limited</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/roche-bangladesh-limited</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/desh-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/doctor-tims-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/doctors-chemicals-works-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/drug-international-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/edcl-dhaka</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/edruc-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/eskayef-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/ethical-drug-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/euro-pharma-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/everest-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/g-a-company-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/general-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/genvio-pharma-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/globe-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/globex-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/gonoshasthaya-pharma-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/gonoshasthaya-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/goodman-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/greenland-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/united-chemicals-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
@@ -453,37 +789,79 @@
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/hallmark-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/mystic-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/healthcare-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/decent-pharma-laboratories-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/hudson-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/premier-pharmaceuticals</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/ibn-sina-pharmaceutical-ind-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/arges-life-science-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/incepta-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/avarox-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/indobangla-pharmaceuticals</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/peoples-pharma-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/mundipharma-bangladesh-pvt-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/genvio-pharma-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/shamsul-al-amin-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/marksman-pharmaceutical-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/the-ibn-sina-pharmaceutical-industry-plc</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/edcl-dhaka</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/c2c-pharma-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
@@ -495,37 +873,49 @@
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/jayson-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/medrx-life-science-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/jenphar-bangladesh-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/novus-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/kemiko-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/bengal-drugs-chemical-works-pharm-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/kumudini-pharma-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/gonoshasthaya-pharma-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/labaid-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/sonear-laboratories-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/leon-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/centeon-pharma-limited</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/national-drug-co-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/prime-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
@@ -549,43 +939,13 @@
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/marksman-pharmaceutical-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/physic-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/medicon-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/medimet-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/medrx-life-science-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/millat-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/modern-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/monicopharma-limited</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/aztec-pharmaceuticals</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
@@ -597,103 +957,13 @@
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/mundipharma-bangladesh-pvt-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/s-n-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/mystic-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/naafco-pharma-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/national-drug-co-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/navana-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/nipa-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/nipro-jmi-pharma-limited</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/novartis-bangladesh-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/novatek-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/novelta-bestway-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/novo-healthcare-and-pharma-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/novus-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/nuvista-pharma-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/one-pharma-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/opsonin-pharma-limited</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/orion-pharma-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/osl-pharma-limited</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/allied-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
@@ -705,277 +975,7 @@
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/pacific-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/peoples-pharma-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/pharmacil-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/pharmadesh-laboratories-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/pharmasia-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/pharmik-laboratories-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/physic-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/popular-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/premier-pharmaceuticals</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/prime-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/pristine-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/radiant-pharmaceutical-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/rangs-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/reliance-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/reman-drug-laboratories-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/renata-plc</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/rephco-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/roche-bangladesh-limited</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/s-n-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/salton-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/seema-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/shamsul-al-amin-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/sharif-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/silco-pharmaceuticlas-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/silva-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/smc-enterprise-limited-bangladesh</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/somatec-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/sonear-laboratories-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/square-pharmaceuticals-plc</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/sun-pharmaceutical-bangladesh-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/sunman-birdem-pharma-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/supreme-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/synovia-pharma-plc</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/syntho-laboratories-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/team-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/techno-drugs-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/the-ibn-sina-pharmaceutical-industry-plc</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/unimed-unihealth-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/union-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/united-chemicals-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/veritas-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/virgo-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/white-horse-pharma</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/zas-corporation</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/zenith-pharmaceuticals-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/ziska-pharmaceuticals-ltd</loc>
+        <loc>https://medvhai.heliox.workers.dev/company/greenland-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
