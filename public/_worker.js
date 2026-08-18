@@ -96,41 +96,15 @@ function getGenericCanonicalPath(gen) {
 function parseMedicineIdFromSlug(slugOrPath) {
   if (!slugOrPath) return null;
   const clean = slugOrPath.split('?')[0].replace(/^\/medicine\//, '').replace(/\/$/, '');
-  
-  // 1. Try extracting trailing 4-char alphanumeric code
-  const codeMatch = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
-  if (codeMatch) {
-    const decoded = decodeId(codeMatch[1]);
-    if (decoded) return decoded;
-  }
-
-  // 2. Fallback: Try extracting legacy raw numeric ID
-  const match = clean.match(/-(\d+)$/) || clean.match(/^(\d+)$/);
-  if (match) {
-    const id = parseInt(match[1], 10);
-    return isNaN(id) ? null : id;
-  }
-  return null;
+  const match = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
+  return match ? decodeId(match[1]) : null;
 }
 
 function parseGenericIdFromSlug(slugOrPath) {
   if (!slugOrPath) return null;
   const clean = slugOrPath.split('?')[0].replace(/^\/generic\//, '').replace(/\/$/, '');
-  
-  // 1. Try extracting trailing 4-char alphanumeric code
-  const codeMatch = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
-  if (codeMatch) {
-    const decoded = decodeId(codeMatch[1]);
-    if (decoded) return decoded;
-  }
-
-  // 2. Fallback: Try extracting legacy raw numeric ID
-  const match = clean.match(/-(\d+)$/) || clean.match(/^(\d+)$/);
-  if (match) {
-    const id = parseInt(match[1], 10);
-    return isNaN(id) ? null : id;
-  }
-  return null;
+  const match = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
+  return match ? decodeId(match[1]) : null;
 }
 
 async function loadDataMaps(origin, env) {

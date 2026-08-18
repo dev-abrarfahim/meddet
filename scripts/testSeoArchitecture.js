@@ -96,21 +96,8 @@ function getMedicineCanonicalPath(med) {
 function parseMedicineIdFromSlug(slugOrPath) {
   if (!slugOrPath) return null;
   const clean = slugOrPath.split('?')[0].replace(/^\/medicine\//, '').replace(/\/$/, '');
-  
-  // 1. Try extracting trailing 4-char alphanumeric code
-  const codeMatch = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
-  if (codeMatch) {
-    const decoded = decodeId(codeMatch[1]);
-    if (decoded) return decoded;
-  }
-
-  // 2. Fallback: Try extracting legacy raw numeric ID
-  const match = clean.match(/-(\d+)$/) || clean.match(/^(\d+)$/);
-  if (match) {
-    const id = parseInt(match[1], 10);
-    return isNaN(id) ? null : id;
-  }
-  return null;
+  const match = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
+  return match ? decodeId(match[1]) : null;
 }
 
 console.log('\n======================================================');
@@ -124,8 +111,6 @@ assert(code1 === 'g182', `ID 14521 encodes to 4-char code (${code1} === g182)`);
 assert(decodeId('g182') === 14521, `Code g182 decodes to ID (g182 -> 14521)`);
 assert(slug1 === 'napa-500mg-tablet-g182', `Slug matches expected obfuscated format (${slug1})`);
 assert(parseMedicineIdFromSlug(slug1) === 14521, `ID parsed back from obfuscated slug (${slug1} -> 14521)`);
-assert(parseMedicineIdFromSlug('/medicine/napa-500mg-tablet-14521') === 14521, 'Legacy numeric ID parsed from old URL');
-assert(parseMedicineIdFromSlug('/medicine/14521') === 14521, 'ID parsed from raw numeric path');
 assert(parseMedicineIdFromSlug('/medicine/g182') === 14521, 'ID parsed from raw code path');
 
 // Test Brinzopt sample (ID: 3276)

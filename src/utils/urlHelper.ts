@@ -137,51 +137,25 @@ export function getCompanyCanonicalPath(company: string): string {
 }
 
 /**
- * Robust ID extractor from medicine slug or pathname
- * Supports both new 4-char obfuscated codes (e.g. "-o2e1") and legacy numeric IDs (e.g. "-3276")
+ * Clean 4-character Code ID extractor from medicine slug or pathname
+ * e.g., "/medicine/brinzopt-1-ophthalmic-suspension-o2e1" -> 3276
  */
 export function parseMedicineIdFromSlug(slugOrPath: string): number | null {
   if (!slugOrPath) return null;
   const clean = slugOrPath.split('?')[0].replace(/^\/medicine\//, '').replace(/\/$/, '');
-  
-  // 1. Try extracting trailing 4-char alphanumeric code
-  const codeMatch = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
-  if (codeMatch) {
-    const decoded = decodeId(codeMatch[1]);
-    if (decoded) return decoded;
-  }
-
-  // 2. Fallback: Try extracting legacy raw numeric ID
-  const numMatch = clean.match(/-(\d+)$/) || clean.match(/^(\d+)$/);
-  if (numMatch) {
-    const id = parseInt(numMatch[1], 10);
-    return isNaN(id) ? null : id;
-  }
-  return null;
+  const match = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
+  return match ? decodeId(match[1]) : null;
 }
 
 /**
- * Robust ID extractor from generic slug or pathname
- * Supports both new 4-char obfuscated codes (e.g. "-k9p3") and legacy numeric IDs (e.g. "-1124")
+ * Clean 4-character Code ID extractor from generic slug or pathname
+ * e.g., "/generic/paracetamol-k9p3" -> 1124
  */
 export function parseGenericIdFromSlug(slugOrPath: string): number | null {
   if (!slugOrPath) return null;
   const clean = slugOrPath.split('?')[0].replace(/^\/generic\//, '').replace(/\/$/, '');
-  
-  // 1. Try extracting trailing 4-char alphanumeric code
-  const codeMatch = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
-  if (codeMatch) {
-    const decoded = decodeId(codeMatch[1]);
-    if (decoded) return decoded;
-  }
-
-  // 2. Fallback: Try extracting legacy raw numeric ID
-  const numMatch = clean.match(/-(\d+)$/) || clean.match(/^(\d+)$/);
-  if (numMatch) {
-    const id = parseInt(numMatch[1], 10);
-    return isNaN(id) ? null : id;
-  }
-  return null;
+  const match = clean.match(/-([0-9a-z]{4})$/i) || clean.match(/^([0-9a-z]{4})$/i);
+  return match ? decodeId(match[1]) : null;
 }
 
 export interface SEOMetadata {
