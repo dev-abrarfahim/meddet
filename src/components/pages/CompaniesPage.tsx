@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
-import { Building2, Search, ArrowRight, Sparkles, Trophy, Award, Star } from 'lucide-react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { Building2, Search, ArrowRight, Trophy, Award, Star, Loader2 } from 'lucide-react';
 import { LanguageMode, CompanyInfo } from '../../types';
-import { getAllCompanies } from '../../data/dbEngine';
+import { getAllCompanies, subscribeDatabase, isDatabaseReady } from '../../data/dbEngine';
 import { getCompanyCanonicalPath } from '../../utils/urlHelper';
 
 interface CompaniesPageProps {
@@ -13,8 +13,17 @@ export const CompaniesPage: React.FC<CompaniesPageProps> = ({ lang, onSelectComp
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedLetter, setSelectedLetter] = useState('All');
   const [activeFilterTab, setActiveFilterTab] = useState<'all' | 'top50' | 'major'>('all');
+  const [allCompanies, setAllCompanies] = useState<CompanyInfo[]>(() => getAllCompanies());
 
-  const allCompanies = useMemo(() => getAllCompanies(), []);
+  // Listen for database updates and load instantly
+  useEffect(() => {
+    const update = () => {
+      setAllCompanies(getAllCompanies());
+    };
+    update();
+    const unsubscribe = subscribeDatabase(update);
+    return () => unsubscribe();
+  }, []);
 
   const filteredCompanies = useMemo(() => {
     return allCompanies.filter((comp) => {
@@ -23,7 +32,7 @@ export const CompaniesPage: React.FC<CompaniesPageProps> = ({ lang, onSelectComp
       
       let matchesTab = true;
       if (activeFilterTab === 'top50') {
-        matchesTab = (comp.rank || 999) <= 50;
+        matchesTab = (comp.rank !== undefined && comp.rank <= 50);
       } else if (activeFilterTab === 'major') {
         matchesTab = comp.brandCount >= 100;
       }
@@ -101,8 +110,8 @@ export const CompaniesPage: React.FC<CompaniesPageProps> = ({ lang, onSelectComp
 
           <p className="text-sm sm:text-base text-[#CCECEE] leading-relaxed font-medium">
             {lang === 'en'
-              ? `Ranked directory of all ${allCompanies.length} pharmaceutical companies. Featuring Bangladesh's Top 50 manufacturers followed by all active companies ordered by available medicine portfolio size.`
-              : `বাংলাদেশের শীর্ষ ৫০টি ফার্মাসিউটিক্যাল কোম্পানি এবং বাজারে বিদ্যমান ওষুধের সংখ্যার ভিত্তিতে ক্রমানুসারে সাজানো সকল ${allCompanies.length}টি কোম্পানির তালিকা।`}
+              ? `Ranked directory of all ${allCompanies.length || '723'} pharmaceutical companies. Featuring Bangladesh's Top 50 manufacturers followed by all active companies ordered by market medicine portfolio size.`
+              : `বাংলাদেশের শীর্ষ ৫০টি ফার্মাসিউটিক্যাল কোম্পানি এবং বাজারে বিদ্যমান ওষুধের সংখ্যার ভিত্তিতে ক্রমানুসারে সাজানো সকল ${allCompanies.length || '৭২৩'}টি কোম্পানির তালিকা।`}
           </p>
         </div>
       </div>
@@ -132,7 +141,7 @@ export const CompaniesPage: React.FC<CompaniesPageProps> = ({ lang, onSelectComp
                 : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200'
             }`}
           >
-            {lang === 'en' ? `All Companies (${allCompanies.length})` : `সকল কোম্পানি (${allCompanies.length})`}
+            {lang === 'en' ? `All Companies (${allCompanies.length || '...'})` : `সকল কোম্পানি (${allCompanies.length || '...'})`}
           </button>
 
           <button
@@ -197,54 +206,67 @@ export const CompaniesPage: React.FC<CompaniesPageProps> = ({ lang, onSelectComp
         </div>
       </div>
 
-      {/* Companies Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-4">
-        {filteredCompanies.map((company) => {
-          const canonicalPath = getCompanyCanonicalPath(company.name);
-          const isTopTier = (company.rank || 999) <= 10;
-          return (
-            <a
-              key={company.id}
-              href={canonicalPath}
-              onClick={(e) => {
-                e.preventDefault();
-                onSelectCompany(company.name);
-              }}
-              className={`p-4 sm:p-5 rounded-3xl bg-white dark:bg-[#152232] border transition-all group flex flex-col justify-between space-y-3 cursor-pointer hover:shadow-lg ${
-                isTopTier
-                  ? 'border-[#14967F]/40 dark:border-[#2DD4BF]/40 shadow-xs'
-                  : 'border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F]'
-              }`}
-            >
-              <div className="flex items-start justify-between gap-2">
-                <div className={`w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform ${
-                  isTopTier ? 'bg-[#095D7E] text-[#E2FCD6]' : 'bg-[#F1F9FF] dark:bg-[#1A2B3E] text-[#095D7E] dark:text-[#2DD4BF]'
-                }`}>
-                  <Building2 className="w-5 h-5" />
+      {/* Loading Skeleton */}
+      {allCompanies.length === 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-4">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <div key={i} className="p-5 rounded-3xl bg-white dark:bg-[#152232] border border-slate-200 dark:border-slate-800 animate-pulse space-y-3">
+              <div className="w-10 h-10 rounded-2xl bg-slate-200 dark:bg-slate-700" />
+              <div className="h-5 bg-slate-200 dark:bg-slate-700 rounded-md w-3/4" />
+              <div className="h-3 bg-slate-200 dark:bg-slate-700 rounded-md w-1/2" />
+            </div>
+          ))}
+        </div>
+      ) : (
+        /* Companies Grid */
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-4">
+          {filteredCompanies.map((company) => {
+            const canonicalPath = getCompanyCanonicalPath(company.name);
+            const isTopTier = (company.rank || 999) <= 10;
+            return (
+              <a
+                key={company.id}
+                href={canonicalPath}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onSelectCompany(company.name);
+                }}
+                className={`p-4 sm:p-5 rounded-3xl bg-white dark:bg-[#152232] border transition-all group flex flex-col justify-between space-y-3 cursor-pointer hover:shadow-lg ${
+                  isTopTier
+                    ? 'border-[#14967F]/40 dark:border-[#2DD4BF]/40 shadow-xs'
+                    : 'border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F]'
+                }`}
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <div className={`w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform ${
+                    isTopTier ? 'bg-[#095D7E] text-[#E2FCD6]' : 'bg-[#F1F9FF] dark:bg-[#1A2B3E] text-[#095D7E] dark:text-[#2DD4BF]'
+                  }`}>
+                    <Building2 className="w-5 h-5" />
+                  </div>
+
+                  {getRankBadge(company.rank)}
                 </div>
 
-                {getRankBadge(company.rank)}
-              </div>
-
-              <div>
-                <h3 className="font-extrabold text-sm sm:text-base text-[#095D7E] dark:text-slate-100 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors line-clamp-2">
-                  {company.name}
-                </h3>
-                
-                <div className="flex items-center justify-between mt-2 pt-2 border-t border-slate-100 dark:border-slate-800 text-xs">
-                  <span className="font-mono font-bold text-slate-500 dark:text-slate-400">
-                    {company.brandCount} {lang === 'en' ? 'medicines' : 'টি ওষুধ'}
-                  </span>
-                  <div className="flex items-center gap-1 font-bold text-[#14967F] dark:text-[#2DD4BF]">
-                    <span>{lang === 'en' ? 'View' : 'দেখুন'}</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                <div>
+                  <h3 className="font-extrabold text-sm sm:text-base text-[#095D7E] dark:text-slate-100 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors line-clamp-2">
+                    {company.name}
+                  </h3>
+                  
+                  <div className="flex items-center justify-between mt-2 pt-2 border-t border-slate-100 dark:border-slate-800 text-xs">
+                    <span className="font-mono font-bold text-slate-500 dark:text-slate-400">
+                      {company.brandCount} {lang === 'en' ? 'medicines' : 'টি ওষুধ'}
+                    </span>
+                    <div className="flex items-center gap-1 font-bold text-[#14967F] dark:text-[#2DD4BF]">
+                      <span>{lang === 'en' ? 'View' : 'দেখুন'}</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
-          );
-        })}
-      </div>
+              </a>
+            );
+          })}
+        </div>
+      )}
 
     </div>
   );

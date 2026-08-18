@@ -42,10 +42,82 @@ function notifyListeners() {
   listeners.forEach((fn) => fn());
 }
 
+const TOP_50_PATTERNS = [
+  /square\s*pharma/i,
+  /incepta\s*pharma/i,
+  /beximco\s*pharma/i,
+  /healthcare\s*pharma/i,
+  /renata/i,
+  /eskayef/i,
+  /opsonin/i,
+  /aristopharma/i,
+  /popular\s*pharma/i,
+  /^acme\s*laboratories/i,
+  /^aci\s*(limited|healthcare|pharma)/i,
+  /radiant\s*pharma/i,
+  /drug\s*international/i,
+  /unimed\s*unihealth/i,
+  /beacon\s*pharma/i,
+  /novo\s*nordisk/i,
+  /nipro\s*jmi/i,
+  /ziska/i,
+  /ibn\s*sina/i,
+  /navana/i,
+  /synovia/i,
+  /nuvista/i,
+  /novartis/i,
+  /roche/i,
+  /general\s*pharma/i,
+  /sun\s*pharmaceutical/i,
+  /^orion\s*pharma/i,
+  /eli\s*lilly/i,
+  /servier/i,
+  /sandoz/i,
+  /everest\s*pharma/i,
+  /labaid/i,
+  /delta\s*pharma/i,
+  /osl\s*pharma|organic\s*health/i,
+  /^biopharma/i,
+  /pacific\s*pharma/i,
+  /mundipharma|mundi\s*pharma/i,
+  /dbl\s*pharma/i,
+  /jenphar/i,
+  /pharmasia/i,
+  /pharmacil/i,
+  /orion\s*infusion/i,
+  /duphar/i,
+  /jayson/i,
+  /globe\s*pharma/i,
+  /one\s*pharma/i,
+  /team\s*pharma/i,
+  /goodman/i,
+  /white\s*horse/i,
+  /sharif\s*pharma/i
+];
+
+function processRankedCompanies(rawCompanies: CompanyInfo[]): CompanyInfo[] {
+  const ranked: CompanyInfo[] = [];
+  const used = new Set<number>();
+
+  TOP_50_PATTERNS.forEach((pat, idx) => {
+    const match = rawCompanies.find(c => !used.has(c.id) && pat.test(c.name));
+    if (match) {
+      used.add(match.id);
+      ranked.push({ ...match, rank: idx + 1 });
+    }
+  });
+
+  const remaining = rawCompanies
+    .filter(c => !used.has(c.id))
+    .sort((a, b) => b.brandCount - a.brandCount);
+
+  return [...ranked, ...remaining.map((c, i) => ({ ...c, rank: ranked.length + i + 1 }))];
+}
+
 async function fetchCachedJson<T>(url: string): Promise<T> {
   if (typeof window !== 'undefined' && 'caches' in window) {
     try {
-      const cache = await caches.open('medvhai-data-v1');
+      const cache = await caches.open('medvhai-data-v2');
       const cachedResponse = await cache.match(url);
       if (cachedResponse) {
         return (await cachedResponse.json()) as T;
@@ -84,7 +156,7 @@ export async function loadDatabase(): Promise<void> {
       ]);
 
       BRANDS = brandsRes;
-      COMPANIES = companiesRes;
+      COMPANIES = processRankedCompanies(companiesRes);
       DOSAGE_NOTES = notesRes;
 
       companiesMap.clear();
