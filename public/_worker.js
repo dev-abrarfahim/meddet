@@ -736,7 +736,85 @@ export default {
       });
     }
 
-    // 7. Homepage and other valid routes -> Return base index.html
+    // 7. Dedicated Standalone Content Pages: /about, /privacy-policy, /terms, /contact, /companies, /api-docs
+    const staticPagesMeta = {
+      '/about': {
+        title: 'About MedVhai™ — Clinical Drug Index & Medicine Guide BD',
+        description: 'Learn about MedVhai, Bangladesh’s verified clinical medicine index, BDT pharmaceutical price comparator, and bilingual drug monographs.'
+      },
+      '/privacy-policy': {
+        title: 'Privacy Policy — MedVhai™ Clinical Healthcare Index',
+        description: 'Our commitment to zero medical health data tracking, client-side local storage protection, and patient confidentiality on MedVhai.'
+      },
+      '/terms': {
+        title: 'Terms & Conditions & Medical Disclaimer | MedVhai™',
+        description: 'Educational clinical reference guidelines, medical disclaimer, and prescribing practitioner terms for MedVhai.'
+      },
+      '/contact': {
+        title: 'Contact Us — Support & Medicine Corrections | MedVhai™',
+        description: 'Get in touch with the MedVhai clinical indexing team for medicine price corrections, new presentations, and developer queries.'
+      },
+      '/companies': {
+        title: 'Pharmaceutical Companies in Bangladesh (723 Manufacturers) | MedVhai',
+        description: 'Complete directory of all 723 licensed pharmaceutical companies in Bangladesh. Browse brand medicine portfolios, dosages, and prices.'
+      },
+      '/api-docs': {
+        title: 'Developer REST API Documentation & Live Studio | MedVhai™',
+        description: 'Free open REST API endpoints for searching 30,500+ medicines, generics, active ingredients, and BDT MRP prices.'
+      }
+    };
+
+    const cleanStaticPath = pathname.replace(/\/$/, '');
+    if (staticPagesMeta[cleanStaticPath]) {
+      const pageInfo = staticPagesMeta[cleanStaticPath];
+      const canonicalUrl = `${origin}${cleanStaticPath}`;
+      const baseReq = new Request(`${origin}/index.html`, request);
+      const baseRes = await env.ASSETS.fetch(baseReq);
+
+      const transformed = new HTMLRewriter()
+        .on('title', {
+          element(el) {
+            el.setInnerContent(pageInfo.title);
+          }
+        })
+        .on('link[rel="canonical"]', {
+          element(el) {
+            el.setAttribute('href', canonicalUrl);
+          }
+        })
+        .on('meta[name="description"]', {
+          element(el) {
+            el.setAttribute('content', pageInfo.description);
+          }
+        })
+        .on('meta[property="og:title"]', {
+          element(el) {
+            el.setAttribute('content', pageInfo.title);
+          }
+        })
+        .on('meta[property="og:description"]', {
+          element(el) {
+            el.setAttribute('content', pageInfo.description);
+          }
+        })
+        .on('meta[property="og:url"]', {
+          element(el) {
+            el.setAttribute('content', canonicalUrl);
+          }
+        })
+        .transform(baseRes);
+
+      const responseHeaders = new Headers(transformed.headers);
+      responseHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
+      responseHeaders.set('Cache-Control', 'public, max-age=3600, s-maxage=86400');
+
+      return new Response(transformed.body, {
+        status: 200,
+        headers: responseHeaders
+      });
+    }
+
+    // 8. Homepage and other valid routes -> Return base index.html
     const defaultRes = await env.ASSETS.fetch(request);
     return defaultRes;
   }

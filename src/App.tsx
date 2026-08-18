@@ -16,11 +16,14 @@ import {
   HomeLanding,
   ClinicalMonographAccordions,
   GenericBrandsExplorer,
-  ApiDocsModal,
-  InfoModal,
-  type InfoModalType,
   FilterPanel,
-  NotFoundPage
+  NotFoundPage,
+  AboutPage,
+  PrivacyPolicyPage,
+  TermsPage,
+  ContactPage,
+  CompaniesPage,
+  ApiDocsPage
 } from './components';
 
 import { Medicine, FilterOptions, LanguageMode } from './types';
@@ -115,6 +118,7 @@ export default function App() {
   const [explorerStrength, setExplorerStrength] = useState<string | undefined>(undefined);
   const [is404, setIs404] = useState<boolean>(false);
   const [notFoundSlug, setNotFoundSlug] = useState<string>('');
+  const [activeStandalonePage, setActiveStandalonePage] = useState<'about' | 'privacy' | 'terms' | 'contact' | 'companies' | 'api-docs' | null>(null);
 
   // Helper to update browser URL using clean canonical path or query parameters
   const syncNavigationUrl = (canonicalPath: string, searchParams?: Record<string, string | null>) => {
@@ -153,6 +157,53 @@ export default function App() {
       // Reset 404 state
       setIs404(false);
       setNotFoundSlug('');
+
+      // Dedicated Standalone Content Pages: /about, /privacy-policy, /terms, /contact, /companies, /api-docs
+      const cleanPath = pathname.replace(/\/$/, '');
+      if (cleanPath === '/about') {
+        setActiveStandalonePage('about');
+        setSelectedMedicine(null);
+        setExplorerGenericId(null);
+        setIs404(false);
+        return;
+      }
+      if (cleanPath === '/privacy-policy') {
+        setActiveStandalonePage('privacy');
+        setSelectedMedicine(null);
+        setExplorerGenericId(null);
+        setIs404(false);
+        return;
+      }
+      if (cleanPath === '/terms') {
+        setActiveStandalonePage('terms');
+        setSelectedMedicine(null);
+        setExplorerGenericId(null);
+        setIs404(false);
+        return;
+      }
+      if (cleanPath === '/contact') {
+        setActiveStandalonePage('contact');
+        setSelectedMedicine(null);
+        setExplorerGenericId(null);
+        setIs404(false);
+        return;
+      }
+      if (cleanPath === '/companies') {
+        setActiveStandalonePage('companies');
+        setSelectedMedicine(null);
+        setExplorerGenericId(null);
+        setIs404(false);
+        return;
+      }
+      if (cleanPath === '/api-docs') {
+        setActiveStandalonePage('api-docs');
+        setSelectedMedicine(null);
+        setExplorerGenericId(null);
+        setIs404(false);
+        return;
+      }
+
+      setActiveStandalonePage(null);
 
       // 1. Path-based routing: /medicine/:slug (e.g., /medicine/napa-500mg-tablet-14521)
       if (pathname.startsWith('/medicine/')) {
@@ -350,6 +401,10 @@ export default function App() {
 
   // Dynamically update document title, meta descriptions, canonical link, OpenGraph & Schema.org JSON-LD
   useEffect(() => {
+    if (activeStandalonePage) {
+      updateDynamicSEO({ staticPage: activeStandalonePage });
+      return;
+    }
     const genericObj = explorerGenericId ? getGenericById(explorerGenericId) : null;
     updateDynamicSEO({
       medicine: selectedMedicine,
@@ -360,9 +415,10 @@ export default function App() {
       letter: selectedLetter !== 'All' ? selectedLetter : undefined,
       searchQuery: searchQuery || undefined
     });
-  }, [selectedMedicine, explorerGenericId, searchQuery, filters.category, filters.dosageForm, filters.manufacturer, selectedLetter, activeTab]);
+  }, [activeStandalonePage, selectedMedicine, explorerGenericId, searchQuery, filters.category, filters.dosageForm, filters.manufacturer, selectedLetter, activeTab]);
 
   const handleOpenGenericBrandsExplorer = (genericId: number, form?: string, strength?: string) => {
+    setActiveStandalonePage(null);
     setExplorerGenericId(genericId);
     setExplorerForm(form);
     setExplorerStrength(strength);
@@ -373,6 +429,7 @@ export default function App() {
   };
 
   const handleCloseGenericBrandsExplorer = () => {
+    setActiveStandalonePage(null);
     setExplorerGenericId(null);
     setExplorerForm(undefined);
     setExplorerStrength(undefined);
@@ -383,8 +440,6 @@ export default function App() {
   // Modal / Drawer States
   const [isFiltersOpen, setIsFiltersOpen] = useState<boolean>(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
-  const [isApiDocsOpen, setIsApiDocsOpen] = useState<boolean>(false);
-  const [activeInfoModal, setActiveInfoModal] = useState<InfoModalType>(null);
   const [activeSection, setActiveSection] = useState<string>('sec-overview');
 
   const mainInputRef = useRef<HTMLInputElement | null>(null);
@@ -418,24 +473,60 @@ export default function App() {
       'sec-moreinfo'
     ];
 
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 180;
-      for (const secId of sections) {
-        const el = document.getElementById(secId);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(secId);
-            break;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
           }
-        }
-      }
-    };
+        });
+      },
+      { rootMargin: '-20% 0px -70% 0px', threshold: 0 }
+    );
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, [selectedMedicine]);
+
+  // Unified Page Navigator for Standalone Pages (/about, /privacy-policy, /terms, /contact, /companies, /api-docs)
+  const handleNavigatePage = (path: string) => {
+    setIs404(false);
+    setSelectedMedicine(null);
+    setExplorerGenericId(null);
+
+    const clean = path.replace(/\/$/, '');
+    if (clean === '/about') {
+      setActiveStandalonePage('about');
+      syncNavigationUrl('/about');
+    } else if (clean === '/privacy-policy') {
+      setActiveStandalonePage('privacy');
+      syncNavigationUrl('/privacy-policy');
+    } else if (clean === '/terms') {
+      setActiveStandalonePage('terms');
+      syncNavigationUrl('/terms');
+    } else if (clean === '/contact') {
+      setActiveStandalonePage('contact');
+      syncNavigationUrl('/contact');
+    } else if (clean === '/companies') {
+      setActiveStandalonePage('companies');
+      syncNavigationUrl('/companies');
+    } else if (clean === '/api-docs') {
+      setActiveStandalonePage('api-docs');
+      syncNavigationUrl('/api-docs');
+    } else {
+      setActiveStandalonePage(null);
+      if (clean === '') {
+        handleGoHome();
+      } else {
+        syncNavigationUrl(path);
+      }
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Execute database search with pagination
   const searchResults = searchMedicines(
@@ -459,14 +550,9 @@ export default function App() {
     (filters.maxPrice > 0 ? 1 : 0);
 
   const handleSelectMedicine = (med: Medicine) => {
-    // Development-only diagnostic logging
-    if (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
-      console.log(`[MedVhai Navigation] Current: ${selectedMedicine?.id || 'none'} (${selectedMedicine?.name || 'none'}) -> Target: ${med.id} (${med.name}) | Generated Canonical Path: ${getMedicineCanonicalPath(med)}`);
-    }
-
-    // Ensure full monograph and note are populated
     const fullMed = getMedicineById(med.id) || med;
     setIs404(false);
+    setActiveStandalonePage(null);
     setSelectedMedicine(fullMed);
     setExplorerGenericId(null);
     setExplorerForm(undefined);
@@ -478,6 +564,7 @@ export default function App() {
 
   const handleGoHome = () => {
     setIs404(false);
+    setActiveStandalonePage(null);
     setSelectedMedicine(null);
     setExplorerGenericId(null);
     setActiveTab('home');
@@ -487,6 +574,7 @@ export default function App() {
 
   const handleGoToSearch = (query?: string, category?: string, manufacturer?: string, dosageForm?: string) => {
     setIs404(false);
+    setActiveStandalonePage(null);
     setSelectedMedicine(null);
     setExplorerGenericId(null);
     setActiveTab('search');
@@ -575,6 +663,18 @@ export default function App() {
             lang={lang}
             requestedSlug={notFoundSlug}
           />
+        ) : activeStandalonePage === 'about' ? (
+          <AboutPage lang={lang} onGoHome={handleGoHome} onGoToSearch={handleGoToSearch} />
+        ) : activeStandalonePage === 'privacy' ? (
+          <PrivacyPolicyPage lang={lang} />
+        ) : activeStandalonePage === 'terms' ? (
+          <TermsPage lang={lang} />
+        ) : activeStandalonePage === 'contact' ? (
+          <ContactPage lang={lang} />
+        ) : activeStandalonePage === 'companies' ? (
+          <CompaniesPage lang={lang} onSelectCompany={(compName) => handleGoToSearch(undefined, undefined, compName)} />
+        ) : activeStandalonePage === 'api-docs' ? (
+          <ApiDocsPage lang={lang} />
         ) : explorerGenericId ? (
           <div className="max-w-4xl mx-auto space-y-4 animate-in fade-in duration-200 pb-16">
             <GenericBrandsExplorer
@@ -862,7 +962,7 @@ export default function App() {
         )}
 
         {/* Global Footer (Rendered on ALL Pages) */}
-        <MedicalDisclaimer onOpenApiDocs={() => setIsApiDocsOpen(true)} />
+        <MedicalDisclaimer onOpenApiDocs={() => handleNavigatePage('/api-docs')} />
 
       </main>
 
@@ -905,23 +1005,7 @@ export default function App() {
         onOpenFilters={() => setIsFiltersOpen(true)}
         lang={lang}
         onToggleLang={toggleLang}
-        onSelectManufacturer={(compName) => handleGoToSearch(undefined, undefined, compName)}
-        onOpenAbout={() => setActiveInfoModal('about')}
-        onOpenPrivacy={() => setActiveInfoModal('privacy')}
-        onOpenTerms={() => setActiveInfoModal('terms')}
-        onOpenContact={() => setActiveInfoModal('contact')}
-        onOpenApiDocs={() => setIsApiDocsOpen(true)}
-      />
-
-      <ApiDocsModal
-        isOpen={isApiDocsOpen}
-        onClose={() => setIsApiDocsOpen(false)}
-      />
-
-      <InfoModal
-        type={activeInfoModal}
-        onClose={() => setActiveInfoModal(null)}
-        lang={lang}
+        onNavigate={handleNavigatePage}
       />
 
     </div>

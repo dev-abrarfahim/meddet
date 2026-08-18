@@ -3,6 +3,7 @@ import {
   generateMedicineMetadata,
   generateGenericMetadata,
   generateDefaultMetadata,
+  generateStaticPageMetadata,
   SEOMetadata
 } from './urlHelper';
 
@@ -18,6 +19,7 @@ export interface SEOProps {
   manufacturer?: string;
   letter?: string;
   searchQuery?: string;
+  staticPage?: 'about' | 'privacy' | 'terms' | 'contact' | 'companies' | 'api-docs';
 }
 
 /**
@@ -27,7 +29,9 @@ export interface SEOProps {
 export function updateDynamicSEO(props: SEOProps) {
   let meta: SEOMetadata;
 
-  if (props.medicine) {
+  if (props.staticPage) {
+    meta = generateStaticPageMetadata(props.staticPage);
+  } else if (props.medicine) {
     meta = generateMedicineMetadata(props.medicine, props.generic);
   } else if (props.generic) {
     meta = generateGenericMetadata(props.generic);

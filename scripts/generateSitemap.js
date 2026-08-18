@@ -71,6 +71,43 @@ let coreXml = `<?xml version="1.0" encoding="UTF-8"?>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
+    <!-- Standalone Core Content Pages -->
+    <url>
+        <loc>${baseUrl}/about</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>${baseUrl}/companies</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>${baseUrl}/privacy-policy</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>${baseUrl}/terms</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>${baseUrl}/contact</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>${baseUrl}/api-docs</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
 `;
 
 const dosageForms = [

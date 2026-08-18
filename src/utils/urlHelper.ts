@@ -430,3 +430,109 @@ export function generateDefaultMetadata(categoryName?: string, dosageForm?: stri
     robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
   };
 }
+
+/**
+ * Authoritative Metadata Factory for Standalone Static Content Pages
+ */
+export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'terms' | 'contact' | 'companies' | 'api-docs'): SEOMetadata {
+  const logoUrl = `${SITE_BASE_URL}/logo.webp`;
+
+  switch (pageType) {
+    case 'about': {
+      const title = 'About MedVhai™ — Clinical Drug Index & Medicine Guide BD';
+      const description = 'Learn about MedVhai, Bangladesh’s verified clinical medicine index, BDT pharmaceutical price comparator, and bilingual drug monographs.';
+      const canonicalUrl = `${SITE_BASE_URL}/about`;
+      return {
+        title,
+        description,
+        keywords: 'About MedVhai, Medicine index BD mission, Clinical drug index Bangladesh, MedVhai',
+        canonicalUrl,
+        h1: 'About MedVhai™ Clinical Index',
+        og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
+        twitter: { card: 'summary_large_image', title, description, image: logoUrl },
+        jsonLd: { '@context': 'https://schema.org', '@type': 'AboutPage', name: title, description, url: canonicalUrl },
+        robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+      };
+    }
+    case 'privacy': {
+      const title = 'Privacy Policy — MedVhai™ Clinical Healthcare Index';
+      const description = 'Our commitment to zero medical health data tracking, client-side local storage protection, and patient confidentiality on MedVhai.';
+      const canonicalUrl = `${SITE_BASE_URL}/privacy-policy`;
+      return {
+        title,
+        description,
+        keywords: 'MedVhai privacy policy, health data privacy Bangladesh, zero medical tracking',
+        canonicalUrl,
+        h1: 'Privacy Policy',
+        og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
+        twitter: { card: 'summary_large_image', title, description, image: logoUrl },
+        jsonLd: { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description, url: canonicalUrl },
+        robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+      };
+    }
+    case 'terms': {
+      const title = 'Terms & Conditions & Medical Disclaimer | MedVhai™';
+      const description = 'Educational clinical reference guidelines, medical disclaimer, and prescribing practitioner terms for MedVhai.';
+      const canonicalUrl = `${SITE_BASE_URL}/terms`;
+      return {
+        title,
+        description,
+        keywords: 'MedVhai terms and conditions, medical disclaimer BD, clinical reference terms',
+        canonicalUrl,
+        h1: 'Terms & Conditions',
+        og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
+        twitter: { card: 'summary_large_image', title, description, image: logoUrl },
+        jsonLd: { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description, url: canonicalUrl },
+        robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+      };
+    }
+    case 'contact': {
+      const title = 'Contact Us — Support & Medicine Corrections | MedVhai™';
+      const description = 'Get in touch with the MedVhai clinical indexing team for medicine price corrections, new presentations, and developer queries.';
+      const canonicalUrl = `${SITE_BASE_URL}/contact`;
+      return {
+        title,
+        description,
+        keywords: 'Contact MedVhai, medicine correction request, support MedVhai BD',
+        canonicalUrl,
+        h1: 'Contact MedVhai™',
+        og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
+        twitter: { card: 'summary_large_image', title, description, image: logoUrl },
+        jsonLd: { '@context': 'https://schema.org', '@type': 'ContactPage', name: title, description, url: canonicalUrl },
+        robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+      };
+    }
+    case 'companies': {
+      const title = 'Pharmaceutical Companies in Bangladesh (723 Manufacturers) | MedVhai';
+      const description = 'Complete directory of all 723 licensed pharmaceutical companies in Bangladesh. Browse brand medicine portfolios, dosages, and prices.';
+      const canonicalUrl = `${SITE_BASE_URL}/companies`;
+      return {
+        title,
+        description,
+        keywords: 'Pharmaceutical companies Bangladesh, Square Pharma, Beximco, Incepta, Renata, medicine manufacturers BD',
+        canonicalUrl,
+        h1: 'Pharmaceutical Companies in Bangladesh',
+        og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
+        twitter: { card: 'summary_large_image', title, description, image: logoUrl },
+        jsonLd: { '@context': 'https://schema.org', '@type': 'CollectionPage', name: title, description, url: canonicalUrl },
+        robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+      };
+    }
+    case 'api-docs': {
+      const title = 'Developer REST API Documentation & Live Studio | MedVhai™';
+      const description = 'Free open REST API endpoints for searching 30,500+ medicines, generics, active ingredients, and BDT MRP prices.';
+      const canonicalUrl = `${SITE_BASE_URL}/api-docs`;
+      return {
+        title,
+        description,
+        keywords: 'MedVhai API, medicine REST API Bangladesh, drug database API BD, drug price API',
+        canonicalUrl,
+        h1: 'Developer REST API',
+        og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
+        twitter: { card: 'summary_large_image', title, description, image: logoUrl },
+        jsonLd: { '@context': 'https://schema.org', '@type': 'TechArticle', name: title, description, url: canonicalUrl },
+        robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+      };
+    }
+  }
+}
