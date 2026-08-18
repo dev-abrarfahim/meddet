@@ -256,7 +256,7 @@ if (response.statusCode == 200) {
                   value={testParamQuery}
                   onChange={(e) => setTestParamQuery(e.target.value)}
                   placeholder="e.g. Napa, Seclo, Paracetamol"
-                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-mono"
+                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 text-xs font-mono"
                 />
               </div>
             )}
@@ -268,7 +268,7 @@ if (response.statusCode == 200) {
                   type="number"
                   value={selectedEndpoint === 'detail' ? testParamId : testParamGenericId}
                   onChange={(e) => selectedEndpoint === 'detail' ? setTestParamId(e.target.value) : setTestParamGenericId(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-mono"
+                  className="w-full px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 text-xs font-mono"
                 />
               </div>
             )}

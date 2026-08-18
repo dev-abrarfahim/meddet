@@ -128,55 +128,13 @@
         @keyframes mv-pulse{0%,100%{opacity:1}50%{opacity:0.5}}
         .mv-skel-pulse{animation:mv-pulse 1.5s ease-in-out infinite}
       </style>
-      <div class="mv-skel">
-        <header class="mv-skel-hdr">
-          <a href="/" style="display:flex;align-items:center;text-decoration:none;">
-            <img src="/logo.webp" alt="MedVhai Logo" style="height:32px;width:auto;" />
-          </a>
-        </header>
+      <div class="mv-skel" aria-hidden="true">
+        <div class="mv-skel-hdr"><div class="mv-skel-logo mv-skel-pulse"></div></div>
         <div class="mv-skel-bar"><div class="mv-skel-search mv-skel-pulse"></div></div>
-        <main class="mv-skel-hero" style="max-width:960px;margin:16px auto;text-align:left;">
-          <h1 class="mv-skel-h1" style="font-size:24px;color:#E2FCD6;">MedVhai™ — Bangladesh Clinical Drug Index & Medicine Price</h1>
-          <p class="mv-skel-p" style="font-size:14px;color:#CCECEE;line-height:1.6;margin-bottom:16px;">
-            Search 30,000+ brand medicines, active generic ingredients, MRP unit prices in BDT, lower-cost brand alternatives, and bilingual clinical guidelines across 723 licensed pharmaceutical companies in Bangladesh.
-          </p>
-
-          <nav aria-label="Quick Internal Links" style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.15);">
-            <div style="font-size:12px;font-weight:900;text-transform:uppercase;color:#E2FCD6;margin-bottom:8px;">Core Directories & Information</div>
-            <ul style="list-style:none;padding:0;margin:0 0 16px;display:flex;flex-wrap:wrap;gap:10px;">
-              <li><a href="/about" style="color:#fff;font-size:13px;font-weight:bold;text-decoration:underline;">About MedVhai</a></li>
-              <li><a href="/companies" style="color:#fff;font-size:13px;font-weight:bold;text-decoration:underline;">Top Pharma Companies</a></li>
-              <li><a href="/privacy-policy" style="color:#fff;font-size:13px;font-weight:bold;text-decoration:underline;">Privacy Policy</a></li>
-              <li><a href="/terms" style="color:#fff;font-size:13px;font-weight:bold;text-decoration:underline;">Terms & Conditions</a></li>
-              <li><a href="/contact" style="color:#fff;font-size:13px;font-weight:bold;text-decoration:underline;">Contact Us</a></li>
-              <li><a href="/api-docs" style="color:#fff;font-size:13px;font-weight:bold;text-decoration:underline;">Developer REST API</a></li>
-            </ul>
-
-            <div style="font-size:12px;font-weight:900;text-transform:uppercase;color:#E2FCD6;margin-bottom:8px;">Popular Medicine Monographs</div>
-            <ul style="list-style:none;padding:0;margin:0 0 16px;display:flex;flex-wrap:wrap;gap:10px;">
-              <li><a href="/medicine/napa-500mg-tablet-6n1u" style="color:#CCECEE;font-size:12px;">Napa 500mg Tablet</a></li>
-              <li><a href="/medicine/maxpro-20mg-tablet-2mv2" style="color:#CCECEE;font-size:12px;">Maxpro 20mg Tablet</a></li>
-              <li><a href="/medicine/sergel-20mg-capsule-mwkt" style="color:#CCECEE;font-size:12px;">Sergel 20mg Capsule</a></li>
-              <li><a href="/medicine/monas-10mg-tablet-558t" style="color:#CCECEE;font-size:12px;">Monas 10mg Tablet</a></li>
-              <li><a href="/medicine/alatrol-10mg-tablet-1r5a" style="color:#CCECEE;font-size:12px;">Alatrol 10mg Tablet</a></li>
-              <li><a href="/medicine/fexo-120mg-tablet-pjxb" style="color:#CCECEE;font-size:12px;">Fexo 120mg Tablet</a></li>
-              <li><a href="/medicine/ace-plus-500mg-65mg-tablet-0hha" style="color:#CCECEE;font-size:12px;">Ace PLUS Tablet</a></li>
-              <li><a href="/medicine/ceevit-250mg-chewable-tablet-bsvw" style="color:#CCECEE;font-size:12px;">Ceevit 250mg Tablet</a></li>
-            </ul>
-
-            <div style="font-size:12px;font-weight:900;text-transform:uppercase;color:#E2FCD6;margin-bottom:8px;">Top Active Generic Ingredients</div>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px;">
-              <li><a href="/generic/paracetamol-3aut" style="color:#CCECEE;font-size:12px;">Paracetamol</a></li>
-              <li><a href="/generic/esomeprazole-magnesium-trihydrate-1v5w" style="color:#CCECEE;font-size:12px;">Esomeprazole</a></li>
-              <li><a href="/generic/omeprazole-36u7" style="color:#CCECEE;font-size:12px;">Omeprazole</a></li>
-              <li><a href="/generic/montelukast-2z0l" style="color:#CCECEE;font-size:12px;">Montelukast</a></li>
-              <li><a href="/generic/cefixime-0xfx" style="color:#CCECEE;font-size:12px;">Cefixime</a></li>
-              <li><a href="/generic/azithromycin-0fse" style="color:#CCECEE;font-size:12px;">Azithromycin</a></li>
-              <li><a href="/generic/losartan-potassium-2qny" style="color:#CCECEE;font-size:12px;">Losartan Potassium</a></li>
-              <li><a href="/generic/amlodipine-06dp" style="color:#CCECEE;font-size:12px;">Amlodipine</a></li>
-            </ul>
-          </nav>
-        </main>
+        <div class="mv-skel-hero">
+          <div class="mv-skel-h1">MedVhai™</div>
+          <p class="mv-skel-p">Clinical Drug Index & Medicine Price BD</p>
+        </div>
       </div>
     </div>
     <script type="module" src="/src/main.tsx"></script>

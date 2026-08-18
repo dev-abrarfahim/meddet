@@ -215,7 +215,7 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
                 className={`px-2.5 py-1 text-xs font-black transition-colors rounded-lg cursor-pointer ${
                   sortBy === 'name'
                     ? 'bg-[#095D7E] dark:bg-[#14967F] text-white shadow-xs'
-                    : 'text-slate-700 dark:text-slate-300 hover:text-slate-900'
+                    : 'text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
                 Name
@@ -225,7 +225,7 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
                 className={`px-2.5 py-1 text-xs font-black transition-colors rounded-lg cursor-pointer ${
                   sortBy === 'price'
                     ? 'bg-[#095D7E] dark:bg-[#14967F] text-white shadow-xs'
-                    : 'text-slate-700 dark:text-slate-300 hover:text-slate-900'
+                    : 'text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
                 Price
@@ -235,7 +235,7 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
                 className={`px-2.5 py-1 text-xs font-black transition-colors rounded-lg cursor-pointer ${
                   sortBy === 'popularity'
                     ? 'bg-[#095D7E] dark:bg-[#14967F] text-white shadow-xs'
-                    : 'text-slate-700 dark:text-slate-300 hover:text-slate-900'
+                    : 'text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
                 Popularity

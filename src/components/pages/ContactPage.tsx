@@ -133,7 +133,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder={lang === 'en' ? 'Dr. / Pharmacist / Student' : 'আপনার নাম লিখুন'}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#14967F]"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#14967F]"
                   />
                 </div>
 
@@ -147,7 +147,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="name@domain.com"
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#14967F]"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#14967F]"
                   />
                 </div>
               </div>
@@ -159,7 +159,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
                 <select
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#14967F]"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-[#14967F]"
                 >
                   <option value="Medicine Data Correction">
                     {lang === 'en' ? 'Medicine Price or Data Correction' : 'ওষুধের দাম বা তথ্য সংশোধন'}
@@ -183,7 +183,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder={lang === 'en' ? 'Please provide medicine brand names, manufacturer info, or your inquiry...' : 'ওষুধের নাম ও বিস্তারিত বিবরণ লিখুন...'}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-[#14967F] resize-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-[#14967F] resize-none"
                 />
               </div>
 

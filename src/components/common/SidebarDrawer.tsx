@@ -9,7 +9,9 @@ import {
   SlidersHorizontal,
   Languages,
   Code2,
-  ChevronRight
+  ChevronRight,
+  Sun,
+  Moon
 } from 'lucide-react';
 import { LanguageMode } from '../../types';
 
@@ -20,6 +22,8 @@ interface SidebarDrawerProps {
   lang: LanguageMode;
   onToggleLang: () => void;
   onNavigate: (path: string) => void;
+  isDarkMode?: boolean;
+  onToggleDarkMode?: () => void;
 }
 
 export const SidebarDrawer: React.FC<SidebarDrawerProps> = ({
@@ -28,7 +32,9 @@ export const SidebarDrawer: React.FC<SidebarDrawerProps> = ({
   onOpenFilters,
   lang,
   onToggleLang,
-  onNavigate
+  onNavigate,
+  isDarkMode = false,
+  onToggleDarkMode
 }) => {
   if (!isOpen) return null;
 
@@ -223,32 +229,50 @@ export const SidebarDrawer: React.FC<SidebarDrawerProps> = ({
               </a>
             </div>
 
-            {/* Preferences (Language & Filter Drawer) */}
+            {/* Preferences (Theme, Language & Filter Drawer) */}
             <div className="space-y-2 pt-2 border-t border-slate-200 dark:border-slate-800">
               <div className="text-[11px] font-black text-slate-400 dark:text-slate-400 uppercase tracking-wider px-2">
                 {lang === 'en' ? 'Preferences' : 'পছন্দসমূহ'}
               </div>
 
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-3 gap-2">
+                {/* 1. Theme Toggle */}
+                {onToggleDarkMode && (
+                  <button
+                    onClick={onToggleDarkMode}
+                    id="sidebar-theme-toggle"
+                    className="flex flex-col items-center justify-center gap-1 p-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs font-black text-[#095D7E] dark:text-[#2DD4BF] hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+                  >
+                    {isDarkMode ? (
+                      <Sun className="w-4 h-4 text-amber-400" />
+                    ) : (
+                      <Moon className="w-4 h-4 text-[#095D7E]" />
+                    )}
+                    <span className="text-[11px]">{isDarkMode ? (lang === 'en' ? 'Light' : 'লাইট') : (lang === 'en' ? 'Dark' : 'ডার্ক')}</span>
+                  </button>
+                )}
+
+                {/* 2. Language Toggle */}
                 <button
                   onClick={onToggleLang}
                   id="sidebar-lang-toggle"
-                  className="flex items-center justify-center gap-2 p-3 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs font-black text-[#095D7E] dark:text-[#2DD4BF] hover:bg-slate-200 transition-colors cursor-pointer"
+                  className="flex flex-col items-center justify-center gap-1 p-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs font-black text-[#095D7E] dark:text-[#2DD4BF] hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer"
                 >
                   <Languages className="w-4 h-4" />
-                  <span>{lang === 'en' ? 'বাংলা' : 'English'}</span>
+                  <span className="text-[11px]">{lang === 'en' ? 'বাংলা' : 'English'}</span>
                 </button>
 
+                {/* 3. Filter Drawer Toggle */}
                 <button
                   onClick={() => {
                     onClose();
                     onOpenFilters();
                   }}
                   id="sidebar-filter-toggle"
-                  className="flex items-center justify-center gap-2 p-3 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs font-black text-[#095D7E] dark:text-[#2DD4BF] hover:bg-slate-200 transition-colors cursor-pointer"
+                  className="flex flex-col items-center justify-center gap-1 p-2.5 rounded-2xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs font-black text-[#095D7E] dark:text-[#2DD4BF] hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer"
                 >
                   <SlidersHorizontal className="w-4 h-4" />
-                  <span>{lang === 'en' ? 'Filters' : 'ফিল্টার'}</span>
+                  <span className="text-[11px]">{lang === 'en' ? 'Filters' : 'ফিল্টার'}</span>
                 </button>
               </div>
             </div>
