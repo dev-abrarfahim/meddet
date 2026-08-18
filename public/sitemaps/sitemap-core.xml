@@ -231,6 +231,18 @@
         <priority>0.80</priority>
     </url>
     <url>
+        <loc>https://medvhai.heliox.workers.dev/company/novartis-bangladesh-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/roche-bangladesh-limited</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
         <loc>https://medvhai.heliox.workers.dev/company/general-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
@@ -280,6 +292,12 @@
     </url>
     <url>
         <loc>https://medvhai.heliox.workers.dev/company/pacific-pharmaceuticals-ltd</loc>
+        <lastmod>2026-08-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://medvhai.heliox.workers.dev/company/mundipharma-bangladesh-pvt-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
@@ -352,12 +370,6 @@
     </url>
     <url>
         <loc>https://medvhai.heliox.workers.dev/company/albion-laboratories-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/novartis-bangladesh-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
@@ -771,12 +783,6 @@
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://medvhai.heliox.workers.dev/company/roche-bangladesh-limited</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
         <loc>https://medvhai.heliox.workers.dev/company/united-chemicals-pharmaceuticals-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
@@ -820,12 +826,6 @@
     </url>
     <url>
         <loc>https://medvhai.heliox.workers.dev/company/peoples-pharma-ltd</loc>
-        <lastmod>2026-08-18</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://medvhai.heliox.workers.dev/company/mundipharma-bangladesh-pvt-ltd</loc>
         <lastmod>2026-08-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>

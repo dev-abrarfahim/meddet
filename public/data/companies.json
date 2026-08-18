@@ -90,9 +90,9 @@
     "rank": 15
   },
   {
-    "id": 802,
-    "name": "Novo Nordisk",
-    "brandCount": 16,
+    "id": 639,
+    "name": "Novo Nordisk A/S Denmark",
+    "brandCount": 17,
     "rank": 16
   },
   {
@@ -132,15 +132,15 @@
     "rank": 22
   },
   {
-    "id": 911,
-    "name": "Nevian Lifescience PLC (Mfg. by: Novartis AG)",
-    "brandCount": 3,
+    "id": 169,
+    "name": "Novartis (Bangladesh) Ltd.",
+    "brandCount": 270,
     "rank": 23
   },
   {
-    "id": 418,
-    "name": "F. Hoffmann La Roche,Switzerland",
-    "brandCount": 3,
+    "id": 225,
+    "name": "Roche Bangladesh Limited",
+    "brandCount": 50,
     "rank": 24
   },
   {
@@ -162,9 +162,9 @@
     "rank": 27
   },
   {
-    "id": 407,
-    "name": "Eli Lilly and Company USA",
-    "brandCount": 4,
+    "id": 408,
+    "name": "Eli Lilly France SA, France",
+    "brandCount": 9,
     "rank": 28
   },
   {
@@ -216,9 +216,9 @@
     "rank": 36
   },
   {
-    "id": 814,
-    "name": "Modi-mundipharma",
-    "brandCount": 0,
+    "id": 155,
+    "name": "Mundipharma (Bangladesh) Pvt. Ltd.",
+    "brandCount": 41,
     "rank": 37
   },
   {
@@ -252,57 +252,57 @@
     "rank": 42
   },
   {
+    "id": 836,
+    "name": "Marketed By Unimed & Unihealth Manufacturers Ltd (Abbott Pharma Product)",
+    "brandCount": 7,
+    "rank": 43
+  },
+  {
     "id": 128,
     "name": "Jayson Pharmaceuticals Ltd.",
     "brandCount": 242,
-    "rank": 43
+    "rank": 44
   },
   {
     "id": 99,
     "name": "Globe Pharmaceuticals Ltd.",
     "brandCount": 343,
-    "rank": 44
+    "rank": 45
   },
   {
     "id": 823,
     "name": "One Pharma Ltd.",
     "brandCount": 148,
-    "rank": 45
+    "rank": 46
   },
   {
     "id": 828,
     "name": "Team Pharmaceuticals Ltd.",
     "brandCount": 157,
-    "rank": 46
+    "rank": 47
   },
   {
     "id": 841,
     "name": "Goodman Pharmaceuticals Ltd.",
     "brandCount": 107,
-    "rank": 47
+    "rank": 48
   },
   {
     "id": 276,
     "name": "White Horse Pharma",
     "brandCount": 179,
-    "rank": 48
+    "rank": 49
   },
   {
     "id": 236,
     "name": "Sharif Pharmaceuticals Ltd.",
     "brandCount": 191,
-    "rank": 49
+    "rank": 50
   },
   {
     "id": 12,
     "name": "Albion Laboratories Ltd.",
     "brandCount": 376,
-    "rank": 50
-  },
-  {
-    "id": 169,
-    "name": "Novartis (Bangladesh) Ltd.",
-    "brandCount": 270,
     "rank": 51
   },
   {
@@ -714,1016 +714,1016 @@
     "rank": 119
   },
   {
-    "id": 225,
-    "name": "Roche Bangladesh Limited",
-    "brandCount": 50,
-    "rank": 120
-  },
-  {
     "id": 268,
     "name": "United Chemicals & Pharmaceuticals Ltd.",
     "brandCount": 50,
-    "rank": 121
+    "rank": 120
   },
   {
     "id": 108,
     "name": "Guardian Healthcare Ltd.",
     "brandCount": 48,
-    "rank": 122
+    "rank": 121
   },
   {
     "id": 156,
     "name": "Mystic Pharmaceuticals Ltd.",
     "brandCount": 48,
-    "rank": 123
+    "rank": 122
   },
   {
     "id": 62,
     "name": "Decent Pharma Laboratories Ltd.",
     "brandCount": 46,
-    "rank": 124
+    "rank": 123
   },
   {
     "id": 199,
     "name": "Premier Pharmaceuticals",
     "brandCount": 43,
-    "rank": 125
+    "rank": 124
   },
   {
     "id": 843,
     "name": "Arges Life Science Ltd.",
     "brandCount": 42,
-    "rank": 126
+    "rank": 125
   },
   {
     "id": 179,
     "name": "Avarox Pharmaceuticals Ltd.",
     "brandCount": 42,
-    "rank": 127
+    "rank": 126
   },
   {
     "id": 187,
     "name": "Peoples Pharma Ltd.",
     "brandCount": 42,
-    "rank": 128
-  },
-  {
-    "id": 155,
-    "name": "Mundipharma (Bangladesh) Pvt. Ltd.",
-    "brandCount": 41,
-    "rank": 129
+    "rank": 127
   },
   {
     "id": 839,
     "name": "Genvio Pharma Ltd.",
     "brandCount": 40,
-    "rank": 130
+    "rank": 128
   },
   {
     "id": 235,
     "name": "Shamsul Al-Amin Pharmaceuticals Ltd.",
     "brandCount": 38,
-    "rank": 131
+    "rank": 129
   },
   {
     "id": 143,
     "name": "Marksman Pharmaceutical Ltd.",
     "brandCount": 37,
-    "rank": 132
+    "rank": 130
   },
   {
     "id": 912,
     "name": "The IBN SINA Pharmaceutical Industry PLC",
     "brandCount": 37,
-    "rank": 133
+    "rank": 131
   },
   {
     "id": 78,
     "name": "EDCL (Dhaka)",
     "brandCount": 34,
-    "rank": 134
+    "rank": 132
   },
   {
     "id": 847,
     "name": "C2C Pharma Ltd.",
     "brandCount": 33,
-    "rank": 135
+    "rank": 133
   },
   {
     "id": 120,
     "name": "Innova Phrmaceutical Ltd.",
     "brandCount": 33,
-    "rank": 136
+    "rank": 134
   },
   {
     "id": 827,
     "name": "MedRx Life Science Ltd.",
     "brandCount": 33,
-    "rank": 137
+    "rank": 135
   },
   {
     "id": 173,
     "name": "Novus Pharmaceuticals Ltd.",
     "brandCount": 31,
-    "rank": 138
+    "rank": 136
   },
   {
     "id": 34,
     "name": "Bengal Drugs & Chemical Works Pharm. Ltd.",
     "brandCount": 30,
-    "rank": 139
+    "rank": 137
   },
   {
     "id": 875,
     "name": "Gonoshasthaya Pharma Ltd.",
     "brandCount": 30,
-    "rank": 140
+    "rank": 138
   },
   {
     "id": 244,
     "name": "Sonear Laboratories Ltd.",
     "brandCount": 30,
-    "rank": 141
+    "rank": 139
   },
   {
     "id": 833,
     "name": "Centeon Pharma Limited",
     "brandCount": 29,
-    "rank": 142
+    "rank": 140
   },
   {
     "id": 853,
     "name": "National Drug Co. Ltd.",
     "brandCount": 29,
-    "rank": 143
+    "rank": 141
   },
   {
     "id": 200,
     "name": "Prime Pharmaceuticals Ltd.",
     "brandCount": 29,
-    "rank": 144
+    "rank": 142
   },
   {
     "id": 138,
     "name": "Libra Pharmaceuticls Ltd.",
     "brandCount": 27,
-    "rank": 145
+    "rank": 143
   },
   {
     "id": 849,
     "name": "Maks Drug Limited",
     "brandCount": 26,
-    "rank": 146
+    "rank": 144
   },
   {
     "id": 142,
     "name": "Maks Drugs Ltd.",
     "brandCount": 26,
-    "rank": 147
+    "rank": 145
   },
   {
     "id": 859,
     "name": "Physic Pharmaceuticals Ltd.",
     "brandCount": 26,
-    "rank": 148
+    "rank": 146
   },
   {
     "id": 26,
     "name": "Aztec Pharmaceuticals",
     "brandCount": 25,
-    "rank": 149
+    "rank": 147
   },
   {
     "id": 826,
     "name": "MST Pharma and Healthcare Ltd.",
     "brandCount": 25,
-    "rank": 150
+    "rank": 148
   },
   {
     "id": 227,
     "name": "S. N. Pharmaceuticals Ltd.",
     "brandCount": 25,
-    "rank": 151
+    "rank": 149
   },
   {
     "id": 817,
     "name": "Allied Pharmaceuticals Ltd.",
     "brandCount": 24,
-    "rank": 152
+    "rank": 150
   },
   {
     "id": 183,
     "name": "Oyster Pharmaceuticals Ltd.",
     "brandCount": 23,
-    "rank": 153
+    "rank": 151
   },
   {
     "id": 107,
     "name": "Greenland Pharmaceuticals Ltd.",
     "brandCount": 21,
-    "rank": 154
+    "rank": 152
   },
   {
     "id": 856,
     "name": "Army Pharma Limited",
     "brandCount": 20,
-    "rank": 155
+    "rank": 153
   },
   {
     "id": 788,
     "name": "Janata Pharma",
     "brandCount": 20,
-    "rank": 156
+    "rank": 154
   },
   {
     "id": 240,
     "name": "Skylab Ltd.",
     "brandCount": 19,
-    "rank": 157
+    "rank": 155
   },
   {
     "id": 14,
     "name": "Alkad Laboratories",
     "brandCount": 17,
-    "rank": 158
+    "rank": 156
   },
   {
     "id": 832,
     "name": "Get Well Limited",
     "brandCount": 17,
-    "rank": 159
+    "rank": 157
   },
   {
-    "id": 639,
-    "name": "Novo Nordisk A/S Denmark",
-    "brandCount": 17,
-    "rank": 160
+    "id": 802,
+    "name": "Novo Nordisk",
+    "brandCount": 16,
+    "rank": 158
   },
   {
     "id": 801,
     "name": "City Overseas",
     "brandCount": 16,
-    "rank": 161
+    "rank": 159
   },
   {
     "id": 86,
     "name": "F N F Pharmaceuticals Ltd.",
     "brandCount": 16,
-    "rank": 162
+    "rank": 160
   },
   {
     "id": 858,
     "name": "Save Pharmaceuticals Ltd.",
     "brandCount": 16,
-    "rank": 163
+    "rank": 161
   },
   {
     "id": 852,
     "name": "UNIDO Pharmaceutical Limited",
     "brandCount": 16,
-    "rank": 164
+    "rank": 162
   },
   {
     "id": 203,
     "name": "Quality Pharmaceuticals Ltd.",
     "brandCount": 15,
-    "rank": 165
+    "rank": 163
   },
   {
     "id": 53,
     "name": "Cipla Ltd.",
     "brandCount": 14,
-    "rank": 166
+    "rank": 164
   },
   {
     "id": 623,
     "name": "Novartis Pharma AG, Switzerland",
     "brandCount": 14,
-    "rank": 167
+    "rank": 165
   },
   {
     "id": 834,
     "name": "Marketed By Unimed & Unihealth Manufacturers Ltd (Janssen-Cilag Products)",
     "brandCount": 13,
-    "rank": 168
+    "rank": 166
   },
   {
     "id": 884,
     "name": "Nevian Lifescience PLC",
     "brandCount": 13,
-    "rank": 169
+    "rank": 167
   },
   {
     "id": 878,
     "name": "Janata Traders (Mfg. by: Merck)",
     "brandCount": 12,
-    "rank": 170
+    "rank": 168
   },
   {
     "id": 561,
     "name": "Leo Pharmaceutical Products,Denmark",
     "brandCount": 12,
-    "rank": 171
+    "rank": 169
   },
   {
     "id": 891,
     "name": "Janata Traders",
     "brandCount": 10,
-    "rank": 172
+    "rank": 170
   },
   {
     "id": 161,
     "name": "National Laboratories Ltd.",
     "brandCount": 10,
-    "rank": 173
+    "rank": 171
   },
   {
     "id": 224,
     "name": "RN Pharmaceuticals",
     "brandCount": 10,
-    "rank": 174
+    "rank": 172
   },
   {
     "id": 226,
     "name": "Royal Pharmaceutical",
     "brandCount": 10,
-    "rank": 175
-  },
-  {
-    "id": 408,
-    "name": "Eli Lilly France SA, France",
-    "brandCount": 9,
-    "rank": 176
+    "rank": 173
   },
   {
     "id": 619,
     "name": "Novartis Farmaceutica S.A., Spain",
     "brandCount": 9,
-    "rank": 177
+    "rank": 174
   },
   {
     "id": 895,
     "name": "Gaco Pharmaceuticals Ltd.",
     "brandCount": 8,
-    "rank": 178
+    "rank": 175
   },
   {
     "id": 194,
     "name": "Phoenix Chemicals Laboratories (BD) Ltd.",
     "brandCount": 8,
-    "rank": 179
+    "rank": 176
   },
   {
     "id": 865,
     "name": "Albion Specialized Pharma Limited.",
     "brandCount": 7,
-    "rank": 180
+    "rank": 177
   },
   {
     "id": 813,
     "name": "Astrazeneca Pharmaceutical company",
     "brandCount": 7,
-    "rank": 181
+    "rank": 178
   },
   {
     "id": 872,
     "name": "Doctor’s Chemical Works Ltd.",
     "brandCount": 7,
-    "rank": 182
+    "rank": 179
   },
   {
     "id": 476,
     "name": "Grifols Biologicals Inc, USA",
     "brandCount": 7,
-    "rank": 183
-  },
-  {
-    "id": 836,
-    "name": "Marketed By Unimed & Unihealth Manufacturers Ltd (Abbott Pharma Product)",
-    "brandCount": 7,
-    "rank": 184
+    "rank": 180
   },
   {
     "id": 152,
     "name": "Momotaz Pharmaceuticals Ltd.",
     "brandCount": 7,
-    "rank": 185
+    "rank": 181
   },
   {
     "id": 212,
     "name": "Reckitt & Benckiser Bangladesh Ltd.",
     "brandCount": 7,
-    "rank": 186
+    "rank": 182
   },
   {
     "id": 696,
     "name": "Rotexmedica GmbH, Germany",
     "brandCount": 7,
-    "rank": 187
+    "rank": 183
   },
   {
     "id": 718,
     "name": "Sanofi Pasteur S A ,France",
     "brandCount": 7,
-    "rank": 188
+    "rank": 184
   },
   {
     "id": 479,
     "name": "H. Lundbeck & Co., A/S, Denmark",
     "brandCount": 6,
-    "rank": 189
+    "rank": 185
   },
   {
     "id": 491,
     "name": "Hexal ag, Germany",
     "brandCount": 6,
-    "rank": 190
+    "rank": 186
   },
   {
     "id": 253,
     "name": "Standard Laboratories Ltd.",
     "brandCount": 6,
-    "rank": 191
+    "rank": 187
   },
   {
     "id": 877,
     "name": "AqVida bangladesh (Mfg. by: AqVida GmbH)",
     "brandCount": 5,
-    "rank": 192
+    "rank": 188
   },
   {
     "id": 375,
     "name": "Choongwae Pharma Corporation,Korea",
     "brandCount": 5,
-    "rank": 193
+    "rank": 189
   },
   {
     "id": 894,
     "name": "MGH Healthcare Limited (Mfg. by: AstraZeneca)",
     "brandCount": 5,
-    "rank": 194
+    "rank": 190
   },
   {
     "id": 617,
     "name": "Novartis Farma SpA, Italy",
     "brandCount": 5,
-    "rank": 195
+    "rank": 191
   },
   {
     "id": 630,
     "name": "Novartis Pharma Switzerland",
     "brandCount": 5,
-    "rank": 196
+    "rank": 192
   },
   {
     "id": 675,
     "name": "Pharmachemie B. V. Netherlands",
     "brandCount": 5,
-    "rank": 197
+    "rank": 193
   },
   {
     "id": 725,
     "name": "Sanofi Winthrop Industries,France",
     "brandCount": 5,
-    "rank": 198
+    "rank": 194
   },
   {
     "id": 874,
     "name": "Zydus Wellness Products Ltd.",
     "brandCount": 5,
-    "rank": 199
+    "rank": 195
+  },
+  {
+    "id": 407,
+    "name": "Eli Lilly and Company USA",
+    "brandCount": 4,
+    "rank": 196
   },
   {
     "id": 812,
     "name": "Boehringer Ingelheim Pharmaceutical",
     "brandCount": 4,
-    "rank": 200
+    "rank": 197
   },
   {
     "id": 61,
     "name": "Crystal Pharmaceuticals Ltd.",
     "brandCount": 4,
-    "rank": 201
+    "rank": 198
   },
   {
     "id": 457,
     "name": "Glaxo SmithKline Biological S.A.,Belgium",
     "brandCount": 4,
-    "rank": 202
+    "rank": 199
   },
   {
     "id": 121,
     "name": "Institute of Public Health",
     "brandCount": 4,
-    "rank": 203
+    "rank": 200
   },
   {
     "id": 124,
     "name": "Jalalabad Pharmaceuticals Ltd.",
     "brandCount": 4,
-    "rank": 204
+    "rank": 201
   },
   {
     "id": 905,
     "name": "Servier Bangladesh Operation",
     "brandCount": 4,
-    "rank": 205
+    "rank": 202
   },
   {
     "id": 754,
     "name": "Stiefel Laboratories Ptd Ltd.,Ireland",
     "brandCount": 4,
-    "rank": 206
+    "rank": 203
+  },
+  {
+    "id": 911,
+    "name": "Nevian Lifescience PLC (Mfg. by: Novartis AG)",
+    "brandCount": 3,
+    "rank": 204
+  },
+  {
+    "id": 418,
+    "name": "F. Hoffmann La Roche,Switzerland",
+    "brandCount": 3,
+    "rank": 205
   },
   {
     "id": 283,
     "name": "Abbott HealthcareProducts,Netherlands",
     "brandCount": 3,
-    "rank": 207
+    "rank": 206
   },
   {
     "id": 41,
     "name": "Bios Pharmaceutical Ltd.",
     "brandCount": 3,
-    "rank": 208
+    "rank": 207
   },
   {
     "id": 879,
     "name": "BOTS Pvt. Limited",
     "brandCount": 3,
-    "rank": 209
+    "rank": 208
   },
   {
     "id": 46,
     "name": "Bridge Pharmaceuticals Ltd.",
     "brandCount": 3,
-    "rank": 210
+    "rank": 209
   },
   {
     "id": 889,
     "name": "City Overseas Ltd. (Mfg. by: Baxter India Private Limited, India)",
     "brandCount": 3,
-    "rank": 211
+    "rank": 210
   },
   {
     "id": 390,
     "name": "CSL Behring GmbH, Germany",
     "brandCount": 3,
-    "rank": 212
+    "rank": 211
   },
   {
     "id": 892,
     "name": "DBL Healthcare Ltd.",
     "brandCount": 3,
-    "rank": 213
+    "rank": 212
   },
   {
     "id": 880,
     "name": "Discount Pharma (Mfg. by: Octapharma S.A.S., France)",
     "brandCount": 3,
-    "rank": 214
+    "rank": 213
   },
   {
     "id": 819,
     "name": "Essential Drugs Company Ltd.",
     "brandCount": 3,
-    "rank": 215
+    "rank": 214
   },
   {
     "id": 413,
     "name": "Excella, Germany",
     "brandCount": 3,
-    "rank": 216
+    "rank": 215
   },
   {
     "id": 425,
     "name": "F.Hoffmann La Roche, Switzerland",
     "brandCount": 3,
-    "rank": 217
+    "rank": 216
   },
   {
     "id": 893,
     "name": "Future Distribution & Network Ltd. (Mfg. by: Abbott Laboratories)",
     "brandCount": 3,
-    "rank": 218
+    "rank": 217
   },
   {
     "id": 452,
     "name": "Glaxo Smith Kline Biological S.A.,Belgium",
     "brandCount": 3,
-    "rank": 219
+    "rank": 218
   },
   {
     "id": 93,
     "name": "GlaxoSmithKline Bangladesh Ltd.",
     "brandCount": 3,
-    "rank": 220
+    "rank": 219
   },
   {
     "id": 466,
     "name": "GlaxoSmithkline Biologicals S.A,Belgium",
     "brandCount": 3,
-    "rank": 221
+    "rank": 220
   },
   {
     "id": 810,
     "name": "IPH",
     "brandCount": 3,
-    "rank": 222
+    "rank": 221
   },
   {
     "id": 809,
     "name": "JMI Pharma",
     "brandCount": 3,
-    "rank": 223
+    "rank": 222
   },
   {
     "id": 129,
     "name": "JMI Syringes & Medical Devices Ltd.",
     "brandCount": 3,
-    "rank": 224
+    "rank": 223
   },
   {
     "id": 545,
     "name": "Kyowa Hakko Kogyo Co., Ltd.,Japan",
     "brandCount": 3,
-    "rank": 225
+    "rank": 224
   },
   {
     "id": 665,
     "name": "Pfizer Manufacturing, Belgium",
     "brandCount": 3,
-    "rank": 226
+    "rank": 225
   },
   {
     "id": 842,
     "name": "Purnava Limited",
     "brandCount": 3,
-    "rank": 227
+    "rank": 226
   },
   {
     "id": 711,
     "name": "Sandoz GmbH, Austria",
     "brandCount": 3,
-    "rank": 228
+    "rank": 227
   },
   {
     "id": 264,
     "name": "Ultra Pharma Ltd.",
     "brandCount": 3,
-    "rank": 229
+    "rank": 228
   },
   {
     "id": 267,
     "name": "Unique Pharmaceutical Ltd.",
     "brandCount": 3,
-    "rank": 230
+    "rank": 229
   },
   {
     "id": 4,
     "name": "Acme Specialized Pharmaceuticals Ltd.",
     "brandCount": 2,
-    "rank": 231
+    "rank": 230
   },
   {
     "id": 830,
     "name": "Active Fine Chemicals Ltd",
     "brandCount": 2,
-    "rank": 232
+    "rank": 231
   },
   {
     "id": 290,
     "name": "Advanced Medical Optics UppsalaAB, Sweden",
     "brandCount": 2,
-    "rank": 233
+    "rank": 232
   },
   {
     "id": 304,
     "name": "Alpha Therapeutic Corporation,USA",
     "brandCount": 2,
-    "rank": 234
+    "rank": 233
   },
   {
     "id": 326,
     "name": "Ayerst Wyeth PharmaceuticalsInc.,",
     "brandCount": 2,
-    "rank": 235
+    "rank": 234
   },
   {
     "id": 358,
     "name": "Bristol Myers Squibb Pvt. Ltd.,USA",
     "brandCount": 2,
-    "rank": 236
+    "rank": 235
   },
   {
     "id": 367,
     "name": "Chemial Works of Gedeon RichterLtd., Hungary",
     "brandCount": 2,
-    "rank": 237
+    "rank": 236
   },
   {
     "id": 54,
     "name": "City Chemicals & Pharmaceuticals Works Ltd.",
     "brandCount": 2,
-    "rank": 238
+    "rank": 237
   },
   {
     "id": 389,
     "name": "CSL Behring Ag, Switzeland",
     "brandCount": 2,
-    "rank": 239
+    "rank": 238
   },
   {
     "id": 890,
     "name": "Dermolive",
     "brandCount": 2,
-    "rank": 240
+    "rank": 239
   },
   {
     "id": 811,
     "name": "Elixir",
     "brandCount": 2,
-    "rank": 241
+    "rank": 240
   },
   {
     "id": 427,
     "name": "F.Hoffmann-La Roche Ltd.Germany",
     "brandCount": 2,
-    "rank": 242
+    "rank": 241
   },
   {
     "id": 434,
     "name": "Fisons Limited, UK",
     "brandCount": 2,
-    "rank": 243
+    "rank": 242
   },
   {
     "id": 438,
     "name": "Fresenius Kabi DeutschlandGmbH, Germany",
     "brandCount": 2,
-    "rank": 244
+    "rank": 243
   },
   {
     "id": 468,
     "name": "GlaxoSmithKline Biologicals,Germany",
     "brandCount": 2,
-    "rank": 245
+    "rank": 244
   },
   {
     "id": 470,
     "name": "Gosun Pharma Co. Ltd., China",
     "brandCount": 2,
-    "rank": 246
+    "rank": 245
   },
   {
     "id": 111,
     "name": "Hope Pharmaceuticals Ltd.",
     "brandCount": 2,
-    "rank": 247
+    "rank": 246
   },
   {
     "id": 132,
     "name": "KDH Laboratories Ltd.",
     "brandCount": 2,
-    "rank": 248
+    "rank": 247
   },
   {
     "id": 835,
     "name": "Marketed By Unimed & Unihealth Manufacturers Ltd (Vifor International Products)",
     "brandCount": 2,
-    "rank": 249
+    "rank": 248
   },
   {
     "id": 614,
     "name": "Nippon Kayaku Co Ltd,.Japan",
     "brandCount": 2,
-    "rank": 250
+    "rank": 249
   },
   {
     "id": 631,
     "name": "Novartis Pharma, France",
     "brandCount": 2,
-    "rank": 251
+    "rank": 250
   },
   {
     "id": 636,
     "name": "Novartis Vaccines & DiagnosticsS.r.l Italy",
     "brandCount": 2,
-    "rank": 252
+    "rank": 251
   },
   {
     "id": 658,
     "name": "Pfizer (perth) Pty. Ltd. Australia",
     "brandCount": 2,
-    "rank": 253
+    "rank": 252
   },
   {
     "id": 668,
     "name": "Pfizer Pharmaceuticals, Ireland",
     "brandCount": 2,
-    "rank": 254
+    "rank": 253
   },
   {
     "id": 670,
     "name": "Pfizer Puus SP.A,., Belgium",
     "brandCount": 2,
-    "rank": 255
+    "rank": 254
   },
   {
     "id": 672,
     "name": "Pfizer, Belgium",
     "brandCount": 2,
-    "rank": 256
+    "rank": 255
   },
   {
     "id": 677,
     "name": "Pharmachemie B.V., Holland",
     "brandCount": 2,
-    "rank": 257
+    "rank": 256
   },
   {
     "id": 883,
     "name": "Radius Pharmaceuticals Ltd.",
     "brandCount": 2,
-    "rank": 258
+    "rank": 257
   },
   {
     "id": 715,
     "name": "Sanofi Aventis, Germany",
     "brandCount": 2,
-    "rank": 259
+    "rank": 258
   },
   {
     "id": 896,
     "name": "SB Laboratories Ltd.",
     "brandCount": 2,
-    "rank": 260
+    "rank": 259
   },
   {
     "id": 232,
     "name": "Seba Laboratories Ltd.",
     "brandCount": 2,
-    "rank": 261
+    "rank": 260
   },
   {
     "id": 262,
     "name": "Theraputics (BD) Ltd.",
     "brandCount": 2,
-    "rank": 262
+    "rank": 261
   },
   {
     "id": 281,
     "name": "A/S Lundbeck Export DivisionLtd., Denmark",
     "brandCount": 1,
-    "rank": 263
+    "rank": 262
   },
   {
     "id": 882,
     "name": "Abbott Laboratories",
     "brandCount": 1,
-    "rank": 264
+    "rank": 263
   },
   {
     "id": 296,
     "name": "Allergan Inc, USA",
     "brandCount": 1,
-    "rank": 265
+    "rank": 264
   },
   {
     "id": 300,
     "name": "Allergan Pharmaceuticals Ltd.,Ireland",
     "brandCount": 1,
-    "rank": 266
+    "rank": 265
   },
   {
     "id": 329,
     "name": "B. Braun Melsungen Ag, Germany",
     "brandCount": 1,
-    "rank": 267
+    "rank": 266
   },
   {
     "id": 897,
     "name": "Bain Trade International",
     "brandCount": 1,
-    "rank": 268
+    "rank": 267
   },
   {
     "id": 27,
     "name": "Bangladesh Antibiotic Industries Limited",
     "brandCount": 1,
-    "rank": 269
+    "rank": 268
   },
   {
     "id": 28,
     "name": "Bangladesh Immunity Co.",
     "brandCount": 1,
-    "rank": 270
+    "rank": 269
   },
   {
     "id": 333,
     "name": "Baxter Oncology Gmbh, Germany",
     "brandCount": 1,
-    "rank": 271
+    "rank": 270
   },
   {
     "id": 337,
     "name": "Becton Dickinson and Company,USA",
     "brandCount": 1,
-    "rank": 272
+    "rank": 271
   },
   {
     "id": 360,
     "name": "Bristol-Myers, Italy",
     "brandCount": 1,
-    "rank": 273
+    "rank": 272
   },
   {
     "id": 49,
     "name": "Care Pharma Laboratories Ltd.",
     "brandCount": 1,
-    "rank": 274
+    "rank": 273
   },
   {
     "id": 913,
     "name": "City Overseas Ltd. (Mfg. by: Gedeon Richter, Hungary)",
     "brandCount": 1,
-    "rank": 275
+    "rank": 274
   },
   {
     "id": 886,
     "name": "CuRx (Mfg. by: Seacross Pharmaceuticals Ltd)",
     "brandCount": 1,
-    "rank": 276
+    "rank": 275
   },
   {
     "id": 898,
     "name": "Derma Health Care",
     "brandCount": 1,
-    "rank": 277
+    "rank": 276
   },
   {
     "id": 76,
     "name": "Eastern Pharmaceuticals Ltd.",
     "brandCount": 1,
-    "rank": 278
+    "rank": 277
   },
   {
     "id": 402,
     "name": "Ebew Pharma,Austria",
     "brandCount": 1,
-    "rank": 279
+    "rank": 278
   },
   {
     "id": 404,
     "name": "Egis Pharmaceuticals, Hungary",
     "brandCount": 1,
-    "rank": 280
+    "rank": 279
   },
   {
     "id": 899,
     "name": "Ergon Pharmaceuticals (AY)",
     "brandCount": 1,
-    "rank": 281
+    "rank": 280
   },
   {
     "id": 822,
     "name": "Faruk Pharmaceutical",
     "brandCount": 1,
-    "rank": 282
+    "rank": 281
   },
   {
     "id": 432,
     "name": "Ferring GmbH, Germany",
     "brandCount": 1,
-    "rank": 283
+    "rank": 282
   },
   {
     "id": 437,
     "name": "Fresenius Kabi Austria GmbH,Austria",
     "brandCount": 1,
-    "rank": 284
+    "rank": 283
   },
   {
     "id": 449,
     "name": "Glaxo Operations UK Ltd., UK",
     "brandCount": 1,
-    "rank": 285
+    "rank": 284
   },
   {
     "id": 460,
     "name": "Glaxo Wellcome GmbH, Germany",
     "brandCount": 1,
-    "rank": 286
+    "rank": 285
   },
   {
     "id": 94,
     "name": "Global Heavy Chemicals Ltd.",
     "brandCount": 1,
-    "rank": 287
+    "rank": 286
   },
   {
     "id": 483,
     "name": "Hamdard Lab. (Waqf), Pakistan",
+    "brandCount": 1,
+    "rank": 287
+  },
+  {
+    "id": 914,
+    "name": "Hamdard Laboratories (WAQF) BD",
     "brandCount": 1,
     "rank": 288
   },
@@ -1734,399 +1734,399 @@
     "rank": 289
   },
   {
-    "id": 914,
-    "name": "Hamdard Laboratories (WAQF) BD",
-    "brandCount": 1,
-    "rank": 290
-  },
-  {
     "id": 497,
     "name": "Hoffman-La Roche Ltd.Switzerland",
     "brandCount": 1,
-    "rank": 291
+    "rank": 290
   },
   {
     "id": 902,
     "name": "Ibnsina Food & Chemical Industries Ltd.",
     "brandCount": 1,
-    "rank": 292
+    "rank": 291
   },
   {
     "id": 903,
     "name": "Index Food & Beverage",
     "brandCount": 1,
-    "rank": 293
+    "rank": 292
   },
   {
     "id": 881,
     "name": "International Agencies (Bd.) Limited (Mfg. by: CSL Behring AG, Switzerland)",
     "brandCount": 1,
-    "rank": 294
+    "rank": 293
   },
   {
     "id": 122,
     "name": "Islami Pharmaceutical Industries Ltd.",
     "brandCount": 1,
-    "rank": 295
+    "rank": 294
   },
   {
     "id": 126,
     "name": "Jams Pharmaceuticals Ltd.",
     "brandCount": 1,
-    "rank": 296
+    "rank": 295
   },
   {
     "id": 518,
     "name": "JHP Pharmaceuticals, USA",
     "brandCount": 1,
-    "rank": 297
+    "rank": 296
   },
   {
     "id": 808,
     "name": "Kazi Chemicals",
     "brandCount": 1,
-    "rank": 298
+    "rank": 297
   },
   {
     "id": 553,
     "name": "Laboratories Panpharma, France",
     "brandCount": 1,
-    "rank": 299
+    "rank": 298
   },
   {
     "id": 555,
     "name": "Laboratorio Aldo-Union, Spain",
     "brandCount": 1,
-    "rank": 300
+    "rank": 299
   },
   {
     "id": 815,
     "name": "Laboratorio Varifarma, Argentina",
     "brandCount": 1,
-    "rank": 301
+    "rank": 300
   },
   {
     "id": 560,
     "name": "Lek dd Ljubljana Pharmaceutical &Chemical Co., Slovenia",
     "brandCount": 1,
-    "rank": 302
+    "rank": 301
   },
   {
     "id": 887,
     "name": "Life Cell Corporation (Mfg. by: Stiefel Laboratories Ltd.)",
     "brandCount": 1,
-    "rank": 303
+    "rank": 302
   },
   {
     "id": 571,
     "name": "Lilly France SA, France",
     "brandCount": 1,
-    "rank": 304
+    "rank": 303
   },
   {
     "id": 572,
     "name": "Lilly, France",
     "brandCount": 1,
-    "rank": 305
+    "rank": 304
   },
   {
     "id": 885,
     "name": "Marker Pharma Ltd.",
     "brandCount": 1,
-    "rank": 306
+    "rank": 305
   },
   {
     "id": 838,
     "name": "Marketed By Unimed & Unihealth Manufacturers Ltd (Biotest Products)",
     "brandCount": 1,
-    "rank": 307
+    "rank": 306
   },
   {
     "id": 586,
     "name": "Medac Gesellschaft fur Klinischespezialpraparate Germany",
     "brandCount": 1,
-    "rank": 308
+    "rank": 307
   },
   {
     "id": 145,
     "name": "Medico Pharmaceuticals Ltd.",
     "brandCount": 1,
-    "rank": 309
+    "rank": 308
   },
   {
     "id": 820,
     "name": "Medihealth Pharmaceutical Limited",
     "brandCount": 1,
-    "rank": 310
+    "rank": 309
   },
   {
     "id": 590,
     "name": "Merck , Italy",
     "brandCount": 1,
-    "rank": 311
+    "rank": 310
   },
   {
     "id": 591,
     "name": "Merck KGaA, Germany",
     "brandCount": 1,
-    "rank": 312
+    "rank": 311
   },
   {
     "id": 592,
     "name": "Merck Serono S.A., Switzerland",
     "brandCount": 1,
-    "rank": 313
+    "rank": 312
   },
   {
     "id": 608,
     "name": "N. V. Organon, Netherlands",
     "brandCount": 1,
-    "rank": 314
+    "rank": 313
   },
   {
     "id": 804,
     "name": "Nicholas",
     "brandCount": 1,
-    "rank": 315
+    "rank": 314
   },
   {
     "id": 625,
     "name": "Novartis Pharma Ag. Germany",
     "brandCount": 1,
-    "rank": 316
+    "rank": 315
   },
   {
     "id": 627,
     "name": "Novartis Pharma GmbH, Germany",
     "brandCount": 1,
-    "rank": 317
+    "rank": 316
   },
   {
     "id": 628,
     "name": "Novartis Pharma SA, China",
     "brandCount": 1,
-    "rank": 318
+    "rank": 317
   },
   {
     "id": 629,
     "name": "Novartis Pharma SA, France",
     "brandCount": 1,
-    "rank": 319
+    "rank": 318
   },
   {
     "id": 634,
     "name": "Novartis Pharmaceuticals, UK",
     "brandCount": 1,
-    "rank": 320
+    "rank": 319
   },
   {
     "id": 644,
     "name": "Octapharma Pharmazeutika mbH,Germany",
     "brandCount": 1,
-    "rank": 321
+    "rank": 320
   },
   {
     "id": 646,
     "name": "Organon (Ireland) Ltd., Ireland",
     "brandCount": 1,
-    "rank": 322
+    "rank": 321
   },
   {
     "id": 650,
     "name": "Orion Corporation Finland",
     "brandCount": 1,
-    "rank": 323
+    "rank": 322
   },
   {
     "id": 663,
     "name": "Pfizer Italia Srl, Italy",
     "brandCount": 1,
-    "rank": 324
+    "rank": 323
   },
   {
     "id": 667,
     "name": "Pfizer PGM, France",
     "brandCount": 1,
-    "rank": 325
+    "rank": 324
   },
   {
     "id": 189,
     "name": "Pharmaco International Ltd.",
     "brandCount": 1,
-    "rank": 326
+    "rank": 325
   },
   {
     "id": 682,
     "name": "Plasmapharm Sera GmbH & Co.,Austria",
     "brandCount": 1,
-    "rank": 327
+    "rank": 326
   },
   {
     "id": 685,
     "name": "Procter & Gumble, Germany",
     "brandCount": 1,
-    "rank": 328
+    "rank": 327
   },
   {
     "id": 209,
     "name": "Rangs Medicine",
     "brandCount": 1,
-    "rank": 329
+    "rank": 328
   },
   {
     "id": 211,
     "name": "Rasa Pharmaceuticals Ltd.",
     "brandCount": 1,
-    "rank": 330
+    "rank": 329
   },
   {
     "id": 907,
     "name": "Real & Co",
     "brandCount": 1,
-    "rank": 331
+    "rank": 330
   },
   {
     "id": 909,
     "name": "River Pharma",
     "brandCount": 1,
-    "rank": 332
+    "rank": 331
   },
   {
     "id": 906,
     "name": "Royal Pharmaceutical Ltd.",
     "brandCount": 1,
-    "rank": 333
+    "rank": 332
   },
   {
     "id": 700,
     "name": "S. A. Alcon Couvreur N.V.,Belgium",
     "brandCount": 1,
-    "rank": 334
+    "rank": 333
   },
   {
     "id": 816,
     "name": "S.A. Alcon Couvreur.,N.V., Belgium",
     "brandCount": 1,
-    "rank": 335
+    "rank": 334
   },
   {
     "id": 706,
     "name": "S.C Sindan Pharma S.R.l,Romania",
     "brandCount": 1,
-    "rank": 336
+    "rank": 335
   },
   {
     "id": 712,
     "name": "Sandoz Private Ltd. India",
     "brandCount": 1,
-    "rank": 337
+    "rank": 336
   },
   {
     "id": 717,
     "name": "Sanofi Pasteur Lyon, France",
     "brandCount": 1,
-    "rank": 338
+    "rank": 337
   },
   {
     "id": 900,
     "name": "Sas Derma Corporation",
     "brandCount": 1,
-    "rank": 339
+    "rank": 338
   },
   {
     "id": 901,
     "name": "Save Trading International",
     "brandCount": 1,
-    "rank": 340
+    "rank": 339
   },
   {
     "id": 729,
     "name": "SBL Vaccin AB, Sweden",
     "brandCount": 1,
-    "rank": 341
+    "rank": 340
   },
   {
     "id": 730,
     "name": "Schering A.G, Germany",
     "brandCount": 1,
-    "rank": 342
+    "rank": 341
   },
   {
     "id": 733,
     "name": "ScheringOy,Pansiontie,47,20210Turku, Finland",
     "brandCount": 1,
-    "rank": 343
+    "rank": 342
   },
   {
     "id": 738,
     "name": "Serono Pharma Ltd., UK",
     "brandCount": 1,
-    "rank": 344
+    "rank": 343
   },
   {
     "id": 821,
     "name": "Shire Pharmaceuticals Ltd.",
     "brandCount": 1,
-    "rank": 345
+    "rank": 344
   },
   {
     "id": 752,
     "name": "Solvay Pharmaceuticals,Netherlands",
     "brandCount": 1,
-    "rank": 346
+    "rank": 345
   },
   {
     "id": 249,
     "name": "Square Cephalosporins Ltd.",
     "brandCount": 1,
-    "rank": 347
+    "rank": 346
   },
   {
     "id": 888,
     "name": "Square Toiletries Limited",
     "brandCount": 1,
-    "rank": 348
+    "rank": 347
   },
   {
     "id": 910,
     "name": "Total Herbal & Nutraceuticals",
     "brandCount": 1,
-    "rank": 349
+    "rank": 348
   },
   {
     "id": 803,
     "name": "UniDerma",
     "brandCount": 1,
-    "rank": 350
+    "rank": 349
   },
   {
     "id": 870,
     "name": "UniMed UniHealth Pharmaceuticals Ltd. (Mfg. by: Nuvista Pharma Ltd.)",
     "brandCount": 1,
-    "rank": 351
+    "rank": 350
   },
   {
     "id": 904,
     "name": "Universal Food Limited",
     "brandCount": 1,
-    "rank": 352
+    "rank": 351
   },
   {
     "id": 777,
     "name": "Vifor (International) Inc.,Switzerland",
     "brandCount": 1,
-    "rank": 353
+    "rank": 352
   },
   {
     "id": 876,
     "name": "Walmart pharma Ltd. (Mfg. by: Neoventis Pharmaceuticals Ltd.)",
     "brandCount": 1,
-    "rank": 354
+    "rank": 353
   },
   {
     "id": 781,
     "name": "Wyeth Pharma GmbH, Germany",
     "brandCount": 1,
+    "rank": 354
+  },
+  {
+    "id": 814,
+    "name": "Modi-mundipharma",
+    "brandCount": 0,
     "rank": 355
   },
   {

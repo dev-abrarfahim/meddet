@@ -79,13 +79,13 @@ const TOP_50_PATTERNS = [
   /osl\s*pharma|organic\s*health/i,
   /^biopharma/i,
   /pacific\s*pharma/i,
-  /mundipharma|mundi\s*pharma/i,
+  /mundipharma\s*\(bangladesh\)|mundipharma/i,
   /dbl\s*pharma/i,
   /jenphar/i,
   /pharmasia/i,
   /pharmacil/i,
   /orion\s*infusion/i,
-  /duphar/i,
+  /abbott|duphar|solvay/i,
   /jayson/i,
   /globe\s*pharma/i,
   /one\s*pharma/i,
@@ -100,10 +100,12 @@ function processRankedCompanies(rawCompanies: CompanyInfo[]): CompanyInfo[] {
   const used = new Set<number>();
 
   TOP_50_PATTERNS.forEach((pat, idx) => {
-    const match = rawCompanies.find(c => !used.has(c.id) && pat.test(c.name));
-    if (match) {
-      used.add(match.id);
-      ranked.push({ ...match, rank: idx + 1 });
+    const matches = rawCompanies.filter(c => !used.has(c.id) && pat.test(c.name));
+    matches.sort((a, b) => b.brandCount - a.brandCount);
+    const bestMatch = matches[0];
+    if (bestMatch) {
+      used.add(bestMatch.id);
+      ranked.push({ ...bestMatch, rank: idx + 1 });
     }
   });
 
