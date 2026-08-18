@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Moon, SlidersHorizontal } from 'lucide-react';
+import { Sun, Moon, SlidersHorizontal, Menu } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface HeaderProps {
@@ -14,29 +14,42 @@ export const Header: React.FC<HeaderProps> = ({
   isDarkMode,
   onToggleDarkMode,
   onOpenFilters,
+  onOpenSidebar,
   onGoHome
 }) => {
   return (
     <header className="sticky top-0 z-30 bg-[#095D7E] dark:bg-[#0B1927] border-b border-transparent dark:border-[#1E3A52] text-white shadow-md transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 h-12 sm:h-16 flex items-center justify-between gap-2 sm:gap-4">
         
-        {/* Logo & Brand */}
-        <a
-          href="/"
-          onClick={(e) => {
-            e.preventDefault();
-            onGoHome();
-          }}
-          id="brand-logo-btn"
-          aria-label="MedVhai - Home"
-          className="flex items-center text-left group focus:outline-none focus:ring-2 focus:ring-[#CCECEE] rounded-lg p-0.5"
-        >
-          <img
-            src="/logo.webp"
-            alt="MedVhai Logo"
-            className="h-8 sm:h-10 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform"
-          />
-        </a>
+        {/* Left Side: Burger Menu Button & Brand Logo */}
+        <div className="flex items-center gap-1.5 sm:gap-3">
+          <button
+            onClick={onOpenSidebar}
+            id="header-burger-menu-btn"
+            aria-label="Open Navigation Menu"
+            title="Open Menu"
+            className="p-1.5 sm:p-2 rounded-xl text-white/90 hover:text-white hover:bg-white/10 active:bg-white/20 transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#CCECEE]"
+          >
+            <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              onGoHome();
+            }}
+            id="brand-logo-btn"
+            aria-label="MedVhai - Home"
+            className="flex items-center text-left group focus:outline-none focus:ring-2 focus:ring-[#CCECEE] rounded-lg p-0.5"
+          >
+            <img
+              src="/logo.webp"
+              alt="MedVhai Logo"
+              className="h-7 sm:h-9 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform"
+            />
+          </a>
+        </div>
 
         {/* Right Navigation Actions */}
         <nav aria-label="Main Navigation" className="flex items-center gap-1.5 sm:gap-2">

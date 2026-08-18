@@ -17,6 +17,8 @@ import {
   ClinicalMonographAccordions,
   GenericBrandsExplorer,
   ApiDocsModal,
+  InfoModal,
+  type InfoModalType,
   FilterPanel,
   NotFoundPage
 } from './components';
@@ -382,6 +384,7 @@ export default function App() {
   const [isFiltersOpen, setIsFiltersOpen] = useState<boolean>(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const [isApiDocsOpen, setIsApiDocsOpen] = useState<boolean>(false);
+  const [activeInfoModal, setActiveInfoModal] = useState<InfoModalType>(null);
   const [activeSection, setActiveSection] = useState<string>('sec-overview');
 
   const mainInputRef = useRef<HTMLInputElement | null>(null);
@@ -903,11 +906,22 @@ export default function App() {
         lang={lang}
         onToggleLang={toggleLang}
         onSelectManufacturer={(compName) => handleGoToSearch(undefined, undefined, compName)}
+        onOpenAbout={() => setActiveInfoModal('about')}
+        onOpenPrivacy={() => setActiveInfoModal('privacy')}
+        onOpenTerms={() => setActiveInfoModal('terms')}
+        onOpenContact={() => setActiveInfoModal('contact')}
+        onOpenApiDocs={() => setIsApiDocsOpen(true)}
       />
 
       <ApiDocsModal
         isOpen={isApiDocsOpen}
         onClose={() => setIsApiDocsOpen(false)}
+      />
+
+      <InfoModal
+        type={activeInfoModal}
+        onClose={() => setActiveInfoModal(null)}
+        lang={lang}
       />
 
     </div>
