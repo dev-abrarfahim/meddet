@@ -962,7 +962,7 @@ export default function App() {
         )}
 
         {/* Global Footer (Rendered on ALL Pages) */}
-        <MedicalDisclaimer onOpenApiDocs={() => handleNavigatePage('/api-docs')} />
+        <MedicalDisclaimer onOpenApiDocs={() => handleNavigatePage('/api-docs')} onNavigate={handleNavigatePage} />
 
       </main>
 

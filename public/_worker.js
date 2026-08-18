@@ -149,6 +149,62 @@ async function loadDataMaps(origin, env) {
   };
 }
 
+function generateGlobalFooterHtml() {
+  return `
+    <footer style="margin-top: 32px; padding: 24px; background: #074760; color: #fff; border-radius: 16px; font-family: system-ui, -apple-system, sans-serif;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 20px;">
+        <div>
+          <h4 style="color: #E2FCD6; font-size: 13px; font-weight: 900; margin: 0 0 10px; text-transform: uppercase;">MedVhai Directory</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px; line-height: 1.8;">
+            <li><a href="/about" style="color: #CCECEE; text-decoration: none;">About MedVhai</a></li>
+            <li><a href="/companies" style="color: #CCECEE; text-decoration: none;">Top Pharma Companies</a></li>
+            <li><a href="/privacy-policy" style="color: #CCECEE; text-decoration: none;">Privacy Policy</a></li>
+            <li><a href="/terms" style="color: #CCECEE; text-decoration: none;">Terms & Conditions</a></li>
+            <li><a href="/contact" style="color: #CCECEE; text-decoration: none;">Contact Us</a></li>
+            <li><a href="/api-docs" style="color: #CCECEE; text-decoration: none;">Developer REST API</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: #E2FCD6; font-size: 13px; font-weight: 900; margin: 0 0 10px; text-transform: uppercase;">Popular Medicines</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px; line-height: 1.8;">
+            <li><a href="/medicine/napa-500mg-tablet-6n1u" style="color: #CCECEE; text-decoration: none;">Napa 500mg Tablet</a></li>
+            <li><a href="/medicine/maxpro-20mg-tablet-2mv2" style="color: #CCECEE; text-decoration: none;">Maxpro 20mg Tablet</a></li>
+            <li><a href="/medicine/sergel-20mg-capsule-mwkt" style="color: #CCECEE; text-decoration: none;">Sergel 20mg Capsule</a></li>
+            <li><a href="/medicine/monas-10mg-tablet-558t" style="color: #CCECEE; text-decoration: none;">Monas 10mg Tablet</a></li>
+            <li><a href="/medicine/alatrol-10mg-tablet-1r5a" style="color: #CCECEE; text-decoration: none;">Alatrol 10mg Tablet</a></li>
+            <li><a href="/medicine/fexo-120mg-tablet-pjxb" style="color: #CCECEE; text-decoration: none;">Fexo 120mg Tablet</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: #E2FCD6; font-size: 13px; font-weight: 900; margin: 0 0 10px; text-transform: uppercase;">Top Generics</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px; line-height: 1.8;">
+            <li><a href="/generic/paracetamol-3aut" style="color: #CCECEE; text-decoration: none;">Paracetamol</a></li>
+            <li><a href="/generic/esomeprazole-magnesium-trihydrate-1v5w" style="color: #CCECEE; text-decoration: none;">Esomeprazole</a></li>
+            <li><a href="/generic/omeprazole-36u7" style="color: #CCECEE; text-decoration: none;">Omeprazole</a></li>
+            <li><a href="/generic/montelukast-2z0l" style="color: #CCECEE; text-decoration: none;">Montelukast</a></li>
+            <li><a href="/generic/cefixime-0xfx" style="color: #CCECEE; text-decoration: none;">Cefixime</a></li>
+            <li><a href="/generic/azithromycin-0fse" style="color: #CCECEE; text-decoration: none;">Azithromycin</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color: #E2FCD6; font-size: 13px; font-weight: 900; margin: 0 0 10px; text-transform: uppercase;">Top Manufacturers</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px; line-height: 1.8;">
+            <li><a href="/company/square-pharmaceuticals-plc" style="color: #CCECEE; text-decoration: none;">Square Pharmaceuticals</a></li>
+            <li><a href="/company/incepta-pharmaceuticals-ltd" style="color: #CCECEE; text-decoration: none;">Incepta Pharmaceuticals</a></li>
+            <li><a href="/company/beximco-pharmaceuticals-ltd" style="color: #CCECEE; text-decoration: none;">Beximco Pharmaceuticals</a></li>
+            <li><a href="/company/healthcare-pharmaceuticals-ltd" style="color: #CCECEE; text-decoration: none;">Healthcare Pharmaceuticals</a></li>
+            <li><a href="/company/renata-plc" style="color: #CCECEE; text-decoration: none;">Renata PLC</a></li>
+            <li><a href="/company/eskayef-pharmaceuticals-ltd" style="color: #CCECEE; text-decoration: none;">Eskayef Pharmaceuticals</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="padding-top: 14px; font-size: 11px; color: #CCECEE; opacity: 0.85; text-align: center;">
+        © 2026 MedVhai™ Healthcare Index • Clinical Reference Database
+      </div>
+    </footer>
+  `;
+}
+
 function generate404Html(resourceType, identifier) {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -526,26 +582,39 @@ export default {
         }
       };
 
+      const genericPath = getGenericCanonicalPath({ id: med.genericId, name: genericName });
+      const companyPath = getCompanyCanonicalPath(company);
+      const dosagePath = getDosageFormCanonicalPath(form);
+
       const preRenderedHtml = `
-        <div class="mv-skel" style="padding: 20px; max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;">
+        <div class="mv-skel" style="padding: 20px; max-width: 960px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;">
+          <!-- Breadcrumb Navigation -->
+          <nav aria-label="Breadcrumb" style="font-size: 12px; margin-bottom: 16px; color: #526E7E;">
+            <a href="/" style="color: #14967F; text-decoration: none; font-weight: bold;">Home</a> › 
+            <a href="${dosagePath}" style="color: #14967F; text-decoration: none; font-weight: bold;">${form}</a> › 
+            <a href="${genericPath}" style="color: #14967F; text-decoration: none; font-weight: bold;">${genericName}</a> › 
+            <span style="color: #095D7E; font-weight: 800;">${brandName} ${strength}</span>
+          </nav>
+
           <header style="border-bottom: 1px solid #CCECEE; padding-bottom: 16px; margin-bottom: 20px;">
-            <a href="/" style="color: #14967F; text-decoration: none; font-size: 14px; font-weight: bold;">← Back to MedVhai Clinical Index</a>
-            <h1 style="font-size: 28px; color: #095D7E; margin: 12px 0 6px;">${brandName} <span style="font-size: 18px; color: #14967F; font-family: monospace;">${strength} ${form}</span></h1>
-            <p style="font-size: 16px; color: #074760; margin: 0; font-weight: bold;">Generic: ${genericName}${genericBn}</p>
-            <p style="font-size: 14px; color: #666; margin: 4px 0 0;">Manufactured by: <strong>${company}</strong></p>
+            <h1 style="font-size: 28px; color: #095D7E; margin: 0 0 6px;">${brandName} <span style="font-size: 18px; color: #14967F; font-family: monospace;">${strength} ${form}</span></h1>
+            <p style="font-size: 16px; color: #074760; margin: 0; font-weight: bold;">Generic: <a href="${genericPath}" style="color: #14967F; text-decoration: underline;">${genericName}${genericBn}</a></p>
+            <p style="font-size: 14px; color: #666; margin: 4px 0 0;">Manufactured by: <a href="${companyPath}" style="color: #095D7E; font-weight: bold; text-decoration: underline;">${company}</a></p>
           </header>
           
           <section style="background: #fff; border: 1px solid #CCECEE; border-radius: 12px; padding: 16px; margin-bottom: 20px;">
-            <h2 style="font-size: 18px; color: #095D7E; margin-top: 0;">Pricing & Pack Details</h2>
+            <h2 style="font-size: 18px; color: #095D7E; margin-top: 0;">Pricing & Presentation</h2>
             <p style="font-size: 20px; font-weight: bold; color: #14967F; margin: 0;">MRP Unit Price: ${priceFormatted} BDT</p>
-            <p style="font-size: 13px; color: #777; margin: 4px 0 0;">Available Pack Size: ${med.packSize || 'Standard Presentation'}</p>
+            <p style="font-size: 13px; color: #777; margin: 4px 0 0;">Available Pack Presentation: ${med.packSize || 'Standard Pack'}</p>
           </section>
 
-          <section style="background: #fff; border: 1px solid #CCECEE; border-radius: 12px; padding: 16px;">
-            <h2 style="font-size: 18px; color: #095D7E; margin-top: 0;">Clinical Monograph & Alternatives</h2>
+          <section style="background: #fff; border: 1px solid #CCECEE; border-radius: 12px; padding: 16px; margin-bottom: 20px;">
+            <h2 style="font-size: 18px; color: #095D7E; margin-top: 0;">Clinical Monograph & Alternative Brands</h2>
             <p style="font-size: 14px; color: #444; line-height: 1.6;">${description}</p>
-            <p><a href="${getGenericCanonicalPath({ id: med.genericId, name: genericName })}" style="color: #14967F; font-weight: bold;">Explore all alternative brands for ${genericName} →</a></p>
+            <p style="margin-top: 12px;"><a href="${genericPath}" style="color: #14967F; font-weight: bold; font-size: 14px;">Explore all available alternative brands for ${genericName} →</a></p>
           </section>
+
+          ${generateGlobalFooterHtml()}
         </div>
       `;
 
@@ -668,16 +737,23 @@ export default {
       };
 
       const preRenderedHtml = `
-        <div class="mv-skel" style="padding: 20px; max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;">
+        <div class="mv-skel" style="padding: 20px; max-width: 960px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;">
+          <nav aria-label="Breadcrumb" style="font-size: 12px; margin-bottom: 16px; color: #526E7E;">
+            <a href="/" style="color: #14967F; text-decoration: none; font-weight: bold;">Home</a> › 
+            <a href="/companies" style="color: #14967F; text-decoration: none; font-weight: bold;">Companies</a> › 
+            <span style="color: #095D7E; font-weight: 800;">${genName}</span>
+          </nav>
+
           <header style="border-bottom: 1px solid #CCECEE; padding-bottom: 16px; margin-bottom: 20px;">
-            <a href="/" style="color: #14967F; text-decoration: none; font-size: 14px; font-weight: bold;">← Back to MedVhai Clinical Index</a>
-            <h1 style="font-size: 28px; color: #095D7E; margin: 12px 0 6px;">${genName} <span style="font-size: 18px; color: #666;">${genBn}</span></h1>
-            <p style="font-size: 14px; color: #074760; margin: 0; font-weight: bold;">Clinical Monograph & Brand Directory</p>
+            <h1 style="font-size: 28px; color: #095D7E; margin: 0 0 6px;">${genName} <span style="font-size: 18px; color: #666;">${genBn}</span></h1>
+            <p style="font-size: 14px; color: #074760; margin: 0; font-weight: bold;">Clinical Monograph & Generic Brand Directory</p>
           </header>
           <section style="background: #fff; border: 1px solid #CCECEE; border-radius: 12px; padding: 16px;">
             <h2 style="font-size: 18px; color: #095D7E; margin-top: 0;">About ${genName}</h2>
             <p style="font-size: 14px; color: #444; line-height: 1.6;">${description}</p>
           </section>
+
+          ${generateGlobalFooterHtml()}
         </div>
       `;
 
