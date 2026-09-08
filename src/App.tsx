@@ -27,7 +27,7 @@ import {
 } from './components';
 
 import { Medicine, FilterOptions, LanguageMode } from './types';
-import { searchMedicines, getMedicineById, getGenericById, subscribeDatabase, isDatabaseReady } from './data/dbEngine';
+import { searchMedicines, getMedicineById, getGenericById, getAllCompanies, subscribeDatabase, isDatabaseReady } from './data/dbEngine';
 import {
   slugify,
   getMedicineCanonicalPath,
@@ -258,20 +258,47 @@ export default function App() {
         const formSlug = pathname.replace(/^\/dosage-form\//, '').replace(/\/$/, '');
         setSelectedMedicine(null);
         setExplorerGenericId(null);
+        setExplorerForm(undefined);
+        setExplorerStrength(undefined);
+        setActiveStandalonePage(null);
         setIs404(false);
         setActiveTab('search');
-        setFilters((prev) => ({ ...prev, dosageForm: formSlug }));
+        setSelectedLetter('All');
+        setSearchQuery('');
+        setFilters({
+          category: 'All',
+          dosageForm: formSlug,
+          manufacturer: 'All',
+          maxPrice: 0,
+          sortBy: 'relevance'
+        });
         return;
       }
 
       // 4. Path-based routing: /company/:company (e.g., /company/square-pharmaceuticals-plc)
       if (pathname.startsWith('/company/')) {
         const compSlug = pathname.replace(/^\/company\//, '').replace(/\/$/, '');
+        const allComps = getAllCompanies();
+        const matchedComp = allComps.find(c => {
+          const cSlug = c.name.toLowerCase().replace(/[^\p{L}\p{N}\s-]+/gu, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+          return cSlug === compSlug;
+        });
         setSelectedMedicine(null);
         setExplorerGenericId(null);
+        setExplorerForm(undefined);
+        setExplorerStrength(undefined);
+        setActiveStandalonePage(null);
         setIs404(false);
         setActiveTab('search');
-        setFilters((prev) => ({ ...prev, manufacturer: compSlug }));
+        setSelectedLetter('All');
+        setSearchQuery('');
+        setFilters({
+          category: 'All',
+          dosageForm: 'All',
+          manufacturer: matchedComp ? matchedComp.name : compSlug,
+          maxPrice: 0,
+          sortBy: 'relevance'
+        });
         return;
       }
 
@@ -328,7 +355,20 @@ export default function App() {
       // 6. Default Root Homepage
       setSelectedMedicine(null);
       setExplorerGenericId(null);
+      setExplorerForm(undefined);
+      setExplorerStrength(undefined);
+      setActiveStandalonePage(null);
       setActiveTab('home');
+      setSearchQuery('');
+      setSelectedLetter('All');
+      setCurrentPage(1);
+      setFilters({
+        category: 'All',
+        dosageForm: 'All',
+        manufacturer: 'All',
+        maxPrice: 0,
+        sortBy: 'relevance'
+      });
     } catch {}
   };
 
@@ -340,7 +380,8 @@ export default function App() {
 
   // Synchronize Search & Filter state to browser URL (Debounced replaceState)
   useEffect(() => {
-    if (!dbReady || selectedMedicine || explorerGenericId || is404 || activeStandalonePage) return;
+    // CRITICAL: ONLY run when actively in search mode. NEVER run on home, medicine, generic, or standalone pages!
+    if (!dbReady || selectedMedicine || explorerGenericId || is404 || activeStandalonePage || activeTab !== 'search') return;
     const pathname = window.location.pathname.replace(/\/$/, '');
     if (
       pathname.startsWith('/medicine/') ||
@@ -355,6 +396,25 @@ export default function App() {
 
     const timer = setTimeout(() => {
       try {
+        // 1. If filtering by ONLY a single company (no query, no letter, no other filters) -> Maintain clean /company/:slug
+        if (filters.manufacturer !== 'All' && filters.dosageForm === 'All' && filters.category === 'All' && !searchQuery.trim() && selectedLetter === 'All' && filters.maxPrice === 0) {
+          const compPath = getCompanyCanonicalPath(filters.manufacturer);
+          if (window.location.pathname !== compPath || window.location.search !== '') {
+            window.history.replaceState(null, '', compPath);
+          }
+          return;
+        }
+
+        // 2. If filtering by ONLY a single dosage form (no query, no letter, no other filters) -> Maintain clean /dosage-form/:slug
+        if (filters.dosageForm !== 'All' && filters.manufacturer === 'All' && filters.category === 'All' && !searchQuery.trim() && selectedLetter === 'All' && filters.maxPrice === 0) {
+          const formPath = getDosageFormCanonicalPath(filters.dosageForm);
+          if (window.location.pathname !== formPath || window.location.search !== '') {
+            window.history.replaceState(null, '', formPath);
+          }
+          return;
+        }
+
+        // 3. General search queries or multi-filter combinations -> Use clean canonical URL with query string
         const url = new URL(window.location.href);
         const params: Record<string, string | null> = {
           q: searchQuery.trim() ? searchQuery.trim() : null,
@@ -372,9 +432,7 @@ export default function App() {
           }
         });
 
-        if (!pathname.startsWith('/dosage-form/') && !pathname.startsWith('/company/')) {
-          url.pathname = '/';
-        }
+        url.pathname = '/';
 
         const newUrl = url.pathname + (url.searchParams.toString() ? `?${url.searchParams.toString()}` : '');
         if (window.location.pathname + window.location.search !== newUrl) {
@@ -577,7 +635,19 @@ export default function App() {
     setActiveStandalonePage(null);
     setSelectedMedicine(null);
     setExplorerGenericId(null);
+    setExplorerForm(undefined);
+    setExplorerStrength(undefined);
     setActiveTab('home');
+    setSearchQuery('');
+    setSelectedLetter('All');
+    setCurrentPage(1);
+    setFilters({
+      category: 'All',
+      dosageForm: 'All',
+      manufacturer: 'All',
+      maxPrice: 0,
+      sortBy: 'relevance'
+    });
     syncNavigationUrl('/');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

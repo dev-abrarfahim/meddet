@@ -339,7 +339,14 @@ export function searchMedicines(
 
   // D. Manufacturer / Company Filter
   if (filters.manufacturer && filters.manufacturer !== 'All') {
-    results = results.filter((b) => b.company.toLowerCase() === filters.manufacturer!.toLowerCase());
+    const mfrTarget = filters.manufacturer.toLowerCase().trim();
+    const mfrSlug = mfrTarget.replace(/[^\p{L}\p{N}\s-]+/gu, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+    results = results.filter((b) => {
+      const compLower = b.company.toLowerCase();
+      if (compLower === mfrTarget) return true;
+      const bSlug = compLower.replace(/[^\p{L}\p{N}\s-]+/gu, '').replace(/\s+/g, '-').replace(/-+/g, '-');
+      return bSlug === mfrSlug;
+    });
   }
 
   // E. Dosage Form Filter
