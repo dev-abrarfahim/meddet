@@ -1,5 +1,5 @@
 /**
- * MedVhai Enterprise Cloudflare Edge Worker (_worker.js)
+ * MEDDET Enterprise Cloudflare Edge Worker (_worker.js)
  * 
  * Provides:
  * 1. Ultra-fast O(1) Chunked Edge SSR (< 5ms response, < 2MB memory footprint, Zero OOM)
@@ -165,7 +165,7 @@ function generate404Html(resourceType, identifier) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 — ${resourceType} Not Found | MedVhai™ Clinical Drug Index</title>
+  <title>404 — ${resourceType} Not Found | MEDDET™ Clinical Drug Index</title>
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <style>
@@ -250,7 +250,7 @@ function generate404Html(resourceType, identifier) {
       <a href="/medicine/ace-500mg-tablet-rz9o" class="chip">Ace 500mg</a>
       <a href="/medicine/monas-10-10mg-tablet-wjyr" class="chip">Monas 10mg</a>
     </div>
-    <a href="/" class="home-btn">← Return to MedVhai Index</a>
+    <a href="/" class="home-btn">← Return to MEDDET Index</a>
   </div>
 </body>
 </html>`;
@@ -368,9 +368,9 @@ export default {
       const genericBn = med.genericNameBn ? ` (${med.genericNameBn})` : '';
       const priceFormatted = med.mrp > 0 ? `৳${med.mrp.toFixed(2)}` : 'MRP N/A';
 
-      const title = `${brandName} ${strength} ${form} — Uses, Price, Dosage & Alternatives | MedVhai`.replace(/\s+/g, ' ');
-      const description = `Learn about ${brandName} ${strength} ${form} manufactured by ${company}. Generic: ${genericName}${genericBn}. MRP Price: ${priceFormatted} BDT. View dosage, clinical indications, side effects, precautions & lower-cost alternative brands on MedVhai.`.replace(/\s+/g, ' ');
-      const keywords = `${brandName}, ${genericName}, ${company}, ${brandName} price in BD, ${brandName} dosage, ${brandName} uses, ${form}, medicine BD, MedVhai`;
+      const title = `${brandName} ${strength} ${form} — Uses, Price, Dosage & Alternatives | MEDDET`.replace(/\s+/g, ' ');
+      const description = `Learn about ${brandName} ${strength} ${form} manufactured by ${company}. Generic: ${genericName}${genericBn}. MRP Price: ${priceFormatted} BDT. View dosage, clinical indications, side effects, precautions & lower-cost alternative brands on MEDDET.`.replace(/\s+/g, ' ');
+      const keywords = `${brandName}, ${genericName}, ${company}, ${brandName} price in BD, ${brandName} dosage, ${brandName} uses, ${form}, medicine BD, MEDDET`;
       const imageUrl = `${origin}/icons/${slugify(form)}.png`;
       const logoUrl = `${origin}/logo.png`;
 
@@ -382,7 +382,7 @@ export default {
         'image': [imageUrl, logoUrl],
         'description': description,
         'url': canonicalUrl,
-        'sku': `MEDVHAI-${med.id}`,
+        'sku': `MEDDET-${med.id}`,
         'mpn': `MED-${med.id}`,
         'brand': { '@type': 'Brand', 'name': company },
         'dosageForm': form,
@@ -397,7 +397,7 @@ export default {
           'priceValidUntil': '2027-12-31',
           'itemCondition': 'https://schema.org/NewCondition',
           'availability': 'https://schema.org/InStock',
-          'seller': { '@type': 'Organization', 'name': 'MedVhai' }
+          'seller': { '@type': 'Organization', 'name': 'MEDDET' }
         }
       };
 
@@ -430,7 +430,7 @@ export default {
 
           <footer style="background: #EAF4F9; border-radius: 12px; padding: 14px; font-size: 12px; color: #526E7E; line-height: 1.5;">
             <p style="margin: 0 0 4px;"><strong>Regulatory & Clinical Attribution (E-E-A-T):</strong> Clinical data referenced in alignment with the Directorate General of Drug Administration (DGDA), Bangladesh and Bangladesh National Formulary (BDNF).</p>
-            <p style="margin: 0;"><strong>Medical Disclaimer:</strong> MedVhai is an educational clinical index. Always consult a registered physician before taking or altering any medicine therapy.</p>
+            <p style="margin: 0;"><strong>Medical Disclaimer:</strong> MEDDET is an educational clinical index. Always consult a registered physician before taking or altering any medicine therapy.</p>
           </footer>
         </div>
       `;
@@ -497,9 +497,9 @@ export default {
 
       const genName = gen.name;
       const genBn = gen.nameBn ? ` (${gen.nameBn})` : '';
-      const title = `${genName} Brands in Bangladesh — Price List, Dosage & Monograph | MedVhai`;
+      const title = `${genName} Brands in Bangladesh — Price List, Dosage & Monograph | MEDDET`;
       const description = `Complete clinical monograph for ${genName}${genBn} in Bangladesh. Compare brand medicines, BDT prices, indications, contraindications, dosage, and side effects.`;
-      const keywords = `${genName}, ${genName} brands BD, ${genName} price, ${genName} side effects, ${genName} dosage, MedVhai`;
+      const keywords = `${genName}, ${genName} brands BD, ${genName} price, ${genName} side effects, ${genName} dosage, MEDDET`;
 
       const jsonLd = {
         '@context': 'https://schema.org',
@@ -512,7 +512,7 @@ export default {
       const preRenderedHtml = `
         <div class="mv-skel" style="padding: 24px 16px; max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;">
           <header style="border-bottom: 2px solid #CCECEE; padding-bottom: 16px; margin-bottom: 20px;">
-            <a href="/" style="color: #14967F; text-decoration: none; font-size: 13px; font-weight: bold;">← Back to MedVhai Index</a>
+            <a href="/" style="color: #14967F; text-decoration: none; font-size: 13px; font-weight: bold;">← Back to MEDDET Index</a>
             <h1 style="font-size: 30px; color: #095D7E; margin: 12px 0 6px; font-weight: 900;">${genName} <span style="font-size: 18px; color: #526E7E; font-weight: 600;">${genBn}</span></h1>
             <p style="font-size: 14px; color: #074760; margin: 0; font-weight: bold;">Clinical Monograph & Available Brand Presentations</p>
           </header>
@@ -561,8 +561,8 @@ export default {
       const rawEntity = pathname.replace(/^\/(company|dosage-form)\//, '').replace(/-/g, ' ');
       const entityFormatted = rawEntity.charAt(0).toUpperCase() + rawEntity.slice(1);
       const title = isCompany
-        ? `${entityFormatted} Medicine List, Prices & Formulations | MedVhai`
-        : `${entityFormatted} Medicines in Bangladesh — Price & Brand Index | MedVhai`;
+        ? `${entityFormatted} Medicine List, Prices & Formulations | MEDDET`
+        : `${entityFormatted} Medicines in Bangladesh — Price & Brand Index | MEDDET`;
 
       const transformed = new HTMLRewriter()
         .on('title', { element(el) { el.setInnerContent(title); } })
@@ -583,27 +583,27 @@ export default {
     // 6. Dedicated Standalone Content Pages: /about, /privacy-policy, /terms, /contact, /companies, /api-docs
     const staticPagesMeta = {
       '/about': {
-        title: 'About MedVhai™ — Clinical Drug Index & Medicine Guide BD',
-        description: 'Learn about MedVhai, Bangladesh’s verified clinical medicine index, BDT pharmaceutical price comparator, and bilingual drug monographs.'
+        title: 'About MEDDET™ — Clinical Drug Index & Medicine Guide BD',
+        description: 'Learn about MEDDET, Bangladesh’s verified clinical medicine index, BDT pharmaceutical price comparator, and bilingual drug monographs.'
       },
       '/privacy-policy': {
-        title: 'Privacy Policy — MedVhai™ Clinical Healthcare Index',
-        description: 'Our commitment to zero medical health data tracking, client-side local storage protection, and patient confidentiality on MedVhai.'
+        title: 'Privacy Policy — MEDDET™ Clinical Healthcare Index',
+        description: 'Our commitment to zero medical health data tracking, client-side local storage protection, and patient confidentiality on MEDDET.'
       },
       '/terms': {
-        title: 'Terms & Conditions & Medical Disclaimer | MedVhai™',
-        description: 'Educational clinical reference guidelines, medical disclaimer, and prescribing practitioner terms for MedVhai.'
+        title: 'Terms & Conditions & Medical Disclaimer | MEDDET™',
+        description: 'Educational clinical reference guidelines, medical disclaimer, and prescribing practitioner terms for MEDDET.'
       },
       '/contact': {
-        title: 'Contact Us — Support & Medicine Corrections | MedVhai™',
-        description: 'Get in touch with the MedVhai clinical indexing team for medicine price corrections, new presentations, and developer queries.'
+        title: 'Contact Us — Support & Medicine Corrections | MEDDET™',
+        description: 'Get in touch with the MEDDET clinical indexing team for medicine price corrections, new presentations, and developer queries.'
       },
       '/companies': {
-        title: 'Pharmaceutical Companies in Bangladesh (723 Manufacturers) | MedVhai',
+        title: 'Pharmaceutical Companies in Bangladesh (723 Manufacturers) | MEDDET',
         description: 'Complete directory of all 723 licensed pharmaceutical companies in Bangladesh. Browse brand medicine portfolios, dosages, and prices.'
       },
       '/api-docs': {
-        title: 'Developer REST API Documentation & Live Studio | MedVhai™',
+        title: 'Developer REST API Documentation & Live Studio | MEDDET™',
         description: 'Free open REST API endpoints for searching 30,500+ medicines, generics, active ingredients, and BDT MRP prices.'
       }
     };

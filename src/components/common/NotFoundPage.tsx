@@ -181,7 +181,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
             className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#095D7E] hover:bg-[#074760] text-white font-black text-sm transition-all shadow-md cursor-pointer group"
           >
             <Home className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
-            <span>{lang === 'en' ? 'Return to MedVhai Homepage' : 'হোমপেজে ফিরে যান'}</span>
+            <span>{lang === 'en' ? 'Return to MEDDET Homepage' : 'হোমপেজে ফিরে যান'}</span>
           </a>
         </div>
 

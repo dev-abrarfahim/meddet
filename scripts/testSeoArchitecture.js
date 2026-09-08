@@ -1,5 +1,5 @@
 /**
- * MedVhai Enterprise Technical SEO & Regression Test Suite
+ * MEDDET Enterprise Technical SEO & Regression Test Suite
  * Validates Canonicalization, Edge SSR logic, Slug Safety, 301 Migration, Sitemaps,
  * and Cross-Medicine Query Conflict Elimination
  */

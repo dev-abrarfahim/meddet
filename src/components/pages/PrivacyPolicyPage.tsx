@@ -25,7 +25,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ lang }) =>
           <p className="text-sm sm:text-base text-[#CCECEE] leading-relaxed font-medium">
             {lang === 'en'
               ? 'Our commitment to transparency, zero personal health data collection, and user confidentiality.'
-              : 'MedVhai-এ ব্যবহারকারীর তথ্যের গোপনীয়তা ও সুরক্ষা সংক্রান্ত নীতিমালা।'}
+              : 'MEDDET-এ ব্যবহারকারীর তথ্যের গোপনীয়তা ও সুরক্ষা সংক্রান্ত নীতিমালা।'}
           </p>
         </div>
       </div>
@@ -45,8 +45,8 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ lang }) =>
           </div>
           <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed pl-13">
             {lang === 'en'
-              ? 'MedVhai operates strictly as an open clinical reference guide. We do not require registration, login, email verification, or phone number submission to access our database. We do NOT store, sell, or monitor personal prescriptions, medical history, or individual drug searches.'
-              : 'MedVhai একটি উন্মুক্ত ক্লিনিক্যাল রেফারেন্স গাইড। এই ওয়েবসাইট ব্যবহারের জন্য কোনো অ্যাকাউন্ট খোলা বা ব্যক্তিগত তথ্য প্রদানের প্রয়োজন নেই। আমরা ব্যবহারকারীর প্রেসক্রিপশন বা ব্যক্তিগত কোনো তথ্য সংরক্ষণ বা বিক্রি করি না।'}
+              ? 'MEDDET operates strictly as an open clinical reference guide. We do not require registration, login, email verification, or phone number submission to access our database. We do NOT store, sell, or monitor personal prescriptions, medical history, or individual drug searches.'
+              : 'MEDDET একটি উন্মুক্ত ক্লিনিক্যাল রেফারেন্স গাইড। এই ওয়েবসাইট ব্যবহারের জন্য কোনো অ্যাকাউন্ট খোলা বা ব্যক্তিগত তথ্য প্রদানের প্রয়োজন নেই। আমরা ব্যবহারকারীর প্রেসক্রিপশন বা ব্যক্তিগত কোনো তথ্য সংরক্ষণ বা বিক্রি করি না।'}
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ lang }) =>
 
         {/* Last Updated Note */}
         <div className="border-t border-slate-200 dark:border-slate-800 pt-6 text-xs text-slate-400 dark:text-slate-500 font-bold">
-          {lang === 'en' ? 'Last Updated: August 2026 • MedVhai Privacy Governance' : 'সর্বশেষ আপডেট: আগস্ট ২০২৬ • MedVhai প্রাইভেসি নীতিমালা'}
+          {lang === 'en' ? 'Last Updated: August 2026 • MEDDET Privacy Governance' : 'সর্বশেষ আপডেট: আগস্ট ২০২৬ • MEDDET প্রাইভেসি নীতিমালা'}
         </div>
 
       </div>

@@ -40,12 +40,12 @@ export const Header: React.FC<HeaderProps> = ({
               onGoHome();
             }}
             id="brand-logo-btn"
-            aria-label="MedVhai - Home"
+            aria-label="MEDDET - Home"
             className="flex items-center text-left group focus:outline-none focus:ring-2 focus:ring-[#CCECEE] rounded-lg p-0.5"
           >
             <img
               src="/logo.webp"
-              alt="MedVhai Logo"
+              alt="MEDDET Logo"
               className="h-7 sm:h-9 w-auto object-contain shrink-0 group-hover:scale-105 transition-transform"
             />
           </a>

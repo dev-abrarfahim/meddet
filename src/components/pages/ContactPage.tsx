@@ -32,7 +32,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
           </div>
 
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
-            {lang === 'en' ? 'Contact MedVhai™' : 'আমাদের সাথে যোগাযোগ করুন'}
+            {lang === 'en' ? 'Contact MEDDET™' : 'আমাদের সাথে যোগাযোগ করুন'}
           </h1>
 
           <p className="text-sm sm:text-base text-[#CCECEE] leading-relaxed font-medium">
@@ -48,7 +48,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
         {/* Left: Contact Channels */}
         <div className="md:col-span-1 space-y-4">
           <a
-            href="mailto:support@medvhai.com"
+            href="mailto:support@meddet.com"
             className="p-5 rounded-3xl bg-white dark:bg-[#152232] border border-[#CCECEE] dark:border-[#243B53] shadow-xs flex items-center gap-4 hover:border-[#14967F] transition-all group block cursor-pointer"
           >
             <div className="w-12 h-12 rounded-2xl bg-[#14967F] text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -59,13 +59,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
                 {lang === 'en' ? 'General & Support Email' : 'সাপোর্ট ইমেইল'}
               </div>
               <div className="text-sm font-black text-[#095D7E] dark:text-[#2DD4BF] truncate">
-                support@medvhai.com
+                support@meddet.com
               </div>
             </div>
           </a>
 
           <a
-            href="mailto:api@medvhai.com"
+            href="mailto:api@meddet.com"
             className="p-5 rounded-3xl bg-white dark:bg-[#152232] border border-[#CCECEE] dark:border-[#243B53] shadow-xs flex items-center gap-4 hover:border-[#14967F] transition-all group block cursor-pointer"
           >
             <div className="w-12 h-12 rounded-2xl bg-[#095D7E] text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -76,7 +76,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
                 {lang === 'en' ? 'Developer API Department' : 'ডেভেলপার এপিআই বিভাগ'}
               </div>
               <div className="text-sm font-black text-[#095D7E] dark:text-[#2DD4BF] truncate">
-                api@medvhai.com
+                api@meddet.com
               </div>
             </div>
           </a>

@@ -24,8 +24,8 @@ export const TermsPage: React.FC<TermsPageProps> = ({ lang }) => {
 
           <p className="text-sm sm:text-base text-[#CCECEE] leading-relaxed font-medium">
             {lang === 'en'
-              ? 'Please review the guidelines, educational purpose limitations, and medical reference disclaimer governing MedVhai.'
-              : 'MedVhai প্ল্যাটফর্ম ব্যবহারের নিয়মাবলী ও জরুরি মেডিকেল ডিসক্লেইমার।'}
+              ? 'Please review the guidelines, educational purpose limitations, and medical reference disclaimer governing MEDDET.'
+              : 'MEDDET প্ল্যাটফর্ম ব্যবহারের নিয়মাবলী ও জরুরি মেডিকেল ডিসক্লেইমার।'}
           </p>
         </div>
       </div>
@@ -39,8 +39,8 @@ export const TermsPage: React.FC<TermsPageProps> = ({ lang }) => {
 
         <p className="text-sm text-rose-900/90 dark:text-rose-200/90 leading-relaxed font-medium">
           {lang === 'en'
-            ? 'MedVhai is an independent clinical reference and pharmaceutical educational tool. The content published on this website (including dosage guidelines, drug indications, pharmacology monographs, and pricing comparisons) is provided strictly for educational and informational purposes. It DOES NOT constitute formal medical advice, clinical diagnosis, or treatment recommendations.'
-            : 'MedVhai শুধুমাত্র একটি শিক্ষামূলক ও তথ্যভিত্তিক ক্লিনিক্যাল রেফারেন্স গাইড। এখানে প্রকাশিত কোনো তথ্য চিকিৎসকের প্রেসক্রিপশন বা চিকিৎসার বিকল্প নয়। যেকোনো ওষুধ সেবন, বন্ধ বা পরিবর্তন করার পূর্বে অবশ্যই রেজিস্টার্ড চিকিৎসকের পরামর্শ নিন।'}
+            ? 'MEDDET is an independent clinical reference and pharmaceutical educational tool. The content published on this website (including dosage guidelines, drug indications, pharmacology monographs, and pricing comparisons) is provided strictly for educational and informational purposes. It DOES NOT constitute formal medical advice, clinical diagnosis, or treatment recommendations.'
+            : 'MEDDET শুধুমাত্র একটি শিক্ষামূলক ও তথ্যভিত্তিক ক্লিনিক্যাল রেফারেন্স গাইড। এখানে প্রকাশিত কোনো তথ্য চিকিৎসকের প্রেসক্রিপশন বা চিকিৎসার বিকল্প নয়। যেকোনো ওষুধ সেবন, বন্ধ বা পরিবর্তন করার পূর্বে অবশ্যই রেজিস্টার্ড চিকিৎসকের পরামর্শ নিন।'}
         </p>
 
         <p className="text-xs text-rose-800/80 dark:text-rose-300/80 font-bold">
@@ -60,7 +60,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ lang }) => {
           </h2>
           <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
             {lang === 'en'
-              ? 'While MedVhai continuously indexes and cross-references Maximum Retail Prices (MRP) from verified pharmaceutical releases across Bangladesh, pharmaceutical manufacturers periodically revise packaging presentations, bottle volumes, and commercial unit rates. MedVhai makes no warranties regarding real-time retail price parity at specific local pharmacies.'
+              ? 'While MEDDET continuously indexes and cross-references Maximum Retail Prices (MRP) from verified pharmaceutical releases across Bangladesh, pharmaceutical manufacturers periodically revise packaging presentations, bottle volumes, and commercial unit rates. MEDDET makes no warranties regarding real-time retail price parity at specific local pharmacies.'
               : 'আমরা নিয়মিতভাবে ওষুধের সর্বোচ্চ খুচরা মূল্য (MRP) আপডেট করি। তবে প্রস্তুতকারক কোম্পানিভেদে বা সময়ের সাথে সাথে ওষুধের দাম পরিবর্তিত হতে পারে। নির্দিষ্ট ফার্মেসিতে ক্রয়ের পূর্বে খুচরা মূল্য যাচাই করে নেওয়ার অনুরোধ করা হচ্ছে।'}
           </p>
         </div>
@@ -84,7 +84,7 @@ export const TermsPage: React.FC<TermsPageProps> = ({ lang }) => {
           </h2>
           <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
             {lang === 'en'
-              ? 'All pharmaceutical brand names, trade dress, logos, and manufacturer trademarks displayed on MedVhai remain the exclusive intellectual property of their respective licensed pharmaceutical companies.'
+              ? 'All pharmaceutical brand names, trade dress, logos, and manufacturer trademarks displayed on MEDDET remain the exclusive intellectual property of their respective licensed pharmaceutical companies.'
               : 'সাইটে উল্লেখিত সকল ওষুধের নাম, লোগো এবং প্রস্তুতকারকের নাম সংশ্লিষ্ট কোম্পানির নিজস্ব ট্রেডমার্ক ও বুদ্ধিবৃত্তিক সম্পত্তি।'}
           </p>
         </div>

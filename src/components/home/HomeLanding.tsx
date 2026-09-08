@@ -59,7 +59,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
           <source srcSet="/hero-bg.webp" type="image/webp" />
           <img
             src="/hero-bg.jpg"
-            alt="MedVhai banner background"
+            alt="MEDDET banner background"
             className="absolute inset-0 w-full h-full object-cover object-center opacity-35 dark:opacity-25 pointer-events-none select-none"
             loading="eager"
             fetchPriority="high"

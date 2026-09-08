@@ -56,7 +56,7 @@ export function updateDynamicSEO(props: SEOProps) {
   // 3. OpenGraph Social Cards
   setMetaTag('property', 'og:title', meta.og.title);
   setMetaTag('property', 'og:description', meta.og.description);
-  setMetaTag('property', 'og:site_name', 'MedVhai');
+  setMetaTag('property', 'og:site_name', 'MEDDET');
   setMetaTag('property', 'og:url', meta.og.url);
   setMetaTag('property', 'og:image', meta.og.image);
   setMetaTag('property', 'og:type', meta.og.type);

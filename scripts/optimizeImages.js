@@ -105,7 +105,7 @@ async function optimizeHeroBg() {
 }
 
 async function main() {
-  console.log('=== MedVhai Image Optimization Pipeline ===\n');
+  console.log('=== MEDDET Image Optimization Pipeline ===\n');
   await optimizeIcons();
   await optimizeBackground();
   await optimizeLogo();

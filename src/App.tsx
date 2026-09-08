@@ -57,7 +57,7 @@ export default function App() {
   // Dual Language State ('en' vs 'bn')
   const [lang, setLang] = useState<LanguageMode>(() => {
     try {
-      const saved = localStorage.getItem('medvhai_lang');
+      const saved = localStorage.getItem('meddet_lang') || localStorage.getItem('medvhai_lang');
       return (saved === 'bn' ? 'bn' : 'en');
     } catch {
       return 'en';
@@ -68,7 +68,7 @@ export default function App() {
     setLang((prev) => {
       const next = prev === 'en' ? 'bn' : 'en';
       try {
-        localStorage.setItem('medvhai_lang', next);
+        localStorage.setItem('meddet_lang', next);
       } catch {}
       return next;
     });
@@ -77,7 +77,7 @@ export default function App() {
   // Theme State (Dark / Light Mode)
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
     try {
-      const saved = localStorage.getItem('medvhai_dark_mode');
+      const saved = localStorage.getItem('meddet_dark_mode') || localStorage.getItem('medvhai_dark_mode');
       if (saved !== null) return JSON.parse(saved);
       return window.matchMedia('(prefers-color-scheme: dark)').matches;
     } catch {
@@ -94,7 +94,7 @@ export default function App() {
       root.classList.remove('dark');
     }
     try {
-      localStorage.setItem('medvhai_dark_mode', JSON.stringify(isDarkMode));
+      localStorage.setItem('meddet_dark_mode', JSON.stringify(isDarkMode));
     } catch {}
   }, [isDarkMode]);
 
@@ -142,7 +142,7 @@ export default function App() {
 
       // If embedded inside Blogger iframe, sync URL via postMessage
       if (window.parent && window.parent !== window) {
-        window.parent.postMessage({ type: 'MEDVHAI_URL_CHANGE', pathname: url.pathname, search: url.search }, 'https://medvhai.heliox.workers.dev');
+        window.parent.postMessage({ type: 'MEDDET_URL_CHANGE', pathname: url.pathname, search: url.search }, 'https://medvhai.heliox.workers.dev');
       }
     } catch {}
   };

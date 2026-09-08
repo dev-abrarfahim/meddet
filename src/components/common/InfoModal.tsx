@@ -34,7 +34,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ type, onClose, lang }) => 
             </div>
             <div>
               <h2 className="text-lg sm:text-xl font-black">
-                {type === 'about' && (lang === 'en' ? 'About MedVhai™' : 'MedVhai™ সম্পর্কে')}
+                {type === 'about' && (lang === 'en' ? 'About MEDDET™' : 'MEDDET™ সম্পর্কে')}
                 {type === 'privacy' && (lang === 'en' ? 'Privacy Policy' : 'প্রাইভেসি পলিসি')}
                 {type === 'terms' && (lang === 'en' ? 'Terms & Medical Disclaimer' : 'ব্যবহারের শর্তাবলী ও ডিসক্লেইমার')}
                 {type === 'contact' && (lang === 'en' ? 'Contact & Support' : 'যোগাযোগ ও সাপোর্ট')}
@@ -64,7 +64,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ type, onClose, lang }) => 
           {type === 'about' && (
             <div className="space-y-4">
               <div className="flex items-center gap-3 p-4 rounded-2xl bg-[#F1F9FF] dark:bg-[#1A2B3E] border border-[#CCECEE] dark:border-[#243B53]">
-                <img src="/logo.webp" alt="MedVhai Logo" className="h-9 w-auto object-contain" />
+                <img src="/logo.webp" alt="MEDDET Logo" className="h-9 w-auto object-contain" />
                 <p className="text-xs sm:text-sm font-semibold text-[#095D7E] dark:text-[#2DD4BF]">
                   {lang === 'en'
                     ? "Bangladesh's comprehensive pharmaceutical intelligence index and medicine price guide."
@@ -79,8 +79,8 @@ export const InfoModal: React.FC<InfoModalProps> = ({ type, onClose, lang }) => 
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                   {lang === 'en'
-                    ? 'MedVhai is an independent clinical reference platform designed for doctors, pharmacists, medical students, and patients across Bangladesh. We index over 30,500+ brand medicines across 2,270+ active generic substances and 700+ licensed pharmaceutical manufacturers.'
-                    : 'MedVhai বাংলাদেশের চিকিৎসক, ফার্মাসিস্ট, মেডিকেল শিক্ষার্থী ও সাধারণ রোগীদের জন্য তৈরি একটি ডিজিটাল ক্লিনিক্যাল রেফারেন্স প্ল্যাটফর্ম। এখানে ৩০,৫০০+ ব্র্যান্ড ওষুধ, ২,২৭০+ জেনেরিক উপাদান এবং ৭০০+ অনুমোদিত প্রস্তুতকারক কোম্পানির তথ্য সংরক্ষিত রয়েছে।'}
+                    ? 'MEDDET is an independent clinical reference platform designed for doctors, pharmacists, medical students, and patients across Bangladesh. We index over 30,500+ brand medicines across 2,270+ active generic substances and 700+ licensed pharmaceutical manufacturers.'
+                    : 'MEDDET বাংলাদেশের চিকিৎসক, ফার্মাসিস্ট, মেডিকেল শিক্ষার্থী ও সাধারণ রোগীদের জন্য তৈরি একটি ডিজিটাল ক্লিনিক্যাল রেফারেন্স প্ল্যাটফর্ম। এখানে ৩০,৫০০+ ব্র্যান্ড ওষুধ, ২,২৭০+ জেনেরিক উপাদান এবং ৭০০+ অনুমোদিত প্রস্তুতকারক কোম্পানির তথ্য সংরক্ষিত রয়েছে।'}
                 </p>
               </div>
 
@@ -133,8 +133,8 @@ export const InfoModal: React.FC<InfoModalProps> = ({ type, onClose, lang }) => 
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                   {lang === 'en'
-                    ? 'MedVhai does not require user registration, login, or personal profile creation. We do NOT collect, store, or sell personal medical histories, prescriptions, or identifiable search queries.'
-                    : 'MedVhai ব্যবহারের জন্য কোনো অ্যাকাউন্ট বা রেজিস্ট্রেশনের প্রয়োজন নেই। আমরা ব্যবহারকারীর কোনো ব্যক্তিগত চিকিৎসা ইতিহাস, প্রেসক্রিপশন বা ব্যক্তিগত তথ্য সংগ্রহ বা বিক্রি করি না।'}
+                    ? 'MEDDET does not require user registration, login, or personal profile creation. We do NOT collect, store, or sell personal medical histories, prescriptions, or identifiable search queries.'
+                    : 'MEDDET ব্যবহারের জন্য কোনো অ্যাকাউন্ট বা রেজিস্ট্রেশনের প্রয়োজন নেই। আমরা ব্যবহারকারীর কোনো ব্যক্তিগত চিকিৎসা ইতিহাস, প্রেসক্রিপশন বা ব্যক্তিগত তথ্য সংগ্রহ বা বিক্রি করি না।'}
                 </p>
               </div>
 
@@ -172,8 +172,8 @@ export const InfoModal: React.FC<InfoModalProps> = ({ type, onClose, lang }) => 
                 </div>
                 <p className="text-xs text-rose-800 dark:text-rose-300/90 leading-relaxed font-medium">
                   {lang === 'en'
-                    ? 'MedVhai is an informational and educational clinical reference tool. The content provided on this website is NOT intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a registered physician or qualified healthcare provider with any questions you may have regarding a medical condition or prescription medication.'
-                    : 'MedVhai শুধুমাত্র একটি শিক্ষামূলক ও তথ্যভিত্তিক ক্লিনিক্যাল রেফারেন্স ওয়েবসাইট। এখানে প্রদত্ত কোনো তথ্যকে চিকিৎসকের পরামর্শ, রোগ নির্ণয় বা চিকিৎসার বিকল্প হিসেবে গ্রহণ করা যাবে না। যেকোনো ওষুধ সেবন বা পরিবর্তনের পূর্বে অবশ্যই রেজিস্টার্ড চিকিৎসকের পরামর্শ নিন।'}
+                    ? 'MEDDET is an informational and educational clinical reference tool. The content provided on this website is NOT intended to be a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a registered physician or qualified healthcare provider with any questions you may have regarding a medical condition or prescription medication.'
+                    : 'MEDDET শুধুমাত্র একটি শিক্ষামূলক ও তথ্যভিত্তিক ক্লিনিক্যাল রেফারেন্স ওয়েবসাইট। এখানে প্রদত্ত কোনো তথ্যকে চিকিৎসকের পরামর্শ, রোগ নির্ণয় বা চিকিৎসার বিকল্প হিসেবে গ্রহণ করা যাবে না। যেকোনো ওষুধ সেবন বা পরিবর্তনের পূর্বে অবশ্যই রেজিস্টার্ড চিকিৎসকের পরামর্শ নিন।'}
                 </p>
               </div>
 
@@ -201,7 +201,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ type, onClose, lang }) => 
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <a
-                  href="mailto:support@medvhai.com"
+                  href="mailto:support@meddet.com"
                   className="p-4 rounded-2xl bg-[#F1F9FF] dark:bg-[#1A2B3E] border border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F] transition-all flex items-center gap-3.5 group cursor-pointer"
                 >
                   <div className="w-10 h-10 rounded-xl bg-[#14967F] text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -209,12 +209,12 @@ export const InfoModal: React.FC<InfoModalProps> = ({ type, onClose, lang }) => 
                   </div>
                   <div className="min-w-0">
                     <div className="text-xs font-bold text-slate-500 dark:text-slate-400">Support & Feedback</div>
-                    <div className="text-sm font-black text-[#095D7E] dark:text-[#2DD4BF] truncate">support@medvhai.com</div>
+                    <div className="text-sm font-black text-[#095D7E] dark:text-[#2DD4BF] truncate">support@meddet.com</div>
                   </div>
                 </a>
 
                 <a
-                  href="mailto:api@medvhai.com"
+                  href="mailto:api@meddet.com"
                   className="p-4 rounded-2xl bg-[#F1F9FF] dark:bg-[#1A2B3E] border border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F] transition-all flex items-center gap-3.5 group cursor-pointer"
                 >
                   <div className="w-10 h-10 rounded-xl bg-[#095D7E] text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -222,7 +222,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ type, onClose, lang }) => 
                   </div>
                   <div className="min-w-0">
                     <div className="text-xs font-bold text-slate-500 dark:text-slate-400">Developer & Data API</div>
-                    <div className="text-sm font-black text-[#095D7E] dark:text-[#2DD4BF] truncate">api@medvhai.com</div>
+                    <div className="text-sm font-black text-[#095D7E] dark:text-[#2DD4BF] truncate">api@meddet.com</div>
                   </div>
                 </a>
               </div>
@@ -245,7 +245,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({ type, onClose, lang }) => 
         {/* Modal Footer */}
         <div className="bg-slate-50 dark:bg-[#0E1B2A] px-5 py-4 sm:px-6 flex items-center justify-between border-t border-slate-200 dark:border-[#1E3A52]">
           <div className="text-[11px] font-bold text-slate-400 dark:text-slate-500">
-            MedVhai Clinical Index © 2026
+            MEDDET Clinical Index © 2026
           </div>
           <button
             onClick={onClose}

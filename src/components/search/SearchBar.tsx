@@ -29,7 +29,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   // 5 Recent Searches State saved in localStorage
   const [recentSearches, setRecentSearches] = useState<string[]>(() => {
     try {
-      const saved = localStorage.getItem('medvhai_recent_searches');
+      const saved = localStorage.getItem('meddet_recent_searches') || localStorage.getItem('medvhai_recent_searches');
       return saved ? JSON.parse(saved) : ['Napa', 'Paracetamol', 'Seclo', 'Maxpro', 'Ceevit'];
     } catch {
       return ['Napa', 'Paracetamol', 'Seclo', 'Maxpro', 'Ceevit'];
@@ -43,7 +43,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       const filtered = prev.filter((item) => item.toLowerCase() !== trimmed.toLowerCase());
       const updated = [trimmed, ...filtered].slice(0, 5);
       try {
-        localStorage.setItem('medvhai_recent_searches', JSON.stringify(updated));
+        localStorage.setItem('meddet_recent_searches', JSON.stringify(updated));
       } catch {}
       return updated;
     });
@@ -54,7 +54,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     setRecentSearches((prev) => {
       const updated = prev.filter((item) => item.toLowerCase() !== term.toLowerCase());
       try {
-        localStorage.setItem('medvhai_recent_searches', JSON.stringify(updated));
+        localStorage.setItem('meddet_recent_searches', JSON.stringify(updated));
       } catch {}
       return updated;
     });
@@ -64,7 +64,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     e.stopPropagation();
     setRecentSearches([]);
     try {
-      localStorage.removeItem('medvhai_recent_searches');
+      localStorage.removeItem('meddet_recent_searches'); localStorage.removeItem('medvhai_recent_searches');
     } catch {}
   };
 

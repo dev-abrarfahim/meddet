@@ -23,7 +23,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ lang, onGoHome, onGoToSear
           </div>
 
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
-            {lang === 'en' ? 'About MedVhai™ Clinical Index' : 'MedVhai™ ক্লিনিক্যাল ইনডেক্স সম্পর্কে'}
+            {lang === 'en' ? 'About MEDDET™ Clinical Index' : 'MEDDET™ ক্লিনিক্যাল ইনডেক্স সম্পর্কে'}
           </h1>
 
           <p className="text-sm sm:text-base text-[#CCECEE] leading-relaxed font-medium">
@@ -86,8 +86,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ lang, onGoHome, onGoToSear
 
           <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
             {lang === 'en'
-              ? 'MedVhai was created to bridge the information gap in the Bangladeshi healthcare ecosystem. We empower healthcare practitioners, pharmacists, medical students, and everyday patients with unbiased, accurate, and structured pharmaceutical intelligence.'
-              : 'MedVhai-এর মূল উদ্দেশ্য বাংলাদেশের স্বাস্থ্যসেবা খাতে সঠিক তথ্যের অবাধ প্রবাহ নিশ্চিত করা। চিকিৎসক, ফার্মাসিস্ট, মেডিকেল শিক্ষার্থী এবং সাধারণ রোগীদের জন্য নিরপেক্ষ, নির্ভরযোগ্য ও সহজে ব্যবহারযোগ্য ডিজিটাল ড্রাগ রেফারেন্স প্ল্যাটফর্ম প্রদান করাই আমাদের লক্ষ্য।'}
+              ? 'MEDDET was created to bridge the information gap in the Bangladeshi healthcare ecosystem. We empower healthcare practitioners, pharmacists, medical students, and everyday patients with unbiased, accurate, and structured pharmaceutical intelligence.'
+              : 'MEDDET-এর মূল উদ্দেশ্য বাংলাদেশের স্বাস্থ্যসেবা খাতে সঠিক তথ্যের অবাধ প্রবাহ নিশ্চিত করা। চিকিৎসক, ফার্মাসিস্ট, মেডিকেল শিক্ষার্থী এবং সাধারণ রোগীদের জন্য নিরপেক্ষ, নির্ভরযোগ্য ও সহজে ব্যবহারযোগ্য ডিজিটাল ড্রাগ রেফারেন্স প্ল্যাটফর্ম প্রদান করাই আমাদের লক্ষ্য।'}
           </p>
 
           <ul className="space-y-2 pt-2 text-xs sm:text-sm text-slate-700 dark:text-slate-200">

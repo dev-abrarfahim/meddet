@@ -1,7 +1,7 @@
-# MedVhai™ — Clinical Drug Index & Medicine Price BD
+# MEDDET™ — Clinical Drug Index & Medicine Price BD
 
 <p align="center">
-  <img src="public/logo.png" alt="MedVhai Logo" width="220" />
+  <img src="public/logo.png" alt="MEDDET Logo" width="220" />
 </p>
 
 <p align="center">
@@ -21,7 +21,7 @@
 
 ## 📖 Overview
 
-**MedVhai™** is a clinical drug database and pharmaceutical price comparison engine designed specifically for healthcare professionals, patients, pharmacists, and medical students in Bangladesh.
+**MEDDET™** is a clinical drug database and pharmaceutical price comparison engine designed specifically for healthcare professionals, patients, pharmacists, and medical students in Bangladesh.
 
 It provides instant access to **30,000+ brand medicines**, active generic ingredients, verified **BDT MRP prices**, lower-cost alternative brand recommendations, and comprehensive **bilingual clinical monographs** (English & Bengali).
 
@@ -143,7 +143,7 @@ npx wrangler pages deploy dist --project-name medvhai
 
 ## 🔌 Public REST API Endpoints
 
-MedVhai provides built-in REST API endpoints for external integrations:
+MEDDET provides built-in REST API endpoints for external integrations:
 
 | Method | Endpoint | Description |
 |---|---|---|
@@ -157,11 +157,11 @@ MedVhai provides built-in REST API endpoints for external integrations:
 
 ## ⚠️ Medical Information Disclaimer
 
-> **MedVhai™** is an educational clinical reference platform created to assist healthcare professionals and provide verified drug information for educational purposes. It does **NOT** provide medical advice, diagnosis, or treatment recommendations. Always consult a registered medical practitioner or physician before initiating, altering, or discontinuing any pharmaceutical therapy.
+> **MEDDET™** is an educational clinical reference platform created to assist healthcare professionals and provide verified drug information for educational purposes. It does **NOT** provide medical advice, diagnosis, or treatment recommendations. Always consult a registered medical practitioner or physician before initiating, altering, or discontinuing any pharmaceutical therapy.
 
 ---
 
 ## 📄 License & Copyright
 
-© 2026 **MedVhai Healthcare Index**. All rights reserved.  
+© 2026 **MEDDET Healthcare Index**. All rights reserved.  
 Crafted for the Bangladeshi Healthcare Ecosystem.

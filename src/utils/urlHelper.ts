@@ -193,9 +193,9 @@ export function generateMedicineMetadata(medicine: Medicine, generic?: GenericMo
   const genericBn = medicine.genericNameBn ? ` (${medicine.genericNameBn})` : '';
   const priceFormatted = medicine.mrp > 0 ? `৳${medicine.mrp.toFixed(2)}` : 'MRP N/A';
 
-  const title = `${brandName} ${strength} ${form} — Uses, Price, Dosage & Alternatives | MedVhai`.replace(/\s+/g, ' ');
-  const description = `Learn about ${brandName} ${strength} ${form} by ${company}. Generic: ${genericName}${genericBn}. MRP Price: ${priceFormatted} BDT. View dosage, indications, side effects, precautions & lower-cost alternative brands on MedVhai.`.replace(/\s+/g, ' ');
-  const keywords = `${brandName}, ${genericName}, ${company}, ${brandName} price in BD, ${brandName} dosage, ${brandName} uses, ${form}, medicine BD, MedVhai`;
+  const title = `${brandName} ${strength} ${form} — Uses, Price, Dosage & Alternatives | MEDDET`.replace(/\s+/g, ' ');
+  const description = `Learn about ${brandName} ${strength} ${form} by ${company}. Generic: ${genericName}${genericBn}. MRP Price: ${priceFormatted} BDT. View dosage, indications, side effects, precautions & lower-cost alternative brands on MEDDET.`.replace(/\s+/g, ' ');
+  const keywords = `${brandName}, ${genericName}, ${company}, ${brandName} price in BD, ${brandName} dosage, ${brandName} uses, ${form}, medicine BD, MEDDET`;
   const canonicalUrl = getMedicineCanonicalUrl(medicine);
   const h1 = `${brandName} ${strength} ${form}`.trim();
   const imageUrl = `${SITE_BASE_URL}/icons/${slugify(form)}.png`;
@@ -208,7 +208,7 @@ export function generateMedicineMetadata(medicine: Medicine, generic?: GenericMo
     'image': [imageUrl, logoUrl],
     'description': description,
     'url': canonicalUrl,
-    'sku': `MEDVHAI-${medicine.id}`,
+    'sku': `MEDDET-${medicine.id}`,
     'mpn': `MED-${medicine.id}`,
     'brand': {
       '@type': 'Brand',
@@ -231,7 +231,7 @@ export function generateMedicineMetadata(medicine: Medicine, generic?: GenericMo
       'availability': 'https://schema.org/InStock',
       'seller': {
         '@type': 'Organization',
-        'name': 'MedVhai'
+        'name': 'MEDDET'
       },
       'hasMerchantReturnPolicy': {
         '@type': 'MerchantReturnPolicy',
@@ -286,9 +286,9 @@ export function generateGenericMetadata(generic: GenericMonograph): SEOMetadata 
   const genName = generic.name;
   const genBn = generic.nameBn ? ` (${generic.nameBn})` : '';
   const canonicalUrl = getGenericCanonicalUrl(generic);
-  const title = `${genName} Brands in Bangladesh — Price List, Dosage & Monograph | MedVhai`;
+  const title = `${genName} Brands in Bangladesh — Price List, Dosage & Monograph | MEDDET`;
   const description = `Complete clinical monograph for ${genName}${genBn} in Bangladesh. Compare brand medicines, BDT prices, indications, contraindications, dosage, and side effects.`;
-  const keywords = `${genName}, ${genName} brands BD, ${genName} price, ${genName} side effects, ${genName} dosage, MedVhai`;
+  const keywords = `${genName}, ${genName} brands BD, ${genName} price, ${genName} side effects, ${genName} dosage, MEDDET`;
   const logoUrl = `${SITE_BASE_URL}/logo.png`;
 
   const jsonLd = {
@@ -300,7 +300,7 @@ export function generateGenericMetadata(generic: GenericMonograph): SEOMetadata 
     'code': {
       '@type': 'MedicalCode',
       'code': generic.id.toString(),
-      'codingSystem': 'MedVhai-Generic-Index'
+      'codingSystem': 'MEDDET-Generic-Index'
     }
   };
 
@@ -335,13 +335,13 @@ export function generateDefaultMetadata(categoryName?: string, dosageForm?: stri
   const logoUrl = `${SITE_BASE_URL}/logo.png`;
 
   if (dosageForm && dosageForm !== 'All') {
-    const title = `${dosageForm} Medicines in Bangladesh — Price List & Directory | MedVhai`;
+    const title = `${dosageForm} Medicines in Bangladesh — Price List & Directory | MEDDET`;
     const description = `Browse all verified ${dosageForm} dosage form medicines in Bangladesh. Check BDT MRP prices, manufacturers, active ingredients, and brand alternatives.`;
     const canonicalUrl = `${SITE_BASE_URL}${getDosageFormCanonicalPath(dosageForm)}`;
     return {
       title,
       description,
-      keywords: `${dosageForm} medicines BD, ${dosageForm} list Bangladesh, ${dosageForm} prices, MedVhai`,
+      keywords: `${dosageForm} medicines BD, ${dosageForm} list Bangladesh, ${dosageForm} prices, MEDDET`,
       canonicalUrl,
       h1: `${dosageForm} Medicines in Bangladesh`,
       og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
@@ -358,13 +358,13 @@ export function generateDefaultMetadata(categoryName?: string, dosageForm?: stri
   }
 
   if (manufacturer && manufacturer !== 'All') {
-    const title = `${manufacturer} Medicines List & MRP Prices in BD | MedVhai`;
+    const title = `${manufacturer} Medicines List & MRP Prices in BD | MEDDET`;
     const description = `Explore all pharmaceutical brands manufactured by ${manufacturer} in Bangladesh. View active ingredients, dosage forms, verified MRP prices, and monographs.`;
     const canonicalUrl = `${SITE_BASE_URL}${getCompanyCanonicalPath(manufacturer)}`;
     return {
       title,
       description,
-      keywords: `${manufacturer} medicine list, ${manufacturer} products, ${manufacturer} pharma BD price, MedVhai`,
+      keywords: `${manufacturer} medicine list, ${manufacturer} products, ${manufacturer} pharma BD price, MEDDET`,
       canonicalUrl,
       h1: `${manufacturer} Medicine Directory`,
       og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
@@ -381,13 +381,13 @@ export function generateDefaultMetadata(categoryName?: string, dosageForm?: stri
   }
 
   if (searchQuery) {
-    const title = `Search Results for "${searchQuery}" — Medicine Price & Index | MedVhai`;
-    const description = `Search results for ${searchQuery} on MedVhai. Find brand medicines, active generic ingredients, BDT MRP prices, and lower-cost alternatives.`;
+    const title = `Search Results for "${searchQuery}" — Medicine Price & Index | MEDDET`;
+    const description = `Search results for ${searchQuery} on MEDDET. Find brand medicines, active generic ingredients, BDT MRP prices, and lower-cost alternatives.`;
     const canonicalUrl = `${SITE_BASE_URL}/`;
     return {
       title,
       description,
-      keywords: `${searchQuery}, medicine search, MedVhai`,
+      keywords: `${searchQuery}, medicine search, MEDDET`,
       canonicalUrl,
       h1: `Search: ${searchQuery}`,
       og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
@@ -403,23 +403,23 @@ export function generateDefaultMetadata(categoryName?: string, dosageForm?: stri
   }
 
   // Core Homepage
-  const title = 'MedVhai™ — Clinical Drug Index & Medicine Price BD';
+  const title = 'MEDDET™ — Clinical Drug Index & Medicine Price BD';
   const description = "Bangladesh's clinical drug index & medicine price guide. Search 30,000+ brand medicines, generic ingredients, BDT MRP prices & alternatives.";
   const canonicalUrl = `${SITE_BASE_URL}/`;
 
   return {
     title,
     description,
-    keywords: 'MedVhai, Medicine Index, Drug Price BD, Generic Medicine BD, Napa, Seclo, Maxpro, Paracetamol, Esomeprazole, Beximco, Square Pharma, Incepta',
+    keywords: 'MEDDET, Medicine Index, Drug Price BD, Generic Medicine BD, Napa, Seclo, Maxpro, Paracetamol, Esomeprazole, Beximco, Square Pharma, Incepta',
     canonicalUrl,
-    h1: 'MedVhai™ Clinical Drug Index & Medicine Price BD',
+    h1: 'MEDDET™ Clinical Drug Index & Medicine Price BD',
     og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
     twitter: { card: 'summary_large_image', title, description, image: logoUrl },
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      'name': 'MedVhai',
-      'alternateName': ['MedVhai BD', 'MedVhai Health Index', 'MedVhai Clinical Index'],
+      'name': 'MEDDET',
+      'alternateName': ['MEDDET BD', 'MEDDET Health Index', 'MEDDET Clinical Index'],
       'url': canonicalUrl,
       'potentialAction': {
         '@type': 'SearchAction',
@@ -439,15 +439,15 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
 
   switch (pageType) {
     case 'about': {
-      const title = 'About MedVhai™ — Clinical Drug Index & Medicine Guide BD';
-      const description = 'Learn about MedVhai, Bangladesh’s verified clinical medicine index, BDT pharmaceutical price comparator, and bilingual drug monographs.';
+      const title = 'About MEDDET™ — Clinical Drug Index & Medicine Guide BD';
+      const description = 'Learn about MEDDET, Bangladesh’s verified clinical medicine index, BDT pharmaceutical price comparator, and bilingual drug monographs.';
       const canonicalUrl = `${SITE_BASE_URL}/about`;
       return {
         title,
         description,
-        keywords: 'About MedVhai, Medicine index BD mission, Clinical drug index Bangladesh, MedVhai',
+        keywords: 'About MEDDET, Medicine index BD mission, Clinical drug index Bangladesh, MEDDET',
         canonicalUrl,
-        h1: 'About MedVhai™ Clinical Index',
+        h1: 'About MEDDET™ Clinical Index',
         og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
         twitter: { card: 'summary_large_image', title, description, image: logoUrl },
         jsonLd: { '@context': 'https://schema.org', '@type': 'AboutPage', name: title, description, url: canonicalUrl },
@@ -455,13 +455,13 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
       };
     }
     case 'privacy': {
-      const title = 'Privacy Policy — MedVhai™ Clinical Healthcare Index';
-      const description = 'Our commitment to zero medical health data tracking, client-side local storage protection, and patient confidentiality on MedVhai.';
+      const title = 'Privacy Policy — MEDDET™ Clinical Healthcare Index';
+      const description = 'Our commitment to zero medical health data tracking, client-side local storage protection, and patient confidentiality on MEDDET.';
       const canonicalUrl = `${SITE_BASE_URL}/privacy-policy`;
       return {
         title,
         description,
-        keywords: 'MedVhai privacy policy, health data privacy Bangladesh, zero medical tracking',
+        keywords: 'MEDDET privacy policy, health data privacy Bangladesh, zero medical tracking',
         canonicalUrl,
         h1: 'Privacy Policy',
         og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
@@ -471,13 +471,13 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
       };
     }
     case 'terms': {
-      const title = 'Terms & Conditions & Medical Disclaimer | MedVhai™';
-      const description = 'Educational clinical reference guidelines, medical disclaimer, and prescribing practitioner terms for MedVhai.';
+      const title = 'Terms & Conditions & Medical Disclaimer | MEDDET™';
+      const description = 'Educational clinical reference guidelines, medical disclaimer, and prescribing practitioner terms for MEDDET.';
       const canonicalUrl = `${SITE_BASE_URL}/terms`;
       return {
         title,
         description,
-        keywords: 'MedVhai terms and conditions, medical disclaimer BD, clinical reference terms',
+        keywords: 'MEDDET terms and conditions, medical disclaimer BD, clinical reference terms',
         canonicalUrl,
         h1: 'Terms & Conditions',
         og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
@@ -487,15 +487,15 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
       };
     }
     case 'contact': {
-      const title = 'Contact Us — Support & Medicine Corrections | MedVhai™';
-      const description = 'Get in touch with the MedVhai clinical indexing team for medicine price corrections, new presentations, and developer queries.';
+      const title = 'Contact Us — Support & Medicine Corrections | MEDDET™';
+      const description = 'Get in touch with the MEDDET clinical indexing team for medicine price corrections, new presentations, and developer queries.';
       const canonicalUrl = `${SITE_BASE_URL}/contact`;
       return {
         title,
         description,
-        keywords: 'Contact MedVhai, medicine correction request, support MedVhai BD',
+        keywords: 'Contact MEDDET, medicine correction request, support MEDDET BD',
         canonicalUrl,
-        h1: 'Contact MedVhai™',
+        h1: 'Contact MEDDET™',
         og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
         twitter: { card: 'summary_large_image', title, description, image: logoUrl },
         jsonLd: { '@context': 'https://schema.org', '@type': 'ContactPage', name: title, description, url: canonicalUrl },
@@ -503,7 +503,7 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
       };
     }
     case 'companies': {
-      const title = 'Pharmaceutical Companies in Bangladesh (723 Manufacturers) | MedVhai';
+      const title = 'Pharmaceutical Companies in Bangladesh (723 Manufacturers) | MEDDET';
       const description = 'Complete directory of all 723 licensed pharmaceutical companies in Bangladesh. Browse brand medicine portfolios, dosages, and prices.';
       const canonicalUrl = `${SITE_BASE_URL}/companies`;
       return {
@@ -519,13 +519,13 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
       };
     }
     case 'api-docs': {
-      const title = 'Developer REST API Documentation & Live Studio | MedVhai™';
+      const title = 'Developer REST API Documentation & Live Studio | MEDDET™';
       const description = 'Free open REST API endpoints for searching 30,500+ medicines, generics, active ingredients, and BDT MRP prices.';
       const canonicalUrl = `${SITE_BASE_URL}/api-docs`;
       return {
         title,
         description,
-        keywords: 'MedVhai API, medicine REST API Bangladesh, drug database API BD, drug price API',
+        keywords: 'MEDDET API, medicine REST API Bangladesh, drug database API BD, drug price API',
         canonicalUrl,
         h1: 'Developer REST API',
         og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },

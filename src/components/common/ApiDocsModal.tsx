@@ -148,7 +148,7 @@ void fetchMedicineData() async {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h2 className="text-lg sm:text-xl font-black tracking-tight">MedVhai Developer API (v1)</h2>
+                <h2 className="text-lg sm:text-xl font-black tracking-tight">MEDDET Developer API (v1)</h2>
                 <span className="bg-[#14967F] text-[#E2FCD6] text-[10px] font-black uppercase px-2 py-0.5 rounded border border-[#E2FCD6]/30">
                   Public & Free
                 </span>
@@ -379,7 +379,7 @@ void fetchMedicineData() async {
         <div className="p-4 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
           <div className="text-xs text-slate-500 dark:text-slate-400 font-semibold flex items-center gap-1">
             <Sparkles className="w-3.5 h-3.5 text-[#14967F]" />
-            <span>Open Public API powered by MedVhai Database</span>
+            <span>Open Public API powered by MEDDET Database</span>
           </div>
 
           <button

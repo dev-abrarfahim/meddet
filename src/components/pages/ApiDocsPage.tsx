@@ -145,7 +145,7 @@ if (response.statusCode == 200) {
           </div>
 
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
-            {lang === 'en' ? 'MedVhai Developer REST API' : 'MedVhai ডেভেলপার REST API'}
+            {lang === 'en' ? 'MEDDET Developer REST API' : 'MEDDET ডেভেলপার REST API'}
           </h1>
 
           <p className="text-sm sm:text-base text-[#CCECEE] leading-relaxed font-medium">

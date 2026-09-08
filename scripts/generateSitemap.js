@@ -45,7 +45,7 @@ function xmlEscape(str) {
 const baseUrl = 'https://medvhai.heliox.workers.dev';
 const today = new Date().toISOString().split('T')[0];
 
-console.log('Generating production sitemap suite for MedVhai with Sitemap Index & Chunking...');
+console.log('Generating production sitemap suite for MEDDET with Sitemap Index & Chunking...');
 
 const brandsPath = path.resolve('public/data/brands.json');
 const genericsPath = path.resolve('public/data/generics.json');

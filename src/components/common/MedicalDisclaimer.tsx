@@ -17,7 +17,7 @@ export const MedicalDisclaimer: React.FC<MedicalDisclaimerProps> = ({ onOpenApiD
           <div className="flex items-center">
             <img
               src="/logo.webp"
-              alt="MedVhai Logo"
+              alt="MEDDET Logo"
               className="h-8 sm:h-10 w-auto object-contain shrink-0"
             />
           </div>
@@ -46,7 +46,7 @@ export const MedicalDisclaimer: React.FC<MedicalDisclaimerProps> = ({ onOpenApiD
           <ul className="space-y-1.5 text-xs text-[#CCECEE] dark:text-slate-300 font-semibold">
             <li>
               <a href="/about" className="hover:text-white transition-colors">
-                About MedVhai Clinical Index
+                About MEDDET Clinical Index
               </a>
             </li>
             <li>
@@ -104,14 +104,14 @@ export const MedicalDisclaimer: React.FC<MedicalDisclaimerProps> = ({ onOpenApiD
           <span>Medical Information Disclaimer</span>
         </div>
         <p className="text-xs leading-relaxed font-medium text-[#CCECEE]/90 dark:text-slate-300/90">
-          MedVhai is an educational clinical reference platform. It does NOT provide medical advice or treatment recommendations. Always consult a registered physician before starting or altering any medication therapy.
+          MEDDET is an educational clinical reference platform. It does NOT provide medical advice or treatment recommendations. Always consult a registered physician before starting or altering any medication therapy.
         </p>
       </div>
 
       {/* Bottom Copyright & Credit Bar */}
       <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[#CCECEE] dark:text-slate-400 font-semibold border-t border-[#095D7E] dark:border-[#1E3A52]">
         <div>
-          © 2026 MedVhai Healthcare Index. All rights reserved.
+          © 2026 MEDDET Healthcare Index. All rights reserved.
         </div>
         <div className="flex items-center gap-1">
           <span>Crafted with</span>

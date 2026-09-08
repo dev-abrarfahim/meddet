@@ -1,5 +1,5 @@
 /**
- * MedVhai Public Medical REST API Router (v1)
+ * MEDDET Public Medical REST API Router (v1)
  * Developer API Engine for External App & Web Integration with Rate Limiting Protection
  */
 

@@ -63,11 +63,11 @@ export const SidebarDrawer: React.FC<SidebarDrawerProps> = ({
               href="/"
               onClick={(e) => handleLinkClick(e, '/')}
               className="flex items-center gap-2.5 cursor-pointer"
-              aria-label="MedVhai Home"
+              aria-label="MEDDET Home"
             >
               <img
                 src="/logo.webp"
-                alt="MedVhai Logo"
+                alt="MEDDET Logo"
                 className="h-8 w-auto object-contain shrink-0"
               />
             </a>
@@ -103,7 +103,7 @@ export const SidebarDrawer: React.FC<SidebarDrawerProps> = ({
                   </div>
                   <div>
                     <span className="text-sm font-extrabold text-[#095D7E] dark:text-slate-100 block">
-                      {lang === 'en' ? 'About MedVhai' : 'আমাদের সম্পর্কে'}
+                      {lang === 'en' ? 'About MEDDET' : 'আমাদের সম্পর্কে'}
                     </span>
                     <span className="text-[11px] text-slate-500 dark:text-slate-400">
                       {lang === 'en' ? 'Mission & clinical scope' : 'উদ্দেশ্য ও তথ্যের উৎস'}
@@ -281,7 +281,7 @@ export const SidebarDrawer: React.FC<SidebarDrawerProps> = ({
 
           {/* Drawer Footer */}
           <div className="p-3.5 bg-slate-50 dark:bg-[#0E1B2A] border-t border-slate-200 dark:border-[#1E3A52] text-center text-[11px] font-bold text-slate-400 dark:text-slate-500">
-            MedVhai™ Clinical Drug Index • 2026
+            MEDDET™ Clinical Drug Index • 2026
           </div>
 
         </div>

@@ -1,4 +1,4 @@
-# MedVhai Robots.txt File for Search Engine Indexing
+# MEDDET Robots.txt File for Search Engine Indexing
 User-agent: *
 Allow: /
 

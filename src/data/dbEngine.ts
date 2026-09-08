@@ -119,7 +119,7 @@ function processRankedCompanies(rawCompanies: CompanyInfo[]): CompanyInfo[] {
 async function fetchCachedJson<T>(url: string): Promise<T> {
   if (typeof window !== 'undefined' && 'caches' in window) {
     try {
-      const cache = await caches.open('medvhai-data-v2');
+      const cache = await caches.open('meddet-data-v1');
       const cachedResponse = await cache.match(url);
       if (cachedResponse) {
         return (await cachedResponse.json()) as T;
