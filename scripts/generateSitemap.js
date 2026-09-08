@@ -135,6 +135,7 @@ activeCompanies.forEach((comp) => {
 
 coreXml += `</urlset>\n`;
 fs.writeFileSync(path.resolve(sitemapsDir, 'sitemap-core.xml'), coreXml, 'utf8');
+fs.writeFileSync(path.resolve('public/sitemap-core.xml'), coreXml, 'utf8');
 
 // 2. Generic Monograph Pages Sitemap (sitemap-generics.xml)
 let genXml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -155,6 +156,7 @@ generics.forEach((gen) => {
 
 genXml += `</urlset>\n`;
 fs.writeFileSync(path.resolve(sitemapsDir, 'sitemap-generics.xml'), genXml, 'utf8');
+fs.writeFileSync(path.resolve('public/sitemap-generics.xml'), genXml, 'utf8');
 
 // 3. Brand Medicine Detail Pages Sitemaps (Chunked into 15,000 batches)
 const CHUNK_SIZE = 15000;
@@ -196,6 +198,7 @@ for (let i = 0; i < totalChunks; i++) {
 
   medXml += `</urlset>\n`;
   fs.writeFileSync(path.resolve(sitemapsDir, fileName), medXml, 'utf8');
+  fs.writeFileSync(path.resolve('public', fileName), medXml, 'utf8');
 }
 
 // 4. Authoritative Root Sitemap Index (public/sitemap.xml)

@@ -276,11 +276,18 @@ export default {
       pathname.endsWith('.ico') ||
       pathname.endsWith('.txt') ||
       pathname.endsWith('.json') ||
+      pathname.endsWith('.xml') ||
       pathname === '/robots.txt' ||
-      pathname === '/sitemap.xml' ||
       pathname.startsWith('/sitemaps/')
     ) {
-      const assetRes = await env.ASSETS.fetch(request);
+      let assetRes = await env.ASSETS.fetch(request);
+      if (!assetRes.ok && pathname.startsWith('/sitemap-') && pathname.endsWith('.xml')) {
+        const subReq = new Request(`${origin}/sitemaps${pathname}`, request);
+        const subRes = await env.ASSETS.fetch(subReq);
+        if (subRes.ok) {
+          assetRes = subRes;
+        }
+      }
       if (assetRes.ok && (pathname === '/robots.txt' || pathname.endsWith('.xml'))) {
         const headers = new Headers(assetRes.headers);
         headers.set('Cache-Control', 'public, max-age=86400, s-maxage=86400');
