@@ -1,0 +1,3 @@
+# Cloudflare Workers Assets Ignore List
+# Prevents server-side Worker script from being uploaded/exposed as a public static asset
+_worker.js
