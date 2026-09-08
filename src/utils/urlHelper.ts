@@ -1,6 +1,6 @@
 import { Medicine, GenericMonograph } from '../types';
 
-export const SITE_BASE_URL = 'https://medvhai.heliox.workers.dev';
+export const SITE_BASE_URL = 'https://meddet.site';
 
 /**
  * Enterprise Unicode & Case-Safe Slugifier
@@ -86,7 +86,7 @@ export const buildMedicinePath = getMedicineCanonicalPath;
 
 /**
  * Canonical Absolute Medicine URL
- * e.g., "https://medvhai.heliox.workers.dev/medicine/brinzopt-1-ophthalmic-suspension-o2e1"
+ * e.g., "https://meddet.site/medicine/brinzopt-1-ophthalmic-suspension-o2e1"
  */
 export function getMedicineCanonicalUrl(medicine: { id: number; name: string; strength?: string; form: string }): string {
   return `${SITE_BASE_URL}${getMedicineCanonicalPath(medicine)}`;
@@ -114,7 +114,7 @@ export function getGenericCanonicalPath(generic: { id: number; name: string }): 
 
 /**
  * Canonical Absolute Generic URL
- * e.g., "https://medvhai.heliox.workers.dev/generic/paracetamol-k9p3"
+ * e.g., "https://meddet.site/generic/paracetamol-k9p3"
  */
 export function getGenericCanonicalUrl(generic: { id: number; name: string }): string {
   return `${SITE_BASE_URL}${getGenericCanonicalPath(generic)}`;

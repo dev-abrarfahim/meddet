@@ -16,7 +16,7 @@ export const ApiDocsPage: React.FC<ApiDocsPageProps> = ({ lang }) => {
   const [copied, setCopied] = useState<boolean>(false);
   const [liveResponse, setLiveResponse] = useState<any>(null);
 
-  const baseUrl = 'https://medvhai.heliox.workers.dev';
+  const baseUrl = 'https://meddet.site';
 
   const endpoints = [
     {
@@ -161,7 +161,7 @@ if (response.statusCode == 200) {
         <div className="p-4 rounded-2xl bg-white dark:bg-[#152232] border border-[#CCECEE] dark:border-[#243B53] shadow-xs space-y-1">
           <div className="text-xs font-bold text-slate-400">Base URL</div>
           <div className="text-xs sm:text-sm font-mono font-black text-[#095D7E] dark:text-[#2DD4BF] truncate">
-            https://medvhai.heliox.workers.dev
+            https://meddet.site
           </div>
         </div>
 

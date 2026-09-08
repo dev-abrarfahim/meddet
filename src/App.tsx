@@ -142,7 +142,7 @@ export default function App() {
 
       // If embedded inside Blogger iframe, sync URL via postMessage
       if (window.parent && window.parent !== window) {
-        window.parent.postMessage({ type: 'MEDDET_URL_CHANGE', pathname: url.pathname, search: url.search }, 'https://medvhai.heliox.workers.dev');
+        window.parent.postMessage({ type: 'MEDDET_URL_CHANGE', pathname: url.pathname, search: url.search }, 'https://meddet.site');
       }
     } catch {}
   };

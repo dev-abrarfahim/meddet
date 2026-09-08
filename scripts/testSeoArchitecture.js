@@ -286,7 +286,7 @@ console.log('======================================================');
 
 const indexHtmlPath = path.join(ROOT_DIR, 'index.html');
 const indexHtmlContent = fs.readFileSync(indexHtmlPath, 'utf8');
-assert(!indexHtmlContent.includes('<link rel="canonical" href="https://medvhai.heliox.workers.dev/" />'), 'index.html has zero hardcoded homepage canonical tag');
+assert(!indexHtmlContent.includes('<link rel="canonical" href="https://meddet.site/" />'), 'index.html has zero hardcoded homepage canonical tag');
 assert(indexHtmlContent.includes('Popular Medicine Prices & Monographs'), 'index.html has crawlable semantic HTML directory');
 
 const wranglerPath = path.join(ROOT_DIR, 'wrangler.jsonc');

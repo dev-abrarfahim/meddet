@@ -7,4 +7,4 @@ Disallow: /draft/
 Disallow: /api/private/
 
 # Sitemap Index (contains all sub-sitemaps automatically)
-Sitemap: https://medvhai.heliox.workers.dev/sitemap.xml
+Sitemap: https://meddet.site/sitemap.xml

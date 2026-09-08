@@ -42,7 +42,7 @@ function xmlEscape(str) {
     .replace(/'/g, '&apos;');
 }
 
-const baseUrl = 'https://medvhai.heliox.workers.dev';
+const baseUrl = 'https://meddet.site';
 const today = new Date().toISOString().split('T')[0];
 
 console.log('Generating production sitemap suite for MEDDET with Sitemap Index & Chunking...');

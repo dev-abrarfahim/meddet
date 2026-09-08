@@ -10,7 +10,7 @@
  * 6. High-Performance Edge Caching (Cache-Control + Stale-While-Revalidate)
  */
 
-const SITE_BASE_URL = 'https://medvhai.heliox.workers.dev';
+const SITE_BASE_URL = 'https://meddet.site';
 
 // In-Memory Cache for SEO Data Chunks in Edge Isolate
 const brandChunkCache = new Map();

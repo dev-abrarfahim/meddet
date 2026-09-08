@@ -18,7 +18,7 @@ export const ApiDocsModal: React.FC<ApiDocsModalProps> = ({ isOpen, onClose }) =
 
   if (!isOpen) return null;
 
-  const baseUrl = 'https://medvhai.heliox.workers.dev';
+  const baseUrl = 'https://meddet.site';
 
   // Endpoint Details definition
   const endpoints = [
