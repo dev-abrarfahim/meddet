@@ -251,6 +251,48 @@ assert(workerCode.includes('hasForbiddenQuery'), 'Worker detects and strips conf
 assert(workerCode.includes('404 Not Found') || workerCode.includes('generate404Html'), 'Worker implements true HTTP 404 responses for invalid IDs');
 assert(workerCode.includes('Link'), 'Worker sets HTTP canonical Link header');
 assert(workerCode.includes('dynamic-seo-schema'), 'Worker injects dynamic Schema.org JSON-LD');
+assert(workerCode.includes('brand-chunk-'), 'Worker utilizes lightweight chunked SEO database to eliminate OOM');
+
+console.log('\n======================================================');
+console.log('🧪 7. TESTING SEO CHUNKS & GSC ERROR URL RESOLUTION');
+console.log('======================================================');
+
+const chunksDir = path.join(ROOT_DIR, 'public', 'data', 'seo-chunks');
+assert(fs.existsSync(chunksDir), 'public/data/seo-chunks directory exists');
+
+const brandChunksCount = fs.readdirSync(chunksDir).filter(f => f.startsWith('brand-chunk-')).length;
+assert(brandChunksCount >= 40, `Found ${brandChunksCount} brand SEO chunks (Expected >= 40)`);
+
+// Test exact GSC error examples from Google Search Console
+const gscSamples = [
+  { code: '6izi', expectedName: 'Naxin' },
+  { code: 'k1j8', expectedName: 'E-400' },
+  { code: 'e0j8', expectedName: 'Fona' },
+  { code: '7edg', expectedName: 'Vgard' }
+];
+
+gscSamples.forEach(sample => {
+  const medId = decodeId(sample.code);
+  const chunkIdx = Math.floor(medId / 1000);
+  const chunkFile = path.join(chunksDir, `brand-chunk-${chunkIdx}.json`);
+  const chunk = JSON.parse(fs.readFileSync(chunkFile, 'utf8'));
+  const record = chunk[medId];
+  assert(record && record.name === sample.expectedName, `GSC URL code ${sample.code} successfully resolved to ${sample.expectedName}`);
+});
+
+console.log('\n======================================================');
+console.log('🧪 8. TESTING INDEX.HTML & WRANGLER CONFIGURATION');
+console.log('======================================================');
+
+const indexHtmlPath = path.join(ROOT_DIR, 'index.html');
+const indexHtmlContent = fs.readFileSync(indexHtmlPath, 'utf8');
+assert(!indexHtmlContent.includes('<link rel="canonical" href="https://medvhai.heliox.workers.dev/" />'), 'index.html has zero hardcoded homepage canonical tag');
+assert(indexHtmlContent.includes('Popular Medicine Prices & Monographs'), 'index.html has crawlable semantic HTML directory');
+
+const wranglerPath = path.join(ROOT_DIR, 'wrangler.jsonc');
+assert(fs.existsSync(wranglerPath), 'wrangler.jsonc exists for Cloudflare deployment');
+const wranglerContent = fs.readFileSync(wranglerPath, 'utf8');
+assert(wranglerContent.includes('dist/_worker.js'), 'wrangler.jsonc configures dist/_worker.js as entry point');
 
 console.log('\n======================================================');
 console.log('📊 TEST SUMMARY');

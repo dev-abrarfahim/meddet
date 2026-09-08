@@ -21,8 +21,7 @@
     <meta name="author" content="MedVhai Clinical Index" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://medvhai.heliox.workers.dev/" />
+    <!-- Canonical Link: Injected dynamically with self-referencing URL by Edge Worker & Client-Side SEO Manager -->
 
     <!-- Enterprise SEO Favicon Suite -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -81,7 +80,6 @@
         "@type": "MedicalAudience",
         "audienceType": ["Patients", "Doctors", "Pharmacists", "Medical Students"]
       },
-
       "inLanguage": ["en", "bn"],
       "publisher": {
         "@type": "Organization",
@@ -111,30 +109,106 @@
   </head>
   <body>
     <div id="root">
-      <!-- Inline Critical Loading Skeleton (instant FCP before React hydrates) -->
+      <!-- Semantic Server-Side & Crawler Crawl Mesh (Instant FCP + Search Engine Internal Linking) -->
       <style>
-        .mv-skel{font-family:system-ui,-apple-system,sans-serif;min-height:100vh;background:#F1F9FF}
-        .dark .mv-skel{background:#0B131B}
-        .mv-skel-hdr{height:64px;background:#095D7E;display:flex;align-items:center;padding:0 16px}
-        .dark .mv-skel-hdr{background:#0B1927}
-        .mv-skel-logo{height:32px;width:120px;background:rgba(255,255,255,0.15);border-radius:6px}
-        .mv-skel-bar{height:44px;background:#074760;display:flex;align-items:center;padding:0 16px}
-        .dark .mv-skel-bar{background:#0E2439}
-        .mv-skel-search{height:32px;width:100%;max-width:640px;margin:0 auto;background:rgba(255,255,255,0.12);border-radius:8px}
-        .mv-skel-hero{margin:16px;padding:32px 24px;background:linear-gradient(135deg,#095D7E,#074760,#042C3C);border-radius:16px;text-align:center}
-        .dark .mv-skel-hero{background:linear-gradient(135deg,#0B1927,#0E2439,#07131F)}
-        .mv-skel-h1{color:#E2FCD6;font-size:20px;font-weight:900;margin:0 0 8px}
-        .mv-skel-p{color:#CCECEE;font-size:14px;margin:0;opacity:0.85}
-        @keyframes mv-pulse{0%,100%{opacity:1}50%{opacity:0.5}}
-        .mv-skel-pulse{animation:mv-pulse 1.5s ease-in-out infinite}
+        .mv-init-wrap { font-family: system-ui, -apple-system, sans-serif; min-height: 100vh; background: #F1F9FF; color: #095D7E; margin: 0; padding: 0; }
+        .mv-init-hdr { height: 64px; background: #095D7E; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; color: #fff; }
+        .mv-init-hero { padding: 40px 20px; background: linear-gradient(135deg, #095D7E, #074760, #042C3C); color: #fff; text-align: center; }
+        .mv-init-hero h1 { font-size: 28px; margin: 0 0 10px; color: #E2FCD6; }
+        .mv-init-hero p { font-size: 15px; color: #CCECEE; max-width: 700px; margin: 0 auto 20px; line-height: 1.5; }
+        .mv-init-content { max-width: 1100px; margin: 24px auto; padding: 0 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .mv-init-card { background: #fff; border: 1px solid #CCECEE; border-radius: 16px; padding: 20px; box-shadow: 0 4px 12px rgba(9, 93, 126, 0.05); }
+        .mv-init-card h2 { font-size: 16px; font-weight: 800; color: #095D7E; margin-top: 0; border-bottom: 2px solid #E2FCD6; padding-bottom: 8px; }
+        .mv-init-links { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-direction: column; gap: 8px; }
+        .mv-init-links a { color: #14967F; text-decoration: none; font-size: 13px; font-weight: 700; }
+        .mv-init-links a:hover { text-decoration: underline; color: #095D7E; }
+        .mv-init-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+        .mv-init-tag { background: #EAF4F9; color: #095D7E; padding: 4px 10px; border-radius: 8px; font-size: 12px; text-decoration: none; font-weight: 700; }
+        .mv-init-footer { text-align: center; padding: 24px 16px; font-size: 12px; color: #526E7E; border-top: 1px solid #CCECEE; margin-top: 40px; }
+        @media (prefers-color-scheme: dark) {
+          .mv-init-wrap { background: #0B131B; color: #E2FCD6; }
+          .mv-init-card { background: #131B2E; border-color: #1E3A52; }
+          .mv-init-card h2 { color: #E2FCD6; border-bottom-color: #14967F; }
+          .mv-init-links a { color: #2DD4BF; }
+          .mv-init-tag { background: #1E293B; color: #2DD4BF; }
+        }
       </style>
-      <div class="mv-skel" aria-hidden="true">
-        <div class="mv-skel-hdr"><div class="mv-skel-logo mv-skel-pulse"></div></div>
-        <div class="mv-skel-bar"><div class="mv-skel-search mv-skel-pulse"></div></div>
-        <div class="mv-skel-hero">
-          <div class="mv-skel-h1">MedVhai™</div>
-          <p class="mv-skel-p">Clinical Drug Index & Medicine Price BD</p>
-        </div>
+      <div class="mv-init-wrap">
+        <header class="mv-init-hdr">
+          <a href="/" style="color: #fff; text-decoration: none; font-weight: 900; font-size: 20px;">MedVhai™ Clinical Index</a>
+          <nav style="display: flex; gap: 14px; font-size: 13px;">
+            <a href="/about" style="color: #E2FCD6; text-decoration: none; font-weight: bold;">About</a>
+            <a href="/companies" style="color: #E2FCD6; text-decoration: none; font-weight: bold;">Pharma Companies</a>
+            <a href="/terms" style="color: #E2FCD6; text-decoration: none; font-weight: bold;">Medical Disclaimer</a>
+            <a href="/contact" style="color: #E2FCD6; text-decoration: none; font-weight: bold;">Contact</a>
+          </nav>
+        </header>
+
+        <section class="mv-init-hero">
+          <h1>Bangladesh Clinical Drug Index & Medicine Price BD</h1>
+          <p>Search 30,500+ verified brand medicines, active generic pharmaceutical substances, verified MRP BDT prices, lower-cost alternative brands, and bilingual clinical monographs.</p>
+        </section>
+
+        <main class="mv-init-content">
+          <!-- Popular Medicines -->
+          <article class="mv-init-card">
+            <h2>Popular Medicine Prices & Monographs</h2>
+            <ul class="mv-init-links">
+              <li><a href="/medicine/napa-500mg-tablet-g182">Napa 500mg Tablet (Paracetamol) — Beximco</a></li>
+              <li><a href="/medicine/seclo-20mg-capsule-ymhk">Seclo 20mg Capsule (Omeprazole) — Square</a></li>
+              <li><a href="/medicine/maxpro-20mg-tablet-e70u">Maxpro 20mg Tablet (Esomeprazole) — Renata</a></li>
+              <li><a href="/medicine/sergel-20mg-capsule-sfzg">Sergel 20mg Capsule (Esomeprazole) — Incepta</a></li>
+              <li><a href="/medicine/ace-500mg-tablet-rz9o">Ace 500mg Tablet (Paracetamol) — Square</a></li>
+              <li><a href="/medicine/monas-10-10mg-tablet-wjyr">Monas 10mg Tablet (Montelukast) — Acme</a></li>
+            </ul>
+          </article>
+
+          <!-- Top Generics -->
+          <article class="mv-init-card">
+            <h2>Common Generic Active Substances</h2>
+            <ul class="mv-init-links">
+              <li><a href="/generic/paracetamol-k9p3">Paracetamol (প্যারাসিটামল) — Alternative Brands</a></li>
+              <li><a href="/generic/esomeprazole-443z">Esomeprazole (এসোমিপ্রাজল) — Price & Dosage</a></li>
+              <li><a href="/generic/omeprazole-11w7">Omeprazole (ওমিপ্রাজল) — Brand Directory</a></li>
+              <li><a href="/generic/cefixime-041z">Cefixime (সেফিক্সিম) — Clinical Monograph</a></li>
+              <li><a href="/generic/azithromycin-7y20">Azithromycin (এজিথ্রোমাইসিন) — Side Effects</a></li>
+            </ul>
+          </article>
+
+          <!-- Top Dosage Forms -->
+          <article class="mv-init-card">
+            <h2>Browse by Dosage Form</h2>
+            <div class="mv-init-tags">
+              <a href="/dosage-form/tablet" class="mv-init-tag">Tablets</a>
+              <a href="/dosage-form/capsule" class="mv-init-tag">Capsules</a>
+              <a href="/dosage-form/syrup" class="mv-init-tag">Syrups</a>
+              <a href="/dosage-form/suspension" class="mv-init-tag">Suspensions</a>
+              <a href="/dosage-form/injection" class="mv-init-tag">Injections</a>
+              <a href="/dosage-form/eye-drops" class="mv-init-tag">Eye Drops</a>
+              <a href="/dosage-form/cream" class="mv-init-tag">Creams</a>
+              <a href="/dosage-form/ointment" class="mv-init-tag">Ointments</a>
+            </div>
+          </article>
+
+          <!-- Top Pharma Manufacturers -->
+          <article class="mv-init-card">
+            <h2>Leading Pharmaceutical Companies</h2>
+            <ul class="mv-init-links">
+              <li><a href="/company/square-pharmaceuticals-plc">Square Pharmaceuticals PLC</a></li>
+              <li><a href="/company/beximco-pharmaceuticals-ltd">Beximco Pharmaceuticals Ltd</a></li>
+              <li><a href="/company/incepta-pharmaceuticals-ltd">Incepta Pharmaceuticals Ltd</a></li>
+              <li><a href="/company/healthcare-pharmaceuticals-ltd">Healthcare Pharmaceuticals Ltd</a></li>
+              <li><a href="/company/renata-limited">Renata Limited</a></li>
+              <li><a href="/companies">View all 723 Licensed Manufacturers →</a></li>
+            </ul>
+          </article>
+        </main>
+
+        <footer class="mv-init-footer">
+          <p><strong>Regulatory & Clinical E-E-A-T Attribution:</strong> Data referenced in compliance with DGDA (Directorate General of Drug Administration, Bangladesh) and Bangladesh National Formulary (BDNF).</p>
+          <p>MedVhai is an educational clinical reference platform. Always consult a registered physician for diagnosis and treatment.</p>
+          <p>© 2026 MedVhai Health Index. All rights reserved.</p>
+        </footer>
       </div>
     </div>
     <script type="module" src="/src/main.tsx"></script>

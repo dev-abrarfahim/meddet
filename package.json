@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "node scripts/generateSitemap.js && tsc && vite build",
+    "build": "node scripts/generateSeoChunks.js && node scripts/generateSitemap.js && tsc && vite build",
+    "chunks": "node scripts/generateSeoChunks.js",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit",

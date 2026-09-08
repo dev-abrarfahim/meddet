@@ -38,25 +38,35 @@ export const MedicalDisclaimer: React.FC<MedicalDisclaimerProps> = ({ onOpenApiD
           </div>
         </div>
 
-        {/* Column 2: Quick Index Links */}
-        <div className="space-y-2 hidden sm:block">
+        {/* Column 2: Quick Index Links & Medical Reference */}
+        <div className="space-y-2">
           <h4 className="text-xs font-black uppercase tracking-wider text-[#E2FCD6] dark:text-[#2DD4BF]">
-            Clinical Tools
+            Index Directory & Legal
           </h4>
           <ul className="space-y-1.5 text-xs text-[#CCECEE] dark:text-slate-300 font-semibold">
             <li>
-              <a href="#sec-overview" className="hover:text-white transition-colors">
-                Medicine Search Index
+              <a href="/about" className="hover:text-white transition-colors">
+                About MedVhai Clinical Index
               </a>
             </li>
             <li>
-              <a href="#sec-alternatives" className="hover:text-white transition-colors">
-                Lower Cost Brand Comparison
+              <a href="/companies" className="hover:text-white transition-colors">
+                All 723 Pharma Companies
               </a>
             </li>
             <li>
-              <a href="#sec-monograph" className="hover:text-white transition-colors">
-                Clinical Monograph Guidelines
+              <a href="/terms" className="hover:text-white transition-colors">
+                Medical Disclaimer & Terms
+              </a>
+            </li>
+            <li>
+              <a href="/privacy-policy" className="hover:text-white transition-colors">
+                Privacy Policy (Zero Health Tracking)
+              </a>
+            </li>
+            <li>
+              <a href="/contact" className="hover:text-white transition-colors">
+                Contact & Clinical Corrections
               </a>
             </li>
           </ul>

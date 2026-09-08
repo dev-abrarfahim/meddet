@@ -2,22 +2,22 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <sitemap>
         <loc>https://medvhai.heliox.workers.dev/sitemaps/sitemap-core.xml</loc>
-        <lastmod>2026-08-18</lastmod>
+        <lastmod>2026-09-08</lastmod>
     </sitemap>
     <sitemap>
         <loc>https://medvhai.heliox.workers.dev/sitemaps/sitemap-generics.xml</loc>
-        <lastmod>2026-08-18</lastmod>
+        <lastmod>2026-09-08</lastmod>
     </sitemap>
     <sitemap>
         <loc>https://medvhai.heliox.workers.dev/sitemaps/sitemap-medicines-1.xml</loc>
-        <lastmod>2026-08-18</lastmod>
+        <lastmod>2026-09-08</lastmod>
     </sitemap>
     <sitemap>
         <loc>https://medvhai.heliox.workers.dev/sitemaps/sitemap-medicines-2.xml</loc>
-        <lastmod>2026-08-18</lastmod>
+        <lastmod>2026-09-08</lastmod>
     </sitemap>
     <sitemap>
         <loc>https://medvhai.heliox.workers.dev/sitemaps/sitemap-medicines-3.xml</loc>
-        <lastmod>2026-08-18</lastmod>
+        <lastmod>2026-09-08</lastmod>
     </sitemap>
 </sitemapindex>
