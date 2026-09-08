@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronUp, ChevronDown, Building2, Layers } from 'lucide-react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { ChevronUp, ChevronDown, Layers } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Medicine } from '../../types';
 import { getAlternativeBrands } from '../../data/dbEngine';
@@ -18,14 +18,14 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
   const [isPaused, setIsPaused] = useState<boolean>(false);
 
   // Fetch alternatives with matching generic, dosage form, and strength
-  const rawAlternatives = getAlternativeBrands(medicine.genericId, medicine.id, medicine.form);
-
-  // Sort by lowest price first
-  const alternatives = [...rawAlternatives].sort((a, b) => {
-    const pA = a.mrp > 0 ? a.mrp : 999;
-    const pB = b.mrp > 0 ? b.mrp : 999;
-    return pA - pB;
-  });
+  const alternatives = useMemo(() => {
+    const rawAlternatives = getAlternativeBrands(medicine.genericId, medicine.id, medicine.form);
+    return [...rawAlternatives].sort((a, b) => {
+      const pA = a.mrp > 0 ? a.mrp : 999;
+      const pB = b.mrp > 0 ? b.mrp : 999;
+      return pA - pB;
+    });
+  }, [medicine.genericId, medicine.id, medicine.form]);
 
   // Automatic smooth transition every 4.5 seconds
   useEffect(() => {

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Building2, Layers, ArrowLeft, ExternalLink } from 'lucide-react';
+import React, { useMemo } from 'react';
+import { Layers, ArrowLeft, ExternalLink } from 'lucide-react';
 import { Medicine, LanguageMode } from '../../types';
 import { getAlternativeBrands } from '../../data/dbEngine';
 import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
@@ -24,13 +24,15 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
   const { iconPath, color: badgeColor } = getDosageFormIconInfo(medicine.form);
 
   // Find variants of the same generic/brand with different strengths & forms
-  const allGenericAlternatives = getAlternativeBrands(medicine.genericId);
-  const variants = [
-    medicine,
-    ...allGenericAlternatives.filter(
-      (m) => m.company.toLowerCase() === medicine.company.toLowerCase() || m.name.toLowerCase().startsWith(medicine.name.split(' ')[0].toLowerCase())
-    )
-  ].filter((v, idx, self) => self.findIndex(t => t.form === v.form && t.strength === v.strength) === idx).slice(0, 6);
+  const variants = useMemo(() => {
+    const allGenericAlternatives = getAlternativeBrands(medicine.genericId);
+    return [
+      medicine,
+      ...allGenericAlternatives.filter(
+        (m) => m.company.toLowerCase() === medicine.company.toLowerCase() || m.name.toLowerCase().startsWith(medicine.name.split(' ')[0].toLowerCase())
+      )
+    ].filter((v, idx, self) => self.findIndex(t => t.form === v.form && t.strength === v.strength) === idx).slice(0, 6);
+  }, [medicine]);
 
   return (
     <section id="sec-overview" className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800/80 p-3.5 sm:p-4 shadow-sm transition-colors space-y-2.5">

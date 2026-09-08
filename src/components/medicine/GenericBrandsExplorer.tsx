@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Building2, ChevronLeft, ArrowUpDown, Filter, Sparkles } from 'lucide-react';
 import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
 import { Medicine, LanguageMode } from '../../types';
@@ -63,6 +63,13 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
   const [selectedStrength, setSelectedStrength] = useState<string>(defaultStrength);
   const [selectedForm, setSelectedForm] = useState<string>(defaultForm);
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity'>('name');
+
+  // Sync filter state when generic context changes
+  useEffect(() => {
+    setSelectedForm(defaultForm);
+    setSelectedStrength(defaultStrength);
+    setSelectedCompany('All');
+  }, [defaultForm, defaultStrength]);
 
   // Filter & Sort Logic
   const filteredBrands = useMemo(() => {

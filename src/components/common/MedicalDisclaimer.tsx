@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stethoscope, ShieldCheck, Code2, ExternalLink, Heart, Lock } from 'lucide-react';
+import { ShieldCheck, Code2, ExternalLink, Heart, Lock } from 'lucide-react';
 
 interface MedicalDisclaimerProps {
   onOpenApiDocs?: () => void;

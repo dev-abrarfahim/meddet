@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { X, RotateCcw, Filter } from 'lucide-react';
 import { FilterOptions } from '../../types';
 import { getAllCompanies, getAllDosageForms } from '../../data/dbEngine';
@@ -14,8 +14,8 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
   onChangeFilters,
   onResetFilters
 }) => {
-  const companies = getAllCompanies();
-  const dosageForms = getAllDosageForms();
+  const companies = useMemo(() => getAllCompanies(), []);
+  const dosageForms = useMemo(() => getAllDosageForms(), []);
 
   return (
     <div className="space-y-5">

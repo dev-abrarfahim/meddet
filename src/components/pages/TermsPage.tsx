@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileText, ShieldAlert, CheckCircle2, Stethoscope, AlertTriangle } from 'lucide-react';
+import { FileText, AlertTriangle } from 'lucide-react';
 import { LanguageMode } from '../../types';
 
 interface TermsPageProps {

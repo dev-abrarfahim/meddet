@@ -142,7 +142,7 @@ export default function App() {
 
       // If embedded inside Blogger iframe, sync URL via postMessage
       if (window.parent && window.parent !== window) {
-        window.parent.postMessage({ type: 'MEDVHAI_URL_CHANGE', pathname: url.pathname, search: url.search }, '*');
+        window.parent.postMessage({ type: 'MEDVHAI_URL_CHANGE', pathname: url.pathname, search: url.search }, 'https://medvhai.heliox.workers.dev');
       }
     } catch {}
   };
@@ -529,7 +529,7 @@ export default function App() {
   };
 
   // Execute database search with pagination
-  const searchResults = searchMedicines(
+  const searchResults = React.useMemo(() => searchMedicines(
     searchQuery,
     selectedLetter,
     {
@@ -541,13 +541,14 @@ export default function App() {
     },
     currentPage,
     48
-  );
+  ), [searchQuery, selectedLetter, filters.category, filters.dosageForm, filters.manufacturer, filters.maxPrice, filters.sortBy, currentPage]);
 
-  const activeFilterCount =
+  const activeFilterCount = React.useMemo(() =>
     (filters.category !== 'All' ? 1 : 0) +
     (filters.dosageForm !== 'All' ? 1 : 0) +
     (filters.manufacturer !== 'All' ? 1 : 0) +
-    (filters.maxPrice > 0 ? 1 : 0);
+    (filters.maxPrice > 0 ? 1 : 0)
+  , [filters.category, filters.dosageForm, filters.manufacturer, filters.maxPrice]);
 
   const handleSelectMedicine = (med: Medicine) => {
     const fullMed = getMedicineById(med.id) || med;

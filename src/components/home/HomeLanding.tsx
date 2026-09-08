@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   Search,
   Pill,
@@ -6,7 +6,6 @@ import {
   Activity,
   HeartPulse,
   Layers,
-  Building2,
   Stethoscope,
   Grid
 } from 'lucide-react';
@@ -34,12 +33,12 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
   };
 
   // Sample top featured medicines from database
-  const featuredMedicines = searchMedicines('Napa', 'All', {}, 1, 6).items;
+  const featuredMedicines = useMemo(() => searchMedicines('Napa', 'All', {}, 1, 6).items, []);
 
   // Top manufacturers
-  const topCompanies = getAllCompanies()
+  const topCompanies = useMemo(() => getAllCompanies()
     .filter((c) => c.brandCount > 100)
-    .slice(0, 8);
+    .slice(0, 8), []);
 
   const categoriesList = [
     { name: 'Ulcer', label: lang === 'en' ? 'Acid Reflux & Ulcer' : 'এসিড রিফ্লাক্স ও আলসার', icon: Pill, color: 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800' },

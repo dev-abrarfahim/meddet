@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Info, ShieldCheck, FileText, Mail, Building2, ExternalLink, Heart, CheckCircle2 } from 'lucide-react';
+import { X, Info, ShieldCheck, FileText, Mail, Building2, CheckCircle2 } from 'lucide-react';
 import { LanguageMode } from '../../types';
 
 export type InfoModalType = 'about' | 'privacy' | 'terms' | 'contact' | null;

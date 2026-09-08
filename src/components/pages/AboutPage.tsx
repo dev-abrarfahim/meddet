@@ -1,5 +1,5 @@
 import React from 'react';
-import { Info, ShieldCheck, Database, Building2, Pill, CheckCircle2, ArrowRight, Heart, Sparkles } from 'lucide-react';
+import { ShieldCheck, Database, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 import { LanguageMode } from '../../types';
 
 interface AboutPageProps {

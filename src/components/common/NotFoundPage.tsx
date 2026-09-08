@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Home, ArrowRight, Pill, Sparkles, RefreshCw, Layers, Building2, HelpCircle } from 'lucide-react';
+import { Search, Home, ArrowRight, Pill, Sparkles, Layers, Building2 } from 'lucide-react';
 import { LanguageMode } from '../../types';
 import { getDosageFormCanonicalPath, getCompanyCanonicalPath } from '../../utils/urlHelper';
 

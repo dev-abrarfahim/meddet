@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Lock, EyeOff, Server, HardDrive, Sparkles } from 'lucide-react';
+import { ShieldCheck, EyeOff, Server, HardDrive } from 'lucide-react';
 import { LanguageMode } from '../../types';
 
 interface PrivacyPolicyPageProps {

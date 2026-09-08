@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Building2, Search, ArrowRight, Trophy, Award, Star, Loader2 } from 'lucide-react';
+import { Building2, Search, ArrowRight, Trophy, Award, Star } from 'lucide-react';
 import { LanguageMode, CompanyInfo } from '../../types';
 import { getAllCompanies, subscribeDatabase, isDatabaseReady } from '../../data/dbEngine';
 import { getCompanyCanonicalPath } from '../../utils/urlHelper';

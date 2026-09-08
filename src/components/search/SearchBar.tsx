@@ -82,9 +82,12 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   // Update live instant suggestions
   useEffect(() => {
     if (query.trim().length >= 2) {
-      const res = searchMedicines(query, 'All', {}, 1, 6);
-      setSuggestions(res.items);
-      setIsOpen(true);
+      const timer = setTimeout(() => {
+        const res = searchMedicines(query, 'All', {}, 1, 6);
+        setSuggestions(res.items);
+        setIsOpen(true);
+      }, 250);
+      return () => clearTimeout(timer);
     } else {
       setSuggestions([]);
     }

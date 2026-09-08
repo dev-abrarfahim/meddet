@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Building2, Send, CheckCircle2, MessageSquare, AlertCircle, Sparkles } from 'lucide-react';
+import { Mail, Building2, Send, CheckCircle2, Sparkles } from 'lucide-react';
 import { LanguageMode } from '../../types';
 
 interface ContactPageProps {

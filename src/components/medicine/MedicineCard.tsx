@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Medicine } from '../../types';
 import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
 import { getMedicineCanonicalPath } from '../../utils/urlHelper';

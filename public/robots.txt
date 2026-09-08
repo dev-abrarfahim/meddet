@@ -6,10 +6,5 @@ Allow: /
 Disallow: /draft/
 Disallow: /api/private/
 
-# Sitemap Suite & Sub-Sitemaps
+# Sitemap Index (contains all sub-sitemaps automatically)
 Sitemap: https://medvhai.heliox.workers.dev/sitemap.xml
-Sitemap: https://medvhai.heliox.workers.dev/sitemaps/sitemap-core.xml
-Sitemap: https://medvhai.heliox.workers.dev/sitemaps/sitemap-generics.xml
-Sitemap: https://medvhai.heliox.workers.dev/sitemaps/sitemap-medicines-1.xml
-Sitemap: https://medvhai.heliox.workers.dev/sitemaps/sitemap-medicines-2.xml
-Sitemap: https://medvhai.heliox.workers.dev/sitemaps/sitemap-medicines-3.xml
