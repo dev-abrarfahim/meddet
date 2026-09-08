@@ -340,9 +340,18 @@ export default function App() {
 
   // Synchronize Search & Filter state to browser URL (Debounced replaceState)
   useEffect(() => {
-    if (!dbReady || selectedMedicine || explorerGenericId || is404) return;
-    const pathname = window.location.pathname;
-    if (pathname.startsWith('/medicine/') || pathname.startsWith('/generic/')) return;
+    if (!dbReady || selectedMedicine || explorerGenericId || is404 || activeStandalonePage) return;
+    const pathname = window.location.pathname.replace(/\/$/, '');
+    if (
+      pathname.startsWith('/medicine/') ||
+      pathname.startsWith('/generic/') ||
+      pathname === '/about' ||
+      pathname === '/privacy-policy' ||
+      pathname === '/terms' ||
+      pathname === '/contact' ||
+      pathname === '/companies' ||
+      pathname === '/api-docs'
+    ) return;
 
     const timer = setTimeout(() => {
       try {
@@ -375,7 +384,7 @@ export default function App() {
     }, 250);
 
     return () => clearTimeout(timer);
-  }, [dbReady, searchQuery, selectedLetter, filters, activeTab, selectedMedicine, explorerGenericId, is404]);
+  }, [dbReady, searchQuery, selectedLetter, filters, activeTab, selectedMedicine, explorerGenericId, is404, activeStandalonePage]);
 
   // Handle browser Back / Forward button navigation (popstate)
   useEffect(() => {
