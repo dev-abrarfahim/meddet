@@ -160,39 +160,44 @@ export default function App() {
 
       // Dedicated Standalone Content Pages: /about, /privacy-policy, /terms, /contact, /companies, /api-docs
       const cleanPath = pathname.replace(/\/$/, '');
-      if (cleanPath === '/about') {
+      if (cleanPath === '/about' || cleanPath === '/about-us') {
         setActiveStandalonePage('about');
         setSelectedMedicine(null);
         setExplorerGenericId(null);
         setIs404(false);
+        if (cleanPath !== '/about') window.history.replaceState(null, '', '/about');
         return;
       }
-      if (cleanPath === '/privacy-policy') {
+      if (cleanPath === '/privacy-policy' || cleanPath === '/privacy') {
         setActiveStandalonePage('privacy');
         setSelectedMedicine(null);
         setExplorerGenericId(null);
         setIs404(false);
+        if (cleanPath !== '/privacy-policy') window.history.replaceState(null, '', '/privacy-policy');
         return;
       }
-      if (cleanPath === '/terms') {
+      if (cleanPath === '/terms' || cleanPath === '/terms-and-conditions' || cleanPath === '/terms-of-use') {
         setActiveStandalonePage('terms');
         setSelectedMedicine(null);
         setExplorerGenericId(null);
         setIs404(false);
+        if (cleanPath !== '/terms') window.history.replaceState(null, '', '/terms');
         return;
       }
-      if (cleanPath === '/contact') {
+      if (cleanPath === '/contact' || cleanPath === '/contact-us') {
         setActiveStandalonePage('contact');
         setSelectedMedicine(null);
         setExplorerGenericId(null);
         setIs404(false);
+        if (cleanPath !== '/contact') window.history.replaceState(null, '', '/contact');
         return;
       }
-      if (cleanPath === '/companies') {
+      if (cleanPath === '/companies' || cleanPath === '/company' || cleanPath === '/manufacturers') {
         setActiveStandalonePage('companies');
         setSelectedMedicine(null);
         setExplorerGenericId(null);
         setIs404(false);
+        if (cleanPath !== '/companies') window.history.replaceState(null, '', '/companies');
         return;
       }
       if (cleanPath === '/api-docs') {
@@ -352,23 +357,33 @@ export default function App() {
         return;
       }
 
-      // 6. Default Root Homepage
+      // 6. Default Root Homepage (strictly for '/' or '')
+      if (pathname === '/' || pathname === '') {
+        setSelectedMedicine(null);
+        setExplorerGenericId(null);
+        setExplorerForm(undefined);
+        setExplorerStrength(undefined);
+        setActiveStandalonePage(null);
+        setActiveTab('home');
+        setSearchQuery('');
+        setSelectedLetter('All');
+        setCurrentPage(1);
+        setFilters({
+          category: 'All',
+          dosageForm: 'All',
+          manufacturer: 'All',
+          maxPrice: 0,
+          sortBy: 'relevance'
+        });
+        return;
+      }
+
+      // 7. Unknown Path -> Trigger 404 Recovery View
+      setIs404(true);
+      setNotFoundSlug(pathname.replace(/^\//, ''));
       setSelectedMedicine(null);
       setExplorerGenericId(null);
-      setExplorerForm(undefined);
-      setExplorerStrength(undefined);
       setActiveStandalonePage(null);
-      setActiveTab('home');
-      setSearchQuery('');
-      setSelectedLetter('All');
-      setCurrentPage(1);
-      setFilters({
-        category: 'All',
-        dosageForm: 'All',
-        manufacturer: 'All',
-        maxPrice: 0,
-        sortBy: 'relevance'
-      });
     } catch {}
   };
 
@@ -468,6 +483,12 @@ export default function App() {
 
   // Dynamically update document title, meta descriptions, canonical link, OpenGraph & Schema.org JSON-LD
   useEffect(() => {
+    if (is404) {
+      document.title = '404 — Page Not Found | MEDDET™ Clinical Index';
+      let metaRobots = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+      if (metaRobots) metaRobots.setAttribute('content', 'noindex, follow');
+      return;
+    }
     if (activeStandalonePage) {
       updateDynamicSEO({ staticPage: activeStandalonePage });
       return;
@@ -482,7 +503,7 @@ export default function App() {
       letter: selectedLetter !== 'All' ? selectedLetter : undefined,
       searchQuery: searchQuery || undefined
     });
-  }, [activeStandalonePage, selectedMedicine, explorerGenericId, searchQuery, filters.category, filters.dosageForm, filters.manufacturer, selectedLetter, activeTab]);
+  }, [is404, activeStandalonePage, selectedMedicine, explorerGenericId, searchQuery, filters.category, filters.dosageForm, filters.manufacturer, selectedLetter, activeTab]);
 
   const handleOpenGenericBrandsExplorer = (genericId: number, form?: string, strength?: string) => {
     setActiveStandalonePage(null);
@@ -566,19 +587,19 @@ export default function App() {
     setExplorerGenericId(null);
 
     const clean = path.replace(/\/$/, '');
-    if (clean === '/about') {
+    if (clean === '/about' || clean === '/about-us') {
       setActiveStandalonePage('about');
       syncNavigationUrl('/about');
-    } else if (clean === '/privacy-policy') {
+    } else if (clean === '/privacy-policy' || clean === '/privacy') {
       setActiveStandalonePage('privacy');
       syncNavigationUrl('/privacy-policy');
-    } else if (clean === '/terms') {
+    } else if (clean === '/terms' || clean === '/terms-and-conditions' || clean === '/terms-of-use') {
       setActiveStandalonePage('terms');
       syncNavigationUrl('/terms');
-    } else if (clean === '/contact') {
+    } else if (clean === '/contact' || clean === '/contact-us') {
       setActiveStandalonePage('contact');
       syncNavigationUrl('/contact');
-    } else if (clean === '/companies') {
+    } else if (clean === '/companies' || clean === '/company' || clean === '/manufacturers') {
       setActiveStandalonePage('companies');
       syncNavigationUrl('/companies');
     } else if (clean === '/api-docs') {

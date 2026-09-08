@@ -641,21 +641,47 @@ export default {
       return new Response(transformed.body, { status: 200, headers: responseHeaders });
     }
 
-    // 7. Homepage -> Injects Homepage Canonical
-    const baseReq = new Request(`${origin}/index.html`, request);
-    const baseRes = await env.ASSETS.fetch(baseReq);
-    const canonicalUrl = `${origin}/`;
+    // 6b. Common 301 Permanent Aliases
+    const aliases = {
+      '/privacy': '/privacy-policy',
+      '/about-us': '/about',
+      '/terms-and-conditions': '/terms',
+      '/terms-of-use': '/terms',
+      '/contact-us': '/contact',
+      '/company': '/companies',
+      '/manufacturers': '/companies',
+      '/index.html': '/'
+    };
+    if (aliases[cleanStaticPath]) {
+      return Response.redirect(`${origin}${aliases[cleanStaticPath]}`, 301);
+    }
 
-    const transformed = new HTMLRewriter()
-      .on('head', {
-        element(el) {
-          el.append(`<link rel="canonical" href="${canonicalUrl}">`, { html: true });
-        }
-      })
-      .transform(baseRes);
+    // 7. Homepage -> Injects Homepage Canonical (Strictly for '/' or '')
+    if (cleanStaticPath === '') {
+      const baseReq = new Request(`${origin}/index.html`, request);
+      const baseRes = await env.ASSETS.fetch(baseReq);
+      const canonicalUrl = `${origin}/`;
 
-    const responseHeaders = new Headers(transformed.headers);
-    responseHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
-    return new Response(transformed.body, { status: 200, headers: responseHeaders });
+      const transformed = new HTMLRewriter()
+        .on('head', {
+          element(el) {
+            el.append(`<link rel="canonical" href="${canonicalUrl}">`, { html: true });
+          }
+        })
+        .transform(baseRes);
+
+      const responseHeaders = new Headers(transformed.headers);
+      responseHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
+      return new Response(transformed.body, { status: 200, headers: responseHeaders });
+    }
+
+    // 8. True HTTP 404 for any other unrecognized URL (Prevents Google Soft-404 penalty)
+    return new Response(generate404Html('Page Not Found', pathname), {
+      status: 404,
+      headers: {
+        'Content-Type': 'text/html; charset=utf-8',
+        'X-Robots-Tag': 'noindex, follow'
+      }
+    });
   }
 };
