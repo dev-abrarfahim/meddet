@@ -3,980 +3,980 @@
     <!-- Homepage -->
     <url>
         <loc>https://meddet.site/</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
     <!-- Standalone Core Content Pages -->
     <url>
         <loc>https://meddet.site/about</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/companies</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://meddet.site/privacy-policy</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.70</priority>
     </url>
     <url>
         <loc>https://meddet.site/terms</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.70</priority>
     </url>
     <url>
         <loc>https://meddet.site/contact</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
     <url>
         <loc>https://meddet.site/api-docs</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/dosage-form/tablet</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://meddet.site/dosage-form/capsule</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://meddet.site/dosage-form/injection</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://meddet.site/dosage-form/syrup</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://meddet.site/dosage-form/suspension</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://meddet.site/dosage-form/cream</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://meddet.site/dosage-form/eye-drops</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://meddet.site/dosage-form/solution</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://meddet.site/dosage-form/inhaler</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://meddet.site/dosage-form/suppository</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/square-pharmaceuticals-plc</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/incepta-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/beximco-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/healthcare-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/renata-plc</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/eskayef-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/opsonin-pharma-limited</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/aristopharma-limited</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/popular-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/acme-laboratories-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/aci-limited</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/radiant-pharmaceutical-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/drug-international-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/unimed-unihealth-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/beacon-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/nipro-jmi-pharma-limited</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/ziska-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/ibn-sina-pharmaceutical-ind-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/navana-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/synovia-pharma-plc</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/nuvista-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/novartis-bangladesh-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/roche-bangladesh-limited</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/general-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/sun-pharmaceutical-bangladesh-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/orion-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/everest-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/labaid-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/delta-pharma-limited</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/osl-pharma-limited</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/biopharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/pacific-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/mundipharma-bangladesh-pvt-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/dbl-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/jenphar-bangladesh-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/pharmasia-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/pharmacil-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/jayson-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/globe-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/one-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/team-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/goodman-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/white-horse-pharma</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/sharif-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/albion-laboratories-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/techno-drugs-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/euro-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/apex-pharma-limited</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/asiatic-laboratories-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/kemiko-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/alco-pharma-limited</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/novatek-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/g-a-company-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/somatec-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/chemist-laboratories-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/edruc-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/gonoshasthaya-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/ad-din-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/pharmik-laboratories-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/benham-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/zenith-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/rangs-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/rephco-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/amico-laboratories-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/kumudini-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/medicon-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/medimet-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/silva-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/nipa-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/concord-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/pharmadesh-laboratories-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/ethical-drug-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/ambee-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/veritas-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/zas-corporation</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/doctors-chemicals-works-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/astra-biopharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/novo-healthcare-and-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/desh-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/silco-pharmaceuticlas-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/leon-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/monicopharma-limited</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/cosmic-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/naafco-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/al-madina-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/hudson-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/biogen-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/reman-drug-laboratories-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/supreme-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/salton-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/bristol-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/doctor-tims-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/millat-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/seema-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/modern-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/virgo-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/hallmark-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/union-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/indobangla-pharmaceuticals</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/smc-enterprise-limited-bangladesh</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/sunman-birdem-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/central-pharmaceutical-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/globex-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/belsen-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/amulet-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/apc-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/pristine-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/apollo-pharmaceutical-laboratories-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/syntho-laboratories-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/aexim-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/cosmo-pharma-laboratories-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/novelta-bestway-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/reliance-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/united-chemicals-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/guardian-healthcare-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/mystic-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/decent-pharma-laboratories-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/premier-pharmaceuticals</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/arges-life-science-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/avarox-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/peoples-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/genvio-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/shamsul-al-amin-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/marksman-pharmaceutical-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/the-ibn-sina-pharmaceutical-industry-plc</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/edcl-dhaka</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/c2c-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/innova-phrmaceutical-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/medrx-life-science-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/novus-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/bengal-drugs-chemical-works-pharm-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/gonoshasthaya-pharma-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/sonear-laboratories-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/centeon-pharma-limited</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/national-drug-co-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/prime-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/libra-pharmaceuticls-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/maks-drug-limited</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/maks-drugs-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/physic-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/aztec-pharmaceuticals</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/mst-pharma-and-healthcare-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/s-n-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/allied-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/oyster-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://meddet.site/company/greenland-pharmaceuticals-ltd</loc>
-        <lastmod>2026-09-08</lastmod>
+        <lastmod>2026-09-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.80</priority>
     </url>

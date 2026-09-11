@@ -85,6 +85,16 @@ export function updateDynamicSEO(props: SEOProps) {
     document.head.appendChild(scriptEl);
   }
   scriptEl.textContent = JSON.stringify(meta.jsonLd);
+
+  // 7. Google Analytics 4 (GA4) Dynamic SPA Route Tracking
+  try {
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'page_view', {
+        page_title: meta.title,
+        page_location: meta.canonicalUrl
+      });
+    }
+  } catch {}
 }
 
 function setMetaTag(attrName: 'name' | 'property', attrValue: string, content: string) {
