@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit",
     "sitemap": "node scripts/generateSitemap.js",
+    "indexnow": "node scripts/submitIndexNow.js",
     "test:seo": "node scripts/testSeoArchitecture.js"
   },
   "dependencies": {
