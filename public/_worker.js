@@ -262,6 +262,16 @@ export default {
     const origin = url.origin;
     const pathname = decodeURIComponent(url.pathname);
     const searchParams = url.searchParams;
+    // 0. IndexNow Instant Key Verification
+    if (pathname === '/b54e8a171900d53d3265ba9ad908ddfb.txt') {
+      return new Response('b54e8a171900d53d3265ba9ad908ddfb', {
+        status: 200,
+        headers: {
+          'Content-Type': 'text/plain; charset=utf-8',
+          'Cache-Control': 'public, max-age=86400'
+        }
+      });
+    }
 
     // 1. Static Assets & Core Public Files Fast Pass-through
     if (
