@@ -418,37 +418,107 @@ export default {
         }
       };
 
-      // Server-Side Pre-rendered Main Content (MC) for Googlebot & Instant First Paint
+      // Server-Side Pre-rendered Main Content (MC) for Googlebot & Instant First Paint (Pixel-matched with React UI)
       const preRenderedHtml = `
-        <div class="mv-skel" style="padding: 24px 16px; max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;">
-          <nav style="font-size: 13px; color: #526E7E; margin-bottom: 16px;">
-            <a href="/" style="color: #14967F; text-decoration: none; font-weight: bold;">Home</a> &gt;
-            <a href="/generic/${slugify(genericName)}-${encodeId(med.genericId)}" style="color: #14967F; text-decoration: none; font-weight: bold;">${genericName}</a> &gt;
-            <span style="color: #095D7E; font-weight: 700;">${brandName}</span>
-          </nav>
-
-          <header style="border-bottom: 2px solid #CCECEE; padding-bottom: 20px; margin-bottom: 20px;">
-            <h1 style="font-size: 32px; color: #095D7E; margin: 0 0 8px; font-weight: 900;">${brandName} <span style="font-size: 20px; color: #14967F; font-weight: 700;">${strength} ${form}</span></h1>
-            <p style="font-size: 16px; color: #074760; margin: 0 0 6px; font-weight: 700;">Active Generic Ingredient: <a href="/generic/${slugify(genericName)}-${encodeId(med.genericId)}" style="color: #14967F; text-decoration: underline;">${genericName}${genericBn}</a></p>
-            <p style="font-size: 14px; color: #526E7E; margin: 0;">Manufactured by: <a href="/company/${slugify(company)}" style="color: #095D7E; font-weight: 700; text-decoration: none;">${company}</a></p>
+        <style>
+          .mv-ssr-wrap { min-height: 100vh; background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+          .mv-ssr-hdr { position: sticky; top: 0; z-index: 30; height: 56px; background-color: #095D7E; display: flex; align-items: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+          .mv-ssr-card { background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+          @media (min-width: 640px) { .mv-ssr-hdr { height: 64px; } .mv-ssr-card { padding: 20px; } }
+          @media (prefers-color-scheme: dark) {
+            .mv-ssr-wrap { background-color: #0b131b; color: #f1f5f9; }
+            .mv-ssr-hdr { background-color: #0b1927; border-bottom: 1px solid #1e3a52; }
+            .mv-ssr-card { background-color: #131b2e; border-color: #1e293b; color: #f1f5f9; }
+            .mv-ssr-subcard { background-color: #1e293b !important; border-color: #334155 !important; }
+            .mv-ssr-footer { background-color: #131b2e !important; color: #94a3b8 !important; }
+          }
+          html.dark .mv-ssr-wrap { background-color: #0b131b; color: #f1f5f9; }
+          html.dark .mv-ssr-hdr { background-color: #0b1927; border-bottom: 1px solid #1e3a52; }
+          html.dark .mv-ssr-card { background-color: #131b2e; border-color: #1e293b; color: #f1f5f9; }
+          html.dark .mv-ssr-subcard { background-color: #1e293b !important; border-color: #334155 !important; }
+          html.dark .mv-ssr-footer { background-color: #131b2e !important; color: #94a3b8 !important; }
+        </style>
+        <div class="mv-ssr-wrap">
+          <header class="mv-ssr-hdr">
+            <div style="max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 16px; display: flex; align-items: center; justify-content: space-between;">
+              <a href="/" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="/logo.webp" alt="MEDDET" style="height: 32px; width: auto; object-fit: contain;" />
+              </a>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; padding: 4px 10px; border-radius: 8px; background: rgba(255,255,255,0.12); color: #E2FCD6; border: 1px solid rgba(226,252,214,0.25);">
+                  Clinical Index
+                </span>
+              </div>
+            </div>
           </header>
 
-          <section style="background: #fff; border: 1px solid #CCECEE; border-radius: 16px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(9,93,126,0.04);">
-            <h2 style="font-size: 18px; color: #095D7E; margin: 0 0 10px; font-weight: 800;">Official Pricing & Presentation (BDT)</h2>
-            <p style="font-size: 24px; font-weight: 900; color: #14967F; margin: 0 0 6px;">Unit MRP: ${priceFormatted}</p>
-            <p style="font-size: 14px; color: #526E7E; margin: 0;">Commercial Pack Size: <strong>${med.packSize || 'Standard Packaging'}</strong></p>
-          </section>
+          <main style="max-width: 1280px; margin: 0 auto; padding: 16px; display: flex; flex-direction: column; gap: 16px;">
+            <!-- Medicine Hero Card -->
+            <section class="mv-ssr-card" style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">
+                <a href="/" style="display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 800; color: #14967F; text-decoration: none;">
+                  ← Back to Index
+                </a>
+                <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; padding: 2px 8px; border-radius: 6px; background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0;">
+                  VERIFIED DRUG
+                </span>
+              </div>
 
-          <section style="background: #fff; border: 1px solid #CCECEE; border-radius: 16px; padding: 20px; margin-bottom: 20px;">
-            <h2 style="font-size: 18px; color: #095D7E; margin: 0 0 10px; font-weight: 800;">Clinical Indication & Uses Overview</h2>
-            <p style="font-size: 14px; color: #334155; line-height: 1.6; margin: 0 0 12px;">${med.indication || description}</p>
-            <p style="margin: 0;"><a href="/generic/${slugify(genericName)}-${encodeId(med.genericId)}" style="color: #14967F; font-weight: 800; text-decoration: none;">Explore all alternative brands for ${genericName} with price comparison →</a></p>
-          </section>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <img src="${imageUrl}" alt="${form}" style="width: 36px; height: 36px; object-fit: contain; flex-shrink: 0;" />
+                <h1 style="font-size: 24px; font-weight: 900; margin: 0; line-height: 1.2; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  <span>${brandName}</span>
+                  <span style="font-size: 12px; font-weight: 800; padding: 2px 8px; border-radius: 6px; background: #F1F5F9; color: #475569; font-family: monospace;">
+                    ${form}
+                  </span>
+                </h1>
+              </div>
 
-          <footer style="background: #EAF4F9; border-radius: 12px; padding: 14px; font-size: 12px; color: #526E7E; line-height: 1.5;">
-            <p style="margin: 0 0 4px;"><strong>Regulatory & Clinical Attribution (E-E-A-T):</strong> Clinical data referenced in alignment with the Directorate General of Drug Administration (DGDA), Bangladesh and Bangladesh National Formulary (BDNF).</p>
-            <p style="margin: 0;"><strong>Medical Disclaimer:</strong> MEDDET is an educational clinical index. Always consult a registered physician before taking or altering any medicine therapy.</p>
-          </footer>
+              <div style="font-size: 15px; font-weight: 800; color: #14967F;">
+                <a href="/generic/${slugify(genericName)}-${encodeId(med.genericId)}" style="color: #14967F; text-decoration: none;">
+                  ${genericName}${genericBn}
+                </a>
+              </div>
+
+              ${strength ? `<div style="font-size: 13px; font-weight: 700; color: #64748b; font-family: monospace;">${strength}</div>` : ''}
+
+              <div style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: #64748b;">
+                <span>Manufactured by:</span>
+                <a href="/company/${slugify(company)}" style="color: inherit; text-decoration: none; font-weight: 800;">
+                  ${company}
+                </a>
+              </div>
+            </section>
+
+            <!-- Pricing Cards (Grid) -->
+            <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+              <div class="mv-ssr-card mv-ssr-subcard" style="background: #ffffff;">
+                <div style="font-size: 11px; font-weight: 800; color: #64748b; text-transform: uppercase;">Unit MRP (Retail Price)</div>
+                <div style="font-size: 26px; font-weight: 900; color: #059669; font-family: monospace; margin-top: 4px;">${priceFormatted}</div>
+                <div style="font-size: 12px; color: #94a3b8; margin-top: 2px;">Verified DGDA Maximum Retail Price</div>
+              </div>
+              <div class="mv-ssr-card mv-ssr-subcard" style="background: #ffffff;">
+                <div style="font-size: 11px; font-weight: 800; color: #64748b; text-transform: uppercase;">Commercial Pack Presentation</div>
+                <div style="font-size: 16px; font-weight: 800; margin-top: 8px;">${med.packSize || 'Standard Commercial Strip'}</div>
+                <div style="font-size: 12px; color: #94a3b8; margin-top: 2px;">Licensed Pharmaceutical Packaging</div>
+              </div>
+            </section>
+
+            <!-- Indications Section -->
+            <section class="mv-ssr-card">
+              <h2 style="font-size: 16px; font-weight: 800; margin: 0 0 10px 0;">Clinical Indications & Therapeutic Overview</h2>
+              <p style="font-size: 14px; line-height: 1.6; color: inherit; opacity: 0.9; margin: 0 0 12px 0;">${med.indication || description}</p>
+              <a href="/generic/${slugify(genericName)}-${encodeId(med.genericId)}" style="display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 800; color: #14967F; text-decoration: none;">
+                Explore all alternative brands for ${genericName} with price comparison →
+              </a>
+            </section>
+
+            <!-- E-E-A-T Footer -->
+            <footer class="mv-ssr-footer" style="background: #f1f5f9; border-radius: 12px; padding: 14px; font-size: 12px; color: #64748b; line-height: 1.5;">
+              <p style="margin: 0 0 4px;"><strong>Regulatory & Clinical Attribution (E-E-A-T):</strong> Clinical data referenced in alignment with the Directorate General of Drug Administration (DGDA), Bangladesh and Bangladesh National Formulary (BDNF).</p>
+              <p style="margin: 0;"><strong>Medical Disclaimer:</strong> MEDDET is an educational clinical index. Always consult a registered physician before taking or altering any medicine therapy.</p>
+            </footer>
+          </main>
         </div>
       `;
 
@@ -527,16 +597,56 @@ export default {
       };
 
       const preRenderedHtml = `
-        <div class="mv-skel" style="padding: 24px 16px; max-width: 900px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif;">
-          <header style="border-bottom: 2px solid #CCECEE; padding-bottom: 16px; margin-bottom: 20px;">
-            <a href="/" style="color: #14967F; text-decoration: none; font-size: 13px; font-weight: bold;">← Back to MEDDET Index</a>
-            <h1 style="font-size: 30px; color: #095D7E; margin: 12px 0 6px; font-weight: 900;">${genName} <span style="font-size: 18px; color: #526E7E; font-weight: 600;">${genBn}</span></h1>
-            <p style="font-size: 14px; color: #074760; margin: 0; font-weight: bold;">Clinical Monograph & Available Brand Presentations</p>
+        <style>
+          .mv-ssr-wrap { min-height: 100vh; background-color: #f8fafc; color: #0f172a; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+          .mv-ssr-hdr { position: sticky; top: 0; z-index: 30; height: 56px; background-color: #095D7E; display: flex; align-items: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+          .mv-ssr-card { background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+          @media (min-width: 640px) { .mv-ssr-hdr { height: 64px; } .mv-ssr-card { padding: 20px; } }
+          @media (prefers-color-scheme: dark) {
+            .mv-ssr-wrap { background-color: #0b131b; color: #f1f5f9; }
+            .mv-ssr-hdr { background-color: #0b1927; border-bottom: 1px solid #1e3a52; }
+            .mv-ssr-card { background-color: #131b2e; border-color: #1e293b; color: #f1f5f9; }
+            .mv-ssr-footer { background-color: #131b2e !important; color: #94a3b8 !important; }
+          }
+          html.dark .mv-ssr-wrap { background-color: #0b131b; color: #f1f5f9; }
+          html.dark .mv-ssr-hdr { background-color: #0b1927; border-bottom: 1px solid #1e3a52; }
+          html.dark .mv-ssr-card { background-color: #131b2e; border-color: #1e293b; color: #f1f5f9; }
+          html.dark .mv-ssr-footer { background-color: #131b2e !important; color: #94a3b8 !important; }
+        </style>
+        <div class="mv-ssr-wrap">
+          <header class="mv-ssr-hdr">
+            <div style="max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 16px; display: flex; align-items: center; justify-content: space-between;">
+              <a href="/" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="/logo.webp" alt="MEDDET" style="height: 32px; width: auto; object-fit: contain;" />
+              </a>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; padding: 4px 10px; border-radius: 8px; background: rgba(255,255,255,0.12); color: #E2FCD6; border: 1px solid rgba(226,252,214,0.25);">
+                  Generic Monograph
+                </span>
+              </div>
+            </div>
           </header>
-          <section style="background: #fff; border: 1px solid #CCECEE; border-radius: 16px; padding: 20px;">
-            <h2 style="font-size: 18px; color: #095D7E; margin: 0 0 10px; font-weight: 800;">About ${genName}</h2>
-            <p style="font-size: 14px; color: #334155; line-height: 1.6; margin: 0;">${gen.indication || description}</p>
-          </section>
+
+          <main style="max-width: 1280px; margin: 0 auto; padding: 16px; display: flex; flex-direction: column; gap: 16px;">
+            <section class="mv-ssr-card" style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">
+                <a href="/" style="display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 800; color: #14967F; text-decoration: none;">
+                  ← Back to MEDDET Index
+                </a>
+              </div>
+              <h1 style="font-size: 26px; font-weight: 900; margin: 0; line-height: 1.2;">
+                ${genName} <span style="font-size: 16px; font-weight: 600; opacity: 0.7;">${genBn}</span>
+              </h1>
+              <p style="font-size: 14px; font-weight: 700; color: #14967F; margin: 0;">
+                Clinical Monograph & Available Brand Presentations in Bangladesh
+              </p>
+            </section>
+
+            <section class="mv-ssr-card">
+              <h2 style="font-size: 16px; font-weight: 800; margin: 0 0 10px 0;">About ${genName}</h2>
+              <p style="font-size: 14px; line-height: 1.6; margin: 0;">${gen.indication || description}</p>
+            </section>
+          </main>
         </div>
       `;
 
