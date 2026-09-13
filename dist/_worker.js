@@ -439,6 +439,12 @@ export default {
           'itemCondition': 'https://schema.org/NewCondition',
           'availability': 'https://schema.org/InStock',
           'seller': { '@type': 'Organization', 'name': 'MEDDET' },
+          'hasMerchantReturnPolicy': {
+            '@type': 'MerchantReturnPolicy',
+            'applicableCountry': 'BD',
+            'returnPolicyCategory': 'https://schema.org/MerchantReturnNotPermitted',
+            'merchantReturnDays': 0
+          },
           'shippingDetails': {
             '@type': 'OfferShippingDetails',
             'shippingDestination': {
@@ -600,7 +606,7 @@ export default {
 
       const responseHeaders = new Headers(transformed.headers);
       responseHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
-      responseHeaders.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=2592000');
+      responseHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=300, stale-while-revalidate=86400');
 
       return new Response(transformed.body, { status: 200, headers: responseHeaders });
     }
