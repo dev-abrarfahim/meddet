@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Building2, ChevronLeft, ArrowUpDown, Filter, Sparkles } from 'lucide-react';
+import { Building2, ChevronLeft, ArrowUpDown, Filter, Sparkles, RotateCcw } from 'lucide-react';
 import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
 import { Medicine, LanguageMode } from '../../types';
 import { getAllBrandsForGeneric, getGenericById } from '../../data/dbEngine';
@@ -25,53 +25,111 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
   const genericMonograph = getGenericById(genericId);
   const allBrands = useMemo(() => getAllBrandsForGeneric(genericId), [genericId]);
 
-  // Unique options for filter dropdowns
+  // Helper to normalize strings for robust comparison (strips whitespace and converts to lower case)
+  const normalize = (s?: string) => (s || '').toLowerCase().replace(/\s+/g, '').trim();
+
+  // Unique companies
   const companyOptions = useMemo(() => {
-    const set = new Set(allBrands.map((b) => b.company.trim()));
-    return ['All', ...Array.from(set).sort()];
+    const set = new Set<string>(allBrands.map((b) => b.company.trim()));
+    return ['All', ...Array.from(set).sort((a: string, b: string) => a.localeCompare(b))];
   }, [allBrands]);
 
-  const strengthOptions = useMemo(() => {
-    const set = new Set(allBrands.map((b) => (b.strength || 'N/A').trim()));
-    return ['All', ...Array.from(set).sort()];
-  }, [allBrands]);
-
+  // Unique dosage forms (deduplicated by normalized text, preserving title casing)
   const formOptions = useMemo(() => {
-    const set = new Set(allBrands.map((b) => b.form.trim()));
-    return ['All', ...Array.from(set).sort()];
+    const map = new Map<string, string>();
+    allBrands.forEach((b) => {
+      const raw = b.form.trim();
+      const norm = normalize(raw);
+      if (raw && !map.has(norm)) {
+        map.set(norm, raw);
+      }
+    });
+    return ['All', ...Array.from(map.values()).sort((a, b) => a.localeCompare(b))];
   }, [allBrands]);
 
-  // Calculate default matching form and strength
+  // Unique strengths (deduplicated by normalized text, e.g., '500mg' and '500 mg' unified into one option)
+  const strengthOptions = useMemo(() => {
+    const map = new Map<string, string>();
+    allBrands.forEach((b) => {
+      const raw = (b.strength || '').trim();
+      const norm = normalize(raw);
+      if (raw && !map.has(norm)) {
+        map.set(norm, raw);
+      }
+    });
+    return ['All', ...Array.from(map.values()).sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))];
+  }, [allBrands]);
+
+  // Calculate default matching form (Strict exact match first to prevent "ER Tablet" from hijacking "Tablet")
   const defaultForm = useMemo(() => {
     if (!initialForm) return 'All';
     const target = initialForm.trim().toLowerCase();
-    const match = formOptions.find(
-      (f) => f.trim().toLowerCase() === target || f.trim().toLowerCase().includes(target) || target.includes(f.trim().toLowerCase())
-    );
-    return match || 'All';
+    
+    // 1. Exact match (case-insensitive)
+    const exact = formOptions.find((f) => f.trim().toLowerCase() === target);
+    if (exact) return exact;
+
+    // 2. Word boundary or startsWith match
+    const starts = formOptions.find((f) => {
+      const fl = f.trim().toLowerCase();
+      return fl.startsWith(target + ' ') || target.startsWith(fl + ' ');
+    });
+    if (starts) return starts;
+
+    // 3. Fallback contains (only if no exact or word-boundary match exists)
+    const contains = formOptions.find((f) => f.trim().toLowerCase().includes(target));
+    return contains || 'All';
   }, [initialForm, formOptions]);
 
+  // Calculate default matching strength:
+  // If at least 2 brands share this strength in the selected form, filter by it.
+  // If only 1 or 0 brands match, default to 'All' so the user is never stranded on an empty or single-item view!
   const defaultStrength = useMemo(() => {
     if (!initialStrength) return 'All';
-    const target = initialStrength.trim().toLowerCase();
-    const match = strengthOptions.find((s) => s.trim().toLowerCase() === target);
-    return match || 'All';
-  }, [initialStrength, strengthOptions]);
+    const targetNorm = normalize(initialStrength);
 
-  // Filter States initialized to exact matching dosage form & strength
+    const matchingFormBrands = defaultForm !== 'All'
+      ? allBrands.filter((b) => normalize(b.form) === normalize(defaultForm))
+      : allBrands;
+
+    const sameStrengthCount = matchingFormBrands.filter(
+      (b) => normalize(b.strength) === targetNorm
+    ).length;
+
+    if (sameStrengthCount >= 2) {
+      const match = strengthOptions.find((s) => normalize(s) === targetNorm);
+      if (match) return match;
+    }
+
+    return 'All';
+  }, [initialStrength, strengthOptions, defaultForm, allBrands]);
+
+  // Filter States initialized to intelligent matching dosage form & strength
   const [selectedCompany, setSelectedCompany] = useState<string>('All');
   const [selectedStrength, setSelectedStrength] = useState<string>(defaultStrength);
   const [selectedForm, setSelectedForm] = useState<string>(defaultForm);
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity'>('name');
 
-  // Sync filter state when generic context changes
+  // Sync filter state when generic context or initial props change
   useEffect(() => {
     setSelectedForm(defaultForm);
     setSelectedStrength(defaultStrength);
     setSelectedCompany('All');
   }, [defaultForm, defaultStrength]);
 
-  // Filter & Sort Logic
+  const handleFormChange = (newForm: string) => {
+    setSelectedForm(newForm);
+    if (newForm !== 'All' && selectedStrength !== 'All') {
+      const hasStrengthInNewForm = allBrands.some(
+        (b) => normalize(b.form) === normalize(newForm) && normalize(b.strength) === normalize(selectedStrength)
+      );
+      if (!hasStrengthInNewForm) {
+        setSelectedStrength('All');
+      }
+    }
+  };
+
+  // Filter & Sort Logic with robust normalized matching
   const filteredBrands = useMemo(() => {
     let result = [...allBrands];
 
@@ -79,18 +137,20 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
       result = result.filter((b) => b.company.trim() === selectedCompany);
     }
     if (selectedStrength !== 'All') {
-      result = result.filter((b) => (b.strength || 'N/A').trim() === selectedStrength);
+      const normStrength = normalize(selectedStrength);
+      result = result.filter((b) => normalize(b.strength) === normStrength);
     }
     if (selectedForm !== 'All') {
-      result = result.filter((b) => b.form.trim() === selectedForm);
+      const normForm = normalize(selectedForm);
+      result = result.filter((b) => normalize(b.form) === normForm);
     }
 
     if (sortBy === 'name') {
       result.sort((a, b) => a.name.localeCompare(b.name));
     } else if (sortBy === 'price') {
       result.sort((a, b) => {
-        const pA = a.mrp > 0 ? a.mrp : 999;
-        const pB = b.mrp > 0 ? b.mrp : 999;
+        const pA = a.mrp > 0 ? a.mrp : 9999;
+        const pB = b.mrp > 0 ? b.mrp : 9999;
         return pA - pB;
       });
     } else if (sortBy === 'popularity') {
@@ -199,7 +259,7 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
             {/* Dosage Form Dropdown */}
             <select
               value={selectedForm}
-              onChange={(e) => setSelectedForm(e.target.value)}
+              onChange={(e) => handleFormChange(e.target.value)}
               className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-2.5 py-1.5 text-xs font-bold text-slate-800 dark:text-slate-200 focus:outline-none focus:border-[#14967F] max-w-[140px] truncate cursor-pointer"
             >
               <option value="All">Dosage form (All)</option>
@@ -271,8 +331,25 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
             <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200">
               {filteredBrands.length === 0 ? (
                 <tr>
-                  <td colSpan={5} className="py-8 text-center text-slate-500">
-                    No matching brands found for the selected filter combination.
+                  <td colSpan={5} className="py-12 px-4 text-center">
+                    <div className="max-w-md mx-auto space-y-3">
+                      <p className="text-sm font-bold text-slate-500 dark:text-slate-400">
+                        {lang === 'en'
+                          ? 'No matching brands found for the selected filter combination.'
+                          : 'নির্বাচিত ফিল্টারের সাথে কোনো ওষুধ খুঁজে পাওয়া যায়নি।'}
+                      </p>
+                      <button
+                        onClick={() => {
+                          setSelectedForm('All');
+                          setSelectedStrength('All');
+                          setSelectedCompany('All');
+                        }}
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#095D7E] dark:bg-[#14967F] text-white text-xs font-black shadow-xs hover:opacity-90 transition-opacity cursor-pointer"
+                      >
+                        <RotateCcw className="w-3.5 h-3.5" />
+                        <span>{lang === 'en' ? `Show All ${allBrands.length} Brands` : `সবগুলো ${allBrands.length}টি ব্র্যান্ড দেখুন`}</span>
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ) : (
@@ -343,8 +420,23 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
         {/* Mobile Compact Card Rows */}
         <div className="sm:hidden divide-y divide-slate-100 dark:divide-slate-800">
           {filteredBrands.length === 0 ? (
-            <div className="p-6 text-center text-xs text-slate-500">
-              No matching brands found for the selected filter.
+            <div className="py-10 px-4 text-center space-y-3">
+              <p className="text-xs font-bold text-slate-500 dark:text-slate-400">
+                {lang === 'en'
+                  ? 'No matching brands found for the selected filter combination.'
+                  : 'নির্বাচিত ফিল্টারের সাথে কোনো ওষুধ খুঁজে পাওয়া যায়নি।'}
+              </p>
+              <button
+                onClick={() => {
+                  setSelectedForm('All');
+                  setSelectedStrength('All');
+                  setSelectedCompany('All');
+                }}
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#095D7E] dark:bg-[#14967F] text-white text-xs font-black shadow-xs hover:opacity-90 transition-opacity cursor-pointer"
+              >
+                <RotateCcw className="w-3.5 h-3.5" />
+                <span>{lang === 'en' ? `Show All ${allBrands.length} Brands` : `সবগুলো ${allBrands.length}টি ব্র্যান্ড দেখুন`}</span>
+              </button>
             </div>
           ) : (
             filteredBrands.map((brand) => {

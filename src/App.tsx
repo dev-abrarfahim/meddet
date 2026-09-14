@@ -521,7 +521,11 @@ export default function App() {
     setExplorerGenericId(null);
     setExplorerForm(undefined);
     setExplorerStrength(undefined);
-    syncNavigationUrl('/');
+    if (selectedMedicine) {
+      syncNavigationUrl(getMedicineCanonicalPath(selectedMedicine));
+    } else {
+      syncNavigationUrl('/');
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
