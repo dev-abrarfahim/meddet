@@ -20,12 +20,17 @@ const genericToBrandsMap = new Map<number, Medicine[]>();
 let uniqueDosageForms: string[] = [];
 
 let isLoaded = false;
+let isGenericsLoaded = false;
 let isLoading = false;
 let loadPromise: Promise<void> | null = null;
 const listeners = new Set<() => void>();
 
 export function isDatabaseReady(): boolean {
   return isLoaded;
+}
+
+export function isGenericsReady(): boolean {
+  return isGenericsLoaded;
 }
 
 export function subscribeDatabase(listener: () => void): () => void {
@@ -185,6 +190,7 @@ export async function loadDatabase(): Promise<void> {
           GENERICS = genericsRes;
           genericsMap.clear();
           GENERICS.forEach((g) => genericsMap.set(g.id, g));
+          isGenericsLoaded = true;
           notifyListeners();
         })
         .catch(() => {
@@ -248,7 +254,37 @@ export function getAllBrandsForGeneric(genericId: number): Medicine[] {
 
 // 5c. Get Generic Monograph by ID
 export function getGenericById(genericId: number): GenericMonograph | undefined {
-  return genericsMap.get(genericId);
+  const monograph = genericsMap.get(genericId);
+  if (monograph) return monograph;
+
+  // Resilient fallback for Tier 1: if generics.json (15MB) is still loading in background,
+  // immediately reconstruct a lightweight monograph from Tier 1 brands data.
+  // This prevents race conditions where /generic/:slug routes temporarily evaluate to 404 during initial SSR/hydration.
+  const brands = genericToBrandsMap.get(genericId);
+  if (brands && brands.length > 0) {
+    const b = brands[0];
+    return {
+      id: genericId,
+      name: b.genericName,
+      nameBn: b.genericNameBn || '',
+      indication: '',
+      indicationBn: '',
+      dose: '',
+      doseBn: '',
+      sideEffect: '',
+      sideEffectBn: '',
+      contraIndication: '',
+      contraIndicationBn: '',
+      precaution: '',
+      precautionBn: '',
+      pregnancyCategory: '',
+      pregnancyCategoryBn: '',
+      overdose: '',
+      overdoseBn: ''
+    };
+  }
+
+  return undefined;
 }
 
 // 6. Database Statistics

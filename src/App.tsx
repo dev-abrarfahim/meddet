@@ -27,7 +27,7 @@ import {
 } from './components';
 
 import { Medicine, FilterOptions, LanguageMode } from './types';
-import { searchMedicines, getMedicineById, getGenericById, getAllCompanies, subscribeDatabase, isDatabaseReady } from './data/dbEngine';
+import { searchMedicines, getMedicineById, getGenericById, getAllCompanies, subscribeDatabase, isDatabaseReady, isGenericsReady } from './data/dbEngine';
 import {
   slugify,
   getMedicineCanonicalPath,
@@ -248,6 +248,14 @@ export default function App() {
             const strParam = searchParams.get('strength');
             if (formParam) setExplorerForm(formParam);
             if (strParam) setExplorerStrength(strParam);
+            return;
+          }
+          // Resilient check: if generics data (Tier 2) has not finished loading yet,
+          // do NOT assume 404! Keep explorerGenericId and wait for Tier 2 completion.
+          if (!isGenericsReady()) {
+            setSelectedMedicine(null);
+            setExplorerGenericId(genId);
+            setIs404(false);
             return;
           }
         }
@@ -478,6 +486,12 @@ export default function App() {
       if (refreshed && refreshed.monograph) {
         setSelectedMedicine(refreshed);
       }
+    }
+    // CRITICAL FIX: Generics data loads in Tier 2 (deferred background fetch).
+    // When Tier 2 completes (dbVersion changes), re-sync URL resolution for generic pages
+    // so full clinical monograph details are loaded without any false-404 or noindex artifact.
+    if (window.location.pathname.startsWith('/generic/')) {
+      restoreStateFromUrl();
     }
   }, [dbVersion]);
 

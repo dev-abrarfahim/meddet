@@ -585,6 +585,7 @@ export default {
         .on('meta[name="title"]', { element(el) { el.setAttribute('content', title); } })
         .on('meta[name="description"]', { element(el) { el.setAttribute('content', description); } })
         .on('meta[name="keywords"]', { element(el) { el.setAttribute('content', keywords); } })
+        .on('meta[name="robots"]', { element(el) { el.setAttribute('content', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'); } })
         .on('head', {
           element(el) {
             el.append(`<link rel="canonical" href="${canonicalUrl}">`, { html: true });
@@ -606,6 +607,7 @@ export default {
 
       const responseHeaders = new Headers(transformed.headers);
       responseHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
+      responseHeaders.set('X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
       responseHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=300, stale-while-revalidate=86400');
 
       return new Response(transformed.body, { status: 200, headers: responseHeaders });
@@ -712,6 +714,7 @@ export default {
         .on('meta[name="title"]', { element(el) { el.setAttribute('content', title); } })
         .on('meta[name="description"]', { element(el) { el.setAttribute('content', description); } })
         .on('meta[name="keywords"]', { element(el) { el.setAttribute('content', keywords); } })
+        .on('meta[name="robots"]', { element(el) { el.setAttribute('content', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'); } })
         .on('head', {
           element(el) {
             el.append(`<link rel="canonical" href="${canonicalUrl}">`, { html: true });
@@ -730,7 +733,8 @@ export default {
 
       const responseHeaders = new Headers(transformed.headers);
       responseHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
-      responseHeaders.set('Cache-Control', 'public, max-age=86400, s-maxage=604800, stale-while-revalidate=2592000');
+      responseHeaders.set('X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+      responseHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=300, stale-while-revalidate=86400');
 
       return new Response(transformed.body, { status: 200, headers: responseHeaders });
     }
