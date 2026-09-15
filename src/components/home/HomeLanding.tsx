@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { Medicine, LanguageMode } from '../../types';
 import { searchMedicines, getAllCompanies } from '../../data/dbEngine';
-import { DOSAGE_FORM_CATEGORIES } from '../../utils/dosageFormHelper';
+import { DOSAGE_FORM_CATEGORIES, toBengaliNumerals } from '../../utils/dosageFormHelper';
 import { getDosageFormCanonicalPath, getCompanyCanonicalPath } from '../../utils/urlHelper';
 
 interface HomeLandingProps {
@@ -154,7 +154,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
                   </div>
 
                   <span className="text-xs font-black font-mono px-2.5 py-0.5 rounded-full bg-white/90 dark:bg-black/30 border border-current/20">
-                    {formCat.count}
+                    {lang === 'en' ? formCat.count : formCat.countBn}
                   </span>
                 </div>
 
@@ -234,7 +234,7 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
                 <div className="min-w-0 flex-1">
                   <div className="text-xs sm:text-sm font-black text-slate-900 dark:text-slate-100 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors truncate">{comp.name}</div>
                   <div className="text-xs font-bold text-[#14967F] dark:text-[#2DD4BF] mt-0.5 font-mono">
-                    {comp.brandCount} Brands
+                    {lang === 'en' ? `${comp.brandCount} Brands` : `${toBengaliNumerals(comp.brandCount)}টি ব্র্যান্ড`}
                   </div>
                 </div>
               </div>

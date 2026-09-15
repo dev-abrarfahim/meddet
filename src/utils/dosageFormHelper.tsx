@@ -12,10 +12,19 @@ export interface DosageFormCategoryInfo {
   name: string;
   nameBn: string;
   count: string;
+  countBn: string;
   iconPath: string;
   color: string; // Tailwind bg & text colors for light/dark modes
   badgeColor: string;
   formsMatch: string[]; // Keywords matching forms in database
+}
+
+/**
+ * Utility to convert Arabic (English) digits to Bengali numerals
+ */
+export function toBengaliNumerals(num: number | string): string {
+  const bnDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+  return String(num).replace(/[0-9]/g, (d) => bnDigits[Number(d)]);
 }
 
 // Base path for static icons served from /public/icons/
@@ -27,6 +36,7 @@ export const DOSAGE_FORM_CATEGORIES: DosageFormCategoryInfo[] = [
     name: 'Tablet',
     nameBn: 'ট্যাবলেট',
     count: '14,907',
+    countBn: '১৪,৯০৭ টি',
     iconPath: `${ICON_BASE}/tablet.webp`,
     color: 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/80',
     badgeColor: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-200',
@@ -37,6 +47,7 @@ export const DOSAGE_FORM_CATEGORIES: DosageFormCategoryInfo[] = [
     name: 'Capsule',
     nameBn: 'ক্যাপসুল',
     count: '3,315',
+    countBn: '৩,৩১৫ টি',
     iconPath: `${ICON_BASE}/capsule.webp`,
     color: 'bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border-indigo-200 dark:border-indigo-800/80',
     badgeColor: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/60 dark:text-indigo-200',
@@ -47,6 +58,7 @@ export const DOSAGE_FORM_CATEGORIES: DosageFormCategoryInfo[] = [
     name: 'Injection & IV Infusion',
     nameBn: 'ইনজেকশন ও স্যালাইন',
     count: '3,100+',
+    countBn: '৩,১০০+ টি',
     iconPath: `${ICON_BASE}/injection.webp`,
     color: 'bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-800/80',
     badgeColor: 'bg-rose-100 text-rose-800 dark:bg-rose-900/60 dark:text-rose-200',
@@ -57,6 +69,7 @@ export const DOSAGE_FORM_CATEGORIES: DosageFormCategoryInfo[] = [
     name: 'Syrup',
     nameBn: 'সিরাপ',
     count: '1,356',
+    countBn: '১,৩৫৬ টি',
     iconPath: `${ICON_BASE}/syrup.webp`,
     color: 'bg-amber-50 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-800/80',
     badgeColor: 'bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-200',
@@ -67,6 +80,7 @@ export const DOSAGE_FORM_CATEGORIES: DosageFormCategoryInfo[] = [
     name: 'Powder for Suspension / Oral Suspension',
     nameBn: 'সাসপেনশন পাউডার',
     count: '1,900+',
+    countBn: '১,৯০০+ টি',
     iconPath: `${ICON_BASE}/powder-for-suspension.webp`,
     color: 'bg-cyan-50 dark:bg-cyan-950/60 text-cyan-800 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800/80',
     badgeColor: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/60 dark:text-cyan-200',
@@ -77,6 +91,7 @@ export const DOSAGE_FORM_CATEGORIES: DosageFormCategoryInfo[] = [
     name: 'Cream, Ointment & Gel',
     nameBn: 'ক্রিম, মলম ও জেল',
     count: '1,142+',
+    countBn: '১,১৪২+ টি',
     iconPath: `${ICON_BASE}/ointment.webp`,
     color: 'bg-fuchsia-50 dark:bg-fuchsia-950/60 text-fuchsia-800 dark:text-fuchsia-300 border-fuchsia-200 dark:border-fuchsia-800/80',
     badgeColor: 'bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900/60 dark:text-fuchsia-200',
@@ -87,6 +102,7 @@ export const DOSAGE_FORM_CATEGORIES: DosageFormCategoryInfo[] = [
     name: 'Eye & Ear Drops',
     nameBn: 'চোখ ও কানের ড্রপ',
     count: '940+',
+    countBn: '৯৪০+ টি',
     iconPath: `${ICON_BASE}/eye-drop.webp`,
     color: 'bg-sky-50 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300 border-sky-200 dark:border-sky-800/80',
     badgeColor: 'bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-200',
@@ -97,6 +113,7 @@ export const DOSAGE_FORM_CATEGORIES: DosageFormCategoryInfo[] = [
     name: 'Oral Solution & Paediatric Drops',
     nameBn: 'ড্রপস ও সল্যুশন',
     count: '600+',
+    countBn: '৬০০+ টি',
     iconPath: `${ICON_BASE}/water.webp`,
     color: 'bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border-teal-200 dark:border-teal-800/80',
     badgeColor: 'bg-teal-100 text-teal-800 dark:bg-teal-900/60 dark:text-teal-200',
@@ -107,6 +124,7 @@ export const DOSAGE_FORM_CATEGORIES: DosageFormCategoryInfo[] = [
     name: 'Inhaler & Nasal Spray',
     nameBn: 'ইনহেলার ও নেসাল স্প্রে',
     count: '240+',
+    countBn: '২৪০+ টি',
     iconPath: `${ICON_BASE}/inhalator.webp`,
     color: 'bg-blue-50 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-800/80',
     badgeColor: 'bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-200',
@@ -117,6 +135,7 @@ export const DOSAGE_FORM_CATEGORIES: DosageFormCategoryInfo[] = [
     name: 'Suppository',
     nameBn: 'সাপোজিটরি',
     count: '90',
+    countBn: '৯০ টি',
     iconPath: `${ICON_BASE}/suppositories.webp`,
     color: 'bg-orange-50 dark:bg-orange-950/60 text-orange-800 dark:text-orange-300 border-orange-200 dark:border-orange-800/80',
     badgeColor: 'bg-orange-100 text-orange-800 dark:bg-orange-900/60 dark:text-orange-200',
