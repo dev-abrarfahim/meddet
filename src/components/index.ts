@@ -22,6 +22,7 @@ export { AlternativeBrands } from './medicine/AlternativeBrands';
 export { ChemicalStructure } from './medicine/ChemicalStructure';
 export { ClinicalMonographAccordions } from './medicine/ClinicalMonographAccordions';
 export { GenericBrandsExplorer } from './medicine/GenericBrandsExplorer';
+export { GenericDetailsPage } from './medicine/GenericDetailsPage';
 
 // Dedicated Standalone Pages
 export { AboutPage } from './pages/AboutPage';

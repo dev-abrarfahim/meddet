@@ -16,6 +16,7 @@ import {
   HomeLanding,
   ClinicalMonographAccordions,
   GenericBrandsExplorer,
+  GenericDetailsPage,
   FilterPanel,
   NotFoundPage,
   AboutPage,
@@ -806,6 +807,7 @@ export default function App() {
               if (activeTab !== 'search') setActiveTab('search');
             }}
             onSelectMedicine={handleSelectMedicine}
+            onSelectGeneric={(gen) => handleOpenGenericBrandsExplorer(gen.id)}
             onOpenFilterDrawer={() => setIsFiltersOpen(true)}
             activeFilterCount={activeFilterCount}
             inputRef={mainInputRef}
@@ -837,16 +839,16 @@ export default function App() {
         ) : activeStandalonePage === 'api-docs' ? (
           <ApiDocsPage lang={lang} />
         ) : explorerGenericId ? (
-          <div className="max-w-4xl mx-auto space-y-4 animate-in fade-in duration-200 pb-16">
-            <GenericBrandsExplorer
-              genericId={explorerGenericId}
-              initialForm={explorerForm}
-              initialStrength={explorerStrength}
-              onSelectMedicine={handleSelectMedicine}
-              onBack={handleCloseGenericBrandsExplorer}
-              lang={lang}
-            />
-          </div>
+          <GenericDetailsPage
+            genericId={explorerGenericId}
+            initialForm={explorerForm}
+            initialStrength={explorerStrength}
+            onSelectMedicine={handleSelectMedicine}
+            onSelectGeneric={(gen) => handleOpenGenericBrandsExplorer(gen.id)}
+            onBack={handleCloseGenericBrandsExplorer}
+            lang={lang}
+            onToggleLang={toggleLang}
+          />
         ) : selectedMedicine ? (
           <div className="max-w-7xl mx-auto space-y-4 animate-in fade-in duration-200 pb-16">
             

@@ -69,13 +69,23 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
         </div>
 
         {/* Line 2: Generic Name */}
-        <div className="text-sm sm:text-base font-extrabold text-[#14967F] dark:text-[#2DD4BF] leading-snug pl-0.5">
-          {medicine.genericName}
-          {medicine.genericNameBn && (
-            <span className="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 ml-1.5">
-              ({medicine.genericNameBn})
-            </span>
-          )}
+        <div>
+          <a
+            href={getGenericCanonicalPath({ id: medicine.genericId, name: medicine.genericName })}
+            onClick={(e) => {
+              e.preventDefault();
+              onOpenGenericBrandsExplorer(medicine.genericId, medicine.form, medicine.strength);
+            }}
+            className="inline-block text-sm sm:text-base font-extrabold text-[#14967F] dark:text-[#2DD4BF] hover:underline cursor-pointer leading-snug pl-0.5"
+            title={`View full clinical monograph for ${medicine.genericName}`}
+          >
+            {medicine.genericName}
+            {medicine.genericNameBn && (
+              <span className="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 ml-1.5">
+                ({medicine.genericNameBn})
+              </span>
+            )}
+          </a>
         </div>
 
         {/* Line 3: Strength */}

@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, SlidersHorizontal, X, Clock, Trash2 } from 'lucide-react';
-import { Medicine } from '../../types';
-import { searchMedicines } from '../../data/dbEngine';
+import { Search, SlidersHorizontal, X, Clock, Trash2, Dna, ChevronRight } from 'lucide-react';
+import { Medicine, GenericSearchResult } from '../../types';
+import { searchMedicines, searchGenerics } from '../../data/dbEngine';
 import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
-import { getMedicineCanonicalPath } from '../../utils/urlHelper';
+import { getMedicineCanonicalPath, getGenericCanonicalPath } from '../../utils/urlHelper';
 
 interface SearchBarProps {
   query: string;
   onChangeQuery: (q: string) => void;
   onSelectMedicine: (med: Medicine) => void;
+  onSelectGeneric?: (generic: { id: number; name: string }) => void;
   onOpenFilterDrawer: () => void;
   activeFilterCount: number;
   inputRef?: React.RefObject<HTMLInputElement | null>;
@@ -18,12 +19,14 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   query,
   onChangeQuery,
   onSelectMedicine,
+  onSelectGeneric,
   onOpenFilterDrawer,
   activeFilterCount,
   inputRef
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [suggestions, setSuggestions] = useState<Medicine[]>([]);
+  const [genericSuggestions, setGenericSuggestions] = useState<GenericSearchResult[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // 5 Recent Searches State saved in localStorage
@@ -84,12 +87,15 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     if (query.trim().length >= 2) {
       const timer = setTimeout(() => {
         const res = searchMedicines(query, 'All', {}, 1, 6);
+        const genRes = searchGenerics(query, 3);
         setSuggestions(res.items);
+        setGenericSuggestions(genRes);
         setIsOpen(true);
-      }, 250);
+      }, 200);
       return () => clearTimeout(timer);
     } else {
       setSuggestions([]);
+      setGenericSuggestions([]);
     }
   }, [query]);
 
@@ -149,49 +155,123 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-[#152232] rounded-2xl shadow-2xl border border-[#CCECEE] dark:border-[#243B53] overflow-hidden z-50 animate-in fade-in slide-in-from-top-2 duration-150">
           
           {/* SCENARIO 1: INSTANT SEARCH MATCHES (When typing >= 2 chars) */}
-          {query.trim().length >= 2 && suggestions.length > 0 ? (
-            <>
-              <div className="p-2.5 border-b border-[#F1F9FF] dark:border-[#243B53] flex items-center justify-between text-xs font-extrabold text-[#095D7E]/70 dark:text-slate-300 px-3.5 bg-slate-50/70 dark:bg-[#111C2B]/80">
-                <span>Instant Matches ({suggestions.length})</span>
-                <span className="text-[10px] font-medium text-slate-400">Press Enter to save search</span>
-              </div>
-
-              <div className="divide-y divide-[#F1F9FF] dark:divide-[#243B53] max-h-80 overflow-y-auto">
-                {suggestions.map((med) => (
-                  <a
-                    key={med.id}
-                    href={getMedicineCanonicalPath(med)}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      saveRecentSearch(med.name);
-                      onSelectMedicine(med);
-                      setIsOpen(false);
-                    }}
-                    className="w-full p-3 sm:p-3.5 hover:bg-[#F1F9FF] dark:hover:bg-[#1A2B3E] text-left flex items-center justify-between gap-3 transition-colors cursor-pointer block"
-                  >
-                    <div className="space-y-0.5 min-w-0">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <img src={getDosageFormIconInfo(med.form).iconPath} alt={med.form} className="w-5 h-5 object-contain shrink-0" loading="lazy" />
-                        <span className="font-black text-sm sm:text-base text-[#095D7E] dark:text-slate-100">
-                          {med.name}
-                        </span>
-                        <span className="text-xs font-extrabold text-[#14967F] dark:text-[#2DD4BF] bg-[#E2FCD6] dark:bg-[#064E3B] px-2 py-0.5 rounded font-mono">
-                          {med.strength} {med.form}
-                        </span>
-                      </div>
-                      <div className="text-xs text-[#095D7E]/70 dark:text-slate-400 truncate">
-                        {med.genericName} • <span className="font-semibold text-slate-700 dark:text-slate-300">{med.company}</span>
-                      </div>
+          {query.trim().length >= 2 && (genericSuggestions.length > 0 || suggestions.length > 0) ? (
+            <div className="max-h-96 overflow-y-auto divide-y divide-[#F1F9FF] dark:divide-[#243B53]">
+              
+              {/* CATEGORY A: GENERICS (CLINICAL MONOGRAPHS) */}
+              {genericSuggestions.length > 0 && (
+                <div>
+                  <div className="p-2 border-b border-emerald-100 dark:border-emerald-950/80 flex items-center justify-between text-xs font-black text-emerald-800 dark:text-emerald-300 px-3.5 bg-emerald-50/80 dark:bg-emerald-950/40">
+                    <div className="flex items-center gap-1.5">
+                      <Dna className="w-3.5 h-3.5 text-[#14967F] dark:text-[#2DD4BF]" />
+                      <span>Generics ({genericSuggestions.length})</span>
                     </div>
+                    <span className="text-[10px] font-bold text-slate-400">Clinical Monograph</span>
+                  </div>
 
-                    <div className="text-right shrink-0">
-                      <div className="text-[10px] font-bold text-slate-400 uppercase">MRP</div>
-                      <div className="text-sm sm:text-base font-black text-[#14967F] dark:text-[#2DD4BF] font-mono">৳{med.mrp.toFixed(2)}</div>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </>
+                  <div className="divide-y divide-emerald-50 dark:divide-slate-800/60">
+                    {genericSuggestions.map((gen) => (
+                      <a
+                        key={`gen-${gen.id}`}
+                        href={getGenericCanonicalPath(gen)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          saveRecentSearch(gen.name);
+                          if (onSelectGeneric) {
+                            onSelectGeneric(gen);
+                          } else {
+                            window.location.href = getGenericCanonicalPath(gen);
+                          }
+                          setIsOpen(false);
+                        }}
+                        className="w-full p-3 hover:bg-emerald-50/60 dark:hover:bg-emerald-950/30 text-left flex items-center justify-between gap-3 transition-colors cursor-pointer group"
+                      >
+                        <div className="space-y-0.5 min-w-0">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="font-black text-sm sm:text-base text-emerald-900 dark:text-emerald-300 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors">
+                              {gen.name}
+                            </span>
+                            {gen.nameBn && (
+                              <span className="text-xs font-bold text-slate-500 dark:text-slate-400">
+                                ({gen.nameBn})
+                              </span>
+                            )}
+                            <span className="text-[10px] font-black text-white bg-[#14967F] dark:bg-[#0D6F5D] px-2 py-0.5 rounded-full uppercase tracking-wider">
+                              Generic
+                            </span>
+                          </div>
+                          <div className="text-xs text-slate-500 dark:text-slate-400 truncate flex items-center gap-1.5">
+                            <span className="font-semibold text-emerald-700 dark:text-emerald-400">
+                              {gen.brandCount} {gen.brandCount === 1 ? 'Brand' : 'Available Brands'}
+                            </span>
+                            {gen.dosageForms.length > 0 && (
+                              <>
+                                <span>•</span>
+                                <span className="text-slate-400 dark:text-slate-500">
+                                  {gen.dosageForms.slice(0, 3).join(', ')}
+                                </span>
+                              </>
+                            )}
+                          </div>
+                        </div>
+
+                        <div className="shrink-0 flex items-center gap-1 text-xs font-black text-[#14967F] dark:text-[#2DD4BF] group-hover:translate-x-0.5 transition-transform">
+                          <span className="hidden sm:inline">View Generic</span>
+                          <ChevronRight className="w-4 h-4" />
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* CATEGORY B: BRAND MEDICINES */}
+              {suggestions.length > 0 && (
+                <div>
+                  <div className="p-2 border-b border-[#F1F9FF] dark:border-[#243B53] flex items-center justify-between text-xs font-extrabold text-[#095D7E]/70 dark:text-slate-300 px-3.5 bg-slate-50/70 dark:bg-[#111C2B]/80">
+                    <span>Brand Medicines ({suggestions.length})</span>
+                    <span className="text-[10px] font-medium text-slate-400">Press Enter to save search</span>
+                  </div>
+
+                  <div className="divide-y divide-[#F1F9FF] dark:divide-[#243B53]">
+                    {suggestions.map((med) => (
+                      <a
+                        key={med.id}
+                        href={getMedicineCanonicalPath(med)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          saveRecentSearch(med.name);
+                          onSelectMedicine(med);
+                          setIsOpen(false);
+                        }}
+                        className="w-full p-3 sm:p-3.5 hover:bg-[#F1F9FF] dark:hover:bg-[#1A2B3E] text-left flex items-center justify-between gap-3 transition-colors cursor-pointer block"
+                      >
+                        <div className="space-y-0.5 min-w-0">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <img src={getDosageFormIconInfo(med.form).iconPath} alt={med.form} className="w-5 h-5 object-contain shrink-0" loading="lazy" />
+                            <span className="font-black text-sm sm:text-base text-[#095D7E] dark:text-slate-100">
+                              {med.name}
+                            </span>
+                            <span className="text-xs font-extrabold text-[#14967F] dark:text-[#2DD4BF] bg-[#E2FCD6] dark:bg-[#064E3B] px-2 py-0.5 rounded font-mono">
+                              {med.strength} {med.form}
+                            </span>
+                          </div>
+                          <div className="text-xs text-[#095D7E]/70 dark:text-slate-400 truncate">
+                            {med.genericName} • <span className="font-semibold text-slate-700 dark:text-slate-300">{med.company}</span>
+                          </div>
+                        </div>
+
+                        <div className="text-right shrink-0">
+                          <div className="text-[10px] font-bold text-slate-400 uppercase">MRP</div>
+                          <div className="text-sm sm:text-base font-black text-[#14967F] dark:text-[#2DD4BF] font-mono">৳{med.mrp.toFixed(2)}</div>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+            </div>
           ) : recentSearches.length > 0 ? (
             /* SCENARIO 2: 5 RECENT SEARCHES (When query is empty or focused) */
             <div>

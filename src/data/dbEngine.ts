@@ -1,4 +1,4 @@
-import { Medicine, GenericMonograph, CompanyInfo, DosageFormNote, FilterOptions, IndexStats } from '../types';
+import { Medicine, GenericMonograph, CompanyInfo, DosageFormNote, FilterOptions, IndexStats, GenericSearchResult, GenericCombination } from '../types';
 import { DOSAGE_FORM_CATEGORIES } from '../utils/dosageFormHelper';
 
 const CONDITION_KEYWORDS_MAP: Record<string, string[]> = {
@@ -13,6 +13,7 @@ let BRANDS: Medicine[] = [];
 let GENERICS: GenericMonograph[] = [];
 let COMPANIES: CompanyInfo[] = [];
 let DOSAGE_NOTES: Record<string, DosageFormNote> = {};
+let fastGenericList: GenericSearchResult[] = [];
 
 const genericsMap = new Map<number, GenericMonograph>();
 const companiesMap = new Map<number, CompanyInfo>();
@@ -180,6 +181,24 @@ export async function loadDatabase(): Promise<void> {
         new Set(BRANDS.map((b) => b.form).filter(Boolean))
       ).sort();
 
+      // Build fast generic search index from Tier 1 brands data
+      const tempGenerics: GenericSearchResult[] = [];
+      genericToBrandsMap.forEach((brands, genId) => {
+        if (brands.length > 0) {
+          const first = brands[0];
+          const forms = Array.from(new Set(brands.map((b) => b.form).filter(Boolean)));
+          tempGenerics.push({
+            id: genId,
+            name: first.genericName,
+            nameBn: first.genericNameBn || '',
+            brandCount: brands.length,
+            dosageForms: forms
+          });
+        }
+      });
+      tempGenerics.sort((a, b) => b.brandCount - a.brandCount);
+      fastGenericList = tempGenerics;
+
       isLoaded = true;
       isLoading = false;
       notifyListeners();
@@ -189,7 +208,21 @@ export async function loadDatabase(): Promise<void> {
         .then((genericsRes) => {
           GENERICS = genericsRes;
           genericsMap.clear();
-          GENERICS.forEach((g) => genericsMap.set(g.id, g));
+          GENERICS.forEach((g) => {
+            genericsMap.set(g.id, g);
+            const existing = fastGenericList.find((x) => x.id === g.id);
+            if (existing) {
+              if (g.nameBn && !existing.nameBn) existing.nameBn = g.nameBn;
+            } else {
+              fastGenericList.push({
+                id: g.id,
+                name: g.name,
+                nameBn: g.nameBn || '',
+                brandCount: genericToBrandsMap.get(g.id)?.length || 0,
+                dosageForms: []
+              });
+            }
+          });
           isGenericsLoaded = true;
           notifyListeners();
         })
@@ -285,6 +318,77 @@ export function getGenericById(genericId: number): GenericMonograph | undefined 
   }
 
   return undefined;
+}
+
+// 5d. Search Generics by Name (English & Bengali)
+export function searchGenerics(query: string, limit: number = 6): GenericSearchResult[] {
+  const clean = query.trim().toLowerCase();
+  if (!clean || clean.length < 2) return [];
+
+  const matched = fastGenericList.filter((g) => {
+    return g.name.toLowerCase().includes(clean) || (g.nameBn && g.nameBn.includes(clean));
+  });
+
+  // Relevance sorting: exact match -> startsWith -> brandCount
+  matched.sort((a, b) => {
+    const aName = a.name.toLowerCase();
+    const bName = b.name.toLowerCase();
+    const aExact = aName === clean;
+    const bExact = bName === clean;
+    if (aExact && !bExact) return -1;
+    if (!aExact && bExact) return 1;
+
+    const aStart = aName.startsWith(clean);
+    const bStart = bName.startsWith(clean);
+    if (aStart && !bStart) return -1;
+    if (!aStart && bStart) return 1;
+
+    return b.brandCount - a.brandCount;
+  });
+
+  return matched.slice(0, limit);
+}
+
+// 5e. Get Combination Generics containing the target Generic
+export function getGenericCombinations(genericName: string): GenericCombination[] {
+  const target = genericName.trim().toLowerCase();
+  if (!target) return [];
+
+  const results: GenericCombination[] = [];
+  const seenIds = new Set<number>();
+
+  fastGenericList.forEach((g) => {
+    const gNameLower = g.name.toLowerCase();
+    if (gNameLower === target) return; // Skip exact self
+
+    // Check if target is part of a combination (contains '+' or '/' or 'with' or '&' or ',')
+    const isCombination =
+      gNameLower.includes('+') ||
+      gNameLower.includes('/') ||
+      gNameLower.includes(' with ') ||
+      gNameLower.includes('&') ||
+      gNameLower.includes(',');
+
+    if (isCombination && gNameLower.includes(target)) {
+      if (!seenIds.has(g.id)) {
+        seenIds.add(g.id);
+        results.push({
+          id: g.id,
+          name: g.name,
+          nameBn: g.nameBn,
+          brandCount: g.brandCount
+        });
+      }
+    }
+  });
+
+  results.sort((a, b) => b.brandCount - a.brandCount);
+  return results;
+}
+
+// 5f. Get All Unique Generics
+export function getAllGenerics(): GenericSearchResult[] {
+  return fastGenericList;
 }
 
 // 6. Database Statistics

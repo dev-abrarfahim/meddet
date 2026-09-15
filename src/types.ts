@@ -33,6 +33,21 @@ export interface GenericMonograph {
   overdoseBn: string;
 }
 
+export interface GenericSearchResult {
+  id: number;
+  name: string;
+  nameBn: string;
+  brandCount: number;
+  dosageForms: string[];
+}
+
+export interface GenericCombination {
+  id: number;
+  name: string;
+  nameBn: string;
+  brandCount: number;
+}
+
 export interface Medicine {
   id: number;
   name: string;
