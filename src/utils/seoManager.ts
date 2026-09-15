@@ -19,7 +19,7 @@ export interface SEOProps {
   manufacturer?: string;
   letter?: string;
   searchQuery?: string;
-  staticPage?: 'about' | 'privacy' | 'terms' | 'contact' | 'companies' | 'api-docs';
+  staticPage?: 'about' | 'privacy' | 'terms' | 'contact' | 'companies' | 'api-docs' | 'tools' | 'bmi-calculator';
 }
 
 /**

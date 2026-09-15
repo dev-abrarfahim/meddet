@@ -836,6 +836,14 @@ export default {
       '/api-docs': {
         title: 'Developer REST API Documentation & Live Studio | MEDDET™',
         description: 'Free open REST API endpoints for searching 30,500+ medicines, generics, active ingredients, and BDT MRP prices.'
+      },
+      '/tools': {
+        title: 'Medical Tools & Clinical Calculators | MEDDET™',
+        description: 'Free clinical healthcare calculators for medical professionals and patients. Calculate BMI, body morphology, and health metrics.'
+      },
+      '/tools/bmi-calculator': {
+        title: 'Medical BMI Calculator — WHO Clinical Standards | MEDDET™',
+        description: 'Accurate clinical Body Mass Index (BMI) calculator. Calculate healthy weight ranges, body morphology scan, and personalized diet & lifestyle guidance.'
       }
     };
 
@@ -874,6 +882,9 @@ export default {
       '/contact-us': '/contact',
       '/company': '/companies',
       '/manufacturers': '/companies',
+      '/bmi-calculator': '/tools/bmi-calculator',
+      '/bmi': '/tools/bmi-calculator',
+      '/tools/bmi': '/tools/bmi-calculator',
       '/index.html': '/'
     };
     if (aliases[cleanStaticPath]) {

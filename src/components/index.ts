@@ -31,3 +31,6 @@ export { TermsPage } from './pages/TermsPage';
 export { ContactPage } from './pages/ContactPage';
 export { CompaniesPage } from './pages/CompaniesPage';
 export { ApiDocsPage } from './pages/ApiDocsPage';
+export { ToolsPage } from './pages/ToolsPage';
+export { BmiCalculatorPage } from './pages/BmiCalculatorPage';
+

@@ -24,7 +24,9 @@ import {
   TermsPage,
   ContactPage,
   CompaniesPage,
-  ApiDocsPage
+  ApiDocsPage,
+  ToolsPage,
+  BmiCalculatorPage
 } from './components';
 
 import { Medicine, FilterOptions, LanguageMode } from './types';
@@ -39,7 +41,7 @@ import {
   parseGenericIdFromSlug
 } from './utils/urlHelper';
 import { updateDynamicSEO } from './utils/seoManager';
-import { Pill, Search, RotateCcw, ChevronLeft, ChevronRight, Languages, ShieldCheck, SlidersHorizontal } from 'lucide-react';
+import { Pill, Search, RotateCcw, ChevronLeft, ChevronRight, Languages, ShieldCheck, SlidersHorizontal, Calculator } from 'lucide-react';
 
 export default function App() {
   const [dbReady, setDbReady] = useState<boolean>(isDatabaseReady());
@@ -170,7 +172,7 @@ export default function App() {
   });
   const [is404, setIs404] = useState<boolean>(false);
   const [notFoundSlug, setNotFoundSlug] = useState<string>('');
-  const [activeStandalonePage, setActiveStandalonePage] = useState<'about' | 'privacy' | 'terms' | 'contact' | 'companies' | 'api-docs' | null>(() => {
+  const [activeStandalonePage, setActiveStandalonePage] = useState<'about' | 'privacy' | 'terms' | 'contact' | 'companies' | 'api-docs' | 'tools' | 'bmi-calculator' | null>(() => {
     if (typeof window !== 'undefined') {
       const cleanPath = decodeURIComponent(window.location.pathname).replace(/\/$/, '');
       if (cleanPath === '/about' || cleanPath === '/about-us') return 'about';
@@ -179,6 +181,8 @@ export default function App() {
       if (cleanPath === '/contact' || cleanPath === '/contact-us') return 'contact';
       if (cleanPath === '/companies' || cleanPath === '/company' || cleanPath === '/manufacturers') return 'companies';
       if (cleanPath === '/api-docs') return 'api-docs';
+      if (cleanPath === '/tools') return 'tools';
+      if (cleanPath === '/bmi-calculator' || cleanPath === '/tools/bmi-calculator' || cleanPath === '/tools/bmi') return 'bmi-calculator';
     }
     return null;
   });
@@ -274,6 +278,24 @@ export default function App() {
         setSelectedGenericId(null);
         setExplorerGenericId(null);
         setIs404(false);
+        return;
+      }
+      if (cleanPath === '/tools') {
+        setActiveStandalonePage('tools');
+        setSelectedMedicine(null);
+        setSelectedGenericId(null);
+        setExplorerGenericId(null);
+        setIs404(false);
+        if (cleanPath !== '/tools') window.history.replaceState(null, '', '/tools');
+        return;
+      }
+      if (cleanPath === '/bmi-calculator' || cleanPath === '/tools/bmi-calculator' || cleanPath === '/tools/bmi') {
+        setActiveStandalonePage('bmi-calculator');
+        setSelectedMedicine(null);
+        setSelectedGenericId(null);
+        setExplorerGenericId(null);
+        setIs404(false);
+        if (cleanPath !== '/tools/bmi-calculator') window.history.replaceState(null, '', '/tools/bmi-calculator');
         return;
       }
 
@@ -519,7 +541,10 @@ export default function App() {
       pathname === '/terms' ||
       pathname === '/contact' ||
       pathname === '/companies' ||
-      pathname === '/api-docs'
+      pathname === '/api-docs' ||
+      pathname === '/tools' ||
+      pathname === '/bmi-calculator' ||
+      pathname.startsWith('/tools/')
     ) return;
 
     const timer = setTimeout(() => {
@@ -769,6 +794,12 @@ export default function App() {
     } else if (clean === '/api-docs') {
       setActiveStandalonePage('api-docs');
       syncNavigationUrl('/api-docs');
+    } else if (clean === '/tools') {
+      setActiveStandalonePage('tools');
+      syncNavigationUrl('/tools');
+    } else if (clean === '/bmi-calculator' || clean === '/tools/bmi-calculator' || clean === '/tools/bmi') {
+      setActiveStandalonePage('bmi-calculator');
+      syncNavigationUrl('/tools/bmi-calculator');
     } else {
       setActiveStandalonePage(null);
       if (clean === '') {
@@ -932,6 +963,10 @@ export default function App() {
             lang={lang}
             requestedSlug={notFoundSlug}
           />
+        ) : activeStandalonePage === 'tools' ? (
+          <ToolsPage onNavigate={handleNavigatePage} lang={lang} onGoHome={handleGoHome} />
+        ) : activeStandalonePage === 'bmi-calculator' ? (
+          <BmiCalculatorPage onNavigate={handleNavigatePage} lang={lang} onGoHome={handleGoHome} />
         ) : activeStandalonePage === 'about' ? (
           <AboutPage lang={lang} onGoHome={handleGoHome} onGoToSearch={handleGoToSearch} />
         ) : activeStandalonePage === 'privacy' ? (
@@ -1045,6 +1080,7 @@ export default function App() {
               onGoToSearch={handleGoToSearch}
               onSelectMedicine={handleSelectMedicine}
               lang={lang}
+              onNavigateTools={() => handleNavigatePage('/tools')}
             />
           </div>
         ) : (
@@ -1264,9 +1300,16 @@ export default function App() {
 
       {/* Floating Bottom Utility Bar */}
       <BottomNav
-        currentView={selectedMedicine ? 'details' : activeTab}
+        currentView={
+          selectedMedicine
+            ? 'details'
+            : activeStandalonePage === 'tools' || activeStandalonePage === 'bmi-calculator'
+            ? 'tools'
+            : activeTab
+        }
         onGoHome={handleGoHome}
         onGoSearch={() => handleGoToSearch()}
+        onGoTools={() => handleNavigatePage('/tools')}
         onOpenFilters={() => setIsFiltersOpen(true)}
         lang={lang}
       />

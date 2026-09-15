@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 520" width="100%" height="100%">
+  <!-- OBESE (30-34.9) -->
+  <defs>
+    <linearGradient id="ped-grad-4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF7043" />
+      <stop offset="100%" stop-color="#E64A19" />
+    </linearGradient>
+  </defs>
+
+  <!-- Male Obese Silhouette -->
+  <g id="obese-male" fill="#004D6D">
+    <!-- Hair & Head (Fuller face) -->
+    <path d="M88 26 C100 18 116 20 122 27 C126 31 123 37 123 42 C126 47 123 54 118 58 C115 63 108 67 100 67 C92 67 85 64 81 59 C77 54 77 47 79 42 C78 35 80 28 88 26 Z" />
+    <ellipse cx="100" cy="50" rx="19.5" ry="22.5" />
+    <!-- Wide Neck -->
+    <path d="M86 68 L114 68 L117 88 L83 88 Z" />
+    <!-- Heavy Torso with prominent rounded abdomen -->
+    <path d="M51 88 C72 91 100 93 149 88 C158 122 156 174 142 203 C130 208 109 210 100 210 C91 210 70 208 58 203 C44 174 42 122 51 88 Z" />
+    <!-- Left Arm (Heavy) -->
+    <path d="M49 89 C34 107 31 150 29 210 C29 216 41 216 44 210 C49 160 57 118 61 95 Z" />
+    <!-- Right Arm (Heavy) -->
+    <path d="M151 89 C166 107 169 150 171 210 C171 216 159 216 156 210 C151 160 143 118 139 95 Z" />
+    <!-- Hands -->
+    <ellipse cx="36" cy="214" rx="7" ry="9.5" />
+    <ellipse cx="164" cy="214" rx="7" ry="9.5" />
+    <!-- Left Leg (Thick) -->
+    <path d="M63 204 C74 236 80 300 78 410 C78 416 61 416 61 410 C62 300 62 236 62 204 Z" />
+    <!-- Right Leg (Thick) -->
+    <path d="M137 204 C126 236 120 300 122 410 C122 416 139 416 139 410 C138 300 138 236 138 204 Z" />
+    <!-- Feet resting on peak -->
+    <ellipse cx="71" cy="413" rx="12" ry="6.5" />
+    <ellipse cx="129" cy="413" rx="12" ry="6.5" />
+  </g>
+
+  <!-- Triangular Pedestal Banner -->
+  <g id="pedestal">
+    <polygon points="12,450 100,418 188,450 188,484 12,484" fill="url(#ped-grad-4)" />
+    <!-- White Category Label -->
+    <text x="100" y="474" text-anchor="middle" fill="#FFFFFF" font-family="'Poppins', sans-serif" font-weight="900" font-size="20" letter-spacing="1">
+      OBESE
+    </text>
+    <!-- BMI Range -->
+    <text x="100" y="510" text-anchor="middle" fill="#004D6D" font-family="'Poppins', sans-serif" font-weight="800" font-size="19">
+      30-34.9
+    </text>
+  </g>
+</svg>

@@ -45,6 +45,18 @@
         <priority>0.80</priority>
     </url>
     <url>
+        <loc>https://meddet.site/tools</loc>
+        <lastmod>2026-09-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>https://meddet.site/tools/bmi-calculator</loc>
+        <lastmod>2026-09-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
+    <url>
         <loc>https://meddet.site/dosage-form/tablet</loc>
         <lastmod>2026-09-15</lastmod>
         <changefreq>weekly</changefreq>

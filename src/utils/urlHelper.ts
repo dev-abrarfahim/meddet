@@ -472,10 +472,135 @@ export function generateDefaultMetadata(categoryName?: string, dosageForm?: stri
 /**
  * Authoritative Metadata Factory for Standalone Static Content Pages
  */
-export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'terms' | 'contact' | 'companies' | 'api-docs'): SEOMetadata {
+export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'terms' | 'contact' | 'companies' | 'api-docs' | 'tools' | 'bmi-calculator'): SEOMetadata {
   const logoUrl = `${SITE_BASE_URL}/logo.webp`;
 
   switch (pageType) {
+    case 'tools': {
+      const title = 'Medical Tools & Clinical Calculators | MEDDET™';
+      const description = 'Free clinical healthcare calculators for medical professionals and patients. Calculate BMI, body morphology, and health metrics.';
+      const canonicalUrl = `${SITE_BASE_URL}/tools`;
+      return {
+        title,
+        description,
+        keywords: 'Medical tools BD, BMI calculator, clinical calculators Bangladesh, health tools, MEDDET',
+        canonicalUrl,
+        h1: 'Medical Tools & Clinical Calculators',
+        og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
+        twitter: { card: 'summary_large_image', title, description, image: logoUrl },
+        jsonLd: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'CollectionPage',
+              name: title,
+              description,
+              url: canonicalUrl,
+              inLanguage: ['en', 'bn'],
+              isPartOf: {
+                '@type': 'WebSite',
+                name: 'MEDDET',
+                url: SITE_BASE_URL
+              }
+            },
+            {
+              '@type': 'ItemList',
+              name: 'Available Medical & Clinical Tools',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Medical BMI Calculator',
+                  url: `${SITE_BASE_URL}/tools/bmi-calculator`
+                }
+              ]
+            }
+          ]
+        },
+        robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+      };
+    }
+    case 'bmi-calculator': {
+      const title = 'Medical BMI Calculator — WHO Clinical Standards | MEDDET™';
+      const description = 'Accurate clinical Body Mass Index (BMI) calculator. Calculate healthy weight ranges, body morphology scan, and personalized diet & lifestyle guidance.';
+      const canonicalUrl = `${SITE_BASE_URL}/tools/bmi-calculator`;
+      return {
+        title,
+        description,
+        keywords: 'BMI calculator BD, body mass index, WHO BMI ranges, weight loss calculator, MEDDET BMI, বিএমআই ক্যালকুলেটর',
+        canonicalUrl,
+        h1: 'Medical BMI Calculator',
+        og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
+        twitter: { card: 'summary_large_image', title, description, image: logoUrl },
+        jsonLd: {
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'WebApplication',
+              name: 'MEDDET Medical BMI Calculator',
+              url: canonicalUrl,
+              applicationCategory: 'HealthApplication',
+              operatingSystem: 'All',
+              browserRequirements: 'Requires JavaScript. Requires HTML5.',
+              offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'BDT'
+              },
+              featureList: [
+                'WHO & CDC standard 5-tier classification',
+                'Calibrated radial dial gauge',
+                'Gender-specific anatomical morphology silhouettes',
+                'Metric (cm/kg) and Imperial (ft/lbs) parity',
+                'Clinical diet and lifestyle suggestions',
+                'English and Bengali bilingual interface'
+              ]
+            },
+            {
+              '@type': 'MedicalWebPage',
+              name: title,
+              description,
+              url: canonicalUrl,
+              aspect: ['Diagnosis', 'RiskFactors', 'Treatment'],
+              about: {
+                '@type': 'MedicalCondition',
+                name: 'Body Mass Index & Obesity'
+              }
+            },
+            {
+              '@type': 'FAQPage',
+              mainEntity: [
+                {
+                  '@type': 'Question',
+                  name: 'What is a healthy BMI for adults according to WHO?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'According to the World Health Organization (WHO), a healthy adult Body Mass Index (BMI) is between 18.5 and 24.9 kg/m² for both men and women.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'How do you calculate Body Mass Index (BMI)?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'In the metric system, BMI is calculated as weight in kilograms divided by height in meters squared (kg/m²). In the US imperial system, it is calculated as 703 × [weight (lbs) / height (in)²].'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'What health risks are associated with a high BMI?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'A high BMI (overweight or obese) significantly increases the risks of hypertension, type 2 diabetes, coronary heart disease, stroke, sleep apnea, osteoarthritis, and several malignancies.'
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+      };
+    }
     case 'about': {
       const title = 'About MEDDET™ — Clinical Drug Index & Medicine Guide BD';
       const description = 'Learn about MEDDET, Bangladesh’s verified clinical medicine index, BDT pharmaceutical price comparator, and bilingual drug monographs.';

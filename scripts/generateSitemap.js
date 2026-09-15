@@ -108,6 +108,18 @@ let coreXml = `<?xml version="1.0" encoding="UTF-8"?>
         <changefreq>monthly</changefreq>
         <priority>0.80</priority>
     </url>
+    <url>
+        <loc>${baseUrl}/tools</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.85</priority>
+    </url>
+    <url>
+        <loc>${baseUrl}/tools/bmi-calculator</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.90</priority>
+    </url>
 `;
 
 const dosageForms = [

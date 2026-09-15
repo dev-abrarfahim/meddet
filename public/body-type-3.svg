@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 520" width="100%" height="100%">
+  <!-- OVERWEIGHT (25-29.9) -->
+  <defs>
+    <linearGradient id="ped-grad-3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFA726" />
+      <stop offset="100%" stop-color="#FB8C00" />
+    </linearGradient>
+  </defs>
+
+  <!-- Male Overweight Silhouette -->
+  <g id="overweight-male" fill="#004D6D">
+    <!-- Hair & Head -->
+    <path d="M88 26 C100 18 116 20 122 27 C126 31 123 37 123 42 C126 47 123 54 118 58 C115 63 108 67 100 67 C92 67 85 64 81 59 C77 54 77 47 79 42 C78 35 80 28 88 26 Z" />
+    <ellipse cx="100" cy="49" rx="18" ry="21.5" />
+    <!-- Thicker Neck -->
+    <path d="M89 67 L111 67 L114 86 L86 86 Z" />
+    <!-- Fuller Torso with subtle belly/flanks -->
+    <path d="M57 86 C74 89 100 90 143 86 C149 116 144 162 135 195 C125 199 107 201 100 201 C93 201 75 199 65 195 C56 162 51 116 57 86 Z" />
+    <!-- Left Arm (Fuller curve) -->
+    <path d="M55 87 C42 103 39 144 38 206 C38 212 48 212 51 206 C55 156 61 114 65 92 Z" />
+    <!-- Right Arm (Fuller curve) -->
+    <path d="M145 87 C158 103 161 144 162 206 C162 212 152 212 149 206 C145 156 139 114 135 92 Z" />
+    <!-- Hands -->
+    <ellipse cx="44" cy="210" rx="6" ry="9" />
+    <ellipse cx="156" cy="210" rx="6" ry="9" />
+    <!-- Left Leg (Thicker thigh and calf) -->
+    <path d="M70 197 C79 228 84 294 82 410 C82 416 67 416 67 410 C68 294 68 228 69 197 Z" />
+    <!-- Right Leg (Thicker thigh and calf) -->
+    <path d="M130 197 C121 228 116 294 118 410 C118 416 133 416 133 410 C132 294 132 228 131 197 Z" />
+    <!-- Feet resting on peak -->
+    <ellipse cx="76" cy="413" rx="11" ry="6" />
+    <ellipse cx="124" cy="413" rx="11" ry="6" />
+  </g>
+
+  <!-- Triangular Pedestal Banner -->
+  <g id="pedestal">
+    <polygon points="12,450 100,418 188,450 188,484 12,484" fill="url(#ped-grad-3)" />
+    <!-- White Category Label -->
+    <text x="100" y="474" text-anchor="middle" fill="#FFFFFF" font-family="'Poppins', sans-serif" font-weight="900" font-size="16" letter-spacing="0.8">
+      OVERWEIGHT
+    </text>
+    <!-- BMI Range -->
+    <text x="100" y="510" text-anchor="middle" fill="#004D6D" font-family="'Poppins', sans-serif" font-weight="800" font-size="19">
+      25-29.9
+    </text>
+  </g>
+</svg>

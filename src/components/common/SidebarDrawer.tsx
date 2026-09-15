@@ -11,7 +11,8 @@ import {
   Code2,
   ChevronRight,
   Sun,
-  Moon
+  Moon,
+  Calculator
 } from 'lucide-react';
 import { LanguageMode } from '../../types';
 
@@ -89,6 +90,34 @@ export const SidebarDrawer: React.FC<SidebarDrawerProps> = ({
               <div className="text-[11px] font-black text-slate-400 dark:text-slate-400 uppercase tracking-wider px-2 pb-1">
                 {lang === 'en' ? 'Navigation Menu' : 'মেনু ও তথ্যসমূহ'}
               </div>
+
+              {/* 0. Medical Tools */}
+              <a
+                href="/tools"
+                onClick={(e) => handleLinkClick(e, '/tools')}
+                id="sidebar-tools-link"
+                className="w-full flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-[#E2FCD6]/80 to-[#CCECEE]/50 dark:from-[#064E3B]/50 dark:to-[#1A2B3E] hover:from-[#E2FCD6] hover:to-[#CCECEE] border-2 border-[#14967F]/40 dark:border-[#2DD4BF]/40 text-left transition-all group cursor-pointer shadow-xs"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-xl bg-[#14967F] dark:bg-[#2DD4BF] text-white dark:text-slate-950 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                    <Calculator className="w-4 h-4 text-[#E2FCD6] dark:text-slate-950" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-sm font-black text-[#095D7E] dark:text-slate-100 block">
+                        {lang === 'en' ? 'Medical Tools' : 'মেডিকেল টুলস'}
+                      </span>
+                      <span className="text-[10px] font-black px-1.5 py-0.2 rounded-full bg-[#14967F] text-white dark:bg-[#2DD4BF] dark:text-slate-950">
+                        NEW
+                      </span>
+                    </div>
+                    <span className="text-[11px] text-slate-600 dark:text-slate-300 font-medium">
+                      {lang === 'en' ? 'BMI calculator & clinical tools' : 'বিএমআই ক্যালকুলেটর ও হেলথ টুলস'}
+                    </span>
+                  </div>
+                </div>
+                <ChevronRight className="w-4 h-4 text-[#14967F] dark:text-[#2DD4BF] group-hover:translate-x-0.5 transition-transform" />
+              </a>
 
               {/* 1. About Us */}
               <a

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 520" width="100%" height="100%">
+  <!-- UNDERWEIGHT (<18.5) -->
+  <defs>
+    <linearGradient id="ped-grad-1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#29B6F6" />
+      <stop offset="100%" stop-color="#0288D1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Male Underweight Silhouette -->
+  <g id="underweight-male" fill="#004D6D">
+    <!-- Hair style with modern side quiff -->
+    <path d="M88 28 C98 20 114 22 120 28 C124 32 122 38 122 43 C125 48 122 55 117 59 C114 64 107 67 100 67 C93 67 86 65 82 60 C78 55 77 48 80 43 C79 36 81 29 88 28 Z" />
+    <!-- Head / Face profile -->
+    <ellipse cx="100" cy="48" rx="16" ry="20" />
+    <!-- Neck -->
+    <path d="M93 66 L107 66 L109 84 L91 84 Z" />
+    <!-- Lean Torso -->
+    <path d="M72 84 C82 86 100 87 128 84 C130 102 126 136 122 186 C115 188 105 189 100 189 C95 189 85 188 78 186 C74 136 70 102 72 84 Z" />
+    <!-- Left Arm (Slender) -->
+    <path d="M71 85 C61 97 58 138 56 200 C56 206 63 206 65 200 C69 148 72 106 75 88 Z" />
+    <!-- Right Arm (Slender) -->
+    <path d="M129 85 C139 97 142 138 144 200 C144 206 137 206 135 200 C131 148 128 106 125 88 Z" />
+    <!-- Hands -->
+    <ellipse cx="60" cy="204" rx="4" ry="7" />
+    <ellipse cx="140" cy="204" rx="4" ry="7" />
+    <!-- Left Leg (Thin) -->
+    <path d="M81 186 C87 215 87 290 85 410 C85 416 75 416 75 410 C77 290 78 218 80 186 Z" />
+    <!-- Right Leg (Thin) -->
+    <path d="M119 186 C113 215 113 290 115 410 C115 416 125 416 125 410 C123 290 122 218 120 186 Z" />
+    <!-- Feet resting on peak -->
+    <ellipse cx="80" cy="413" rx="8" ry="5" />
+    <ellipse cx="120" cy="413" rx="8" ry="5" />
+  </g>
+
+  <!-- Triangular Pedestal Banner -->
+  <g id="pedestal">
+    <polygon points="12,450 100,418 188,450 188,484 12,484" fill="url(#ped-grad-1)" />
+    <!-- White Category Label -->
+    <text x="100" y="474" text-anchor="middle" fill="#FFFFFF" font-family="'Poppins', sans-serif" font-weight="900" font-size="16" letter-spacing="1">
+      UNDERWEIGHT
+    </text>
+    <!-- BMI Range -->
+    <text x="100" y="510" text-anchor="middle" fill="#004D6D" font-family="'Poppins', sans-serif" font-weight="800" font-size="19">
+      &lt;18.5
+    </text>
+  </g>
+</svg>

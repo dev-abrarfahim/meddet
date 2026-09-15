@@ -7,7 +7,9 @@ import {
   HeartPulse,
   Layers,
   Stethoscope,
-  Grid
+  Grid,
+  Calculator,
+  Sparkles
 } from 'lucide-react';
 import { Medicine, LanguageMode } from '../../types';
 import { searchMedicines, getAllCompanies } from '../../data/dbEngine';
@@ -18,12 +20,14 @@ interface HomeLandingProps {
   onGoToSearch: (query?: string, category?: string, manufacturer?: string, dosageForm?: string) => void;
   onSelectMedicine: (med: Medicine) => void;
   lang: LanguageMode;
+  onNavigateTools?: () => void;
 }
 
 export const HomeLanding: React.FC<HomeLandingProps> = ({
   onGoToSearch,
   onSelectMedicine,
-  lang
+  lang,
+  onNavigateTools
 }) => {
   const [heroQuery, setHeroQuery] = useState('');
 
@@ -116,6 +120,43 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
         </div>
 
       </section>
+
+      {/* MEDICAL HEALTH TOOLS HIGHLIGHT BANNER */}
+      {onNavigateTools && (
+        <div className="bg-gradient-to-r from-[#E2FCD6] via-[#CCECEE]/60 to-[#F1F9FF] dark:from-[#064E3B]/60 dark:via-[#1A2B3E] dark:to-[#0B1927] rounded-2xl border-2 border-[#14967F]/40 dark:border-[#2DD4BF]/40 p-4 sm:p-5 shadow-sm hover:shadow-md transition-all flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
+            <div className="w-12 h-12 rounded-2xl bg-[#14967F] dark:bg-[#2DD4BF] text-white dark:text-slate-950 flex items-center justify-center shrink-0 shadow-md">
+              <Calculator className="w-6 h-6 text-[#E2FCD6] dark:text-slate-950" />
+            </div>
+            <div className="space-y-0.5">
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-[#14967F] text-white dark:bg-[#2DD4BF] dark:text-slate-950 uppercase tracking-wider">
+                  {lang === 'en' ? 'New Tool' : 'নতুন ফিচার'}
+                </span>
+                <span className="text-xs font-bold text-[#0D6F5D] dark:text-[#6EE7B7]">
+                  {lang === 'en' ? 'WHO & CDC Standards' : 'WHO নির্দেশিকা অনুযায়ী'}
+                </span>
+              </div>
+              <h2 className="text-sm sm:text-base font-black text-[#095D7E] dark:text-slate-100">
+                {lang === 'en' ? 'Medical BMI Calculator & Morphology' : 'মেডিকেল বিএমআই ক্যালকুলেটর ও শারীরিক গঠন'}
+              </h2>
+              <p className="text-xs text-slate-600 dark:text-slate-300 hidden sm:block">
+                {lang === 'en'
+                  ? 'Calculate clinical Body Mass Index with gender-specific silhouettes, radial gauge, and dietary therapy.'
+                  : 'শারীরিক গঠন মডেল, রেডিয়াল ডায়াল গেজ ও পুষ্টি পরামর্শসহ বিএমআই হিসাব করুন।'}
+              </p>
+            </div>
+          </div>
+
+          <button
+            onClick={onNavigateTools}
+            className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#14967F] hover:bg-[#0D6F5D] text-white font-black text-xs shadow-md transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer"
+          >
+            <span>{lang === 'en' ? 'Explore Tools' : 'টুলস দেখুন'}</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+      )}
 
       {/* DOSAGE FORM CATEGORY EXPLORER (10 Distinct Types with Custom Icons & Counts) */}
       <section className="space-y-3.5 pt-2">
