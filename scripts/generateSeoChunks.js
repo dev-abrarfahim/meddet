@@ -30,17 +30,46 @@ console.log('Generating ultra-fast SEO data chunks for Edge Worker...');
 const brandsRaw = JSON.parse(fs.readFileSync(BRANDS_PATH, 'utf8'));
 const genericsRaw = JSON.parse(fs.readFileSync(GENERICS_PATH, 'utf8'));
 
-// 1. Create Generic Lookup Map (only essential SEO fields)
+// 1. Group Brands by genericId
+const genericBrandsMap = new Map();
+for (const b of brandsRaw) {
+  const gId = Number(b.genericId);
+  if (!gId) continue;
+  if (!genericBrandsMap.has(gId)) {
+    genericBrandsMap.set(gId, []);
+  }
+  genericBrandsMap.get(gId).push({
+    id: Number(b.id),
+    name: b.name || '',
+    company: b.company || '',
+    form: b.form || '',
+    strength: b.strength || '',
+    mrp: Number(b.mrp) || 0
+  });
+}
+
+// 2. Create Enriched Generic Lookup Map
 const genericSummaryMap = new Map();
 for (const g of genericsRaw) {
   const gId = Number(g.id);
   if (!gId) continue;
+  const brandsForGen = genericBrandsMap.get(gId) || [];
+  const forms = Array.from(new Set(brandsForGen.map(b => b.form).filter(Boolean)));
+  const prices = brandsForGen.map(b => b.mrp).filter(p => p > 0);
+  const minPrice = prices.length ? Math.min(...prices) : 0;
+  const maxPrice = prices.length ? Math.max(...prices) : 0;
+
   genericSummaryMap.set(gId, {
     id: gId,
     name: g.name || '',
     nameBn: g.nameBn || '',
-    indication: (g.indication || '').slice(0, 300),
-    indicationBn: (g.indicationBn || '').slice(0, 300)
+    indication: (g.indication || '').slice(0, 500),
+    indicationBn: (g.indicationBn || '').slice(0, 500),
+    brandCount: brandsForGen.length,
+    forms: forms.slice(0, 6),
+    minPrice,
+    maxPrice,
+    topBrands: brandsForGen.slice(0, 15)
   });
 }
 

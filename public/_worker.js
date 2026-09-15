@@ -697,14 +697,57 @@ export default {
                 ${genName} <span style="font-size: 16px; font-weight: 600; opacity: 0.7;">${genBn}</span>
               </h1>
               <p style="font-size: 14px; font-weight: 700; color: #14967F; margin: 0;">
-                Clinical Monograph & Available Brand Presentations in Bangladesh
+                Clinical Monograph & ${gen.brandCount ? `${gen.brandCount} ` : ''}Available Brand Presentations in Bangladesh
               </p>
+              ${gen.forms && gen.forms.length ? `
+              <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap;">
+                ${gen.forms.map(f => `<span style="font-size: 11px; font-weight: 800; padding: 3px 10px; border-radius: 6px; background: #F1F5F9; color: #475569; border: 1px solid #E2E8F0;">${f}</span>`).join('')}
+              </div>` : ''}
             </section>
 
             <section class="mv-ssr-card">
-              <h2 style="font-size: 16px; font-weight: 800; margin: 0 0 10px 0;">About ${genName}</h2>
+              <h2 style="font-size: 16px; font-weight: 800; margin: 0 0 10px 0;">About ${genName} (Indications & Use)</h2>
               <p style="font-size: 14px; line-height: 1.6; margin: 0;">${gen.indication || description}</p>
+              ${gen.indicationBn ? `<p style="font-size: 14px; line-height: 1.6; margin: 10px 0 0; color: #475569;">${gen.indicationBn}</p>` : ''}
             </section>
+
+            ${gen.topBrands && gen.topBrands.length ? `
+            <section class="mv-ssr-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                <h2 style="font-size: 16px; font-weight: 800; margin: 0;">Available Brands in Bangladesh (${gen.brandCount || gen.topBrands.length})</h2>
+                ${gen.minPrice ? `<span style="font-size: 12px; font-weight: 700; color: #047857; background: #ECFDF5; padding: 3px 8px; border-radius: 6px; border: 1px solid #A7F3D0;">Price Range: ৳${gen.minPrice.toFixed(2)} – ৳${gen.maxPrice.toFixed(2)}</span>` : ''}
+              </div>
+              <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: left;">
+                  <thead>
+                    <tr style="border-bottom: 2px solid #e2e8f0; color: #64748b; font-size: 11px; text-transform: uppercase;">
+                      <th style="padding: 10px 12px;">Brand Name</th>
+                      <th style="padding: 10px 12px;">Manufacturer</th>
+                      <th style="padding: 10px 12px;">Form & Strength</th>
+                      <th style="padding: 10px 12px; text-align: right;">MRP (BDT)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${gen.topBrands.map(b => `
+                    <tr style="border-bottom: 1px solid #f1f5f9;">
+                      <td style="padding: 10px 12px; font-weight: 800; color: #095D7E;">
+                        <a href="/medicine/${slugify(b.name)}-${slugify(b.strength)}-${slugify(b.form)}-${encodeId(b.id)}" style="color: #095D7E; text-decoration: none;">${b.name}</a>
+                      </td>
+                      <td style="padding: 10px 12px; color: #475569; font-weight: 600;">${b.company}</td>
+                      <td style="padding: 10px 12px; color: #64748b;">${b.form} ${b.strength}</td>
+                      <td style="padding: 10px 12px; text-align: right; font-weight: 800; color: #14967F;">৳${Number(b.mrp).toFixed(2)}</td>
+                    </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </section>` : ''}
+
+            <!-- E-E-A-T Footer -->
+            <footer class="mv-ssr-footer" style="background: #f1f5f9; border-radius: 12px; padding: 14px; font-size: 12px; color: #64748b; line-height: 1.5;">
+              <p style="margin: 0 0 4px;"><strong>Regulatory & Clinical Attribution (E-E-A-T):</strong> Clinical data referenced in alignment with the Directorate General of Drug Administration (DGDA), Bangladesh and Bangladesh National Formulary (BDNF).</p>
+              <p style="margin: 0;"><strong>Medical Disclaimer:</strong> MEDDET is an educational clinical index. Always consult a registered physician before taking or altering any medicine therapy.</p>
+            </footer>
           </main>
         </div>
       `;

@@ -52,7 +52,21 @@ export default function App() {
   }, []);
 
   // Active Main Tab State ('home' vs 'search')
-  const [activeTab, setActiveTab] = useState<'home' | 'search'>('home');
+  const [activeTab, setActiveTab] = useState<'home' | 'search'>(() => {
+    if (typeof window !== 'undefined') {
+      const pathname = decodeURIComponent(window.location.pathname);
+      if (
+        pathname.startsWith('/generic/') ||
+        pathname.startsWith('/medicine/') ||
+        pathname.startsWith('/dosage-form/') ||
+        pathname.startsWith('/company/') ||
+        window.location.search.includes('q=')
+      ) {
+        return 'search';
+      }
+    }
+    return 'home';
+  });
 
   // Dual Language State ('en' vs 'bn')
   const [lang, setLang] = useState<LanguageMode>(() => {
@@ -113,12 +127,31 @@ export default function App() {
   });
 
   const [selectedMedicine, setSelectedMedicine] = useState<Medicine | null>(null);
-  const [explorerGenericId, setExplorerGenericId] = useState<number | null>(null);
+  const [explorerGenericId, setExplorerGenericId] = useState<number | null>(() => {
+    if (typeof window !== 'undefined') {
+      const pathname = decodeURIComponent(window.location.pathname);
+      if (pathname.startsWith('/generic/')) {
+        return parseGenericIdFromSlug(pathname);
+      }
+    }
+    return null;
+  });
   const [explorerForm, setExplorerForm] = useState<string | undefined>(undefined);
   const [explorerStrength, setExplorerStrength] = useState<string | undefined>(undefined);
   const [is404, setIs404] = useState<boolean>(false);
   const [notFoundSlug, setNotFoundSlug] = useState<string>('');
-  const [activeStandalonePage, setActiveStandalonePage] = useState<'about' | 'privacy' | 'terms' | 'contact' | 'companies' | 'api-docs' | null>(null);
+  const [activeStandalonePage, setActiveStandalonePage] = useState<'about' | 'privacy' | 'terms' | 'contact' | 'companies' | 'api-docs' | null>(() => {
+    if (typeof window !== 'undefined') {
+      const cleanPath = decodeURIComponent(window.location.pathname).replace(/\/$/, '');
+      if (cleanPath === '/about' || cleanPath === '/about-us') return 'about';
+      if (cleanPath === '/privacy-policy' || cleanPath === '/privacy') return 'privacy';
+      if (cleanPath === '/terms' || cleanPath === '/terms-and-conditions' || cleanPath === '/terms-of-use') return 'terms';
+      if (cleanPath === '/contact' || cleanPath === '/contact-us') return 'contact';
+      if (cleanPath === '/companies' || cleanPath === '/company' || cleanPath === '/manufacturers') return 'companies';
+      if (cleanPath === '/api-docs') return 'api-docs';
+    }
+    return null;
+  });
 
   // Helper to update browser URL using clean canonical path or query parameters
   const syncNavigationUrl = (canonicalPath: string, searchParams?: Record<string, string | null>) => {
@@ -507,7 +540,16 @@ export default function App() {
       updateDynamicSEO({ staticPage: activeStandalonePage });
       return;
     }
+
+    const pathname = window.location.pathname;
+    // CRITICAL PROTECTION: Do not overwrite Edge SSR metadata with default homepage metadata
+    // while generic or medicine entities are still resolving in background!
+    if (pathname.startsWith('/generic/') && !explorerGenericId) return;
+    if (pathname.startsWith('/medicine/') && !selectedMedicine) return;
+
     const genericObj = explorerGenericId ? getGenericById(explorerGenericId) : null;
+    if (pathname.startsWith('/generic/') && !genericObj) return;
+
     updateDynamicSEO({
       medicine: selectedMedicine,
       generic: genericObj,

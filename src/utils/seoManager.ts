@@ -36,6 +36,15 @@ export function updateDynamicSEO(props: SEOProps) {
   } else if (props.generic) {
     meta = generateGenericMetadata(props.generic);
   } else {
+    // CRITICAL PROTECTION: If the window location is currently on a /generic/ or /medicine/ route
+    // and neither medicine nor generic data is ready, NEVER overwrite the Edge SSR metadata
+    // with homepage default metadata! Doing so causes Googlebot to see mismatched canonicals and flags soft-404!
+    if (typeof window !== 'undefined') {
+      const pathname = window.location.pathname;
+      if (pathname.startsWith('/generic/') || pathname.startsWith('/medicine/')) {
+        return;
+      }
+    }
     meta = generateDefaultMetadata(
       props.categoryName,
       props.dosageForm,

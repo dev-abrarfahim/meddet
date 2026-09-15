@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Building2, ChevronLeft, ArrowUpDown, Filter, Sparkles, RotateCcw } from 'lucide-react';
 import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
 import { Medicine, LanguageMode } from '../../types';
-import { getAllBrandsForGeneric, getGenericById } from '../../data/dbEngine';
+import { getAllBrandsForGeneric, getGenericById, isDatabaseReady } from '../../data/dbEngine';
 import { getMedicineCanonicalPath } from '../../utils/urlHelper';
 
 interface GenericBrandsExplorerProps {
@@ -330,6 +330,17 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200">
               {filteredBrands.length === 0 ? (
+                !isDatabaseReady() ? (
+                  Array.from({ length: 6 }).map((_, i) => (
+                    <tr key={i} className="animate-pulse bg-white dark:bg-[#131B2E]">
+                      <td className="py-3 px-4"><div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-28"></div></td>
+                      <td className="py-3 px-4"><div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-16"></div></td>
+                      <td className="py-3 px-4"><div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-20"></div></td>
+                      <td className="py-3 px-4"><div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-32"></div></td>
+                      <td className="py-3 px-4 text-right"><div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-16 ml-auto"></div></td>
+                    </tr>
+                  ))
+                ) : (
                 <tr>
                   <td colSpan={5} className="py-12 px-4 text-center">
                     <div className="max-w-md mx-auto space-y-3">
@@ -352,6 +363,7 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
                     </div>
                   </td>
                 </tr>
+                )
               ) : (
                 filteredBrands.map((brand, idx) => {
                   const brandHref = getMedicineCanonicalPath(brand);
@@ -420,6 +432,20 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
         {/* Mobile Compact Card Rows */}
         <div className="sm:hidden divide-y divide-slate-100 dark:divide-slate-800">
           {filteredBrands.length === 0 ? (
+            !isDatabaseReady() ? (
+              Array.from({ length: 4 }).map((_, i) => (
+                <div key={i} className="p-3.5 space-y-2 animate-pulse bg-white dark:bg-[#131B2E]">
+                  <div className="flex justify-between items-center">
+                    <div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-28"></div>
+                    <div className="h-4 bg-slate-200 dark:bg-slate-700 rounded w-14"></div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <div className="h-3 bg-slate-200 dark:bg-slate-700 rounded w-24"></div>
+                    <div className="h-3 bg-slate-200 dark:bg-slate-700 rounded w-16"></div>
+                  </div>
+                </div>
+              ))
+            ) : (
             <div className="py-10 px-4 text-center space-y-3">
               <p className="text-xs font-bold text-slate-500 dark:text-slate-400">
                 {lang === 'en'
@@ -438,6 +464,7 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
                 <span>{lang === 'en' ? `Show All ${allBrands.length} Brands` : `সবগুলো ${allBrands.length}টি ব্র্যান্ড দেখুন`}</span>
               </button>
             </div>
+            )
           ) : (
             filteredBrands.map((brand) => {
               const brandHref = getMedicineCanonicalPath(brand);
