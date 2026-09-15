@@ -10,6 +10,7 @@ interface MedicineHeroProps {
   onBackToSearch: () => void;
   onSelectMedicine: (med: Medicine) => void;
   onOpenGenericBrandsExplorer: (genericId: number, form?: string, strength?: string) => void;
+  onSelectGeneric?: (genericId: number) => void;
   lang: LanguageMode;
   onToggleLang?: () => void;
 }
@@ -19,6 +20,7 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
   onBackToSearch,
   onSelectMedicine,
   onOpenGenericBrandsExplorer,
+  onSelectGeneric,
   lang
 }) => {
   const { iconPath, color: badgeColor } = getDosageFormIconInfo(medicine.form);
@@ -74,7 +76,11 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
             href={getGenericCanonicalPath({ id: medicine.genericId, name: medicine.genericName })}
             onClick={(e) => {
               e.preventDefault();
-              onOpenGenericBrandsExplorer(medicine.genericId, medicine.form, medicine.strength);
+              if (onSelectGeneric) {
+                onSelectGeneric(medicine.genericId);
+              } else {
+                onOpenGenericBrandsExplorer(medicine.genericId);
+              }
             }}
             className="inline-block text-sm sm:text-base font-extrabold text-[#14967F] dark:text-[#2DD4BF] hover:underline cursor-pointer leading-snug pl-0.5"
             title={`View full clinical monograph for ${medicine.genericName}`}
@@ -113,7 +119,7 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
 
           {/* Alternative Brands Dedicated Explorer Link */}
           <a
-            href={getGenericCanonicalPath({ id: medicine.genericId, name: medicine.genericName })}
+            href={`${getGenericCanonicalPath({ id: medicine.genericId, name: medicine.genericName })}?view=brands${medicine.form ? `&form=${encodeURIComponent(medicine.form)}` : ''}${medicine.strength ? `&strength=${encodeURIComponent(medicine.strength)}` : ''}`}
             onClick={(e) => {
               e.preventDefault();
               onOpenGenericBrandsExplorer(medicine.genericId, medicine.form, medicine.strength);

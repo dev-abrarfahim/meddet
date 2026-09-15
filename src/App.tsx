@@ -128,11 +128,28 @@ export default function App() {
   });
 
   const [selectedMedicine, setSelectedMedicine] = useState<Medicine | null>(null);
+  const [selectedGenericId, setSelectedGenericId] = useState<number | null>(() => {
+    if (typeof window !== 'undefined') {
+      const pathname = decodeURIComponent(window.location.pathname);
+      const search = window.location.search;
+      if (pathname.startsWith('/generic/')) {
+        const isBrands = search.includes('view=brands') || (search.includes('form=') && search.includes('strength='));
+        if (!isBrands) {
+          return parseGenericIdFromSlug(pathname);
+        }
+      }
+    }
+    return null;
+  });
   const [explorerGenericId, setExplorerGenericId] = useState<number | null>(() => {
     if (typeof window !== 'undefined') {
       const pathname = decodeURIComponent(window.location.pathname);
+      const search = window.location.search;
       if (pathname.startsWith('/generic/')) {
-        return parseGenericIdFromSlug(pathname);
+        const isBrands = search.includes('view=brands') || (search.includes('form=') && search.includes('strength='));
+        if (isBrands) {
+          return parseGenericIdFromSlug(pathname);
+        }
       }
     }
     return null;
@@ -197,6 +214,7 @@ export default function App() {
       if (cleanPath === '/about' || cleanPath === '/about-us') {
         setActiveStandalonePage('about');
         setSelectedMedicine(null);
+        setSelectedGenericId(null);
         setExplorerGenericId(null);
         setIs404(false);
         if (cleanPath !== '/about') window.history.replaceState(null, '', '/about');
@@ -205,6 +223,7 @@ export default function App() {
       if (cleanPath === '/privacy-policy' || cleanPath === '/privacy') {
         setActiveStandalonePage('privacy');
         setSelectedMedicine(null);
+        setSelectedGenericId(null);
         setExplorerGenericId(null);
         setIs404(false);
         if (cleanPath !== '/privacy-policy') window.history.replaceState(null, '', '/privacy-policy');
@@ -213,6 +232,7 @@ export default function App() {
       if (cleanPath === '/terms' || cleanPath === '/terms-and-conditions' || cleanPath === '/terms-of-use') {
         setActiveStandalonePage('terms');
         setSelectedMedicine(null);
+        setSelectedGenericId(null);
         setExplorerGenericId(null);
         setIs404(false);
         if (cleanPath !== '/terms') window.history.replaceState(null, '', '/terms');
@@ -221,6 +241,7 @@ export default function App() {
       if (cleanPath === '/contact' || cleanPath === '/contact-us') {
         setActiveStandalonePage('contact');
         setSelectedMedicine(null);
+        setSelectedGenericId(null);
         setExplorerGenericId(null);
         setIs404(false);
         if (cleanPath !== '/contact') window.history.replaceState(null, '', '/contact');
@@ -229,6 +250,7 @@ export default function App() {
       if (cleanPath === '/companies' || cleanPath === '/company' || cleanPath === '/manufacturers') {
         setActiveStandalonePage('companies');
         setSelectedMedicine(null);
+        setSelectedGenericId(null);
         setExplorerGenericId(null);
         setIs404(false);
         if (cleanPath !== '/companies') window.history.replaceState(null, '', '/companies');
@@ -237,6 +259,7 @@ export default function App() {
       if (cleanPath === '/api-docs') {
         setActiveStandalonePage('api-docs');
         setSelectedMedicine(null);
+        setSelectedGenericId(null);
         setExplorerGenericId(null);
         setIs404(false);
         return;
@@ -251,6 +274,7 @@ export default function App() {
           const med = getMedicineById(medId);
           if (med) {
             setSelectedMedicine(med);
+            setSelectedGenericId(null);
             setExplorerGenericId(null);
             setIs404(false);
 
@@ -265,6 +289,7 @@ export default function App() {
         setIs404(true);
         setNotFoundSlug(pathname.replace(/^\/medicine\//, '').replace(/\/$/, ''));
         setSelectedMedicine(null);
+        setSelectedGenericId(null);
         setExplorerGenericId(null);
         return;
       }
@@ -274,28 +299,49 @@ export default function App() {
         const genId = parseGenericIdFromSlug(pathname);
         if (genId) {
           const gen = getGenericById(genId);
+          const isBrandsView = searchParams.get('view') === 'brands' || Boolean(searchParams.get('form') && searchParams.get('strength'));
+          const formParam = searchParams.get('form');
+          const strParam = searchParams.get('strength');
+
           if (gen) {
             setSelectedMedicine(null);
-            setExplorerGenericId(genId);
             setIs404(false);
-            const formParam = searchParams.get('form');
-            const strParam = searchParams.get('strength');
-            if (formParam) setExplorerForm(formParam);
-            if (strParam) setExplorerStrength(strParam);
+            if (isBrandsView) {
+              setSelectedGenericId(null);
+              setExplorerGenericId(genId);
+              if (formParam) setExplorerForm(formParam);
+              if (strParam) setExplorerStrength(strParam);
+            } else {
+              setExplorerGenericId(null);
+              setSelectedGenericId(genId);
+              if (formParam) setExplorerForm(formParam);
+              if (strParam) setExplorerStrength(strParam);
+            }
             return;
           }
           // Resilient check: if generics data (Tier 2) has not finished loading yet,
-          // do NOT assume 404! Keep explorerGenericId and wait for Tier 2 completion.
+          // do NOT assume 404! Keep generic ID active and wait for Tier 2 completion.
           if (!isGenericsReady()) {
             setSelectedMedicine(null);
-            setExplorerGenericId(genId);
             setIs404(false);
+            if (isBrandsView) {
+              setSelectedGenericId(null);
+              setExplorerGenericId(genId);
+              if (formParam) setExplorerForm(formParam);
+              if (strParam) setExplorerStrength(strParam);
+            } else {
+              setExplorerGenericId(null);
+              setSelectedGenericId(genId);
+              if (formParam) setExplorerForm(formParam);
+              if (strParam) setExplorerStrength(strParam);
+            }
             return;
           }
         }
         setIs404(true);
         setNotFoundSlug(pathname.replace(/^\/generic\//, '').replace(/\/$/, ''));
         setSelectedMedicine(null);
+        setSelectedGenericId(null);
         setExplorerGenericId(null);
         return;
       }
@@ -304,6 +350,7 @@ export default function App() {
       if (pathname.startsWith('/dosage-form/')) {
         const formSlug = pathname.replace(/^\/dosage-form\//, '').replace(/\/$/, '');
         setSelectedMedicine(null);
+        setSelectedGenericId(null);
         setExplorerGenericId(null);
         setExplorerForm(undefined);
         setExplorerStrength(undefined);
@@ -331,6 +378,7 @@ export default function App() {
           return cSlug === compSlug;
         });
         setSelectedMedicine(null);
+        setSelectedGenericId(null);
         setExplorerGenericId(null);
         setExplorerForm(undefined);
         setExplorerStrength(undefined);
@@ -363,6 +411,7 @@ export default function App() {
         const med = getMedicineById(Number(idParam));
         if (med) {
           setSelectedMedicine(med);
+          setSelectedGenericId(null);
           setExplorerGenericId(null);
           // Upgrade URL in address bar to clean canonical path
           window.history.replaceState(null, '', getMedicineCanonicalPath(med));
@@ -372,7 +421,14 @@ export default function App() {
 
       if (gIdParam && !isNaN(Number(gIdParam))) {
         setSelectedMedicine(null);
-        setExplorerGenericId(Number(gIdParam));
+        const isBrandsView = searchParams.get('view') === 'brands' || Boolean(formParam && strParam);
+        if (isBrandsView) {
+          setSelectedGenericId(null);
+          setExplorerGenericId(Number(gIdParam));
+        } else {
+          setExplorerGenericId(null);
+          setSelectedGenericId(Number(gIdParam));
+        }
         if (formParam) setExplorerForm(formParam);
         if (strParam) setExplorerStrength(strParam);
         const gen = getGenericById(Number(gIdParam));
@@ -384,6 +440,7 @@ export default function App() {
 
       if (qParam || letterParam || catParam || mfrParam || formParam) {
         setSelectedMedicine(null);
+        setSelectedGenericId(null);
         setExplorerGenericId(null);
         setActiveTab('search');
         if (qParam) setSearchQuery(qParam);
@@ -402,6 +459,7 @@ export default function App() {
       // 6. Default Root Homepage (strictly for '/' or '')
       if (pathname === '/' || pathname === '') {
         setSelectedMedicine(null);
+        setSelectedGenericId(null);
         setExplorerGenericId(null);
         setExplorerForm(undefined);
         setExplorerStrength(undefined);
@@ -424,6 +482,7 @@ export default function App() {
       setIs404(true);
       setNotFoundSlug(pathname.replace(/^\//, ''));
       setSelectedMedicine(null);
+      setSelectedGenericId(null);
       setExplorerGenericId(null);
       setActiveStandalonePage(null);
     } catch {}
@@ -438,7 +497,7 @@ export default function App() {
   // Synchronize Search & Filter state to browser URL (Debounced replaceState)
   useEffect(() => {
     // CRITICAL: ONLY run when actively in search mode. NEVER run on home, medicine, generic, or standalone pages!
-    if (!dbReady || selectedMedicine || explorerGenericId || is404 || activeStandalonePage || activeTab !== 'search') return;
+    if (!dbReady || selectedMedicine || explorerGenericId || selectedGenericId || is404 || activeStandalonePage || activeTab !== 'search') return;
     const pathname = window.location.pathname.replace(/\/$/, '');
     if (
       pathname.startsWith('/medicine/') ||
@@ -499,7 +558,7 @@ export default function App() {
     }, 250);
 
     return () => clearTimeout(timer);
-  }, [dbReady, searchQuery, selectedLetter, filters, activeTab, selectedMedicine, explorerGenericId, is404, activeStandalonePage]);
+  }, [dbReady, searchQuery, selectedLetter, filters, activeTab, selectedMedicine, explorerGenericId, selectedGenericId, is404, activeStandalonePage]);
 
   // Handle browser Back / Forward button navigation (popstate)
   useEffect(() => {
@@ -545,10 +604,11 @@ export default function App() {
     const pathname = window.location.pathname;
     // CRITICAL PROTECTION: Do not overwrite Edge SSR metadata with default homepage metadata
     // while generic or medicine entities are still resolving in background!
-    if (pathname.startsWith('/generic/') && !explorerGenericId) return;
+    const currentGenericId = selectedGenericId || explorerGenericId;
+    if (pathname.startsWith('/generic/') && !currentGenericId) return;
     if (pathname.startsWith('/medicine/') && !selectedMedicine) return;
 
-    const genericObj = explorerGenericId ? getGenericById(explorerGenericId) : null;
+    const genericObj = currentGenericId ? getGenericById(currentGenericId) : null;
     if (pathname.startsWith('/generic/') && !genericObj) return;
 
     updateDynamicSEO({
@@ -560,22 +620,52 @@ export default function App() {
       letter: selectedLetter !== 'All' ? selectedLetter : undefined,
       searchQuery: searchQuery || undefined
     });
-  }, [is404, activeStandalonePage, selectedMedicine, explorerGenericId, searchQuery, filters.category, filters.dosageForm, filters.manufacturer, selectedLetter, activeTab]);
+  }, [is404, activeStandalonePage, selectedMedicine, selectedGenericId, explorerGenericId, searchQuery, filters.category, filters.dosageForm, filters.manufacturer, selectedLetter, activeTab]);
+
+  const handleOpenGenericDetails = (genericId: number) => {
+    setActiveStandalonePage(null);
+    setExplorerGenericId(null);
+    setSelectedGenericId(genericId);
+    setExplorerForm(undefined);
+    setExplorerStrength(undefined);
+    const gen = getGenericById(genericId);
+    const canonicalPath = gen ? getGenericCanonicalPath(gen) : `/generic/${genericId}`;
+    syncNavigationUrl(canonicalPath);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleOpenGenericBrandsExplorer = (genericId: number, form?: string, strength?: string) => {
     setActiveStandalonePage(null);
+    setSelectedGenericId(null);
     setExplorerGenericId(genericId);
     setExplorerForm(form);
     setExplorerStrength(strength);
     const gen = getGenericById(genericId);
     const canonicalPath = gen ? getGenericCanonicalPath(gen) : `/generic/${genericId}`;
-    syncNavigationUrl(canonicalPath, { form: form || null, strength: strength || null });
+    syncNavigationUrl(canonicalPath, { view: 'brands', form: form || null, strength: strength || null });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleCloseGenericBrandsExplorer = () => {
     setActiveStandalonePage(null);
     setExplorerGenericId(null);
+    setExplorerForm(undefined);
+    setExplorerStrength(undefined);
+    if (selectedMedicine) {
+      syncNavigationUrl(getMedicineCanonicalPath(selectedMedicine));
+    } else if (selectedGenericId) {
+      const gen = getGenericById(selectedGenericId);
+      if (gen) syncNavigationUrl(getGenericCanonicalPath(gen));
+      else syncNavigationUrl('/');
+    } else {
+      syncNavigationUrl('/');
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleCloseGenericDetails = () => {
+    setActiveStandalonePage(null);
+    setSelectedGenericId(null);
     setExplorerForm(undefined);
     setExplorerStrength(undefined);
     if (selectedMedicine) {
@@ -645,6 +735,7 @@ export default function App() {
   const handleNavigatePage = (path: string) => {
     setIs404(false);
     setSelectedMedicine(null);
+    setSelectedGenericId(null);
     setExplorerGenericId(null);
 
     const clean = path.replace(/\/$/, '');
@@ -704,6 +795,7 @@ export default function App() {
     setIs404(false);
     setActiveStandalonePage(null);
     setSelectedMedicine(fullMed);
+    setSelectedGenericId(null);
     setExplorerGenericId(null);
     setExplorerForm(undefined);
     setExplorerStrength(undefined);
@@ -716,6 +808,7 @@ export default function App() {
     setIs404(false);
     setActiveStandalonePage(null);
     setSelectedMedicine(null);
+    setSelectedGenericId(null);
     setExplorerGenericId(null);
     setExplorerForm(undefined);
     setExplorerStrength(undefined);
@@ -738,6 +831,7 @@ export default function App() {
     setIs404(false);
     setActiveStandalonePage(null);
     setSelectedMedicine(null);
+    setSelectedGenericId(null);
     setExplorerGenericId(null);
     setActiveTab('search');
     setSelectedLetter('All');
@@ -807,7 +901,7 @@ export default function App() {
               if (activeTab !== 'search') setActiveTab('search');
             }}
             onSelectMedicine={handleSelectMedicine}
-            onSelectGeneric={(gen) => handleOpenGenericBrandsExplorer(gen.id)}
+            onSelectGeneric={(gen) => handleOpenGenericDetails(gen.id)}
             onOpenFilterDrawer={() => setIsFiltersOpen(true)}
             activeFilterCount={activeFilterCount}
             inputRef={mainInputRef}
@@ -839,13 +933,26 @@ export default function App() {
         ) : activeStandalonePage === 'api-docs' ? (
           <ApiDocsPage lang={lang} />
         ) : explorerGenericId ? (
+          <div className="max-w-4xl mx-auto space-y-4 animate-in fade-in duration-200 pb-16">
+            <GenericBrandsExplorer
+              genericId={explorerGenericId}
+              initialForm={explorerForm}
+              initialStrength={explorerStrength}
+              onSelectMedicine={handleSelectMedicine}
+              onBack={handleCloseGenericBrandsExplorer}
+              onViewGenericDetails={handleOpenGenericDetails}
+              lang={lang}
+            />
+          </div>
+        ) : selectedGenericId ? (
           <GenericDetailsPage
-            genericId={explorerGenericId}
+            genericId={selectedGenericId}
             initialForm={explorerForm}
             initialStrength={explorerStrength}
             onSelectMedicine={handleSelectMedicine}
-            onSelectGeneric={(gen) => handleOpenGenericBrandsExplorer(gen.id)}
-            onBack={handleCloseGenericBrandsExplorer}
+            onSelectGeneric={(gen) => handleOpenGenericDetails(gen.id)}
+            onOpenBrandsExplorer={(genId, form, str) => handleOpenGenericBrandsExplorer(genId, form, str)}
+            onBack={handleCloseGenericDetails}
             lang={lang}
             onToggleLang={toggleLang}
           />
@@ -868,6 +975,7 @@ export default function App() {
                     setActiveTab('search');
                   }}
                   onSelectMedicine={handleSelectMedicine}
+                  onSelectGeneric={handleOpenGenericDetails}
                   onOpenGenericBrandsExplorer={handleOpenGenericBrandsExplorer}
                   lang={lang}
                   onToggleLang={toggleLang}

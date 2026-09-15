@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Building2, ChevronLeft, ArrowUpDown, Filter, Sparkles, RotateCcw } from 'lucide-react';
+import { Building2, ChevronLeft, ArrowUpDown, Filter, Sparkles, RotateCcw, BookOpen } from 'lucide-react';
 import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
 import { Medicine, LanguageMode } from '../../types';
 import { getAllBrandsForGeneric, getGenericById, isDatabaseReady } from '../../data/dbEngine';
@@ -11,6 +11,7 @@ interface GenericBrandsExplorerProps {
   initialStrength?: string;
   onSelectMedicine: (med: Medicine) => void;
   onBack: () => void;
+  onViewGenericDetails?: (genericId: number) => void;
   lang: LanguageMode;
 }
 
@@ -20,6 +21,7 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
   initialStrength,
   onSelectMedicine,
   onBack,
+  onViewGenericDetails,
   lang
 }) => {
   const genericMonograph = getGenericById(genericId);
@@ -213,7 +215,17 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
         </div>
 
         {/* Optional Pill Tagline */}
-        <div className="pt-1">
+        <div className="pt-1 flex items-center gap-2 flex-wrap">
+          {onViewGenericDetails && (
+            <button
+              onClick={() => onViewGenericDetails(genericId)}
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-blue-50 hover:bg-blue-100 dark:bg-blue-950/60 dark:hover:bg-blue-900 border border-blue-200 dark:border-blue-800 text-blue-800 dark:text-blue-300 text-xs font-bold shadow-xs transition-all cursor-pointer"
+              title="View full prescribing indications, dose, side effects, precautions, and pharmacology"
+            >
+              <BookOpen className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
+              <span>{lang === 'en' ? 'Clinical Monograph & Info' : 'ক্লিনিক্যাল মোনোগ্রাফ ও তথ্য'}</span>
+            </button>
+          )}
           <button className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs font-bold shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
             <span>Other Combinations of this Generic</span>

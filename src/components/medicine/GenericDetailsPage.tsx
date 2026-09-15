@@ -30,6 +30,7 @@ interface GenericDetailsPageProps {
   initialStrength?: string;
   onSelectMedicine: (med: Medicine) => void;
   onSelectGeneric: (generic: { id: number; name: string }) => void;
+  onOpenBrandsExplorer?: (genericId: number, form?: string, strength?: string) => void;
   onBack: () => void;
   lang: LanguageMode;
   onToggleLang?: () => void;
@@ -41,6 +42,7 @@ export const GenericDetailsPage: React.FC<GenericDetailsPageProps> = ({
   initialStrength,
   onSelectMedicine,
   onSelectGeneric,
+  onOpenBrandsExplorer,
   onBack,
   lang,
   onToggleLang
@@ -295,7 +297,13 @@ export const GenericDetailsPage: React.FC<GenericDetailsPageProps> = ({
 
             {/* Link to Full Table Explorer (PC Desktop Helper) */}
             <button
-              onClick={() => setShowFullExplorer(true)}
+              onClick={() => {
+                if (onOpenBrandsExplorer) {
+                  onOpenBrandsExplorer(genericId, selectedForm !== 'All' ? selectedForm : undefined, initialStrength);
+                } else {
+                  setShowFullExplorer(true);
+                }
+              }}
               className="hidden lg:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-extrabold text-slate-600 dark:text-slate-300 hover:text-[#095D7E] dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-700"
             >
               <Layers className="w-3.5 h-3.5" />
@@ -646,7 +654,13 @@ export const GenericDetailsPage: React.FC<GenericDetailsPageProps> = ({
             {/* Bottom button: Open full explorer table */}
             <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80">
               <button
-                onClick={() => setShowFullExplorer(true)}
+                onClick={() => {
+                  if (onOpenBrandsExplorer) {
+                    onOpenBrandsExplorer(genericId, selectedForm !== 'All' ? selectedForm : undefined, initialStrength);
+                  } else {
+                    setShowFullExplorer(true);
+                  }
+                }}
                 className="w-full py-2 px-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-black flex items-center justify-center gap-1.5 transition-colors cursor-pointer border border-slate-200 dark:border-slate-700"
               >
                 <Layers className="w-3.5 h-3.5 text-[#14967F]" />
