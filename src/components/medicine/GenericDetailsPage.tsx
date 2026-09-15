@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   Pill,
   ChevronLeft,
@@ -18,7 +18,7 @@ import {
   Info
 } from 'lucide-react';
 import { Medicine, GenericMonograph, LanguageMode, GenericCombination } from '../../types';
-import { getAllBrandsForGeneric, getGenericById, getGenericCombinations } from '../../data/dbEngine';
+import { getAllBrandsForGeneric, getGenericById, getGenericCombinations, subscribeDatabase } from '../../data/dbEngine';
 import { getDosageFormIconInfo } from '../../utils/dosageFormHelper';
 import { getMedicineCanonicalPath, getGenericCanonicalPath } from '../../utils/urlHelper';
 import { ChemicalStructure } from './ChemicalStructure';
@@ -47,13 +47,21 @@ export const GenericDetailsPage: React.FC<GenericDetailsPageProps> = ({
   lang,
   onToggleLang
 }) => {
-  const monograph = getGenericById(genericId);
-  const allBrands = useMemo(() => getAllBrandsForGeneric(genericId), [genericId]);
+  const [dbVersion, setDbVersion] = useState<number>(0);
+
+  useEffect(() => {
+    return subscribeDatabase(() => {
+      setDbVersion((v) => v + 1);
+    });
+  }, []);
+
+  const monograph = useMemo(() => getGenericById(genericId), [genericId, dbVersion]);
+  const allBrands = useMemo(() => getAllBrandsForGeneric(genericId), [genericId, dbVersion]);
   const genericName = monograph?.name || allBrands[0]?.genericName || 'Generic Substance';
   const genericNameBn = monograph?.nameBn || allBrands[0]?.genericNameBn || '';
 
   // Combinations
-  const combinations = useMemo(() => getGenericCombinations(genericName), [genericName]);
+  const combinations = useMemo(() => getGenericCombinations(genericName), [genericName, dbVersion]);
 
   // Unique dosage forms for filtering
   const uniqueForms = useMemo(() => {
@@ -190,6 +198,7 @@ export const GenericDetailsPage: React.FC<GenericDetailsPageProps> = ({
           initialForm={selectedForm !== 'All' ? selectedForm : undefined}
           initialStrength={initialStrength}
           onSelectMedicine={onSelectMedicine}
+          onSelectGeneric={onSelectGeneric}
           onBack={() => setShowFullExplorer(false)}
           lang={lang}
         />

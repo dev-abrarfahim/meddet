@@ -154,8 +154,20 @@ export default function App() {
     }
     return null;
   });
-  const [explorerForm, setExplorerForm] = useState<string | undefined>(undefined);
-  const [explorerStrength, setExplorerStrength] = useState<string | undefined>(undefined);
+  const [explorerForm, setExplorerForm] = useState<string | undefined>(() => {
+    if (typeof window !== 'undefined') {
+      const sp = new URLSearchParams(window.location.search);
+      return sp.get('form') || undefined;
+    }
+    return undefined;
+  });
+  const [explorerStrength, setExplorerStrength] = useState<string | undefined>(() => {
+    if (typeof window !== 'undefined') {
+      const sp = new URLSearchParams(window.location.search);
+      return sp.get('strength') || undefined;
+    }
+    return undefined;
+  });
   const [is404, setIs404] = useState<boolean>(false);
   const [notFoundSlug, setNotFoundSlug] = useState<string>('');
   const [activeStandalonePage, setActiveStandalonePage] = useState<'about' | 'privacy' | 'terms' | 'contact' | 'companies' | 'api-docs' | null>(() => {
@@ -941,6 +953,7 @@ export default function App() {
               onSelectMedicine={handleSelectMedicine}
               onBack={handleCloseGenericBrandsExplorer}
               onViewGenericDetails={handleOpenGenericDetails}
+              onSelectGeneric={(gen) => handleOpenGenericBrandsExplorer(gen.id)}
               lang={lang}
             />
           </div>
