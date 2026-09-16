@@ -176,10 +176,10 @@ export const BodySilhouetteRow: React.FC<BodySilhouetteRowProps> = ({
   return (
     <div
       ref={rowRef}
-      className="w-full bg-white dark:bg-[#152232] rounded-2xl border border-[#CCECEE] dark:border-[#243B53] p-4 sm:p-5 shadow-xs text-slate-800 dark:text-slate-100"
+      className="w-full bg-white dark:bg-[#152232] rounded-2xl border border-[#CCECEE] dark:border-[#243B53] p-3.5 sm:p-4 shadow-xs text-slate-800 dark:text-slate-100"
     >
       {/* Section Header with Slider Navigation */}
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex items-center justify-between mb-2">
         <div>
           <h2 className="text-sm font-bold text-[#095D7E] dark:text-slate-100 tracking-tight flex items-center gap-1.5 font-['Poppins',sans-serif]">
             {lang === 'en' ? 'BMI Body Morphology' : 'শারীরিক গঠন মডেল'}

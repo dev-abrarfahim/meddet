@@ -102,14 +102,14 @@ export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
   };
 
   return (
-    <div className="max-w-7xl mx-auto space-y-5 animate-in fade-in duration-200 pb-16">
+    <div className="max-w-7xl mx-auto space-y-1.5 animate-in fade-in duration-200 pb-12">
 
       {/* Responsive Navigation Pills / Tab Bar */}
       <NavPills activeTab={activeTab} onTabChange={setActiveTab} lang={lang} />
 
       {/* Search query banner if active */}
       {searchQuery && (
-        <div className="p-3 bg-white dark:bg-[#152232] rounded-xl border border-[#CCECEE] dark:border-[#243B53] text-xs text-[#095D7E] dark:text-slate-200 flex items-center justify-between shadow-xs">
+        <div className="p-2.5 bg-white dark:bg-[#152232] rounded-xl border border-[#CCECEE] dark:border-[#243B53] text-xs text-[#095D7E] dark:text-slate-200 flex items-center justify-between shadow-xs">
           <span>Filter active: &quot;{searchQuery}&quot;</span>
           <button
             onClick={() => setSearchQuery('')}
@@ -122,17 +122,17 @@ export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
 
       {/* Non-overview Tabs (Body Scan, Suggestion, Diet, Advice) */}
       {activeTab !== 'overview' && (
-        <div className="rounded-2xl overflow-hidden shadow-xs">
+        <div className="rounded-xl overflow-hidden shadow-xs">
           <TabPanels activeTab={activeTab} result={result} searchQuery={searchQuery} lang={lang} />
         </div>
       )}
 
       {/* Overview Tab: Desktop 2-Column Bento Layout, Mobile Stack */}
       {activeTab === 'overview' && (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-2.5 items-start">
           
           {/* Left Column: Calculator Card & Patient Biometric Summary */}
-          <div className="lg:col-span-5 space-y-5 lg:sticky lg:top-20">
+          <div className="lg:col-span-5 space-y-1.5 sm:space-y-2 lg:sticky lg:top-20">
             {/* 1. Primary Calculator Input Card */}
             <BmiCalculatorCard
               age={inputAge}
@@ -189,7 +189,7 @@ export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
           </div>
 
           {/* Right Column: Visual Silhouettes, Gauge & Reference Details */}
-          <div id="bmi-results-section" className="lg:col-span-7 space-y-6">
+          <div id="bmi-results-section" className="lg:col-span-7 space-y-1.5 sm:space-y-2">
             {/* 2. Body Silhouette Row */}
             <BodySilhouetteRow
               currentCategory={result ? result.category.key : null}

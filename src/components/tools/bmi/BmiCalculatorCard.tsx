@@ -187,9 +187,9 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
   };
 
   return (
-    <div className="w-full bg-white dark:bg-[#152232] rounded-2xl border border-[#CCECEE] dark:border-[#243B53] shadow-xs p-4 sm:p-5 text-slate-800 dark:text-slate-100">
+    <div className="w-full bg-white dark:bg-[#152232] rounded-2xl border border-[#CCECEE] dark:border-[#243B53] shadow-xs p-3.5 sm:p-4 text-slate-800 dark:text-slate-100">
       {/* Title & Subtitle */}
-      <div className="border-b border-[#CCECEE] dark:border-[#243B53] pb-3 mb-3.5 flex items-center justify-between">
+      <div className="border-b border-[#CCECEE] dark:border-[#243B53] pb-2 mb-2.5 flex items-center justify-between">
         <div>
           <h1 className="text-base sm:text-lg font-bold text-[#095D7E] dark:text-slate-100 tracking-tight flex items-center gap-2">
             <Calculator className="w-5 h-5 text-[#14967F] dark:text-[#2DD4BF]" />
@@ -205,7 +205,7 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
       </div>
 
       {/* 1. Biological Sex / Gender Selector */}
-      <div className="mb-4">
+      <div className="mb-2.5">
         <div className="flex items-center justify-between mb-1.5">
           <label className="text-sm font-semibold text-[#095D7E] dark:text-slate-200 flex items-center gap-1.5">
             {lang === 'en' ? 'Biological Sex' : 'শারীরবৃত্তীয় লিঙ্গ'}
@@ -344,7 +344,7 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
       </div>
 
       {/* 2. Age Input */}
-      <div className="mb-4">
+      <div className="mb-2.5">
         <div className="flex items-center justify-between mb-1.5">
           <label htmlFor="input-age" className="text-sm font-semibold text-[#095D7E] dark:text-slate-200">
             {lang === 'en' ? 'Age' : 'বয়স'}
@@ -374,7 +374,7 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
       </div>
 
       {/* 3. Height Input */}
-      <div className="mb-4">
+      <div className="mb-2.5">
         <div className="flex items-center justify-between mb-1.5">
           <label className="text-sm font-semibold text-[#095D7E] dark:text-slate-200">
             {lang === 'en' ? 'Height' : 'উচ্চতা'}
@@ -463,7 +463,7 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
       </div>
 
       {/* 4. Weight Input */}
-      <div className="mb-4">
+      <div className="mb-2.5">
         <div className="flex items-center justify-between mb-1.5">
           <label className="text-sm font-semibold text-[#095D7E] dark:text-slate-200">
             {lang === 'en' ? 'Weight' : 'ওজন'}
@@ -537,7 +537,7 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
       </div>
 
       {/* 5. Action Buttons (Calculate & Clear) */}
-      <div className="grid grid-cols-2 gap-3 pt-2">
+      <div className="grid grid-cols-2 gap-2.5 pt-1">
         <button
           type="button"
           id="btn-calculate-bmi"

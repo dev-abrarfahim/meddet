@@ -154,7 +154,7 @@ export const BmiGauge: React.FC<BmiGaugeProps> = ({ result, bmi: propBmi, catego
   return (
     <div
       ref={containerRef}
-      className="w-full bg-white dark:bg-[#152232] text-slate-800 dark:text-slate-100 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] p-3 sm:p-5 shadow-xs flex flex-col items-center"
+      className="w-full bg-white dark:bg-[#152232] text-slate-800 dark:text-slate-100 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] p-3 sm:p-4 shadow-xs flex flex-col items-center"
     >
       {/* Light Theme Card Header */}
       <div className="w-full flex items-center justify-between pb-2 mb-2 border-b border-[#CCECEE] dark:border-[#243B53]">
