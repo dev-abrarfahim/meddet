@@ -209,10 +209,8 @@ export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
               <BmiGauge result={result} lang={lang} />
             </div>
 
-            {/* 4. Dropdown Details / FAQ Reference Section */}
-            <div className="bg-white dark:bg-[#152232] rounded-2xl border border-[#CCECEE] dark:border-[#243B53] p-4 shadow-xs">
-              <BmiDetailsFaq lang={lang} />
-            </div>
+            {/* 4. Clinical Monograph Accordions FAQ Reference Section */}
+            <BmiDetailsFaq lang={lang} />
           </div>
         </div>
       )}
