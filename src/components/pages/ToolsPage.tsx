@@ -4,11 +4,9 @@ import {
   Flame,
   Scale,
   Pill,
-  ChevronRight,
   ChevronDown,
   ChevronUp,
   ArrowRight,
-  Home,
   CheckCircle2
 } from 'lucide-react';
 import { LanguageMode } from '../../types';
@@ -86,7 +84,7 @@ const TOOLS: ToolItem[] = [
 export const ToolsPage: React.FC<ToolsPageProps> = ({
   onNavigate,
   lang,
-  onGoHome
+  onGoHome: _onGoHome
 }) => {
   const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>({
     'bmi-calculator': false
@@ -102,21 +100,6 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({
 
   return (
     <div className="max-w-4xl mx-auto space-y-4 animate-in fade-in duration-200 pb-16">
-      
-      {/* Breadcrumb Navigation */}
-      <nav aria-label="Breadcrumbs" className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
-        <button
-          onClick={onGoHome ? onGoHome : () => onNavigate('/')}
-          className="flex items-center gap-1 hover:text-[#14967F] dark:hover:text-[#2DD4BF] transition-colors cursor-pointer"
-        >
-          <Home className="w-3.5 h-3.5" />
-          <span>{lang === 'en' ? 'Home' : 'হোম'}</span>
-        </button>
-        <ChevronRight className="w-3 h-3 text-slate-400" />
-        <span className="font-bold text-[#095D7E] dark:text-[#2DD4BF]">
-          {lang === 'en' ? 'Clinical Tools' : 'ক্লিনিক্যাল টুলস'}
-        </span>
-      </nav>
 
       {/* Clean Header */}
       <div className="flex items-center justify-between pt-1 pb-1 border-b border-[#CCECEE] dark:border-[#1E3A52]">
