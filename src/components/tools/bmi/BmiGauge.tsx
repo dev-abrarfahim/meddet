@@ -166,8 +166,8 @@ export const BmiGauge: React.FC<BmiGaugeProps> = ({ result, bmi: propBmi, catego
         </span>
       </div>
 
-      {/* SVG Radial Semi-Circle Gauge with maximized viewport for mobile legibility */}
-      <div className="w-full relative px-0 sm:px-1">
+      {/* SVG Radial Semi-Circle Gauge: Full width on mobile, sleek and compact on PC */}
+      <div className="w-full max-w-full md:max-w-[400px] lg:max-w-[410px] mx-auto relative px-0">
         <svg
           id="gaugeSvg"
           viewBox="25 44 550 282"
