@@ -19,7 +19,7 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <header className="sticky top-0 z-30 bg-[#095D7E] dark:bg-[#0B1927] border-b border-transparent dark:border-[#1E3A52] text-white shadow-md transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 h-12 sm:h-16 flex items-center justify-between gap-2 sm:gap-4">
+      <div className="max-w-7xl mx-auto px-2 h-12 sm:h-16 flex items-center justify-between gap-2 sm:gap-4">
         
         {/* Left Side: Burger Menu Button & Brand Logo */}
         <div className="flex items-center gap-1.5 sm:gap-3">
