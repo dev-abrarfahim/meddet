@@ -103,31 +103,6 @@ export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
 
   return (
     <div className="max-w-7xl mx-auto space-y-5 animate-in fade-in duration-200 pb-16">
-      
-      {/* Semantic Top SEO Header Banner */}
-      <header className="rounded-2xl border border-[#CCECEE] dark:border-[#243B53] shadow-xs bg-white dark:bg-[#152232] p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-        <div className="space-y-1">
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-[#E2FCD6] text-[#0D6F5D] dark:bg-[#064E3B] dark:text-[#6EE7B7] border border-[#14967F]/20">
-              WHO Clinical Standards
-            </span>
-            <span className="text-[10px] font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-[#1A2B3E] px-2 py-0.5 rounded-full border border-slate-200 dark:border-slate-700/60">
-              Asian Criteria Included
-            </span>
-          </div>
-          <h1 className="text-base sm:text-xl font-black text-[#095D7E] dark:text-slate-100 tracking-tight">
-            {lang === 'en' ? 'Medical BMI Calculator' : 'মেডিকেল বিএমআই ক্যালকুলেটর'}
-            <span className="text-xs sm:text-sm font-semibold text-slate-500 dark:text-slate-400 ml-2 font-normal">
-              {lang === 'en' ? '— Adult & Child Body Mass Index' : '— শারীরিক ওজন ও স্বাস্থ্যসূচক'}
-            </span>
-          </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">
-            {lang === 'en'
-              ? 'Calculate accurate body mass index with calibrated WHO 5-tier classification, morphology silhouette scan, and personalized diet guidelines.'
-              : 'বিশ্ব স্বাস্থ্য সংস্থা (WHO) ও এশীয় মানদণ্ড অনুযায়ী সঠিক বিএমআই, শারীরিক গঠন স্ক্যান এবং সুষম খাদ্য তালিকা জেনে নিন।'}
-          </p>
-        </div>
-      </header>
 
       {/* Responsive Navigation Pills / Tab Bar */}
       <div className="rounded-2xl overflow-hidden border border-[#CCECEE] dark:border-[#243B53] shadow-xs bg-white dark:bg-[#152232]">

@@ -191,10 +191,10 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
       {/* Title & Subtitle */}
       <div className="border-b border-[#CCECEE] dark:border-[#243B53] pb-3 mb-3.5 flex items-center justify-between">
         <div>
-          <h2 className="text-base sm:text-lg font-bold text-[#095D7E] dark:text-slate-100 tracking-tight flex items-center gap-2">
+          <h1 className="text-base sm:text-lg font-bold text-[#095D7E] dark:text-slate-100 tracking-tight flex items-center gap-2">
             <Calculator className="w-5 h-5 text-[#14967F] dark:text-[#2DD4BF]" />
-            {lang === 'en' ? 'BMI Calculator' : 'বিএমআই ক্যালকুলেটর'}
-          </h2>
+            {lang === 'en' ? 'Medical BMI Calculator' : 'মেডিকেল বিএমআই ক্যালকুলেটর'}
+          </h1>
           <p className="text-xs text-[#64748B] dark:text-slate-400 font-medium mt-0.5">
             {lang === 'en' ? 'Body Mass Index Clinical Measurement' : 'বডি ম্যাস ইনডেক্স ক্লিনিক্যাল পরিমাপ'}
           </p>
