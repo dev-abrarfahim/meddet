@@ -258,10 +258,12 @@ function generate404Html(resourceType, identifier) {
 
 export default {
   async fetch(request, env, ctx) {
-    const url = new URL(request.url);
-    const origin = url.origin;
-    const pathname = decodeURIComponent(url.pathname);
-    const searchParams = url.searchParams;
+    try {
+      const url = new URL(request.url);
+      const origin = url.origin;
+      const pathname = decodeURIComponent(url.pathname);
+      const cleanStaticPath = pathname.replace(/\/$/, '');
+      const searchParams = url.searchParams;
     // 0. IndexNow Instant Key Verification
     if (pathname === '/b54e8a171900d53d3265ba9ad908ddfb.txt') {
       return new Response('b54e8a171900d53d3265ba9ad908ddfb', {
@@ -1424,8 +1426,7 @@ export default {
         description: 'Free clinical healthcare calculators for medical professionals and patients. Calculate BMI, body morphology, and health metrics.'
       }
     };
-
-    const cleanStaticPath = pathname.replace(/\/$/, '');
+ 
     if (staticPagesMeta[cleanStaticPath]) {
       const pageInfo = staticPagesMeta[cleanStaticPath];
       const canonicalUrl = `${origin}${cleanStaticPath}`;
@@ -1496,5 +1497,10 @@ export default {
         'X-Robots-Tag': 'noindex, follow'
       }
     });
+    } catch (err) {
+      console.error('MEDDET Edge Worker exception caught:', err);
+      // Graceful fallback to static assets / client-side SPA rendering to prevent Cloudflare Error 1101
+      return env.ASSETS.fetch(request);
+    }
   }
 };
