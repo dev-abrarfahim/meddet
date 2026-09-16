@@ -176,18 +176,15 @@ export const BodySilhouetteRow: React.FC<BodySilhouetteRowProps> = ({
   return (
     <div
       ref={rowRef}
-      className="w-full bg-white rounded-lg border border-[#CCECEE] p-4 shadow-sm text-slate-800"
+      className="w-full bg-white dark:bg-[#152232] rounded-2xl border border-[#CCECEE] dark:border-[#243B53] p-4 sm:p-5 shadow-xs text-slate-800 dark:text-slate-100"
     >
       {/* Section Header with Slider Navigation */}
       <div className="flex items-center justify-between mb-3">
         <div>
-          <h2 className="text-sm font-bold text-[#095D7E] tracking-tight flex items-center gap-1.5 font-['Poppins',sans-serif]">
+          <h2 className="text-sm font-bold text-[#095D7E] dark:text-slate-100 tracking-tight flex items-center gap-1.5 font-['Poppins',sans-serif]">
             {lang === 'en' ? 'BMI Body Morphology' : 'শারীরিক গঠন মডেল'}
-            <span className="text-[10px] text-[#14967F] bg-[#E2FCD6] px-2 py-0.5 rounded font-semibold border border-[#14967F]/20">
-              {lang === 'en' ? '5 Body Types' : '৫টি স্তর'}
-            </span>
           </h2>
-          <p className="text-[11px] text-[#64748B]">
+          <p className="text-[11px] text-[#64748B] dark:text-slate-400 mt-0.5">
             {gender === 'male'
               ? (lang === 'en' ? 'Custom Male ♂ Anatomical Models' : 'পুরুষ ♂ অ্যানাটমিক্যাল গঠন মডেল')
               : (lang === 'en' ? 'Custom Female ♀ Anatomical Models' : 'নারী ♀ অ্যানাটমিক্যাল গঠন মডেল')}{' '}
@@ -202,7 +199,7 @@ export const BodySilhouetteRow: React.FC<BodySilhouetteRowProps> = ({
             onClick={() => handleScroll('left')}
             disabled={!canScrollLeft}
             aria-label={lang === 'en' ? 'Previous body type' : 'পূর্ববর্তী বডি টাইপ'}
-            className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-md border border-[#CCECEE] bg-[#F1F9FF] text-[#095D7E] hover:bg-[#CCECEE]/60 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-2xs"
+            className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-md border border-[#CCECEE] dark:border-[#243B53] bg-[#F1F9FF] dark:bg-[#1E293B] text-[#095D7E] dark:text-[#2DD4BF] hover:bg-[#CCECEE]/60 dark:hover:bg-[#334155] disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-2xs cursor-pointer"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
@@ -211,7 +208,7 @@ export const BodySilhouetteRow: React.FC<BodySilhouetteRowProps> = ({
             onClick={() => handleScroll('right')}
             disabled={!canScrollRight}
             aria-label={lang === 'en' ? 'Next body type' : 'পরবর্তী বডি টাইপ'}
-            className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-md border border-[#CCECEE] bg-[#F1F9FF] text-[#095D7E] hover:bg-[#CCECEE]/60 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-2xs"
+            className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-md border border-[#CCECEE] dark:border-[#243B53] bg-[#F1F9FF] dark:bg-[#1E293B] text-[#095D7E] dark:text-[#2DD4BF] hover:bg-[#CCECEE]/60 dark:hover:bg-[#334155] disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-2xs cursor-pointer"
           >
             <ChevronRight className="w-4 h-4" />
           </button>

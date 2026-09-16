@@ -193,21 +193,17 @@ export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
 
           {/* Right Column: Visual Silhouettes, Gauge & Reference Details */}
           <div id="bmi-results-section" className="lg:col-span-7 space-y-6">
-            {/* 2. Body Silhouette Row with Med Navy Silhouettes */}
-            <div className="bg-white dark:bg-[#152232] rounded-2xl border border-[#CCECEE] dark:border-[#243B53] p-4 shadow-xs">
-              <BodySilhouetteRow
-                currentCategory={result ? result.category.key : null}
-                gender={calculatedState ? calculatedState.gender : inputGender}
-                currentBmi={result ? result.bmi : null}
-                onSelectCategory={handleSelectCategory}
-                lang={lang}
-              />
-            </div>
+            {/* 2. Body Silhouette Row */}
+            <BodySilhouetteRow
+              currentCategory={result ? result.category.key : null}
+              gender={calculatedState ? calculatedState.gender : inputGender}
+              currentBmi={result ? result.bmi : null}
+              onSelectCategory={handleSelectCategory}
+              lang={lang}
+            />
 
             {/* 3. Semi-Circular Radial Dial Gauge with Merged Clinical Anthropometric Metrics */}
-            <div className="bg-white dark:bg-[#152232] rounded-2xl border border-[#CCECEE] dark:border-[#243B53] p-4 shadow-xs">
-              <BmiGauge result={result} lang={lang} />
-            </div>
+            <BmiGauge result={result} lang={lang} />
 
             {/* 4. Clinical Monograph Accordions FAQ Reference Section */}
             <BmiDetailsFaq lang={lang} />
