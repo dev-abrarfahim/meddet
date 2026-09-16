@@ -230,19 +230,19 @@ export const BodySilhouetteRow: React.FC<BodySilhouetteRowProps> = ({
             const cardTitle = lang === 'en' ? card.label : card.labelBn;
             const cardRange = lang === 'en' ? `BMI ${card.range}` : `বিএমআই ${card.rangeBn}`;
 
-            // Highlight styling for the active card
-            let borderClass = 'border-[#CCECEE] hover:border-[#14967F]/50 bg-[#F1F9FF]/40 hover:shadow-xs';
+            // Highlight styling for the active card with rich border shadow and halo
+            let borderClass = 'border-[#CCECEE] dark:border-slate-800 hover:border-[#14967F]/50 dark:hover:border-[#2DD4BF]/50 bg-[#F1F9FF]/40 dark:bg-[#1E293B]/40 hover:shadow-xs';
             if (isSelected) {
               if (card.key === 'normal') {
-                borderClass = 'border-2 border-[#14967F] ring-2 ring-[#E2FCD6] bg-[#E2FCD6]/20 shadow-sm';
+                borderClass = 'border-2 border-[#14967F] dark:border-[#2DD4BF] ring-2 ring-[#14967F]/25 dark:ring-[#2DD4BF]/30 bg-[#E2FCD6]/30 dark:bg-[#064E3B]/30 shadow-md shadow-[#14967F]/30 dark:shadow-[#14967F]/40';
               } else if (card.key === 'underweight') {
-                borderClass = 'border-2 border-[#00A8E8] ring-2 ring-[#E0F2FE] bg-[#F0F9FF] shadow-sm';
+                borderClass = 'border-2 border-[#00A8E8] dark:border-[#38BDF8] ring-2 ring-[#00A8E8]/25 dark:ring-[#38BDF8]/30 bg-[#F0F9FF] dark:bg-[#0284C7]/20 shadow-md shadow-[#00A8E8]/30 dark:shadow-[#00A8E8]/40';
               } else if (card.key === 'overweight') {
-                borderClass = 'border-2 border-[#FB8C00] ring-2 ring-[#FEF3C7] bg-[#FFFBEB] shadow-sm';
+                borderClass = 'border-2 border-[#FB8C00] dark:border-[#FBBF24] ring-2 ring-[#FB8C00]/25 dark:ring-[#FBBF24]/30 bg-[#FFFBEB] dark:bg-[#F59E0B]/20 shadow-md shadow-[#FB8C00]/30 dark:shadow-[#FB8C00]/40';
               } else if (card.key === 'obese') {
-                borderClass = 'border-2 border-[#F4511E] ring-2 ring-[#FFEDD5] bg-[#FFF7ED] shadow-sm';
+                borderClass = 'border-2 border-[#F4511E] dark:border-[#FB923C] ring-2 ring-[#F4511E]/25 dark:ring-[#FB923C]/30 bg-[#FFF7ED] dark:bg-[#EA580C]/20 shadow-md shadow-[#F4511E]/30 dark:shadow-[#F4511E]/40';
               } else {
-                borderClass = 'border-2 border-[#D32F2F] ring-2 ring-[#FEE2E2] bg-[#FEF2F2] shadow-sm';
+                borderClass = 'border-2 border-[#D32F2F] dark:border-[#F87171] ring-2 ring-[#D32F2F]/25 dark:ring-[#F87171]/30 bg-[#FEF2F2] dark:bg-[#DC2626]/20 shadow-md shadow-[#D32F2F]/30 dark:shadow-[#D32F2F]/40';
               }
             }
 
@@ -261,8 +261,8 @@ export const BodySilhouetteRow: React.FC<BodySilhouetteRowProps> = ({
               >
                 {/* Active Indicator Tick Mark in Upper Right Corner */}
                 {isSelected && (
-                  <div className="absolute -top-1.5 -right-1.5 bg-[#14967F] text-white w-5 h-5 rounded-full shadow-xs border-2 border-white flex items-center justify-center z-10 animate-tick-bounce">
-                    <Check className="w-3 h-3 text-white stroke-[3]" />
+                  <div className="absolute -top-1.5 -right-1.5 bg-[#14967F] dark:bg-[#2DD4BF] text-white dark:text-slate-950 w-5 h-5 rounded-full shadow-md border-2 border-white dark:border-[#152232] flex items-center justify-center z-10 animate-tick-bounce">
+                    <Check className="w-3 h-3 text-white dark:text-slate-950 stroke-[3]" />
                   </div>
                 )}
 
@@ -284,15 +284,15 @@ export const BodySilhouetteRow: React.FC<BodySilhouetteRowProps> = ({
                 </div>
 
                 {/* Card Label & BMI Range */}
-                <div className="w-full text-center pt-1.5 border-t border-[#CCECEE]/60 mt-1">
+                <div className="w-full text-center pt-1.5 border-t border-[#CCECEE]/60 dark:border-slate-800/60 mt-1">
                   <span
                     className={`text-[11px] font-bold block truncate leading-tight ${
-                      isSelected ? 'text-[#095D7E]' : 'text-[#334155]'
+                      isSelected ? 'text-[#095D7E] dark:text-[#2DD4BF]' : 'text-[#334155] dark:text-slate-300'
                     }`}
                   >
                     {cardTitle}
                   </span>
-                  <span className="text-[10px] text-[#64748B] block font-medium leading-tight">
+                  <span className="text-[10px] text-[#64748B] dark:text-slate-400 block font-medium leading-tight">
                     {cardRange}
                   </span>
                 </div>
