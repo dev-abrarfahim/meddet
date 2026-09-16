@@ -132,39 +132,54 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({
               <div className="w-full flex items-center justify-between gap-1 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
                 
                 {/* Main Link/Button to open tool */}
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (isActive) {
+                {isActive ? (
+                  <a
+                    href={tool.path}
+                    onClick={(e) => {
+                      e.preventDefault();
                       onNavigate(tool.path);
-                    } else {
-                      toggleToolInfo(tool.id);
-                    }
-                  }}
-                  className="flex-1 py-3 px-3.5 flex items-center justify-between gap-2 text-left cursor-pointer group"
-                >
-                  <div className="flex items-center gap-2.5 min-w-0">
-                    <span className={`shrink-0 ${isActive ? 'text-[#14967F] dark:text-[#2DD4BF]' : 'text-slate-400 dark:text-slate-500'}`}>
-                      <Icon className="w-4 h-4" />
-                    </span>
-                    <span className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors truncate">
-                      {lang === 'en' ? tool.titleEn : tool.titleBn}
-                    </span>
-                  </div>
+                    }}
+                    className="flex-1 py-3 px-3.5 flex items-center justify-between gap-2 text-left cursor-pointer group no-underline"
+                  >
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <span className="shrink-0 text-[#14967F] dark:text-[#2DD4BF]">
+                        <Icon className="w-4 h-4" />
+                      </span>
+                      <span className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors truncate">
+                        {lang === 'en' ? tool.titleEn : tool.titleBn}
+                      </span>
+                    </div>
 
-                  {/* Status Badge */}
-                  <div className="shrink-0 flex items-center gap-1.5 mr-1">
-                    {isActive ? (
+                    {/* Status Badge */}
+                    <div className="shrink-0 flex items-center gap-1.5 mr-1">
                       <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#E2FCD6] text-[#0D6F5D] dark:bg-[#064E3B] dark:text-[#6EE7B7] border border-[#14967F]/20">
                         {lang === 'en' ? 'Open' : 'চালু করুন'}
                       </span>
-                    ) : (
+                    </div>
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => toggleToolInfo(tool.id)}
+                    className="flex-1 py-3 px-3.5 flex items-center justify-between gap-2 text-left cursor-pointer group"
+                  >
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <span className="shrink-0 text-slate-400 dark:text-slate-500">
+                        <Icon className="w-4 h-4" />
+                      </span>
+                      <span className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors truncate">
+                        {lang === 'en' ? tool.titleEn : tool.titleBn}
+                      </span>
+                    </div>
+
+                    {/* Status Badge */}
+                    <div className="shrink-0 flex items-center gap-1.5 mr-1">
                       <span className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400">
                         {lang === 'en' ? 'Soon' : 'শীঘ্রই'}
                       </span>
-                    )}
-                  </div>
-                </button>
+                    </div>
+                  </button>
+                )}
 
                 {/* Dropdown Information Toggle Button matching requested style */}
                 <button

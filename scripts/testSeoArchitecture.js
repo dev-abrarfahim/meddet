@@ -252,6 +252,10 @@ assert(workerCode.includes('404 Not Found') || workerCode.includes('generate404H
 assert(workerCode.includes('Link'), 'Worker sets HTTP canonical Link header');
 assert(workerCode.includes('dynamic-seo-schema'), 'Worker injects dynamic Schema.org JSON-LD');
 assert(workerCode.includes('brand-chunk-'), 'Worker utilizes lightweight chunked SEO database to eliminate OOM');
+assert(workerCode.includes("cleanStaticPath === '/tools/bmi-calculator'"), 'Worker implements dedicated Edge SSR for /tools/bmi-calculator');
+assert(workerCode.includes('WebApplication') && workerCode.includes('HealthApplication'), 'Worker injects WebApplication Health schema for BMI tool');
+assert(workerCode.includes('FAQPage') && workerCode.includes('HowTo'), 'Worker injects FAQPage and HowTo rich snippets for BMI tool');
+assert(workerCode.includes('Asian Population Cut-Off') || workerCode.includes('WHO Asian & South Asian'), 'Worker pre-renders WHO Asian clinical criteria');
 
 console.log('\n======================================================');
 console.log('🧪 7. TESTING SEO CHUNKS & GSC ERROR URL RESOLUTION');
@@ -288,6 +292,7 @@ const indexHtmlPath = path.join(ROOT_DIR, 'index.html');
 const indexHtmlContent = fs.readFileSync(indexHtmlPath, 'utf8');
 assert(!indexHtmlContent.includes('<link rel="canonical" href="https://meddet.site/" />'), 'index.html has zero hardcoded homepage canonical tag');
 assert(indexHtmlContent.includes('Popular Medicine Prices & Monographs'), 'index.html has crawlable semantic HTML directory');
+assert(indexHtmlContent.includes('/tools/bmi-calculator'), 'index.html crawl mesh contains direct internal link to /tools/bmi-calculator');
 
 const wranglerPath = path.join(ROOT_DIR, 'wrangler.jsonc');
 assert(fs.existsSync(wranglerPath), 'wrangler.jsonc exists for Cloudflare deployment');

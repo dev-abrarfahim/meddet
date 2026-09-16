@@ -66,11 +66,6 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
     }
   };
 
-  const handleAgeSliderChange = (val: number) => {
-    setAgeStr(val.toString());
-    onUpdate({ age: val, gender, heightCm, weightKg });
-  };
-
   const handleGenderChange = (newGender: Gender) => {
     onUpdate({ age, gender: newGender, heightCm, weightKg });
   };
@@ -99,11 +94,6 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
     } else {
       onUpdate({ age, gender, heightCm: null, weightKg });
     }
-  };
-
-  const handleMetricHeightSliderChange = (cm: number) => {
-    setHeightCmStr(cm.toString());
-    onUpdate({ age, gender, heightCm: cm, weightKg });
   };
 
   const handleFtChange = (valStr: string) => {
@@ -158,11 +148,6 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
     }
   };
 
-  const handleWeightKgSliderChange = (kg: number) => {
-    setWeightKgStr(kg.toString());
-    onUpdate({ age, gender, heightCm, weightKg: kg });
-  };
-
   const handleWeightLbsChange = (valStr: string) => {
     setWeightLbsStr(valStr);
     if (valStr.trim() !== '') {
@@ -202,30 +187,30 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
   };
 
   return (
-    <div className="w-full bg-white rounded-md border border-[#CCECEE] shadow-sm p-4 text-slate-800">
+    <div className="w-full bg-white dark:bg-[#152232] rounded-2xl border border-[#CCECEE] dark:border-[#243B53] shadow-xs p-4 sm:p-5 text-slate-800 dark:text-slate-100">
       {/* Title & Subtitle */}
-      <div className="border-b border-[#CCECEE] pb-3 mb-[6px] flex items-center justify-between">
+      <div className="border-b border-[#CCECEE] dark:border-[#243B53] pb-3 mb-3.5 flex items-center justify-between">
         <div>
-          <h1 className="text-[22px] font-bold text-[#095D7E] tracking-tight flex items-center gap-2">
-            <Calculator className="w-5 h-5 text-[#14967F]" />
+          <h2 className="text-base sm:text-lg font-bold text-[#095D7E] dark:text-slate-100 tracking-tight flex items-center gap-2">
+            <Calculator className="w-5 h-5 text-[#14967F] dark:text-[#2DD4BF]" />
             {lang === 'en' ? 'BMI Calculator' : 'বিএমআই ক্যালকুলেটর'}
-          </h1>
-          <p className="text-xs text-[#64748B] font-medium mt-0.5">
+          </h2>
+          <p className="text-xs text-[#64748B] dark:text-slate-400 font-medium mt-0.5">
             {lang === 'en' ? 'Body Mass Index Clinical Measurement' : 'বডি ম্যাস ইনডেক্স ক্লিনিক্যাল পরিমাপ'}
           </p>
         </div>
-        <span className="px-2.5 py-1 rounded text-[11px] font-semibold bg-[#F1F9FF] text-[#095D7E] border border-[#CCECEE]">
+        <span className="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-[#F1F9FF] text-[#095D7E] dark:bg-[#1A2B3E] dark:text-[#2DD4BF] border border-[#CCECEE] dark:border-[#243B53]">
           {lang === 'en' ? 'WHO Standard' : 'WHO মানদণ্ড'}
         </span>
       </div>
 
       {/* 1. Biological Sex / Gender Selector */}
-      <div className="mb-3.5">
+      <div className="mb-4">
         <div className="flex items-center justify-between mb-1.5">
-          <label className="text-sm font-semibold text-[#095D7E] flex items-center gap-1.5">
+          <label className="text-sm font-semibold text-[#095D7E] dark:text-slate-200 flex items-center gap-1.5">
             {lang === 'en' ? 'Biological Sex' : 'শারীরবৃত্তীয় লিঙ্গ'}
           </label>
-          <span className="text-[11px] font-medium text-[#64748B]">
+          <span className="text-[11px] font-medium text-[#64748B] dark:text-slate-400">
             {lang === 'en' ? 'Morphology Reference' : 'দেহ গঠন রেফারেন্স'}
           </span>
         </div>
@@ -238,10 +223,10 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
             role="radio"
             aria-checked={gender === 'male'}
             onClick={() => handleGenderChange('male')}
-            className={`group relative flex items-center justify-between px-3 py-2 rounded-lg border transition-all duration-200 cursor-pointer text-left select-none ${
+            className={`group relative flex items-center justify-between px-3 py-2.5 rounded-xl border transition-all duration-200 cursor-pointer text-left select-none ${
               gender === 'male'
                 ? 'bg-gradient-to-r from-[#095D7E] to-[#14967F] border-transparent text-white shadow-sm ring-2 ring-[#14967F]/20'
-                : 'bg-[#F8FCFD] border-[#CCECEE] text-[#475569] hover:bg-[#F1F9FF] hover:border-[#14967F]/50 hover:text-[#095D7E]'
+                : 'bg-[#F8FCFD] dark:bg-[#1A2B3E] border-[#CCECEE] dark:border-[#243B53] text-[#475569] dark:text-slate-200 hover:bg-[#F1F9FF] dark:hover:bg-[#1E3A52] hover:border-[#14967F]/50 hover:text-[#095D7E]'
             }`}
           >
             <div className="flex items-center gap-2">
@@ -249,7 +234,7 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
                 className={`w-7 h-7 rounded-full flex items-center justify-center transition-colors ${
                   gender === 'male'
                     ? 'bg-white/20 text-white shadow-inner'
-                    : 'bg-[#CCECEE]/40 text-[#095D7E] group-hover:bg-[#14967F]/10 group-hover:text-[#14967F]'
+                    : 'bg-[#CCECEE]/40 dark:bg-[#243B53] text-[#095D7E] dark:text-[#2DD4BF] group-hover:bg-[#14967F]/10 group-hover:text-[#14967F]'
                 }`}
               >
                 {/* Modern Mars SVG Icon */}
@@ -274,7 +259,7 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
                 </span>
                 <span
                   className={`text-[9.5px] leading-tight block font-medium ${
-                    gender === 'male' ? 'text-white/80' : 'text-[#94A3B8]'
+                    gender === 'male' ? 'text-white/80' : 'text-[#94A3B8] dark:text-slate-400'
                   }`}
                 >
                   {lang === 'en' ? 'XY Reference' : 'XY রেফারেন্স'}
@@ -287,7 +272,7 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
               className={`w-4 h-4 rounded-full flex items-center justify-center transition-all ${
                 gender === 'male'
                   ? 'bg-white text-[#095D7E] shadow-xs scale-100'
-                  : 'border border-[#CBD5E1] bg-white group-hover:border-[#14967F]/60'
+                  : 'border border-[#CBD5E1] dark:border-[#243B53] bg-white dark:bg-[#152232] group-hover:border-[#14967F]/60'
               }`}
             >
               {gender === 'male' && <Check className="w-3 h-3 stroke-[3]" />}
@@ -301,10 +286,10 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
             role="radio"
             aria-checked={gender === 'female'}
             onClick={() => handleGenderChange('female')}
-            className={`group relative flex items-center justify-between px-3 py-2 rounded-lg border transition-all duration-200 cursor-pointer text-left select-none ${
+            className={`group relative flex items-center justify-between px-3 py-2.5 rounded-xl border transition-all duration-200 cursor-pointer text-left select-none ${
               gender === 'female'
                 ? 'bg-gradient-to-r from-[#095D7E] to-[#14967F] border-transparent text-white shadow-sm ring-2 ring-[#14967F]/20'
-                : 'bg-[#F8FCFD] border-[#CCECEE] text-[#475569] hover:bg-[#F1F9FF] hover:border-[#14967F]/50 hover:text-[#095D7E]'
+                : 'bg-[#F8FCFD] dark:bg-[#1A2B3E] border-[#CCECEE] dark:border-[#243B53] text-[#475569] dark:text-slate-200 hover:bg-[#F1F9FF] dark:hover:bg-[#1E3A52] hover:border-[#14967F]/50 hover:text-[#095D7E]'
             }`}
           >
             <div className="flex items-center gap-2">
@@ -312,7 +297,7 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
                 className={`w-7 h-7 rounded-full flex items-center justify-center transition-colors ${
                   gender === 'female'
                     ? 'bg-white/20 text-white shadow-inner'
-                    : 'bg-[#CCECEE]/40 text-[#095D7E] group-hover:bg-[#14967F]/10 group-hover:text-[#14967F]'
+                    : 'bg-[#CCECEE]/40 dark:bg-[#243B53] text-[#095D7E] dark:text-[#2DD4BF] group-hover:bg-[#14967F]/10 group-hover:text-[#14967F]'
                 }`}
               >
                 {/* Modern Venus SVG Icon */}
@@ -336,7 +321,7 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
                 </span>
                 <span
                   className={`text-[9.5px] leading-tight block font-medium ${
-                    gender === 'female' ? 'text-white/80' : 'text-[#94A3B8]'
+                    gender === 'female' ? 'text-white/80' : 'text-[#94A3B8] dark:text-slate-400'
                   }`}
                 >
                   {lang === 'en' ? 'XX Reference' : 'XX রেফারেন্স'}
@@ -349,7 +334,7 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
               className={`w-4 h-4 rounded-full flex items-center justify-center transition-all ${
                 gender === 'female'
                   ? 'bg-white text-[#095D7E] shadow-xs scale-100'
-                  : 'border border-[#CBD5E1] bg-white group-hover:border-[#14967F]/60'
+                  : 'border border-[#CBD5E1] dark:border-[#243B53] bg-white dark:bg-[#152232] group-hover:border-[#14967F]/60'
               }`}
             >
               {gender === 'female' && <Check className="w-3 h-3 stroke-[3]" />}
@@ -358,197 +343,162 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
         </div>
       </div>
 
-      {/* 2. Age Input & Slider */}
-      <div className="mb-3.5">
+      {/* 2. Age Input */}
+      <div className="mb-4">
         <div className="flex items-center justify-between mb-1.5">
-          <label htmlFor="input-age" className="text-sm font-semibold text-[#095D7E]">
+          <label htmlFor="input-age" className="text-sm font-semibold text-[#095D7E] dark:text-slate-200">
             {lang === 'en' ? 'Age' : 'বয়স'}
           </label>
-          <span className="text-[11px] font-medium text-[#64748B]">
+          <span className="text-[11px] font-medium text-[#64748B] dark:text-slate-400">
             {lang === 'en' ? 'Pediatric & Adult (2–120 yrs)' : 'শিশু ও প্রাপ্তবয়স্ক (২-১২০ বছর)'}
           </span>
         </div>
 
-        {/* Age Number Input below header, matching Height and Weight */}
-        <div className="flex items-center gap-2 mb-[5px]">
+        {/* Clean, professional Input Box with embedded unit inside */}
+        <div className="relative flex items-center w-full">
           <input
             id="input-age"
             type="number"
             min={2}
             max={120}
             value={ageStr}
-            placeholder=""
+            placeholder={lang === 'en' ? 'e.g. 28' : 'যেমন: ২৮'}
             onBlur={handleAgeBlur}
             onChange={(e) => handleAgeChange(e.target.value)}
-            className="w-full h-10 px-3 text-center text-base font-bold text-[#095D7E] bg-[#F1F9FF] border border-[#CCECEE] rounded-md focus:outline-none focus:ring-2 focus:ring-[#14967F]"
+            className="w-full h-11 px-3.5 pr-14 text-sm sm:text-base font-bold text-[#095D7E] dark:text-slate-100 bg-[#F1F9FF] dark:bg-[#1A2B3E] border border-[#CCECEE] dark:border-[#243B53] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#14967F] dark:focus:ring-[#2DD4BF] transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 placeholder:font-normal"
           />
-          <span className="text-xs font-semibold text-[#64748B] w-8">
+          <span className="absolute right-3.5 text-xs font-bold text-[#64748B] dark:text-slate-400 pointer-events-none select-none">
             {lang === 'en' ? 'yrs' : 'বছর'}
-          </span>
-        </div>
-
-        {/* Age Slider */}
-        <div className="flex items-center gap-2">
-          <span className="text-[10px] text-[#64748B] font-medium">
-            {lang === 'en' ? '2 yrs' : '২ বছর'}
-          </span>
-          <input
-            type="range"
-            min={2}
-            max={120}
-            value={age !== null ? age : 2}
-            onChange={(e) => handleAgeSliderChange(parseInt(e.target.value, 10))}
-            className="w-full h-2 rounded appearance-none cursor-pointer bg-[#CCECEE] accent-[#14967F]"
-          />
-          <span className="text-[10px] text-[#64748B] font-medium">
-            {lang === 'en' ? '120 yrs' : '১২০ বছর'}
           </span>
         </div>
       </div>
 
-      {/* 2. Height Input & Slider */}
-      <div className="mb-[10px]">
+      {/* 3. Height Input */}
+      <div className="mb-4">
         <div className="flex items-center justify-between mb-1.5">
-          <label className="text-sm font-semibold text-[#095D7E]">
+          <label className="text-sm font-semibold text-[#095D7E] dark:text-slate-200">
             {lang === 'en' ? 'Height' : 'উচ্চতা'}
           </label>
-          {/* Unit Toggle: USA vs Metric */}
-          <div className="flex items-center bg-[#F1F9FF] p-0.5 rounded border border-[#CCECEE] text-xs">
-            <button
-              type="button"
-              id="btn-height-imperial"
-              onClick={() => setHeightUnit('imperial')}
-              className={`px-2 py-0.5 rounded font-semibold transition-all cursor-pointer ${
-                heightUnit === 'imperial'
-                  ? 'bg-[#14967F] text-white'
-                  : 'text-[#64748B] hover:text-[#095D7E]'
-              }`}
-            >
-              {lang === 'en' ? 'USA (ft/in)' : 'ফিট/ইঞ্চি'}
-            </button>
+          {/* Unit Toggle: Metric vs USA */}
+          <div className="flex items-center bg-[#F1F9FF] dark:bg-[#1A2B3E] p-0.5 rounded-lg border border-[#CCECEE] dark:border-[#243B53] text-xs">
             <button
               type="button"
               id="btn-height-metric"
               onClick={() => setHeightUnit('metric')}
-              className={`px-2 py-0.5 rounded font-semibold transition-all cursor-pointer ${
+              className={`px-2.5 py-1 rounded-md font-bold transition-all cursor-pointer ${
                 heightUnit === 'metric'
-                  ? 'bg-[#14967F] text-white'
-                  : 'text-[#64748B] hover:text-[#095D7E]'
+                  ? 'bg-[#14967F] dark:bg-[#2DD4BF] text-white dark:text-slate-950 shadow-xs'
+                  : 'text-[#64748B] dark:text-slate-400 hover:text-[#095D7E] dark:hover:text-slate-200'
               }`}
             >
               {lang === 'en' ? 'Metric (cm)' : 'সেমি (cm)'}
+            </button>
+            <button
+              type="button"
+              id="btn-height-imperial"
+              onClick={() => setHeightUnit('imperial')}
+              className={`px-2.5 py-1 rounded-md font-bold transition-all cursor-pointer ${
+                heightUnit === 'imperial'
+                  ? 'bg-[#14967F] dark:bg-[#2DD4BF] text-white dark:text-slate-950 shadow-xs'
+                  : 'text-[#64748B] dark:text-slate-400 hover:text-[#095D7E] dark:hover:text-slate-200'
+              }`}
+            >
+              {lang === 'en' ? 'USA (ft/in)' : 'ফিট/ইঞ্চি'}
             </button>
           </div>
         </div>
 
         {/* Input fields based on unit */}
         {heightUnit === 'metric' ? (
-          <div className="flex items-center gap-2 mb-[5px]">
+          <div className="relative flex items-center w-full">
             <input
               id="input-height-cm"
               type="number"
               min={60}
               max={240}
               value={heightCmStr}
-              placeholder=""
+              placeholder={lang === 'en' ? 'e.g. 172' : 'যেমন: ১৭২'}
               onBlur={handleMetricHeightBlur}
               onChange={(e) => handleMetricHeightChange(e.target.value)}
-              className="w-full h-10 px-3 text-center text-base font-bold text-[#095D7E] bg-[#F1F9FF] border border-[#CCECEE] rounded-md focus:outline-none focus:ring-2 focus:ring-[#14967F]"
+              className="w-full h-11 px-3.5 pr-14 text-sm sm:text-base font-bold text-[#095D7E] dark:text-slate-100 bg-[#F1F9FF] dark:bg-[#1A2B3E] border border-[#CCECEE] dark:border-[#243B53] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#14967F] dark:focus:ring-[#2DD4BF] transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 placeholder:font-normal"
             />
-            <span className="text-xs font-semibold text-[#64748B] w-8">
+            <span className="absolute right-3.5 text-xs font-bold text-[#64748B] dark:text-slate-400 pointer-events-none select-none">
               {lang === 'en' ? 'cm' : 'সেমি'}
             </span>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-2 mb-[5px]">
-            <div className="flex items-center gap-1.5">
+          <div className="grid grid-cols-2 gap-2.5">
+            <div className="relative flex items-center w-full">
               <input
                 id="input-height-ft"
                 type="number"
                 min={2}
                 max={7}
                 value={heightFtStr}
-                placeholder=""
+                placeholder={lang === 'en' ? 'e.g. 5' : 'যেমন: ৫'}
                 onChange={(e) => handleFtChange(e.target.value)}
-                className="w-full h-10 px-2 text-center text-base font-bold text-[#095D7E] bg-[#F1F9FF] border border-[#CCECEE] rounded-md focus:outline-none focus:ring-2 focus:ring-[#14967F]"
+                className="w-full h-11 px-3.5 pr-12 text-sm sm:text-base font-bold text-[#095D7E] dark:text-slate-100 bg-[#F1F9FF] dark:bg-[#1A2B3E] border border-[#CCECEE] dark:border-[#243B53] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#14967F] dark:focus:ring-[#2DD4BF] transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 placeholder:font-normal"
               />
-              <span className="text-xs font-semibold text-[#64748B]">
-                {lang === 'en' ? 'feet' : 'ফিট'}
+              <span className="absolute right-3.5 text-xs font-bold text-[#64748B] dark:text-slate-400 pointer-events-none select-none">
+                {lang === 'en' ? 'ft' : 'ফিট'}
               </span>
             </div>
-            <div className="flex items-center gap-1.5">
+            <div className="relative flex items-center w-full">
               <input
                 id="input-height-in"
                 type="number"
                 min={0}
                 max={11}
                 value={heightInStr}
-                placeholder=""
+                placeholder={lang === 'en' ? 'e.g. 8' : 'যেমন: ৮'}
                 onChange={(e) => handleInChange(e.target.value)}
-                className="w-full h-10 px-2 text-center text-base font-bold text-[#095D7E] bg-[#F1F9FF] border border-[#CCECEE] rounded-md focus:outline-none focus:ring-2 focus:ring-[#14967F]"
+                className="w-full h-11 px-3.5 pr-12 text-sm sm:text-base font-bold text-[#095D7E] dark:text-slate-100 bg-[#F1F9FF] dark:bg-[#1A2B3E] border border-[#CCECEE] dark:border-[#243B53] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#14967F] dark:focus:ring-[#2DD4BF] transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 placeholder:font-normal"
               />
-              <span className="text-xs font-semibold text-[#64748B]">
-                {lang === 'en' ? 'inches' : 'ইঞ্চি'}
+              <span className="absolute right-3.5 text-xs font-bold text-[#64748B] dark:text-slate-400 pointer-events-none select-none">
+                {lang === 'en' ? 'in' : 'ইঞ্চি'}
               </span>
             </div>
           </div>
         )}
-
-        <div className="flex items-center gap-2">
-          <span className="text-[10px] text-[#64748B] font-medium">
-            {lang === 'en' ? '90 cm' : '৯০ সেমি'}
-          </span>
-          <input
-            type="range"
-            min={90}
-            max={220}
-            value={heightCm !== null ? heightCm : 90}
-            onChange={(e) => handleMetricHeightSliderChange(parseInt(e.target.value, 10))}
-            className="w-full h-2 rounded appearance-none cursor-pointer bg-[#CCECEE] accent-[#14967F]"
-          />
-          <span className="text-[10px] text-[#64748B] font-medium">
-            {lang === 'en' ? '220 cm' : '২২০ সেমি'}
-          </span>
-        </div>
       </div>
 
-      {/* 3. Weight Input & Slider */}
-      <div className="mb-[10px]">
+      {/* 4. Weight Input */}
+      <div className="mb-4">
         <div className="flex items-center justify-between mb-1.5">
-          <label className="text-sm font-semibold text-[#095D7E]">
+          <label className="text-sm font-semibold text-[#095D7E] dark:text-slate-200">
             {lang === 'en' ? 'Weight' : 'ওজন'}
           </label>
-          {/* Unit Toggle: USA vs Metric */}
-          <div className="flex items-center bg-[#F1F9FF] p-0.5 rounded border border-[#CCECEE] text-xs">
-            <button
-              type="button"
-              id="btn-weight-imperial"
-              onClick={() => setWeightUnit('imperial')}
-              className={`px-2 py-0.5 rounded font-semibold transition-all cursor-pointer ${
-                weightUnit === 'imperial'
-                  ? 'bg-[#14967F] text-white'
-                  : 'text-[#64748B] hover:text-[#095D7E]'
-              }`}
-            >
-              {lang === 'en' ? 'USA (lbs)' : 'পাউন্ড (lbs)'}
-            </button>
+          {/* Unit Toggle: Metric vs USA */}
+          <div className="flex items-center bg-[#F1F9FF] dark:bg-[#1A2B3E] p-0.5 rounded-lg border border-[#CCECEE] dark:border-[#243B53] text-xs">
             <button
               type="button"
               id="btn-weight-metric"
               onClick={() => setWeightUnit('metric')}
-              className={`px-2 py-0.5 rounded font-semibold transition-all cursor-pointer ${
+              className={`px-2.5 py-1 rounded-md font-bold transition-all cursor-pointer ${
                 weightUnit === 'metric'
-                  ? 'bg-[#14967F] text-white'
-                  : 'text-[#64748B] hover:text-[#095D7E]'
+                  ? 'bg-[#14967F] dark:bg-[#2DD4BF] text-white dark:text-slate-950 shadow-xs'
+                  : 'text-[#64748B] dark:text-slate-400 hover:text-[#095D7E] dark:hover:text-slate-200'
               }`}
             >
               {lang === 'en' ? 'Metric (kg)' : 'কেজি (kg)'}
+            </button>
+            <button
+              type="button"
+              id="btn-weight-imperial"
+              onClick={() => setWeightUnit('imperial')}
+              className={`px-2.5 py-1 rounded-md font-bold transition-all cursor-pointer ${
+                weightUnit === 'imperial'
+                  ? 'bg-[#14967F] dark:bg-[#2DD4BF] text-white dark:text-slate-950 shadow-xs'
+                  : 'text-[#64748B] dark:text-slate-400 hover:text-[#095D7E] dark:hover:text-slate-200'
+              }`}
+            >
+              {lang === 'en' ? 'USA (lbs)' : 'পাউন্ড (lbs)'}
             </button>
           </div>
         </div>
 
         {weightUnit === 'metric' ? (
-          <div className="flex items-center gap-2 mb-[5px]">
+          <div className="relative flex items-center w-full">
             <input
               id="input-weight-kg"
               type="number"
@@ -556,17 +506,17 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
               min={20}
               max={250}
               value={weightKgStr}
-              placeholder=""
+              placeholder={lang === 'en' ? 'e.g. 68' : 'যেমন: ৬৮'}
               onBlur={handleWeightKgBlur}
               onChange={(e) => handleWeightKgChange(e.target.value)}
-              className="w-full h-10 px-3 text-center text-base font-bold text-[#095D7E] bg-[#F1F9FF] border border-[#CCECEE] rounded-md focus:outline-none focus:ring-2 focus:ring-[#14967F]"
+              className="w-full h-11 px-3.5 pr-14 text-sm sm:text-base font-bold text-[#095D7E] dark:text-slate-100 bg-[#F1F9FF] dark:bg-[#1A2B3E] border border-[#CCECEE] dark:border-[#243B53] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#14967F] dark:focus:ring-[#2DD4BF] transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 placeholder:font-normal"
             />
-            <span className="text-xs font-semibold text-[#64748B] w-8">
+            <span className="absolute right-3.5 text-xs font-bold text-[#64748B] dark:text-slate-400 pointer-events-none select-none">
               {lang === 'en' ? 'kg' : 'কেজি'}
             </span>
           </div>
         ) : (
-          <div className="flex items-center gap-2 mb-[5px]">
+          <div className="relative flex items-center w-full">
             <input
               id="input-weight-lbs"
               type="number"
@@ -574,43 +524,25 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
               min={44}
               max={550}
               value={weightLbsStr}
-              placeholder=""
+              placeholder={lang === 'en' ? 'e.g. 150' : 'যেমন: ১৫০'}
               onBlur={handleWeightLbsBlur}
               onChange={(e) => handleWeightLbsChange(e.target.value)}
-              className="w-full h-10 px-3 text-center text-base font-bold text-[#095D7E] bg-[#F1F9FF] border border-[#CCECEE] rounded-md focus:outline-none focus:ring-2 focus:ring-[#14967F]"
+              className="w-full h-11 px-3.5 pr-14 text-sm sm:text-base font-bold text-[#095D7E] dark:text-slate-100 bg-[#F1F9FF] dark:bg-[#1A2B3E] border border-[#CCECEE] dark:border-[#243B53] rounded-xl focus:outline-none focus:ring-2 focus:ring-[#14967F] dark:focus:ring-[#2DD4BF] transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 placeholder:font-normal"
             />
-            <span className="text-xs font-semibold text-[#64748B] w-8">
+            <span className="absolute right-3.5 text-xs font-bold text-[#64748B] dark:text-slate-400 pointer-events-none select-none">
               {lang === 'en' ? 'lbs' : 'পাউন্ড'}
             </span>
           </div>
         )}
-
-        <div className="flex items-center gap-2">
-          <span className="text-[10px] text-[#64748B] font-medium">
-            {lang === 'en' ? '30 kg' : '৩০ কেজি'}
-          </span>
-          <input
-            type="range"
-            min={30}
-            max={180}
-            step={0.5}
-            value={weightKg !== null ? weightKg : 30}
-            onChange={(e) => handleWeightKgSliderChange(parseFloat(e.target.value))}
-            className="w-full h-2 rounded appearance-none cursor-pointer bg-[#CCECEE] accent-[#14967F]"
-          />
-          <span className="text-[10px] text-[#64748B] font-medium">
-            {lang === 'en' ? '180 kg' : '১৮০ কেজি'}
-          </span>
-        </div>
       </div>
 
-      {/* 4. Action Buttons (Calculate & Clear) */}
-      <div className="grid grid-cols-2 gap-3 pt-1">
+      {/* 5. Action Buttons (Calculate & Clear) */}
+      <div className="grid grid-cols-2 gap-3 pt-2">
         <button
           type="button"
           id="btn-calculate-bmi"
           onClick={onCalculate}
-          className="w-full py-2.5 px-4 rounded-md bg-[#14967F] hover:bg-[#0D6F5D] active:scale-[0.98] text-white font-bold text-sm tracking-wide shadow-sm flex items-center justify-center gap-2 transition-all cursor-pointer"
+          className="w-full py-2.5 px-4 rounded-xl bg-[#14967F] hover:bg-[#0D6F5D] dark:bg-[#2DD4BF] dark:hover:bg-[#14B8A6] dark:text-slate-950 active:scale-[0.98] text-white font-bold text-sm tracking-wide shadow-sm flex items-center justify-center gap-2 transition-all cursor-pointer"
         >
           <span>{lang === 'en' ? 'Calculate' : 'হিসাব করুন'}</span>
           <ArrowRight className="w-4 h-4" />
@@ -620,7 +552,7 @@ export const BmiCalculatorCard: React.FC<BmiCalculatorCardProps> = ({
           type="button"
           id="btn-clear-bmi"
           onClick={handleResetClick}
-          className="w-full py-2.5 px-4 rounded-md bg-[#F1F9FF] hover:bg-[#CCECEE]/40 active:scale-[0.98] text-[#475569] hover:text-[#095D7E] font-semibold text-sm border border-[#CCECEE] flex items-center justify-center gap-2 transition-all cursor-pointer"
+          className="w-full py-2.5 px-4 rounded-xl bg-[#F1F9FF] hover:bg-[#CCECEE]/40 dark:bg-[#1A2B3E] dark:hover:bg-[#243B53] active:scale-[0.98] text-[#475569] hover:text-[#095D7E] dark:text-slate-300 dark:hover:text-white font-semibold text-sm border border-[#CCECEE] dark:border-[#243B53] flex items-center justify-center gap-2 transition-all cursor-pointer"
         >
           <RotateCcw className="w-4 h-4" />
           <span>{lang === 'en' ? 'Clear' : 'মুছে ফেলুন'}</span>

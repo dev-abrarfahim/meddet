@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
+import { CheckCircle2, ChevronDown, ChevronUp, ExternalLink, Pill } from 'lucide-react';
 import { LanguageMode } from '../../../types';
 
 interface BmiDetailsFaqProps {
@@ -17,11 +17,13 @@ export const BmiDetailsFaq: React.FC<BmiDetailsFaqProps> = ({ lang = 'en' }) => 
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({
     intro: false,
     adultTable: false,
+    asianCutoffs: false,
     childTable: false,
     overweightRisks: false,
     underweightRisks: false,
     limitations: false,
-    formulas: false
+    formulas: false,
+    references: false
   });
 
   const toggleItem = (key: string) => {
@@ -86,6 +88,48 @@ export const BmiDetailsFaq: React.FC<BmiDetailsFaqProps> = ({ lang = 'en' }) => 
       )
     },
     {
+      key: 'asianCutoffs',
+      titleEn: 'WHO Asian & South Asian Specific BMI Cut-Offs',
+      titleBn: 'ডব্লিউএইচও এশীয় ও বাংলাদেশি জনগোষ্ঠীর জন্য বিএমআই মানদণ্ড',
+      renderContent: () => (
+        <div className="space-y-2.5">
+          <p className="text-slate-600 dark:text-slate-300">
+            {lang === 'en'
+              ? 'According to WHO expert consultations, South Asian individuals (including Bangladeshis) develop insulin resistance, abdominal fat, and cardiovascular disease at significantly lower BMI thresholds than Caucasian populations.'
+              : 'বিশ্ব স্বাস্থ্য সংস্থার (WHO) বিশেষজ্ঞ কমিটির পর্যবেক্ষণ অনুযায়ী, দক্ষিণ এশীয় ও বাংলাদেশি জনগোষ্ঠীর ক্ষেত্রে কম বিএমআই-তেও পেটের চর্বি (Visceral Fat), ইনসুলিন রেজিস্ট্যান্স ও ডায়াবেটিসের ঝুঁকি অনেক বেশি থাকে।'}
+          </p>
+          <div className="overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-700/80">
+            <table className="w-full text-left text-xs">
+              <thead>
+                <tr className="bg-[#095D7E] text-white">
+                  <th className="py-2 px-3 font-semibold">{lang === 'en' ? 'Asian Category' : 'এশীয় শ্রেণীবিন্যাস'}</th>
+                  <th className="py-2 px-3 font-semibold text-right">{lang === 'en' ? 'BMI Cut-Off (kg/m²)' : 'বিএমআই মাত্রা (কেজি/মি²)'}</th>
+                  <th className="py-2 px-3 font-semibold text-right">{lang === 'en' ? 'Risk Level' : 'ঝুঁকির মাত্রা'}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-800 bg-white dark:bg-[#152232]">
+                <tr className="bg-[#E2FCD6] dark:bg-[#064E3B] font-bold text-[#0D6F5D] dark:text-[#6EE7B7]">
+                  <td className="py-1.5 px-3">{lang === 'en' ? 'Normal Range (Asian)' : 'স্বাভাবিক মাত্রা (এশীয়)'}</td>
+                  <td className="py-1.5 px-3 text-right font-mono">18.5 - 22.9</td>
+                  <td className="py-1.5 px-3 text-right">{lang === 'en' ? 'Low Risk' : 'কম ঝুঁকি'}</td>
+                </tr>
+                <tr>
+                  <td className="py-1.5 px-3 text-slate-700 dark:text-slate-300">{lang === 'en' ? 'Overweight (Increased Risk)' : 'অতিরিক্ত ওজন (ঝুঁকিপূর্ণ)'}</td>
+                  <td className="py-1.5 px-3 text-right font-mono text-slate-900 dark:text-slate-100">23.0 - 27.4</td>
+                  <td className="py-1.5 px-3 text-right text-amber-600 font-bold">{lang === 'en' ? 'Increased Risk' : 'বর্ধিত ঝুঁকি'}</td>
+                </tr>
+                <tr>
+                  <td className="py-1.5 px-3 text-slate-700 dark:text-slate-300">{lang === 'en' ? 'Obese (High Risk)' : 'স্থূলতা (উচ্চ ঝুঁকি)'}</td>
+                  <td className="py-1.5 px-3 text-right font-mono text-slate-900 dark:text-slate-100">&ge; 27.5</td>
+                  <td className="py-1.5 px-3 text-right text-rose-600 font-bold">{lang === 'en' ? 'High Risk' : 'উচ্চ ঝুঁকি'}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )
+    },
+    {
       key: 'childTable',
       titleEn: 'BMI for Children & Teens (CDC Percentiles)',
       titleBn: 'শিশু ও কিশোরদের বিএমআই (CDC পার্সেন্টাইল)',
@@ -136,6 +180,21 @@ export const BmiDetailsFaq: React.FC<BmiDetailsFaqProps> = ({ lang = 'en' }) => 
             <li>{lang === 'en' ? 'Osteoarthritis (cartilage breakdown in knees and joints)' : 'অস্টিওআর্থ্রাইটিস বা হাঁটু ও সংযোগস্থলের ক্ষয়'}</li>
             <li>{lang === 'en' ? 'Obstructive sleep apnea & breathing difficulties' : 'স্লিপ অ্যাপনিয়া ও ঘুমে শ্বাসকষ্টজনিত সমস্যা'}</li>
           </ul>
+
+          {/* Contextual internal linking */}
+          <div className="pt-2 mt-2 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap gap-2 text-[11px]">
+            <span className="font-bold text-[#095D7E] dark:text-[#2DD4BF] flex items-center gap-1">
+              <Pill className="w-3.5 h-3.5" />
+              {lang === 'en' ? 'Related Clinical Monographs:' : 'সম্পর্কিত ক্লিনিক্যাল ওষুধ:'}
+            </span>
+            <a href="/generic/orlistat-7pga" className="text-[#14967F] dark:text-[#2DD4BF] hover:underline font-semibold">
+              Orlistat (ওরলিস্ট্যাট)
+            </a>
+            <span>•</span>
+            <a href="/generic/metformin-hydrochloride-x2r4" className="text-[#14967F] dark:text-[#2DD4BF] hover:underline font-semibold">
+              Metformin (মেটফরমিন)
+            </a>
+          </div>
         </div>
       )
     },
@@ -198,6 +257,44 @@ export const BmiDetailsFaq: React.FC<BmiDetailsFaqProps> = ({ lang = 'en' }) => 
           </div>
         </div>
       )
+    },
+    {
+      key: 'references',
+      titleEn: 'Authoritative Clinical References & Literature (E-E-A-T)',
+      titleBn: 'ক্লিনিক্যাল রেফারেন্স ও তথ্যের নির্ভরযোগ্য উৎস',
+      renderContent: () => (
+        <div className="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+          <p>
+            {lang === 'en'
+              ? 'Our clinical algorithms and educational interpretations adhere to authoritative medical sources:'
+              : 'আমাদের অ্যালগরিদম ও তথ্যসমূহ আন্তর্জাতিক স্বাস্থ্য সংস্থা কর্তৃক স্বীকৃত ক্লিনিক্যাল গাইডের ভিত্তিতে প্রস্তুত:'}
+          </p>
+          <ul className="space-y-1 pl-1">
+            <li className="flex items-center gap-1.5">
+              <ExternalLink className="w-3.5 h-3.5 text-[#14967F] shrink-0" />
+              <a
+                href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#14967F] dark:text-[#2DD4BF] hover:underline font-semibold"
+              >
+                World Health Organization (WHO) — Obesity & Overweight Fact Sheet
+              </a>
+            </li>
+            <li className="flex items-center gap-1.5">
+              <ExternalLink className="w-3.5 h-3.5 text-[#14967F] shrink-0" />
+              <a
+                href="https://www.cdc.gov/healthyweight/assessing/bmi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#14967F] dark:text-[#2DD4BF] hover:underline font-semibold"
+              >
+                Centers for Disease Control and Prevention (CDC) — About Adult BMI
+              </a>
+            </li>
+          </ul>
+        </div>
+      )
     }
   ];
 
@@ -212,6 +309,7 @@ export const BmiDetailsFaq: React.FC<BmiDetailsFaqProps> = ({ lang = 'en' }) => 
           >
             <button
               type="button"
+              aria-expanded={isOpen}
               onClick={() => toggleItem(item.key)}
               className="w-full py-2.5 px-3 flex items-center justify-between gap-2 text-left hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors cursor-pointer"
             >
@@ -233,11 +331,14 @@ export const BmiDetailsFaq: React.FC<BmiDetailsFaqProps> = ({ lang = 'en' }) => 
               </div>
             </button>
 
-            {isOpen && (
-              <div className="py-2.5 px-3 text-xs font-medium text-slate-700 dark:text-slate-200 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 bg-slate-50/60 dark:bg-slate-800/40">
-                {item.renderContent()}
-              </div>
-            )}
+            <div
+              className={`py-2.5 px-3 text-xs font-medium text-slate-700 dark:text-slate-200 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 bg-slate-50/60 dark:bg-slate-800/40 ${
+                isOpen ? 'block' : 'hidden'
+              }`}
+              aria-hidden={!isOpen}
+            >
+              {item.renderContent()}
+            </div>
           </div>
         );
       })}

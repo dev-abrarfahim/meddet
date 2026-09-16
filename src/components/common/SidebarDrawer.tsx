@@ -119,6 +119,22 @@ export const SidebarDrawer: React.FC<SidebarDrawerProps> = ({
                 <ChevronRight className="w-4 h-4 text-[#14967F] dark:text-[#2DD4BF] group-hover:translate-x-0.5 transition-transform" />
               </a>
 
+              {/* 0b. Direct Link to Medical BMI Calculator */}
+              <a
+                href="/tools/bmi-calculator"
+                onClick={(e) => handleLinkClick(e, '/tools/bmi-calculator')}
+                id="sidebar-bmi-calculator-link"
+                className="w-full flex items-center justify-between py-2 px-3 pl-4 rounded-xl bg-slate-50 dark:bg-[#1A2B3E]/60 hover:bg-[#E2FCD6]/40 dark:hover:bg-[#1E3A52] border border-slate-100 dark:border-[#243B53]/50 text-left transition-all group cursor-pointer text-xs"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#14967F] dark:bg-[#2DD4BF]"></span>
+                  <span className="font-bold text-[#095D7E] dark:text-slate-200">
+                    {lang === 'en' ? 'Medical BMI Calculator' : 'মেডিকেল বিএমআই ক্যালকুলেটর'}
+                  </span>
+                </div>
+                <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors" />
+              </a>
+
               {/* 1. About Us */}
               <a
                 href="/about"

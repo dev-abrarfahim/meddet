@@ -45,6 +45,16 @@ export const MedicalDisclaimer: React.FC<MedicalDisclaimerProps> = ({ onOpenApiD
           </h4>
           <ul className="space-y-1.5 text-xs text-[#CCECEE] dark:text-slate-300 font-semibold">
             <li>
+              <a href="/tools/bmi-calculator" className="hover:text-white transition-colors">
+                Medical BMI Calculator BD (বিএমআই)
+              </a>
+            </li>
+            <li>
+              <a href="/tools" className="hover:text-white transition-colors">
+                Clinical Health Tools & Calculators
+              </a>
+            </li>
+            <li>
               <a href="/about" className="hover:text-white transition-colors">
                 About MEDDET Clinical Index
               </a>
