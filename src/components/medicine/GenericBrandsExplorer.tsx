@@ -186,10 +186,10 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
   };
 
   return (
-    <div className="space-y-4 animate-in fade-in duration-300 pb-16">
+    <div className="space-y-1.5 animate-in fade-in duration-300 pb-12">
       
       {/* Top Back Header Bar */}
-      <div className="flex items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
+      <div className="flex items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-1.5">
         <button
           onClick={onBack}
           className="inline-flex items-center gap-1 text-xs font-black text-[#14967F] dark:text-[#2DD4BF] hover:underline cursor-pointer"
@@ -219,7 +219,7 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
       </div>
 
       {/* Main Page Title Header (Strictly Matching User Reference Image) */}
-      <div className="space-y-3 bg-white dark:bg-[#131B2E] p-4 rounded-2xl border border-slate-200 dark:border-slate-800/80 shadow-xs">
+      <div className="space-y-1.5 bg-white dark:bg-[#131B2E] p-3 rounded-2xl border border-slate-200 dark:border-slate-800/80 shadow-xs">
         <div className="border-l-4 border-[#095D7E] dark:border-[#2DD4BF] pl-3.5 space-y-0.5">
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
             {genericName}
@@ -258,7 +258,7 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
       </div>
 
       {/* Filter and Sort Toolbar (Strictly Matching User Reference Image) */}
-      <div className="bg-white dark:bg-[#131B2E] p-3 rounded-2xl border border-slate-200 dark:border-slate-800/80 shadow-xs space-y-3">
+      <div className="bg-white dark:bg-[#131B2E] p-2.5 rounded-2xl border border-slate-200 dark:border-slate-800/80 shadow-xs space-y-1.5">
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
           
           {/* Left Side: Filter Dropdowns */}
@@ -520,7 +520,7 @@ export const GenericBrandsExplorer: React.FC<GenericBrandsExplorerProps> = ({
                     e.preventDefault();
                     onSelectMedicine(brand);
                   }}
-                  className="block p-3 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer space-y-1.5"
+                  className="block p-2.5 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer space-y-1"
                 >
                   <div className="flex items-center justify-between gap-2">
                     <h3 className="text-sm font-black text-slate-900 dark:text-slate-100 hover:text-[#14967F]">

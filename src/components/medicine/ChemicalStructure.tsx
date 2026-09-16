@@ -42,10 +42,10 @@ export const ChemicalStructure: React.FC<ChemicalStructureProps> = ({ genericNam
     iupac: genericName
   };
   return (
-    <section id="sec-structure" className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800/80 p-3 sm:p-3.5 shadow-xs space-y-3 transition-colors">
+    <section id="sec-structure" className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800/80 p-2.5 sm:p-3 shadow-xs space-y-1.5 transition-colors">
       
       {/* Header Bar */}
-      <div className="flex items-center justify-between gap-2 flex-wrap border-b border-slate-100 dark:border-slate-800/60 pb-2">
+      <div className="flex items-center justify-between gap-2 flex-wrap border-b border-slate-100 dark:border-slate-800/60 pb-1.5">
         <div className="flex items-center gap-1.5">
           <Atom className="w-4 h-4 text-[#14967F]" />
           <h2 className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-slate-100">
@@ -60,7 +60,7 @@ export const ChemicalStructure: React.FC<ChemicalStructureProps> = ({ genericNam
       </div>
 
       {/* 2D Skeletal Chemical Diagram Box (Strictly Matching Hand-Drawn Sketch Layout) */}
-      <div className="bg-slate-50 dark:bg-slate-800/80 p-4 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center space-y-2 min-h-[180px]">
+      <div className="bg-slate-50 dark:bg-slate-800/80 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center space-y-1.5 min-h-[140px]">
         
         {/* SVG Drawing of Esomeprazole / Chemical Ring Diagram */}
         <svg

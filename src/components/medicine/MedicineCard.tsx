@@ -20,9 +20,9 @@ export const MedicineCard: React.FC<MedicineCardProps> = ({ medicine, onSelect }
         e.preventDefault();
         onSelect(medicine);
       }}
-      className="bg-white dark:bg-[#131B2E] rounded-xl border border-slate-200 dark:border-slate-800/80 hover:border-[#14967F] dark:hover:border-[#2DD4BF] p-3 shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between space-y-2 group"
+      className="bg-white dark:bg-[#131B2E] rounded-xl border border-slate-200 dark:border-slate-800/80 hover:border-[#14967F] dark:hover:border-[#2DD4BF] p-2.5 shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between space-y-1.5 group"
     >
-      <div className="space-y-1.5">
+      <div className="space-y-1">
         {/* Top Badges */}
         <div className="flex items-center justify-between gap-1 flex-wrap">
           <span className={`inline-flex items-center gap-1 text-xs font-black px-2.5 py-0.5 rounded font-mono ${badgeColor}`}>
@@ -50,7 +50,7 @@ export const MedicineCard: React.FC<MedicineCardProps> = ({ medicine, onSelect }
       </div>
 
       {/* Pricing Footer */}
-      <div className="pt-2 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between gap-2">
+      <div className="pt-1.5 border-t border-slate-100 dark:border-slate-800/60 flex items-center justify-between gap-2">
         <div>
           <div className="text-xs font-bold text-slate-400">
             MRP Price

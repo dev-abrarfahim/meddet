@@ -16,10 +16,10 @@ export const PriceSection: React.FC<PriceSectionProps> = ({ medicine, lang = 'en
     : (lang === 'en' ? 'Commercial Pack :' : 'কমার্শিয়াল প্যাক :');
 
   return (
-    <section id="sec-price" className="space-y-2">
+    <section id="sec-price" className="space-y-1.5">
       
       {/* 1. Unit Price Card (Accurate Unit/Bottle/Tube/Device Price) */}
-      <div className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800/80 p-3 sm:p-3.5 shadow-xs space-y-1.5 transition-colors">
+      <div className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800/80 p-2.5 sm:p-3 shadow-xs space-y-1 transition-colors">
         <div className="flex items-center justify-between gap-2">
           <div>
             <div className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-slate-100 leading-tight">
@@ -43,7 +43,7 @@ export const PriceSection: React.FC<PriceSectionProps> = ({ medicine, lang = 'en
       </div>
 
       {/* 2. Pack Price / Commercial Packaging Card */}
-      <div className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800/80 p-3 sm:p-3.5 shadow-xs space-y-1.5 transition-colors">
+      <div className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800/80 p-2.5 sm:p-3 shadow-xs space-y-1 transition-colors">
         <div className="flex items-start justify-between gap-2">
           <div>
             <div className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-slate-100 leading-tight">

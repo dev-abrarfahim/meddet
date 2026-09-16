@@ -207,10 +207,10 @@ export const GenericDetailsPage: React.FC<GenericDetailsPageProps> = ({
   }
 
   return (
-    <div className="max-w-7xl mx-auto space-y-5 animate-in fade-in duration-200 pb-16">
+    <div className="max-w-7xl mx-auto space-y-1.5 sm:space-y-2 animate-in fade-in duration-200 pb-16">
       
       {/* Top Header Card */}
-      <section className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800 p-4 sm:p-5 shadow-xs space-y-4 transition-colors">
+      <section className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800 p-3 sm:p-4 shadow-xs space-y-2 transition-colors">
         
         {/* Navigation & Controls Row */}
         <div className="flex items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800/80 pb-3 flex-wrap">
@@ -325,13 +325,13 @@ export const GenericDetailsPage: React.FC<GenericDetailsPageProps> = ({
       </section>
 
       {/* Main Grid Layout: Left Column (Clinical Details) + Right Sidebar (Available Brands on PC) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-2.5 items-start">
         
         {/* PRIMARY COLUMN (lg:col-span-8) - CLINICAL MONOGRAPH & DETAILS */}
-        <div className="lg:col-span-8 space-y-4">
+        <div className="lg:col-span-8 space-y-1.5 sm:space-y-2">
           
           {/* SECTION 1: CLINICAL MONOGRAPH ACCORDIONS */}
-          <section className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800 p-4 shadow-xs space-y-3 transition-colors">
+          <section className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800 p-3 shadow-xs space-y-2 transition-colors">
             <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800/80 pb-2.5">
               <div className="flex items-center gap-2">
                 <Stethoscope className="w-4 h-4 text-[#14967F]" />
@@ -562,8 +562,8 @@ export const GenericDetailsPage: React.FC<GenericDetailsPageProps> = ({
 
         {/* SECONDARY COLUMN (lg:col-span-4) - PC DESKTOP "AVAILABLE BRANDS" SIDEBAR */}
         {/* User requested: On PC, show Available Brands on the right side. On mobile, this section is hidden, instead mobile has the top button. */}
-        <aside className="hidden lg:block lg:col-span-4 space-y-3 sticky top-24">
-          <div className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm p-4 space-y-3 transition-colors">
+        <aside className="hidden lg:block lg:col-span-4 space-y-2 sticky top-24">
+          <div className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm p-3 space-y-2 transition-colors">
             
             {/* Header with Brand Count */}
             <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800/80 pb-3">

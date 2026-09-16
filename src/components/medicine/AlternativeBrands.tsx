@@ -70,10 +70,10 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
       id="sec-alternatives"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800/80 p-3 sm:p-3.5 shadow-xs space-y-3 transition-colors relative"
+      className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800/80 p-2.5 sm:p-3 shadow-xs space-y-1.5 transition-colors relative"
     >
       {/* 1. Header Bar */}
-      <div className="flex items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800/60 pb-2.5">
+      <div className="flex items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800/60 pb-1.5">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 flex items-center justify-center text-[#14967F] dark:text-[#2DD4BF] shrink-0">
             <Layers className="w-4 h-4" />
@@ -108,7 +108,7 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
       </div>
 
       {/* 2. Single Alternative Brand Card (Smooth Fade & Slide Transition) */}
-      <div className="relative overflow-hidden min-h-[115px] flex items-center">
+      <div className="relative overflow-hidden min-h-[90px] flex items-center">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentAlt.id}
@@ -124,10 +124,10 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
                 e.preventDefault();
                 onSelectMedicine(currentAlt);
               }}
-              className="w-full bg-slate-50 dark:bg-slate-800/60 p-3 rounded-xl border border-slate-200 dark:border-slate-700/80 hover:border-[#14967F] transition-all cursor-pointer shadow-xs flex items-center justify-between gap-3 group"
+              className="w-full bg-slate-50 dark:bg-slate-800/60 p-2 sm:p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/80 hover:border-[#14967F] transition-all cursor-pointer shadow-xs flex items-center justify-between gap-2.5 group"
             >
               {/* Left Column: Brand Name, Generic, Manufacturer */}
-              <div className="space-y-1 min-w-0 flex-1">
+              <div className="space-y-0.5 min-w-0 flex-1">
                 <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-slate-100 group-hover:text-[#14967F] dark:group-hover:text-[#2DD4BF] transition-colors truncate">
                   {currentAlt.name} {currentAlt.strength} {currentAlt.form}
                 </h3>
@@ -143,7 +143,7 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
               </div>
 
               {/* Right Column: Prominent Savings & Pricing Display */}
-              <div className="text-right shrink-0 space-y-1 bg-white dark:bg-[#131B2E] p-2 rounded-lg border border-slate-200 dark:border-slate-800/80">
+              <div className="text-right shrink-0 space-y-0.5 bg-white dark:bg-[#131B2E] p-1.5 rounded-lg border border-slate-200 dark:border-slate-800/80">
                 {/* Savings Badge */}
                 {percentCheaper > 0 && (
                   <div className="inline-flex items-center gap-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-[10px] font-black px-2 py-0.5 rounded border border-emerald-300 dark:border-emerald-800">
@@ -182,7 +182,7 @@ export const AlternativeBrands: React.FC<AlternativeBrandsProps> = ({
           id="alt-brand-next-btn"
           title="Next Alternative (↓)"
           aria-label="Next Alternative"
-          className="w-full py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 hover:border-[#14967F] transition-all flex items-center justify-center text-slate-700 dark:text-slate-300 cursor-pointer shadow-xs group"
+          className="w-full py-1 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 hover:border-[#14967F] transition-all flex items-center justify-center text-slate-700 dark:text-slate-300 cursor-pointer shadow-xs group"
         >
           <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform text-[#14967F] dark:text-[#2DD4BF]" />
         </button>

@@ -64,10 +64,10 @@ export const ClinicalMonographAccordions: React.FC<ClinicalMonographAccordionsPr
   ];
 
   return (
-    <section id="sec-monograph" className="space-y-3 pt-1">
+    <section id="sec-monograph" className="space-y-1.5 pt-0.5">
       
       {/* Accordions List (Strictly matching hand-drawn sketch) */}
-      <div className="space-y-1.5">
+      <div className="space-y-1">
         {accordionItems.map((item) => {
           const isOpen = !!openItems[item.key];
           if (!item.content) return null;
@@ -79,7 +79,7 @@ export const ClinicalMonographAccordions: React.FC<ClinicalMonographAccordionsPr
             >
               <button
                 onClick={() => toggleItem(item.key)}
-                className="w-full py-2.5 px-3 flex items-center justify-between gap-2 text-left hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors cursor-pointer"
+                className="w-full py-1.5 px-2.5 flex items-center justify-between gap-2 text-left hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors cursor-pointer"
               >
                 <div className="flex items-center gap-2">
                   <span className="text-[#14967F] dark:text-[#2DD4BF] shrink-0">
@@ -96,7 +96,7 @@ export const ClinicalMonographAccordions: React.FC<ClinicalMonographAccordionsPr
               </button>
 
               {isOpen && (
-                <div className="py-2 px-3 text-xs font-medium text-slate-700 dark:text-slate-200 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 whitespace-pre-line bg-slate-50/60 dark:bg-slate-800/40">
+                <div className="py-1.5 px-2.5 text-xs font-medium text-slate-700 dark:text-slate-200 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 whitespace-pre-line bg-slate-50/60 dark:bg-slate-800/40">
                   {item.content}
                 </div>
               )}

@@ -37,7 +37,7 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
   }, [medicine]);
 
   return (
-    <section id="sec-overview" className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800/80 p-3.5 sm:p-4 shadow-sm transition-colors space-y-2.5">
+    <section id="sec-overview" className="bg-white dark:bg-[#131B2E] rounded-2xl border border-slate-200 dark:border-slate-800/80 p-2.5 sm:p-3 shadow-sm transition-colors space-y-1.5">
       
       {/* Back Button Bar */}
       <div className="flex items-center justify-between gap-2 pb-1 border-b border-slate-100 dark:border-slate-800/60">
@@ -55,7 +55,7 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
       </div>
 
       {/* Main Header Info */}
-      <div className="space-y-1">
+      <div className="space-y-0.5 sm:space-y-1">
         
         {/* Line 1: Dynamic Dosage Form Icon + Brand Name + Form Badge */}
         <div className="flex items-center gap-1.5">
@@ -110,7 +110,7 @@ export const MedicineHero: React.FC<MedicineHeroProps> = ({
       </div>
 
       {/* "Also available As" Container with "Alternative Brands" Button */}
-      <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80 space-y-1.5">
+      <div className="pt-1.5 border-t border-slate-100 dark:border-slate-800/80 space-y-1">
         <div className="flex items-center justify-between gap-2 flex-wrap">
           <div className="text-[11px] font-black uppercase tracking-wider text-slate-800 dark:text-slate-200 flex items-center gap-1">
             <Layers className="w-3 h-3 text-[#14967F]" />

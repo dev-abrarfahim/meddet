@@ -953,7 +953,7 @@ export default function App() {
       </div>
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-2 pt-2 sm:pt-3 space-y-4">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-2 pt-2 sm:pt-3 space-y-2 sm:space-y-2.5">
 
         {/* VIEW 404: MEDICINE NOT FOUND RECOVERY VIEW */}
         {is404 ? (
@@ -1005,16 +1005,16 @@ export default function App() {
             onToggleLang={toggleLang}
           />
         ) : selectedMedicine ? (
-          <div className="max-w-7xl mx-auto space-y-4 animate-in fade-in duration-200 pb-16">
+          <div className="max-w-7xl mx-auto space-y-1.5 animate-in fade-in duration-200 pb-16">
             
             {/* Sticky Table of Contents Jump Bar */}
             <TableOfContents activeSection={activeSection} />
 
             {/* Responsive Grid Layout for Tablet (md:), PC/Desktop (lg: & xl:) */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-2.5 items-start">
               
               {/* Primary Clinical Column (lg:col-span-8) */}
-              <div className="lg:col-span-8 space-y-3 sm:space-y-4">
+              <div className="lg:col-span-8 space-y-1.5 sm:space-y-2">
                 {/* 1. Hero Overview */}
                 <MedicineHero
                   medicine={selectedMedicine}
@@ -1047,7 +1047,7 @@ export default function App() {
               </div>
 
               {/* Secondary Sidebar Column (lg:col-span-4) - PC & Tablet */}
-              <div className="lg:col-span-4 space-y-3 sm:space-y-4 lg:sticky lg:top-24">
+              <div className="lg:col-span-4 space-y-1.5 sm:space-y-2 lg:sticky lg:top-24">
                 {/* Chemical Structure (2D Diagram + Formula Grid) */}
                 <ChemicalStructure
                   genericName={selectedMedicine.genericName}
@@ -1055,7 +1055,7 @@ export default function App() {
                 />
 
                 {/* Verified Clinical Quick Info Card */}
-                <div className="bg-white dark:bg-[#131B2E] p-4 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-2.5 shadow-xs">
+                <div className="bg-white dark:bg-[#131B2E] p-3 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-1.5 shadow-xs">
                   <div className="flex items-center gap-2 text-xs font-black text-slate-900 dark:text-slate-100">
                     <ShieldCheck className="w-4 h-4 text-[#14967F]" />
                     <span>Clinical Verification Summary</span>
@@ -1085,7 +1085,7 @@ export default function App() {
           </div>
         ) : (
           /* VIEW 3: MEDICINE INDEX SEARCH & FILTER GRID PAGE */
-          <div className="space-y-4 sm:space-y-6 animate-in fade-in duration-200">
+          <div className="space-y-1.5 sm:space-y-2 animate-in fade-in duration-200">
             
             {/* Alphabet Quick Filter */}
             <AlphabetFilter
@@ -1098,12 +1098,12 @@ export default function App() {
             />
 
             {/* Responsive Grid Layout for PC Desktop & Tablet */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-2.5 items-start">
               
               {/* Desktop Sticky Filter Sidebar (lg:col-span-3 - Hidden on Mobile, visible on PC lg:) */}
-              <div className="hidden lg:block lg:col-span-3 space-y-4 sticky top-24">
-                <div className="bg-white dark:bg-[#131B2E] p-4.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-4">
-                  <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+              <div className="hidden lg:block lg:col-span-3 space-y-2 sticky top-24">
+                <div className="bg-white dark:bg-[#131B2E] p-3 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs space-y-2">
+                  <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
                     <div className="flex items-center gap-2">
                       <SlidersHorizontal className="w-4 h-4 text-[#14967F]" />
                       <h3 className="font-extrabold text-sm text-slate-900 dark:text-slate-100">Filter Index</h3>
@@ -1127,10 +1127,10 @@ export default function App() {
               </div>
 
               {/* Main Results Column (lg:col-span-9) */}
-              <div className="lg:col-span-9 space-y-4">
+              <div className="lg:col-span-9 space-y-1.5 sm:space-y-2">
 
                 {/* Results Counter & Filter Status Bar */}
-                <div className="flex items-center justify-between gap-3 flex-wrap bg-white dark:bg-[#152232] p-3.5 sm:p-4 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] transition-colors shadow-xs">
+                <div className="flex items-center justify-between gap-2.5 flex-wrap bg-white dark:bg-[#152232] p-2.5 sm:p-3 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] transition-colors shadow-xs">
                   <div>
                     <h1 className="text-base sm:text-lg font-bold text-[#095D7E] dark:text-slate-100 flex items-center gap-2 flex-wrap">
                       <Pill className="w-5 h-5 text-[#14967F] dark:text-[#2DD4BF]" />
@@ -1202,7 +1202,7 @@ export default function App() {
                 {/* Medicine Cards Grid (1 col mobile, 2 col tablet md, 3 col pc lg/xl) */}
                 {searchResults.items.length > 0 ? (
                   <>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3.5 sm:gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-1.5 sm:gap-2">
                       {searchResults.items.map((med) => (
                         <MedicineCard
                           key={med.id}
@@ -1214,7 +1214,7 @@ export default function App() {
 
                     {/* Pagination Controls */}
                     {searchResults.totalPages > 1 && (
-                      <div className="flex items-center justify-between bg-white dark:bg-[#152232] p-4 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] mt-6 shadow-xs">
+                      <div className="flex items-center justify-between bg-white dark:bg-[#152232] p-2.5 rounded-2xl border border-[#CCECEE] dark:border-[#243B53] mt-2 shadow-xs">
                         <button
                           disabled={currentPage <= 1}
                           onClick={() => {
