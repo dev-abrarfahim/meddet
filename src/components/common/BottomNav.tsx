@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Search, SlidersHorizontal, ArrowLeft, Calculator } from 'lucide-react';
+import { Home, Search, SlidersHorizontal, Calculator } from 'lucide-react';
 import { LanguageMode } from '../../types';
 
 interface BottomNavProps {
@@ -79,17 +79,6 @@ export const BottomNav: React.FC<BottomNavProps> = ({
           <SlidersHorizontal className="w-5 h-5" />
           <span>{lang === 'en' ? 'Filter' : 'ফিল্টার'}</span>
         </button>
-
-        {/* Details Back Button (if viewing details) */}
-        {currentView === 'details' && (
-          <button
-            onClick={onGoSearch}
-            className="flex flex-col items-center gap-1 text-xs font-bold py-1 px-3 rounded-xl text-[#14967F] dark:text-[#2DD4BF] bg-[#F1F9FF] dark:bg-[#1A2B3E] transition-all cursor-pointer"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            <span>{lang === 'en' ? 'Back' : 'ফিরে যান'}</span>
-          </button>
-        )}
 
       </div>
     </nav>
