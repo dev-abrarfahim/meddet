@@ -146,7 +146,7 @@ export const BmiGauge: React.FC<BmiGaugeProps> = ({ result, bmi: propBmi, catego
   if (category?.key === 'overweight') {
     badgeStyle = 'bg-amber-50 text-amber-800 border-amber-300';
   } else if (category?.key === 'underweight') {
-    badgeStyle = 'bg-[#F1F9FF] text-[#095D7E] border-[#CCECEE]';
+    badgeStyle = 'bg-[#F1F9FF] dark:bg-[#1E293B] text-[#095D7E] dark:text-[#2DD4BF] border-[#CCECEE] dark:border-[#243B53]';
   } else if (category?.key === 'obese' || category?.key === 'extremely_obese') {
     badgeStyle = 'bg-rose-50 text-rose-800 border-rose-300';
   }
@@ -347,13 +347,13 @@ export const BmiGauge: React.FC<BmiGaugeProps> = ({ result, bmi: propBmi, catego
             </span>
 
             {(category.description || category.descriptionBn) && (
-              <p className="text-[11px] text-[#64748B] text-center mt-1.5 px-4 leading-relaxed font-['Poppins',sans-serif]">
+              <p className="text-[11px] text-[#64748B] dark:text-slate-400 text-center mt-1.5 px-4 leading-relaxed font-['Poppins',sans-serif]">
                 {lang === 'bn' && category.descriptionBn ? category.descriptionBn : category.description}
               </p>
             )}
           </>
         ) : (
-          <span className="inline-block text-xs font-semibold px-3 py-1 rounded border bg-[#F1F9FF] text-[#64748B] border-[#CCECEE] shadow-2xs">
+          <span className="inline-block text-xs font-semibold px-3 py-1 rounded border bg-[#F1F9FF] dark:bg-[#1E293B] text-[#64748B] dark:text-slate-400 border-[#CCECEE] dark:border-[#243B53] shadow-2xs">
             {lang === 'en' ? 'Awaiting Calculation' : 'হিসাব করার জন্য তথ্য দিন'}
           </span>
         )}

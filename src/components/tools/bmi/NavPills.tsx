@@ -37,7 +37,7 @@ export const NavPills: React.FC<NavPillsProps> = ({ activeTab, onTabChange, lang
   };
 
   return (
-    <nav className="w-full bg-[#F1F9FF] border-b border-[#CCECEE] select-none" aria-label="Clinical Navigation">
+    <nav className="w-full bg-[#F1F9FF] dark:bg-[#152232] select-none transition-colors" aria-label="Clinical Navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Desktop Tab Bar */}
         <div className="hidden md:flex items-center justify-between py-2.5">
@@ -52,19 +52,19 @@ export const NavPills: React.FC<NavPillsProps> = ({ activeTab, onTabChange, lang
                   onClick={() => onTabChange(tab.id)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-md text-xs font-semibold tracking-wide transition-all border cursor-pointer ${
                     isActive
-                      ? 'bg-[#14967F] text-white border-[#14967F] shadow-sm'
-                      : 'bg-white text-[#475569] border-[#CCECEE] hover:border-[#14967F]/50 hover:text-[#095D7E] hover:bg-white/80'
+                      ? 'bg-[#14967F] dark:bg-[#2DD4BF] text-white dark:text-slate-950 border-[#14967F] dark:border-[#2DD4BF] shadow-sm'
+                      : 'bg-white dark:bg-[#1A2B3E] text-[#475569] dark:text-slate-200 border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F]/50 dark:hover:border-[#2DD4BF]/50 hover:text-[#095D7E] dark:hover:text-[#2DD4BF] hover:bg-white/80 dark:hover:bg-[#1E3A52]'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-[#14967F]'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-white dark:text-slate-950' : 'text-[#14967F] dark:text-[#2DD4BF]'}`} />
                   <span>{lang === 'bn' ? tab.labelBn : tab.label}</span>
                 </button>
               );
             })}
           </div>
 
-          <div className="text-[11px] text-[#64748B] flex items-center gap-1.5 font-medium">
-            <span className="w-2 h-2 rounded-full bg-[#14967F] animate-pulse" />
+          <div className="text-[11px] text-[#64748B] dark:text-slate-400 flex items-center gap-1.5 font-medium">
+            <span className="w-2 h-2 rounded-full bg-[#14967F] dark:bg-[#2DD4BF] animate-pulse" />
             <span>
               {lang === 'en' ? 'Interactive Real-time Clinical Engine' : 'রিয়েল-টাইম ক্লিনিক্যাল ইঞ্জিন'}
             </span>
@@ -78,7 +78,7 @@ export const NavPills: React.FC<NavPillsProps> = ({ activeTab, onTabChange, lang
             id="btn-scroll-left"
             onClick={() => scroll('left')}
             aria-label="Scroll tabs left"
-            className="w-7 h-7 flex-shrink-0 flex items-center justify-center rounded bg-white border border-[#CCECEE] text-[#095D7E] hover:bg-[#CCECEE]/30 active:scale-95 transition-all shadow-xs"
+            className="w-7 h-7 flex-shrink-0 flex items-center justify-center rounded bg-white dark:bg-[#1A2B3E] border border-[#CCECEE] dark:border-[#243B53] text-[#095D7E] dark:text-[#2DD4BF] hover:bg-[#CCECEE]/30 dark:hover:bg-[#243B53] active:scale-95 transition-all shadow-xs"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
@@ -99,11 +99,11 @@ export const NavPills: React.FC<NavPillsProps> = ({ activeTab, onTabChange, lang
                   onClick={() => onTabChange(tab.id)}
                   className={`whitespace-nowrap flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold tracking-wide transition-all border ${
                     isActive
-                      ? 'bg-[#14967F] text-white border-[#14967F] shadow-xs'
-                      : 'bg-white text-[#475569] border-[#CCECEE] hover:border-[#14967F]/50 hover:text-[#095D7E]'
+                      ? 'bg-[#14967F] dark:bg-[#2DD4BF] text-white dark:text-slate-950 border-[#14967F] dark:border-[#2DD4BF] shadow-xs'
+                      : 'bg-white dark:bg-[#1A2B3E] text-[#475569] dark:text-slate-200 border-[#CCECEE] dark:border-[#243B53] hover:border-[#14967F]/50 dark:hover:border-[#2DD4BF]/50 hover:text-[#095D7E] dark:hover:text-[#2DD4BF]'
                   }`}
                 >
-                  <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-[#14967F]'}`} />
+                  <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-white dark:text-slate-950' : 'text-[#14967F] dark:text-[#2DD4BF]'}`} />
                   <span>{lang === 'bn' ? tab.labelBn : tab.label}</span>
                 </button>
               );
@@ -115,7 +115,7 @@ export const NavPills: React.FC<NavPillsProps> = ({ activeTab, onTabChange, lang
             id="btn-scroll-right"
             onClick={() => scroll('right')}
             aria-label="Scroll tabs right"
-            className="w-7 h-7 flex-shrink-0 flex items-center justify-center rounded bg-white border border-[#CCECEE] text-[#095D7E] hover:bg-[#CCECEE]/30 active:scale-95 transition-all shadow-xs"
+            className="w-7 h-7 flex-shrink-0 flex items-center justify-center rounded bg-white dark:bg-[#1A2B3E] border border-[#CCECEE] dark:border-[#243B53] text-[#095D7E] dark:text-[#2DD4BF] hover:bg-[#CCECEE]/30 dark:hover:bg-[#243B53] active:scale-95 transition-all shadow-xs"
           >
             <ChevronRight className="w-4 h-4" />
           </button>
