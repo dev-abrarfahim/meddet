@@ -7,20 +7,19 @@ import { BodySilhouetteRow } from '../tools/bmi/BodySilhouetteRow';
 import { BmiGauge } from '../tools/bmi/BmiGauge';
 import { BmiDetailsFaq } from '../tools/bmi/BmiDetailsFaq';
 import { TabPanels } from '../tools/bmi/TabPanels';
-import { BmiInfoModal } from '../tools/bmi/BmiInfoModal';
-import { Check, ChevronRight, Home, ArrowLeft, Info } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { LanguageMode } from '../../types';
 
 interface BmiCalculatorPageProps {
-  onNavigate: (path: string) => void;
+  onNavigate?: (path: string) => void;
   lang: LanguageMode;
   onGoHome?: () => void;
 }
 
 export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
-  onNavigate,
+  onNavigate: _onNavigate,
   lang,
-  onGoHome
+  onGoHome: _onGoHome
 }) => {
   // Input form states - start empty (null) so no default values are shown
   const [inputAge, setInputAge] = useState<number | null>(null);
@@ -39,7 +38,6 @@ export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
   // Navigation & UI state
   const [activeTab, setActiveTab] = useState<NavTabId>('overview');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [isInfoModalOpen, setIsInfoModalOpen] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   // Compute BMI Result strictly from calculatedState (no real-time recalculation while typing)
@@ -106,47 +104,6 @@ export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
   return (
     <div className="max-w-7xl mx-auto space-y-5 animate-in fade-in duration-200 pb-16">
       
-      {/* Top Header Bar: Breadcrumb + Back to Tools + Standards Button */}
-      <div className="flex items-center justify-between flex-wrap gap-2 pt-1">
-        <nav aria-label="Breadcrumbs" className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 font-medium">
-          <button
-            onClick={onGoHome ? onGoHome : () => onNavigate('/')}
-            className="flex items-center gap-1 hover:text-[#14967F] dark:hover:text-[#2DD4BF] transition-colors cursor-pointer"
-          >
-            <Home className="w-3.5 h-3.5" />
-            <span>{lang === 'en' ? 'Home' : 'হোম'}</span>
-          </button>
-          <ChevronRight className="w-3 h-3 text-slate-400" />
-          <button
-            onClick={() => onNavigate('/tools')}
-            className="hover:text-[#14967F] dark:hover:text-[#2DD4BF] transition-colors cursor-pointer"
-          >
-            {lang === 'en' ? 'Tools' : 'টুলস'}
-          </button>
-          <ChevronRight className="w-3 h-3 text-slate-400" />
-          <span className="font-bold text-[#095D7E] dark:text-[#2DD4BF]">
-            {lang === 'en' ? 'BMI Calculator' : 'বিএমআই ক্যালকুলেটর'}
-          </span>
-        </nav>
-
-        <div className="flex items-center gap-2">
-          <button
-            onClick={() => onNavigate('/tools')}
-            className="flex items-center gap-1.5 text-xs font-bold text-[#095D7E] dark:text-slate-200 bg-white dark:bg-[#152232] border border-[#CCECEE] dark:border-[#243B53] px-3 py-1.5 rounded-xl hover:border-[#14967F] transition-colors cursor-pointer"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>{lang === 'en' ? 'All Tools' : 'সকল টুলস'}</span>
-          </button>
-
-          <button
-            onClick={() => setIsInfoModalOpen(true)}
-            className="flex items-center gap-1.5 text-xs font-bold text-[#14967F] dark:text-[#2DD4BF] bg-[#E2FCD6] dark:bg-[#064E3B] border border-[#14967F]/30 px-3 py-1.5 rounded-xl hover:scale-102 transition-transform cursor-pointer"
-          >
-            <Info className="w-3.5 h-3.5" />
-            <span>{lang === 'en' ? 'WHO Guidelines' : 'WHO নির্দেশিকা'}</span>
-          </button>
-        </div>
-      </div>
 
       {/* Responsive Navigation Pills / Tab Bar */}
       <div className="rounded-2xl overflow-hidden border border-[#CCECEE] dark:border-[#243B53] shadow-xs bg-white dark:bg-[#152232]">
@@ -267,13 +224,6 @@ export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
           <span>{toastMessage}</span>
         </div>
       )}
-
-      {/* Info Modal */}
-      <BmiInfoModal
-        isOpen={isInfoModalOpen}
-        onClose={() => setIsInfoModalOpen(false)}
-        lang={lang}
-      />
     </div>
   );
 };
