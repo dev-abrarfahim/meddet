@@ -933,7 +933,7 @@ export default function App() {
       />
 
       {/* Secondary Sticky Search Header Toolbar */}
-      <div className="sticky top-16 z-30 bg-[#095D7E] dark:bg-[#0B1927] border-b border-[#074760] dark:border-[#1E3A52] py-2 px-2 shadow-md transition-colors duration-300">
+      <div className="sticky top-12 sm:top-16 z-30 bg-[#095D7E] dark:bg-[#0B1927] border-b border-[#074760] dark:border-[#1E3A52] py-2 px-2 shadow-md transition-colors duration-300">
         <div className="max-w-7xl mx-auto">
           <SearchBar
             query={searchQuery}

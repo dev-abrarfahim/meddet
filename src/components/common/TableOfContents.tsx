@@ -22,7 +22,9 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection 
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 130;
+      const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+      const offset = isMobile ? 110 : 134;
+      const top = el.getBoundingClientRect().top + window.scrollY - offset;
       window.scrollTo({ top, behavior: 'smooth' });
     }
   };
@@ -42,7 +44,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ activeSection 
   return (
     <nav
       aria-label="Table of Contents"
-      className="sticky top-28 z-20 bg-white/95 dark:bg-[#131B2E]/95 backdrop-blur-md border border-slate-200 dark:border-slate-800/80 rounded-xl p-1 shadow-xs transition-colors flex items-center gap-1"
+      className="sticky top-28 sm:top-32 z-20 bg-white/95 dark:bg-[#131B2E]/95 backdrop-blur-md border border-slate-200 dark:border-slate-800/80 rounded-xl p-1 shadow-xs transition-colors flex items-center gap-1"
     >
       
       {/* Left Chevron Arrow Button < */}
