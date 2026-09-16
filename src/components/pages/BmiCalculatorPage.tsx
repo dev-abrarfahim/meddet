@@ -105,9 +105,7 @@ export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
     <div className="max-w-7xl mx-auto space-y-5 animate-in fade-in duration-200 pb-16">
 
       {/* Responsive Navigation Pills / Tab Bar */}
-      <div className="rounded-2xl overflow-hidden border border-[#CCECEE] dark:border-[#243B53] shadow-xs bg-white dark:bg-[#152232]">
-        <NavPills activeTab={activeTab} onTabChange={setActiveTab} lang={lang} />
-      </div>
+      <NavPills activeTab={activeTab} onTabChange={setActiveTab} lang={lang} />
 
       {/* Search query banner if active */}
       {searchQuery && (
