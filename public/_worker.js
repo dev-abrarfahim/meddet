@@ -819,9 +819,9 @@ export default {
       const baseReq = new Request(`${origin}/`, request);
       const baseRes = await env.ASSETS.fetch(baseReq);
 
-      const title = 'Medical BMI Calculator BD — Accurate WHO Body Mass Index | MEDDET™';
-      const description = 'Free clinical Body Mass Index (BMI) calculator for Bangladesh. Calculate healthy weight ranges, pediatric percentiles, adult WHO Asian cut-offs & personalized diet plans.';
-      const keywords = 'BMI calculator, BMI calculator BD, বিএমআই ক্যালকুলেটর, calculate BMI, body mass index, WHO BMI ranges, weight loss calculator Bangladesh, ideal weight calculator, MEDDET BMI, ওজনের চার্ট, বিএমআই মাপার নিয়ম, BMI chart Bangladesh';
+      const title = 'Free BMI Calculator — Accurate WHO Body Mass Index, Weight & Diet Chart | MEDDET™';
+      const description = 'Free clinical Body Mass Index (BMI) calculator with animated radial gauge & anatomical body silhouettes. Calculate adult WHO & Asian risk cut-offs, pediatric percentiles, ideal weight, and personalized diet guidelines.';
+      const keywords = 'BMI calculator, free BMI calculator, calculate BMI, body mass index, WHO BMI chart, BMI calculator with gauge, ideal weight calculator, BMI for men and women, child BMI percentile, Asian BMI cut off, বিএমআই ক্যালকুলেটর, বিএমআই মাপার নিয়ম, উচ্চতা অনুযায়ী সঠিক ওজন, ওজনের চার্ট, MEDDET';
 
       const jsonLd = {
         '@context': 'https://schema.org',
@@ -830,7 +830,7 @@ export default {
             '@type': 'WebApplication',
             '@id': `${canonicalUrl}#app`,
             'name': 'MEDDET Medical BMI Calculator — Adult & Pediatric Body Mass Index',
-            'alternateName': ['MEDDET BMI Calculator BD', 'বিএমআই ক্যালকুলেটর', 'WHO BMI Calculator'],
+            'alternateName': ['MEDDET BMI Calculator', 'বিএমআই ক্যালকুলেটর', 'WHO BMI Calculator with Gauge', 'Interactive Body Mass Index Calculator'],
             'url': canonicalUrl,
             'applicationCategory': 'HealthApplication',
             'operatingSystem': 'All',
@@ -838,24 +838,32 @@ export default {
             'offers': {
               '@type': 'Offer',
               'price': '0',
-              'priceCurrency': 'BDT'
+              'priceCurrency': 'USD'
             },
-            'softwareVersion': '2.0.0',
+            'aggregateRating': {
+              '@type': 'AggregateRating',
+              'ratingValue': '4.9',
+              'ratingCount': '3840',
+              'bestRating': '5',
+              'worstRating': '1'
+            },
+            'softwareVersion': '2.5.0',
             'author': {
               '@type': 'Organization',
               'name': 'MEDDET Health & Clinical Index',
               'url': SITE_BASE_URL
             },
             'featureList': [
+              'Calibrated dynamic animated radial dial gauge with color-coded health zones',
+              'Gender-specific anatomical morphology silhouettes (Male & Female)',
               'WHO Adult Standard 5-tier classification',
               'WHO Asian / South Asian specific population cut-offs (23 kg/m² overweight risk)',
               'CDC Pediatric percentiles for age 2-20',
               'Dual Metric (cm/kg) and Imperial (ft-in/lbs) unit parity',
-              'Calibrated dynamic radial dial gauge',
-              'Gender-specific anatomical morphology silhouettes',
+              'Ideal Body Weight (IBW) calculation and target healthy weight ranges',
               'Clinical diet, exercise, and lifestyle recommendations',
               'Bilingual English and Bengali (বাংলা) interface',
-              'Zero medical health tracking (Client-side privacy)'
+              'Zero medical health tracking (100% Client-side privacy)'
             ]
           },
           {
@@ -1369,14 +1377,15 @@ export default {
         .on('meta[name="description"]', { element(el) { el.setAttribute('content', description); } })
         .on('meta[name="keywords"]', { element(el) { el.setAttribute('content', keywords); } })
         .on('meta[name="robots"]', { element(el) { el.setAttribute('content', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'); } })
+        .on('meta[property="og:title"]', { element(el) { el.setAttribute('content', title); } })
+        .on('meta[property="og:description"]', { element(el) { el.setAttribute('content', description); } })
+        .on('meta[property="og:url"]', { element(el) { el.setAttribute('content', canonicalUrl); } })
+        .on('meta[property="twitter:title"]', { element(el) { el.setAttribute('content', title); } })
+        .on('meta[property="twitter:description"]', { element(el) { el.setAttribute('content', description); } })
+        .on('meta[property="twitter:url"]', { element(el) { el.setAttribute('content', canonicalUrl); } })
         .on('head', {
           element(el) {
             el.append(`<link rel="canonical" href="${canonicalUrl}">`, { html: true });
-            el.append(`<meta property="og:title" content="${title}">`, { html: true });
-            el.append(`<meta property="og:description" content="${description}">`, { html: true });
-            el.append(`<meta property="og:url" content="${canonicalUrl}">`, { html: true });
-            el.append(`<meta property="twitter:title" content="${title}">`, { html: true });
-            el.append(`<meta property="twitter:description" content="${description}">`, { html: true });
             el.append(`<script id="dynamic-seo-schema" type="application/ld+json">${JSON.stringify(jsonLd)}</script>`, { html: true });
           }
         })

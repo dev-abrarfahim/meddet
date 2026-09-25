@@ -930,6 +930,7 @@ export default function App() {
         onOpenFilters={() => setIsFiltersOpen(true)}
         onOpenSidebar={() => setIsSidebarOpen(true)}
         onGoHome={handleGoHome}
+        onNavigateToBmi={() => handleNavigatePage('/tools/bmi-calculator')}
       />
 
       {/* Secondary Sticky Search Header Toolbar */}

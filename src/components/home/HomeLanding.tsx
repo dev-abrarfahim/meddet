@@ -148,13 +148,17 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
             </div>
           </div>
 
-          <button
-            onClick={onNavigateTools}
-            className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#14967F] hover:bg-[#0D6F5D] text-white font-black text-xs shadow-md transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer"
+          <a
+            href="/tools/bmi-calculator"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigateTools();
+            }}
+            className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#14967F] hover:bg-[#0D6F5D] text-white font-black text-xs shadow-md transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer no-underline"
           >
-            <span>{lang === 'en' ? 'Explore Tools' : 'টুলস দেখুন'}</span>
+            <span>{lang === 'en' ? 'Open BMI Calculator' : 'বিএমআই ক্যালকুলেটর খুলুন'}</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </a>
         </div>
       )}
 

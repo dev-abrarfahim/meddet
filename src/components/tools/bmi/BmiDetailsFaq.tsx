@@ -16,6 +16,7 @@ interface AccordionItem {
 export const BmiDetailsFaq: React.FC<BmiDetailsFaqProps> = ({ lang = 'en' }) => {
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({
     intro: false,
+    interactiveFeatures: false,
     adultTable: false,
     asianCutoffs: false,
     childTable: false,
@@ -49,6 +50,25 @@ export const BmiDetailsFaq: React.FC<BmiDetailsFaqProps> = ({ lang = 'en' }) => 
             {lang === 'en'
               ? 'BMI categories differentiate individuals into underweight, normal healthy weight, overweight, and obese ranges. Maintaining a balanced BMI significantly reduces long-term metabolic and cardiovascular health risks.'
               : 'বিএমআই গণনার ভিত্তিতে মানুষকে কম ওজন, স্বাভাবিক ওজন, অতিরিক্ত ওজন কিংবা মেদবহুল শ্রেণীতে বিভক্ত করা হয়। সঠিক বিএমআই বজায় রাখা দীর্ঘমেয়াদী হৃদরোগ ও ডায়াবেটিসের ঝুঁকি উল্লেখযোগ্যভাবে হ্রাস করে।'}
+          </p>
+        </div>
+      )
+    },
+    {
+      key: 'interactiveFeatures',
+      titleEn: 'Interactive Animated Radial Gauge & Body Silhouette Guide',
+      titleBn: 'ইন্টারেক্টিভ ডায়াল গেজ (স্পিডোমিটার কাঁটা) ও শারীরিক গঠনের নির্দেশিকা',
+      renderContent: () => (
+        <div className="space-y-2">
+          <p>
+            {lang === 'en'
+              ? 'MEDDET provides a calibrated 180° semi-circular dynamic radial gauge meter that visually illustrates your exact BMI score along a smooth gradient from Severe Thinness (< 16.0) to Severe Obesity (≥ 40.0).'
+              : 'MEDDET-এর ডায়াল গেজে একটি ক্যালিব্রেটেড ১৮০° স্পিডোমিটার অ্যানিমেশন রয়েছে, যা আপনার নির্ভুল বিএমআই অনুযায়ী কাঁটা ঘুরিয়ে স্বাভাবিক ওজন, অতিরিক্ত ওজন বা স্থূলতার অবস্থান স্পষ্ট করে তোলে।'}
+          </p>
+          <p>
+            {lang === 'en'
+              ? 'Our dynamic gender-specific body silhouettes visually adapt to your calculated BMI category (Underweight, Normal, Overweight, Obese), giving clinicians and patients an instant morphological reference alongside WHO clinical criteria.'
+              : 'এছাড়া নারী ও পুরুষের শারীরিক গঠন অনুযায়ী বডি সিলুয়েট বা অ্যানাটমিক্যাল মডেল রয়েছে, যা বিএমআই স্কোরের পরিবর্তনের সাথে সাথে শারীরিক গড়নের পরিবর্তন সুন্দরভাবে ফুটিয়ে তোলে।'}
           </p>
         </div>
       )

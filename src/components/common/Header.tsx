@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Moon, SlidersHorizontal, Menu } from 'lucide-react';
+import { Sun, Moon, SlidersHorizontal, Menu, Calculator } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface HeaderProps {
@@ -8,6 +8,7 @@ interface HeaderProps {
   onOpenFilters: () => void;
   onOpenSidebar: () => void;
   onGoHome: () => void;
+  onNavigateToBmi?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -15,7 +16,8 @@ export const Header: React.FC<HeaderProps> = ({
   onToggleDarkMode,
   onOpenFilters,
   onOpenSidebar,
-  onGoHome
+  onGoHome,
+  onNavigateToBmi
 }) => {
   return (
     <header className="sticky top-0 z-30 bg-[#095D7E] dark:bg-[#0B1927] border-b border-transparent dark:border-[#1E3A52] text-white shadow-md transition-colors duration-300">
@@ -53,6 +55,23 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Right Navigation Actions */}
         <nav aria-label="Main Navigation" className="flex items-center gap-1.5 sm:gap-2">
+
+          {/* Direct BMI Calculator Link (Crawlable Anchor for Search Engines) */}
+          <a
+            href="/tools/bmi-calculator"
+            onClick={(e) => {
+              if (onNavigateToBmi) {
+                e.preventDefault();
+                onNavigateToBmi();
+              }
+            }}
+            id="header-bmi-calculator-link"
+            title="Medical BMI Calculator"
+            className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#14967F] hover:bg-[#11806C] border border-[#CCECEE]/30 text-xs font-black text-[#E2FCD6] transition-all shadow-xs cursor-pointer no-underline"
+          >
+            <Calculator className="w-3.5 h-3.5 text-[#E2FCD6]" />
+            <span>BMI Calculator</span>
+          </a>
 
           {/* Filter Drawer Trigger */}
           <button
