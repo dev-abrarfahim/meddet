@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect, useRef } from 'react';
 import { BmiCalculationResult, BmiCategoryInfo } from '../../../types/bmi';
 import { LanguageMode } from '../../../types';
-import { kgToLbs } from '../../../utils/bmiCalculator';
+import { kgToLbs, getBmiCategory } from '../../../utils/bmiCalculator';
 import { Activity, Scale } from 'lucide-react';
 
 interface BmiGaugeProps {
@@ -74,16 +74,50 @@ function fitFont(text: string, arcLen: number, opts?: { max?: number; min?: numb
   return Math.max(o.min, Math.min(o.max, size));
 }
 
+/**
+ * Calibrated piece-wise linear interpolation mapping clinical BMI values
+ * directly to the exact angular bounds of the SVG dial segments:
+ * - Underweight (< 18.5)      -> Arc [180°, 144°]
+ * - Normal (18.5 - 24.9)      -> Arc [144°, 108°]
+ * - Overweight (25.0 - 29.9)  -> Arc [108°, 72°]
+ * - Obese (30.0 - 34.9)       -> Arc [72°, 36°]
+ * - Extremely Obese (>= 35.0) -> Arc [36°, 0°]
+ */
 function bmiToAngle(val: number): number {
-  const MIN = 15, MAX = 40;
-  const clamped = Math.max(MIN, Math.min(MAX, val));
-  return 180 - ((clamped - MIN) / (MAX - MIN)) * 180;
+  if (isNaN(val) || val <= 0) return 180;
+
+  if (val < 18.5) {
+    const minBmi = 12.0;
+    const clamped = Math.max(minBmi, val);
+    const fraction = (clamped - minBmi) / (18.5 - minBmi);
+    return 180 - fraction * 36;
+  }
+
+  if (val < 25.0) {
+    const fraction = (val - 18.5) / (25.0 - 18.5);
+    return 144 - fraction * 36;
+  }
+
+  if (val < 30.0) {
+    const fraction = (val - 25.0) / (30.0 - 25.0);
+    return 108 - fraction * 36;
+  }
+
+  if (val < 35.0) {
+    const fraction = (val - 30.0) / (35.0 - 30.0);
+    return 72 - fraction * 36;
+  }
+
+  const maxBmi = 45.0;
+  const clamped = Math.min(maxBmi, val);
+  const fraction = (clamped - 35.0) / (maxBmi - 35.0);
+  return 36 - fraction * 36;
 }
 
 export const BmiGauge: React.FC<BmiGaugeProps> = ({ result, bmi: propBmi, category: propCategory, lang = 'en' }) => {
   const hasResult = Boolean(result || propBmi !== undefined);
   const bmi = propBmi ?? result?.bmi ?? 0;
-  const category = propCategory ?? result?.category;
+  const category = propCategory ?? result?.category ?? (bmi > 0 ? getBmiCategory(bmi) : undefined);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
