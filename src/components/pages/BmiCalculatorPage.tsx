@@ -102,7 +102,112 @@ export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
   };
 
   return (
-    <div className="max-w-7xl mx-auto space-y-1.5 animate-in fade-in duration-200 pb-12">
+    <div className="max-w-7xl mx-auto space-y-2 animate-in fade-in duration-200 pb-12">
+
+      {/* 0. Clinical Breadcrumbs & Semantic Hero Header */}
+      <header className="bg-white dark:bg-[#152232] rounded-2xl border border-[#CCECEE] dark:border-[#243B53] p-4 sm:p-5 shadow-xs">
+        {/* Breadcrumb Navigation with Schema.org Microdata */}
+        <nav aria-label="Breadcrumb" className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 mb-2.5 flex items-center gap-1.5 flex-wrap">
+          <a
+            href="/"
+            onClick={(e) => {
+              if (_onGoHome) {
+                e.preventDefault();
+                _onGoHome();
+              } else if (_onNavigate) {
+                e.preventDefault();
+                _onNavigate('/');
+              }
+            }}
+            className="hover:text-[#14967F] dark:hover:text-[#2DD4BF] font-semibold transition-colors"
+          >
+            {lang === 'en' ? 'Home' : 'হোম'}
+          </a>
+          <span className="text-slate-300 dark:text-slate-600">/</span>
+          <a
+            href="/tools"
+            onClick={(e) => {
+              if (_onNavigate) {
+                e.preventDefault();
+                _onNavigate('/tools');
+              }
+            }}
+            className="hover:text-[#14967F] dark:hover:text-[#2DD4BF] font-semibold transition-colors"
+          >
+            {lang === 'en' ? 'Medical Tools' : 'মেডিকেল টুলস'}
+          </a>
+          <span className="text-slate-300 dark:text-slate-600">/</span>
+          <span className="text-[#095D7E] dark:text-[#2DD4BF] font-bold">
+            {lang === 'en' ? 'BMI Calculator Online' : 'অনলাইন বিএমআই ক্যালকুলেটর'}
+          </span>
+        </nav>
+
+        {/* Primary Semantic H1 Heading */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#E2FCD6] dark:bg-[#064E3B] text-[#0D6F5D] dark:text-[#6EE7B7] text-[11px] font-black uppercase tracking-wider mb-1.5">
+              <span>●</span>
+              <span>{lang === 'en' ? 'WHO & CDC Clinical Reference (2026 Edition)' : 'বিশ্ব স্বাস্থ্য সংস্থা (WHO) ও সিডিসি ক্লিনিক্যাল মানদণ্ড'}</span>
+            </div>
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#095D7E] dark:text-slate-100 tracking-tight leading-tight">
+              {lang === 'en'
+                ? 'BMI Calculator Online — Accurate WHO Body Mass Index & Ideal Weight'
+                : 'অনলাইন বিএমআই ক্যালকুলেটর — ডব্লিউএইচও মানসম্মত বডি ম্যাস ইনডেক্স ও আদর্শ ওজন'}
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 max-w-3xl leading-relaxed">
+              {lang === 'en'
+                ? 'Free online clinical Body Mass Index (BMI) calculator. Calculate accurate BMI for adult men, women, and children with interactive radial gauge visualizer, anatomical body silhouettes, WHO Asian risk cut-offs, ideal weight chart, and personalized dietary advice.'
+                : 'সকলের জন্য সম্পূর্ণ ফ্রি অনলাইন বিএমআই ক্যালকুলেটর। প্রাপ্তবয়স্ক নারী, পুরুষ এবং শিশু-কিশোরদের নির্ভুল বডি ম্যাস ইনডেক্স, ইন্টারেক্টিভ স্পিডোমিটার গেজ, শারীরিক গড়ন মডেল, দক্ষিণ এশীয় ঝুঁকির মাত্রা এবং উচ্চতা অনুযায়ী আদর্শ ওজনের পুষ্টি পরামর্শ নিন।'}
+            </p>
+          </div>
+        </div>
+
+        {/* Clinical Trust Badges & Quick Jump Pills */}
+        <div className="pt-3 border-t border-slate-100 dark:border-slate-800/80 mt-3 flex items-center justify-between flex-wrap gap-2 text-xs">
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[11px] font-bold">
+              ✓ {lang === 'en' ? 'Metric (kg/cm) & Imperial (lbs/ft)' : 'মেট্রিক (কেজি/সেমি) ও ইম্পেরিয়াল (পাউন্ড/ফুট)'}
+            </span>
+            <span className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[11px] font-bold">
+              ✓ {lang === 'en' ? 'Asian Specific Cut-Offs (23 kg/m²)' : 'এশীয় জনগোষ্ঠীর জন্য বিশেষ মানদণ্ড (২৩ কেজি/মি²)'}
+            </span>
+            <span className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[11px] font-bold">
+              ✓ {lang === 'en' ? 'CDC Pediatric Growth (Age 2-19)' : 'শিশু ও কিশোরদের সিডিসি পার্সেন্টাইল'}
+            </span>
+            <span className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-[11px] font-bold">
+              ✓ {lang === 'en' ? '100% Private (Zero Data Tracking)' : 'সম্পূর্ণ গোপনীয় (কোন ডাটা সংগ্রহ করা হয় না)'}
+            </span>
+          </div>
+
+          {/* Quick Anchor Jump Links */}
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <a
+              href="#who-table"
+              className="text-[11px] font-bold text-[#14967F] dark:text-[#2DD4BF] hover:underline px-2 py-1 rounded bg-[#E2FCD6]/40 dark:bg-[#064E3B]/30"
+            >
+              {lang === 'en' ? '📊 WHO Table' : '📊 WHO চার্ট'}
+            </a>
+            <a
+              href="#ideal-weight-chart"
+              className="text-[11px] font-bold text-[#14967F] dark:text-[#2DD4BF] hover:underline px-2 py-1 rounded bg-[#E2FCD6]/40 dark:bg-[#064E3B]/30"
+            >
+              {lang === 'en' ? '⚖️ Ideal Weight' : '⚖️ আদর্শ ওজন'}
+            </a>
+            <a
+              href="#bmi-formulas"
+              className="text-[11px] font-bold text-[#14967F] dark:text-[#2DD4BF] hover:underline px-2 py-1 rounded bg-[#E2FCD6]/40 dark:bg-[#064E3B]/30"
+            >
+              {lang === 'en' ? '📐 Formulas' : '📐 সূত্র'}
+            </a>
+            <a
+              href="#clinical-faqs"
+              className="text-[11px] font-bold text-[#14967F] dark:text-[#2DD4BF] hover:underline px-2 py-1 rounded bg-[#E2FCD6]/40 dark:bg-[#064E3B]/30"
+            >
+              {lang === 'en' ? '❓ FAQs' : '❓ প্রশ্নোত্তর'}
+            </a>
+          </div>
+        </div>
+      </header>
 
       {/* Responsive Navigation Pills / Tab Bar */}
       <NavPills activeTab={activeTab} onTabChange={setActiveTab} lang={lang} />
@@ -132,7 +237,7 @@ export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-2.5 items-start">
           
           {/* Left Column: Calculator Card & Patient Biometric Summary */}
-          <div className="lg:col-span-5 space-y-1.5 sm:space-y-2 lg:sticky lg:top-20">
+          <div id="bmi-calculator-tool" className="lg:col-span-5 space-y-1.5 sm:space-y-2 lg:sticky lg:top-20">
             {/* 1. Primary Calculator Input Card */}
             <BmiCalculatorCard
               age={inputAge}

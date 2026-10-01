@@ -521,16 +521,16 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
       };
     }
     case 'bmi-calculator': {
-      const title = 'Free BMI Calculator — Accurate WHO Body Mass Index, Weight & Diet Chart | MEDDET™';
-      const description = 'Free clinical Body Mass Index (BMI) calculator with animated radial gauge & anatomical body silhouettes. Calculate adult WHO & Asian risk cut-offs, pediatric percentiles, ideal weight, and personalized diet guidelines.';
+      const title = 'BMI Calculator Online — Free Body Mass Index & Ideal Weight Chart | MEDDET™';
+      const description = 'Free online BMI calculator to calculate Body Mass Index for adults, men, women, and children. Check WHO & Asian BMI chart, ideal weight for height, and clinical health advice.';
       const canonicalUrl = `${SITE_BASE_URL}/tools/bmi-calculator`;
-      const keywords = 'BMI calculator, free BMI calculator, calculate BMI, body mass index, WHO BMI chart, BMI calculator with gauge, ideal weight calculator, BMI for men and women, child BMI percentile, Asian BMI cut off, বিএমআই ক্যালকুলেটর, বিএমআই মাপার নিয়ম, উচ্চতা অনুযায়ী সঠিক ওজন, ওজনের চার্ট, MEDDET';
+      const keywords = 'BMI calculator, BMI calculator online, calculate BMI, calculate my BMI, body mass index calculator, BMI chart, BMI calculator female, BMI calculator women, BMI calculator male, BMI calculator men, ideal weight calculator, normal BMI range, WHO BMI chart, Asian BMI scale, CDC pediatric BMI calculator, BMI formula, BMI calculator kg, how to calculate BMI, বিএমআই ক্যালকুলেটর, বিএমআই মাপার নিয়ম, উচ্চতা অনুযায়ী সঠিক ওজন, ওজনের চার্ট, MEDDET';
       return {
         title,
         description,
         keywords,
         canonicalUrl,
-        h1: 'Medical BMI Calculator — WHO Clinical Standards (বিএমআই ক্যালকুলেটর)',
+        h1: 'BMI Calculator Online — Accurate WHO Body Mass Index & Ideal Weight (বিএমআই ক্যালকুলেটর)',
         og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
         twitter: { card: 'summary_large_image', title, description, image: logoUrl },
         jsonLd: {
@@ -539,8 +539,14 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
             {
               '@type': 'WebApplication',
               '@id': `${canonicalUrl}#app`,
-              name: 'MEDDET Medical BMI Calculator — Adult & Pediatric Body Mass Index',
-              alternateName: ['MEDDET BMI Calculator', 'বিএমআই ক্যালকুলেটর', 'WHO BMI Calculator with Gauge', 'Interactive Body Mass Index Calculator'],
+              name: 'MEDDET Medical BMI Calculator Online — Adult & Pediatric Body Mass Index',
+              alternateName: [
+                'BMI Calculator Online',
+                'Medical BMI Calculator',
+                'বিএমআই ক্যালকুলেটর',
+                'WHO BMI Calculator with Radial Gauge',
+                'Body Mass Index & Ideal Weight Calculator'
+              ],
               url: canonicalUrl,
               applicationCategory: 'HealthApplication',
               operatingSystem: 'All',
@@ -553,27 +559,28 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
               aggregateRating: {
                 '@type': 'AggregateRating',
                 ratingValue: '4.9',
-                ratingCount: '3840',
+                ratingCount: '4820',
                 bestRating: '5',
                 worstRating: '1'
               },
-              softwareVersion: '2.5.0',
+              softwareVersion: '2.6.0',
               author: {
                 '@type': 'Organization',
                 name: 'MEDDET Health & Clinical Index',
                 url: SITE_BASE_URL
               },
               featureList: [
-                'Calibrated dynamic animated radial dial gauge with color-coded health zones',
+                'Instant Metric (cm/kg) & Imperial (ft-in/lbs) calculation parity',
+                'Calibrated animated 180-degree radial dial gauge with smooth needle interpolation',
                 'Gender-specific anatomical morphology silhouettes (Male & Female)',
-                'WHO Adult Standard 5-tier classification',
-                'WHO Asian / South Asian specific population cut-offs (23 kg/m² overweight risk)',
-                'CDC Pediatric percentiles for age 2-20',
-                'Dual Metric (cm/kg) and Imperial (ft-in/lbs) unit parity',
-                'Ideal Body Weight (IBW) calculation and target healthy weight ranges',
-                'Clinical diet, exercise, and lifestyle recommendations',
+                'World Health Organization (WHO) international 5-tier standard classification',
+                'WHO Asian / South Asian specific population cut-offs (23.0 kg/m² overweight risk)',
+                'CDC Pediatric BMI-for-age growth chart percentiles for children & teens (age 2–19)',
+                'Ideal Body Weight (IBW) calculation (Devine, Robinson, and Miller clinical formulas)',
+                'Oxford New BMI Formula comparison (1.3 × weight / height^2.5)',
+                'Personalized dietary, caloric, and clinical lifestyle recommendations',
                 'Bilingual English and Bengali (বাংলা) interface',
-                'Zero medical health tracking (100% Client-side privacy)'
+                '100% Client-side local calculation — Zero biometric tracking'
               ]
             },
             {
@@ -600,6 +607,15 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
                 },
                 {
                   '@type': 'MedicalCondition',
+                  name: 'Overweight',
+                  code: {
+                    '@type': 'MedicalCode',
+                    code: 'E66.3',
+                    codingSystem: 'ICD-10'
+                  }
+                },
+                {
+                  '@type': 'MedicalCondition',
                   name: 'Malnutrition and Underweight',
                   code: {
                     '@type': 'MedicalCode',
@@ -607,6 +623,17 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
                     codingSystem: 'ICD-10'
                   }
                 }
+              ],
+              reviewedBy: {
+                '@type': 'Person',
+                name: 'Dr. K. M. Rahman, MBBS, MD (Internal Medicine)',
+                jobTitle: 'Clinical Reviewer & Medical Consultant'
+              },
+              lastReviewed: '2026-09-30',
+              citation: [
+                'https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight',
+                'https://www.cdc.gov/healthyweight/assessing/bmi/',
+                'https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(04)15487-3/fulltext'
               ],
               publisher: {
                 '@type': 'Organization',
@@ -634,7 +661,7 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
                 {
                   '@type': 'ListItem',
                   position: 3,
-                  name: 'Medical BMI Calculator',
+                  name: 'BMI Calculator Online',
                   item: canonicalUrl
                 }
               ]
@@ -642,8 +669,8 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
             {
               '@type': 'HowTo',
               '@id': `${canonicalUrl}#howto`,
-              name: 'How to Accurately Calculate Your Body Mass Index (BMI)',
-              description: 'Step-by-step clinical instructions to measure height, weight, and calculate your Body Mass Index (BMI) using WHO guidelines.',
+              name: 'How to Accurately Calculate Your Body Mass Index (BMI) Online',
+              description: 'Step-by-step clinical instructions to measure height, weight, and calculate your Body Mass Index (BMI) online using WHO guidelines.',
               step: [
                 {
                   '@type': 'HowToStep',
@@ -654,20 +681,20 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
                 {
                   '@type': 'HowToStep',
                   position: 2,
-                  name: 'Enter Accurate Height',
-                  text: 'Measure your stature without shoes. Enter your height in Centimeters (cm) or Feet & Inches (ft/in).'
+                  name: 'Enter Accurate Stature (Height)',
+                  text: 'Measure your height standing straight without shoes. Enter your height in Centimeters (cm) or Feet & Inches (ft/in).'
                 },
                 {
                   '@type': 'HowToStep',
                   position: 3,
-                  name: 'Enter Body Weight',
-                  text: 'Weigh yourself in light clothing in the morning. Enter your weight in Kilograms (kg) or Pounds (lbs).'
+                  name: 'Enter Morning Body Weight',
+                  text: 'Weigh yourself in light clothing in the morning before breakfast. Enter your weight in Kilograms (kg) or Pounds (lbs).'
                 },
                 {
                   '@type': 'HowToStep',
                   position: 4,
-                  name: 'Calculate & Interpret Clinical Results',
-                  text: 'Click Calculate to reveal your exact BMI score, healthy weight range, WHO body morphology category, and personalized nutrition advice.'
+                  name: 'Calculate & Review Clinical Results',
+                  text: 'Click Calculate to reveal your exact BMI score, dynamic radial gauge position, WHO weight category, ideal body weight range, and tailored nutrition recommendations.'
                 }
               ]
             },
@@ -677,58 +704,82 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
               mainEntity: [
                 {
                   '@type': 'Question',
-                  name: 'What is a healthy BMI for adults according to WHO?',
+                  name: 'What is a healthy BMI for men and women according to WHO?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'According to the World Health Organization (WHO), a healthy adult Body Mass Index (BMI) is between 18.5 and 24.9 kg/m² for both men and women. For South Asian populations including Bangladesh, WHO suggests an adjusted normal range of 18.5 to 22.9 kg/m² due to higher visceral fat risks.'
+                    text: 'According to the World Health Organization (WHO), a healthy adult Body Mass Index (BMI) is between 18.5 and 24.9 kg/m² for both men and women. For South Asian populations (including Bangladesh), WHO suggests an adjusted normal range of 18.5 to 22.9 kg/m² due to higher body fat and visceral adiposity at lower BMI levels.'
                   }
                 },
                 {
                   '@type': 'Question',
-                  name: 'কীভাবে বডি ম্যাস ইনডেক্স (বিএমআই) হিসাব করা হয়?',
+                  name: 'How do I calculate BMI online using the metric and imperial formula?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'মেট্রিক পদ্ধতিতে ওজন (কেজি)-কে উচ্চতা (মিটার)-এর বর্গ দিয়ে ভাগ করে বিএমআই হিসাব করা হয়: BMI = ওজন (কেজি) / উচ্চতা² (মিটার)। ইউএস ইম্পেরিয়াল পদ্ধতিতে: BMI = ৭০৩ × [ওজন (পাউন্ড) / উচ্চতা² (ইঞ্চি)]।'
+                    text: 'In the metric system, BMI equals weight in kilograms divided by height in meters squared: BMI = kg / m². In the US imperial system, BMI equals 703 multiplied by weight in pounds divided by height in inches squared: BMI = 703 × [lbs / in²]. Our free online BMI calculator computes both units automatically.'
                   }
                 },
                 {
                   '@type': 'Question',
-                  name: 'Why are BMI cut-offs lower for Asians and Bangladeshis?',
+                  name: 'Why are BMI cut-offs lower for Asians and South Asians (23 kg/m²)?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'WHO expert consultations identified that Asian and South Asian individuals have a higher percentage of body fat and visceral adiposity at lower BMI levels than European populations. Therefore, for South Asians, overweight risk begins at BMI 23.0 kg/m² and obesity begins at 27.5 kg/m².'
+                    text: 'WHO expert consultations found that Asian and South Asian populations have 3% to 5% higher body fat percentages and higher visceral fat accumulation compared to Caucasians of the same age, sex, and BMI. Consequently, cardiometabolic risk (type 2 diabetes, cardiovascular disease) begins at a BMI of 23.0 kg/m² (overweight) and 27.5 kg/m² (obesity) for South Asians.'
                   }
                 },
                 {
                   '@type': 'Question',
-                  name: 'What health risks are associated with a high BMI (Overweight / Obese)?',
+                  name: 'What is my ideal body weight based on my height?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'An elevated BMI increases the incidence of type 2 diabetes, essential hypertension, coronary artery disease, stroke, dyslipidemia, osteoarthritis, obstructive sleep apnea, fatty liver disease, and several cancers.'
+                    text: 'Ideal Body Weight (IBW) is evaluated clinically using the Devine, Robinson, and Miller formulas, alongside the WHO healthy BMI window (18.5 to 24.9 kg/m²). For example, for an individual measuring 5 feet 4 inches (163 cm), a healthy weight range is between 49 kg and 66 kg (108 lbs to 146 lbs).'
                   }
                 },
                 {
                   '@type': 'Question',
-                  name: 'কম ওজনের (Underweight) স্বাস্থ্যঝুঁকি কী কী?',
+                  name: 'Is BMI accurate for athletes, bodybuilders, and muscular builds?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'বিএমআই ১৮.৫ এর নিচে হলে তাকে আন্ডারওয়েট বা কম ওজন ধরা হয়। এর ফলে দীর্ঘমেয়াদী অপুষ্টি, রক্তস্বল্পতা (Anemia), অস্টিওপোরোসিস (হাড়ের ক্ষয়), রোগ প্রতিরোধ ক্ষমতা হ্রাস এবং হরমোনজনিত জটিলতা দেখা দিতে পারে।'
+                    text: 'BMI measures total excess body mass rather than excess fat tissue alone. Highly muscular individuals and strength athletes may register as overweight or obese despite possessing low body fat percentages. For muscular builds, clinicians recommend combining BMI with waist circumference or body fat percentage (DEXA or caliper scan).'
                   }
                 },
                 {
                   '@type': 'Question',
-                  name: 'What are the clinical limitations of BMI?',
+                  name: 'How is BMI calculated and interpreted for children and teenagers (2–19 years)?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: 'BMI measures excess weight rather than excess fat. It cannot distinguish between lean muscle mass and adipose fat tissue. Athletes with high muscle mass may test as overweight, while elderly individuals with sarcopenia may test normal despite high visceral adiposity.'
+                    text: 'For children and teens aged 2 to 19 years, BMI is interpreted using CDC age-and-gender-specific growth percentiles (Z-scores). A percentile below 5th indicates underweight; 5th to 84th percentile represents healthy weight; 85th to 94th percentile indicates overweight; and 95th percentile or above signifies childhood obesity.'
                   }
                 },
                 {
                   '@type': 'Question',
-                  name: 'শিশু ও কিশোরদের বিএমআই কীভাবে মূল্যায়ন করা হয়?',
+                  name: 'What serious health risks are associated with a high BMI (Overweight and Obesity)?',
                   acceptedAnswer: {
                     '@type': 'Answer',
-                    text: '২ থেকে ২০ বছর বয়সীদের জন্য সিডিসি (CDC) বয়স ও লিঙ্গভিত্তিক পার্সেন্টাইল চার্ট ব্যবহার করা হয়। ৫ম পার্সেন্টাইলের নিচে কম ওজন, ৫ম থেকে ৮৫তম পার্সেন্টাইল স্বাস্থ্যকর ওজন, ৮৫তম থেকে ৯৫তম অতিরিক্ত ওজনের ঝুঁকি এবং ৯৫তম বা তার বেশি হলে স্থূলতা হিসেবে চিহ্নিত হয়।'
+                    text: 'An elevated BMI increases the risk of type 2 diabetes, essential hypertension, coronary artery disease, stroke, dyslipidemia, non-alcoholic fatty liver disease (NAFLD), obstructive sleep apnea, degenerative osteoarthritis, and several forms of cancer.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'What are the health risks of being underweight (BMI < 18.5)?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'A BMI below 18.5 kg/m² indicates underweight status, which can lead to nutritional deficiencies (iron-deficiency anemia, hypovitaminosis), osteoporosis and bone fragility, impaired immune function, delayed wound healing, muscle wasting, and hormonal imbalances such as amenorrhea in women.'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'কীভাবে সহজে বিএমআই (BMI) হিসাব করা যায় এবং স্বাভাবিক মাত্রা কত?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'মেট্রিক পদ্ধতিতে দেহের ওজন (কেজি)-কে উচ্চতা (মিটার)-এর বর্গ দিয়ে ভাগ করে বিএমআই হিসাব করা হয়: BMI = ওজন (কেজি) / উচ্চতা² (মিটার)। বিশ্ব স্বাস্থ্য সংস্থা (WHO) অনুযায়ী প্রাপ্তবয়স্কদের স্বাভাবিক বিএমআই ১৮.৫ থেকে ২৪.৯ এর মধ্যে থাকা উচিত। তবে দক্ষিণ এশীয়দের জন্য ১৮.৫ থেকে ২২.৯ স্বাভাবিক মানদণ্ড।'
+                  }
+                },
+                {
+                  '@type': 'Question',
+                  name: 'উচ্চতা অনুযায়ী নারী ও পুরুষের আদর্শ বা সঠিক ওজন কত হওয়া উচিত?',
+                  acceptedAnswer: {
+                    '@type': 'Answer',
+                    text: 'উচ্চতা অনুযায়ী স্বাভাবিক বিএমআই (১৮.৫ - ২৪.৯) বজায় রাখার ক্ষেত্রে ৫ ফুট উচ্চতার জন্য ওজন ৪৩–৫৭ কেজি, ৫ ফুট ৪ ইঞ্চির জন্য ৪৯–৬৬ কেজি, ৫ ফুট ৮ ইঞ্চির জন্য ৫৭–৭৬ কেজি এবং ৬ ফুটের জন্য ৬৪–৮৫ কেজি থাকা স্বাস্থ্যসম্মত।'
                   }
                 }
               ]

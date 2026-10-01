@@ -17,6 +17,7 @@
     "test:seo": "node scripts/testSeoArchitecture.js"
   },
   "dependencies": {
+    "@microsoft/clarity": "^1.0.2",
     "@tailwindcss/vite": "^4.1.14",
     "@vitejs/plugin-react": "^5.0.4",
     "lucide-react": "^0.546.0",

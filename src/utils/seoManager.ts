@@ -6,6 +6,7 @@ import {
   generateStaticPageMetadata,
   SEOMetadata
 } from './urlHelper';
+import { setClarityTag, trackClarityEvent } from './clarity';
 
 export interface SEOProps {
   title?: string;
@@ -102,6 +103,28 @@ export function updateDynamicSEO(props: SEOProps) {
         page_title: meta.title,
         page_location: meta.canonicalUrl
       });
+    }
+  } catch {}
+
+  // 8. Microsoft Clarity Dynamic Behavioral Tracking & Route Tagging
+  try {
+    if (typeof window !== 'undefined') {
+      const pageType = props.medicine
+        ? 'medicine'
+        : props.generic
+        ? 'generic'
+        : props.dosageForm
+        ? 'dosage-form'
+        : props.manufacturer
+        ? 'company'
+        : props.staticPage
+        ? `static-${props.staticPage}`
+        : props.searchQuery
+        ? 'search'
+        : 'home';
+
+      setClarityTag('page_type', pageType);
+      trackClarityEvent('page_view');
     }
   } catch {}
 }

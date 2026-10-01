@@ -117,8 +117,8 @@ let coreXml = `<?xml version="1.0" encoding="UTF-8"?>
     <url>
         <loc>${baseUrl}/tools/bmi-calculator</loc>
         <lastmod>${today}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.90</priority>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
     </url>
 `;
 
