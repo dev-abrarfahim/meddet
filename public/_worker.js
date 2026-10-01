@@ -808,7 +808,7 @@ export default {
 
       const responseHeaders = new Headers(transformed.headers);
       responseHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
-      responseHeaders.set('Cache-Control', 'public, max-age=86400, s-maxage=604800');
+      responseHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=60, stale-while-revalidate=86400');
 
       return new Response(transformed.body, { status: 200, headers: responseHeaders });
     }
@@ -1503,7 +1503,7 @@ export default {
       const responseHeaders = new Headers(transformed.headers);
       responseHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
       responseHeaders.set('X-Robots-Tag', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
-      responseHeaders.set('Cache-Control', 'public, max-age=86400, s-maxage=604800');
+      responseHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=60, stale-while-revalidate=86400');
 
       return new Response(transformed.body, { status: 200, headers: responseHeaders });
     }
@@ -1560,7 +1560,7 @@ export default {
 
       const responseHeaders = new Headers(transformed.headers);
       responseHeaders.set('Link', `<${canonicalUrl}>; rel="canonical"`);
-      responseHeaders.set('Cache-Control', 'public, max-age=86400, s-maxage=604800');
+      responseHeaders.set('Cache-Control', 'public, max-age=0, s-maxage=60, stale-while-revalidate=86400');
 
       return new Response(transformed.body, { status: 200, headers: responseHeaders });
     }
