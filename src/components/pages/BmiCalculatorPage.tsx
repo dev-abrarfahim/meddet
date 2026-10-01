@@ -293,8 +293,11 @@ export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
             </div>
           </div>
 
-          {/* Right Column: Visual Silhouettes, Gauge & Reference Details */}
+          {/* Right Column: Radial Dial Gauge, Visual Silhouettes & Reference Details */}
           <div id="bmi-results-section" className="lg:col-span-7 space-y-1.5 sm:space-y-2">
+            {/* 1. Semi-Circular Radial Dial Gauge with Merged Clinical Anthropometric Metrics */}
+            <BmiGauge result={result} lang={lang} />
+
             {/* 2. Body Silhouette Row */}
             <BodySilhouetteRow
               currentCategory={result ? result.category.key : null}
@@ -304,10 +307,7 @@ export const BmiCalculatorPage: React.FC<BmiCalculatorPageProps> = ({
               lang={lang}
             />
 
-            {/* 3. Semi-Circular Radial Dial Gauge with Merged Clinical Anthropometric Metrics */}
-            <BmiGauge result={result} lang={lang} />
-
-            {/* 4. Clinical Monograph Accordions FAQ Reference Section */}
+            {/* 3. Clinical Monograph Accordions FAQ Reference Section */}
             <BmiDetailsFaq lang={lang} />
           </div>
         </div>
