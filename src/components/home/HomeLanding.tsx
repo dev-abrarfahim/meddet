@@ -21,13 +21,15 @@ interface HomeLandingProps {
   onSelectMedicine: (med: Medicine) => void;
   lang: LanguageMode;
   onNavigateTools?: () => void;
+  onNavigateCompanies?: () => void;
 }
 
 export const HomeLanding: React.FC<HomeLandingProps> = ({
   onGoToSearch,
   onSelectMedicine,
   lang,
-  onNavigateTools
+  onNavigateTools,
+  onNavigateCompanies
 }) => {
   const [heroQuery, setHeroQuery] = useState('');
 
@@ -255,10 +257,32 @@ export const HomeLanding: React.FC<HomeLandingProps> = ({
       {/* TOP PHARMA MANUFACTURERS */}
       <section className="space-y-3 pt-2">
         <div className="flex items-center justify-between">
-          <h2 className="text-base sm:text-xl md:text-2xl font-black text-[#095D7E] dark:text-slate-100 flex items-center gap-2">
+          <a
+            href="/companies"
+            onClick={(e) => {
+              if (onNavigateCompanies) {
+                e.preventDefault();
+                onNavigateCompanies();
+              }
+            }}
+            className="group flex items-center gap-2 text-base sm:text-xl md:text-2xl font-black text-[#095D7E] dark:text-slate-100 hover:text-[#14967F] transition-colors"
+          >
             <img src="/icons/pharmaceutical.webp" alt="Pharma Manufacturers" className="w-6 h-6 sm:w-7 sm:h-7 object-contain shrink-0" loading="lazy" />
-            <span>{lang === 'en' ? 'Top Pharma Manufacturers' : 'শীর্ষ ফার্মাসিউটিক্যালস'}</span>
-          </h2>
+            <span className="group-hover:underline">{lang === 'en' ? 'Top Pharma Manufacturers' : 'শীর্ষ ফার্মাসিউটিক্যালস'}</span>
+          </a>
+
+          {onNavigateCompanies && (
+            <a
+              href="/companies"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigateCompanies();
+              }}
+              className="text-xs sm:text-sm font-black text-[#14967F] dark:text-[#2DD4BF] hover:underline cursor-pointer"
+            >
+              {lang === 'en' ? 'View All 723 Companies' : 'সব ৭২৩টি কোম্পানি'} →
+            </a>
+          )}
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">

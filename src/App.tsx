@@ -26,7 +26,8 @@ import {
   CompaniesPage,
   ApiDocsPage,
   ToolsPage,
-  BmiCalculatorPage
+  BmiCalculatorPage,
+  CookieConsentBanner
 } from './components';
 
 import { Medicine, FilterOptions, LanguageMode } from './types';
@@ -1082,6 +1083,7 @@ export default function App() {
               onSelectMedicine={handleSelectMedicine}
               lang={lang}
               onNavigateTools={() => handleNavigatePage('/tools')}
+              onNavigateCompanies={() => handleNavigatePage('/companies')}
             />
           </div>
         ) : (
@@ -1283,7 +1285,10 @@ export default function App() {
         )}
 
         {/* Global Footer (Rendered on ALL Pages) */}
-        <MedicalDisclaimer onOpenApiDocs={() => handleNavigatePage('/api-docs')} />
+        <MedicalDisclaimer
+          onOpenApiDocs={() => handleNavigatePage('/api-docs')}
+          onNavigate={handleNavigatePage}
+        />
 
       </main>
 
@@ -1337,6 +1342,9 @@ export default function App() {
         isDarkMode={isDarkMode}
         onToggleDarkMode={toggleDarkMode}
       />
+
+      {/* Cookie Consent & Privacy Preference Banner (GDPR / Google Consent Mode v2) */}
+      <CookieConsentBanner lang={lang} onNavigate={handleNavigatePage} />
 
     </div>
   );

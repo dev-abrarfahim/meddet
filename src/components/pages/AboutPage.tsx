@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Database, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
+import { ShieldCheck, Database, CheckCircle2, ArrowRight, Sparkles, BookOpen, Stethoscope, Lock, Building2 } from 'lucide-react';
 import { LanguageMode } from '../../types';
 
 interface AboutPageProps {
@@ -8,7 +8,7 @@ interface AboutPageProps {
   onGoToSearch: (query?: string, category?: string, manufacturer?: string) => void;
 }
 
-export const AboutPage: React.FC<AboutPageProps> = ({ lang, onGoHome, onGoToSearch }) => {
+export const AboutPage: React.FC<AboutPageProps> = ({ lang, onGoToSearch }) => {
   return (
     <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-300 pb-12">
       
@@ -28,7 +28,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ lang, onGoHome, onGoToSear
 
           <p className="text-sm sm:text-base text-[#CCECEE] leading-relaxed font-medium">
             {lang === 'en'
-              ? "Bangladesh's comprehensive clinical medicine index, BDT pharmaceutical price comparator, and bilingual drug monograph reference platform."
+              ? "Bangladesh's authoritative clinical medicine index, BDT pharmaceutical price comparator, and bilingual drug monograph reference platform."
               : 'বাংলাদেশের পূর্ণাঙ্গ ক্লিনিক্যাল ড্রাগ ডিরেক্টরি, ওষুধের সঠিক বাজারমূল্য এবং বিকল্প ব্র্যান্ডের তুলনামূলক তথ্যভান্ডার।'}
           </p>
         </div>
@@ -130,6 +130,79 @@ export const AboutPage: React.FC<AboutPageProps> = ({ lang, onGoHome, onGoToSear
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* Editorial & Clinical Verification Standards (Crucial for AdSense Health/YMYL E-E-A-T) */}
+      <div className="p-6 sm:p-10 rounded-3xl bg-white dark:bg-[#152232] border border-[#CCECEE] dark:border-[#243B53] shadow-xs space-y-6">
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 rounded-2xl bg-[#F1F9FF] dark:bg-[#1A2B3E] text-[#095D7E] dark:text-[#2DD4BF] flex items-center justify-center shrink-0">
+            <BookOpen className="w-6 h-6" />
+          </div>
+          <div>
+            <h2 className="text-xl sm:text-2xl font-black text-[#095D7E] dark:text-slate-100">
+              {lang === 'en' ? 'Editorial Policy & Medical Data Sources' : 'এডিটোরিয়াল নীতিমালা ও তথ্যের উৎস'}
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+              {lang === 'en'
+                ? 'How we verify pharmaceutical data and maintain independent clinical objectivity.'
+                : 'আমাদের তথ্যের নির্ভুলতা যাচাই ও নিরপেক্ষতা বজায় রাখার নিয়মাবলী।'}
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+          
+          <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 space-y-2">
+            <div className="font-extrabold text-sm text-[#095D7E] dark:text-[#2DD4BF] flex items-center gap-2">
+              <Stethoscope className="w-4 h-4 text-[#14967F]" />
+              <span>{lang === 'en' ? 'Authoritative Reference Sources' : 'প্রামাণ্য রেফারেন্স উৎস'}</span>
+            </div>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              {lang === 'en'
+                ? 'Clinical monographs, indications, and dosage contraindications are cross-referenced with the Directorate General of Drug Administration (DGDA, Bangladesh), British National Formulary (BNF), and World Health Organization (WHO) Essential Medicines standards.'
+                : 'সকল ওষুধের বিবরণ ও নির্দেশিকা ঔষধ প্রশাসন অধিদপ্তর (DGDA), ব্রিটিশ ন্যাশনাল ফর্মুলারি (BNF) এবং বিশ্ব স্বাস্থ্য সংস্থা (WHO)-এর আন্তর্জাতিক রেফারেন্স অনুসরণ করে সন্নিবেশিত।'}
+            </p>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 space-y-2">
+            <div className="font-extrabold text-sm text-[#095D7E] dark:text-[#2DD4BF] flex items-center gap-2">
+              <Building2 className="w-4 h-4 text-[#14967F]" />
+              <span>{lang === 'en' ? 'Commercial Price Parity (BDT MRP)' : 'মূল্য যাচাই প্রক্রিয়া'}</span>
+            </div>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              {lang === 'en'
+                ? 'Maximum Retail Prices (MRP) in Bangladeshi Taka (৳) are compiled from published pharmaceutical company price sheets, official national drug gazettes, and retail packaging verifications across licensed pharmacies.'
+                : 'ওষুধের সর্বোচ্চ খুচরা মূল্য (MRP) সরাসরি প্রস্তুতকারক কোম্পানির অনুমোদিত রেট ও ঔষধ প্রশাসনের গ্যাজেট অনুযায়ী নিয়মিত হালনাগাদ করা হয়।'}
+            </p>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 space-y-2">
+            <div className="font-extrabold text-sm text-[#095D7E] dark:text-[#2DD4BF] flex items-center gap-2">
+              <Lock className="w-4 h-4 text-[#14967F]" />
+              <span>{lang === 'en' ? 'Pharmaceutical Independence' : 'সম্পূর্ণ বাণিজ্যিক নিরপেক্ষতা'}</span>
+            </div>
+            <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              {lang === 'en'
+                ? 'MEDDET is an independent clinical directory. We do NOT promote or accept payment to favor any specific brand, generic, or pharmaceutical manufacturer. Alternative brand comparisons are computed purely by active generic parity and economic pricing formula.'
+                : 'MEDDET কোনো নির্দিষ্ট ওষুধ প্রস্তুতকারক কোম্পানির অধীন নয়। বিকল্প ওষুধের তালিকা সম্পূর্ণ গাণিতিক ও জেনেরিক মিলের ভিত্তিতে নিরপেক্ষভাবে প্রস্তুত করা হয়।'}
+            </p>
+          </div>
+
+        </div>
+
+        <div className="p-4 rounded-2xl bg-[#F1F9FF] dark:bg-[#1A2B3E] border border-[#CCECEE] dark:border-[#243B53] text-xs text-slate-600 dark:text-slate-300 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <span>
+            {lang === 'en'
+              ? 'Published by MEDDET Clinical Informatics Group • Headquartered in Dhaka, Bangladesh.'
+              : 'প্রকাশক: MEDDET ক্লিনিক্যাল ইনফরম্যাটিক্স গ্রুপ • ঢাকা, বাংলাদেশ।'}
+          </span>
+          <a
+            href="mailto:editorial@meddet.site"
+            className="font-bold text-[#14967F] dark:text-[#2DD4BF] underline hover:text-[#095D7E]"
+          >
+            editorial@meddet.site
+          </a>
         </div>
       </div>
 

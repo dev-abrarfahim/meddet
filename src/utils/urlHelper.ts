@@ -806,15 +806,15 @@ export function generateStaticPageMetadata(pageType: 'about' | 'privacy' | 'term
       };
     }
     case 'privacy': {
-      const title = 'Privacy Policy — MEDDET™ Clinical Healthcare Index';
-      const description = 'Our commitment to zero medical health data tracking, client-side local storage protection, and patient confidentiality on MEDDET.';
+      const title = 'Privacy Policy & Cookie Statement — MEDDET™ Clinical Healthcare Index';
+      const description = 'Our commitment to zero medical health data tracking, Google AdSense & third-party cookie disclosures, and GDPR user privacy choices on MEDDET.';
       const canonicalUrl = `${SITE_BASE_URL}/privacy-policy`;
       return {
         title,
         description,
-        keywords: 'MEDDET privacy policy, health data privacy Bangladesh, zero medical tracking',
+        keywords: 'MEDDET privacy policy, Google AdSense cookies, cookie policy, health data privacy Bangladesh, zero medical tracking',
         canonicalUrl,
-        h1: 'Privacy Policy',
+        h1: 'Privacy Policy & Cookie Statement',
         og: { title, description, url: canonicalUrl, image: logoUrl, type: 'website' },
         twitter: { card: 'summary_large_image', title, description, image: logoUrl },
         jsonLd: { '@context': 'https://schema.org', '@type': 'WebPage', name: title, description, url: canonicalUrl },

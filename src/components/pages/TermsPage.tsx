@@ -89,6 +89,18 @@ export const TermsPage: React.FC<TermsPageProps> = ({ lang }) => {
           </p>
         </div>
 
+        {/* Term 4 */}
+        <div className="space-y-2 border-t border-slate-100 dark:border-slate-800 pt-6">
+          <h2 className="text-base sm:text-lg font-extrabold text-[#095D7E] dark:text-slate-100">
+            {lang === 'en' ? '4. Acceptable Use & Advertising Transparency' : '৪. ব্যবহারের নিয়মনীতি ও বিজ্ঞাপন স্বচ্ছতা'}
+          </h2>
+          <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            {lang === 'en'
+              ? 'MEDDET is funded through compliant, non-intrusive display advertisements (including Google AdSense). Automated scraping, malicious probing, or artificial traffic generation is strictly prohibited under Cloudflare Edge security rules. By using this service, you consent to our Terms and our Privacy Policy.'
+              : 'MEDDET গুগল অ্যাডসেন্সসহ নিরাপদ ও নিরপেক্ষ বিজ্ঞাপনের মাধ্যমে পরিচালিত হয়। ক্লাউডফ্লেয়ার সুরক্ষার অধীনে কৃত্রিম বট ট্রাফিক বা ডাটা স্ক্র্যাপিং সম্পূর্ণ নিষিদ্ধ। সাইটটি ব্যবহারের মাধ্যমে আপনি আমাদের শর্তাবলী ও প্রাইভেসি পলিসিতে সম্মতি জ্ঞাপন করছেন।'}
+          </p>
+        </div>
+
       </div>
 
     </div>

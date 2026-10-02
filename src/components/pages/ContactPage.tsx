@@ -48,7 +48,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
         {/* Left: Contact Channels */}
         <div className="md:col-span-1 space-y-4">
           <a
-            href="mailto:support@meddet.com"
+            href="mailto:support@meddet.site"
             className="p-5 rounded-3xl bg-white dark:bg-[#152232] border border-[#CCECEE] dark:border-[#243B53] shadow-xs flex items-center gap-4 hover:border-[#14967F] transition-all group block cursor-pointer"
           >
             <div className="w-12 h-12 rounded-2xl bg-[#14967F] text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -59,13 +59,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
                 {lang === 'en' ? 'General & Support Email' : 'সাপোর্ট ইমেইল'}
               </div>
               <div className="text-sm font-black text-[#095D7E] dark:text-[#2DD4BF] truncate">
-                support@meddet.com
+                support@meddet.site
               </div>
             </div>
           </a>
 
           <a
-            href="mailto:api@meddet.com"
+            href="mailto:editorial@meddet.site"
             className="p-5 rounded-3xl bg-white dark:bg-[#152232] border border-[#CCECEE] dark:border-[#243B53] shadow-xs flex items-center gap-4 hover:border-[#14967F] transition-all group block cursor-pointer"
           >
             <div className="w-12 h-12 rounded-2xl bg-[#095D7E] text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -73,10 +73,27 @@ export const ContactPage: React.FC<ContactPageProps> = ({ lang }) => {
             </div>
             <div className="min-w-0">
               <div className="text-xs font-bold text-slate-500 dark:text-slate-400">
-                {lang === 'en' ? 'Developer API Department' : 'ডেভেলপার এপিআই বিভাগ'}
+                {lang === 'en' ? 'Editorial & Clinical Inquiries' : 'এডিটোরিয়াল ও তথ্য সংশোধন'}
               </div>
               <div className="text-sm font-black text-[#095D7E] dark:text-[#2DD4BF] truncate">
-                api@meddet.com
+                editorial@meddet.site
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="mailto:privacy@meddet.site"
+            className="p-5 rounded-3xl bg-white dark:bg-[#152232] border border-[#CCECEE] dark:border-[#243B53] shadow-xs flex items-center gap-4 hover:border-[#14967F] transition-all group block cursor-pointer"
+          >
+            <div className="w-12 h-12 rounded-2xl bg-[#14967F] text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+              <Mail className="w-6 h-6 text-[#E2FCD6]" />
+            </div>
+            <div className="min-w-0">
+              <div className="text-xs font-bold text-slate-500 dark:text-slate-400">
+                {lang === 'en' ? 'Privacy Officer & Ad Compliance' : 'প্রাইভেসি ও বিজ্ঞাপন সহায়তা'}
+              </div>
+              <div className="text-sm font-black text-[#095D7E] dark:text-[#2DD4BF] truncate">
+                privacy@meddet.site
               </div>
             </div>
           </a>

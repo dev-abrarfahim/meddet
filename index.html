@@ -4,15 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDYVNZLSST"></script>
+    <!-- Google Consent Mode v2 & Google tag (gtag.js) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
 
+      // Establish Google Consent Mode v2 default states before tags fire
+      (function() {
+        var savedConsent = null;
+        try {
+          var raw = localStorage.getItem('meddet_cookie_consent_v1');
+          if (raw) savedConsent = JSON.parse(raw);
+        } catch (e) {}
+
+        if (savedConsent) {
+          gtag('consent', 'default', {
+            'ad_storage': savedConsent.advertising ? 'granted' : 'denied',
+            'ad_user_data': savedConsent.advertising ? 'granted' : 'denied',
+            'ad_personalization': savedConsent.advertising ? 'granted' : 'denied',
+            'analytics_storage': savedConsent.analytics ? 'granted' : 'denied'
+          });
+        } else {
+          // Check if visitor is in an EU/EEA timezone. If not (e.g. Bangladesh / Asia), grant by default
+          var isEU = false;
+          try {
+            var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+            if (tz.indexOf('Europe/') === 0 || tz.indexOf('Atlantic/Reykjavik') === 0 || tz.indexOf('Atlantic/Canary') === 0) {
+              isEU = true;
+            }
+          } catch(err) {}
+
+          if (isEU) {
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied',
+              'analytics_storage': 'denied',
+              'wait_for_update': 500
+            });
+          } else {
+            gtag('consent', 'default', {
+              'ad_storage': 'granted',
+              'ad_user_data': 'granted',
+              'ad_personalization': 'granted',
+              'analytics_storage': 'granted'
+            });
+          }
+        }
+      })();
+
+      gtag('js', new Date());
       gtag('config', 'G-CDYVNZLSST');
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDYVNZLSST"></script>
 
     <!-- Microsoft Clarity Behavioral Analytics -->
     <script type="text/javascript" id="clarity-script">

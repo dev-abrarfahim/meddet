@@ -1515,8 +1515,8 @@ export default {
         description: 'Learn about MEDDET, Bangladesh’s verified clinical medicine index, BDT pharmaceutical price comparator, and bilingual drug monographs.'
       },
       '/privacy-policy': {
-        title: 'Privacy Policy — MEDDET™ Clinical Healthcare Index',
-        description: 'Our commitment to zero medical health data tracking, client-side local storage protection, and patient confidentiality on MEDDET.'
+        title: 'Privacy Policy & Cookie Statement — MEDDET™ Clinical Healthcare Index',
+        description: 'Our commitment to zero medical health data tracking, Google AdSense & third-party cookie disclosures, and GDPR user privacy choices on MEDDET.'
       },
       '/terms': {
         title: 'Terms & Conditions & Medical Disclaimer | MEDDET™',

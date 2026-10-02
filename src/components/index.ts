@@ -5,6 +5,7 @@ export { BottomNav } from './common/BottomNav';
 export { SidebarDrawer } from './common/SidebarDrawer';
 export { TableOfContents } from './common/TableOfContents';
 export { MedicalDisclaimer } from './common/MedicalDisclaimer';
+export { CookieConsentBanner } from './common/CookieConsentBanner';
 export { ApiDocsModal } from './common/ApiDocsModal';
 export { InfoModal, type InfoModalType } from './common/InfoModal';
 export { NotFoundPage } from './common/NotFoundPage';

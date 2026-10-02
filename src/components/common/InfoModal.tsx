@@ -140,18 +140,29 @@ export const InfoModal: React.FC<InfoModalProps> = ({ type, onClose, lang }) => 
 
               <div className="space-y-2">
                 <h3 className="text-base font-extrabold text-[#095D7E] dark:text-slate-100">
-                  {lang === 'en' ? '2. Local Storage Usage' : '২. ব্রাউজার লোকাল স্টোরেজ'}
+                  {lang === 'en' ? '2. Google Advertising & Third-Party Cookies' : '২. গুগল অ্যাডসেন্স ও থার্ড-পার্টি বিজ্ঞাপন কুকি'}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                   {lang === 'en'
-                    ? 'We use your browser’s local storage strictly for interface preferences (e.g., Dark Mode setting, recent medicine searches, and preferred language: English/বাংলা). This data never leaves your device.'
-                    : 'আপনার ডিভাইসের লোকাল স্টোরেজ শুধুমাত্র থিম সেটিংস (ডার্ক/লাইট মোড), ভাষা নির্বাচন এবং সাম্প্রতিক সার্চ হিস্টোরির জন্য ব্যবহার করা হয়। এই তথ্য আপনার ডিভাইসের বাইরে কোথাও পাঠানো হয় না।'}
+                    ? 'Third-party vendors, including Google, use cookies (including DoubleClick / DART cookies) to serve ads based on prior visits. Users may opt out of personalized advertising by visiting Google Ads Settings (adssettings.google.com) or aboutads.info.'
+                    : 'গুগল সহ অনুমোদিত থার্ড-পার্টি বিজ্ঞাপন পার্টনাররা ব্যবহারকারীর অতীত ভিজিটের ভিত্তিতে প্রাসঙ্গিক বিজ্ঞাপন প্রদর্শনের জন্য কুকি ব্যবহার করে। ব্যবহারকারীরা গুগলের অ্যাড সেটিংস (adssettings.google.com) ভিজিট করে ব্যক্তিগতকৃত বিজ্ঞাপন নিয়ন্ত্রণ করতে পারেন।'}
                 </p>
               </div>
 
               <div className="space-y-2">
                 <h3 className="text-base font-extrabold text-[#095D7E] dark:text-slate-100">
-                  {lang === 'en' ? '3. Anonymous Analytics' : '৩. অ্যানালিটিক্স'}
+                  {lang === 'en' ? '3. Local Storage & Cookie Preferences' : '৩. ব্রাউজার লোকাল স্টোরেজ ও কুকি নিয়ন্ত্রণ'}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+                  {lang === 'en'
+                    ? 'We use your browser’s local storage strictly for interface preferences (e.g., Dark Mode setting, recent medicine searches, and preferred language: English/বাংলা). You can customize non-essential cookies via our Cookie Consent settings.'
+                    : 'আপনার ডিভাইসের লোকাল স্টোরেজ শুধুমাত্র থিম সেটিংস (ডার্ক/লাইট মোড), ভাষা নির্বাচন এবং সাম্প্রতিক সার্চ হিস্টোরির জন্য ব্যবহার করা হয়। আপনি যেকোনো সময় কুকি সেটিংস কাস্টমাইজ করতে পারেন।'}
+                </p>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="text-base font-extrabold text-[#095D7E] dark:text-slate-100">
+                  {lang === 'en' ? '4. Anonymous Analytics & Security' : '৪. অ্যানালিটিক্স ও নিরাপত্তা'}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                   {lang === 'en'
